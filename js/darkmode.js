@@ -1,4 +1,12 @@
 //Join darkside we have cookies.... DARKMODE!
+
+ $(document).ready(function(){
+     $('.toggle').click(function(){
+     $('.toggle').toggleClass('active')
+     $('body').toggleClass('night-mode')
+ })
+})
+
 ;(function (window, document, undefined) {
 'use strict';
 if (!('localStorage' in window)) return;
@@ -29,7 +37,6 @@ if (!nightMode) return;
 
 // When clicked, toggle night mode on or off
 nightMode.addEventListener('click', function (event) {
-    event.preventDefault();
     document.documentElement.classList.toggle('night-mode');
     if ( document.documentElement.classList.contains('night-mode') ) {
         localStorage.setItem('gmtNightMode', true);

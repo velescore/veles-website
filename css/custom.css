@@ -318,6 +318,13 @@ footer {
   background-image: linear-gradient(90deg, #e3b699, #514d45);
 }
 
+.btn-faq {
+  border: 0px;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+}
+
 .night-mode .btn {
   margin-left: 20px;
   width: 25%;
@@ -632,18 +639,23 @@ Main components
 /*End ROADMAP*/
 
 .card {
-  border-radius: 3px;
   border-color: #262626;
 }
 
 .card-header {
   background-color: #262626;
-  border-bottom-color: #3986ba;
 }
 
 #card-body {
-  border-radius: 3px;
   background: #262626;
+}
+
+#card-body-faq {
+  background-color: #393939;
+}
+
+.night-mode #card-body-faq {
+  background: #fff;
 }
 
 .night-mode #card-body {
@@ -651,7 +663,6 @@ Main components
 }
 
 #card-body-1 {
-  border-radius: 3px;
   background: #262626;
 }
 
@@ -661,7 +672,6 @@ Main components
 }
 
 #card-body-2 {
-  border-radius: 3px;
   background: #262626;
 }
 
@@ -767,4 +777,67 @@ Main components
 
 .night-mode #card-team-5 {
   background-color: #e5e5e5;
+}
+
+.list-group {
+  border-radius: 5px;
+  background: linear-gradient(180deg, #262626, #e3b699);
+}
+
+.night-mode .list-group {
+  border-radius: 5px;
+  color: black;
+  background: #e5e5e5;
+}
+
+.list-group-item.active {
+  background-color: #292929;
+  border-color: #e3b699;
+}
+
+.night-mode .list-group-item.active {
+  background-color: #fff;
+  border-color: black;
+}
+
+.list-group-item {
+background-color: transparent;
+color: #fff;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.night-mode .list-group-item {
+background-color: transparent;
+color: black;
+border-radius: 5px;
+font-weight: bold;
+}
+
+#headingOne {
+  background:  #262626;
+}
+
+.night-mode #headingOne {
+  background: #e5e5e5;
+}
+
+#headingTwo {
+   border-left: 0px;
+  border: 0.5px;
+  background: linear-gradient(90deg, #262626, #e3b699);
+}
+
+.night-mode #headingTwo {
+  background: #e5e5e5;
+}
+
+
+#headingThree {
+  border: 0.5px;
+  background: linear-gradient(90deg, #262626, #e3b699);
+}
+
+.night-mode #headingThree {
+  background: #e5e5e5;
 }
