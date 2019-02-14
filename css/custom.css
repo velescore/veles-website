@@ -808,7 +808,7 @@ Main components
 
 .list-group {
 	border-radius: 5px;
-	background: linear-gradient(180deg, #262626, #e3b699);
+	background: linear-gradient(180deg, #262626, #e3b699, #262626);
 }
 
 .night-mode .list-group {
@@ -846,24 +846,5 @@ Main components
 }
 
 .night-mode #headingOne {
-	background: #e5e5e5;
-}
-
-#headingTwo {
-	border-left: 0px;
-	border: 0.5px;
-	background: linear-gradient(90deg, #262626, #e3b699);
-}
-
-.night-mode #headingTwo {
-	background: #e5e5e5;
-}
-
-#headingThree {
-	border: 0.5px;
-	background: linear-gradient(90deg, #262626, #e3b699);
-}
-
-.night-mode #headingThree {
 	background: #e5e5e5;
 }
