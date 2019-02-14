@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Veles-network</title>
+      <!-- Core bootstrap CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <!-- Custom styles CSS -->
+      <link href="css/custom.css" rel="stylesheet">
+   </head>
+   <body>
+      <!-- Navigation -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
+         <div class="container">
+            <img src="images/veles.ico" />
+            <a class="navbar-brand" href="index.html">Veles</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="download.html">Download</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="roadmap.html">Roadmap</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="http://explorer.veles.network">Explorer</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Resources
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        <a class="dropdown-item" href="faq.html">FAQ</a>
+                        <a class="dropdown-item" href="com-mile.html">Community-milestones</a>
+                        <a class="dropdown-item" href="miningpools.html">Mining-pools</a>
+                        <a class="dropdown-item" href="wiki.html">Wiki</a>
+                        <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="contact.html">Contact</a>
+                  </li>
+                  <li>
+                     <div id="menu-primary"></div>
+                  </li>
+            </div>
+            </ul>
+         </div>
+         </div>
+      </nav>
+      <!-- Page Content -->
+      <br>
+      <div class="container">
+         <!-- Page Heading/Breadcrumbs -->
+         <h1 class="mt-4 mb-3">Resources
+            <small>section</small>
+         </h1>
+         <ol class="breadcrumb" id="breadcrumb-1">
+            <li class="breadcrumb-item">
+               <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active">About</li>
+         </ol>
+         <!-- Content Row -->
+         <div class="row">
+            <!-- Sidebar Column-->
+            <div class="col-lg-3 mb-4">
+               <div class="list-group text-left">
+                  <a href="faq.html" class="list-group-item">FAQ</a>
+                  <a href="coin-specs.html" class="list-group-item active">Coin specifications</a>
+                  <a href="mining.html" class="list-group-item">Mining</a>
+                  <a href="wiki.html" class="list-group-item">Wiki</a>
+                  <a href="com-mile.html" class="list-group-item">Community-milestones</a>
+               </div>
+               <coingecko-coin-ticker-widget  coin-id="veles" currency="btc" locale="en"></coingecko-coin-ticker-widget>
+            </div>
+ <div class="col-lg-9 mb-4">
+     <div class="mb-4" role="tablist" aria-multiselectable="true">
+<div class="card">
+         <div class="card-header" role="tab" id="headingOne">
+            <div class="mb-4"></div>
+            </div>
+                <div class="card-body" id="card-body-faq">
+                        <h5>General specifications :</h5>
+                        <hr>
+                        <li><b>Coin supply :</b>  12 500 000 VLS</li>
+                        <li><b>Block time :</b>  2 minutes</li>
+                        <li><b>Swap premine :</b>  50000 VLS</li>
+                        <li><b>Masternode collateral :</b>  2000 VLS</li>
+                        <li><b>Multi-algorithmic :</b> Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</li>
+                        <li><b>Active and only dev. address :</b>  VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj</li>
+                        <br>
+                        <h5>Reward system :</h5>
+                        <hr>
+                        <li><b>Minimal block reward :</b>  0.01 VLS</li>
+                        <li><b>Maximal Block reward :</b>  80 VLS</li>
+                        <li><b>Proof of work reward :</b> Rewards are dynamicaly moving between Max. and Min. rewards . The movement of rewards is connected with hashrate (more hashrate = bigger reward, less hashrate = lower reward)
+                        <li><b>Masternode reward :</b>  Dynamicaly raising from 5% to 60% of block reward in 5 years.</li>
+                        <li><b>Development reward :</b>  Dynamicaly decreasing from 5% to 0% in 5 years.</li>
+                        <br>
+                        <h5>Halving system :</h5>
+                        <hr>
+                        <li> Veles has own custom dynamic nonlinear halvings. Here is functionality and usage explained.You can check Veles halving status with rpc command "gethalvingstatus".</li>
+                        <br>
+                        <li><b>Example of gethalvingstatus :</b><br>
+                                                                {
+                                                                <br>
+                                                                "halvings_occured": 1,
+                                                                <br>
+                                                                "epochs_occured": 5,
+                                                                <br>
+                                                                "halving_interval": 4000,
+                                                                <br>
+                                                                "blocks_to_next_epoch": 1579,
+                                                                <br>
+                                                                "epoch_supply_target_reached": "14%",
+                                                                <br>
+                                                                "min_epoch_supply_to_halve": "80%",
+                                                                <br>
+                                                                }
+                                                                <br><hr>
+                                                                <li><a> It starts with the most basic information, this one here says, that the next block reward halving is supposed to occur in 1579 blocks from now, but most likely it won't occur, as we've mined only 14% from required 80% of maximum theoretical block reward since the last halving (because of the dynamic block reward that depends on the hashrate - number of workers).
+And If the halving doesn't occur, it will be delayed another 4000 blocks. But the dynamic block rewards will actually increase (instead of being halved), so that we'll reach our target (of coins to be mined till next halving) sooner and won't be delaying the halving unnecessarily for too long, even when the hashrate is lower than ideal. More specific info on this sort of "boost" of dynamic block rewards can be seen in next example.
+... the output then contains info on all the 5 "halving epochs" (what I mean by "halving epoch" I'll also clarify later on if it's not clear yet), I'll post just the data since block 50k when  VCIP01 has been activated and the proper PoW rewards kicked in.</a></li>
+                                                                <br><hr>
+                                                                "epochs": [
+                                                                <br>
+                                                                {
+                                                                <br>
+                                                                "epoch_name": "ALPHA",
+                                                                <br>
+                                                                "started_by_halving": false,
+                                                                <br>
+                                                                "start_block": 50000,
+                                                                <br>
+                                                                "end_block": 51999,
+                                                                <br>
+                                                                "max_block_reward": 80.00000000,
+                                                                <br>
+                                                                "dynamic_rewards_boost": false,
+                                                                <br>
+                                                                "start_supply": 71864.16989983,
+                                                                <br>
+                                                                "end_supply": 154133.54077063,
+                                                                <br>
+                                                                "supply_target": 160000.00000000,
+                                                                <br>
+                                                                "supply_this_epoch": 82269.37087080,
+                                                                <br>
+                                                                "supply_since_halving": 82269.37087080,
+                                                                <br>
+                                                                "supply_target_reached": "51%"    // 80% not reached, halving delayed
+                                                                <br>
+                                                                },
+                                                                <br>
+                                                                {
+                                                                <br>
+                                                                "epoch_name": "ALPHA_H0_E1",
+                                                                <br>
+                                                                "started_by_halving": false,
+                                                                <br>
+                                                                "start_block": 52000,
+                                                                <br>
+                                                                "end_block": 53999,
+                                                                <br>
+                                                                "max_block_reward": 80.00000000,
+                                                                <br>
+                                                                "dynamic_rewards_boost": "+50%",  // the reward adjustment kicked in
+                                                                <br>
+                                                                "start_supply": 154133.54077063,
+                                                                <br>
+                                                                "end_supply": 273041.50588623,
+                                                                <br>
+                                                                "supply_target": 160000.00000000,
+                                                                <br>
+                                                                "supply_this_epoch": 118907.96511560,
+                                                                <br>
+                                                                "supply_since_halving": 201177.33598640,
+                                                                <br>
+                                                                "supply_target_reached": "125%"
+                                                                <br>
+                                                                },
+                                                                <br>
+                                                                {
+                                                                <br>
+                                                                "epoch_name": "ALPHA_H1_E0",
+                                                                <br>
+                                                                "started_by_halving": true,       // successful halving
+                                                                <br>
+                                                                "start_block": 54000,
+                                                                <br>
+                                                                "end_block": 57999,
+                                                                <br>
+                                                                "max_block_reward": 40.00000000,
+                                                                <br>
+                                                                "dynamic_rewards_boost": false,
+                                                                <br>
+                                                                "start_supply": 273041.50588623,
+                                                                <br>
+                                                                "end_supply": false,
+                                                                <br>
+                                                                "supply_target": 160000.00000000,
+                                                                <br>
+                                                                "supply_this_epoch": 23011.73077920,
+                                                                <br>
+                                                                "supply_since_halving": 23011.73077920,
+                                                                <br>
+                                                                "supply_target_reached": "14%"
+                                                                <br>
+                                                                }
+                                                                <br><hr>
+                       </li>
+                       <li><a> Here we can see, for example, that at the block 52k halving has not occurred because there were only 51% of the target amount of VLS mined, from required 80%. The maximum block reward was 80 VLS.</a></li>
+                       <li><a> So the halving was delayed by another 2k blocks and this constitutes another halving epoch (APLHA_H0_E1), where the <b>max_block_reward</b> remains 80 VLS, but the <b>dynamic_rewards_boost</b> kicks in and increases dynamic blocks rewards by 50% (but always within the range of maximum block reward of 80 VLS).
+Thanks to this mechanism we can see that at the and of this epoch the initial target was actually fulfilled by 125% (as the time has increased too, those extra %  are just fine)</a></li>
+                       <li><a> As the target was met, the third section shows that the block rewards were successfully halved at the block 54k to 40 VLS and <b>dynamic_rewards_boost</b> turned off, next check and readjustments will happen with the start of another epoch at the block 58k.
+...  and as I promised, to clarify on the term halving epochs, the manual page starts like this:</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- /.container -->
+</div>
+<!-- /.container -->
+<br>
+<!-- Footer -->
+<footer class="py-1 ">
+   <div class="container">
+      <div class="col-md-12 text-right">
+         <p class="m-0">Copyright &copy; Veles-network 2019</p>
+         <a href="https://bitcointalk.org/index.php?topic=5064523">
+            <p class="fab fa-bitcoin fa-2x"></p>
+         </a>
+         <a href="https://twitter.com/Velescore">
+            <p class="fab fa-twitter-square fa-2x"></p>
+         </a>
+         <a href="https://github.com/Velescore/Veles">
+            <p class="fab fa-github-square fa-2x"></p>
+         </a>
+         <a href="https://discord.gg/P528fGg">
+            <p class="fab fa-discord fa-2x"></p>
+         </a>
+      </div>
+   </div>
+   <!-- /.container -->
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="js/darkmode.js"> </script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
