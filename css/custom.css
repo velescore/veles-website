@@ -325,7 +325,7 @@ footer {
 
 .btn {
 	margin-left: 20px;
-	width: 25%;
+	width: 40%;
 	border: 0.5px;
 	border-radius: 12px;
 	font-size: 15px;
@@ -333,13 +333,6 @@ footer {
 	font-weight: 500;
 	color: black;
 	background-image: linear-gradient(90deg, #e3b699, #514d45);
-}
-
-.btn-faq {
-	border: 0px;
-	font-size: 20px;
-	color: white;
-	background-color: transparent;
 }
 
 .night-mode .btn {
@@ -355,7 +348,7 @@ footer {
 
 #btn-index {
 	margin-top: 5px;
-	width: 40%;
+	width: 45%;
 	margin-left: 20px;
 	border: 1px;
 	border-radius: 12px;
@@ -381,7 +374,7 @@ footer {
 
 #btn-contact {
 	margin-top: 3px;
-	width: 30%;
+	width: 40%;
 	margin-left: 20px;
 	border: 0.5px;
 	border-radius: 12px;
@@ -394,7 +387,6 @@ footer {
 
 .night-mode #btn-contact {
 	margin-top: 3px;
-	width: 30%;
 	margin-left: 20px;
 	border: 0.5px;
 	border-radius: 12px;
@@ -523,7 +515,7 @@ Main components
 	border-radius: 2px;
 	padding: 1em;
 	.timeline-content-info {
-		background: #2B343A;
+		background: #262626;
 		padding: 5px 10px;
 		color: rgba(255, 255, 255, 0.7);
 		font-size: 12px;
@@ -545,6 +537,7 @@ Main components
 			}
 		}
 	}
+
 	.content-skills {
 		font-size: 12px;
 		padding: 0;
@@ -677,12 +670,17 @@ Main components
 	background: #262626;
 }
 
+#card-body-pool {
+	background-color: #262626;
+}
+
 #card-body-faq {
-	background-color: #393939;
+	border: 0px;
+	background: #262626;
 }
 
 .night-mode #card-body-faq {
-	background: #fff;
+	background-color: #e5e5e5;
 }
 
 .night-mode #card-body {
@@ -808,7 +806,8 @@ Main components
 
 .list-group {
 	border-radius: 5px;
-	background: linear-gradient(180deg, #262626, #e3b699, #262626);
+	margin-bottom: 15px;
+	background: #262626;
 }
 
 .night-mode .list-group {
@@ -818,8 +817,8 @@ Main components
 }
 
 .list-group-item.active {
+	border-width: 2px;
 	background-color: #292929;
-	border-color: #e3b699;
 }
 
 .night-mode .list-group-item.active {
