@@ -37,6 +37,7 @@ if (!nightMode) return;
 
 // When clicked, toggle night mode on or off
 nightMode.addEventListener('click', function (event) {
+    event.preventDefault();
     document.documentElement.classList.toggle('night-mode');
     if ( document.documentElement.classList.contains('night-mode') ) {
         localStorage.setItem('gmtNightMode', true);

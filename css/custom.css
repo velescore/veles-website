@@ -18,6 +18,7 @@ body {
 	color: #fff;
 	font-weight: 500;
 	background-color: #393939;
+  	background: repeating-linear-gradient(135deg, #3b3b3b 0%, #3b3b3b 10%, #393939 0%, #393939 50%) 0 / 15px 15px;
 	text-rendering: optimizeLegibility;
 	margin: 0;
 	margin-top: 20px;
@@ -31,6 +32,8 @@ body {
 }
 
 hr {
+	margin-top: 30px;
+	margin-bottom: 30px;
 	height: 8px;
 	background-image: linear-gradient(90deg, #e3b699, transparent);
 	border: 2px;
@@ -50,20 +53,18 @@ hr {
 
 .toggle {
 	position: absolute;
-	top: 23px;
+	top: 18.5px;
 	right: 50px;
 	background: linear-gradient(90deg, #262626, #e3b699);
-	border: 1.2px solid #262626;
-	width: 45px;
-	height: 20px;
+	width: 29.25px;
+	height: 13.3px;
 	cursor: pointer;
 	border-radius: 20px;
 	transition: 0.5s;
 }
 
 .toggle.active {
-	background: linear-gradient(90deg, #e3b699, #262626);
-	border: 2px solid #262626;
+	background: linear-gradient(90deg, #262626, #e3b699);
 }
 
 .toggle:before {
@@ -71,15 +72,16 @@ hr {
 	position: absolute;
 	top: 1px;
 	left: 2px;
-	width: 16px;
-	height: 16px;
+	width: 10px;
+	height: 10px;
 	background: #262626;
 	border-radius: 50%;
 	transition: 0.5s;
 }
 
 .toggle.active:before {
-	left: 26px;
+	left: 17px;
+	top: 1px;
 	background: #262626;
 }
 
@@ -115,11 +117,8 @@ hr {
 /*Navbar */
 
 .navbar {
+	height: 50px;
 	background-color: black;
-	padding-bottom: 1px;
-	border-bottom: 1px;
-	border-bottom-color: #e3b699;
-	border-bottom-style: outset;
 }
 
 .navbar-brand {
@@ -133,6 +132,7 @@ hr {
 }
 
 .dropdown-menu {
+	font-size: 14px;
 	background-color: black;
 }
 
@@ -141,11 +141,9 @@ hr {
 }
 
 .nav-link {
-	font-weight: 450;
-	font-size: 14px;
+	font-size: 15px;
 	color: #fff;
 }
-
 
 /*end of navbar */
 
@@ -187,8 +185,8 @@ hr {
 }
 
 .m-0 {
+	font-size: 13px;
 	text-align: center;
-	margin-top: 30px;
 }
 
 .my-4 {
@@ -239,6 +237,7 @@ hr {
 }
 
 #img-index {
+	margin-left: 20px;
 	margin-bottom: 30px;
 	max-height: 350px;
 }
@@ -256,7 +255,7 @@ hr {
 
 #img-download {
 	margin-right: 10px;
-	max-height: 200px;
+	max-height: 160px;
 }
 
 #img-partners {
@@ -268,6 +267,10 @@ hr {
 	margin-left: 20px;
 	margin-bottom: 20px;
 	max-height: 300px;
+}
+
+#partners {
+	margin-bottom: 30px;
 }
 
 #col-lg-6-start {
@@ -291,10 +294,20 @@ hr {
 }
 
 .fab {
-	color: #e3b699;
+	margin-right: 5px;
+	font-size:25px;
+	margin-top: 4px;
+	background: -webkit-linear-gradient(45deg,#262626, #e3b699);
+ 	-webkit-background-clip: text;
+ 	-webkit-text-fill-color: transparent;
 }
 
 footer {
+	position: fixed;
+   	left:0px;
+   	bottom: 0px;
+   	height: 40px;
+   	width: 100%;
 	background-color: black;
 	color: white;
 }
@@ -325,7 +338,7 @@ footer {
 
 .btn {
 	margin-left: 20px;
-	width: 25%;
+	width: 40%;
 	border: 0.5px;
 	border-radius: 12px;
 	font-size: 15px;
@@ -333,13 +346,6 @@ footer {
 	font-weight: 500;
 	color: black;
 	background-image: linear-gradient(90deg, #e3b699, #514d45);
-}
-
-.btn-faq {
-	border: 0px;
-	font-size: 20px;
-	color: white;
-	background-color: transparent;
 }
 
 .night-mode .btn {
@@ -355,7 +361,7 @@ footer {
 
 #btn-index {
 	margin-top: 5px;
-	width: 40%;
+	width: 45%;
 	margin-left: 20px;
 	border: 1px;
 	border-radius: 12px;
@@ -381,7 +387,7 @@ footer {
 
 #btn-contact {
 	margin-top: 3px;
-	width: 30%;
+	width: 40%;
 	margin-left: 20px;
 	border: 0.5px;
 	border-radius: 12px;
@@ -394,7 +400,6 @@ footer {
 
 .night-mode #btn-contact {
 	margin-top: 3px;
-	width: 30%;
 	margin-left: 20px;
 	border: 0.5px;
 	border-radius: 12px;
@@ -523,7 +528,7 @@ Main components
 	border-radius: 2px;
 	padding: 1em;
 	.timeline-content-info {
-		background: #2B343A;
+		background: #262626;
 		padding: 5px 10px;
 		color: rgba(255, 255, 255, 0.7);
 		font-size: 12px;
@@ -545,6 +550,7 @@ Main components
 			}
 		}
 	}
+
 	.content-skills {
 		font-size: 12px;
 		padding: 0;
@@ -677,12 +683,17 @@ Main components
 	background: #262626;
 }
 
+#card-body-pool {
+	background-color: #262626;
+}
+
 #card-body-faq {
-	background-color: #393939;
+	border: 0px;
+	background: #262626;
 }
 
 .night-mode #card-body-faq {
-	background: #fff;
+	background-color: #e5e5e5;
 }
 
 .night-mode #card-body {
@@ -750,7 +761,7 @@ Main components
 #breadcrumb-1 {
 	border-radius: 12px;
 	border-color: black;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	background: linear-gradient(90deg, #262626, #e3b699);
 }
 
@@ -808,7 +819,8 @@ Main components
 
 .list-group {
 	border-radius: 5px;
-	background: linear-gradient(180deg, #262626, #e3b699);
+	margin-bottom: 15px;
+	background: #262626;
 }
 
 .night-mode .list-group {
@@ -818,8 +830,8 @@ Main components
 }
 
 .list-group-item.active {
+	border-width: 2px;
 	background-color: #292929;
-	border-color: #e3b699;
 }
 
 .night-mode .list-group-item.active {
@@ -846,24 +858,5 @@ Main components
 }
 
 .night-mode #headingOne {
-	background: #e5e5e5;
-}
-
-#headingTwo {
-	border-left: 0px;
-	border: 0.5px;
-	background: linear-gradient(90deg, #262626, #e3b699);
-}
-
-.night-mode #headingTwo {
-	background: #e5e5e5;
-}
-
-#headingThree {
-	border: 0.5px;
-	background: linear-gradient(90deg, #262626, #e3b699);
-}
-
-.night-mode #headingThree {
 	background: #e5e5e5;
 }
