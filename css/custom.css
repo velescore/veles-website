@@ -132,7 +132,7 @@ hr {
 }
 
 .dropdown-menu {
-	font-size: 12px;
+	font-size: 13px;
 	background-color: black;
 }
 
@@ -141,7 +141,7 @@ hr {
 }
 
 .nav-link {
-	font-size: 14px;
+	font-size: 15px;
 	color: #fff;
 }
 
@@ -254,7 +254,7 @@ hr {
 
 #img-download {
 	margin-right: 10px;
-	max-height: 200px;
+	max-height: 160px;
 }
 
 #img-partners {
@@ -760,7 +760,7 @@ Main components
 #breadcrumb-1 {
 	border-radius: 12px;
 	border-color: black;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	background: linear-gradient(90deg, #262626, #e3b699);
 }
 
