@@ -132,7 +132,7 @@ hr {
 }
 
 .dropdown-menu {
-	font-size: 13px;
+	font-size: 14px;
 	background-color: black;
 }
 
@@ -237,6 +237,7 @@ hr {
 }
 
 #img-index {
+	margin-left: 20px;
 	margin-bottom: 30px;
 	max-height: 350px;
 }
