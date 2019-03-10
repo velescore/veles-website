@@ -118,7 +118,6 @@ hr {
 
 .navbar {
 	background-color: black;
-	padding-bottom: 1px;
 }
 
 .navbar-brand {
@@ -173,10 +172,6 @@ hr {
 .float-left {
 	margin-bottom: 35px;
 	max-height: 250px;
-}
-
-#col-lg-2-index {
-	padding-top: 50px;
 }
 
 #col-lg-6-start {
@@ -237,9 +232,10 @@ hr {
 }
 
 #img-index {
+	margin-top:20px;
+	margin-bottom: 10px;
 	margin-left: 20px;
-	margin-bottom: 30px;
-	max-height: 350px;
+	max-height: 330px;
 }
 
 #img-about {
@@ -275,10 +271,6 @@ hr {
 
 #col-lg-6-start {
 	margin-left: 30px;
-}
-
-#col-lg-4-contact {
-	margin-left: 20px;
 }
 
 #img-contact {
@@ -337,73 +329,66 @@ footer {
 /*contact*/
 
 .btn {
-	margin-left: 20px;
-	width: 40%;
-	border: 0.5px;
-	border-radius: 12px;
-	font-size: 15px;
-	border-color: #333;
-	font-weight: 500;
-	color: black;
-	background-image: linear-gradient(90deg, #e3b699, #514d45);
+    background: #262626;
+    display: block;
+    width: 40%;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+	border-radius: 28px;
+	border-color: #292929;
 }
 
-.night-mode .btn {
-	margin-left: 20px;
-	width: 25%;
-	border: 1px;
-	border-color: black;
-	border-radius: 12px;
-	font-size: 15px;
-	border-color: black;
-	font-weight: 500;
-	color: black;
-	background: #e5e5e5;
+.btn:hover {
+    -webkit-box-shadow: inset 0 0 30px #292929, 0 0 30px #292929;
+    -moz-box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+    box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+	border-color: #e3b699;
+    background: linear-gradient(90deg, #e3b699, #514d45);
 }
 
 #btn-index {
-	margin-top: 7px;
-	width: 45%;
+	margin-top: 10px;
 	margin-right: 25px;
-	border: 2px;
-	border-radius: 12px;
-	font-size: 15px;
-	border-color: #333;
 	font-weight: 500;
-	color: black;
-	background-image: linear-gradient(90deg, #e3b699, #514d45);
+	background: #262626;
+    display: block;
+    width: 45%;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+	border-radius: 28px;
+	border-color: #292929;
 }
 
-.night-mode #btn-index {
-	color: black;
-	background: #e5e5e5;
+#btn-index:hover {
+    -webkit-box-shadow: inset 0 0 30px #292929, 0 0 30px #292929;
+    -moz-box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+    box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+	border-color: #e3b699;
+    background: linear-gradient(90deg, #e3b699, #514d45);
 }
 
 #btn-contact {
 	margin-top: 3px;
-	width: 40%;
-	margin-left: 20px;
-	border: 0.5px;
-	border-radius: 12px;
+	margin-left: 100px;
+	background: #262626;
+    display: block;
+    width: 40%;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+	border-radius: 28px;
 	border-color: #292929;
-	font-weight: 500;
-	font-size: 15px;
-	color: black;
-	background-image: linear-gradient(90deg, #e3b699, #514d45);
 }
 
-.night-mode #btn-contact {
-	margin-top: 3px;
-	margin-left: 20px;
-	border: 0.5px;
-	border-radius: 12px;
-	border-color: #292929;
-	font-weight: 500;
-	font-size: 15px;
-	color: black;
-	background: #e5e5e5;
+#btn-contact:hover {
+    -webkit-box-shadow: inset 0 0 30px #292929, 0 0 30px #292929;
+    -moz-box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+    box-shadow: inset 0 0 30px #e3b699, 0 0 30px #e3b699;
+	border-color: #e3b699;
+    background: linear-gradient(90deg, #e3b699, #514d45);
 }
-
 
 /*Roadmap*/
 
