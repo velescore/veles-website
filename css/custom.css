@@ -351,6 +351,8 @@ footer {
 .night-mode .btn {
 	margin-left: 20px;
 	width: 25%;
+	border: 1px;
+	border-color: black;
 	border-radius: 12px;
 	font-size: 15px;
 	border-color: black;
@@ -363,7 +365,7 @@ footer {
 	margin-top: 7px;
 	width: 45%;
 	margin-right: 25px;
-	border: 1px;
+	border: 2px;
 	border-radius: 12px;
 	font-size: 15px;
 	border-color: #333;
@@ -373,14 +375,6 @@ footer {
 }
 
 .night-mode #btn-index {
-	margin-top: 5px;
-	width: 40%;
-	margin-left: 20px;
-	border-color: #000000;
-	border: 3px;
-	border-radius: 12px;
-	font-size: 15px;
-	font-weight: 500;
 	color: black;
 	background: #e5e5e5;
 }
