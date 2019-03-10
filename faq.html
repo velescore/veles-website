@@ -16,52 +16,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
-        <div class="container">
-            <img src="images/veles.ico" />
-            <a class="navbar-brand" href="index.html">Veles</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/velescore/veles/wiki">Wiki</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://explorer.veles.network">Explorer</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Resources
-                     </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="com-mile.html">Community-milestones</a>
-                            <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>
-                            <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <div id="menu-primary"></div>
-                    </li>
-            </div>
-            </ul>
-        </div>
-        </div>
-    </nav>
+    <script src="js/nav.js"></script>
     <!-- Page Content -->
     <br>
     <div class="container">
@@ -84,9 +39,11 @@
             <div class="col-lg-3 mb-4">
                 <div class="list-group text-left">
                     <a href="faq.html" class="list-group-item active">FAQ</a>
-                    <a href="coin-specs.html" class="list-group-item">Coin specifications</a>
+                    <a href="wiki.html" class="list-group-item">Wiki</a>
+                    <a href="coin-specs.html" class="list-group-item">Coin-specs</a>
                     <a href="mining-pools.html" class="list-group-item">Mining-pools</a>
-                    <a href="com-mile.html" class="list-group-item">Community-milestones</a>
+                    <a href="services.html" class="list-group-item">External-services</a>
+                    <a href="community.html" class="list-group-item">Community-milestones</a>
                 </div>
                 <coingecko-coin-ticker-widget coin-id="veles" currency="btc" locale="en"></coingecko-coin-ticker-widget>
             </div>
@@ -198,29 +155,7 @@
     <!-- /.container -->
     <br>
     <!-- Footer -->
-    <footer class="py-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-left">
-                    <ul class="footer-follow">
-                        <a href="https://bitcointalk.org/index.php?topic=5064523">
-                            <p class="fab fa-bitcoin"></p>
-                        </a>
-                        <a href="https://twitter.com/velescore"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github/velescore/veles"><i class="fab fa-github"></i></a>
-                        <a href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-center">
-                    <p class="m-0">Copyright © 2018 . Veles
-                        <p>
-                </div>
-                <div class="col-md-3 text-right">
-                </div>
-            </div>
-        </div>
-        <!-- /.container -->
-    </footer>
+    <script src="js/footer.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

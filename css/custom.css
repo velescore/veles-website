@@ -53,7 +53,7 @@ hr {
 
 .toggle {
 	position: absolute;
-	top: 18.5px;
+	top: 25px;
 	right: 50px;
 	background: linear-gradient(90deg, #262626, #e3b699);
 	width: 29.25px;
@@ -117,8 +117,8 @@ hr {
 /*Navbar */
 
 .navbar {
-	height: 50px;
 	background-color: black;
+	padding-bottom: 1px;
 }
 
 .navbar-brand {
@@ -132,7 +132,7 @@ hr {
 }
 
 .dropdown-menu {
-	font-size: 14px;
+	font-size: 15px;
 	background-color: black;
 }
 
@@ -219,12 +219,12 @@ hr {
 
 #img-introduction {
 	margin-top: 35px;
-	max-height: 250px;
+	max-height: 240px;
 }
 
 #img-funding {
 	margin-top: 35px;
-	max-height: 250px;
+	max-height: 240px;
 }
 
 #img-dynamic {
@@ -243,14 +243,14 @@ hr {
 }
 
 #img-about {
-	max-height: 240px;
+	max-height: 220px;
 	margin-top: 30px;
 }
 
 #img-team {
 	margin-right: 20px;
 	max-width: 80%;
-	max-height: 80%;
+	max-height: 65%;
 }
 
 #img-download {
@@ -351,6 +351,8 @@ footer {
 .night-mode .btn {
 	margin-left: 20px;
 	width: 25%;
+	border: 1px;
+	border-color: black;
 	border-radius: 12px;
 	font-size: 15px;
 	border-color: black;
@@ -360,10 +362,10 @@ footer {
 }
 
 #btn-index {
-	margin-top: 5px;
+	margin-top: 7px;
 	width: 45%;
-	margin-left: 20px;
-	border: 1px;
+	margin-right: 25px;
+	border: 2px;
 	border-radius: 12px;
 	font-size: 15px;
 	border-color: #333;
@@ -373,14 +375,6 @@ footer {
 }
 
 .night-mode #btn-index {
-	margin-top: 5px;
-	width: 40%;
-	margin-left: 20px;
-	border-color: #000000;
-	border: 3px;
-	border-radius: 12px;
-	font-size: 15px;
-	font-weight: 500;
 	color: black;
 	background: #e5e5e5;
 }

@@ -16,52 +16,8 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
-        <div class="container">
-            <img src="images/veles.ico" />
-            <a class="navbar-brand" href="index.html">Veles</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/velescore/veles/wiki">Wiki</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://explorer.veles.network">Explorer</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Resources
-                     </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="com-mile.html">Community-milestones</a>
-                            <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>
-                            <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <div id="menu-primary"></div>
-                    </li>
-            </div>
-            </ul>
-        </div>
-        </div>
-    </nav>
+    <script src="js/nav.js"></script>
+    <!-- ./Navigation -->
     <header>
         <div id="carouselSlideIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -77,14 +33,13 @@
                         <p>In process of development.</p>
                     </div>
                 </div>
-                <!-- Slide Two - Set the background image for this slide in the line below -->
+                <!-- Slide Two - Set the background image for this slide in the line below
                 <div class="carousel-item" style="background: url('images/multi-official.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Multi-algorithmic </h3>
                         <p>Lyra2z ,X11 ,X16r ,Sha256d ,Scrypt ,Nist5</p>
                     </div>
                 </div>
-                <!-- Slide Three - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background: url('images/dynamic-official.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Dynamic</h3>
@@ -99,7 +54,7 @@
             <a class="carousel-control-next" href="#carouselSlideIndicators" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+            </a>-->
         </div>
     </header>
     <!-- Page Content -->
@@ -112,27 +67,27 @@
                 <h2>Getting started :</h2>
                 <ul>
                     <p></p>
-                    <a class="btn btn-primary" id="btn-index" href="https://github.com/Velescore/Veles">Download wallet
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/Velescore/Veles">Download wallet
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                     <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://crex24.com/cs/exchange/VLS-BTC">Buy VLS
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://crex24.com/cs/exchange/VLS-BTC">Buy VLS
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                     <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Setup masternode
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Setup masternode
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                     <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://twitter.com/velescore">Follow on Twitter
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">Follow on Twitter
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                     <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://steemit.com/@velescore">Follow on Steemit
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">Follow on Steemit
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                     <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://discord.gg/P528fGg">Join Discord
+                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">Join Discord
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
                 </ul>
@@ -157,10 +112,10 @@
         <div class="container">
             <hr>
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-4 text-center">
                     <img class="img" id="img-introduction" src="images/intro-official.png" alt="">
                 </div>
-                <div class="col-lg-3"></div>
+                <div class="col-lg-1"></div>
                 <div class="col-lg-7">
                     <h2>Introduction</h2>
                     <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give up your private data to central authorities.</p>
@@ -173,16 +128,16 @@
                     <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-4 text-left">
+                <div class="col-lg-4 text-center">
                     <img class="img" id="img-funding" src="images/fund-official.png" alt="">
                 </div>
             </div>
             <hr/>
             <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 text-left">
+                <div class="col-lg-4 text-center">
                     <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="">
                 </div>
+                <div class="col-lg-1"></div>
                 <div class="col-lg-7">
                     <h2>Dynamic character</h2>
                     <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
@@ -228,40 +183,40 @@
             <hr/>
             <div class="col-lg-12 text-center">
                 <h5 id="partners">Where you can find us </h5>
-                <a  href="https://www.mining-dutch.nl">
+                <a  target="_blank" rel="noopener noreferrer" href="https://www.mining-dutch.nl">
                 <img class="img" id="img-partners" src="images/dutch.png" alt="">
                 </a>
-                <a href="https://www.coingecko.com/en/coins/veles?utm_content=veles&utm_medium=search_coin&utm_source=coingecko">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.coingecko.com/en/coins/veles?utm_content=veles&utm_medium=search_coin&utm_source=coingecko">
                 <img class="img" id="img-partners" src="images/coingecko.webp" alt="">
                 </a>
-                <a href="https://crex24.com/cs/exchange/VLS-BTC">
+                <a target="_blank" rel="noopener noreferrer" href="https://crex24.com/cs/exchange/VLS-BTC">
                 <img class="img" id="img-partners" src="images/crex.webp" alt="">
                 </a>
-                <a href="https://steemit.com/@velescore">
+                <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">
                 <img class="img" id="img-partners" src="images/steemit.png" alt="">
                 </a>
-                <a href="">
+                <a target="_blank" rel="noopener noreferrer" href="">
                 <img class="img" id="img-partners" src="images/blockfol.png" alt="">
                 </a>
-                <a href="https://bitcointalk.org/index.php?topic=5064523">
+                <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
                 <img class="img" id="img-partners" src="images/bitcointalk.png" alt="">
                 </a>
-                <a href="https://discord.gg/dBPBY8S">
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/dBPBY8S">
                 <img class="img" id="img-partners" src="images/dev.png" alt="">
                 </a>
-                <a href="https://discord.gg/P528fGg">
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
                 <img class="img" id="img-partners" src="images/disc.png" alt="">
                 </a>
-                <a href="https://twitter.com/velescore">
+                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
                 <img class="img" id="img-partners" src="images/twit.png" alt="">
                 </a>
                 <a href="https://github.com/velescore">
                 <img class="img" id="img-partners" src="images/git.png" alt="">
                 </a>
-                <a href="">
+                <a target="_blank" rel="noopener noreferrer" href="">
                 <img class="img" id="img-partners" src="images/medi.png" alt="">
                 </a>
-                <a href="">
+                <a target="_blank" rel="noopener noreferrer" href="">
                 <img class="img" id="img-partners" src="images/red.png" alt="">
                 </a>
             </div>
@@ -273,29 +228,7 @@
     <!-- /.container -->
     <br>
     <!-- Footer -->
-    <footer class="py-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-left">
-                    <ul class="footer-follow">
-                        <a href="https://bitcointalk.org/index.php?topic=5064523">
-                            <p class="fab fa-bitcoin"></p>
-                        </a>
-                        <a href="https://twitter.com/velescore"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github/velescore/veles"><i class="fab fa-github"></i></a>
-                        <a href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a>
-                    </ul>
-                </div>
-                <div class="col-md-6 text-center">
-                    <p class="m-0">Copyright © 2018 . Veles
-                        <p>
-                </div>
-                <div class="col-md-3 text-right">
-                </div>
-            </div>
-        </div>
-        <!-- /.container -->
-    </footer>
+    <script src="js/footer.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="https://widgets.coingecko.com/div/coingecko-coin-price-chart-widget-div.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
