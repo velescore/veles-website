@@ -140,6 +140,7 @@ hr {
 /*Navbar */
 
 .navbar {
+	padding-top: 5px;
 	height: 40px;
 	background-color: black;
 }
@@ -155,16 +156,19 @@ hr {
 }
 
 .dropdown-menu {
-	font-size: 15px;
+	font-size: 14px;
 	background-color: black;
 }
 
 .dropdown-item {
+	font-size: 14px;
+	background-color: black;
 	color: #fff;
 }
 
 .nav-link {
-	font-size: 15px;
+	background: black;
+	font-size: 14px;
 	color: #fff;
 }
 
