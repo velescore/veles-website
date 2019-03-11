@@ -140,7 +140,6 @@ hr {
 /*Navbar */
 
 .navbar {
-	height: 43px;
 	background-color: black;
 }
 
@@ -151,33 +150,28 @@ hr {
 .navbar-brand {
 	padding-left: 4px;
 	padding-top: 4px;
-	height: 43px;
 	font-weight: bold;
 	color: #fff;
 }
 
 .navbarResponsive {
-	height: 43px;
 	color: #fff;
 	background-color: black;
 }
 
 .dropdown-menu {
-	height: 43px;
 	font-size: 15px;
 	background-color: black;
 }
 
 .dropdown-item {
 	padding-top: 1px;
-	height: 43px;
 	font-size: 15px;
 	background-color: black;
 	color: #fff;
 }
 
 .nav-link {
-	height: 43px;
 	background: black;
 	font-size: 15px;
 	color: #fff;
