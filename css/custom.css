@@ -140,8 +140,7 @@ hr {
 /*Navbar */
 
 .navbar {
-	margin-top: 2px;
-	height: 43px;
+	margin-bottom: 10px;
 	background-color: black;
 }
 
@@ -151,13 +150,11 @@ hr {
 }
 
 .navbarResponsive {
-	height: 43px;
 	color: #fff;
 	background-color: black;
 }
 
 .dropdown-menu {
-	height: 43px;
 	font-size: 14px;
 	background-color: black;
 	margin-bottom: 1px;
@@ -170,7 +167,6 @@ hr {
 }
 
 .nav-link {
-	height: 43px;
 	background: black;
 	font-size: 14px;
 	color: #fff;
