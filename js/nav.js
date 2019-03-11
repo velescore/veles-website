@@ -18,21 +18,6 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                     </li>\
                     <li class="nav-item dropdown">\
                         <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
-                     Explorer\
-                     </a>\
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
-                            <a class="dropdown-item" href="http://explorer.network">Search</a>\
-                            <a class="dropdown-item" href="http://explorer.network/movement">Movements</a>\
-                            <a class="dropdown-item" href="http://explorer.network/network">Network</a>\
-                            <a class="dropdown-item" href="http://explorer.network/richlist">Richlist</a>\
-                            <a class="dropdown-item" href="http://explorer.network/masternodes">Masternodes</a>\
-                            <a class="dropdown-item" href="http://explorer.network/coininfo">Coin-info</a>\
-                            <a class="dropdown-item" href="http://explorer.network/mining-stats">Mining-stats</a>\
-                            <a class="dropdown-item" href="http://explorer.network/api">Api</a>\
-                        </div>\
-                    </li>\
-                    <li class="nav-item dropdown">\
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
                      Resources\
                      </a>\
                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
@@ -47,7 +32,7 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                     <li class="nav-item">\
                         <a class="nav-link" href="contact.html">Contact</a>\
                     </li>\
-                    <li>\
+                     <li>\
                         <div id="menu-primary"></div>\
                     </li>\
             </div>\
@@ -56,3 +41,26 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
         </div>\
     </nav>\
     ');
+
+/* nightmode toogle
+        <li>\
+            <div id="menu-primary"></div>\
+        </li>\
+*/
+/* explorer
+<li class="nav-item dropdown">\
+    <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
+ Explorer\
+ </a>\
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
+        <a class="dropdown-item" href="http://explorer.network">Search</a>\
+        <a class="dropdown-item" href="http://explorer.network/movement">Movements</a>\
+        <a class="dropdown-item" href="http://explorer.network/network">Network</a>\
+        <a class="dropdown-item" href="http://explorer.network/richlist">Richlist</a>\
+        <a class="dropdown-item" href="http://explorer.network/masternodes">Masternodes</a>\
+        <a class="dropdown-item" href="http://explorer.network/coininfo">Coin-info</a>\
+        <a class="dropdown-item" href="http://explorer.network/mining-stats">Mining-stats</a>\
+        <a class="dropdown-item" href="http://explorer.network/api">Api</a>\
+    </div>\
+</li>\
+*/
