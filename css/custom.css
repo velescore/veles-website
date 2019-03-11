@@ -155,20 +155,20 @@ hr {
 }
 
 .dropdown-menu {
-	font-size: 14px;
+	font-size: 15px;
 	background-color: black;
 	margin-bottom: 1px;
 }
 
 .dropdown-item {
-	font-size: 14px;
+	font-size: 15px;
 	background-color: black;
 	color: #fff;
 }
 
 .nav-link {
 	background: black;
-	font-size: 14px;
+	font-size: 15px;
 	color: #fff;
 }
 
