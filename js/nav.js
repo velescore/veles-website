@@ -1,6 +1,6 @@
 document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">\
                     <div class="container">\
-            <img src="images/veles.ico" />\
+            <img id="icon" src="images/veles.ico" />\
             <a class="navbar-brand" href="index.html">Veles</a>\
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">\
                 <span class="navbar-toggler-icon"></span>\

@@ -59,7 +59,7 @@ hr {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	height: 8px;
-	background-image: linear-gradient(90deg, #e3b699, transparent);
+	background-image: linear-gradient(90deg,transparent, #e3b699, transparent);
 	border: 2px;
 	border-color: black;
 	height: 1px;
@@ -140,33 +140,44 @@ hr {
 /*Navbar */
 
 .navbar {
-	margin-bottom: 10px;
+	height: 43px;
 	background-color: black;
 }
 
+#icon {
+	margin-bottom: 2px;
+}
+
 .navbar-brand {
+	padding-left: 4px;
+	padding-top: 4px;
+	height: 43px;
 	font-weight: bold;
 	color: #fff;
 }
 
 .navbarResponsive {
+	height: 43px;
 	color: #fff;
 	background-color: black;
 }
 
 .dropdown-menu {
+	height: 43px;
 	font-size: 15px;
 	background-color: black;
-	margin-bottom: 1px;
 }
 
 .dropdown-item {
+	padding-top: 1px;
+	height: 43px;
 	font-size: 15px;
 	background-color: black;
 	color: #fff;
 }
 
 .nav-link {
+	height: 43px;
 	background: black;
 	font-size: 15px;
 	color: #fff;
