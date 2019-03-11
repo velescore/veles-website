@@ -32,9 +32,6 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                     <li class="nav-item">\
                         <a class="nav-link" href="contact.html">Contact</a>\
                     </li>\
-                     <li>\
-                        <div id="menu-primary"></div>\
-                    </li>\
             </div>\
             </ul>\
         </div>\
