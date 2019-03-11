@@ -50,8 +50,6 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                     <li>\
                         <div id="menu-primary"></div>\
                     </li>\
-            </div>\
-            </ul>\
         </div>\
         </div>\
     </nav>\
