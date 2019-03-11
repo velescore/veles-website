@@ -241,6 +241,7 @@ hr {
 }
 
 #img-introduction {
+	margin-bottom: 5px;
 	margin-top: 35px;
 	max-height: 240px;
 }
@@ -383,7 +384,7 @@ footer {
 	font-weight: 500;
 	background: #262626;
     display: block;
-    width: 50%;
+    width: 55%;
     text-decoration: none;
     color: #fff;
     text-align: center;
