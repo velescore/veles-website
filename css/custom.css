@@ -140,8 +140,8 @@ hr {
 /*Navbar */
 
 .navbar {
-	padding-top: 5px;
-	height: 40px;
+	margin-top: 2px;
+	height: 45px;
 	background-color: black;
 }
 
