@@ -165,13 +165,13 @@ hr {
 }
 
 .dropdown-item {
-	padding-top: 1px;
 	font-size: 15px;
 	background-color: black;
 	color: #fff;
 }
 
 .nav-link {
+	height: 43px;
 	background: black;
 	font-size: 15px;
 	color: #fff;
@@ -371,7 +371,7 @@ footer {
     text-align: center;
 	border-radius: 28px;
 	border: 0.5px;
-	border-color: #e3b699;
+	border-color: #262626;
 }
 
 .btn:hover {
@@ -395,7 +395,7 @@ footer {
     text-align: center;
 	border-radius: 28px;
 	border: 1px;
-	border-color: #e3b699;
+	border-color: #262626;
 }
 
 #btn-index:hover {
@@ -418,7 +418,7 @@ footer {
     text-align: center;
 	border-radius: 22px;
 	border: 1px;
-	border-color: #e3b699;
+	border-color: #262626;
 }
 
 #btn-contact:hover {
