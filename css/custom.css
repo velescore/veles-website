@@ -33,7 +33,7 @@ body {
 /*text colors */
 .neon{
   color: white;
-  text-shadow: 0 0 3vw #c6aa86;
+  text-shadow: 0 0 3vw #e4b99c;
 }
 
 .flux {
@@ -59,7 +59,7 @@ hr {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	height: 8px;
-	background-image: linear-gradient(90deg,transparent, #c6aa86, transparent);
+	background-image: linear-gradient(90deg,transparent, #e4b99c, transparent);
 	border: 2px;
 	border-color: black;
 	height: 1px;
@@ -79,7 +79,7 @@ hr {
 	position: absolute;
 	top: 13px;
 	right: 50px;
-	background: linear-gradient(90deg, #262626, #c6aa86);
+	background: linear-gradient(90deg, #262626, #e4b99c);
 	width: 29.25px;
 	height: 13.3px;
 	cursor: pointer;
@@ -88,7 +88,7 @@ hr {
 }
 
 .toggle.active {
-	background: linear-gradient(90deg, #262626, #c6aa86);
+	background: linear-gradient(90deg, #262626, #e4b99c);
 }
 
 .toggle:before {
@@ -189,7 +189,7 @@ hr {
 	background-size: cover;
 	font-weight: bold;
 	border-bottom: 1px;
-	border-bottom-color: #c6aa86;
+	border-bottom-color: #e4b99c;
 	border-bottom-style: outset;
 }
 
@@ -323,7 +323,7 @@ hr {
 	margin-right: 5px;
 	font-size:25px;
 	margin-top: 4px;
-	background: -webkit-linear-gradient(45deg,#262626, #c6aa86);
+	background: -webkit-linear-gradient(45deg,#262626, #e4b99c);
  	-webkit-background-clip: text;
  	-webkit-text-fill-color: transparent;
 }
@@ -376,10 +376,10 @@ footer {
 
 .btn:hover {
     -webkit-box-shadow: inset 0 0 20px #292929, 0 0 20px #292929;
-    -moz-box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-    box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-	border-color: #c6aa86;
-    background: #c6aa86;
+    -moz-box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+    box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+	border-color: #e4b99c;
+    background: #e4b99c;
 	color: #333;
 }
 
@@ -400,10 +400,10 @@ footer {
 
 #btn-index:hover {
 	-webkit-box-shadow: inset 0 0 20px #292929, 0 0 20px #292929;
-    -moz-box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-    box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-	border-color: #c6aa86;
-    background: #c6aa86;
+    -moz-box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+    box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+	border-color: #e4b99c;
+    background: #e4b99c;
 	color: #333;
 }
 
@@ -423,10 +423,10 @@ footer {
 
 #btn-contact:hover {
 	-webkit-box-shadow: inset 0 0 20px #292929, 0 0 20px #292929;
-    -moz-box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-    box-shadow: inset 0 0 20px #c6aa86, 0 0 20px #c6aa86;
-	border-color: #c6aa86;
-    background: #c6aa86;
+    -moz-box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+    box-shadow: inset 0 0 20px #e4b99c, 0 0 20px #e4b99c;
+	border-color: #e4b99c;
+    background: #e4b99c;
 	color: #333;
 }
 
@@ -468,7 +468,7 @@ Main components
 	height: 100%;
 	width: 3.5px;
 	border-radius: 15px;
-	background: #c6aa86;
+	background: #e4b99c;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -782,7 +782,7 @@ Main components
 	border-radius: 12px;
 	border-color: black;
 	margin-bottom: 30px;
-	background: linear-gradient(90deg, #262626, #c6aa86);
+	background: linear-gradient(90deg, #262626, #e4b99c);
 }
 
 .night-mode #breadcrumb-1 {
