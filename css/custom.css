@@ -32,20 +32,20 @@ html {
 }
 
 .header {
-	position: relative;
-   width: 100%;
+	display: block;
+   position: relative;
    height: 350px !important;
-   background: #111;
+   background: #262626;
    overflow: hidden;
-   background-size: cover;
-   background-position: center center;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
    border-bottom: 1px;
    border-bottom-color: #e4b99c;
    border-bottom-style: outset;
    z-index: 1;
+}
+
+.movething {
+	max-width: 100%;
+	overflow: hidden;
 }
 
 .movething .header {
@@ -62,15 +62,6 @@ html {
    left: 50%;
    -webkit-transform: translate3d(-50%, -50%, 0);
    transform: translate3d(-50%, -50%, 0);
-}
-
-.sub-title {
-	position: absolute;
-    margin: 0;
-    padding: 0;
-    color: #F9F1E9;
-    top: 75%;
-	right: 34%;
 }
 
 .movething .main-title {
@@ -194,6 +185,14 @@ hr {
 	color: #fff;
 }
 
+.navbar-toggler:active {
+	border-color: #111;
+}
+
+.fas {
+  color:white;
+}
+
 .navbarResponsive {
 	color: #fff;
 	background-color: black;
@@ -308,7 +307,7 @@ hr {
 #img-index {
 	margin-top:20px;
 	margin-bottom: 10px;
-	margin-left: 20px;
+	margin-left: 30px;
 	max-height: 330px;
 }
 
