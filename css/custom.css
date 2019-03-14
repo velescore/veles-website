@@ -80,11 +80,6 @@ html {
    }
 }
 
-.night-mode body {
-	color: black;
-	background: #fff;
-}
-
 /*end text colors */
 hr {
 	margin-top: 30px;
@@ -95,53 +90,6 @@ hr {
 	border-color: black;
 	height: 1px;
 }
-
-.night-mode hr {
-	background-image: linear-gradient(90deg, #262626, transparent);
-	height: 8px;
-	border: 0;
-	height: 2px;
-}
-
-
-/*  Button for nightmode */
-
-.toggle {
-	position: absolute;
-	top: 13px;
-	right: 50px;
-	background: linear-gradient(90deg, #262626, #e4b99c);
-	width: 29.25px;
-	height: 13.3px;
-	cursor: pointer;
-	border-radius: 20px;
-	transition: 0.5s;
-}
-
-.toggle.active {
-	background: linear-gradient(90deg, #262626, #e4b99c);
-}
-
-.toggle:before {
-	content: '';
-	position: absolute;
-	top: 1px;
-	left: 2px;
-	width: 10px;
-	height: 10px;
-	background: #262626;
-	border-radius: 50%;
-	transition: 0.5s;
-}
-
-.toggle.active:before {
-	left: 17px;
-	top: 1px;
-	background: #262626;
-}
-
-
-/* End of toogle button for night mode*/
 
 .content {
 	margin: 100px auto;
@@ -161,11 +109,6 @@ hr {
 	color: #000;
 	transition: 0.5s;
 	font-size: 18px;
-}
-
-.night-mode body .content h1,
-.night-mode body .content p {
-	color: #fff;
 }
 
 /*Navbar */
@@ -217,21 +160,6 @@ hr {
 }
 
 /*end of navbar */
-
-.carousel-item {
-	min-height: 450px;
-	width: 100%;
-	background: no-repeat center center scroll;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	font-weight: bold;
-	border-bottom: 1px;
-	border-bottom-color: #e4b99c;
-	border-bottom-style: outset;
-}
-
 .float-right {
 	max-height: 270px;
 	margin-bottom: 20px;
@@ -344,12 +272,6 @@ hr {
 
 #col-lg-6-start {
 	margin-left: 30px;
-}
-
-#img-contact {
-	margin-left: 0px;
-	margin-bottom: 20px;
-	max-height: 300px;
 }
 
 .card-img-top {
@@ -751,30 +673,12 @@ Main components
 	background: #262626;
 }
 
-.night-mode #card-body-faq {
-	background-color: #e5e5e5;
-}
-
-.night-mode #card-body {
-	background-color: #e5e5e5;
-}
-
 #card-body-1 {
 	background: #262626;
 }
 
-.night-mode #card-body-1 {
-	border-color: black;
-	background-color: #e5e5e5;
-}
-
 #card-body-2 {
 	background: #262626;
-}
-
-.night-mode #card-body-2 {
-	border-color: black;
-	background-color: #e5e5e5;
 }
 
 #message {
@@ -784,23 +688,11 @@ Main components
 	background: #262626;
 }
 
-.night-mode #message {
-	border-radius: 10px;
-	border-color: black;
-	background-color: #e5e5e5;
-}
-
 #name {
 	border-radius: 10px;
 	color: #e5e5e5;
 	border-color: #262626;
 	background: #262626;
-}
-
-.night-mode #name {
-	border-radius: 10px;
-	border-color: black;
-	background-color: #e5e5e5;
 }
 
 #email {
@@ -810,13 +702,6 @@ Main components
 	background: #262626;
 }
 
-.night-mode #email {
-	border-radius: 10px;
-	color: #e5e5e5;
-	border-color: black;
-	background-color: #e5e5e5;
-}
-
 #breadcrumb-1 {
 	border-radius: 12px;
 	border-color: black;
@@ -824,56 +709,28 @@ Main components
 	background: linear-gradient(90deg, #262626, #e4b99c);
 }
 
-.night-mode #breadcrumb-1 {
-	background: #e5e5e5;
-}
-
 #card-team {
 	background: #262626;
-}
-
-.night-mode #card-team {
-	background-color: #e5e5e5;
 }
 
 #card-team-1 {
 	background: #262626;
 }
 
-.night-mode #card-team-1 {
-	background-color: #e5e5e5;
-}
-
 #card-team-2 {
 	background: #262626;
-}
-
-.night-mode #card-team-2 {
-	background-color: #e5e5e5;
 }
 
 #card-team-3 {
 	background: #262626;
 }
 
-.night-mode #card-team-3 {
-	background-color: #e5e5e5;
-}
-
 #card-team-4 {
 	background: #262626;
 }
 
-.night-mode #card-team-4 {
-	background-color: #e5e5e5;
-}
-
 #card-team-5 {
 	background: #262626;
-}
-
-.night-mode #card-team-5 {
-	background-color: #e5e5e5;
 }
 
 .list-group {
@@ -882,20 +739,9 @@ Main components
 	background: #262626;
 }
 
-.night-mode .list-group {
-	border-radius: 5px;
-	color: black;
-	background: #e5e5e5;
-}
-
 .list-group-item.active {
 	border-width: 2px;
 	background-color: #292929;
-}
-
-.night-mode .list-group-item.active {
-	background-color: #fff;
-	border-color: black;
 }
 
 .list-group-item {
@@ -905,17 +751,6 @@ Main components
 	font-weight: bold;
 }
 
-.night-mode .list-group-item {
-	background-color: transparent;
-	color: black;
-	border-radius: 5px;
-	font-weight: bold;
-}
-
 #headingOne {
 	background: #262626;
-}
-
-.night-mode #headingOne {
-	background: #e5e5e5;
 }
