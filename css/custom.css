@@ -138,7 +138,7 @@ hr {
 }
 
 .fa-bitcoin:before {
-    content: "\f15a";
+    content: "\f15a" !important;
 }
 
 .navbarResponsive {
