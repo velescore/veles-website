@@ -1,15 +1,15 @@
 var velesSocketClient = {
-    host: 'localhost', 
-    port: 8882, 
+    host: 'explorer.veles.network',
+    port: 8882,
     protocol: 'ws',     // protocol: wss of ws
-    retries: 300, 
-    connected: false, 
-    handleEvent: null, 
-    handleConnect: null, 
+    retries: 300,
+    connected: false,
+    handleEvent: null,
+    handleConnect: null,
     handleDisconnect: null,
     onResultCallbacks: {},
     requestID: 1
-    };    
+    };
 
 velesSocketClient.log = function(msg) {
     console.log(msg)
