@@ -1,5 +1,5 @@
 var velesSocketClient = {
-    host: 'localhost',
+    host: 'explorer.veles.network',
     port: 8882,
     protocol: 'ws',     // protocol: wss of ws
     retries: 300,
@@ -167,5 +167,5 @@ $(document).ready(function(){
         setTimeout(function(){ $('.connection-status-area').hide("fast"); }, 5000);
     });
     // todo: shit to move elsewhere
-    $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px')
+    $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px');
 });
