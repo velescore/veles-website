@@ -137,6 +137,10 @@ hr {
   color:white;
 }
 
+.fa-bitcoin:before {
+    content: "\f15a";
+}
+
 .navbarResponsive {
 	color: #fff;
 	background-color: black;
