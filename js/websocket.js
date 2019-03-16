@@ -1,5 +1,5 @@
 var velesSocketClient = {
-    host: 'explorer.veles.network',
+    host: 'localhost',
     port: 8882,
     protocol: 'ws',     // protocol: wss of ws
     retries: 300,
