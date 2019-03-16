@@ -661,6 +661,9 @@ Main components
 
 
 /*End ROADMAP*/
+.list-group-item.active {
+	border-color: #e4b99c;
+}
 
 .card {
 	border-color: #262626;
