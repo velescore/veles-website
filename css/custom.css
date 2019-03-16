@@ -288,7 +288,7 @@ hr {
  	-webkit-text-fill-color: transparent;
 }
 
-footer {
+.footer-overlay {
 	position: fixed;
    	left:0px;
    	bottom: 0px;
@@ -296,6 +296,11 @@ footer {
    	width: 100%;
 	background-color: black;
 	color: white;
+	padding: 0px 10px 0px 10px;
+}
+
+.footer-labels {
+	padding-top: 5px;
 }
 
 .portfolio-item {
@@ -752,4 +757,12 @@ Main components
 
 #headingOne {
 	background: #262626;
+}
+
+.night-mode #headingOne {
+	background: #e5e5e5;
+}
+
+.timeline-Tweet-text {
+	font-size: 13px;
 }

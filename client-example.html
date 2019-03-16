@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>RPi RFID WS test</title>
+ <script type="text/javascript">
+ 	var rfidSocketClient = { host: 'explorer.veles.network', port: 8882, protocol: 'ws', retries: 3, connected: false };	// protocol: wss of ws
+
+ 	rfidSocketClient.log = function(msg) {
+ 		console.log(msg)
+ 		li = document.createElement('li')
+	    li.innerHTML = msg
+	    document.getElementById('debug-area').appendChild(li)	
+ 	}
+
+ 	rfidSocketClient.insert_reconnect_link = function() {
+ 		li = document.createElement('li')
+ 		li.innerHTML = '... (not connected) '
+ 		a = document.createElement('a');
+ 		a.setAttribute('href', 'javascript:rfidSocketClient.connect()');
+ 		a.innerHTML = 'reconnect'
+ 		li.appendChild(a)
+	    document.getElementById('debug-area').appendChild(li)	
+ 	}
+
+ 	rfidSocketClient.clear_console = function(msg) {
+	    document.getElementById('debug-area').innerHTML = '';
+	    
+	    if (!this.connected) {
+	        rfidSocketClient.insert_reconnect_link();
+	    } else {
+	    	li = document.createElement('li');
+	    	li.innerHTML = '... (connected)';
+	    	document.getElementById('debug-area').appendChild(li);
+	    }
+ 	}
+
+ 	rfidSocketClient.send_cmd = function(name, data = {}) {
+ 		msg = window.JSON.stringify({ 'message-type': 'command', 'name': name, 'data': {} })
+    	if (!this.ws || !this.connected) {
+	        rfidSocketClient.log('No WebSocket connection');
+	        rfidSocketClient.connect()
+	    }
+	    if (this.connected) {
+	    	rfidSocketClient.log('>> ' + msg);
+	    	this.ws.send(msg);
+	    }
+	};
+
+	rfidSocketClient.connect = function()  {
+		rfidSocketClient.log("Connecting to " + rfidSocketClient.host + " ...")
+	    var ws = new WebSocket(rfidSocketClient.protocol + "://" + rfidSocketClient.host + ":" + rfidSocketClient.port + "/ws/");
+	    ws.onopen = function() {
+	        rfidSocketClient.log('WebSocket connected, waiting for events');
+	        rfidSocketClient.ws = ws;
+	        rfidSocketClient.connected = true;
+	    };
+	    ws.onerror = function() {
+	        rfidSocketClient.log('WebSocket error');
+	    };
+	    ws.onclose = function() {
+	        rfidSocketClient.log('WebSocket closed');
+	        rfidSocketClient.connected = false;
+
+	        if (rfidSocketClient.retries) {
+	        	rfidSocketClient.retries--;
+	        	rfidSocketClient.connect();
+	        } else {
+	        	rfidSocketClient.insert_reconnect_link();
+	        	rfidSocketClient.retries++
+	        }
+	    };
+	    ws.onmessage = function(msgevent) {
+	        var msg = msgevent.data;	//JSON.parse(msgevent.data);
+	        rfidSocketClient.log('<< ' + msg);
+	    };
+	    //rfidSocketClient.send("tablet1");
+	};
+
+	
+    </script>
+</head>
+<body onload="javascript:rfidSocketClient.connect()">
+  <ul id="nav">
+  	<li>
+  		<a href="#" onclick="javascript:rfidSocketClient.clear_console()">Clear console</a> |
+  		Commands: 
+  		<a href="#" onclick="javascript:rfidSocketClient.send_cmd('listClients')">listClients</a> |
+  		<a href="#" onclick="javascript:rfidSocketClient.send_cmd('listCommands')">listClients</a> |
+  		<a href="#" onclick="javascript:rfidSocketClient.send_cmd('getmultialgostatus')">getmultialgostatus</a> |
+  		<a href="#" onclick="javascript:rfidSocketClient.send_cmd('gethalvingstatus')">gethalvingstatus</a>
+  	</li>
+  </ul>
+  <ul id="debug-area"></ul>
+</body>
+</html>
