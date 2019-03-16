@@ -32,6 +32,21 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                              <a class="dropdown-item" href="community.html">Community-milestones</a>\
                          </div>\
                     </li>\
+                    <li class="nav-item dropdown">\
+                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
+                     Explorer\
+                     </a>\
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
+                            <a class="dropdown-item" href="http://35.240.96.108:88">Search</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/movement">Movements</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/network">Network</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/richlist">Richlist</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/masternodes">Masternodes</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/coininfo">Coin-info</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/mining-stats">Mining-stats</a>\
+                            <a class="dropdown-item" href="http://35.240.96.108:88/api">Api</a>\
+                        </div>\
+                    </li>\
                     <li class="nav-item">\
                         <a class="nav-link" href="contact.html">Contact</a>\
                     </li>\
