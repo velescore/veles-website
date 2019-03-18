@@ -1,3 +1,15 @@
+/*
+ * Class and functions to provide communication with the Veles Web API
+ * server over websocket.
+ * 
+ * Copyright (C) 2019 The Veles Core developers
+ * Author: Altcoin Baggins
+ *
+ * This program is free software: you can redistribute it and/or 
+ * modify it under the terms of the GNU General Public License 
+ * as published by the Free Software Foundation, either version 3 
+ * of the License, or (at your option) any later version.
+ */
 var velesSocketClient = {
     host: 'explorer.veles.network',
     port: 8882,
@@ -125,6 +137,7 @@ velesSocketClient.connect = function()  {
 
 
 $(document).ready(function(){
+    /* Event handlers */
     velesSocketClient.handleEvent = function(e) {
         // cool hack to update all fields named as entity property, like chain-tip-height
         if (e.name == 'state_changed') {
@@ -143,13 +156,6 @@ $(document).ready(function(){
         velesSocketClient.get_cmd_result('node', 'masternodelist', {}, function(d) { 
             $('.masternode-list-enabled-length').text(d); 
         }, 'value=ENABLED|count'); */
-
-        // todo: shit to move elsewhere
-       setTimeout(function(){ 
-            $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px');
-            $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css("font-family: 'Jura', sans-serif");
-        }, 4000);
-
     };
     velesSocketClient.handleDisconnect = function() {
         $('.websocket-online').hide();
@@ -160,7 +166,7 @@ $(document).ready(function(){
 
     velesSocketClient.connect();
 
-    // buttons
+    /* Interactive statusbar buttons */
     $('.websocket-status').click(function(){
         velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) { 
             $('.website-connections-count').text(d); 
