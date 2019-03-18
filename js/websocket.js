@@ -139,10 +139,19 @@ velesSocketClient.connect = function()  {
 $(document).ready(function(){
     /* Event handlers */
     velesSocketClient.handleEvent = function(e) {
-        // cool hack to update all fields named as entity property, like chain-tip-height
+        // Automagically update all fields named as entity property, 
+        // for example <span class="chain-tip-height"></span>
         if (e.name == 'state_changed') {
             for (var key in e['new-state']) {
                 $('.' + e['entity-id'].replace('.', '-') + '-' + key).text(e['new-state'][key]);
+            }
+
+            // If we're on block explorer page, trigger it's status update
+            // function ASAP when new block is found
+            try {
+                update_stats();
+            } catch {
+                // noop
             }
         }
     };
