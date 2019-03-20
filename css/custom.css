@@ -821,3 +821,44 @@ Main components
 .timeline-Tweet-text {
 	font-size: 13px;
 }
+
+.tomottoWrap{
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 17px;
+}
+
+#tomotto{
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 36px;
+  margin: auto;
+}
+
+.lookWrap{
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#look{
+  margin: auto;
+  width: 700px;
+}
+
+.section{
+  overflow: hidden;
+  float: left;
+  display: inline;
+  width: 160px;
+  margin: 0 15px 15px 0;
+  font-size:14px;
+  line-height: 1.6em;
+}
+
+.section a{
+  display: block;
+}
