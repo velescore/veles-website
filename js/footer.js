@@ -1,4 +1,57 @@
 document.write('\
+<div class="container">\
+<hr id="hr-footer">\
+  <div class="tomottoWrap text-center" id="tomotto">\
+    “In such seconds of decision entire futures are made.”\
+― Dan Simmons, Hyperion\
+  </div>\
+</div>\
+<br>\
+<div class="container">\
+<div class="lookWrap">\
+ <div class="row">\
+      <div id="look">\
+        <div class="section col-md-3">\
+          <h5>Website</h5>\
+          <a href="/about.html">About</a>\
+          <a href="/download.html">Download</a>\
+          <a href="/faq.html">FAQ</a>\
+          <a href="/wiki.html">WIKI</a>\
+          <a href="/coin-specs.html">Coins-specs</a>\
+          <a href="/services.html">External-services</a>\
+        </div>\
+        <div class="section col-md-3">\
+          <h5>Explorer</h5>\
+          <a href="http://35.240.96.108:88/">Search</a>\
+          <a href="http://35.240.96.108:88/richlist">Richlist</a>\
+          <a href="http://35.240.96.108:88/masternodes">Masternodes</a>\
+          <a href="http://35.240.96.108:88/coininfo">Coin-info</a>\
+          <a href="http://35.240.96.108:88/miningstats">Mining-stats</a>\
+          <a href="http://35.240.96.108:88/info">Api</a>\
+        </div>\
+        <div class="section col-md-3">\
+          <h5>Community</h5>\
+          <a href="https://twitter.com/velescore">Twitter</a>\
+          <a href="https://discord.gg/P528fGg">Discord</a>\
+          <a href="https://steemit.com/@velescore/">Steemit</a>\
+          <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>\
+          <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a>\
+          <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a>\
+          <a href="https://masternodecap.com/coins/VLS">Masternodecap</a>\
+        </div>\
+        <div class="section col-md-3">\
+          <h5>About Us</h5>\
+          <a href="/about.html">About</a>\
+          <a href="/roadmad.html">Roadmap</a>\
+          <a href="/contact.html">Contact Us</a>\
+          <a href="https://github.com/Velescore">Github</a>\
+        </div>\
+    </div>\
+  </div>\
+  <div class="footer-copyright text-center py-3">\© Copyright 2018-'
+    + Math.min(2019, (new Date()).getFullYear()) + ' The Veles Core developers\
+  </div>\
+  </div>\
   <!-- Bottom-most footer -->\
 <footer class="page-footer font-small blue pt-4">\
   ' + /*<!-- Footer Links -->\
@@ -53,12 +106,6 @@ document.write('\
   </div>\
   <!-- Footer Links -->\
   */'\
-  <!-- Copyright -->\
-  <div class="footer-copyright text-center py-3">\© Copyright 2018-'
-    + Math.min(2019, (new Date()).getFullYear()) + ' The Veles Core developers\
-  </div>\
-  <!-- Copyright -->\
-  <br /><br />\
   </footer>\
   <div class="footer-tooltip" id="connection-tooltip">\
     <ul>\
