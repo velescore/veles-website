@@ -141,6 +141,7 @@ hr {
 }
 
 .navbar-brand:hover {
+	color: #fff;
     border-bottom: 2px solid #F19B7E;
     background-color: rgba(100, 100, 100, 0.3)
 }
@@ -177,7 +178,7 @@ hr {
 	color: #fff;
 }
 
-.nav-link {
+.nav-link, .nav-link:hover {
 	height: 43px;
 	font-size: 15px;
 	color: #fff;
