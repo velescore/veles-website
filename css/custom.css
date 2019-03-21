@@ -490,6 +490,18 @@ inner#img-download:focus {
 	width: 350px;
 }
 
+/* Hyperlinks */
+a {
+    color: #F19B7E;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F19B7E;
+    text-decoration: underline;
+}
+
+
 /* Other elements */
 .portfolio-item {
 	padding-top: 20px;
