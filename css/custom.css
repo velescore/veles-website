@@ -169,12 +169,12 @@ hr {
 
 .dropdown-menu {
 	font-size: 15px;
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
 .dropdown-item {
 	font-size: 15px;
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.9);
 	color: #fff;
 	border-left: 4px solid transparent;
 }
