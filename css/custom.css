@@ -458,12 +458,12 @@ inner#img-download:focus {
 }
 
 .footer-overlay .status-area:hover {
-    border-top: 2px solid #e4b99c;
+    border-top: 2px solid #F19B7E;	/*	#e4b99c; */
     background-color: rgba(100, 100, 100, 0.3)
 }
 
 .footer-overlay .status-area.active {
-	border-top: 2px solid #725c4e;
+	border-top: 2px solid #e4b99c;	/*#725c4e;*/
 }
 
 #connection-status {
@@ -492,7 +492,7 @@ inner#img-download:focus {
 
 /* Hyperlinks */
 a {
-    color: #F19B7E;
+    color: #e4b99c;
     text-decoration: none;
 }
 
@@ -500,7 +500,6 @@ a:hover {
     color: #F19B7E;
     text-decoration: underline;
 }
-
 
 /* Other elements */
 .portfolio-item {
@@ -1013,5 +1012,5 @@ Main components
 }
 
 .section a:hover {
-    color: #e4b99c;
+    color: #F19B7E;		/* baggins: micro drop of more orange to the mix (was #e4b99c) */
 }
