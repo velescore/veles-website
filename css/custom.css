@@ -859,6 +859,11 @@ Main components
   line-height: 1.6em;
 }
 
-.section a{
-  display: block;
+.section a {
+    color: #e4b99c;
+    display: block;
+}
+
+.section a:hover {
+    color: #e4b99c;
 }
