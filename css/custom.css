@@ -91,6 +91,15 @@ hr {
 	height: 1px;
 }
 
+#hr-footer {
+	margin-bottom: 30px;
+	height: 8px;
+	background-image: linear-gradient(90deg,transparent, #e4b99c, transparent);
+	border: 2px;
+	border-color: black;
+	height: 1px;
+}
+
 .content {
 	margin: 100px auto;
 	width: 1000px;
@@ -488,6 +497,11 @@ inner#img-download:focus {
 #chain-pow-tooltip {
 	right: 177px;
 	width: 350px;
+}
+
+.footer-copyright.text-center.py-3 {
+    margin-bottom: 20px;
+	font-size: small;
 }
 
 /* Hyperlinks */
@@ -997,6 +1011,7 @@ Main components
 }
 
 .section{
+  padding-inline-start: 20px;
   overflow: hidden;
   float: left;
   display: inline;
