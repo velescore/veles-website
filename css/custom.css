@@ -176,7 +176,15 @@ hr {
 	font-size: 15px;
 	background-color: black;
 	color: #fff;
+	border-left: 4px solid transparent;
 }
+
+.dropdown-item:hover {
+	color: #fff;
+    border-left: 4px solid #F19B7E;
+    background-color: rgba(100, 100, 100, 0.3)
+}
+
 
 .nav-link, .nav-link:hover {
 	height: 43px;
