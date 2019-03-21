@@ -1,9 +1,9 @@
 /*
- * Class and functions to provide communication with the Veles Web API
- * server over websocket.
+ * Basic functionality used only on the index page, like twitter feed
+ * widget modifications.
  *
  * Copyright (C) 2019 The Veles Core developers
- * Author: Altcoin Baggins
+ * Authors: Altcoin Baggins, mdfkbtc
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU General Public License

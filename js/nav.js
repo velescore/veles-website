@@ -1,3 +1,5 @@
+var navExplorerUrl = 'http://35.240.96.108:88';
+
 document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">\
                     <div class="container">\
             <a class="navbar-brand" href="index.html">\
@@ -37,14 +39,14 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
                      Explorer\
                      </a>\
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
-                            <a class="dropdown-item" href="http://35.240.96.108:88">Search</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/movement">Movements</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/network">Network</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/richlist">Richlist</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/masternodes">Masternodes</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/coininfo">Coin-info</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/mining-stats">Mining-stats</a>\
-                            <a class="dropdown-item" href="http://35.240.96.108:88/api">Api</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/">Search</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/movement">Movements</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/network">Network</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/richlist">Richlist</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/masternodes">Masternodes</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/coininfo">Coin-info</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/mining-stats">Mining-stats</a>\
+                            <a class="dropdown-item" href="' + navExplorerUrl + '/api">Api</a>\
                         </div>\
                     </li>\
                     <li class="nav-item">\
@@ -56,6 +58,18 @@ document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-d
         </div>\
     </nav>\
     ');
+
+/* Mark current page's tab as active (if found in main nav) */
+$(document).ready(function() {
+    var navCurrentPage = $(window.location.pathname.split('/')).get(-1);
+    $('a[href$="' + navCurrentPage + '"]').parent('li').addClass('active');
+
+    // little hack for main page when called as / and not on explorer
+    if ((navCurrentPage.indexOf('.html') == -1 && window.location.pathname.indexOf(navExplorerUrl) == -1)
+        || navCurrentPage == 'index.html')
+        $('a.navbar-brand').addClass('active');
+});
+
 
 /* nightmode toogle
         <li>\
