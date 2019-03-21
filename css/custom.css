@@ -116,6 +116,7 @@ hr {
 .navbar {
 	background-color: black;
 	border-bottom: 1px solid #322c1e;
+	padding: 0 16px;
 }
 
 #icon {
@@ -123,11 +124,20 @@ hr {
 }
 
 .navbar-brand {
-	padding-left: 4px;
-	padding-top: 4px;
+	padding: 11px 14px 9px 4px;
 	font-weight: bold;
 	color: #fff;
 	font-size: 21px;
+	border-bottom: 2px solid transparent;
+}
+
+.navbar-brand:hover {
+    border-bottom: 2px solid #F19B7E;
+    background-color: rgba(100, 100, 100, 0.3)
+}
+
+.navbar-brand.active {
+	border-bottom: 2px solid #e4b99c;
 }
 
 .navbar-toggler:active {
@@ -160,10 +170,24 @@ hr {
 
 .nav-link {
 	height: 43px;
-	background: black;
 	font-size: 15px;
 	color: #fff;
 }
+
+li.nav-item {
+	border-bottom: 2px solid transparent;
+	padding: 8px 0 6px 0;
+}
+
+li.nav-item:hover {
+    border-bottom: 2px solid #F19B7E;
+    background-color: rgba(100, 100, 100, 0.3)
+}
+
+li.nav-item.active {
+	border-bottom: 2px solid #e4b99c;
+}
+
 
 /*end of navbar */
 .float-right {
