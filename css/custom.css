@@ -115,6 +115,7 @@ hr {
 
 .navbar {
 	background-color: black;
+	border-bottom: 1px solid #322c1e;
 }
 
 #icon {
@@ -293,6 +294,7 @@ hr {
  	-webkit-text-fill-color: transparent;
 }
 
+/* Footer bar and tootips */
 .footer-overlay {
 	position: fixed;
    	left:0px;
@@ -303,12 +305,146 @@ hr {
 	color: white;
 	padding: 0px 10px 0px 10px;
 	font-size: 13px;
+	z-index: 100;
+	border-top: 1px solid #322c1e;
 }
 
-.footer-labels {
-	padding-top: 5px;
+.footer-tooltip {
+	position: fixed;
+	display: none;
+	right: 10px;
+	bottom: 48px;
+	z-index: 101;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.90);
+	border: 1px solid #322c1e;
+	border-radius: 6px;
+	font-size: 13px;
+	-webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+.footer-tooltip ul {
+	list-style: none;
+	padding: 15px 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.footer-tooltip li {
+	height: 25px;
+	width: 100%;
+}
+
+.footer-tooltip li:first-child {
+	font-size: 14px;
+	padding-bottom: 10px;
+	height: 35px;
+}
+
+.footer-tooltip li.first-row {
+	width: 55%;
+}
+
+.footer-tooltip li.second-row {
+    width: 45%;
+    float: right;
+    margin-top: -25px;	/* mkay, bit of hack */
+}
+
+.footer-tooltip li.list-separator {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: 10px;
+	padding-top: 10px;
+	height: 35px;
+}
+
+.footer-tooltip::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  right: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.footer-tooltip .fa {
+	margin-right: 5px;
+}
+
+.footer-tooltip a {
+	color: white;
+	font-weight: bold;
+}
+
+.footer-tooltip .label-success {
+	color: #8cff8c;
+}
+
+.footer-tooltip .label-error {
+	color: #ff8c8c;
+}
+
+.footer-tooltip .label-warning {
+	color: #ffff8c;
+}
+
+
+.footer-overlay .status-area {
+	float: right;
+	cursor: pointer;
+	height: 100%;
+	border-top: 2px solid transparent;
+	padding: 3px 15px 0 5px;
+}
+
+.footer-overlay .status-area::after {
+	content: " ";
+	border: 1px solid #888;
+	margin: 0 5px 0 5px;
+}
+
+.footer-overlay .status-area:first-child:after {
+	border: none;
+}
+
+.footer-overlay .status-area:hover {
+    border-top: 2px solid #e4b99c;
+    background-color: rgba(100, 100, 100, 0.3)
+}
+
+.footer-overlay .status-area.active {
+	border-top: 2px solid #725c4e;
+}
+
+#connection-status {
+	width: 30px;
+	margin-right: -5px;
+	text-align: center;
+	padding-left: 8px;
+}
+
+#connection-tooltip::after {	/* move just the arrow, keep tooltip whet it is */
+  right: 5px;
+}
+
+#masternodes-tooltip {			/* move tooltip,keep arrow in the middle */
+  right: 60px;
+}
+
+#chain-tip-tooltip::after {
+	right: 70px;
+}
+
+#chain-pow-tooltip {
+	right: 177px;
+	width: 350px;
+}
+
+/* Other elements */
 .portfolio-item {
 	padding-top: 20px;
 	padding-bottom: 20px;
