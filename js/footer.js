@@ -139,6 +139,7 @@ document.write('\
       <li>Expired: <b class="masternodes-expired-count label-error">0</b></span></li>\
       <li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">2000</b> VLS</li>\
       <li>MN block reward part: <b class="masternodes-reward-percent">0</b> %</span></li>\
+      <li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>\
     </ul>\
   </div>\
   <div class="footer-tooltip" id="chain-pow-tooltip">\
