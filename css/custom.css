@@ -504,7 +504,6 @@ inner#img-download:focus {
 
 .footer-overlay .status-area::after {
 	content: " ";
-	border: 1px solid #888;
 	margin: 0 5px 0 5px;
 }
 
