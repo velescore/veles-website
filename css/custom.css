@@ -137,16 +137,20 @@ hr {
 	padding: 0 16px;
 }
 
-#icon {
-	margin-bottom: 2px;
-}
-
 .navbar-brand {
 	padding: 11px 14px 9px 4px;
 	font-weight: bold;
 	color: #fff;
 	font-size: 21px;
 	border-bottom: 2px solid transparent;
+	margin-top: 2px;
+    height: 59px;
+}
+
+div#brand-text {
+    font-size: 1.32rem;
+    display: inline;
+    margin-inline-start: 0.02rem;
 }
 
 .navbar-brand:hover {
@@ -1188,4 +1192,3 @@ Main components
   100% { transform: rotate(360deg); transform: rotate(360deg); }
 }
 */
-
