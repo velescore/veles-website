@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Veles-network</title>
-    <!-- Core bootstrap CSS -->
+    <title>Veles Network</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- Custom styles CSS -->
     <link href="css/custom.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script data-pace-options='{ "eventLag": false }' src="js/pace.js"></script>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <script src="js/nav.js"></script>
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row"></div>
-        <br>
-        <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">Contact
-            <small>section</small>
-         </h1>
-        <ol class="breadcrumb" id="breadcrumb-1">
-            <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Contact</li>
-        </ol>
-        <!-- Content Row -->
-        <div class="row">
-            <div class="col-lg-8 mb-4">
-                <h3>Send us a Message</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Nickname:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                            <p class="help-block"></p>
+    <div id="header-wrapper"></div>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Contact
+                <small>section</small>
+             </h1>
+            <ol class="breadcrumb" id="breadcrumb-1">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Contact</li>
+            </ol>
+            <!-- Content Row -->
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <h3>Send us a Message</h3>
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Nickname:</label>
+                                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Email Address:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Email Address:</label>
+                                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            </div>
                         </div>
-                    </div>
-                    <div class="control-group form-group">
-                        <div class="controls">
-                            <label>Message:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Message:</label>
+                                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div id="success"></div>
-                    <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
-                    <br>
-                </form>
+                        <div id="success"></div>
+                        <!-- For success/fail messages -->
+                        <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+                        <br>
+                    </form>
+                </div>
+                <!-- Map Column -->
+                <div class="col-lg-4 text-center">
+                    <h3>Contact Details :</h3>
+                    <p>
+                        <br>
+                        <button type="button" class="btn btn-primary " id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">Discord</button>
+                    <p>
+                        <button type="button" class="btn btn-primary" id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">Steemit</button>
+                    </p>
+                    <p>
+                        <button type="button" class="btn btn-primary" id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">Twitter</button>
+                    </p>
+                    <p>
+                        <a title="velesdevs@gmail.com">velesdevs@gmail.com
+                      </a>
+                    </p>
+                    <p>
+                        <a title="velesdevs@protonmail.com">velesdevs@protonmail.com
+                      </a>
+                    </p>
+                </div>
             </div>
-            <!-- Map Column -->
-            <div class="col-lg-4 text-center">
-                <h3>Contact Details :</h3>
-                <p>
-                    <br>
-                    <button type="button" class="btn btn-primary " id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">Discord</button>
-                <p>
-                    <button type="button" class="btn btn-primary" id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">Steemit</button>
-                </p>
-                <p>
-                    <button type="button" class="btn btn-primary" id="btn-contact" target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">Twitter</button>
-                </p>
-                <p>
-                    <a title="velesdevs@gmail.com">velesdevs@gmail.com
-                  </a>
-                </p>
-                <p>
-                    <a title="velesdevs@protonmail.com">velesdevs@protonmail.com
-                  </a>
-                </p>
-            </div>
-        </div>
-        <!-- /.row -->
+        </div><!-- /#content -->
     </div>
-    <!-- Footer -->
-    <script src="js/footer.js"></script>
-    <script src="js/pace.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script src="js/darkmode.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Contact form JavaScript -->
-    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-    <script src="js/websocket.js"></script>
+    <div id="footer-wrapper">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/apploader.js"></script>
+    </div>
 </body>
-
 </html>

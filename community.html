@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Veles-network</title>
-    <!-- Core bootstrap CSS -->
+    <title>Veles Network</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- Custom styles CSS -->
     <link href="css/custom.css" rel="stylesheet">
+    <script data-pace-options='{ "eventLag": false }' src="js/pace.js"></script>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/nav.js"></script>
-    <!-- Page Content -->
-    <br>
-    <div class="container">
-        <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">Resources
-            <small>section</small>
-         </h1>
-        <ol class="breadcrumb" id="breadcrumb-1">
-            <li class="breadcrumb-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="breadcrumb-item active">About</li>
-        </ol>
-        <!-- Content Row -->
-        <div class="row">
-            <!-- Sidebar Column-->
-            <div class="col-lg-3 mb-4">
-                <div class="list-group text-left">
-                    <a href="faq.html" class="list-group-item">FAQ</a>
-                    <a href="wiki.html" class="list-group-item">Wiki</a>
-                    <a href="coin-specs.html" class="list-group-item">Coin-specs</a>
-                    <a href="mining-pools.html" class="list-group-item">Mining-pools</a>
-                    <a href="services.html" class="list-group-item">External-services</a>
-                    <a href="community.html" class="list-group-item active">Community-milestones</a>
+    <div id="header-wrapper"></div>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+          <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Resources
+                <small>section</small>
+             </h1>
+            <ol class="breadcrumb" id="breadcrumb-1">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active">About</li>
+            </ol>
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Sidebar Column-->
+                <div class="col-lg-3 mb-4">
+                    <div class="list-group text-left">
+                        <a href="faq.html" class="list-group-item">FAQ</a>
+                        <a href="wiki.html" class="list-group-item">Wiki</a>
+                        <a href="coin-specs.html" class="list-group-item">Coin-specs</a>
+                        <a href="mining-pools.html" class="list-group-item">Mining-pools</a>
+                        <a href="services.html" class="list-group-item">External-services</a>
+                        <a href="community.html" class="list-group-item active">Community-milestones</a>
+                    </div>
+                    <coingecko-coin-ticker-widget coin-id="veles" currency="btc" locale="en"></coingecko-coin-ticker-widget>
                 </div>
-                <coingecko-coin-ticker-widget coin-id="veles" currency="btc" locale="en"></coingecko-coin-ticker-widget>
-            </div>
-            <div class="col-lg-9 mb-4">
-                <div class="mb-4" role="tablist" aria-multiselectable="true">
-                    <div class="card">
-                        <div class="card-body" id="card-body-1">
+                <div class="col-lg-9 mb-4">
+                    <div class="mb-4" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-body" id="card-body-1">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.container -->
-        </div>
-        <!-- /.container -->
-        <br>
-        <!-- Footer -->
-        <script src="js/footer.js"></script>
-        <script src="js/pace.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
-        <script src="js/darkmode.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="js/websocket.js"></script>
+        </div><!-- /#content -->
+    </div>
+    <div id="footer-wrapper">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/apploader.js"></script>
+    </div>
 </body>
-
 </html>

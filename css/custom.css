@@ -80,6 +80,15 @@ html {
    }
 }
 
+/* page content */
+#content-wrapper {
+	margin-top: 58px;
+}
+
+#content-wrapper h1:first-child {
+	padding-top: 20px;
+}
+
 /*end text colors */
 hr {
 	margin-top: 30px;

@@ -16,7 +16,7 @@ var velesSinglePageApp = {
         }
 
         // load the content, init the page scripts and hide the progress bar
-        $('#content').load('./' + page + '.html #content', null, function() {
+        $('#content-wrapper').load('./' + page + '.html #content', null, function() {
             Pace.stop();
             velesSinglePageApp.runPageHook('init');
         });
