@@ -1,95 +1,109 @@
-var navExplorerUrl = 'http://35.240.96.108:88';
+var velesSinglePageApp = {
+    'explorerUrl': 'http://35.240.96.108:88',
+    'currentPage': null,
+    'pageSuffix': '.html',
+    'pageHooks': {},
 
-document.write('<nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">\
-                    <div class="container">\
-            <a class="navbar-brand" href="index.html">\
-            <img id="icon" src="images/veles.ico">\
-            Veles</a>\
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">\
-                <span class="navbar-toggler-icon">\
-                <i class="fas fa-bars"></i>\
-                </span>\
-            </button>\
-            <div class="collapse navbar-collapse" id="navbarResponsive">\
-                <ul class="navbar-nav ml-auto">\
-                    <li class="nav-item">\
-                        <a class="nav-link"  href="about.html">About</a>\
-                    </li>\
-                    <li class="nav-item">\
-                        <a class="nav-link"  href="download.html">Download</a>\
-                    </li>\
-                    <li class="nav-item">\
-                        <a class="nav-link"  href="roadmap.html">Roadmap</a>\
-                    </li>\
-                    <li class="nav-item dropdown">\
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
-                     Resources\
-                     </a>\
-                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
-                             <a class="dropdown-item" href="faq.html">FAQ</a>\
-                             <a class="dropdown-item" href="wiki.html">Wiki</a>\
-                             <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>\
-                             <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>\
-                             <a class="dropdown-item" href="services.html">External-services</a>\
-                             <a class="dropdown-item" href="community.html">Community-milestones</a>\
-                         </div>\
-                    </li>\
-                    <li class="nav-item dropdown">\
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
-                     Explorer\
-                     </a>\
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/">Search</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/movement">Movements</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/network">Network</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/richlist">Richlist</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/masternodes">Masternodes</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/coininfo">Coin-info</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/mining-stats">Mining-stats</a>\
-                            <a class="dropdown-item" href="' + navExplorerUrl + '/api">Api</a>\
-                        </div>\
-                    </li>\
-                    <li class="nav-item">\
-                        <a class="nav-link" href="contact.html">Contact</a>\
-                    </li>\
-            </div>\
-            </ul>\
-        </div>\
-        </div>\
-    </nav>\
-    ');
+    'go': function(page = 'index') {
+        this.currentPage = page;
+        this.setActive(page);
+
+        // change browser's url filed
+        if (history.pushState) {
+            window.history.pushState({'currentPage': page}, this.getTitle(), "./" + page + this.pageSuffix);
+        } else {
+            document.location.href = "./" + page + this.pageSuffix;
+        }
+
+        // load the content, init the page scripts and hide the progress bar
+        $('#content').load('./' + page + '.html #content', null, function() {
+            Pace.stop();
+            velesSinglePageApp.runPageHook('init');
+        });
+    },
+
+    'addPageHook': function(pageName, hookName, callback) {
+        if (!this.pageHooks.hasOwnProperty(pageName))
+            this.pageHooks[pageName] = {}
+
+        this.pageHooks[pageName][hookName] = callback;
+    },
+
+    'runPageHook': function(hookName, pageName = null) {
+        if (!pageName)
+            pageName = this.currentPage;
+
+        if (this.pageHooks.hasOwnProperty(pageName) && this.pageHooks[pageName].hasOwnProperty(hookName))
+            this.pageHooks[pageName][hookName]();
+    },
+
+    'setActive': function(page = null) {
+        if (!page)
+            page = this.getCurrentPage();
+
+        $('.nav-active').removeClass('nav-active'); // deactivate previously active tabs
+
+        if (page == 'index')    // main index link is a special one
+            $('a.navbar-brand').addClass('nav-active');
+        
+        else
+            $('a[href$="' + page + this.pageSuffix + '"].nav-link').parent('li').addClass('nav-active');
+    },
+
+    'getCurrentPage': function() {
+        if (this.currentPage)
+            return this.currentPage;
+
+        else {
+            var filename = $(window.location.pathname.split('/')).get(-1);
+
+            return (filename) ? filename.replace('.html', '') : 'index';
+        }
+    },
+
+    'getTitle': function(page = null) {
+        // todo: load titles from JSON or parse from loaded content
+        return $('title').text();
+    },
+
+    'bindEvents': function() {
+        var app = velesSinglePageApp;
+        // History changed event
+        $(window).bind('popstate', function(e) {
+            if (e.originalEvent.state && e.originalEvent.state.hasOwnProperty('currentPage'))
+                app.go(e.originalEvent.state.currentPage);
+            else
+                app.go();
+        });
+
+        // Click events on navigation links
+        $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item').not('.nav-external-app').click(function(e) {
+           e.preventDefault();
+           app.go($(this).attr('href').replace(app.pageSuffix, ''));
+        });
+    },
+
+    'start': function() {
+        this.currentPage = this.getCurrentPage();
+        this.setActive();
+        this.bindEvents();
+        this.runPageHook('init');
+    }
+}
 
 /* Mark current page's tab as active (if found in main nav) */
 $(document).ready(function() {
+    velesSinglePageApp.start();
+
+    /*
     var navCurrentPage = $(window.location.pathname.split('/')).get(-1);
-    $('a[href$="' + navCurrentPage + '"]').parent('li').addClass('active');
+    $('a[href$="' + navCurrentPage + '"].nav-link').parent('li').addClass('active');
 
     // little hack for main page when called as / and not on explorer
-    if ((navCurrentPage.indexOf('.html') == -1 && window.location.pathname.indexOf(navExplorerUrl) == -1)
+    if ((navCurrentPage.indexOf('.html') == -1 && window.location.pathname.indexOf(velesSinglePageApp.explorerUrl) == -1)
         || navCurrentPage == 'index.html')
         $('a.navbar-brand').addClass('active');
+    */
 });
 
 
-/* nightmode toogle
-        <li>\
-            <div id="menu-primary"></div>\
-        </li>\
-*/
-/* explorer
-<li class="nav-item dropdown">\
-    <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
- Explorer\
- </a>\
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">\
-        <a class="dropdown-item" href="http://explorer.network">Search</a>\
-        <a class="dropdown-item" href="http://explorer.network/movement">Movements</a>\
-        <a class="dropdown-item" href="http://explorer.network/network">Network</a>\
-        <a class="dropdown-item" href="http://explorer.network/richlist">Richlist</a>\
-        <a class="dropdown-item" href="http://explorer.network/masternodes">Masternodes</a>\
-        <a class="dropdown-item" href="http://explorer.network/coininfo">Coin-info</a>\
-        <a class="dropdown-item" href="http://explorer.network/mining-stats">Mining-stats</a>\
-        <a class="dropdown-item" href="http://explorer.network/api">Api</a>\
-    </div>\
-</li>\
-*/

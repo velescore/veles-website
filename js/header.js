@@ -1,11 +1,16 @@
+// Wrapper object
+var indexHeaderWidget = {};
+
 (function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
-    // Main
-    initHeader();
-    initAnimation();
-    addListeners();
+    indexHeaderWidget.init = function() {
+        // Main
+        initHeader();
+        initAnimation();
+        addListeners();            
+    } 
 
     function initHeader() {
         width = window.innerWidth;

@@ -146,7 +146,7 @@ hr {
     background-color: rgba(100, 100, 100, 0.3)
 }
 
-.navbar-brand.active {
+.navbar-brand.nav-active {
 	border-bottom: 2px solid #e4b99c;
 }
 
@@ -202,7 +202,7 @@ li.nav-item:hover {
     background-color: rgba(100, 100, 100, 0.3)
 }
 
-li.nav-item.active {
+li.nav-item.nav-active {
 	border-bottom: 2px solid #e4b99c;
 }
 
@@ -464,7 +464,7 @@ inner#img-download:focus {
 }
 
 .footer-tooltip li.tooltip-icons  {
-	height: 48px;
+	height: 56px;
 }
 
 .footer-tooltip li.tooltip-icons .fab {
@@ -474,6 +474,7 @@ inner#img-download:focus {
 	border-radius: 24px;
 	width: 48px;
 	height: 48px;
+	padding: 11px 7px;
 }
 
 .footer-tooltip a {

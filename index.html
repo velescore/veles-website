@@ -1,167 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Veles-network</title>
-    <!-- Core bootstrap CSS -->
+    <title>Veles Network</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- Custom styles CSS -->
     <link href="css/custom.css" rel="stylesheet">
+    <script data-pace-options='{ "eventLag": false }' src="js/pace.js"></script>
 </head>
-
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <!-- Navigation -->
-    <script src="js/nav.js"></script>
-    <!-- ./Navigation -->
-    <header>
-        <div class="movething">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="large-header" class="header">
-                        <canvas id="canvas"></canvas>
-                        <h1 class="main-title"><span class="thin">VELES</span>-NETWORK</h1>
+    <div id="header-wrapper">
+        <!-- Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" title="Homepage">
+                    <img id="icon" src="images/veles.ico"> Veles
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="download.html">Download</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="roadmap.html">Roadmap</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                     Resources                     </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                                <a class="dropdown-item" href="faq.html">FAQ</a>
+                                <a class="dropdown-item" href="wiki.html">Wiki</a>
+                                <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
+                                <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>
+                                <a class="dropdown-item" href="services.html">External-services</a>
+                                <a class="dropdown-item" href="community.html">Community-milestones</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                     Explorer                     </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/">Search</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/movement">Movements</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/network">Network</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/richlist">Richlist</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/masternodes">Masternodes</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/coininfo">Coin-info</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/mining-stats">Mining-stats</a>
+                                <a class="dropdown-item nav-external-app" href="http://35.240.96.108:88/api">Api</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>  <!-- ./Navigation -->
+    </div>
+    <div id="content-wrapper">
+        <div id="content">
+            <header>
+                <div class="movething">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="large-header" class="header">
+                                <canvas id="canvas"></canvas>
+                                <h1 class="main-title"><span class="thin">VELES</span>-NETWORK</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <!-- Page Content -->
-    <!-- Features Section -->
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-6" id="col-lg-6-start">
-                <h2>Getting started :</h2>
-                <ul>
-                    <p></p>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/Velescore/Veles">Download wallet
+            </header>
+            <!-- Page Content -->
+            <!-- Features Section -->
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-6" id="col-lg-6-start">
+                        <h2>Getting started :</h2>
+                        <ul>
+                            <p></p>
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/Velescore/Veles">Download wallet
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://crex24.com/cs/exchange/VLS-BTC">Buy VLS
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://crex24.com/cs/exchange/VLS-BTC">Buy VLS
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Setup MN
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Setup MN
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">Follow on Twitter
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">Follow on Twitter
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">Follow on Steemit
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore">Follow on Steemit
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                    <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">Join Discord
+                            <a class="btn btn-primary" id="btn-index" target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">Join Discord
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   </a>
-                </ul>
-                <p>Join our social-medias and share your ideas with our development team .</p>
-            </div>
-            <div class="col-lg-4">
-                <img class="img" id="img-index" src="images/veles-official.png" alt="">
-                <br>
-                <img src="https://img.shields.io/badge/Main--net-Live-success.svg?style=for-the-badge">
-                <a href"https://github.com/velescore/veles/releases/tag/v0.17.0.22"></a>
-                <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765"></img>
-                <p> Main-net is live from 6th Nov 2018 15:22:08.
-                </p>
-            </div>
-            <div class="col-lg-1"></div>
-        </div>
-        <!-- /.row -->
-        <div class="container">
-            <hr>
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <img class="img" id="img-introduction" src="images/funding.png" alt="">
+                        </ul>
+                        <p>Join our social-medias and share your ideas with our development team .</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="img" id="img-index" src="images/veles-official.png" alt="">
+                        <br>
+                        <img src="https://img.shields.io/badge/Main--net-Live-success.svg?style=for-the-badge">
+                        <a href "https:=" " github.com=" " velescore=" " veles=" " releases=" " tag=" " v0.17.0.22"=""></a>
+                        <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
+                        <p> Main-net is live from 6th Nov 2018 15:22:08.
+                        </p>
+                    </div>
+                    <div class="col-lg-1"></div>
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-7">
-                    <h2>Introduction</h2>
-                    <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give up your private data to central authorities.</p>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-lg-7 text-left">
-                    <h2>Funding and Launch</h2>
-                    <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 text-center">
-                    <img class="img" id="img-funding" src="images/launch.png" alt="">
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="">
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-7">
-                    <h2>Dynamic character</h2>
-                    <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
-                </div>
-            </div>
-            <!-- Portfolio Section -->
-            <hr>
-            <h2 class="my-5 text">Main features</h2>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body">
-                            <h4 class="card-title">
+                <!-- /.row -->
+                <div class="container">
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4 text-center">
+                            <img class="img" id="img-introduction" src="images/funding.png" alt="">
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-7">
+                            <h2>Introduction</h2>
+                            <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with
+                                very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike
+                                common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give
+                                up your private data to central authorities.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-7 text-left">
+                            <h2>Funding and Launch</h2>
+                            <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were
+                                part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to
+                                grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing
+                                available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-4 text-center">
+                            <img class="img" id="img-funding" src="images/launch.png" alt="">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4 text-center">
+                            <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="">
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-7">
+                            <h2>Dynamic character</h2>
+                            <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward
+                                and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Section -->
+                    <hr>
+                    <h2 class="my-5 text">Main features</h2>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
                            <a>Multi-algo</a>
                         </h4>
-                            <p class="card-text">Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles network in a harmony.Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5
-                            </p>
+                                    <p class="card-text">Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles
+                                        network in a harmony.Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body-1">
-                            <h4 class="card-title">
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-1">
+                                    <h4 class="card-title">
                            <a>Masternodes</a>
                         </h4>
-                            <p class="card-text">On Veles network is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral for masternode is 2000VLS. More informations you can find on our Wiki</p>
+                                    <p class="card-text">On Veles network is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral
+                                        for masternode is 2000VLS. More informations you can find on our Wiki</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body-2">
-                            <h4 class="card-title">
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-2">
+                                    <h4 class="card-title">
                            <a>Open source</a>
                         </h4>
-                            <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual.There is opportunity for individuals join the develepment and be rewarde from dev rewards fund. The coin distribution is designed to be as fair as possible.</p>
+                                    <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual.There is opportunity for individuals join the develepment and be rewarde from dev
+                                        rewards fund. The coin distribution is designed to be as fair as possible.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <hr>
+                            <!--Twitter widget -->
+                            <a class="twitter-timeline" data-height="400" data-dnt="true" width="2000" data-chrome="transparent" data-theme="dark" href="https://twitter.com/velescore?ref_src=twsrc%5Etfw">Tweets by velescore</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr>
-            <!--Our Customers -->
-            <a class="twitter-timeline" data-height="400" data-dnt="true" width="2000" data-chrome="transparent" data-theme="dark" href="https://twitter.com/velescore?ref_src=twsrc%5Etfw">Tweets by velescore</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-    </br>
-        <!-- /.row -->
-    <!-- /.container -->
-    <!-- Footer -->
-    <script src="js/footer.js"></script>
-    <script src="js/pace.js"></script>
-    <!-- JavaScript dependencies -->
-    <script src="https://widgets.coingecko.com/div/coingecko-coin-price-chart-widget-div.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/TweenLite.min.js"></script>
-    <script src="js/EasePack.min.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/websocket.js"></script>
-    <script src="js/index.js"></script>
+    </div>
+    <div id="footer-wrapper">
+        <!-- Footer -->
+        <div class="container">
+            <hr id="hr-footer">
+            <div class="tomottoWrap text-center" id="tomotto"> “In such seconds of decision entire futures are made.”― Dan Simmons, Hyperion </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="lookWrap">
+                <div class="row">
+                    <div id="look">
+                        <div class="section col-md-3">
+                            <h5>Website</h5> <a href="/about.html">About</a> <a href="/download.html">Download</a> <a href="/faq.html">FAQ</a> <a href="/wiki.html">WIKI</a> <a href="/coin-specs.html">Coins-specs</a> <a href="/services.html">External-services</a> </div>
+                        <div class="section col-md-3">
+                            <h5>Explorer</h5> <a href="http://35.240.96.108:88/">Search</a> <a href="http://35.240.96.108:88/richlist">Richlist</a> <a href="http://35.240.96.108:88/masternodes">Masternodes</a> <a href="http://35.240.96.108:88/coininfo">Coin-info</a>
+                            <a
+                            href="http://35.240.96.108:88/miningstats">Mining-stats</a> <a href="http://35.240.96.108:88/info">Api</a> </div>
+                        <div class="section col-md-3">
+                            <h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
+                        <div class="section col-md-3">
+                            <h5>About Us</h5> <a href="/about.html">About</a> <a href="/roadmad.html">Roadmap</a> <a href="/contact.html">Contact Us</a> <a href="https://github.com/Velescore">Github</a> </div>
+                    </div>
+                </div>
+                <div class="footer-copyright text-center py-3">© Copyright 2018-2019 The Veles Core developers </div>
+            </div>
+            <!-- Bottom-most footer -->
+            <footer class="page-footer font-small blue pt-4"> </footer>
+            <div class="footer-tooltip" id="connection-tooltip">
+                <ul>
+                    <li> <i class="fa fa-signal"></i> Websocket Status: <b class="label-success websocket-online">online</b> <b class="label-error websocket-offline" style="display: none;">offline</b> </li>
+                    <li>Peer Connections: <b>8</b></li>
+                    <li>Websocket Connections: <b>25</b></li>
+                </ul>
+            </div>
+            <div class="footer-tooltip" id="chain-tip-tooltip">
+                <ul>
+                    <li><i class="fa fa-cube"></i> Current Block Height: <b class="chain-tip-height">89419</b></li>
+                    <li>Best block hash: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+                    <li>Found at: <b class="chain-tip-time"></b></li>
+                    <li class="first-row">Size: <b class="chain-tip-size-kb">0</b> kB</li>
+                    <li class="second-row">Algo: <b class="chain-tip-algo"></b></li>
+                    <li>Transactions: <b class="chain-tip-ntx">0</b></li>
+                </ul>
+            </div>
+            <div class="footer-tooltip" id="masternodes-tooltip">
+                <ul>
+                    <li><i class="fa fa-server"></i> Masternodes Total: <b class="masternodes-count">0</b></li>
+                    <li>Enabled: <b class="masternodes-enabled-count label-success">0</b></li>
+                    <li style="display: none;">Pre-Enabled: <b class="masternodes-pre-enabled-count label-warning">0</b></li>
+                    <li>New Start Required: <b class="masternodes-new-start-required-count label-warning">0</b></li>
+                    <li style="display: none;">Expired: <b class="masternodes-expired-count label-error">0</b></li>
+                    <li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">0</b> VLS</li>
+                    <li>MN block reward part: <b class="masternodes-reward-percent">0</b> %</li>
+                    <li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>
+                </ul>
+            </div>
+            <div class="footer-tooltip" id="chain-pow-tooltip">
+                <ul>
+                    <li>
+                        <i class="fa fa-chart-bar"></i>
+                        Hashrate Total:
+                        <span class="chain-pow-totalhashrate-human"></span>
+                    </li>
+                    <li class="first-row">
+                        sha256d: <span class="chain-pow-sha256d-hashrate"></span>
+                    </li>
+                    <li class="second-row">
+                        scrypt: <span class="chain-pow-scrypt-hashrate"></span>
+                    </li>
+                    <li class="first-row">
+                        lyra2z: <span class="chain-pow-lyra2z-hashrate"></span>
+                    </li>
+                    <li class="second-row">
+                        x11: <span class="chain-pow-x11-hashrate"></span></li>
+                    <li class="first-row">
+                        x16r: <span class="chain-pow-x16r-hashrate"><b>1</b></span>
+                    </li>
+                    <li class="second-row">
+                        nist5: <span class="chain-pow-nist5-hashrate"><b>85</b></span>
+                    </li>
+                    <li class="list-separator">
+                        Blocks to next halving check: <b class="chain-pow-blocks-to-next-epoch"></b>
+                    </li>
+                    <li>
+                        Epoch supply reached: <b class="chain-pow-supply-target-reached">0%</b> of min 80%
+                    </li>
+                </ul>
+            </div>
+            <!-- Overlay footer -->
+            <div class="footer-overlay">
+                <div class="row">
+                    <div class="col-md-3 text-left">
+                        <ul class="footer-follow">
+                            <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                                <p class="fab fa-bitcoin"></p>
+                            </a> <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore"><i class="fab fa-twitter"></i></a> <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles"><i class="fab fa-github"></i></a>                            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a> </ul>
+                    </div>
+                    <div class="col-md-3 text-left"> </div>
+                    <div class="col-md-6 text-right">
+                        <div id="connection-status" class="status-area"> <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE" style="color: rgb(238, 238, 238); display: none;"></span> <span class="websocket-online" title="Websocket Status: ONLINE" style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
+                            </div>
+                        <div id="chain-tip-status" class="status-area websocket-online-animate" style=""> Blocks: <b><span class="chain-tip-height">0</span></b> </div>
+                        <div id="masternodes-status" class="status-area websocket-online-animate" style=""> Masternodes: <b><span class="masternodes-count">0</span></b> </div>
+                        <div id="chain-pow-status" class="status-area websocket-online-animate" style=""> Hashrate: <b><span class="chain-pow-totalhashrate-human"><b>12</b>.82 <b>T</b>H/s</span>
+                            </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Common dependencies -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/nav.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="js/websocket.js"></script>
+        <script src="js/websocket-ui.js"></script>
+        <script src="js/footer.js"></script>
+        <!-- Resources specific for index page -->
+        <script src="js/TweenLite.min.js"></script>
+        <script src="js/EasePack.min.js"></script>
+        <script src="js/header.js"></script>
+        <script src="js/index.js"></script>
+    </div>
 </body>
 
 </html>

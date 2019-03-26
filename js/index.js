@@ -10,7 +10,11 @@
  * as published by the Free Software Foundation, either version 3
  * of the License, or (at your option) any later version.
  */
-$(document).ready(function(){
+velesSinglePageApp.addPageHook('index', 'init', function() {
+    // Start the animation effect
+    indexHeaderWidget.init();
+
+    // Update twitter feed style
     setTimeout(function(){
         $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px');
         $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css("font-family: 'Jura', sans-serif");
