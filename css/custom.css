@@ -53,6 +53,10 @@ html {
 	transition: background-color 2.5s ease;
 }
 
+.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgb(228, 185, 156);
+}
 
 .main-title {
    position: absolute;
