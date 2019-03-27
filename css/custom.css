@@ -33,14 +33,14 @@ html {
 
 .header {
 	display: block;
-   position: relative;
-   height: 350px !important;
-   background: #262626;
-   overflow: hidden;
-   border-bottom: 1px;
-   border-bottom-color: #e4b99c;
-   border-bottom-style: outset;
-   z-index: 1;
+	position: relative;
+	height: 350px !important;
+	background: transparent;
+	overflow: hidden;
+	border-bottom: 1px;
+	border-bottom-color: #e4b99c;
+	border-bottom-style: outset;
+	z-index: 1;
 }
 
 .movething {
@@ -48,9 +48,11 @@ html {
 	overflow: hidden;
 }
 
-.movething .header {
-   background: #262626;
+.movething .header.with-bg {
+	background-color: #262626;
+	transition: background-color 2.5s ease;
 }
+
 
 .main-title {
    position: absolute;
@@ -114,7 +116,7 @@ html {
 #content-overlay  .overlay-bottom {
 	top: 0;
 	left: 0;
-	background: linear-gradient(0deg, black, #262626) no-repeat;
+	background: linear-gradient(0deg, black, #3b3b3b) no-repeat;
 	height: 100%;
 	width: 100%;
 	margin-top: 280px;

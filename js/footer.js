@@ -99,9 +99,11 @@ var velesFooterPanel = {
             velesSocketClient.get_cmd_result('node', 'masternode collateral', {}, function(d) { 
                 $('.masternodes-collateral-amount').text(d); 
             }); 
-            $('.masternodes-reward-percent').text(Math.round(
-                (0.05 + (0.6 - 0.05) / ((1051200) / (velesChain.state['chain.tip']['height'] - 50000))) * 10000
-            ) / 100);
+            if (velesChain && velesChain.hasOwnProperty('state') && velesChain.state.hasOwnProperty('chain.tip')) {
+                $('.masternodes-reward-percent').text(Math.round(
+                    (0.05 + (0.6 - 0.05) / ((1051200) / (velesChain.state['chain.tip']['height'] - 50000))) * 10000
+                ) / 100);
+            }
 
         } else if (name == 'connection') {
             velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) { 

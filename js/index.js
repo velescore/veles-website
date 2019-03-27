@@ -11,8 +11,13 @@
  * of the License, or (at your option) any later version.
  */
 velesSinglePageApp.addPageHook('index', 'init', function() {
-    // Start the animation effect
+    // Set the bg for animation effect just after overlay gets faded,
+    // otherwise it causes bug with the fading effect.
     indexHeaderWidget.init();
+    setTimeout(function(){
+        $('.movething .header').addClass('with-bg');
+        
+    }, 3000);
 
     // Update twitter feed style
     setTimeout(function(){
