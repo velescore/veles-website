@@ -3,8 +3,14 @@ var velesSinglePageApp = {
     'currentPage': null,
     'pageSuffix': '.html',
     'pageHooks': {},
+    'cachedPages': {},
+    'eventsBound': {},
 
     'go': function(page = 'index') {
+        // cache the previous HTML, index is always cached
+        this.cachedPages[this.currentPage] = $('#content-wrapper').html();
+
+        // change the current page pointers and links
         this.currentPage = page;
         this.setActive(page);
 
@@ -15,11 +21,22 @@ var velesSinglePageApp = {
             document.location.href = "./" + page + this.pageSuffix;
         }
 
-        // load the content, init the page scripts and hide the progress bar
-        $('#content-wrapper').load('./' + page + '.html #content', null, function() {
-            Pace.stop();
+        // load the content if not cached, init the page scripts
+        if (this.cachedPages.hasOwnProperty(page)) {
+            $('#content-wrapper').html(this.cachedPages[page]);
+            velesSinglePageApp.hideOverlay();
             velesSinglePageApp.runPageHook('init');
-        });
+            velesSinglePageApp.bindEvents();
+        } else {
+            $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
+                velesSinglePageApp.hideOverlay();
+                velesSinglePageApp.runPageHook('init');
+                velesSinglePageApp.bindEvents();
+            }); 
+        }
+
+        // just start scrolling to the top
+        window.scrollTo(0,0);
     },
 
     'addPageHook': function(pageName, hookName, callback) {
@@ -39,7 +56,7 @@ var velesSinglePageApp = {
 
     'setActive': function(page = null) {
         if (!page)
-            page = this.getCurrentPage();
+            page = this.currentPage;
 
         $('.nav-active').removeClass('nav-active'); // deactivate previously active tabs
 
@@ -50,15 +67,10 @@ var velesSinglePageApp = {
             $('a[href$="' + page + this.pageSuffix + '"].nav-link').parent('li').addClass('nav-active');
     },
 
-    'getCurrentPage': function() {
-        if (this.currentPage)
-            return this.currentPage;
+    'detectCurrentPage': function() {
+        var filename = $(window.location.pathname.split('/')).get(-1);
 
-        else {
-            var filename = $(window.location.pathname.split('/')).get(-1);
-
-            return (filename) ? filename.replace('.html', '') : 'index';
-        }
+        return (filename) ? filename.replace('.html', '') : 'index';
     },
 
     'getTitle': function(page = null) {
@@ -67,43 +79,49 @@ var velesSinglePageApp = {
     },
 
     'bindEvents': function() {
-        var app = velesSinglePageApp;
         // History changed event
-        $(window).bind('popstate', function(e) {
-            if (e.originalEvent.state && e.originalEvent.state.hasOwnProperty('currentPage'))
-                app.go(e.originalEvent.state.currentPage);
-            else
-                app.go();
-        });
+        if (!this.eventsBound.hasOwnProperty('popstate') || !this.eventsBound['popstate']) {
+            $(window).bind('popstate', function(e) {
+                if (e.originalEvent.state && e.originalEvent.state.hasOwnProperty('currentPage'))
+                    velesSinglePageApp.go(e.originalEvent.state.currentPage);
+                else
+                    velesSinglePageApp.go();
+            });
+            this.eventsBound['popstate'] = true;
+        }
 
         // Click events on navigation links
-        $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item').not('.nav-external-app').click(function(e) {
+        $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
+            .add('.nav-vertical a').add('.breadcrumb-item a')
+            .not('.nav-external-app').not('.spa').click(function(e) {
            e.preventDefault();
-           app.go($(this).attr('href').replace(app.pageSuffix, ''));
-        });
+           velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
+        }).addClass('spa');
+    },
+
+    'hideOverlay': function() {
+        $('#content-overlay').fadeOut(2000);
+        $('body').removeClass('with-overlay');
     },
 
     'start': function() {
-        this.currentPage = this.getCurrentPage();
-        this.setActive();
         this.bindEvents();
-        this.runPageHook('init');
+        this.currentPage = 'index';
+
+        // only the index is pre-loaded
+        if (this.detectCurrentPage() == 'index') {
+            this.setActive();
+            this.runPageHook('init');
+            this.hideOverlay();
+        } else {
+            this.go(this.detectCurrentPage());
+        }
     }
 }
 
 /* Mark current page's tab as active (if found in main nav) */
 $(document).ready(function() {
     velesSinglePageApp.start();
-
-    /*
-    var navCurrentPage = $(window.location.pathname.split('/')).get(-1);
-    $('a[href$="' + navCurrentPage + '"].nav-link').parent('li').addClass('active');
-
-    // little hack for main page when called as / and not on explorer
-    if ((navCurrentPage.indexOf('.html') == -1 && window.location.pathname.indexOf(velesSinglePageApp.explorerUrl) == -1)
-        || navCurrentPage == 'index.html')
-        $('a.navbar-brand').addClass('active');
-    */
 });
 
 

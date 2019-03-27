@@ -94,6 +94,45 @@ html {
 	padding-top: 20px;
 }
 
+#content-overlay .overlay-gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	/*background-color: rgba(0, 0, 0, 0.5);*/
+	background-image: linear-gradient(90deg, transparent, #e4b99c, transparent);
+	z-index: 1100;	/* just over navbar */
+	text-align: center;
+}
+
+#content-overlay .overlay-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1101;	/* just over gradient */
+}
+
+#content-overlay  .overlay-bottom {
+	top: 0;
+	left: 0;
+	background: linear-gradient(0deg, black, #262626) no-repeat;
+	height: 100%;
+	width: 100%;
+	margin-top: 280px;
+	display: block;
+	position: absolute;
+	z-index: 1000;
+}
+
+body.with-overlay {
+	margin: 0; height: 100%; overflow: hidden;
+}
+
+
 /*end text colors */
 hr {
 	margin-top: 30px;
@@ -212,16 +251,17 @@ div#brand-text {
 
 li.nav-item {
 	border-bottom: 2px solid transparent;
-	padding: 8px 0 6px 0;
+	padding: 8px 0 5px 0;
 }
 
 li.nav-item:hover {
     border-bottom: 2px solid #F19B7E;
-    background-color: rgba(100, 100, 100, 0.3)
+    background-color: rgba(100, 100, 100, 0.3);
 }
 
 li.nav-item.nav-active {
 	border-bottom: 2px solid #e4b99c;
+	transition: border-color 1s ease-in-out;
 }
 
 
@@ -1034,6 +1074,8 @@ Main components
 	border-radius: 5px;
 	font-weight: bold;
 }
+
+/*.nav-vertical .*/
 
 #headingOne {
 	background: #262626;
