@@ -100,7 +100,7 @@ var velesSinglePageApp = {
     },
 
     'hideOverlay': function() {
-        $('#content-overlay').fadeOut(2000);
+        $('#content-overlay').fadeOut(3000);
         $('body').removeClass('with-overlay');
     },
 
@@ -121,6 +121,7 @@ var velesSinglePageApp = {
 
 /* Mark current page's tab as active (if found in main nav) */
 $(document).ready(function() {
+    window.scrollTo(0,0);
     velesSinglePageApp.start();
 });
 
