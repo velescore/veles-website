@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Resources
+                <small>section</small>
+             </h1>
+            <ol class="breadcrumb" id="breadcrumb-1">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item active">About</li>
+            </ol>
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Sidebar Column-->
+                <div class="col-lg-3 mb-4">
+                    <div class="list-group text-left nav-vertical">
+                        <a href="faq.html" class="list-group-item">FAQ</a>
+                        <a href="wiki.html" class="list-group-item active">Wiki</a>
+                        <a href="coin-specs.html" class="list-group-item">Coin-specs</a>
+                        <a href="mining-pools.html" class="list-group-item">Mining-pools</a>
+                        <a href="services.html" class="list-group-item">External-services</a>
+                        <a href="community.html" class="list-group-item">Community-milestones</a>
+                    </div>
+                    <coingecko-coin-ticker-widget coin-id="veles" currency="btc" locale="en"></coingecko-coin-ticker-widget>
+                </div>
+                <div class="col-lg-9 mb-4">
+                    <div class="mb-4" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-body" id="card-body-1">
+                                <h5>Veles-Wiki</h5>
+                                <hr>
+                                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Masternode setup guide</a></li>
+                                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Whitepaper">Whitepaper</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>
