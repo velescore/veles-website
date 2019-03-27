@@ -52,6 +52,11 @@ html {
    background: #262626;
 }
 
+.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgb(228, 185, 156);
+}
+
 .main-title {
    position: absolute;
    margin: 0;
