@@ -1164,8 +1164,12 @@ Main components
 
 /* scroll bar */
 body::-webkit-scrollbar {
-    width: 1em;
+    width: 0.75em;
     background-color: #393939;
+
+    &:hover {
+      width: 2em;
+    }
 }
  
 body::-webkit-scrollbar-track {
@@ -1175,12 +1179,15 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: black;
   outline: 1px solid slategrey;
-  border-left: 4px solid transparent;
+  border-radius: 0.375em;
+  border: 2px solid #262626;
 }
 
 body::-webkit-scrollbar-thumb:hover {
     border-color: #F19B7E;
+  	box-shadow: 0 0 30px #F19B7E, 0 0 50px #F19B7E;
 }
+
 
 /* Alternative loading bar with spinner
 .pace {
