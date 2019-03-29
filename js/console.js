@@ -5,6 +5,9 @@ var velesDevConsole = {
     animationDelay: 500,
     cmdDeferred: null,
     cmdResult: false,
+    welcomeMessage: "Veles Core Websocket client version v0.17 \"Aged Amnesia\"\n"
+        + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
+        + "This feature is highly EXPERIMENTAL, please use at your own risk.\n",
 
     init: function(websocketClient) {
         if (!this.isInitialized) {
@@ -28,10 +31,16 @@ var velesDevConsole = {
                     animateScroll: false,
                     promptHistory: true,
                     autofocus: true,
-                    welcomeMessage: "Welcome to Veles Code web node console. This feature is highly EXPERIMENTAL, "
-                        + "please use at your own risk."
+                    welcomeMessage: velesDevConsole.welcomeMessage
                 });
             }); 
+            // auto-focus when mouse over console
+            $('#dev-console').mouseover(function() {
+                if (velesDevConsole.isShown())
+                    if (velesDevConsole.controller)
+                        velesDevConsole.controller.focus();
+            });
+
             this.isInitialized = true;
         }
     },
@@ -51,11 +60,15 @@ var velesDevConsole = {
 
     show: function() {
         $('.footer-overlay').addClass('footer-panel-expand');
-        //this.controller.focus()
+        $('body').addClass('with-overlay')
+
+        if (this.controller)
+            this.controller.focus();
     },
 
     hide: function() {
         $('.footer-overlay').removeClass('footer-panel-expand');
+        $('body').removeClass('with-overlay')
     },
 
     isShown: function() {

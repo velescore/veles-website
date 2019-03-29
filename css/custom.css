@@ -465,7 +465,7 @@ inner#img-download:focus {
 }
 
 .footer-overlay.footer-panel-expand {
-	height: 50%;
+	height: 60%;
 	transition: height 0.5s ease-in-out;
 }
 
@@ -1229,6 +1229,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 #dev-console span.jquery-console-prompt-label {
 	color: #F19B7E;
+}
+#dev-console div.jquery-console-message {
+	white-space: pre;
 }
 #dev-console div.jquery-console-message-error { color:#ef0505; font-weight:bold; padding:0.1em; }
 #dev-console div.jquery-console-message-value { color:#1ad027; padding:0.1em; }
