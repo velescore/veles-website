@@ -1250,6 +1250,7 @@ body::-webkit-scrollbar-thumb:hover {
 #dev-console span.jquery-console-prompt-label { font-weight:bold }
 #dev-console div.jquery-console-focus span.jquery-console-cursor {
  	background: #aeed6a;
+ 	color: black;	/* contrast text color when blinking */
  	font-weight: bold;
  	animation: console-blinker 1s linear infinite;
  }

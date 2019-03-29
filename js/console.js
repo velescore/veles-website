@@ -26,15 +26,7 @@ var velesDevConsole = {
                         //if (line == "") return false; // not needed - just like in unix console
                         return true;
                     },
-                    commandHandle: function(line, report){
-                        if (line == "") 
-                            return true;
-
-                        if (line[0] == '.')
-                            velesDevConsole.handleInternalCommand(line, report);
-                        else
-                            velesDevConsole.handleWalletCommand(line, report);
-                    },
+                    commandHandle: velesDevConsole.handleCommand,
                     animateScroll: false,
                     promptHistory: true,
                     autofocus: true,
@@ -53,48 +45,100 @@ var velesDevConsole = {
         }
     },
 
-    handleInternalCommand: function(line, report) {
-        args = line.split(' ');
-        cmd = line.split(' ')[0];
+    handleCommand: function(line, report, prevResult = null) {
+        if (line == "") 
+            return true;
+
+        if (line.trim()[0] == '.')
+            velesDevConsole.handleInternalCommand(line, report, prevResult);
+        else
+            velesDevConsole.handleWalletCommand(line, report, prevResult);
+    },
+
+    handleInternalCommand: function(line, report, prevResult = null) {
+        // Allow to chain multiple commands with pipe
+        var args = line.split('|')[0].trim().split(' ');
+        var cmd = args.shift().trim();
 
         if (cmd == '.clear') {
             report('');
             return velesDevConsole.controller.clearScreen();
 
         } else if (cmd == '.help') {
-            return report(""
+            return this.submitCommandResult(line, report, 
+                "Internal console commands start with dot '.', all other commands are handled by the Veles Core daemon. \n"
+                + "However, some commands might be disabled in the web console, such as commands directly related to wallet \n"
+                + "manipulation or payment handling.\n\n"
+                + "Redirect of output using pipes is also supported. You can connect two or more commands so that the output \n"
+                + "of one command is used as the input of another command. The commands can be connected by a pipe (|) symbol. \n"
+                + "For example: 'getbestblockhash | getblock' or 'masternode list | .grep ENABLED'.\n\n"
                 + "== Internal console commands ==\n"
-                + ".clear\n.help\n\n"
+                + ".clear\n.grep\n.help\n\n"
                 + "== Veles Core daemon commands ==\n"
-                + "help\ngethalvingstatus\ngetmultialgostatus\ngetblockchaininfo\n...\n"
-                + "For a full list of Veles Core daemon commands please run 'help'\n\n"
+                + "For list of Veles Core daemon commands please run: 'help'\n\n"
                 );
+
+        } else if (cmd == '.grep') {
+            if (prevResult) {
+                if (args.length < 1)
+                    return report("Usage: COMMAND | .grep PATTERN");
+
+                return this.submitCommandResult(line, report, $.grep(
+                    prevResult.split("\n"), 
+                    function(n, i) {
+                        return n.indexOf(args[0]) != -1; 
+                        }
+                    ).join("\n"));
+            } else {
+                return report("Usage: COMMAND | .grep PATTERN");
+            }
+
+            return this.submitCommandResult(line, report, '');
         }
 
         return velesDevConsole.handleCommandNotFound(line, report);
     },
 
-    handleWalletCommand: function(line, report) {
-        this.client.get_cmd_result('node', line, {}, function(data) {
-            if (data == null || data == false)  // depends on current API impl.
-                return velesDevConsole.handleCommandNotFound(line, report);
+    handleWalletCommand: function(line, report, prevResult = null) {
+        // Allow to chain multiple commands with pipe
+        var cmdLine = line.split('|')[0].trim();
 
-            if (typeof data == 'object')
-                report(JSON.stringify(data, null, 4));
-            else
-                report(data.toString());
+        if (prevResult)     // if previous result has multiple lines, use just the first one
+            cmdLine += ' ' + prevResult.split("\n")[0].trim();
+
+        this.client.get_cmd_result('node', cmdLine, {}, function(data) {
+            if (data == null || data == false)  // depends on current API impl.
+                return velesDevConsole.handleCommandNotFound(cmdLine, report);
+
+            return velesDevConsole.submitCommandResult(line, report, (typeof data == 'object')
+                ? JSON.stringify(data, null, 4)
+                : data.toString()
+                );
         });
     },
 
-    handleCommandNotFound(line, report) {
-        cmdName = line.split(' ')[0];
-        cmdSuggestion = null;
+    handleCommandNotFound: function(line, report) {
+        var cmdName = line.split(' ')[0];
+        var cmdSuggestion = null;
 
         if (cmdName == 'clear')
             cmdSuggestion = "Command '.clear' from console internal commands";
 
+        else if (cmdName == 'grep')
+            cmdSuggestion = "Command '.grep' from console internal commands";
+
         report(((cmdSuggestion) ? "No command '" + cmdName + "' found, did you mean:\n " + cmdSuggestion + "\n"  : '')
             + cmdName + ': command not found');
+    },
+
+    submitCommandResult(line, report, result) {
+        var pipeSeparated = line.split('|');
+        pipeSeparated.shift();
+
+        if (pipeSeparated.length)
+            return this.handleCommand(pipeSeparated.join('|'), report, result);
+
+        return report(result);
     },
 
     show: function() {
