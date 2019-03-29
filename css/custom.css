@@ -585,6 +585,7 @@ inner#img-download:focus {
 }
 
 .footer-overlay .status-area:hover {
+	max-height: 39px;
     border-top: 2px solid #F19B7E;	/*	#e4b99c; */
     background-color: rgba(100, 100, 100, 0.3)
 }
