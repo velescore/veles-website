@@ -1216,21 +1216,6 @@ body::-webkit-scrollbar-thumb:hover {
 	background: rgba(0, 0, 0, 0.8);
    	padding-bottom: 40px;
 }
-#dev-console div.jquery-console-inner::-webkit-scrollbar {
-    width: 1em;
-    background-color: #393939;
-}
-#dev-console div.jquery-console-inner::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
-#dev-console div.jquery-console-inner::-webkit-scrollbar-thumb {
-  background-color: black;
-  outline: 1px solid slategrey;
-  border-left: 3px solid #e4b99c;
-}
-#dev-console div.jquery-console-inner::-webkit-scrollbar-thumb:hover {
-    border-color: #F19B7E;
-}
 #dev-console div.jquery-console-inner {
  	width:100%;
  	height: 100%;
