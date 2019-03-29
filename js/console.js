@@ -22,10 +22,13 @@ var velesDevConsole = {
                 velesDevConsole.controller = container.console({
                     promptLabel: 'VelesCore # ',
                     commandValidate: function(line){
-                        if (line == "") return false;
-                        else return true;
+                        //if (line == "") return false; // not needed - just like in unix console
+                        return true;
                     },
                     commandHandle: function(line, report){
+                        if (line == "") 
+                            return true;
+
                         velesDevConsole.handleWalletCommand(line, report);
                     },
                     animateScroll: false,
@@ -51,6 +54,11 @@ var velesDevConsole = {
 
     handleWalletCommand: function(line, report) {
         this.client.get_cmd_result('node', line, {}, function(data) {
+            parts = line.split(' ');
+
+            if (data == null || data == false)  // depends on current API impl.
+                return report(parts[0] + ': command not found');
+
             if (typeof data == 'object')
                 report(JSON.stringify(data, null, 4));
             else
