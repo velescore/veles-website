@@ -1185,12 +1185,8 @@ Main components
 
 /* scroll bar */
 body::-webkit-scrollbar {
-    width: 0.75em;
+    width: 1em;
     background-color: #393939;
-
-    &:hover {
-      width: 2em;
-    }
 }
  
 body::-webkit-scrollbar-track {
@@ -1200,8 +1196,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: black;
   outline: 1px solid slategrey;
-  border-radius: 0.375em;
-  border: 2px solid #262626;
+  border-left: 3px solid #262626;
 }
 
 body::-webkit-scrollbar-thumb:hover {
