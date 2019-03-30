@@ -254,6 +254,20 @@
                         <h5>About Us</h5> <a href="/about.html">About</a> <a href="/roadmad.html">Roadmap</a> <a href="/contact.html">Contact Us</a> <a href="https://github.com/Velescore">Github</a> </div>
                 </div>
             </div>
+            <div class="footer-follow-mobile">
+                <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                    <i class="fab fa-bitcoin"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
             <div class="footer-copyright text-center py-3">© Copyright 2018-2019 The Veles Core developers </div>
         </div>
         <!-- Bottom-most footer -->
@@ -322,24 +336,45 @@
         <!-- Overlay footer -->
         <div class="footer-overlay">
             <div class="row footer-panel-row">
-                <div class="col-md-4 text-left">
+                <div class="col-md-12 text-left">
                     <div id="console-toggle" class="status-area websocket-online">
                         <!--<span class="fa fa-window-close"></span>
                         <span class="fa fa-window-maximize"></span>-->
                         <span class="fa fa-terminal" title="Veles Core console" style="color: display: none;"></span>
                     </div>
-                    <ul class="footer-follow">
+                    <div class="footer-follow-wide">
                         <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
-                            <p class="fab fa-bitcoin"></p>
-                        </a> <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore"><i class="fab fa-twitter"></i></a> <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles"><i class="fab fa-github"></i></a>                            <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a></ul>
-                </div>
-                <div class="col-md-8 text-right">
-                    <div id="connection-status" class="status-area"> <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE" style="color: rgb(238, 238, 238); display: none;"></span> <span class="websocket-online" title="Websocket Status: ONLINE" style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
-                        </div>
-                    <div id="chain-tip-status" class="status-area websocket-online-animate" style=""> Blocks: <b><span class="chain-tip-height">0</span></b> </div>
-                    <div id="masternodes-status" class="status-area websocket-online-animate" style=""> Masternodes: <b><span class="masternodes-count">0</span></b> </div>
-                    <div id="chain-pow-status" class="status-area websocket-online-animate" style=""> Hashrate: <b><span class="chain-pow-totalhashrate-human"></span></b>
-                        </b>
+                            <i class="fab fa-bitcoin"></i>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                    <div id="connection-status" class="status-area">
+                        <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE" 
+                            style="color: rgb(238, 238, 238); display: none;">
+                        </span>
+                        <span class="websocket-online" title="Websocket Status: ONLINE" 
+                            style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
+                    </div>
+                    <div id="chain-tip-status" class="status-area websocket-online-animate" style="">
+                        <span class="status-label-wide">Blocks:</span> 
+                        <b><span class="chain-tip-height">0</span></b> 
+                    </div>
+                    <div id="masternodes-status" class="status-area websocket-online-animate" style="">
+                        <span class="status-label-wide">Masternodes:</span>
+                        <b><span class="masternodes-count">0</span></b>
+                        <span class="status-label-short">MNs</span>
+                    </div>
+                    <div id="chain-pow-status" class="status-area websocket-online-animate" style="">
+                        <span class="status-label-wide">Hashrate:</span>
+                        <span class="chain-pow-totalhashrate-human"></span>
                     </div>
                 </div>
             </div>
