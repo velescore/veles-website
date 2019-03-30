@@ -367,7 +367,7 @@ li.nav-item.nav-active {
     width: 160px;
     height: 160px;
     border-radius: 100px;
-    box-shadow: 0 0 8px #e4b99c, inset 0 0 12px #e4b99c;
+    box-shadow: 0 0 8px #F19B7E, inset 0 0 12px #F19B7E;
 	-webkit-animation: pulse 0.5s linear 0.5s infinite;
 }
 
@@ -400,8 +400,8 @@ inner#img-download:focus {
 
 @-webkit-keyframes pulse {
   0% { box-shadow:0 0 8px #e4b99c, inset 0 0 8px #e4b99c; }
-  50% { box-shadow:0 0 16px #e4b99c, inset 0 0 14px #e4b99c; }
-  100% { box-shadow:0 0 8px #e4b99c, inset 0 0 8px #e4b99c; }
+  50% { box-shadow:0 0 16px #F19B7E, inset 0 0 14px #e4b99c; }
+  100% { box-shadow:0 0 8px #F19B7E, inset 0 0 8px #F19B7E; }
 }
 
 .rounded {
@@ -665,11 +665,12 @@ a:hover {
 }
 
 
-/*contact*/
+/*buttons*/
 
 button {
-	font-weight: 600;
-    color: #e4b99c;
+	background: #262626!important;
+	font-weight: 500;
+    color:  #e4b99c;
     text-shadow: 0px 1px #000;
     font-size: 16px;
     text-decoration:none;
@@ -677,7 +678,7 @@ button {
     cursor: pointer;
     width: 40%;
     overflow: visible;
-    border-radius: 29px!important;
+    border-radius: 15px!important;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-transition: all 0.1s ease-in-out;
@@ -709,10 +710,10 @@ button {
       color-stop(88%,rgba(75,80,81,0.3)),
       color-stop(97%,rgba(0,0,0,0.3)),
       color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%); /* W3C */
+    background: -webkit-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%);
+    background: -o-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%);
+    background: -ms-linear-gradient(top,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(to bottom,  rgba(96,103,104,0.3) 0%,rgba(187,187,187,0.3) 3%,rgba(187,187,187,0.3) 27%,rgba(0,0,0,0.3) 28%,rgba(0,0,0,0.3) 60%,rgba(0,0,0,0.3) 73%,rgba(75,80,81,0.3) 88%,rgba(0,0,0,0.3) 97%,rgba(0,0,0,0.3) 100%);
 
     border-color: rgba(0, 0, 0, 0.6);
     border-image: none;
@@ -741,7 +742,7 @@ button:active.glassie {
 
 button:hover.glassie {
     color: rgba(241, 155, 126, 0.8);
-    text-shadow: 0px 0px 2px rgba(241, 155, 126, 0.99), 0px 0px 4px rgba(241, 155, 126, 0.75);
+    text-shadow: 0px 0px 2px rgba(241, 155, 126, 0.99), 0px 0px 0px rgba(241, 155, 126, 0.75);
     border-color: rgba(241, 155, 126, 0.4);
     box-shadow: 0 1px 0 0 rgba(241, 155, 126, 0.4) inset, 0 2px 6px rgba(0, 0, 0, 0.5), 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 5px 2px rgba(241, 155, 126, 0.75), 0 0 10px 2px rgba(241, 155, 126, 0.75) inset;
 }
@@ -759,7 +760,7 @@ button:hover.glassie {
 	margin-top: 3px;
 	margin-left: 100px;
 }
-
+/*END of buttons*/
 /*Roadmap*/
 
 .cd-container {
