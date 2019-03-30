@@ -22,8 +22,8 @@ var velesSinglePageApp = {
         }
 
         // close the menu if open
-        if (!$('.navbar-toggler').hasClass('collapsed'))
-            $('.navbar-toggler').click();
+        $('div.navbar-collapse').removeClass('show');
+        $('div.navbar-collapse').addClass('hide');
 
         // load the content if not cached, init the page scripts
         if (this.cachedPages.hasOwnProperty(page)) {
