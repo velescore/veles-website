@@ -827,6 +827,7 @@ button:hover.glassie {
 	margin-right: 25px;
     width: 45%;
     text-decoration: none;
+    min-width: 200px;
 }
 
 #btn-contact {
