@@ -21,6 +21,10 @@ var velesSinglePageApp = {
             document.location.href = "./" + page + this.pageSuffix;
         }
 
+        // close the menu if open
+        if (!$('.navbar-toggler').hasClass('collapsed'))
+            $('.navbar-toggler').click();
+
         // load the content if not cached, init the page scripts
         if (this.cachedPages.hasOwnProperty(page)) {
             $('#content-wrapper').html(this.cachedPages[page]);

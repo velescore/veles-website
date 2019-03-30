@@ -741,7 +741,6 @@ button:active {
 }
 
 button:active.glassie {
-
     -webkit-transition: none !important;
     -moz-transition: none !important;
     -o-transition: none !important;
