@@ -208,11 +208,20 @@ div#brand-text {
 .navbar-brand.nav-active {
 	border-bottom: 2px solid #e4b99c;
 }
+/*navbar toggler */
+.navbar-toggler:focus {
+	outline:0;
+}
 
 .navbar-toggler:active {
 	border-color: #111;
 }
 
+.navbar-toggler {
+    width: fit-content;
+    background: transparent!important;
+}
+/*end of navbar toggler*/
 .fas {
   color:white;
 }
