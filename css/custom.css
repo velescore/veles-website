@@ -466,6 +466,7 @@ inner#img-download:focus {
 }
 
 .footer-overlay .footer-panel-row {
+	overflow: hidden;
    	height: 40px;
 	padding: 0px 10px 0px 10px;
 	background-color: black;
@@ -677,7 +678,6 @@ a:hover {
 /*buttons*/
 
 button {
-	background: #262626!important;
 	font-weight: 500;
     color:  #fff;
     text-shadow: 0px 1px #000;
