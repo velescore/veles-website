@@ -824,6 +824,7 @@ Main components
 .cd-timeline-block {
 	position: relative;
 	margin: 2em 0;
+	margin-top: -200px;
 }
 
 .cd-timeline-block:after {
@@ -843,6 +844,7 @@ Main components
 @media only screen and (min-width: 1170px) {
 	.cd-timeline-block {
 		margin: 4em 0;
+		margin-top: -200px;
 	}
 	.cd-timeline-block:first-child {
 		margin-top: 0;
@@ -883,7 +885,7 @@ Main components
 	position: relative;
 	margin-left: 60px;
 	margin-right: 30px;
-	background: #262626;
+	background: #26262688;
 	border-radius: 2px;
 	padding: 1em;
 	.timeline-content-info {
@@ -990,7 +992,7 @@ Main components
 		color: white;
 		margin-left: 0;
 		padding: 1.6em;
-		width: 36%;
+		width: 41%;
 		margin: 0 5%
 	}
 	.cd-timeline-content::before {
@@ -1034,33 +1036,9 @@ Main components
 }
 
 .card {
-	border-color: #262626;
+	background-color: #26262688;
 }
 
-.card-header {
-	background-color: #262626;
-}
-
-#card-body {
-	background: #262626;
-}
-
-#card-body-pool {
-	background-color: #262626;
-}
-
-#card-body-faq {
-	border: 0px;
-	background: #262626;
-}
-
-#card-body-1 {
-	background: #262626;
-}
-
-#card-body-2 {
-	background: #262626;
-}
 
 #message {
 	border-radius: 10px;
@@ -1090,29 +1068,6 @@ Main components
 	background: linear-gradient(90deg, #262626, #e4b99c);
 }
 
-#card-team {
-	background: #262626;
-}
-
-#card-team-1 {
-	background: #262626;
-}
-
-#card-team-2 {
-	background: #262626;
-}
-
-#card-team-3 {
-	background: #262626;
-}
-
-#card-team-4 {
-	background: #262626;
-}
-
-#card-team-5 {
-	background: #262626;
-}
 
 .list-group {
 	border-radius: 5px;
