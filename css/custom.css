@@ -1035,33 +1035,9 @@ Main components
 }
 
 .card {
-	border-color: #262626;
+	background-color: #26262688;
 }
 
-.card-header {
-	background-color: #262626;
-}
-
-#card-body {
-	background: #262626;
-}
-
-#card-body-pool {
-	background-color: #262626;
-}
-
-#card-body-faq {
-	border: 0px;
-	background: #262626;
-}
-
-#card-body-1 {
-	background: #262626;
-}
-
-#card-body-2 {
-	background: #262626;
-}
 
 #message {
 	border-radius: 10px;
@@ -1091,29 +1067,6 @@ Main components
 	background: linear-gradient(90deg, #262626, #e4b99c);
 }
 
-#card-team {
-	background: #262626;
-}
-
-#card-team-1 {
-	background: #262626;
-}
-
-#card-team-2 {
-	background: #262626;
-}
-
-#card-team-3 {
-	background: #262626;
-}
-
-#card-team-4 {
-	background: #262626;
-}
-
-#card-team-5 {
-	background: #262626;
-}
 
 .list-group {
 	border-radius: 5px;
