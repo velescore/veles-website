@@ -208,6 +208,7 @@ div#brand-text {
 .navbar-brand.nav-active {
 	border-bottom: 2px solid #e4b99c;
 }
+
 /*navbar toggler */
 .navbar-toggler:focus {
 	outline:0;
@@ -275,6 +276,22 @@ li.nav-item.nav-active {
 	transition: border-color 1s ease-in-out;
 }
 
+@media (max-width: 992px) {
+	li.nav-item {
+		margin-left: -16px;
+    	padding-left: 16px;
+	}
+	li.nav-item.nav-active {
+		border-bottom: 0px;
+		border-left: 4px solid #e4b99c;
+		padding-left: 12px;
+	}
+	li.nav-item:hover {
+	    border-bottom: 0px;
+	    border-left: 4px solid #F19B7E;
+	    padding-left: 16px;
+	}
+}
 
 /*end of navbar */
 .float-right {
@@ -534,7 +551,7 @@ inner#img-download:focus {
   content: " ";
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
-  right: 50%;
+  right: 140px;
   margin-left: -5px;
   border-width: 10px;
   border-style: solid;
@@ -611,11 +628,22 @@ inner#img-download:focus {
 	border-top: 2px solid #e4b99c;	/*#725c4e;*/
 }
 
+span.status-label-wide {
+	display: initial;
+}
+span.status-label-short {
+	display: none;
+}
+
 @media only screen and (max-width: 768px) {
 	span.status-label-wide {
 		display: none;
 	}
+	span.status-label-short {
+		display: initial;
+	}
 }
+
 
 #connection-status {
 	width: 30px;
@@ -625,37 +653,79 @@ inner#img-download:focus {
 }
 
 #connection-tooltip::after {	/* move just the arrow, keep tooltip whet it is */
-  right: 5px;
+  right: 3px;
 }
 
 #masternodes-tooltip {			/* move tooltip,keep arrow in the middle */
-  right: 60px;
+  right: 65px;
+}
+
+#chain-pow-tooltip {
+	right: 185px;
+	width: 350px;
 }
 
 #chain-tip-tooltip::after {
 	right: 70px;
 }
 
-@media only screen and (max-width: 768px) {
+#chain-pow-tooltip::after {
+	right: 165px;
+}
+
+/* Everything smaller than: iPad, iPad pro, ... */
+@media only screen and (max-width: 767px) {	
+	/* When buttons are shown without long labels,
+	tooltips and arrows need to be moved accordingly */
 	#chain-pow-tooltip {
-		left: 10px;
-		right: unset;
+		right: 20px;
+	}
+	#connection-tooltip::after {
+		right: 0;
 	}
 	#chain-pow-tooltip::after {
-		right: 43%;
+		right: 170px;
 	}
 	#masternodes-tooltip::after {		
-		right: 60px;
+		right: 55px;
 	}
 	#chain-tip-tooltip::after {
 		right: 45px;
 	}
 }
 
-#chain-pow-tooltip {
-	right: 177px;
-	width: 350px;
+@media only screen and (max-width: 415px) {	/* iPhone 6/7/8 Plus and smaller */
+	/* Two leftmost tooltips resised to screen width with even margins */
+	#chain-pow-tooltip, #masternodes-tooltip {
+	    width: unset !important;
+		right: 0px !important;
+	    left: 0px !important;
+	    margin: 0 20px 0 20px !important;
+	}
+	#chain-pow-tooltip::after {
+		right: 170px;
+	}
+	#masternodes-tooltip::after {		
+		right: 98px;
+	}
 }
+
+@media only screen and (max-width: 361px) {	/* iPhone 5/SE, Galaxy S5 and smaller */
+	/* Rest of tooltips resised to screen width with even margins */
+	.footer-tooltip, #chain-tip-tooltip {
+	    width: unset !important;
+		right: 0px !important;
+	    left: 0px !important;
+	    margin: 0 20px 0 20px !important;
+	}
+	#connection-tooltip {
+	    margin: 0 5px 0 35px !important;
+	}
+	#chain-tip-tooltip::after {
+		right: 35px;
+	}
+}
+
 
 #console-toggle {
 	width: 30px;
@@ -671,8 +741,9 @@ inner#img-download:focus {
 }
 
 .footer-follow-wide {
-	display: block
+	display: block;
 	margin-top: 3px;
+	margin-left: 30px;
 	float: left;
 }
 
