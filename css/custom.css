@@ -1339,6 +1339,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .bread-button.bread .icon2 {
   display: block;
+  opacity: 0.75;
   position: absolute;
   top: 0;
   left: 0;
@@ -1471,6 +1472,7 @@ body::-webkit-scrollbar-thumb:hover {
 	max-width: 100%;
 	margin-top: 20px;
 	height: 45px;
+	opacity: 0.75;
 }
 div#bread-button {
     margin-right: 27px;
