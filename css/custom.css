@@ -369,7 +369,7 @@ li.nav-item.nav-active {
 #img-index {
 	margin-top:20px;
 	margin-bottom: 10px;
-	margin-left: 30px;
+	margin-left: 65px;
 	max-height: 330px;
 }
 
@@ -675,7 +675,7 @@ span.status-label-short {
 }
 
 /* Everything smaller than: iPad, iPad pro, ... */
-@media only screen and (max-width: 767px) {	
+@media only screen and (max-width: 767px) {
 	/* When buttons are shown without long labels,
 	tooltips and arrows need to be moved accordingly */
 	#chain-pow-tooltip {
@@ -687,7 +687,7 @@ span.status-label-short {
 	#chain-pow-tooltip::after {
 		right: 170px;
 	}
-	#masternodes-tooltip::after {		
+	#masternodes-tooltip::after {
 		right: 47px;
 	}
 	#chain-tip-tooltip::after {
@@ -706,7 +706,7 @@ span.status-label-short {
 	#chain-pow-tooltip::after {
 		right: 170px;
 	}
-	#masternodes-tooltip::after {		
+	#masternodes-tooltip::after {
 		right: 98px;
 	}
 }
@@ -1033,6 +1033,8 @@ button:active.glassie {
 }
 
 #btn-index {
+	margin:0;
+	text-align: center;
 	margin-top: 10px;
 	margin-right: 25px;
     width: 45%;
