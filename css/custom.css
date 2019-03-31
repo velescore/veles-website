@@ -93,6 +93,7 @@ html {
 }
 
 #content-wrapper h1:first-child {
+	margin-bottom: 5px!important;
 	padding-top: 20px;
 }
 
