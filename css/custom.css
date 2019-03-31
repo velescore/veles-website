@@ -644,7 +644,7 @@ inner#img-download:focus {
 	#chain-pow-tooltip::after {
 		right: 43%;
 	}
-	#masternodes-tooltip::after {		
+	#masternodes-tooltip::after {
 		right: 60px;
 	}
 	#chain-tip-tooltip::after {
@@ -1127,14 +1127,6 @@ Main components
 	background: #262626;
 }
 
-#breadcrumb-1 {
-	border-radius: 12px;
-	border-color: black;
-	margin-bottom: 30px;
-	background: linear-gradient(90deg, #262626, #e4b99c);
-}
-
-
 .list-group {
 	border-radius: 5px;
 	margin-bottom: 15px;
@@ -1318,8 +1310,171 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
-
-
+.bread-button {
+  margin: 20px;
+  float: left;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 7px;
+}
+.bread-button .label {
+  padding: 10px;
+  display: inline-block;
+}
+.bread-button.bread .label {
+  padding: 10px 30px;
+  font-size: 14px;
+  display: inline-block;
+  z-index: 10;
+  position: relative;
+  white-space: nowrap;
+  line-height: 24px;
+  transition: all 0.225s;
+  transition-delay: 0.45s;
+  letter-spacing: 2px;
+}
+.bread-button.bread.bread-button-start .label {
+  padding: 12px 65px;
+}
+.bread-button.bread .icon2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.225s;
+  transform: skew(-40deg, 0deg) scaleX(1);
+  background: rgba(38, 38, 38, 0.9);
+  transition-delay: 0.45s;
+}
+.bread-button.bread .icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.225s;
+  transform: scale(0.9) skew(0deg, 0deg);
+  transition-delay: 0.15s;
+}
+.bread-button.bread .icon:before, .bread-button.bread .icon:after {
+  width: 60px;
+  opacity: 0;
+  content: '';
+  height: 1px;
+  position: absolute;
+  display: block;
+  background: #f19b7e;
+  transition: all 0.375s;
+  transition-delay: 0.3s;
+}
+.bread-button.bread .icon:before {
+  top: 0;
+  left: calc(50% - 30px);
+}
+.bread-button.bread .icon:after {
+  bottom: 0;
+  right: calc(50% - 30px);
+}
+.bread-button.bread .icon span:before, .bread-button.bread .icon span:after {
+  height: 0;
+  transition-delay: 0s;
+  content: '';
+  background: #f19b7e;
+  position: absolute;
+  display: block;
+  width: 2px;
+  transition: all 0.225s;
+}
+.bread-button.bread .icon span:before {
+  left: 0;
+  top: 0;
+}
+.bread-button.bread .icon span:after {
+  right: 0;
+  bottom: 0;
+}
+.bread-button.bread:hover .icon {
+  transform: skew(-40deg, 0deg);
+}
+.bread-button.bread:hover .icon:before, .bread-button.bread:hover .icon:after {
+  transition-delay: 0s;
+  width: 30px;
+  opacity: 1;
+}
+.bread-button.bread:hover .icon:before {
+  left: 0;
+}
+.bread-button.bread:hover .icon:after {
+  right: 0;
+}
+.bread-button.bread:hover .icon span:before, .bread-button.bread:hover .icon span:after {
+  height: 30px;
+  transition-delay: 0.45s;
+}
+.bread-button.bread:hover .icon2 {
+  transform: skew(-40deg, 0deg) scaleX(0.2);
+  background: transparent;
+  transition-delay: 0s;
+  opacity: 0;
+}
+.bread-button.bread.white:hover .label {
+  color: #fff;
+  transition-delay: 0s;
+}
+.bread-button.bread.white .icon2 {
+  background: #fff;
+}
+.bread-button.bread.white .icon:before, .bread-button.bread.white .icon:after {
+  background: #fff;
+}
+.bread-button.bread.white .icon span:before, .bread-button.bread.white .icon span:after {
+  background: #fff;
+}
+.bread-button.bread.labelred .label {
+  color: #f0202f;
+}
+.bread-button.bread.labelgray .label {
+  color: #1d1d1d;
+}
+.bread-button.bread.transparent {
+  float: none;
+  display: inline-block;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+.bread-button.bread.transparent .label {
+  color: #fff;
+  transition-delay: 0s;
+}
+.bread-button.bread.transparent .icon2 {
+  background: transparent;
+}
+.bread-button.bread.transparent .icon {
+  transform: scale(1) skew(10deg, 0deg);
+}
+.bread-button.bread.transparent .icon:before, .bread-button.bread.transparent .icon:after {
+  background: #fff;
+}
+.bread-button.bread.transparent .icon span:before, .bread-button.bread.transparent .icon span:after {
+  background: #fff;
+}
+.bread-button.bread.transparent:hover .icon {
+  transform: scale(1) skew(-40deg, 0deg);
+}
+#breadcrumb-1 {
+	background: linear-gradient(90deg, #262626, #e4b99c);
+	transform: skew(-40deg, 0deg) scaleX(1);
+	max-width: 100%;
+	margin-top: 20px;
+	height: 45px;
+}
+div#bread-button {
+    margin-right: 27px;
+}
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
