@@ -87,7 +87,7 @@
         <div id="content">
             <header>
                 <div class="movething">
-                    <div class="row">
+                    <div class="row row-wide">
                         <div class="col-lg-12">
                             <div id="large-header" class="header">
                                 <canvas id="canvas"></canvas>
@@ -103,54 +103,53 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-1"></div>
-                    <div class="col-lg-6" id="col-lg-6-start">
+                    <div class="col-lg-6">
                         <h2>Getting started :</h2>
-                        <ul>
-                            <p></p>
-                            <div class="button-new new" id="btn-index">
+                        <div class="buttonset-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Download wallet</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="button-new new" id="btn-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Buy VLS</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="button-new new" id="btn-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Setup MN</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="button-new new" id="btn-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Follow Twitter</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="button-new new" id="btn-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Follow Steemit</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="button-new new" id="btn-index">
+                            <div class="button-effect btn-index">
                                 <span class="label">Join Discord</span>
                                 <span class="icon">
                                 <span></span>
                                 </span>
                                 <span class="icon2"></span>
                             </div>
-                            <div class="start-text">Join our social-medias and share your ideas with our development team .</div>
-                        </ul>
+                        </div>
+                        <div class="start-text">Join our social-medias and share your ideas with our development team .</div>
                     </div>
                     <div class="col-lg-4">
                         <img class="img" id="img-index" src="images/veles-official.png" alt="">
@@ -257,12 +256,9 @@
         </div>
     </div>
     <!-- Footer -->
-    <div class="container">
+    <div class="footer container">
         <hr id="hr-footer">
         <div class="tomottoWrap text-center" id="tomotto"> “In such seconds of decision entire futures are made.”― Dan Simmons, Hyperion </div>
-    </div>
-    <br>
-    <div class="container">
         <div class="lookWrap">
             <div class="row">
                 <div id="look">
@@ -357,54 +353,54 @@
                 </li>
             </ul>
         </div>
-        <!-- Overlay footer -->
-        <div class="footer-overlay">
-            <div class="row footer-panel-row">
-                <div class="col-md-12 text-left">
-                    <div id="console-toggle" class="status-area websocket-online">
-                        <!--<span class="fa fa-window-close"></span>
-                        <span class="fa fa-window-maximize"></span>-->
-                        <span class="fa fa-terminal" title="Veles Core console" style="color: display: none;"></span>
-                    </div>
-                    <div class="footer-follow-wide">
-                        <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
-                            <i class="fab fa-bitcoin"></i>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                    </div>
-                    <div id="connection-status" class="status-area">
-                        <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE"
-                            style="color: rgb(238, 238, 238); display: none;">
-                        </span>
-                        <span class="websocket-online" title="Websocket Status: ONLINE"
-                            style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
-                    </div>
-                    <div id="chain-tip-status" class="status-area websocket-online-animate" style="">
-                        <span class="status-label-wide">Blocks:</span>
-                        <b><span class="chain-tip-height">0</span></b>
-                    </div>
-                    <div id="masternodes-status" class="status-area websocket-online-animate" style="">
-                        <span class="status-label-wide">Masternodes:</span>
-                        <b><span class="masternodes-count">0</span></b>
-                        <span class="status-label-short">MNs</span>
-                    </div>
-                    <div id="chain-pow-status" class="status-area websocket-online-animate" style="">
-                        <span class="status-label-wide">Hashrate:</span>
-                        <span class="chain-pow-totalhashrate-human"></span>
-                    </div>
+    </div>
+    <!-- Overlay footer -->
+    <div class="footer-overlay">
+        <div class="row footer-panel-row">
+            <div class="col-md-12 text-left">
+                <div id="console-toggle" class="status-area websocket-online">
+                    <!--<span class="fa fa-window-close"></span>
+                    <span class="fa fa-window-maximize"></span>-->
+                    <span class="fa fa-terminal" title="Veles Core console" style="color: display: none;"></span>
+                </div>
+                <div class="footer-follow-wide">
+                    <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                        <i class="fab fa-bitcoin"></i>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github/velescore/veles">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+                <div id="connection-status" class="status-area">
+                    <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE"
+                        style="color: rgb(238, 238, 238); display: none;">
+                    </span>
+                    <span class="websocket-online" title="Websocket Status: ONLINE"
+                        style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
+                </div>
+                <div id="chain-tip-status" class="status-area websocket-online-animate" style="">
+                    <span class="status-label-wide">Blocks:</span>
+                    <b><span class="chain-tip-height">0</span></b>
+                </div>
+                <div id="masternodes-status" class="status-area websocket-online-animate" style="">
+                    <span class="status-label-wide">Masternodes:</span>
+                    <b><span class="masternodes-count">0</span></b>
+                    <span class="status-label-short">MNs</span>
+                </div>
+                <div id="chain-pow-status" class="status-area websocket-online-animate" style="">
+                    <span class="status-label-wide">Hashrate:</span>
+                    <span class="chain-pow-totalhashrate-human"></span>
                 </div>
             </div>
-            <div id="dev-console">
-                <div class="jquery-console-message">Loading blockchain client ...</div>
-            </div>
+        </div>
+        <div id="dev-console">
+            <div class="jquery-console-message">Loading blockchain client ...</div>
         </div>
     </div>
     <!-- Common dependencies -->
