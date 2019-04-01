@@ -711,18 +711,15 @@ span.status-label-short {
 }
 
 @media only screen and (max-width: 361px) {	/* iPhone 5/SE, Galaxy S5 and smaller */
-	/* Rest of tooltips resised to screen width with even margins */
-	.footer-tooltip, #chain-tip-tooltip {
-	    width: unset !important;
-		right: 0px !important;
-	    left: 0px !important;
-	    margin: 0 20px 0 20px !important;
+	/* Widest tooltip zoomed out to ensure it fits */
+	#chain-pow-tooltip {
+		width: unset !important;
+	    margin: 0 12px 5px 10px !important;
+	    zoom: 0.9 !important;
 	}
-	#connection-tooltip {
-	    margin: 0 5px 0 35px !important;
-	}
-	#chain-tip-tooltip::after {
-		right: 35px;
+	#chain-pow-tooltip ul {
+	    padding-left: 20px;
+	    padding-right: 20px;
 	}
 }
 
@@ -1458,13 +1455,26 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
+/* Breadcrumb */
+.breadcrumb {
+	background: linear-gradient(90deg, #262626, #e4b99c);
+	transform: skew(-40deg, 0deg) scaleX(1);
+	max-width: 100%;
+	margin-top: 20px;
+	height: 45px;
+	opacity: 0.75;
+	margin: 10px;
+}
 .bread-button {
-  margin: 20px;
+  margin: 10px;
   float: left;
   position: relative;
   color: #fff;
   cursor: pointer;
   margin-left: 7px;
+}
+.bread-button.active {	/* Active button is always the last */
+	margin-right: 20px;
 }
 .bread-button .label {
   padding: 10px;
@@ -1614,17 +1624,21 @@ body::-webkit-scrollbar-thumb:hover {
 .bread-button.bread.transparent:hover .icon {
   transform: scale(1) skew(-40deg, 0deg);
 }
-#breadcrumb-1 {
-	background: linear-gradient(90deg, #262626, #e4b99c);
-	transform: skew(-40deg, 0deg) scaleX(1);
-	max-width: 100%;
-	margin-top: 20px;
-	height: 45px;
-	opacity: 0.75;
+/* Zoom out breadcrumb to half for everything smaller than: iPad, iPad pro, ... */
+@media only screen and (max-width: 767px) {
+	.breadcrumb {
+		zoom: 0.5;
+	}
+	.bread-button {
+		zoom: 0.5;
+	}
+	.bread-button.bread .label {
+		font-size: 24px;
+	}
 }
-div#bread-button {
-    margin-right: 27px;
-}
+
+
+
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
