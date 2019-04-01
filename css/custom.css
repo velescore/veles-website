@@ -61,11 +61,6 @@ html {
 	}
 }
 
-.form-control:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.1rem rgb(228, 185, 156);
-}
-
 .main-title {
    position: absolute;
    margin: 0;
@@ -365,9 +360,11 @@ li.nav-item.nav-active {
 }
 
 #img-index {
-	margin: auto;
-	display: table;
-	margin-top: 47px;
+	margin-left: 30px;
+    margin-top: 45px;
+    margin-bottom: 13px;
+    max-height: 345px;
+    opacity: 0.94;
 }
 
 /* Hide index image on anything smaller than iPad */
