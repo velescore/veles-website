@@ -54,6 +54,13 @@ html {
 	transition: background-color 2.5s ease;
 }
 
+/* Zoom out the effect when on screen smaller than iPad */
+@media only screen and (max-width: 767px) {
+	.movething {
+		zoom: 0.5;
+	}
+}
+
 .form-control:focus {
     outline: 0;
     box-shadow: 0 0 0 0.1rem rgb(228, 185, 156);
@@ -1337,15 +1344,30 @@ Main components
   font-size: 16px;
 }
 
-.section a {
+.footer-links {	
+	margin-left: 10%;	/* Move optically to the right */
+}
+.footer-links .section a {
+	font-color: 14px;
     color: #e4b99c;
     display: block;
 }
 
-.section a:hover {
+.footer-links .section a:hover {
     color: #F19B7E;		/* baggins: micro drop of more orange to the mix (was #e4b99c) */
 }
 
+/* Smaller section on the mobile to fit two columns */
+@media only screen and (max-width: 767px) {
+	.footer-links {
+		margin-left: 3%;
+	}
+	.footer-links .section {
+		width: 40%;
+		margin-left: 5%;
+		margin-bottom: 20px;
+	}
+}
 
 /* Loading bar Pace */
 .pace {
