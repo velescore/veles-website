@@ -1656,16 +1656,41 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 /* More customizations for mobile screens - everything smaller than iPad */  
+
+.wide-screen {	/* utility class to show selected elements only on wide screen */
+	display: block;
+}
+.narrow-screen {
+	display: none;
+}
+
+.img-narrow-screen {
+	display: none;
+}
+
 @media only screen and (max-width: 767px) {
-	/* Maximum allowed width for ANY image is 90% of screen width */
-	img {
-		max-width: 90vw;
+	.wide-screen {
+		display: none;
 	}
-	/* Center content images */
+	.narrow-screen {
+		display: block;
+	}
+	/* Maximum allowed width for ANY image is 75% of screen width - to fit margins and stuff */
+	img {
+		max-width: 75vw;
+	}
+	/* Center generic content images */
 	.img {
 		margin: 0 auto;
 		display: table;
-		max-width: 75vw;	/* to fit margins and stuff in content div */
+		max-width: 75vw;	
+	}
+	.img-narrow-screen {
+		display: block;
+		float: right;
+	    width: 40vw;
+	    margin: 5px;
+	    margin-top: 30px;
 	}
 	/* Smaller font and line height */
 	#content {
