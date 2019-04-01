@@ -54,6 +54,18 @@ html {
 	transition: background-color 2.5s ease;
 }
 
+/* Zoom out the effect when on screen smaller than iPad */
+@media only screen and (max-width: 767px) {
+	.movething {
+		zoom: 0.5;
+	}
+}
+
+.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgb(228, 185, 156);
+}
+
 .main-title {
    position: absolute;
    margin: 0;
@@ -304,11 +316,6 @@ li.nav-item.nav-active {
 	max-height: 250px;
 }
 
-#col-lg-6-start {
-	margin-top: 30px;
-	padding-right: 30px;
-}
-
 .m-0 {
 	font-size: 13px;
 	text-align: center;
@@ -358,12 +365,18 @@ li.nav-item.nav-active {
 }
 
 #img-index {
-	margin-left: 30px;
-	margin-top:45px;
-	margin-bottom: 13px;
-	max-height: 345px;
-	opacity: 0.94;
+	margin: auto;
+	display: table;
+	margin-top: 47px;
 }
+
+/* Hide index image on anything smaller than iPad */
+@media only screen and (max-width: 767px) {
+	#img-index {
+		display: none;
+	}
+}
+
 
 #img-about {
 	max-height: 220px;
@@ -394,8 +407,8 @@ li.nav-item.nav-active {
 }
 
 
-#col-lg-6-start {
-	margin-left: 30px;
+.row-wide {
+	padding: 0;
 }
 
 .card-img-top {
@@ -677,9 +690,19 @@ span.status-label-short {
 	float: left;
 }
 
+
+/* Footer */
+.footer {
+	margin-bottom: 40px;	/* width of footer-overlay */
+}
+
 .footer-copyright.text-center.py-3 {
-    margin-bottom: 20px;
 	font-size: small;
+}
+
+.footer-copyright {
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 .footer-follow-wide {
@@ -717,6 +740,13 @@ span.status-label-short {
 	.footer-follow-mobile .fab:hover {
 		border-color: #F19B7E;
 	}
+}
+
+.footer-badges {
+	margin: 0 auto;
+	display: table;
+	opacity: 0.5;
+    margin-bottom: 40px;	/* height of footer overlay */
 }
 
 /* Hyperlinks */
@@ -775,19 +805,14 @@ a:hover {
 	transition: opacity 300ms;
 	max-height: 30px;
 }
-.button-new {
+.button-effect {
   margin: 20px;
-  float: left;
   position: relative;
   color: #fff;
   cursor: pointer;
   margin-left: 7px;
 }
-.button-new .label {
-  padding: 10px;
-  display: inline-block;
-}
-.button-new.new .label {
+.button-effect .label {
   padding: 10px 30px;
   font-size: 14px;
   display: inline-block;
@@ -799,10 +824,10 @@ a:hover {
   transition-delay: 0.45s;
   letter-spacing: 2px;
 }
-.button-new.new.button-new-start .label {
+.button-effect.button-effect-start .label {
   padding: 12px 65px;
 }
-.button-new.new .icon2 {
+.button-effect .icon2 {
   display: block;
   opacity: 0.75;
   position: absolute;
@@ -814,7 +839,7 @@ a:hover {
   background: rgba(38, 38, 38, 0.9);
   transition-delay: 0.45s;
 }
-.button-new.new .icon {
+.button-effect .icon {
   display: block;
   position: absolute;
   top: 0;
@@ -824,7 +849,7 @@ a:hover {
   transition: all 0.225s;
   transition-delay: 0.15s;
 }
-.button-new.new .icon:before, .button-new.new .icon:after {
+.button-effect .icon:before, .button-effect .icon:after {
   width: 60px;
   opacity: 0;
   content: '';
@@ -835,15 +860,15 @@ a:hover {
   transition: all 0.375s;
   transition-delay: 0.3s;
 }
-.button-new.new .icon:before {
+.button-effect .icon:before {
   top: 0;
   left: calc(50% - 30px);
 }
-.button-new.new .icon:after {
+.button-effect .icon:after {
   bottom: 0;
   right: calc(50% - 30px);
 }
-.button-new.new .icon span:before, .button-new.new .icon span:after {
+.button-effect .icon span:before, .button-effect .icon span:after {
   height: 0;
   transition-delay: 0s;
   content: '';
@@ -853,85 +878,90 @@ a:hover {
   width: 2px;
   transition: all 0.225s;
 }
-.button-new.new .icon span:before {
+.button-effect .icon span:before {
   left: 0;
   top: 0;
 }
-.button-new.new .icon span:after {
+.button-effect .icon span:after {
   right: 0;
   bottom: 0;
 }
-.button-new.new:hover .icon:before, .button-new.new:hover .icon:after {
+.button-effect:hover .icon:before, .button-effect:hover .icon:after {
   transition-delay: 0s;
   width: 30px;
   opacity: 1;
 }
-.button-new.new:hover .icon:before {
+.button-effect:hover .icon:before {
   left: 0;
 }
-.button-new.new:hover .icon:after {
+.button-effect:hover .icon:after {
   right: 0;
 }
-.button-new.new:hover .icon span:before, .button-new.new:hover .icon span:after {
+.button-effect:hover .icon span:before, .button-effect:hover .icon span:after {
   height: 30px;
   transition-delay: 0.45s;
 }
-.button-new.new:hover .icon2 {
+.button-effect:hover .icon2 {
   background: transparent;
   transition-delay: 0s;
   opacity: 0;
 }
-.button-new.new.white:hover .label {
+.button-effect.white:hover .label {
   color: #fff;
   transition-delay: 0s;
 }
-.button-new.new.white .icon2 {
+.button-effect.white .icon2 {
   background: #fff;
 }
-.button-new.new.white .icon:before, .button-new.new.white .icon:after {
+.button-effect.white .icon:before, .button-effect.white .icon:after {
   background: #fff;
 }
-.button-new.new.white .icon span:before, .button-new.new.white .icon span:after {
+.button-effect.white .icon span:before, .button-effect.white .icon span:after {
   background: #fff;
 }
-.button-new.new.labelred .label {
+.button-effect.labelred .label {
   color: #f0202f;
 }
-.button-new.new.labelgray .label {
+.button-effect.labelgray .label {
   color: #1d1d1d;
 }
-.button-new.new.transparent {
+.button-effect.transparent {
   float: none;
   display: inline-block;
   -webkit-transform: translateZ(0px);
   transform: translateZ(0px);
 }
-.button-new.new.transparent .label {
+.button-effect.transparent .label {
   color: #fff;
   transition-delay: 0s;
 }
-.button-new.new.transparent .icon2 {
+.button-effect.transparent .icon2 {
   background: transparent;
 }
-.button-new.new.transparent .icon:before, .button-new.new.transparent .icon:after {
+.button-effect.transparent .icon:before, .button-effect.transparent .icon:after {
   background: #fff;
 }
-.button-new.new.transparent .icon span:before, .button-new.new.transparent .icon span:after {
+.button-effect.transparent .icon span:before, .button-effect.transparent .icon span:after {
   background: #fff;
 }
 
-#btn-index {
-	margin:0;
+.btn-index {
+	margin: 0px 0px 10px;
 	text-align: center;
-	margin-top: 10px;
-	margin-right: 25px;
-    width: 45%;
+    width: 300px;
     text-decoration: none;
-    min-width: 200px;
+    margin: 0 auto;
+    margin-top: 5px;
+	display: table;	/* IE */
 }
 
-.start-text {
-    padding-top: 340px;
+@media only screen and (max-width: 767px) {
+	.btn-index {
+		width: 100%;
+	}
+}
+.buttonset-index {
+	margin: 30px;
 }
 
 #btn-contact {
@@ -1257,12 +1287,6 @@ Main components
 	font-size: 13px;
 }
 
-.tomottoWrap{
-  position: relative;
-  margin-top: 15px;
-  margin-bottom: 17px;
-}
-
 #tomotto{
   text-align: center;
   width: 100%;
@@ -1270,40 +1294,36 @@ Main components
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   line-height: 36px;
   margin: auto;
-}
-
-.lookWrap{
   position: relative;
-  float: left;
-  width: 100%;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 16px;
 }
 
-#look{
-  margin: auto;
-  width: 700px;
+.footer-links {
+	margin-left: 10%;	/* Move optically to the right */
 }
-
-.section{
-  padding-inline-start: 20px;
-  overflow: hidden;
-  float: left;
-  display: inline;
-  width: 160px;
-  margin: 0 15px 15px 0;
-  font-size:14px;
-  line-height: 1.6em;
-}
-
-.section a {
+.footer-links .section a {
+	font-color: 14px;
     color: #e4b99c;
     display: block;
 }
 
-.section a:hover {
+.footer-links .section a:hover {
     color: #F19B7E;		/* baggins: micro drop of more orange to the mix (was #e4b99c) */
 }
 
+/* Smaller section on the mobile to fit two columns */
+@media only screen and (max-width: 767px) {
+	.footer-links {
+		margin-left: 3%;
+	}
+	.footer-links .section {
+		width: 40%;
+		margin-left: 5%;
+		margin-bottom: 20px;
+	}
+}
 
 /* Loading bar Pace */
 .pace {
@@ -1590,6 +1610,62 @@ body::-webkit-scrollbar-thumb:hover {
 	}
 }
 
+
+/* More customizations for mobile screens - everything smaller than iPad */
+
+.wide-screen {	/* utility class to show selected elements only on wide screen */
+	display: block;
+}
+.narrow-screen {
+	display: none;
+}
+
+.img-narrow-screen {
+	display: none;
+}
+
+@media only screen and (max-width: 767px) {
+	.wide-screen {
+		display: none;
+	}
+	.narrow-screen {
+		display: block;
+	}
+	/* Maximum allowed width for ANY image is 75% of screen width - to fit margins and stuff */
+	img {
+		max-width: 75vw;
+	}
+	/* Center generic content images */
+	.img {
+		margin: 0 auto;
+		display: table;
+		max-width: 75vw;
+	}
+	.img-narrow-screen {
+		display: block;
+		float: right;
+	    width: 40vw;
+	    margin: 5px;
+	    margin-top: 30px;
+	}
+	/* Smaller font and line height */
+	#content {
+	    font-size: 14px;
+    	line-height: 22px;
+    }
+    /* Margin on the top of subheadings that gets re-positioned under the image */
+    h2 {
+    	margin-top: 20px;
+    }
+    /* Less vertical spaces
+    hr {
+    	margin: 10px 0;
+    } */
+    /* No horisontal scrolling for grid content, ever */
+    .row {
+   		overflow-x: hidden;
+    }
+}
 
 
 /* Alternative loading bar with spinner
