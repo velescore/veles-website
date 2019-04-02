@@ -158,7 +158,7 @@ body.with-overlay {
     overflow: hidden;
     position: fixed;
     margin-left: -40%;
-    margin-top: -15%;
+    margin-top: -7.5vh;
 	z-index: 1010;
 	box-shadow: 0 0 100px #F19B7E40, 0 0 100px #F19B7E40;
 	background-color: #c4bebe;	/* same as body */
