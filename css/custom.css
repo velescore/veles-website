@@ -830,6 +830,15 @@ span.status-label-short {
 	display: table;
 	opacity: 0.5;
     margin-bottom: 40px;	/* height of footer overlay */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Anything smaller than iPad */
+@media only screen and (max-width: 765px) {
+	.footer-badges {
+		transform: scale(0.7);
+	}
 }
 
 /* Hyperlinks */
