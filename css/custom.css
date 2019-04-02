@@ -219,7 +219,7 @@ body.with-overlay {
 	}
 }
 
-@media only screen and (min-width: 640px) {	/* Tablets or large screen phones */
+@media only screen and (min-width: 640px) and (min-height: 960px) {	/* Tablets or large screen phones */
 	#mobile-menu-overlay .mobile-menu-under {
     	margin-top: 1vh;
     }
