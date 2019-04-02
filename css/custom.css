@@ -803,12 +803,18 @@ span.status-label-short {
 
 #console-toggle {
 	width: 30px;
-	margin-right: -5px;
 	text-align: center;
 	padding-left: 8px;
 	float: left;
 }
 
+
+#mobile-follow-toggle {
+	width: 30px;
+	padding-left: 3px;
+	text-align: center;
+	float: left;
+}
 
 /* Footer */
 .footer {
@@ -826,12 +832,19 @@ span.status-label-short {
 
 .footer-follow-wide {
     display: block;
-    margin-top: -49px;
+    margin-top: -47px;
     height: 110px;
     margin-left: 30px;
     float: left;
 }
 
+@media only screen and (max-width: 768px) {
+	.footer-follow-wide {
+		display: none;
+	}
+}
+
+/*
 .footer-follow-mobile {
 	display: none;
 	width: 100%;
@@ -861,6 +874,8 @@ span.status-label-short {
 		border-color: #F19B7E;
 	}
 }
+*/
+
 
 .footer-badges {
 	margin: 0 auto;
@@ -1822,9 +1837,11 @@ ul.osx-dock li a {
   height: 30px;
   padding: 0 1px;
   margin: 0;
+  /*
   -webkit-transition: 0.15s linear;
   -webkit-transition-property: -webkit-transform margin;
   -webkit-box-reflect: below 2px; -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
+	*/
 }
  
 ul.osx-dock li a img {
@@ -1834,6 +1851,8 @@ ul.osx-dock li a img {
 ul.osx-dock li:hover {
   margin-left: 9px; margin-right: 9px;
   z-index: 200;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5), 0 0 50px rgba(0,0,0,0.5);
+  /*border-bottom: 2px solid #F19B7E;*/
 }
  
 ul.osx-dock li:hover a {
