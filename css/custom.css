@@ -198,6 +198,17 @@ body.with-overlay {
     opacity: 0.4;
 }
 
+
+@media only screen and (max-width: 376px) and (max-height: 670px) {	/* iPhone 6 effect niceness adjustment */
+	#mobile-menu-overlay .mobile-menu-under {
+    	margin-top: 4vh;
+    }
+
+ 	#mobile-menu-overlay .mobile-menu-under2 {
+		margin-top: 7vh;
+	}
+}
+
 @media only screen and (max-width: 361px) {	/* iPhone 5/SE and smaller effect niceness adjustment */
 	#mobile-menu-overlay .mobile-menu-under {
     	margin-top: 5.5vh;
