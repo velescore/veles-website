@@ -118,7 +118,7 @@ html {
 	height: 100%;
 	width: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 1001;	/* just over gradient */
+	z-index: 1101;	/* just over gradient */
 }
 
 #content-overlay  .overlay-bottom {
@@ -137,16 +137,27 @@ body.with-overlay {
 	margin: 0; height: 100%; overflow: hidden;
 }
 
-#content.mobile-menu-zoom-initial, 
-#content.mobile-menu-zoom,  
-#content-overlay.mobile-menu-zoom .mobile-menu-under,
-#content-overlay.mobile-menu-zoom .mobile-menu-under2  {
+/* mobile menu overlay */
+#mobile-menu-overlay .overlay-shadow {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1001;	/* just over gradient */
+}
+
+#content.mobile-menu-overlay-initial, 
+#content.mobile-menu-overlay,  
+#mobile-menu-overlay .mobile-menu-under,
+#mobile-menu-overlay .mobile-menu-under2  {
 	transform: scale(0.7);
     width: 100vw;
     height: 100vh;
     overflow: hidden;
     position: fixed;
-    margin-left: -50%;
+    margin-left: -40%;
     margin-top: -15%;
 	z-index: 1010;
 	box-shadow: 0 0 100px #F19B7E40, 0 0 100px #F19B7E40;
@@ -155,7 +166,15 @@ body.with-overlay {
 	transition: margin 2s, transform 2s;
 }
 
-#content.mobile-menu-zoom-initial  {
+#content.mobile-menu-overlay-initial.zoom-submenu, 
+#content.mobile-menu-overlay.zoom-submenu,  
+#mobile-menu-overlay.zoom-submenu .mobile-menu-under,
+#mobile-menu-overlay.zoom-submenu .mobile-menu-under2  {
+	margin-left: -60%;
+	transition: margin 1s;
+}
+
+#content.mobile-menu-overlay-initial  {
 	transform: scale(1);
 	transition: margin 0.1s, transform 0.1s ease;
 	margin: 0;
@@ -163,16 +182,16 @@ body.with-overlay {
 	margin-bottom: 40px;
 }
 
- #content-overlay.mobile-menu-zoom .mobile-menu-under {
-	margin-left: -47%;
+ #mobile-menu-overlay .mobile-menu-under {
+	margin-left: -37%;
     margin-top: 3vh;
     height: 94vh;
     z-index: 1009;
     opacity: 0.8;
 }
 
- #content-overlay.mobile-menu-zoom .mobile-menu-under2 {
-	margin-left: -44%;
+ #mobile-menu-overlay .mobile-menu-under2 {
+	margin-left: -34%;
     margin-top: 6vh;
     height: 88vh;
     z-index: 1008;
@@ -180,31 +199,23 @@ body.with-overlay {
 }
 
 @media only screen and (max-width: 361px) {	/* iPhone 5/SE and smaller effect niceness adjustment */
-	#content-overlay.mobile-menu-zoom .mobile-menu-under {
+	#mobile-menu-overlay .mobile-menu-under {
     	margin-top: 5vh;
     }
 
- 	#content-overlay.mobile-menu-zoom .mobile-menu-under2 {
+ 	#mobile-menu-overlay .mobile-menu-under2 {
 		margin-top: 8vh;
 	}
 }
 
-#content-overlay.mobile-menu-zoom .overlay-gradient {
-	display: none;
-}
-
-#content-overlay.mobile-menu-zoom.mobile-menu-zoom-initial .overlay-shadow {
+#mobile-menu-overlay.mobile-menu-overlay-initial .overlay-shadow {
 	background-color: rgba(0, 0, 0, 0);
 	transition: background-color 1s ease;
 }
 
-#content-overlay.mobile-menu-zoom .overlay-shadow {
+#mobile-menu-overlay .overlay-shadow {
 	background-color: rgba(0, 0, 0, 1);
 	transition: background-color 0.5s ease;
-}
-
-#content-overlay.mobile-menu-zoom .overlay-shadow .stage {
-	display: none;
 }
 
 .navbar.mobile-menu {
@@ -220,7 +231,7 @@ body.with-overlay {
 
 .navbar.mobile-menu .navbar-collapse.show {
 	position: absolute;
-    left: 50%;
+    left: 60%;
     transition: left 2s ease;
 }
 
@@ -839,7 +850,7 @@ span.status-label-short {
 	.footer-badges {
 		transform: scale(0.7);
 	}
-}
+}	
 
 /* Hyperlinks */
 a {

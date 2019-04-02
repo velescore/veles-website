@@ -115,80 +115,69 @@ var velesSinglePageApp = {
     },
 
     'hideOverlay': function(overlayName = null, fade = true, delay = 3000) {
-        if (!overlayName && this.isMobileMenuShown())
+        if (overlayName == null)
+            overlayName = 'content-overlay';
+        else
+            overlayName += '-overlay';
+
+        if (!this.isOverlayShown(overlayName))
             return;
 
         if (fade)
-            $('#content-overlay').fadeOut(delay);
+            $('#' + overlayName).fadeOut(delay);
 
-        if (overlayName) {
-            $('#content').addClass(overlayName + '-initial');
-            $('#content-overlay').addClass(overlayName + '-initial');
-        }
+        $('#content').addClass(overlayName + '-initial');
+        $('#' + overlayName).addClass(overlayName + '-initial');
         
         window.setTimeout(function() {
-            if (!overlayName && velesSinglePageApp.isMobileMenuShown())
-                return;
-
             if (!fade)
-                $('#content-overlay').hide();
+                $('#' + overlayName).hide();
 
-            if (overlayName) {
-                $('#content').removeClass(overlayName + '-initial');
-                $('#content-overlay').removeClass(overlayName + '-initial');
-                $('#content').removeClass(overlayName);
-                $('#content-overlay').removeClass(overlayName);
-            } else {
-               // $('.navbar-toggler').fadeIn();
-            }
+            $('#content').removeClass(overlayName + '-initial');
+            $('#content').removeClass(overlayName);
+            $('#' + overlayName).removeClass(overlayName + '-initial');
             $('body').removeClass('with-overlay');
-            
         }, delay);
     },
 
     'showOverlay': function(overlayName = null, fade = true, delay = 3000) {
-        if (overlayName == 'mobile-menu-zoom' && this.isMobileMenuShown())
+        if (overlayName == null)
+            overlayName = 'content-overlay';
+        else
+            overlayName += '-overlay';
+
+        if (this.isOverlayShown(overlayName))
             return;
-
-        if (overlayName) {
-            if (this.isOverlayShown())   // hide loading overlay if still shown
-                this.hideOverlay(null, true, 0);
-
-            $('#content-overlay').addClass(overlayName + '-initial');
-            $('#content-overlay').addClass(overlayName);
-            $('#content').addClass(overlayName + '-initial');
-            $('#content').addClass(overlayName);
-        }
+        
+        $('#' + overlayName).addClass(overlayName + '-initial');
+        $('#content').addClass(overlayName + '-initial');
+        $('#content').addClass(overlayName);
 
         if (fade)
-            $('#content-overlay').fadeOut(delay);
+            $('#' + overlayName).fadeIn(delay);
         else
-            $('#content-overlay').show();
+            $('#' + overlayName).show();
 
-        if (overlayName) {
-            $('#content').removeClass(overlayName + '-initial');
-            $('#content-overlay').removeClass(overlayName + '-initial');
-        } else {
-           // $('.navbar-toggler').fadeOut();
-        }
+        $('#' + overlayName).removeClass(overlayName + '-initial');
+        $('#content').removeClass(overlayName + '-initial');
     },
 
-    'isOverlayShown': function() {
-        return $('#content-overlay').is(':visible');
+    'isOverlayShown': function(overlayName) {
+        return $('#' + overlayName).is(':visible');
     },
 
     'showMobileMenu': function() {
-        this.showOverlay('mobile-menu-zoom', false, 2000);
+        this.showOverlay('mobile-menu', false, 2000);
         $('.navbar').addClass('mobile-menu');
     },
 
     'hideMobileMenu': function() {
-        this.hideOverlay('mobile-menu-zoom', false, 100);
+        this.hideOverlay('mobile-menu', false, 100);
         $('.navbar').removeClass('mobile-menu');
     },
 
     'isMobileMenuShown': function() {
-        return $('#content-overlay').hasClass('mobile-menu-zoom');
+        return this.isOverlayShown('mobile-menu');
     },
 
     'start': function() {
