@@ -28,7 +28,11 @@ var indexHeaderWidget = {};
         canvas.height = height;
         ctx = canvas.getContext('2d');
 
-        // create points
+        initPoints();
+    }
+
+    function initPoints() {
+         // create points
         points = [];
         for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {
             for(var y = 0; y < height; y = y + height / 10) {
@@ -112,6 +116,8 @@ var indexHeaderWidget = {};
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
+        initPoints();   // Baggins: fix for resize
+        initAnimation();
     }
 
     // animation
