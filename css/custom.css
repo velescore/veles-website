@@ -138,6 +138,10 @@ body.with-overlay {
 }
 
 /* mobile menu overlay */
+#mobile-menu-overlay {
+	display: none;
+}
+
 #mobile-menu-overlay .overlay-shadow {
 	position: fixed;
 	top: 0;
@@ -869,7 +873,7 @@ span.status-label-short {
 /* Anything smaller than iPad */
 @media only screen and (max-width: 765px) {
 	.footer-badges {
-		transform: scale(0.7);
+		transform: scale(0.8);
 	}
 }	
 
