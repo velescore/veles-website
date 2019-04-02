@@ -561,7 +561,6 @@ li.nav-item.nav-active {
 }
 
 .footer-overlay .footer-panel-row {
-	overflow: hidden;
    	height: 40px;
 	padding: 0px 10px 0px 10px;
 	background-color: black;
@@ -826,10 +825,11 @@ span.status-label-short {
 }
 
 .footer-follow-wide {
-	display: block;
-	margin-top: 3px;
-	margin-left: 30px;
-	float: left;
+    display: block;
+    margin-top: -49px;
+    height: 110px;
+    margin-left: 30px;
+    float: left;
 }
 
 .footer-follow-mobile {
@@ -1794,6 +1794,79 @@ body::-webkit-scrollbar-thumb:hover {
     .row {
    		overflow-x: hidden;
     }
+}
+
+/* osx dock */
+ul.osx-dock {
+    display: inline-block;
+    height: 110px;
+    padding: 0 40px 0 0;
+    /*overflow: hidden;*/
+    margin: 0;
+}
+
+ul.osx-dock li {
+    display: block;
+    position: relative;
+    float: left;
+    width: 35px;
+    height: 25px;
+    margin: 50px 0 4px 0;
+    -webkit-transition: 0.15s linear;
+    -webkit-transition-property: -webkit-transform margin;
+    text-align: center;
+}
+
+ul.osx-dock li a {
+  display: block;
+  height: 30px;
+  padding: 0 1px;
+  margin: 0;
+  -webkit-transition: 0.15s linear;
+  -webkit-transition-property: -webkit-transform margin;
+  -webkit-box-reflect: below 2px; -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
+}
+ 
+ul.osx-dock li a img {
+  width: 48px;
+}
+ 
+ul.osx-dock li:hover {
+  margin-left: 9px; margin-right: 9px;
+  z-index: 200;
+}
+ 
+ul.osx-dock li:hover a {
+  -webkit-transform-origin: center bottom;
+  -webkit-transform: scale(1.5);
+}
+ 
+ul.osx-dock li.nearby {
+  margin-left: 6px; margin-right: 6px;
+  z-index: 100;
+}
+ 
+ul.osx-dock li.nearby a {
+  -webkit-transform-origin: center bottom;
+  -webkit-transform: scale(1.25);
+}
+ 
+ul.osx-dock li span {
+ background: rgba(0,0,0,0.75);
+ position: absolute;
+ bottom: 40px;
+ /*margin: 0 auto;*/
+ margin-left: -37%;
+ display: none;
+ width: auto;
+ font-size: 11px;
+ font-weight: bold;
+ padding: 3px 6px;
+ -webkit-border-radius: 6px;
+ color: #fff;
+}
+ ul.osx-dock li:hover span {
+ display: block;
 }
 
 
