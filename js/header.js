@@ -91,6 +91,9 @@ var indexHeaderWidget = {};
 
     function mouseMove(e) {
         var posx = posy = 0;
+        var maxX = $('.movething').width();
+        var maxY= $('.movething').height();
+
         if (e.pageX || e.pageY) {
             posx = e.pageX;
             posy = e.pageY;
@@ -99,8 +102,9 @@ var indexHeaderWidget = {};
             posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
             posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
         }
-        target.x = posx / $('.movething').css('zoom');    /* baggins: zoom support */
-        target.y = posy / $('.movething').css('zoom');
+        /* baggins: zoom support, keep animation inside the canvas */
+        target.x = Math.min(posx / $('.movething').css('zoom'), maxX);    
+        target.y = Math.min(posy / $('.movething').css('zoom'), maxY);
     }
 
     function scrollCheck() {
@@ -118,6 +122,7 @@ var indexHeaderWidget = {};
         canvas.height = height;
         initPoints();   // Baggins: fix for resize
         initAnimation();
+        target = {x: width/2, y: height/2};    // Re-center the animation
     }
 
     // animation
