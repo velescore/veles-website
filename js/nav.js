@@ -139,7 +139,7 @@ var velesSinglePageApp = {
                 $('#content').removeClass(overlayName);
                 $('#content-overlay').removeClass(overlayName);
             } else {
-                $('.navbar-toggler').fadeIn();
+               // $('.navbar-toggler').fadeIn();
             }
             $('body').removeClass('with-overlay');
             
@@ -169,7 +169,7 @@ var velesSinglePageApp = {
             $('#content').removeClass(overlayName + '-initial');
             $('#content-overlay').removeClass(overlayName + '-initial');
         } else {
-            $('.navbar-toggler').fadeOut();
+           // $('.navbar-toggler').fadeOut();
         }
     },
 
