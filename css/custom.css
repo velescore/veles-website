@@ -200,11 +200,21 @@ body.with-overlay {
 
 @media only screen and (max-width: 361px) {	/* iPhone 5/SE and smaller effect niceness adjustment */
 	#mobile-menu-overlay .mobile-menu-under {
-    	margin-top: 5vh;
+    	margin-top: 5.5vh;
     }
 
  	#mobile-menu-overlay .mobile-menu-under2 {
-		margin-top: 8vh;
+		margin-top: 8.5vh;
+	}
+}
+
+@media only screen and (min-width: 640px) {	/* Tablets or large screen phones */
+	#mobile-menu-overlay .mobile-menu-under {
+    	margin-top: 1vh;
+    }
+
+ 	#mobile-menu-overlay .mobile-menu-under2 {
+		margin-top: 4vh;
 	}
 }
 
