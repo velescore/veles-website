@@ -24,6 +24,7 @@ var velesSinglePageApp = {
         // close the menu if open
         $('div.navbar-collapse').removeClass('show');
         $('div.navbar-collapse').addClass('hide');
+        this.hideMobileMenu();
 
         // load the content if not cached, init the page scripts
         if (this.cachedPages.hasOwnProperty(page)) {
@@ -94,6 +95,16 @@ var velesSinglePageApp = {
             this.eventsBound['popstate'] = true;
         }
 
+        if (!this.eventsBound.hasOwnProperty('navbar-toggler') || !this.eventsBound['navbar-toggler']) {
+            $('.navbar-collapse').on('show.bs.collapse', function () {
+                velesSinglePageApp.showMobileMenu();
+            });
+            $('.navbar-collapse').on('hide.bs.collapse', function () {
+                velesSinglePageApp.hideMobileMenu();
+            });
+            this.eventsBound['navbar-toggler'] = true;
+        }
+
         // Click events on navigation links
         $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
             .add('.nav-vertical a').add('.breadcrumb-item a')
@@ -103,9 +114,81 @@ var velesSinglePageApp = {
         }).addClass('spa');
     },
 
-    'hideOverlay': function() {
-        $('#content-overlay').fadeOut(3000);
-        $('body').removeClass('with-overlay');
+    'hideOverlay': function(overlayName = null, fade = true, delay = 3000) {
+        if (!overlayName && this.isMobileMenuShown())
+            return;
+
+        if (fade)
+            $('#content-overlay').fadeOut(delay);
+
+        if (overlayName) {
+            $('#content').addClass(overlayName + '-initial');
+            $('#content-overlay').addClass(overlayName + '-initial');
+        }
+        
+        window.setTimeout(function() {
+            if (!overlayName && velesSinglePageApp.isMobileMenuShown())
+                return;
+
+            if (!fade)
+                $('#content-overlay').hide();
+
+            if (overlayName) {
+                $('#content').removeClass(overlayName + '-initial');
+                $('#content-overlay').removeClass(overlayName + '-initial');
+                $('#content').removeClass(overlayName);
+                $('#content-overlay').removeClass(overlayName);
+            } else {
+                $('.navbar-toggler').fadeIn();
+            }
+            $('body').removeClass('with-overlay');
+            
+        }, delay);
+    },
+
+    'showOverlay': function(overlayName = null, fade = true, delay = 3000) {
+        if (overlayName == 'mobile-menu-zoom' && this.isMobileMenuShown())
+            return;
+
+        if (overlayName) {
+            if (this.isOverlayShown())   // hide loading overlay if still shown
+                this.hideOverlay(null, true, 0);
+
+            $('#content-overlay').addClass(overlayName + '-initial');
+            $('#content-overlay').addClass(overlayName);
+            $('#content').addClass(overlayName + '-initial');
+            $('#content').addClass(overlayName);
+        }
+
+        if (fade)
+            $('#content-overlay').fadeOut(delay);
+        else
+            $('#content-overlay').show();
+
+        if (overlayName) {
+            $('#content').removeClass(overlayName + '-initial');
+            $('#content-overlay').removeClass(overlayName + '-initial');
+        } else {
+            $('.navbar-toggler').fadeOut();
+        }
+    },
+
+    'isOverlayShown': function() {
+        return $('#content-overlay').is(':visible');
+    },
+
+    'showMobileMenu': function() {
+        this.showOverlay('mobile-menu-zoom', false, 2000);
+        $('.navbar').addClass('mobile-menu');
+    },
+
+    'hideMobileMenu': function() {
+        this.hideOverlay('mobile-menu-zoom', false, 100);
+        $('.navbar').removeClass('mobile-menu');
+    },
+
+    'isMobileMenuShown': function() {
+        return $('#content-overlay').hasClass('mobile-menu-zoom');
     },
 
     'start': function() {
@@ -125,7 +208,6 @@ var velesSinglePageApp = {
 
 /* Mark current page's tab as active (if found in main nav) */
 $(document).ready(function() {
-    window.scrollTo(0,0);
     velesSinglePageApp.start();
 });
 
