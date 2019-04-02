@@ -47,6 +47,7 @@ html {
 .movething {
 	max-width: 100%;
 	overflow: hidden;
+	zoom: 1;
 }
 
 .movething .header.with-bg {

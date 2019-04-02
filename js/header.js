@@ -13,8 +13,11 @@ var indexHeaderWidget = {};
     } 
 
     function initHeader() {
-        width = window.innerWidth;
-        height = window.innerHeight;
+        //width = window.innerWidth;
+        //height = window.innerHeight;
+        width = $('.movething').width();
+        height = $('.movething').height();
+
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large-header');
@@ -27,10 +30,10 @@ var indexHeaderWidget = {};
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
+        for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {
+            for(var y = 0; y < height; y = y + height / 10) {
+                var px = x + Math.random()*width / 10;
+                var py = y + Math.random()*height / 10;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }
@@ -92,8 +95,8 @@ var indexHeaderWidget = {};
             posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
             posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
         }
-        target.x = posx;
-        target.y = posy;
+        target.x = posx / $('.movething').css('zoom');    /* baggins: zoom support */
+        target.y = posy / $('.movething').css('zoom');
     }
 
     function scrollCheck() {
@@ -102,8 +105,10 @@ var indexHeaderWidget = {};
     }
 
     function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
+        //width = window.innerWidth;
+        //height = window.innerHeight;
+        width = $('.movething').width();
+        height = $('.movething').height();
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
