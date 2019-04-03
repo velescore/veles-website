@@ -597,7 +597,9 @@ li.nav-item.nav-active {
 	background-position: 0px 0px, 5px 5px, 0px 0px;
     padding: 10px 10px 50px 10px;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
+
 
 #panel-slide .fab, #panel-slide .fas.brand  {
 	font-size: 60px;
@@ -605,14 +607,20 @@ li.nav-item.nav-active {
 
 #panel-slide a {
 	margin: 0 auto;
-    padding: 7px;
+    padding-right: calc((100vw - 352px) / 6);
+    padding-left: 7px;
 }
 
+#panel-slide a:first-child {
+	padding-left: calc((100vw - 352px) / 6);
+}
+
+
 #panel-slide .slide-iconset {
+	display: block;
 	margin: 0 auto;
 	white-space: nowrap;
 }
-
 
 .footer-tooltip {
 	position: fixed;
