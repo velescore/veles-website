@@ -1957,16 +1957,16 @@ ul.osx-dock li span {
 .row.row-dark {
     margin: 0;
     background-image: linear-gradient(90deg,transparent, #26262688, transparent);
-    height: auto;
     width: auto;
     padding-top: 44px;
-	height: 320px;
+	min-height: 320px;
+	padding-bottom: 60px;
 }
 
 .row.row-light {
 	margin: 0;
     background-image: linear-gradient(90deg,transparent, #e4b99c88, transparent);
-    height: : 320px;
+    min-height: : 320px;
     width: auto;
     padding-top: 44px;
 	padding-bottom: 60px;
