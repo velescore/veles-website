@@ -134,6 +134,10 @@ html {
 	z-index: 1000;
 }
 
+#content {
+	transition: margin-top 0.5s ease-in-out;	/* support for easy transition when sliding out */
+}
+
 body.with-overlay {
 	margin: 0; height: 100%; overflow: hidden;
 }
@@ -537,7 +541,7 @@ li.nav-item.nav-active {
 	max-width: 300px;
 }
 
-.fab {
+.fab, .fas.brand {
 	margin-right: 5px;
 	font-size:25px;
 	margin-top: 4px;
@@ -572,6 +576,43 @@ li.nav-item.nav-active {
 	height: 60%;
 	transition: height 0.5s ease-in-out;
 }
+
+.footer-overlay.footer-panel-slide {
+	height: 130px;
+	transition: height 0.5s ease-in-out;
+}
+
+#content.footer-panel-slide {
+	margin-top: -90px;
+	transition: margin-top 0.5s ease-in-out;
+}
+
+#panel-slide {
+	color: #222;
+	width: 100%;
+    height: 100%;
+	background-color: rgb(32, 32, 32);
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+	background-size: 10px 10px, 10px 10px, 10px 5px;
+	background-position: 0px 0px, 5px 5px, 0px 0px;
+    padding: 10px 10px 50px 10px;
+    overflow-x: scroll;
+}
+
+#panel-slide .fab, #panel-slide .fas.brand  {
+	font-size: 60px;
+}
+
+#panel-slide a {
+	margin: 0 auto;
+    padding: 7px;
+}
+
+#panel-slide .slide-iconset {
+	margin: 0 auto;
+	white-space: nowrap;
+}
+
 
 .footer-tooltip {
 	position: fixed;
@@ -802,6 +843,7 @@ span.status-label-short {
 
 
 #console-toggle {
+	display: block;
 	width: 30px;
 	text-align: center;
 	padding-left: 8px;
@@ -809,11 +851,46 @@ span.status-label-short {
 }
 
 
+.footer-follow-wide {
+    display: block;
+    margin-top: -47px;
+    height: 110px;
+    margin-left: 30px;
+    float: left;
+}
+
 #mobile-follow-toggle {
-	width: 30px;
-	padding-left: 3px;
-	text-align: center;
-	float: left;
+	display: none;
+}
+
+/* Replace console with social button group widget on smaller devices */
+@media only screen and (max-width: 991px) {	/* and (orientation: portrait) */
+	#console-toggle, #dev-console {
+		display: none;
+	}
+
+	.footer-follow-wide {
+		display: none;
+	}
+
+	#mobile-follow-toggle {
+		display: block;
+		padding-left: 3px;
+		text-align: center;
+		float: left;
+		overflow: hidden;
+	}
+
+	#mobile-follow-toggle .label {
+		margin-left: 5px;
+		font-weight: bold;
+	}
+}
+
+@media only screen and (max-width: 374px) {	/* smaller than iPhone 6 */
+	#mobile-follow-toggle {
+		width: 60px;
+	}
 }
 
 /* Footer */
@@ -830,19 +907,7 @@ span.status-label-short {
 	margin-bottom: 20px;
 }
 
-.footer-follow-wide {
-    display: block;
-    margin-top: -47px;
-    height: 110px;
-    margin-left: 30px;
-    float: left;
-}
 
-@media only screen and (max-width: 768px) {
-	.footer-follow-wide {
-		display: none;
-	}
-}
 
 /*
 .footer-follow-mobile {

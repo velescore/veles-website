@@ -24,17 +24,19 @@ var velesSinglePageApp = {
         // close the menu if open
         $('div.navbar-collapse').removeClass('show');
         $('div.navbar-collapse').addClass('hide');
-        this.hideMobileMenu();
+        //
 
         // load the content if not cached, init the page scripts
         if (this.cachedPages.hasOwnProperty(page)) {
             $('#content-wrapper').html(this.cachedPages[page]);
             velesSinglePageApp.hideOverlay();
+            velesSinglePageApp.hideMobileMenu();
             velesSinglePageApp.runPageHook('init');
             velesSinglePageApp.bindEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
+                velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');
                 velesSinglePageApp.bindEvents();
             }); 
@@ -102,6 +104,13 @@ var velesSinglePageApp = {
             $('.navbar-collapse').on('hide.bs.collapse', function () {
                 velesSinglePageApp.hideMobileMenu();
             });
+            $('#mobile-follow-toggle').click(function(){
+                if (velesSinglePageApp.isMobileSliderShown())
+                    velesSinglePageApp.hideMobileSlider();
+                else
+                    velesSinglePageApp.showMobileSlider();
+            })
+
             this.eventsBound['navbar-toggler'] = true;
         }
 
@@ -148,6 +157,9 @@ var velesSinglePageApp = {
 
         if (this.isOverlayShown(overlayName))
             return;
+
+        // some extra UI stuff
+        this.hideMobileSlider();
         
         $('#' + overlayName).addClass(overlayName + '-initial');
         $('#content').addClass(overlayName + '-initial');
@@ -178,6 +190,28 @@ var velesSinglePageApp = {
 
     'isMobileMenuShown': function() {
         return this.isOverlayShown('mobile-menu');
+    },
+
+    'showMobileSlider': function() {
+        if (this.isMobileSliderShown())
+            return;
+
+        $('#mobile-follow-toggle').addClass('active');
+        $('.footer-overlay').addClass('footer-panel-slide');
+        $('#content').addClass('footer-panel-slide');
+    },
+
+    'hideMobileSlider': function() {
+        if (!this.isMobileSliderShown())
+            return;
+
+        $('#mobile-follow-toggle').removeClass('active');
+        $('.footer-overlay').removeClass('footer-panel-slide');
+        $('#content').removeClass('footer-panel-slide');
+    },
+
+    'isMobileSliderShown': function() {
+        return $('.footer-overlay').hasClass('footer-panel-slide');
     },
 
     'start': function() {
