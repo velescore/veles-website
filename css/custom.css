@@ -1964,6 +1964,11 @@ ul.osx-dock li span {
 	height: calc(100vh - 262px);
 }
 
+.row-no-limit {
+    height: unset!important;
+    min-height: unset!important;
+}
+
 .row.row-light {
 	height: calc(100vh - 262px);
 	margin: 0;
@@ -1974,7 +1979,7 @@ ul.osx-dock li span {
 	padding-bottom: 60px;
 }
 
-hr.hr-download {
+hr.hr-new {
 	margin: 0;
 	height: 8px;
 	background-image: linear-gradient(90deg,transparent, #e4b99c88, transparent);
