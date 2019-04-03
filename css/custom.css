@@ -1968,9 +1968,9 @@ ul.osx-dock li span {
     background-image: linear-gradient(90deg,transparent, #26262632, transparent);
     width: auto;
     padding-top: 44px;
-	min-height: 320px;
+	min-height: 350px;
 	padding-bottom: 60px;
-	height: calc(100vh - 262px);
+	/*height: calc(100vh - 262px);*/
 }
 
 .row-no-limit {
@@ -1979,10 +1979,10 @@ ul.osx-dock li span {
 }
 
 .row.row-light {
-	height: calc(100vh - 262px);
+	/*height: calc(100vh - 262px);*/
 	margin: 0;
     background-image: linear-gradient(90deg,transparent, #e4b99c32, transparent);
-    min-height: : 320px;
+    min-height: : 350px;
     width: auto;
     padding-top: 44px;
 	padding-bottom: 60px;
