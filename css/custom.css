@@ -1676,8 +1676,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-/* Zoom out the console on small devices, we get close to 80 characters 
-	at around 530px. Need to be set at breakpoints as calc() from vw 
+/* Zoom out the console on small devices, we get close to 80 characters
+	at around 530px. Need to be set at breakpoints as calc() from vw
 	would not work here */
 @media only screen and (max-width: 560px) {
 	#dev-console {
@@ -2023,13 +2023,17 @@ ul.osx-dock li span {
 /*new colored rows*/
 .row.row-dark {
     margin: 0;
-	box-shadow: -2px 2px 2px rgba( 228, 185, 156, 0.2);
+	border-radius: 5px;
     background-image: linear-gradient(90deg,#26262688, transparent);
     width: auto;
     padding-top: 44px;
 	min-height: 350px;
 	padding-bottom: 60px;
 	/*height: calc(100vh - 262px);*/
+}
+
+.padding-dark {
+	padding-left: 30px; 
 }
 
 .row-no-limit {
@@ -2040,7 +2044,7 @@ ul.osx-dock li span {
 .row.row-light {
 	/*height: calc(100vh - 262px);*/
 	margin: 0;
-	box-shadow: 2px 2px 2px rgba( 0, 0, 0, 0.2);
+	border-radius: 5px;
     background-image: linear-gradient(90deg,transparent, #e4b99c32);
     min-height: : 350px;
     width: auto;
