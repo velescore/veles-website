@@ -892,9 +892,15 @@ span.status-label-short {
 		overflow: hidden;
 	}
 
+	#mobile-follow-toggle span.brand-color {
+		font-size: 15px;
+	}
+
+
 	#mobile-follow-toggle .label {
 		margin-left: 5px;
 		font-weight: bold;
+		color: #e4b99c;
 	}
 }
 
