@@ -872,12 +872,9 @@ span.status-label-short {
 	display: none;
 }
 
-/* Replace console with social button group widget on smaller devices */
-@media only screen and (max-width: 991px) {	/* and (orientation: portrait) */
-	#console-toggle, #dev-console {
-		display: none;
-	}
-
+/* Mobile version of follow icons with native feel, instead of
+	desktop version with osX hover effect */
+@media only screen and (max-width: 991px) {
 	.footer-follow-wide {
 		display: none;
 	}
@@ -895,6 +892,35 @@ span.status-label-short {
 		font-weight: bold;
 	}
 }
+
+/* Zoom out the console on small devices, we get close to 80 characters 
+	at around 530px. Need to be set at breakpoints as calc() from vw 
+	would not work here */
+@media only screen and (max-width: 560px) {
+	#dev-console {
+		zoom: 0.9;
+	}
+}@media only screen and (max-width: 500px) {
+	#dev-console {
+		zoom: 0.8;
+	}
+}@media only screen and (max-width: 440px) {
+	#dev-console {
+		zoom: 0.7;
+	}
+}
+@media only screen and (max-width: 374px) {
+	#dev-console {
+		zoom: 0.6;
+	}
+}
+@media only screen and (max-width: 319px) {
+	#dev-console {
+		zoom: 0.5;
+	}
+}
+
+
 
 @media only screen and (max-width: 374px) {	/* smaller than iPhone 6 */
 	#mobile-follow-toggle {
@@ -1625,7 +1651,7 @@ body::-webkit-scrollbar-thumb:hover {
 	color: #F19B7E;
 }
 #dev-console div.jquery-console-message {
-	white-space: pre;
+	white-space: pre-wrap;
 }
 #dev-console div.jquery-console-message-error { color:#ef0505; font-weight:bold; padding:0.1em; }
 #dev-console div.jquery-console-message-value { color:#1ad027; padding:0.1em; }
