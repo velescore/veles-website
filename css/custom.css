@@ -157,8 +157,8 @@ body.with-overlay {
 	z-index: 1001;	/* just over gradient */
 }
 
-#content.mobile-menu-overlay-initial, 
-#content.mobile-menu-overlay,  
+#content.mobile-menu-overlay-initial,
+#content.mobile-menu-overlay,
 #mobile-menu-overlay .mobile-menu-under,
 #mobile-menu-overlay .mobile-menu-under2  {
 	transform: scale(0.7);
@@ -175,8 +175,8 @@ body.with-overlay {
 	transition: margin 2s, transform 2s;
 }
 
-#content.mobile-menu-overlay-initial.zoom-submenu, 
-#content.mobile-menu-overlay.zoom-submenu,  
+#content.mobile-menu-overlay-initial.zoom-submenu,
+#content.mobile-menu-overlay.zoom-submenu,
 #mobile-menu-overlay.zoom-submenu .mobile-menu-under,
 #mobile-menu-overlay.zoom-submenu .mobile-menu-under2  {
 	margin-left: -60%;
@@ -964,7 +964,7 @@ span.status-label-short {
 	.footer-badges {
 		transform: scale(0.8);
 	}
-}	
+}
 
 /* Hyperlinks */
 a {
@@ -1916,33 +1916,33 @@ ul.osx-dock li a {
   -webkit-box-reflect: below 2px; -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.45, transparent), to(rgba(255, 255, 255, 0.25)));
 	*/
 }
- 
+
 ul.osx-dock li a img {
   width: 48px;
 }
- 
+
 ul.osx-dock li:hover {
   margin-left: 9px; margin-right: 9px;
   z-index: 200;
   box-shadow: 0 0 30px rgba(0,0,0,0.5), 0 0 50px rgba(0,0,0,0.5);
   /*border-bottom: 2px solid #F19B7E;*/
 }
- 
+
 ul.osx-dock li:hover a {
   -webkit-transform-origin: center bottom;
   -webkit-transform: scale(1.5);
 }
- 
+
 ul.osx-dock li.nearby {
   margin-left: 6px; margin-right: 6px;
   z-index: 100;
 }
- 
+
 ul.osx-dock li.nearby a {
   -webkit-transform-origin: center bottom;
   -webkit-transform: scale(1.25);
 }
- 
+
 ul.osx-dock li span {
  background: rgba(0,0,0,0.75);
  position: absolute;
@@ -1961,7 +1961,40 @@ ul.osx-dock li span {
  display: block;
 }
 
+/*new colored rows*/
+.row.row-dark {
+    margin: 0;
+    background-image: linear-gradient(90deg,transparent, #262626CC, transparent);
+    width: auto;
+    padding-top: 44px;
+	min-height: 320px;
+	padding-bottom: 60px;
+	height: calc(100vh - 262px);
+}
 
+.row-no-limit {
+    height: unset!important;
+    min-height: unset!important;
+}
+
+.row.row-light {
+	height: calc(100vh - 262px);
+	margin: 0;
+    background-image: linear-gradient(90deg,transparent, #e4b99c44, transparent);
+    min-height: : 320px;
+    width: auto;
+    padding-top: 44px;
+	padding-bottom: 60px;
+}
+
+hr.hr-new {
+	margin: 0;
+	height: 8px;
+	background-image: linear-gradient(90deg,transparent, #e4b99c88, transparent);
+	border: 2px;
+/* border-color: black; */
+	height: 1px;
+}
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
