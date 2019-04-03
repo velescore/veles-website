@@ -143,7 +143,7 @@ var velesDevConsole = {
 
     show: function() {
         $('.footer-overlay').addClass('footer-panel-expand');
-        $('body').addClass('with-overlay')
+        $('body').addClass('with-overlay');
 
         if (this.controller)
             this.controller.focus();
