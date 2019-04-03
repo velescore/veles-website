@@ -294,6 +294,27 @@
     });
 
     ////////////////////////////////////////////////////////////////////////
+    // Handle Android text input.
+    // Veles Core: Ported from pull request #68 by @JerryChin
+    // committed on Jan 29, 2018
+
+    typer.on('textInput', e => {
+        var data = e.originalEvent.data;
+        if (acceptInput) {
+           if ( typeof config.charInsertTrigger == 'undefined' || 
+               typeof config.charInsertTrigger == 'function'){
+              for(var i = 0; i < data.length; i++) {
+                if(!config.charInsertTrigger(data.charCodeAt(i))) {
+                  return;   
+                }
+              }
+
+              typer.consoleInsert(data);
+            }
+        }
+     });
+
+    ////////////////////////////////////////////////////////////////////////
     // Handle key hit before translation
     // For picking up control characters like up/left/down/right
 

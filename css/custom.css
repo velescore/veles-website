@@ -584,7 +584,8 @@ li.nav-item.nav-active {
 
 #content.footer-panel-slide {
 	margin-top: -90px;
-	transition: margin-top 0.5s ease-in-out;
+	margin-bottom: 90px;
+	transition: margin 0.5s ease-in-out;
 }
 
 #panel-slide {
