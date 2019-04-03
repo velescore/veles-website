@@ -270,7 +270,7 @@ hr {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	height: 8px;
-	background-image: linear-gradient(90deg,transparent, #e4b99c, transparent);
+	background-image: linear-gradient(90deg,transparent, #e4b99c44, transparent);
 	border: 2px;
 	border-color: black;
 	height: 1px;
@@ -279,7 +279,7 @@ hr {
 #hr-footer {
 	margin-bottom: 30px;
 	height: 8px;
-	background-image: linear-gradient(90deg,transparent, #e4b99c, transparent);
+	background-image: linear-gradient(90deg,transparent, #e4b99c44, transparent);
 	border: 2px;
 	border-color: black;
 	height: 1px;
@@ -1965,7 +1965,8 @@ ul.osx-dock li span {
 /*new colored rows*/
 .row.row-dark {
     margin: 0;
-    background-image: linear-gradient(90deg,transparent, #26262632, transparent);
+	box-shadow: -2px 2px 2px rgba( 228, 185, 156, 0.2);
+    background-image: linear-gradient(90deg,#26262688, transparent);
     width: auto;
     padding-top: 44px;
 	min-height: 350px;
@@ -1981,7 +1982,8 @@ ul.osx-dock li span {
 .row.row-light {
 	/*height: calc(100vh - 262px);*/
 	margin: 0;
-    background-image: linear-gradient(90deg,transparent, #e4b99c32, transparent);
+	box-shadow: 2px 2px 2px rgba( 0, 0, 0, 0.2);
+    background-image: linear-gradient(90deg,transparent, #e4b99c32);
     min-height: : 350px;
     width: auto;
     padding-top: 44px;
