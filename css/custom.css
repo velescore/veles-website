@@ -1888,7 +1888,32 @@ ul.osx-dock li span {
  display: block;
 }
 
+/*new colored rows*/
+.row.row-dark {
+    margin: 0;
+    background-image: linear-gradient(90deg,transparent, #26262688, transparent);
+    height: auto;
+    width: auto;
+    padding-top: 44px;
+	height: 320px;
+}
 
+.row.row-light {
+	margin: 0;
+    background-image: linear-gradient(90deg,transparent, #e4b99c88, transparent);
+    height: : 320px;
+    width: auto;
+    padding-top: 44px;
+}
+
+hr.hr-download {
+	margin: 0;
+	height: 8px;
+	background-image: linear-gradient(90deg,transparent, #e4b99c88, transparent);
+	border: 2px;
+/* border-color: black; */
+	height: 1px;
+}
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
