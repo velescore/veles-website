@@ -614,7 +614,14 @@ li.nav-item.nav-active {
 
 
 #panel-slide .fab, #panel-slide .fas.brand  {
-	font-size: 60px;
+	font-size: 50px;
+	margin: 6px;
+}
+
+@media only screen and (max-width: 350px) {
+	#panel-slide .fab, #panel-slide .fas.brand  {
+		margin-right: 15px;
+	}
 }
 
 #panel-slide a {
