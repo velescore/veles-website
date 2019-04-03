@@ -541,10 +541,16 @@ li.nav-item.nav-active {
 	max-width: 300px;
 }
 
-.fab, .fas.brand {
+.fab, .fas.brand, .fa.brand {
 	margin-right: 5px;
 	font-size:25px;
 	margin-top: 4px;
+	background: -webkit-linear-gradient(45deg,#262626, #e4b99c);
+ 	-webkit-background-clip: text;
+ 	-webkit-text-fill-color: transparent;
+}
+
+.fa.brand-color {
 	background: -webkit-linear-gradient(45deg,#262626, #e4b99c);
  	-webkit-background-clip: text;
  	-webkit-text-fill-color: transparent;
@@ -886,9 +892,15 @@ span.status-label-short {
 		overflow: hidden;
 	}
 
+	#mobile-follow-toggle span.brand-color {
+		font-size: 15px;
+	}
+
+
 	#mobile-follow-toggle .label {
 		margin-left: 5px;
 		font-weight: bold;
+		color: #e4b99c;
 	}
 }
 
