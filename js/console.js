@@ -142,8 +142,13 @@ var velesDevConsole = {
     },
 
     show: function() {
+        velesSinglePageApp.hideMobileSlider();
+        $('#dev-console').show();
         $('.footer-overlay').addClass('footer-panel-expand');
         $('body').addClass('with-overlay');
+        $('#mobile-follow-toggle').addClass('inactive');
+        $('.console-area').show();
+        $('#console-toggle').add('.console-area').addClass('active');
 
         if (this.controller)
             this.controller.focus();
@@ -151,7 +156,13 @@ var velesDevConsole = {
 
     hide: function() {
         $('.footer-overlay').removeClass('footer-panel-expand');
-        $('body').removeClass('with-overlay')
+        $('body').removeClass('with-overlay');
+        $('#mobile-follow-toggle').removeClass('inactive');
+        $('.console-area').hide();
+        $('#console-toggle').add('.console-area').removeClass('active');
+        window.setTimeout(function(){
+            $('#dev-console').hide();
+        }, 500);    // duration of the animation
     },
 
     isShown: function() {
@@ -168,6 +179,14 @@ var velesDevConsole = {
                 velesDevConsole.hide();
             else
                 velesDevConsole.show();
+        });
+        /* BInd other elements if present */
+        $('#console-maximize').click(function() {
+            if ($('.footer-overlay').hasClass('panel-maximize')) {
+                $('.footer-overlay').removeClass('panel-maximize');
+            } else {
+                $('.footer-overlay').addClass('panel-maximize');
+            }
         });
     },
 }
