@@ -38,13 +38,12 @@ html {
 	height: 350px !important;
 	background: transparent;
 	overflow: hidden;
-	border-bottom: 1px;
-	border-bottom-color: #e4b99c;
-	border-bottom-style: outset;
+	border-bottom: 0px;
 	z-index: 1;
 }
 
 .movething {
+	border-radius: 5px;
 	max-width: 100%;
 	overflow: hidden;
 	zoom: 1;
