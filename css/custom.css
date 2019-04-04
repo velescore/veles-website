@@ -2203,6 +2203,17 @@ hr.hr-new {
 	font-weight: bold;
 	color: #F19B7E;
 }
+.index-page .header-tile:hover {
+	background-color: #3f3d3d80;
+}
+.index-page .header-tile:hover .tile-label {
+	transform: scale(1.1);
+	transition: transform 1.5s ease;
+}
+.index-page .header-tile:hover .tile-label-value {
+	transform: scale(1.1);
+	transition: transform 2.5s ease;
+}
 
 @media only screen and (max-width: 1024px) {
 	.index-page .header-tile {
