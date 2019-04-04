@@ -1046,7 +1046,7 @@ a:hover {
   cursor: pointer;
   margin-left: 7px;
 }
-.button-effect .label {
+.button-effect .label, .button-effect .sublabel {
   padding: 10px 30px;
   font-size: 14px;
   display: inline-block;
@@ -1057,6 +1057,14 @@ a:hover {
   transition: all 0.225s;
   transition-delay: 0.45s;
   letter-spacing: 2px;
+}
+.button-effect .sublabel {	/* Baggins: grey less important label */;
+    font-size: 13px;
+    color: #ffffff88;
+    display: inline;
+    padding: 10px 30px 10px 0px;
+    margin-left: -20px;
+    top: -1px;
 }
 .button-effect.button-effect-start .label {
   padding: 12px 65px;
@@ -2070,6 +2078,36 @@ ul.osx-dock li span {
 	padding-bottom: 60px;
 }
 
+.download-page .button-effect .sublabel.long {
+	display: none;
+}
+.download-page .button-effect .sublabel.short {
+	display: inline;
+}
+
+/* fullscreen download page row on desktop screens */
+@media only screen and (min-width: 991px) {
+	.download-page .row-light, .download-page .row-dark {
+		height: calc(100vh - 264px);
+	}
+	.download-page .button-effect .sublabel.long {
+		display: inline;
+	}
+	.download-page .button-effect .sublabel.short {
+		display: none;
+	}
+	.download-page .button-effect {
+		margin-right: 7vw;
+	}
+}
+@media only screen and (max-width: 395px) {
+	.download-page .button-effect .sublabel.short {
+		display: none;
+	}
+}
+
+
+
 hr.hr-new {
 	margin: 0;
 	height: 8px;
@@ -2078,6 +2116,10 @@ hr.hr-new {
 /* border-color: black; */
 	height: 1px;
 }
+
+
+
+
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
