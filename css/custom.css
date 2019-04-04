@@ -1502,16 +1502,10 @@ Main components
 
 /* sidebar faq wiki etc...*/
 .list-group {
-	width: 43vh;
+	width: 100%;
 	border-radius: 5px;
 	margin-bottom: 15px;
 	background: #262626bb;
-}
-
-@media only screen and (max-width: 1200px) {
-	.list-group {
-		width: 100%;
-	}
 }
 
 .list-group-hover .list-group-item:hover {
@@ -2165,12 +2159,12 @@ ul.osx-dock li span {
 	.download-page .row-light, .download-page .row-dark {
 		height: calc((100vh - 295px) / 2);
 	}
-} 
+}
 @media only screen and (min-height: 861px) {	/* two pages for tablets in portrait */
 	.download-page .row-light, .download-page .row-dark {
 		height: calc((100vh - 295px) / 2);
 	}
-} 
+}
 
 
 hr.hr-new {
