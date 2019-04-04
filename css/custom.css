@@ -2112,7 +2112,7 @@ ul.osx-dock li span {
 /* fullscreen download page row on desktop screens */
 @media only screen and (min-width: 991px) {
 	.download-page .row-light, .download-page .row-dark {
-		height: calc(100vh - 264px);
+		height: calc(100vh - 295px);
 	}
 	.download-page .button-effect {
 		max-width: 340px;
