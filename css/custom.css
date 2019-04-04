@@ -2210,11 +2210,11 @@ hr.hr-new {
 }
 .index-page .header-tile:hover .tile-label {
 	transform: scale(1.1);
-	transition: transform 1.5s ease;
+	transition: transform 0.5s ease;
 }
 .index-page .header-tile:hover .tile-label-value {
 	transform: scale(1.1);
-	transition: transform 2.5s ease;
+	transition: transform 1.5s ease;
 }
 
 @media only screen and (max-width: 1024px) {
