@@ -2207,7 +2207,7 @@ hr.hr-new {
 		font-size: 14px;
 	}
 }
-@media only screen and (max-width: 800px), only screen and (max-height: 600px) {	/* same breakpoints as .movething to fit */
+@media only screen and (max-width: 767px), only screen and (max-height: 600px) {	/* same breakpoints as .movething to fit */
 	.index-page .row-no-limit:first-child {
 		height: calc(70vh - 40px) !important;
 	}
