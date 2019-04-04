@@ -1474,9 +1474,6 @@ Main components
 
 
 /*End ROADMAP*/
-.list-group-item.active {
-	border-color: #e4b99c;
-}
 
 .card {
 	background-color: #26262688;
@@ -1496,29 +1493,40 @@ Main components
     box-shadow: 0 0 0 0.1rem rgb(228, 185, 156,0.4);
 }
 
+/* sidebar faq wiki etc...*/
 .list-group {
-	border-color: #e4b99c68;
-	max-width: 85%;
+	width: 43vh;
 	border-radius: 5px;
 	margin-bottom: 15px;
 	background: #262626bb;
 }
 
+@media only screen and (max-width: 1200px) {
+	.list-group {
+		width: 100%;
+	}
+}
+
+.list-group-hover .list-group-item:hover {
+    background-color: transparent;
+	color: #fff;
+	border-left: 4px solid #F19B7E;
+}
+
 .list-group-item.active {
-	border-width: 1px;
-	background-color: #292929bb;
-	border-color: #e4b99c68;
+	background-color: transparent;
+	border-left: 4px solid #e4b99c!important;
 }
 
 .list-group-item {
-	background-color: transparent;
-	color: #fff;
+	background-color: #262626b4;
 	border-radius: 5px;
 	font-weight: bold;
-	border-color: transparent;
+	color: #fff;
+	border: 0;
 }
 
-/*.nav-vertical .*/
+/* end of sidebar */
 
 #headingOne {
 	background: #262626bb;
@@ -2103,7 +2111,7 @@ ul.osx-dock li span {
 .download-page .button-effect {
 	margin: 15px;
 }
-.download-page .button-effect .label, 
+.download-page .button-effect .label,
 .download-page .button-effect .sublabel {
   padding: 10px 20px;
 }
