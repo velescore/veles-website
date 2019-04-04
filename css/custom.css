@@ -1481,9 +1481,6 @@ Main components
 
 
 /*End ROADMAP*/
-.list-group-item.active {
-	border-color: #e4b99c;
-}
 
 .card {
 	background-color: #26262688;
@@ -1503,28 +1500,37 @@ Main components
     box-shadow: 0 0 0 0.1rem rgb(228, 185, 156,0.4);
 }
 
+/* sidebar faq wiki etc...*/
 .list-group {
+	width: 100%;
 	border-radius: 5px;
 	margin-bottom: 15px;
-	background: #262626;
+	background: #262626bb;
+}
+
+.list-group-hover .list-group-item:hover {
+    background-color: transparent;
+	color: #fff;
+	border-left: 4px solid #F19B7E;
 }
 
 .list-group-item.active {
-	border-width: 2px;
-	background-color: #292929;
+	background-color: transparent;
+	border-left: 4px solid #e4b99c!important;
 }
 
 .list-group-item {
-	background-color: transparent;
-	color: #fff;
+	background-color: #262626b4;
 	border-radius: 5px;
 	font-weight: bold;
+	color: #fff;
+	border: 0;
 }
 
-/*.nav-vertical .*/
+/* end of sidebar */
 
 #headingOne {
-	background: #262626;
+	background: #262626bb;
 }
 
 .night-mode #headingOne {
@@ -1739,12 +1745,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Breadcrumb */
 .breadcrumb {
-	background: linear-gradient(90deg, #262626, #e4b99c);
+	background: linear-gradient(90deg, #262626b2, #e4b99cb2);
 	transform: skew(-40deg, 0deg) scaleX(1);
 	max-width: 100%;
 	margin-top: 20px;
 	height: 44px;
-	opacity: 0.75;
 	margin: 10px;
 }
 .bread-button {
@@ -2107,7 +2112,7 @@ ul.osx-dock li span {
 .download-page .button-effect {
 	margin: 15px;
 }
-.download-page .button-effect .label, 
+.download-page .button-effect .label,
 .download-page .button-effect .sublabel {
   padding: 10px 20px;
 }
@@ -2154,12 +2159,12 @@ ul.osx-dock li span {
 	.download-page .row-light, .download-page .row-dark {
 		height: calc((100vh - 295px) / 2);
 	}
-} 
+}
 @media only screen and (min-height: 861px) {	/* two pages for tablets in portrait */
 	.download-page .row-light, .download-page .row-dark {
 		height: calc((100vh - 295px) / 2);
 	}
-} 
+}
 
 
 hr.hr-new {
