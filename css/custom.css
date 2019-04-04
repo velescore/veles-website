@@ -1709,11 +1709,11 @@ body::-webkit-scrollbar-thumb:hover {
 	#dev-console {
 		zoom: 0.9;
 	}
-}@media only screen and (max-width: 500px) {
+} @media only screen and (max-width: 500px) {
 	#dev-console {
 		zoom: 0.8;
 	}
-}@media only screen and (max-width: 440px) {
+} @media only screen and (max-width: 440px) {
 	#dev-console {
 		zoom: 0.7;
 	}
@@ -2110,20 +2110,13 @@ ul.osx-dock li span {
 
 
 /* fullscreen download page row on desktop screens */
-@media only screen and (min-width: 991px) {
-	.download-page .row-light, .download-page .row-dark {
-		height: calc(100vh - 295px);
-	}
-	.download-page .button-effect {
-		max-width: 340px;
-	}
-	.download-page .button-effect .sublabel.long {
-		display: inline;
-	}
+
+@media only screen and (max-width: 395px) {
 	.download-page .button-effect .sublabel.short {
 		display: none;
 	}
-}@media only screen and (min-width: 767px) {
+}
+@media only screen and (min-width: 767px) {
 	.download-page .row-dark {
 	    display: flex;
 	    flex-direction: row-reverse;
@@ -2133,12 +2126,33 @@ ul.osx-dock li span {
 	    }
 	}
 }
-@media only screen and (max-width: 395px) {
+@media only screen and (min-width: 991px) {
+	.download-page .button-effect {
+		max-width: 340px;
+	}
+	.download-page .button-effect .sublabel.long {
+		display: inline;
+	}
 	.download-page .button-effect .sublabel.short {
 		display: none;
 	}
 }
 
+@media only screen and (min-height: 660px) {
+	.download-page .row-light, .download-page .row-dark {
+		height: calc(100vh - 295px);
+	}
+}
+@media only screen and (min-height: 1024px) and (max-width: 1025px) {	/* two pages for tablets in portrait */
+	.download-page .row-light, .download-page .row-dark {
+		height: calc((100vh - 295px) / 2);
+	}
+} 
+@media only screen and (min-height: 861px) {	/* two pages for tablets in portrait */
+	.download-page .row-light, .download-page .row-dark {
+		height: calc((100vh - 295px) / 2);
+	}
+} 
 
 
 hr.hr-new {
