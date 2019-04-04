@@ -610,15 +610,17 @@ li.nav-item.nav-active {
 	color: #222;
 	width: 100%;
     height: 100%;
-	background-color: rgb(32, 32, 32);
-	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
-	background-size: 10px 10px, 10px 10px, 10px 5px;
-	background-position: 0px 0px, 5px 5px, 0px 0px;
     padding: 10px 10px 50px 10px;
     overflow-x: scroll;
     overflow-y: hidden;
 }
 
+.bg-carbon, .row.row-dark.bg-carbon, .row.row-light.bg-carbon {
+	background-color: rgb(32, 32, 32);
+	background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(to bottom, rgb(8, 8, 8), rgb(32, 32, 32));
+	background-size: 10px 10px, 10px 10px, 10px 5px;
+	background-position: 0px 0px, 5px 5px, 0px 0px;
+}
 
 #panel-slide .fab, #panel-slide .fas.brand  {
 	font-size: 50px;
@@ -2184,7 +2186,7 @@ hr.hr-new {
 }
 .index-page .header-tile {
 	display: flex;
-	background-color: #3f3d3d;
+	background-color: #3f3d3d88;
 	border: 1px solid #2e2d2d;
 	border-top: none;
 	border-left: none;
@@ -2207,7 +2209,7 @@ hr.hr-new {
 		font-size: 16px;
 	}
 }
-@media only screen and (max-width: 991px) {	/* smaller font to fit on small desktop screens */
+@media only screen and (max-width: 991psx) {	/* smaller font to fit on small desktop screens */
 	.index-page .header-tile {
 		font-size: 14px;
 	}
