@@ -2197,11 +2197,13 @@ hr.hr-new {
 .index-page .header-tile .tile-label {
 	margin: auto auto;
 	text-align: center;
+	transition: transform 1.0s ease;
 }
 .index-page .header-tile .tile-label-value {
 	display: block;
 	font-weight: bold;
 	color: #F19B7E;
+	transition: transform 1.0s ease;
 }
 .index-page .header-tile:hover {
 	background-color: #3f3d3d80;
