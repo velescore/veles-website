@@ -1496,14 +1496,17 @@ Main components
 }
 
 .list-group {
+	border-color: #e4b99c68;
+	max-width: 85%;
 	border-radius: 5px;
 	margin-bottom: 15px;
-	background: #262626;
+	background: #262626bb;
 }
 
 .list-group-item.active {
-	border-width: 2px;
-	background-color: #292929;
+	border-width: 1px;
+	background-color: #292929bb;
+	border-color: #e4b99c68;
 }
 
 .list-group-item {
@@ -1511,12 +1514,13 @@ Main components
 	color: #fff;
 	border-radius: 5px;
 	font-weight: bold;
+	border-color: transparent;
 }
 
 /*.nav-vertical .*/
 
 #headingOne {
-	background: #262626;
+	background: #262626bb;
 }
 
 .night-mode #headingOne {
@@ -1731,12 +1735,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Breadcrumb */
 .breadcrumb {
-	background: linear-gradient(90deg, #262626, #e4b99c);
+	background: linear-gradient(90deg, #262626b2, #e4b99cb2);
 	transform: skew(-40deg, 0deg) scaleX(1);
 	max-width: 100%;
 	margin-top: 20px;
 	height: 44px;
-	opacity: 0.75;
 	margin: 10px;
 }
 .bread-button {
