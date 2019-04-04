@@ -516,6 +516,7 @@ li.nav-item.nav-active {
 	opacity: 0.95;
 	margin-top: 10px;
 	max-height: 180px;
+	margin: auto auto;
 }
 
 .rounded {
@@ -1061,7 +1062,7 @@ a:hover {
     font-size: 13px;
     color: #ffffff88;
     display: inline;
-    padding: 10px 30px 10px 0px;
+    padding: 10px 10px 10px 0px;
     margin-left: -20px;
     top: -1px;
 }
@@ -1094,7 +1095,7 @@ a:hover {
   width: 60px;
   opacity: 0;
   content: '';
-  height: 1px;
+  height: 2px;
   position: absolute;
   display: block;
   background: #f19b7e;
@@ -2086,11 +2087,38 @@ ul.osx-dock li span {
 .download-page .button-effect .sublabel.short {
 	display: inline;
 }
+.download-page .col-image {
+	display: flex;
+	float: right;
+}
+.download-page .col-text {
+	float: left;
+}
+.download-page .row-dark .col-text {
+    padding-left: 7%;
+}
+.download-page .row-light .col-text {
+    padding-right: 7%;
+}
+.download-page .button-effect {
+	margin: 15px;
+}
+.download-page .button-effect .label, 
+.download-page .button-effect .sublabel {
+  padding: 10px 20px;
+}
+.download-page .button-effect .sublabel {
+  padding: 10px 0 10px 10px;
+}
+
 
 /* fullscreen download page row on desktop screens */
 @media only screen and (min-width: 991px) {
 	.download-page .row-light, .download-page .row-dark {
-		height: calc(100vh - 264px);
+		height: calc(100vh - 295px);
+	}
+	.download-page .button-effect {
+		max-width: 340px;
 	}
 	.download-page .button-effect .sublabel.long {
 		display: inline;
@@ -2098,8 +2126,14 @@ ul.osx-dock li span {
 	.download-page .button-effect .sublabel.short {
 		display: none;
 	}
-	.download-page .button-effect {
-		margin-right: 7vw;
+}@media only screen and (min-width: 767px) {
+	.download-page .row-dark {
+	    display: flex;
+	    flex-direction: row-reverse;
+
+	    @include sm-min {
+	        flex-direction: row;
+	    }
 	}
 }
 @media only screen and (max-width: 395px) {
