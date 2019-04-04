@@ -35,7 +35,7 @@ html {
 .header {
 	display: block;
 	position: relative;
-	height: 350px !important;
+	height: calc(60vh - 60px) !important;
 	background: transparent;
 	overflow: hidden;
 	border-bottom: 0px;
@@ -55,9 +55,16 @@ html {
 }
 
 /* Zoom out the effect when on screen smaller than iPad */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 800px) {
 	.movething {
 		zoom: 0.5;
+		height: calc(60vh - 120px) !important;
+	}
+}
+@media only screen and (max-height: 600px) {
+	.movething {
+		zoom: 0.5;
+		height: calc(60vh - 120px) !important;
 	}
 }
 
@@ -2164,6 +2171,60 @@ hr.hr-new {
 	height: 1px;
 }
 
+/* index tile row  */
+.index-page .row-no-limit:first-child {
+	height: calc(40vh - 40px) !important;
+	border-left: 1px solid #2e2d2d;
+	padding: 0;
+}
+.index-page .header-tile {
+	display: flex;
+	background-color: #3f3d3d;
+	border: 1px solid #2e2d2d;
+	border-top: none;
+	border-left: none;
+	height: calc((40vh - 40px) / 2);
+	width: 25%;
+	font-size: 18px;
+}
+.index-page .header-tile .tile-label {
+	margin: auto auto;
+	text-align: center;
+}
+.index-page .header-tile .tile-label-value {
+	display: block;
+	font-weight: bold;
+	color: #F19B7E;
+}
+
+@media only screen and (max-width: 1024px) {
+	.index-page .header-tile {
+		font-size: 16px;
+	}
+}
+@media only screen and (max-width: 991px) {	/* smaller font to fit on small desktop screens */
+	.index-page .header-tile {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 800px), only screen and (max-height: 600px) {	/* same breakpoints as .movething to fit */
+	.index-page .row-no-limit:first-child {
+		height: calc(70vh - 40px) !important;
+	}
+	.index-page .header-tile {
+		width: 100%;
+		height: calc((70vh - 40px) / 8);
+	}
+}
+@media only screen and (max-height: 480px) {	/* Galaxy S5, iPhone 5/SE and smaller only 6 tiles per screen */
+	.index-page .row-no-limit:first-child {
+		height: calc((70vh - 38px) / 6 * 8) !important;
+	}
+	.index-page .header-tile {
+		width: 100%;
+		height: calc((70vh - 38px) / 6);
+	}
+}
 
 
 
