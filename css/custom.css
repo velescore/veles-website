@@ -1502,25 +1502,25 @@ Main components
 
 /* sidebar faq wiki etc...*/
 .list-group {
+	background-color: #262626bb;
 	width: 100%;
 	border-radius: 5px;
 	margin-bottom: 15px;
-	background: #262626bb;
 }
 
 .list-group-hover .list-group-item:hover {
-    background-color: transparent;
+    background-color: #11111144;
 	color: #fff;
 	border-left: 4px solid #F19B7E;
 }
 
 .list-group-item.active {
-	background-color: transparent;
+	background-color: #11111144;
 	border-left: 4px solid #e4b99c!important;
 }
 
 .list-group-item {
-	background-color: #262626b4;
+	background-color: transparent;
 	border-radius: 5px;
 	font-weight: bold;
 	color: #fff;
