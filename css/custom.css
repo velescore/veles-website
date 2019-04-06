@@ -545,6 +545,16 @@ li.nav-item.nav-active {
 	text-align: center;
 }
 
+div#accordion {
+    margin-top: 3%;
+}
+
+#img-faq {
+    padding-bottom: 4px;
+    margin-left: -25px;
+    max-height: 45px;
+}
+
 #img-introduction {
 	margin-top: 15px;
 	max-height: 300px;
@@ -2247,7 +2257,7 @@ hr.hr-new {
 	height: 1px;
 }
 
-/* index tile row  
+/* index tile row
 #large-header .container {
 	top: 0;
 	height: calc(100vh-100px);
@@ -2354,7 +2364,7 @@ hr.hr-new {
 	}
 	.movething h1.main-title {
 		font-size: 6vw;
-	}	
+	}
 }
 @media only screen and (max-height: 480px) {	/* Galaxy S5, iPhone 5/SE and smaller only 6 tiles per screen */
 	#large-header .row-no-limit:first-child {
