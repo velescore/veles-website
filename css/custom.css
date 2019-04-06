@@ -453,16 +453,21 @@ div#brand-text {
     background-color: rgba(100, 100, 100, 0.3)
 }
 
-
 .nav-link, .nav-link:hover {
 	height: 43px;
 	font-size: 15px;
 	color: #fff;
 }
 
+.nav-item.template, .nav-item.template:hover {
+	opacity: 0;
+}
+
 li.nav-item {
 	border-bottom: 2px solid transparent;
 	padding: 8px 0 5px 0;
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
 }
 
 li.nav-item:hover {

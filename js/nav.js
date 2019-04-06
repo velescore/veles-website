@@ -214,7 +214,51 @@ var velesSinglePageApp = {
         return $('.footer-overlay').hasClass('footer-panel-slide');
     },
 
+    'buildMenus': function() {
+        var menuTemplates = {};
+        var $menu = $('.nav-item.template').parent();
+
+        menuTemplates['subMenuItem'] = $('.dropdown-item.template')[0].outerHTML;
+        $('.dropdown-item.template').remove();
+
+        menuTemplates['menuDropdown'] = $('.nav-item.dropdown.template')[0].outerHTML;
+        $('.nav-item.dropdown.template').remove();
+
+        menuTemplates['menuItem'] = $('.nav-item.template')[0].outerHTML;
+        $('.nav-item.template').remove();
+
+        this.buildMenuLevel(menuTree, $menu, menuTemplates);
+       
+        $('.navbar .template').removeClass('template');
+    },
+
+    'buildMenuLevel': function(tree, $parent, templates, level = 0) {
+        for (var i = 0; i < tree.length; i++) {
+            console.log(tree[i].title);
+
+            if (!tree[i].hasOwnProperty('page'))
+                tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
+
+            if (tree[i].hasOwnProperty('items')) {
+                var $item = $(templates['menuDropdown']
+                    .replace('{{title}}', tree[i].title)
+                    .replace('{{url}}', tree[i].page + this.pageSuffix)
+                    .replace('{{page}}', tree[i].page).replace('{{page}}', tree[i].page)
+                    );
+                $subMenu = $item.appendTo($parent).find('div');
+                this.buildMenuLevel(tree[i].items, $subMenu, templates, level+1);
+            } else {
+                var item = ((level) ? templates['subMenuItem'] : templates['menuItem'])
+                    .replace('{{title}}', tree[i].title)
+                    .replace('{{url}}', tree[i].page + this.pageSuffix);
+                $parent.append(item);
+            }
+            
+        }
+    },
+
     'start': function() {
+        this.buildMenus();
         this.bindEvents();
         this.currentPage = 'index';
 

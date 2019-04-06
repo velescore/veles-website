@@ -27,24 +27,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item template">
+                        <a class="nav-link" href="{{url}}">{{title}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                     Resources                     </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="wiki.html">Wiki</a>
-                            <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
-                            <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>
-                            <a class="dropdown-item" href="services.html">External-services</a>
-                            <a class="dropdown-item" href="community.html">Community-milestones</a>
+                    <li class="nav-item dropdown template">
+                        <a class="nav-link dropdown-toggle" href="{{url}}" id="navbarDropdown-{{page}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{title}}</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-{{page}}">
+                            <a class="dropdown-item template" href="{{url}}">{{title}}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -500,6 +489,7 @@
     </div>
     <!-- Common dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/menuTree.js"></script>
     <script src="js/nav.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/websocket.js"></script>
