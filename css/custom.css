@@ -2250,6 +2250,7 @@ hr.hr-new {
 
 #large-header canvas {
 	position: absolute;
+	pointer-events: none;
 }
 #large-header .container .row {
 	padding-left: 15px;
@@ -2263,13 +2264,13 @@ hr.hr-new {
 }
 
 #large-header .row:last-child {
-	border-left: 1px solid #2e2d2d;
+	border-left: none; /* #2e2d2d;*/
 	padding: 0px 15px 0px 15px;
 }
 #large-header .header-tile {
 	display: flex;
 	background-color: transparent;
-	border: 1px solid #2e2d2d;
+	border: none; /*#2e2d2d;*/
 	border-bottom: none;
 	border-left: none;
 	height: calc((40vh - 40px) / 2);
