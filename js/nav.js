@@ -36,6 +36,7 @@ var velesSinglePageApp = {
             velesSinglePageApp.hideMobileMenu();
             velesSinglePageApp.runPageHook('init');
             velesSinglePageApp.rebuildPageMenu(page, true);
+            velesSinglePageApp.updateTemplate();
             velesSinglePageApp.bindEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
@@ -43,12 +44,18 @@ var velesSinglePageApp = {
                 velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');
                 velesSinglePageApp.rebuildPageMenu(page, false);
+                velesSinglePageApp.updateTemplate();
                 velesSinglePageApp.bindEvents();
             }); 
         }
 
         // just start scrolling to the top
         window.scrollTo(0,0);
+    },
+
+    'updateTemplate': function() {
+        $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
+        $('[data-id="page.url"]').text(this.menuTreeIndex[page].title);
     },
 
     'addPageHook': function(pageName, hookName, callback) {
@@ -245,8 +252,6 @@ var velesSinglePageApp = {
             console.log('[Sidebar] Page tree not indexed: ' + page);
             return;
         }
-
-        $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
 
         if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
             this.buildMenuLevel(
