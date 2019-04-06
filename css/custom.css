@@ -77,19 +77,28 @@ html {
 	font-size: 15px;
 	text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
 }
-.sidebar:hover:before{
-  	opacity:0;
+.sidebar:hover:before,
+.sidebar.sidebar-expand:before, 
+.sidebar.sidebar-expand:hover:before {
+	opacity: 0;
 }
-.sidebar:hover{
+.sidebar:hover, .sidebar.sidebar-expand {
 	width: 20%;
 	background-color: #000000dd;
 	border-bottom: 40px solid transparent;
 	border-top: 60px solid transparent;
 }
-.sidebar:hover li{
+.sidebar:hover li, .sidebar.sidebar-expand li {
   	opacity:1;
 }
-.sidebar a{
+.sidebar.sidebar-expand, .sidebar.sidebar-expand:hover {
+	border-top: 0;
+	border-bottom: 0;
+	margin-top: 60px;
+	margin-bottom: 38px;
+}
+
+.sidebar a {
   text-decoration:none;
   color:#bbb;
   line-height: 50px;
@@ -99,6 +108,10 @@ html {
 }
 .sidebar a:hover{
   color:#fff;
+  text-decoration: none;
+}
+.sidebar li {
+	border-left: 4px solid transparent;
 }
 .sidebar li:hover{
 	color: #fff;
