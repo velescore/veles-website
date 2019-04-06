@@ -121,6 +121,7 @@ var velesSinglePageApp = {
         // Click events on navigation links
         $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
             .add('.nav-vertical a').add('.breadcrumb-item a')
+            .add('.sidebar .menu-item')
             .not('.nav-external-app').not('.spa').click(function(e) {
            e.preventDefault();
            velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
@@ -239,7 +240,6 @@ var velesSinglePageApp = {
             return;
         }
 
-
         $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
 
         if (this.menuTreeIndex[page].hasOwnProperty('sections'))
@@ -250,12 +250,20 @@ var velesSinglePageApp = {
                 page
             );
 
-        if (this.menuTreeIndex[page].hasOwnProperty('items'))
+        else if (this.menuTreeIndex[page].hasOwnProperty('items'))
             this.buildMenuLevel(
                 this.menuTreeIndex[page].items,
                 $('.sidebar ul'), 
                 this.menuTemplates['sidebar'],
                 page
+            );
+
+        else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items'))
+            this.buildMenuLevel(
+                this.menuTreeIndex[this.menuTreeIndex[page].parent].items,
+                $('.sidebar ul'), 
+                this.menuTemplates['sidebar'],
+                page.parent
             );
     },
 
@@ -315,16 +323,18 @@ var velesSinglePageApp = {
             }
 
             // Index to the smarter structure
-            this.menuTreeIndex[tree[i].page] = tree[i];
-            this.menuTreeIndex[tree[i].page].next = null;
-            this.menuTreeIndex[tree[i].page].prev = null;
-            this.menuTreeIndex[tree[i].page].parent = parentPage;
+            if (!this.menuTreeIndex.hasOwnProperty(tree[i].page)) {
+                this.menuTreeIndex[tree[i].page] = tree[i];
+                this.menuTreeIndex[tree[i].page].next = null;
+                this.menuTreeIndex[tree[i].page].prev = null;
+                this.menuTreeIndex[tree[i].page].parent = parentPage;
 
-            if (prevPage) {
-                this.menuTreeIndex[prevPage].next = tree[i].page;
-                this.menuTreeIndex[tree[i].page].prev = prevPage;
+                if (prevPage) {
+                    this.menuTreeIndex[prevPage].next = tree[i].page;
+                    this.menuTreeIndex[tree[i].page].prev = prevPage;
+                }
+                prevPage = tree[i].page;
             }
-            prevPage = tree[i].page;
         }
     },
 
