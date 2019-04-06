@@ -32,6 +32,80 @@ html {
   scroll-behavior: smooth;
 }
 
+.sidebar, .sidebar *, .sidebar:before{
+  transition: all 0.24s ease-in-out;
+}
+.sidebar{
+	overflow: hidden;
+	margin-right: 0px;
+	height: auto;
+	width: 10px;
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	background-color: #373737;
+	overflow-x: hidden;
+	padding-top: 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	bottom: 0;
+}
+.sidebar div{
+  opacity:0;
+}
+.sidebar:before{
+	width: 10px;
+	font-size: 27px;
+	content: ">";
+	background-color: black;
+	padding-top: 20px;
+	padding-bottom: 23px;
+	border-right: solid 2px #262626;
+	position: absolute;
+	top: 50%;
+	overflow: visible;
+	transform: translate(0%,-50%);
+	color: #bbb;
+	font-size: 15px;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
+}
+.sidebar:hover:before{
+  	opacity:0;
+}
+.sidebar:hover{
+	width: 20%;
+	background-color: #000000dd;
+	margin-top: 61px;
+	margin-bottom: 39px;
+}
+.sidebar:hover div{
+  	opacity:1;
+}
+.sidebar a{
+  text-decoration:none;
+  color:#bbb;
+  line-height: 50px;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
+  padding: 0 20px;
+  display:block;
+}
+.sidebar a:hover{
+  color:#fff;
+}
+.sidebar div:hover{
+	color: #fff;
+    border-left: 4px solid #F19B7E;
+    background-color: rgba(100, 100, 100, 0.3);
+}
+.sidebar div:last-child{
+  border-bottom:none;
+  border-radius: 0px 0px 5px 0px;
+}
+.sidebar div:first-child{
+  border-radius: 0px 5px 0px 0px;
+}
+
 .header {
 	display: block;
 	position: relative;
@@ -557,6 +631,7 @@ li.nav-item.nav-active {
    	bottom: 0px;
    	height: 40px;
    	width: 100%;
+	margin-left: 10px;
 	background-color: transparent;
 	color: white;
 	font-size: 13px;
@@ -1594,7 +1669,7 @@ Main components
 
 /* scroll bar */
 body::-webkit-scrollbar {
-    width: 1em;
+    width: 10px;
     background-color: #393939;
 }
 
@@ -1633,7 +1708,7 @@ body::-webkit-scrollbar-thumb:hover {
    	overflow:auto;
 }
 #dev-console div.jquery-console-inner::-webkit-scrollbar {
-    width: 1em;
+    width: 20px;
     background-color: #393939;
 }
 #dev-console div.jquery-console-inner::-webkit-scrollbar-track {

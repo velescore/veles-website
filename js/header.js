@@ -9,8 +9,8 @@ var indexHeaderWidget = {};
         // Main
         initHeader();
         initAnimation();
-        addListeners();            
-    } 
+        addListeners();
+    }
 
     function initHeader() {
         //width = window.innerWidth;
@@ -103,7 +103,7 @@ var indexHeaderWidget = {};
             posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
         }
         /* baggins: zoom support, keep animation inside the canvas */
-        target.x = Math.min(posx / $('.movething').css('zoom'), maxX);    
+        target.x = Math.min(posx / $('.movething').css('zoom'), maxX);
         target.y = Math.min(posy / $('.movething').css('zoom'), maxY);
     }
 
