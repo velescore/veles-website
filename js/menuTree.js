@@ -11,14 +11,16 @@
  */
 var menuTree = [
     {
-       'title': 'Index',
-       'sections': [
+    	'page': 'index',
+       	'title': 'Home',
+       	'sections': [
            { 'title': 'Getting-started' },
            { 'title': 'Introduction' },
            { 'title': 'Funding' },
            { 'title': 'Dynamic-character' },
            { 'title': 'Main-features' }
-       ]
+       ],
+       'hideFromNav': true,
     },
 	{
        'title': 'About',
@@ -52,7 +54,7 @@ var menuTree = [
        ]
     },
 	{
-		'title': 'Resource',
+		'title': 'Resources',
 		'items': [
 			{ 'title': 'FAQ' },
 			{ 'title': 'Wiki' },
