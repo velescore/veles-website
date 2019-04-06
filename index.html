@@ -28,22 +28,26 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item template">
-                        <a class="nav-link" href="{{url}}">{{title}}</a>
+                        <a class="nav-link" href="{{item.url}}">{{item.title}}</a>
                     </li>
                     <li class="nav-item dropdown template">
-                        <a class="nav-link dropdown-toggle" href="{{url}}" id="navbarDropdown-{{page}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{title}}</a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-{{page}}">
-                            <a class="dropdown-item template" href="{{url}}">{{title}}</a>
+                        <a class="nav-link dropdown-toggle" href="{{item.url}}" id="navbarDropdown-{{item.page}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{item.title}}</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-{{item.page}}">
+                            <a class="dropdown-item template" href="{{item.url}}">{{item.title}}</a>
                         </div>
                     </li>
                 </ul>
                 <div class="sidebar text-left">
-                    <div><a><i class="fas fa-question-circle brand" aria-hidden="true"></i><span>FAQ</span></a></div>
-                    <div><a ref="#"><i class="fab fa-wikipedia-w brand" aria-hidden="true"></i><span>Wiki</span></a></div>
-                    <div><a href="#"><i class="fas fa-wrench brand" aria-hidden="true"></i><span>Coin-specs</span></a></div>
-                    <div><a href="#"><i class="fas fa-server brand" aria-hidden="true"></i><span>Mining-pools</span></a></div>
-                    <div><a href="#"><i class="fas fa-handshake brand" aria-hidden="true"></i>External-services</a></div>
-                    <div><a href="#"><i class="fas fa-users brand" aria-hidden="true"></i>Community</a></div>
+                    <h4>{{page.title}}</h4>
+                    <ul>
+                        <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                        <li class="menu-item submenu template">
+                            <a href="{{item.url}}"><span>{{item.title}}</span></a>
+                            <ul>
+                                <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

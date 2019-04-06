@@ -5,6 +5,8 @@ var velesSinglePageApp = {
     'pageHooks': {},
     'cachedPages': {},
     'eventsBound': {},
+    'menuTreeIndex': {},
+    'menuTemplates': {},
 
     'go': function(page = 'index') {
         // cache the previous HTML, index is always cached
@@ -32,12 +34,14 @@ var velesSinglePageApp = {
             velesSinglePageApp.hideOverlay();
             velesSinglePageApp.hideMobileMenu();
             velesSinglePageApp.runPageHook('init');
+            velesSinglePageApp.rebuildPageMenu(page);
             velesSinglePageApp.bindEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
                 velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');
+                velesSinglePageApp.rebuildPageMenu(page);
                 velesSinglePageApp.bindEvents();
             }); 
         }
@@ -215,45 +219,111 @@ var velesSinglePageApp = {
     },
 
     'buildMenus': function() {
-        var menuTemplates = {};
-        var $menu = $('.nav-item.template').parent();
+        this.menuTreeIndex = {};
+        this.menuTemplates = {
+            'navbar': this.extractTemplates(),
+            'sidebar': this.extractTemplates('.sidebar')
+        };
 
-        menuTemplates['subMenuItem'] = $('.dropdown-item.template')[0].outerHTML;
-        $('.dropdown-item.template').remove();
-
-        menuTemplates['menuDropdown'] = $('.nav-item.dropdown.template')[0].outerHTML;
-        $('.nav-item.dropdown.template').remove();
-
-        menuTemplates['menuItem'] = $('.nav-item.template')[0].outerHTML;
-        $('.nav-item.template').remove();
-
-        this.buildMenuLevel(menuTree, $menu, menuTemplates);
+        this.buildMenuLevel(menuTree, $('#navbarResponsive ul.navbar-nav'), this.menuTemplates['navbar']);
+        //this.buildMenuLevel(menuTree, $('.sidebar ul'), this.menuTemplates['sidebar']);
        
         $('.navbar .template').removeClass('template');
     },
 
-    'buildMenuLevel': function(tree, $parent, templates, level = 0) {
+    'rebuildPageMenu': function(page) {
+        $('.sidebar ul').html('');
+
+        if (!this.menuTreeIndex.hasOwnProperty(page)){
+            console.log('[Sidebar] Page tree not indexed: ' + page);
+            return;
+        }
+
+        $('.sidebar').html($('.sidebar').html().replace('{{page.title}}', this.menuTreeIndex[page].title));
+
+        if (this.menuTreeIndex[page].hasOwnProperty('sections'))
+            this.buildMenuLevel(
+                this.menuTreeIndex[page].sections,
+                $('.sidebar ul'), 
+                this.menuTemplates['sidebar'],
+                page
+            );
+
+        if (this.menuTreeIndex[page].hasOwnProperty('items'))
+            this.buildMenuLevel(
+                this.menuTreeIndex[page].items,
+                $('.sidebar ul'), 
+                this.menuTemplates['sidebar'],
+                page
+            );
+    },
+
+    'extractTemplates': function(context = null) {
+        var menuTemplates = {};
+
+        if (!context) {
+            menuTemplates['subMenuItem'] = $('.dropdown-item.template')[0].outerHTML;
+            $('.dropdown-item.template').remove();
+
+            menuTemplates['menuDropdown'] = $('.nav-item.dropdown.template')[0].outerHTML;
+            $('.nav-item.dropdown.template').remove();
+
+            menuTemplates['menuItem'] = $('.nav-item.template')[0].outerHTML;
+            $('.nav-item.template').remove();
+
+        } else {
+            menuTemplates['subMenuItem'] = $(context).find('.submenu-item.template')[0].outerHTML;
+            $('.submenu-item.template').remove();
+
+            menuTemplates['menuDropdown'] = $(context).find('.menu-item.submenu.template')[0].outerHTML;
+            $('.menu-item.submenu.template').remove();
+
+            menuTemplates['menuItem'] = $(context).find('.menu-item.template')[0].outerHTML;
+            $('.menu-item.template').remove();
+        }
+
+        return menuTemplates;
+    },
+
+    'buildMenuLevel': function(tree, $parent, templates, parentPage = null) {
+        var prevPage = null;
+
         for (var i = 0; i < tree.length; i++) {
             console.log(tree[i].title);
+
+            if (tree[i].hasOwnProperty('hideFromNav') && tree[i].hideFromNav)
+                continue;
 
             if (!tree[i].hasOwnProperty('page'))
                 tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
             if (tree[i].hasOwnProperty('items')) {
                 var $item = $(templates['menuDropdown']
-                    .replace('{{title}}', tree[i].title)
-                    .replace('{{url}}', tree[i].page + this.pageSuffix)
-                    .replace('{{page}}', tree[i].page).replace('{{page}}', tree[i].page)
+                    .replace('{{item.title}}', tree[i].title)
+                    .replace('{{item.url}}', tree[i].page + this.pageSuffix)
+                    .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
                     );
                 $subMenu = $item.appendTo($parent).find('div');
-                this.buildMenuLevel(tree[i].items, $subMenu, templates, level+1);
+                this.buildMenuLevel(tree[i].items, $subMenu, templates, tree[i].page);
+
             } else {
-                var item = ((level) ? templates['subMenuItem'] : templates['menuItem'])
-                    .replace('{{title}}', tree[i].title)
-                    .replace('{{url}}', tree[i].page + this.pageSuffix);
+                var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
+                    .replace('{{item.title}}', tree[i].title)
+                    .replace('{{item.url}}', tree[i].page + this.pageSuffix);
                 $parent.append(item);
             }
-            
+
+            // Index to the smarter structure
+            this.menuTreeIndex[tree[i].page] = tree[i];
+            this.menuTreeIndex[tree[i].page].next = null;
+            this.menuTreeIndex[tree[i].page].prev = null;
+            this.menuTreeIndex[tree[i].page].parent = parentPage;
+
+            if (prevPage) {
+                this.menuTreeIndex[prevPage].next = tree[i].page;
+                this.menuTreeIndex[tree[i].page].prev = prevPage;
+            }
+            prevPage = tree[i].page;
         }
     },
 
