@@ -116,10 +116,10 @@ var velesSinglePageApp = {
                     velesSinglePageApp.showMobileSlider();
             })
 
-            //$('body').resize(function(){
-                //if ($('.sidebar').hasClass('sidebar-expand'))
-                //    velesSinglePageApp.sidebarResizePage();
-            //});
+            $('body').resize(function(){
+                if ($('.sidebar').hasClass('sidebar-expand'))
+                    velesSinglePageApp.sidebarResizePage();
+            });
 
             this.eventsBound['navbar-toggler'] = true;
         }
@@ -325,6 +325,7 @@ var velesSinglePageApp = {
 
     'sidebarResizePage': function() {
         if ($('body').width() > 990) {
+            $('#content').css('padding-left', 0);
             this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
 
             if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
