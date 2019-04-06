@@ -10,14 +10,83 @@
  * of the License, or (at your option) any later version.
  */
 var menuTree = [
-	{ 'title': 'About'	 },
-	{ 'title': 'Download' },
-	{ 'title': 'Roadmap' },
+    {
+       'title': 'Index',
+       'sections': [
+           { 'title': 'Getting-started' },
+           { 'title': 'Introduction' },
+           { 'title': 'Funding' },
+           { 'title': 'Dynamic-character' },
+           { 'title': 'Main-features' }
+       ]
+    },
+	{
+       'title': 'About',
+       'sections': [
+           { 'title': 'About-us' },
+           { 'title': 'AltcoinBaggins' },
+           { 'title': 'Mdfkbtc' },
+           { 'title': 'Virtuado' },
+           { 'title': 'Uhlik' }
+       ]
+    },
+	{
+       'title': 'Download',
+       'sections': [
+           { 'title': 'Linux' },
+           { 'title': 'Windos' },
+           { 'title': 'MacOS' },
+           { 'title': 'Raspberry' },
+           { 'title': 'Source-code' },
+           { 'title': 'Whitepaper' }
+
+       ]
+    },
+	{
+       'title': 'Roadmap',
+       'sections': [
+           { 'title': 'Q1' },
+           { 'title': 'Q2' },
+           { 'title': 'Q3' },
+           { 'title': 'Q4' }
+       ]
+    },
 	{
 		'title': 'Resource',
 		'items': [
 			{ 'title': 'FAQ' },
-			{ 'title': 'Wiki' }	
+			{ 'title': 'Wiki' },
+            { 'title': 'Coin-specs' },
+            { 'title': 'Mining-pools'},
+            { 'title': 'External-service'},
+            { 'title': 'Community-milestones'}
 		]
-	}
+	},
+    {
+        'title': 'Explorer',
+        'items': [
+            { 'title': 'Index',
+              'url': 'http://35.240.96.108:88'
+            },
+            { 'title': 'Search',
+              'url': 'http://35.240.96.108:88'
+            },
+            {
+              'title': 'Richlist',
+              'url': 'http://35.240.96.108:88/Richlist'
+            },
+            { 'title': 'Masternodes',
+              'url': 'http://35.240.96.108:88/masternodes'
+            },
+            { 'title': 'Coin-info',
+              'url': 'http://35.240.96.108:88/coininfo'
+            },
+            { 'title': 'Mining-stats',
+              'url': 'http://35.240.96.108:88/miningstats'
+            },
+            { 'title': 'Api',
+              'url': 'http://35.240.96.108:88/info'
+            }
+        ]
+    }
 ];
