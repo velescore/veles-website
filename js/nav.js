@@ -121,7 +121,7 @@ var velesSinglePageApp = {
         // Click events on navigation links
         $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
             .add('.nav-vertical a').add('.breadcrumb-item a')
-            .add('.sidebar .menu-item')
+            .add('.sidebar a')
             .not('.nav-external-app').not('.spa').click(function(e) {
            e.preventDefault();
            velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
