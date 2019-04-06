@@ -54,8 +54,8 @@ var velesSinglePageApp = {
     },
 
     'updateTemplate': function() {
-        $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
-        $('[data-id="page.url"]').text(this.menuTreeIndex[page].title);
+        $('[data-id="page.title"]').text(this.menuTreeIndex[this.currentPage].title);
+        $('[data-id="page.url"]').text(this.menuTreeIndex[this.currentPage].title);
     },
 
     'addPageHook': function(pageName, hookName, callback) {
@@ -348,7 +348,7 @@ var velesSinglePageApp = {
         for (var i = 0; i < tree.length; i++) {
             console.log(tree[i].title);
 
-            if (!tree[i].hasOwnProperty('hideFromNav') || tree[i].hideFromNav) {
+            if (!tree[i].hasOwnProperty('hideFromNav') && !tree[i].hideFromNav) {
                 if (!tree[i].hasOwnProperty('page'))
                     tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
