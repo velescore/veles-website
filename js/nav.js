@@ -7,6 +7,7 @@ var velesSinglePageApp = {
     'eventsBound': {},
     'menuTreeIndex': {},
     'menuTemplates': {},
+    'sidebarPadContent': 0,
 
     'go': function(page = 'index') {
         // cache the previous HTML, index is always cached
@@ -34,14 +35,14 @@ var velesSinglePageApp = {
             velesSinglePageApp.hideOverlay();
             velesSinglePageApp.hideMobileMenu();
             velesSinglePageApp.runPageHook('init');
-            velesSinglePageApp.rebuildPageMenu(page);
+            velesSinglePageApp.rebuildPageMenu(page, true);
             velesSinglePageApp.bindEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
                 velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');
-                velesSinglePageApp.rebuildPageMenu(page);
+                velesSinglePageApp.rebuildPageMenu(page, false);
                 velesSinglePageApp.bindEvents();
             }); 
         }
@@ -232,7 +233,7 @@ var velesSinglePageApp = {
         $('.navbar .template').removeClass('template');
     },
 
-    'rebuildPageMenu': function(page) {
+    'rebuildPageMenu': function(page, cachedPage = false) {
         $('.sidebar ul').html('');
 
         if (!this.menuTreeIndex.hasOwnProperty(page)){
@@ -242,29 +243,40 @@ var velesSinglePageApp = {
 
         $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
 
-        if (this.menuTreeIndex[page].hasOwnProperty('sections'))
+        if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].sections,
                 $('.sidebar ul'), 
                 this.menuTemplates['sidebar'],
                 page
             );
+            this.sidebarCollapse();
 
-        else if (this.menuTreeIndex[page].hasOwnProperty('items'))
+        } else if (this.menuTreeIndex[page].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].items,
                 $('.sidebar ul'), 
                 this.menuTemplates['sidebar'],
                 page
             );
+            this.sidebarCollapse();
 
-        else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items'))
+        } else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[this.menuTreeIndex[page].parent].items,
                 $('.sidebar ul'), 
                 this.menuTemplates['sidebar'],
                 page.parent
             );
+            // expand sidebar when parent is menu, on larger screens
+            this.sidebarExpand();
+            
+            if (!cachedPage)
+                this.sidebarResizePage();
+
+        } else {
+            this.sidebarCollapse();
+        }
     },
 
     'extractTemplates': function(context = null) {
@@ -292,6 +304,31 @@ var velesSinglePageApp = {
         }
 
         return menuTemplates;
+    },
+
+    'sidebarExpand': function() {
+        if ($('body').width() > 990 ) {
+            if (!$('.sidebar').hasClass('sidebar-expand')) {
+                $('.sidebar').addClass('sidebar-expand');
+            }
+        }        
+    },
+
+    'sidebarCollapse': function() {
+        $('.sidebar').removeClass('sidebar-expand');
+    },
+
+    'sidebarResizePage': function() {
+        if ($('body').width() > 990) {
+            this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
+
+            if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
+                console.log('oga');
+                $('#content').css('padding-left', this.sidebarPadContent+'px');
+            } else {
+                $('#content-wrapper').css('padding-left', 'unset');
+            }
+        }        
     },
 
     'buildMenuLevel': function(tree, $parent, templates, parentPage = null) {
