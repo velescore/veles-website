@@ -50,10 +50,8 @@ html {
     margin-top: 61px;
     margin-bottom: 39px;
     bottom: 0;
-    border-bottom: 40px solid black;
-    border-top: 60px solid black;
 }
-.sidebar div{
+.sidebar li{
   opacity:0;
 }
 .sidebar:before {
@@ -78,11 +76,20 @@ html {
 .sidebar:hover{
 	width: 20%;
 	background-color: #000000dd;
-	border-bottom: 40px solid transparent;
-	border-top: 60px solid transparent;
 }
-.sidebar:hover div{
+.sidebar:hover li, .sidebar.sidebar-expand li{
   	opacity:1;
+}
+.sidebar h4 {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.sidebar.sidebar-expand, .sidebar.sidebar-expand:hover {
+	border-top: 0;
+	border-bottom: 0;
+	margin-top: 60px;
+	margin-bottom: 38px;
 }
 .sidebar a{
   text-decoration:none;
