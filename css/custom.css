@@ -50,6 +50,8 @@ html {
 	margin-top: 0;
 	margin-bottom: 0;
 	bottom: 0;
+	border-bottom: 40px solid #373737;
+	border-top: 60px solid #373737;
 }
 .sidebar div{
   opacity:0;
@@ -76,8 +78,8 @@ html {
 .sidebar:hover{
 	width: 20%;
 	background-color: #000000dd;
-	margin-top: 61px;
-	margin-bottom: 39px;
+	border-bottom: 40px solid transparent;
+	border-top: 60px solid transparent;
 }
 .sidebar:hover div{
   	opacity:1;
@@ -2298,6 +2300,13 @@ hr.hr-new {
 #large-header .header-tile:hover .tile-label-value {
 	transform: scale(1.1);
 	transition: transform 1.5s ease;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	body {
+		transform: scale(calc(100vw/1505px));
+	}
 }
 
 
