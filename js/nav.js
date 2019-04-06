@@ -239,7 +239,8 @@ var velesSinglePageApp = {
             return;
         }
 
-        $('.sidebar').html($('.sidebar').html().replace('{{page.title}}', this.menuTreeIndex[page].title));
+
+        $('[data-id="page.title"]').text(this.menuTreeIndex[page].title);
 
         if (this.menuTreeIndex[page].hasOwnProperty('sections'))
             this.buildMenuLevel(
