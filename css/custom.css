@@ -35,7 +35,7 @@ html {
 .header {
 	display: block;
 	position: relative;
-	height: calc(60vh - 60px) !important;
+	height: calc(100vh - 100px) !important;
 	background: transparent;
 	overflow: hidden;
 	border-bottom: 0px;
@@ -54,20 +54,6 @@ html {
 	transition: background-color 2.5s ease;
 }
 
-/* Zoom out the effect when on screen smaller than iPad */
-@media only screen and (max-width: 800px) {
-	.movething {
-		zoom: 0.5;
-		height: calc(60vh - 120px) !important;
-	}
-}
-@media only screen and (max-height: 600px) {
-	.movething {
-		zoom: 0.5;
-		height: calc(60vh - 120px) !important;
-	}
-}
-
 .main-title {
    position: absolute;
    margin: 0;
@@ -84,6 +70,7 @@ html {
    text-transform: uppercase;
    font-size: 4.2em;
    letter-spacing: 0.1em;
+   white-space: nowrap;
 }
 
 .main-title .thin {
@@ -2178,69 +2165,112 @@ hr.hr-new {
 	height: 1px;
 }
 
-/* index tile row  */
-.index-page .row-no-limit:first-child {
-	height: calc(40vh - 40px) !important;
-	border-left: 1px solid #2e2d2d;
-	padding: 0;
+/* index tile row  
+#large-header .container {
+	top: 0;
+	height: calc(100vh-100px);
+	position: relative;
+	margin-top: 40px;
+}*/
+
+#large-header canvas {
+	position: absolute;
 }
-.index-page .header-tile {
+#large-header .container .row {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#large-header .container .row:first-child {
+	height: calc(60vh - 60px);
+}
+#large-header .container .row:last-child {
+	height: calc(40vh - 40px);
+}
+
+#large-header .row:last-child {
+	border-left: 1px solid #2e2d2d;
+	padding: 0px 15px 0px 15px;
+}
+#large-header .header-tile {
 	display: flex;
-	background-color: #3f3d3d88;
+	background-color: transparent;
 	border: 1px solid #2e2d2d;
-	border-top: none;
+	border-bottom: none;
 	border-left: none;
 	height: calc((40vh - 40px) / 2);
 	width: 25%;
 	font-size: 18px;
 }
-.index-page .header-tile .tile-label {
+#large-header .header-tile .tile-label {
 	margin: auto auto;
 	text-align: center;
 	transition: transform 1.0s ease;
 }
-.index-page .header-tile .tile-label-value {
+#large-header .header-tile .tile-label-value {
 	display: block;
 	font-weight: bold;
 	color: #F19B7E;
 	transition: transform 1.0s ease;
 }
-.index-page .header-tile:hover {
-	background-color: #3f3d3d80;
+#large-header .header-tile:hover {
+	background-color: #3f3d3d20;
 }
-.index-page .header-tile:hover .tile-label {
+#large-header .header-tile:hover .tile-label {
 	transform: scale(1.1);
 	transition: transform 0.5s ease;
 }
-.index-page .header-tile:hover .tile-label-value {
+#large-header .header-tile:hover .tile-label-value {
 	transform: scale(1.1);
 	transition: transform 1.5s ease;
 }
 
+
+/* Smaller heading area, larger font on screen smaller than iPad */
+@media only screen and (max-width: 800px), only screen and (max-height: 600px)  {
+	.movething h1.main-title {
+		font-size: 7vw;
+	}
+	#large-header .container .row:first-child {
+	    height: calc(30vh - 40px);
+	}
+}
+
 @media only screen and (max-width: 1024px) {
-	.index-page .header-tile {
+	#large-header .header-tile {
 		font-size: 16px;
 	}
 }
-@media only screen and (max-width: 991psx) {	/* smaller font to fit on small desktop screens */
-	.index-page .header-tile {
+@media only screen and (max-width: 991px) {	/* smaller font to fit on small desktop screens */
+	#large-header .header-tile {
 		font-size: 14px;
 	}
 }
 @media only screen and (max-width: 767px), only screen and (max-height: 600px) {	/* same breakpoints as .movething to fit */
-	.index-page .row-no-limit:first-child {
-		height: calc(70vh - 40px) !important;
+	#large-header .row:last-child {
+		height: calc(70vh - 60px) !important;
 	}
-	.index-page .header-tile {
+	#large-header .header-tile {
 		width: 100%;
-		height: calc((70vh - 40px) / 8);
+		height: calc((70vh - 60px) / 8);
 	}
 }
+@media only screen and (min-width: 400px) and (min-height: 500px) and (max-width: 767px) { /* wider screens */
+	#large-header .header-tile {
+		width: 50%;
+		height: calc((70vh - 60px) / 4);
+	}
+	#large-header .container .row:first-child {
+	    height: calc(30vh - 40px);
+	}
+	.movething h1.main-title {
+		font-size: 6vw;
+	}	
+}
 @media only screen and (max-height: 480px) {	/* Galaxy S5, iPhone 5/SE and smaller only 6 tiles per screen */
-	.index-page .row-no-limit:first-child {
+	#large-header .row-no-limit:first-child {
 		height: calc((70vh - 38px) / 6 * 8) !important;
 	}
-	.index-page .header-tile {
+	#large-header .header-tile {
 		width: 100%;
 		height: calc((70vh - 38px) / 6);
 	}
