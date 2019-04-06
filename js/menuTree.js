@@ -67,8 +67,10 @@ var menuTree = [
     {
         'title': 'Explorer',
         'items': [
-            { 'title': 'Index',
-              'url': 'http://35.240.96.108:88'
+            { 
+            	'title': 'Index',
+            	'page': 'explorer-index',
+              	'url': 'http://35.240.96.108:88'
             },
             { 'title': 'Search',
               'url': 'http://35.240.96.108:88'

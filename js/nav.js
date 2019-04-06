@@ -116,6 +116,11 @@ var velesSinglePageApp = {
                     velesSinglePageApp.showMobileSlider();
             })
 
+            //$('body').resize(function(){
+                //if ($('.sidebar').hasClass('sidebar-expand'))
+                //    velesSinglePageApp.sidebarResizePage();
+            //});
+
             this.eventsBound['navbar-toggler'] = true;
         }
 
@@ -270,7 +275,7 @@ var velesSinglePageApp = {
             );
             // expand sidebar when parent is menu, on larger screens
             this.sidebarExpand();
-            
+
             if (!cachedPage)
                 this.sidebarResizePage();
 
@@ -337,26 +342,25 @@ var velesSinglePageApp = {
         for (var i = 0; i < tree.length; i++) {
             console.log(tree[i].title);
 
-            if (tree[i].hasOwnProperty('hideFromNav') && tree[i].hideFromNav)
-                continue;
+            if (!tree[i].hasOwnProperty('hideFromNav') || tree[i].hideFromNav) {
+                if (!tree[i].hasOwnProperty('page'))
+                    tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
-            if (!tree[i].hasOwnProperty('page'))
-                tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
+                if (tree[i].hasOwnProperty('items')) {
+                    var $item = $(templates['menuDropdown']
+                        .replace('{{item.title}}', tree[i].title)
+                        .replace('{{item.url}}', tree[i].page + this.pageSuffix)
+                        .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
+                        );
+                    $subMenu = $item.appendTo($parent).find('div');
+                    this.buildMenuLevel(tree[i].items, $subMenu, templates, tree[i].page);
 
-            if (tree[i].hasOwnProperty('items')) {
-                var $item = $(templates['menuDropdown']
-                    .replace('{{item.title}}', tree[i].title)
-                    .replace('{{item.url}}', tree[i].page + this.pageSuffix)
-                    .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
-                    );
-                $subMenu = $item.appendTo($parent).find('div');
-                this.buildMenuLevel(tree[i].items, $subMenu, templates, tree[i].page);
-
-            } else {
-                var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
-                    .replace('{{item.title}}', tree[i].title)
-                    .replace('{{item.url}}', tree[i].page + this.pageSuffix);
-                $parent.append(item);
+                } else {
+                    var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
+                        .replace('{{item.title}}', tree[i].title)
+                        .replace('{{item.url}}', tree[i].page + this.pageSuffix);
+                    $parent.append(item);
+                }
             }
 
             // Index to the smarter structure
