@@ -78,15 +78,15 @@ html {
     text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
 }
 .sidebar:hover:before,
-.sidebar.sidebar-expand:before, 
+.sidebar.sidebar-expand:before,
 .sidebar.sidebar-expand:hover:before {
 	opacity: 0;
 }
 .sidebar:hover, .sidebar.sidebar-expand {
 	width: 20%;
 	background-color: #000000dd;
-	border-top: 0;
-	border-bottom: 0;
+	/*border-top: 0;
+	border-bottom: 0;*/
 	margin-top: 60px;
 	margin-bottom: 38px;
 }
