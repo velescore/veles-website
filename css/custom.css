@@ -1599,8 +1599,12 @@ Main components
 }
 
 #headingOne {
-	border: solid 1px #26262644;
-	background: #26262644;
+	border: solid 1px #262626;
+	background: #262626bb;
+}
+
+.text-orange {
+	color: #e4b99c;
 }
 
 .form-control {
