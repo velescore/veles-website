@@ -85,8 +85,8 @@ html {
 .sidebar:hover, .sidebar.sidebar-expand {
 	width: 20%;
 	background-color: #000000dd;
-	/*border-top: 0;
-	border-bottom: 0;*/
+	border-top: 0;
+	border-bottom: 0;
 	margin-top: 60px;
 	margin-bottom: 38px;
 }
