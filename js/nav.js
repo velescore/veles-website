@@ -21,7 +21,7 @@ var velesSinglePageApp = {
         //    pageHash = window.location.hash;
 
         if (page == '')
-            page = 'index';
+            page = (this.currentPage) ? this.currentPage : 'index';
         
         // just scroll to top if its the same page
         if (this.currentPage == page || page == '') {
@@ -68,6 +68,7 @@ var velesSinglePageApp = {
                 velesSinglePageApp.runPageHook('init');
                 velesSinglePageApp.rebuildPageMenu(page, false);
                 velesSinglePageApp.updateTemplate();
+                velesSinglePageApp.autoAddIds();
                 velesSinglePageApp.bindEvents();
             }); 
         }
@@ -79,10 +80,33 @@ var velesSinglePageApp = {
             window.scrollTo(0,0);
     },
 
+    'autoAddIds': function() {
+        $('h2').add('h3').each(function(i){
+            if (!$(this).parents('.row').length)
+                return;
+
+            if (!$(this).parents('.row').eq(0).attr('id')) {
+                $(this).parents('.row').eq(0).attr('id', $(this).text()
+                    .toLowerCase().replace(': ', '').replace(' ', '-')
+                    .trim());
+            }
+        });
+        $('h4').each(function(i){
+            if (!$(this).parents('div.card').length)
+                return;
+
+            if (!$(this).parents('div.card').eq(0).attr('id')) {
+                $(this).parents('div.card').eq(0).attr('id', $(this).text()
+                    .toLowerCase().replace(': ', '').replace(' ', '-')
+                    .trim());
+            }
+        });
+    },
+
     'updateTemplate': function() {
-        if (this.menuTemplates.hasOwnProperty(this.currentPage)) {
-            $('[data-id="page.title"]').text(this.menuTreeIndex[this.currentPage].title);
-            $('[data-id="page.url"]').text(this.menuTreeIndex[this.currentPage].title);
+        if (this.menuTemplates.hasOwnProperty(velesSinglePageApp.currentPage)) {
+            $('[data-id="page.title"]').text(velesSinglePageApp.menuTreeIndex[velesSinglePageApp.currentPage].title);
+            $('[data-id="page.url"]').text(velesSinglePageApp.menuTreeIndex[velesSinglePageApp.currentPage].title);
         }
     },
 
@@ -428,6 +452,7 @@ var velesSinglePageApp = {
             this.setActive();
             this.rebuildPageMenu('index', false);
             this.updateTemplate();
+            this.autoAddIds();
             this.hideOverlay();
             this.bindEvents();
 

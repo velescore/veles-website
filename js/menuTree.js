@@ -35,10 +35,10 @@ var menuTree = [
 	{
        'title': 'Download',
        'sections': [
-           { 'title': 'Linux' },
-           { 'title': 'Windos' },
-           { 'title': 'MacOS' },
-           { 'title': 'Raspberry' },
+           { 'title': 'Linux Wallet' },
+           { 'title': 'Windows Wallet' },
+           { 'title': 'macOS Wallet' },
+           { 'title': 'RaspberryPi Wallet' },
            { 'title': 'Source-code' },
            { 'title': 'Whitepaper' }
 
