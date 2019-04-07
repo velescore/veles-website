@@ -50,8 +50,8 @@ html {
     margin-top: 61px;
     margin-bottom: 39px;
     bottom: 0;
-    border-bottom: 40px solid black;
-    border-top: 60px solid black;
+    /*border-bottom: 40px solid black;
+    border-top: 60px solid black;*/
 }
 .sidebar ul {
 	list-style: none;
@@ -87,8 +87,8 @@ html {
 	background-color: #000000dd;
 	border-top: 0;
 	border-bottom: 0;
-	margin-top: 60px;
-	margin-bottom: 38px;
+	margin-top: 61px;
+	margin-bottom: 39px;
 }
 .sidebar:hover li, .sidebar.sidebar-expand li {
   	opacity:1;
