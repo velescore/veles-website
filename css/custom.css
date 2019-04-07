@@ -1588,9 +1588,20 @@ Main components
 /*End ROADMAP*/
 
 .card {
+	border: 0;
 	background-color: #26262688;
 }
 
+.card-header {
+    background: linear-gradient(90deg, #e4b99c44, transparent);
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+#headingOne {
+	border: solid 1px #26262644;
+	background: #26262644;
+}
 
 .form-control {
 	color: #e5e5e5;
@@ -1633,14 +1644,6 @@ Main components
 }
 
 /* end of sidebar */
-
-#headingOne {
-	background: #262626bb;
-}
-
-.night-mode #headingOne {
-	background: #e5e5e5;
-}
 
 .timeline-Tweet-text {
 	font-size: 13px;
@@ -1846,7 +1849,6 @@ body::-webkit-scrollbar-thumb:hover {
 		zoom: 0.5;
 	}
 }
-
 
 /* Breadcrumb */
 .breadcrumb {
