@@ -10,6 +10,29 @@ var velesSinglePageApp = {
     'sidebarPadContent': 0,
 
     'go': function(page = 'index') {
+        var pageHash = null;
+
+        if (page.indexOf('#') != -1) {
+            pageHash = '#' + page.split('#')[1];
+            page = page.split('#')[0];
+        }
+
+        //} else if (window.location.hash)
+        //    pageHash = window.location.hash;
+
+        if (page == '')
+            page = 'index';
+        
+        // just scroll to top if its the same page
+        if (this.currentPage == page || page == '') {
+            if (pageHash && $(pageHash).length) {
+                $('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
+            } else {
+                window.scrollTo(0,0);
+            }
+            return;
+        }
+
         // cache the previous HTML, index is always cached
         this.cachedPages[this.currentPage] = $('#content-wrapper').html();
 
@@ -50,12 +73,17 @@ var velesSinglePageApp = {
         }
 
         // just start scrolling to the top
-        window.scrollTo(0,0);
+        if (pageHash && $(pageHash).length)
+            $('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
+        else 
+            window.scrollTo(0,0);
     },
 
     'updateTemplate': function() {
-        $('[data-id="page.title"]').text(this.menuTreeIndex[this.currentPage].title);
-        $('[data-id="page.url"]').text(this.menuTreeIndex[this.currentPage].title);
+        if (this.menuTemplates.hasOwnProperty(this.currentPage)) {
+            $('[data-id="page.title"]').text(this.menuTreeIndex[this.currentPage].title);
+            $('[data-id="page.url"]').text(this.menuTreeIndex[this.currentPage].title);
+        }
     },
 
     'addPageHook': function(pageName, hookName, callback) {
@@ -258,7 +286,8 @@ var velesSinglePageApp = {
                 this.menuTreeIndex[page].sections,
                 $('.sidebar ul'), 
                 this.menuTemplates['sidebar'],
-                page
+                page,
+                isSectionLinks = true
             );
             this.sidebarCollapse();
 
@@ -342,8 +371,9 @@ var velesSinglePageApp = {
         }        
     },
 
-    'buildMenuLevel': function(tree, $parent, templates, parentPage = null) {
+    'buildMenuLevel': function(tree, $parent, templates, parentPage = null, isSectionLinks = false) {
         var prevPage = null;
+        var url = null;
 
         for (var i = 0; i < tree.length; i++) {
             console.log(tree[i].title);
@@ -352,10 +382,14 @@ var velesSinglePageApp = {
                 if (!tree[i].hasOwnProperty('page'))
                     tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
+                url = (isSectionLinks) 
+                    ? '#' +  tree[i].page
+                    : tree[i].page + this.pageSuffix;
+
                 if (tree[i].hasOwnProperty('items')) {
                     var $item = $(templates['menuDropdown']
                         .replace('{{item.title}}', tree[i].title)
-                        .replace('{{item.url}}', tree[i].page + this.pageSuffix)
+                        .replace('{{item.url}}', url)
                         .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
                         );
                     $subMenu = $item.appendTo($parent).find('div');
@@ -364,7 +398,7 @@ var velesSinglePageApp = {
                 } else {
                     var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
                         .replace('{{item.title}}', tree[i].title)
-                        .replace('{{item.url}}', tree[i].page + this.pageSuffix);
+                        .replace('{{item.url}}', url);
                     $parent.append(item);
                 }
             }
@@ -387,16 +421,20 @@ var velesSinglePageApp = {
 
     'start': function() {
         this.buildMenus();
-        this.bindEvents();
         this.currentPage = 'index';
 
         // only the index is pre-loaded
         if (this.detectCurrentPage() == 'index') {
             this.setActive();
-            this.runPageHook('init');
+            this.rebuildPageMenu('index', false);
+            this.updateTemplate();
             this.hideOverlay();
+            this.bindEvents();
+
+            if (window.location.hash)
+                $('html, body').animate({ scrollTop: ($(window.location.hash).offset().top - 60) },50);
         } else {
-            this.go(this.detectCurrentPage());
+            this.go(this.detectCurrentPage() + window.location.hash);
         }
     }
 }
