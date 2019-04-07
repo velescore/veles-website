@@ -37,21 +37,21 @@ html {
 }
 .sidebar{
 	overflow: hidden;
-	margin-right: 0px;
-	height: auto;
-	width: 10px;
-	position: fixed;
-	z-index: 0;
-	top: 0;
-	left: 0;
-	background-color: #373737;
-	overflow-x: hidden;
-	padding-top: 20px;
-	margin-top: 0;
-	margin-bottom: 0;
-	bottom: 0;
-	border-bottom: 40px solid #373737;
-	border-top: 60px solid #373737;
+    margin-right: 0px;
+    height: auto;
+    width: 11px;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    /* padding-top: 20px; */
+    margin-top: 61px;
+    margin-bottom: 39px;
+    bottom: 0;
+    border-bottom: 40px solid black;
+    border-top: 60px solid black;
 }
 .sidebar ul {
 	list-style: none;
@@ -1711,7 +1711,7 @@ Main components
 /* scroll bar */
 body::-webkit-scrollbar {
     width: 10px;
-    background-color: #393939;
+    background-color: black;
 }
 
 body::-webkit-scrollbar-track {
@@ -1719,9 +1719,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: #262626;
   outline: 1px solid slategrey;
-  border-left: 3px solid #262626;
+  border-left: 3px solid #e4b99cbb;
 }
 
 body::-webkit-scrollbar-thumb:hover {
