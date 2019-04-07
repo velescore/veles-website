@@ -1593,7 +1593,7 @@ Main components
 }
 
 .card-header {
-    background: linear-gradient(90deg, #e4b99c44, transparent);
+    background: #e4b99c44;
     margin-bottom: 0;
     border-bottom: 0;
 }
@@ -2195,11 +2195,6 @@ ul.osx-dock li span {
     width: auto;
     padding-top: 44px;
 	padding-bottom: 60px;
-}
-
-.row-resources {
-	padding-top: 20px!important;
-	padding-bottom: 30px!important;
 }
 
 .download-page .button-effect .sublabel.long {

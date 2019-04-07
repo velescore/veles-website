@@ -34,14 +34,14 @@
                 <div class="col-lg-12 mb-4">
                     <div class="mb-4" role="tablist" aria-multiselectable="true">
                         <div class="card">
-                            <div class="card-header"><h5><b>General specifications :</b></h5></div>
+                            <div class="card-header"><h5>General specifications :</h5></div>
                             <div class="card-body" id="card-body-1">
-                                <p><b>Coin supply :</b> 2 500 000 VLS</p>
-                                <p><b>Block time :</b> 2 minutes</p>
-                                <p><b>Swap premine :</b> 50000 VLS</p>
-                                <p><b>Masternode collateral :</b> 2000 VLS</p>
-                                <p><b>Multi-algorithmic :</b> Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</p>
-                                <p><b>Active and only dev. address :</b> VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj</p>
+                                <p>Coin supply : 2 500 000 VLS</p>
+                                <p>Block time : 2 minutes</p>
+                                <p>Swap premine : 50000 VLS</p>
+                                <p>Masternode collateral : 2000 VLS</p>
+                                <p>Multi-algorithmic : Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</p>
+                                <p>Active and only dev. address : VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj</p>
                             </div>
                         </div>
                     </div>
@@ -49,13 +49,13 @@
                 <div class="col-lg-12 mb-4">
                     <div class="mb-4" role="tablist" aria-multiselectable="true">
                         <div class="card">
-                            <div class="card-header"><h5><b>Reward system :</b></h5></div>
+                            <div class="card-header"><h5>Reward system :</h5></div>
                             <div class="card-body" id="card-body-1">
-                                <p><b>Minimal block reward :</b> 0.01 VLS</p>
-                                <p><b>Maximal Block reward :</b> 10 VLS</p>
-                                <p><b>Proof of work reward :</b> Rewards are dynamicaly moving between Max. and Min. rewards . The movement of rewards is connected with hashrate (more hashrate = bigger reward, less hashrate = lower reward)
-                                <p><b>Masternode reward :</b> Dynamicaly raising from 5% to 60% of block reward in 5 years.</p>
-                                <p><b>Development reward :</b> Dynamicaly decreasing from 5% to 0% in 5 years.</p>
+                                <p>Minimal block reward : 0.01 VLS</p>
+                                <p>Maximal Block reward : 10 VLS</p>
+                                <p>Proof of work reward : Rewards are dynamicaly moving between Max. and Min. rewards . The movement of rewards is connected with hashrate (more hashrate = bigger reward, less hashrate = lower reward)
+                                <p>Masternode reward : Dynamicaly raising from 5% to 60% of block reward in 5 years.</p>
+                                <p>Development reward : Dynamicaly decreasing from 5% to 0% in 5 years.</p>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="col-lg-12 mb-4">
                     <div class="mb-4" role="tablist" aria-multiselectable="true">
                         <div class="card">
-                            <div class="card-header"><h5><b>Halving system :</b></h5></div>
+                            <div class="card-header"><h5>Halving system :</h5></div>
                             <div class="card-body" id="card-body-1">
                                 <p> Veles has own custom dynamic nonlinear halvings. Here is functionality and usage explained.You can check Veles halving status with rpc command "gethalvingstatus".</p>
                                 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
@@ -75,7 +75,7 @@
                                         </div>
                                         <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="card-body" id="card-body-1">
-                                                <p><b>Example of gethalvingstatus :</b>
+                                                <p>Example of gethalvingstatus :
                                                     <br> {
                                                     <br> "halvings_occured": 1,
                                                     <br> "epochs_occured": 5,
@@ -137,9 +137,9 @@
                                                     <hr>
                                                 </p>
                                                 <p><a> Here we can see, for example, that at the block 52k halving has not occurred because there were only 51% of the target amount of VLS mined, from required 80%. The maximum block reward was 80 VLS.</a></p>
-                                                <p><a> So the halving was delayed by another 2k blocks and this constitutes another halving epoch (APLHA_H0_E1), where the <b>max_block_reward</b> remains 80 VLS, but the <b>dynamic_rewards_boost</b> kicks in and increases dynamic blocks rewards by 50% (but always within the range of maximum block reward of 80 VLS).
+                                                <p><a> So the halving was delayed by another 2k blocks and this constitutes another halving epoch (APLHA_H0_E1), where the max_block_reward remains 80 VLS, but the dynamic_rewards_boost kicks in and increases dynamic blocks rewards by 50% (but always within the range of maximum block reward of 80 VLS).
                 Thanks to this mechanism we can see that at the and of this epoch the initial target was actually fulfilled by 125% (as the time has increased too, those extra %  are just fine)</a></p>
-                                                <p><a> As the target was met, the third section shows that the block rewards were successfully halved at the block 54k to 40 VLS and <b>dynamic_rewards_boost</b> turned off, next check and readjustments will happen with the start of another epoch at the block 58k.
+                                                <p><a> As the target was met, the third section shows that the block rewards were successfully halved at the block 54k to 40 VLS and dynamic_rewards_boost turned off, next check and readjustments will happen with the start of another epoch at the block 58k.
                 ...  and as I promised, to clarify on the term halving epochs, the manual page starts like this:</a></p>
                                             </div>
                                         </div>
