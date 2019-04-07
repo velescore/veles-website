@@ -1598,10 +1598,15 @@ Main components
     border-bottom: 0;
 }
 
+.h5-resources {
+	font-size:17px!important;
+}
+
 #headingOne {
 	border: solid 1px #262626;
 	background: #262626bb;
 }
+
 
 .text-orange {
 	color: #e4b99c;
