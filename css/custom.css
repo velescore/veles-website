@@ -2197,6 +2197,11 @@ ul.osx-dock li span {
 	padding-bottom: 60px;
 }
 
+.row-resources {
+	padding-top: 20px!important;
+	padding-bottom: 30px!important;
+}
+
 .download-page .button-effect .sublabel.long {
 	display: none;
 }
