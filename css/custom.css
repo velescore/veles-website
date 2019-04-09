@@ -2422,12 +2422,30 @@ hr.hr-new {
 	background: #e4b99c44!important;
 }
 .modal-content {
-	height: 90vh;
-	background-color: #262626b8;
+	height: auto;
+	background-color: #262626;
 }
 .modal-footer {
 	border-top: 1px solid #e4b99c44!important;
 }
+img.qrcode {
+	border-radius: 10px;
+	text-align: center;
+	opacity: 0.8;
+	display: inline-block;
+	margin-bottom: 20px
+}
+.input-donate {
+	display: inline-block;
+	background: transparent;
+	border: solid 1px #52463f;
+	color: #ffffff;
+	min-width: 85%;
+	text-align: center;
+	border-radius: 5px;
+}
+
+
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;
