@@ -11,7 +11,9 @@
  * of the License, or (at your option) any later version.
  */
 var velesSocketClient = {
-    host: 'explorer.veles.network',
+    host: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
+        ? 'localhost'
+        : 'explorer.veles.network',
     port: 8882,
     protocol: 'ws',     // protocol: wss of ws
     retries: 300,
