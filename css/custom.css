@@ -2412,6 +2412,10 @@ hr.hr-new {
 	}
 }
 
+.modal {
+	height: unset;
+	max-height: 97%;
+}
 .modal.modal-wide .modal-dialog {
   width: 90%;
 }
@@ -2444,7 +2448,10 @@ img.qrcode {
 	text-align: center;
 	border-radius: 5px;
 }
-
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
 /* Alternative loading bar with spinner
 .pace {
