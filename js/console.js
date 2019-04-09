@@ -173,6 +173,12 @@ var velesDevConsole = {
         else if (cmdName == 'grep')
             cmdSuggestion = "Command '.grep' from console internal commands";
 
+        else if (cmdName == 'max' || cmdName.indexOf('max') != -1)
+            cmdSuggestion = "Command '.max' from console internal commands";
+
+         else if (cmdName == 'min' || cmdName.indexOf('min') != -1)
+            cmdSuggestion = "Command '.min' from console internal commands";
+
         report(((cmdSuggestion) ? "No command '" + cmdName + "' found, did you mean:\n " + cmdSuggestion + "\n"  : '')
             + cmdName + ': command not found');
     },
