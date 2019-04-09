@@ -2412,8 +2412,22 @@ hr.hr-new {
 	}
 }
 
-
-
+.modal.modal-wide .modal-dialog {
+  width: 90%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+.icon2-modal {
+	background: #e4b99c44!important;
+}
+.modal-content {
+	height: 90vh;
+	background-color: #262626b8;
+}
+.modal-footer {
+	border-top: 1px solid #e4b99c44!important;
+}
 /* Alternative loading bar with spinner
 .pace {
   -webkit-pointer-events: none;

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+          <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Resources</h1>
+             <div class="row">
+                 <div class="col-sm-12">
+                     <div class="bread-button bread">
+                         <span class="label">Home</span>
+                         <span class="icon">
+                         <span></span>
+                         </span>
+                         <span class="icon2"></span>
+                     </div>
+                     <div class="bread-button bread active" id="bread-button">
+                         <span class="label">Community</span>
+                         <span class="icon">
+                         <span></span>
+                         </span>
+                         <span class="icon2"></span>
+                     </div>
+                     <ol class="breadcrumb" id="breadcrumb-1"></ol>
+                 </div>
+             </div>
+            <!-- Content Row -->
+        </br>
+            <div class="row">
+                <!-- Sidebar Column-->
+                <div class="col-lg-12 mb-4">
+                    <div class="mb-4" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header"><h5>Community crowdfunding :</h5></div>
+                            <div class="card-body" id="card-body-1">
+                                <p>Here you can get informations about all crowdfundings...</p>
+                                <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <h5 class="h5-resources">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
+                                </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="card-body" id="card-body-1">
+                                                <p>Veles have opportunity to get listed on  Qtrade.io for action price 0.5 btc , click button below to get more informations about actual status of crowdfunding.</p>
+                                                <div data-toggle="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                    <span class="label">Details</span>
+                                                    <span class="icon">
+                                                    <span></span>
+                                                    </span>
+                                                    <span class="icon2 icon2-modal"></span>
+                                                </div>
+                                                <div id="tallModal" class="modal modal-wide fade">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header card-header">
+                                                          <h4 class="modal-title">Qtrade.io listing</h4>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <p>Baggins dame prda ?:D a co oros?:D</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <div data-dismiss="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                              <span class="label">Close</span>
+                                                              <span class="icon">
+                                                              <span></span>
+                                                              </span>
+                                                              <span class="icon2 icon2-modal"></span>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /#content -->
+</body>
+</html>
