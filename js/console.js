@@ -80,12 +80,12 @@ var velesDevConsole = {
                 + "of one command is used as the input of another command. The commands can be connected by a pipe (|) symbol. \n"
                 + "For example: 'getbestblockhash | getblock' or 'masternode list | .grep ENABLED'.\n\n"
                 + "== Internal console commands ==\n"
-                + ".clear   Clear the console\n"
-                + ".close   Close console window\n"
-                + ".grep    Search for PATTERN in COMMAND output.\n"
-                + ".help    Display this help text\n"
-                + ".max     Maximize console window to full size\n"
-                + ".min     Shrink console window to minimum size\n"
+                + ".clear      Clear the console\n"
+                + ".close      Close console window\n"
+                + ".grep       Search for PATTERN in COMMAND output.\n"
+                + ".help       Display this help text\n"
+                + ".max        Maximize console window to full size\n"
+                + ".min        Shrink console window to minimum size\n"
                 + "\n== Veles Core daemon commands ==\n"
                 + "For list of Veles Core daemon commands please run: 'help'\n\n"
                 );
@@ -108,13 +108,21 @@ var velesDevConsole = {
             return this.submitCommandResult(line, report, '');
 
         } else if (cmd == '.max') {
-            $('.footer-overlay').addClass('panel-maximize');
-            report('');
+            if ($('.footer-overlay').hasClass('panel-maximize')) {
+                report('.max: console window has already maximal size, press [F11] to enter full-screen mode');
+            } else {
+                $('.footer-overlay').addClass('panel-maximize');
+                report('');
+            }
             return;
 
         } else if (cmd == '.min') {
-            $('.footer-overlay').removeClass('panel-maximize');
-            report('');
+            if (!$('.footer-overlay').hasClass('panel-maximize')) {
+                report('.min: console window has already minimal size, use .close to completely close the window.');
+            } else {
+                $('.footer-overlay').removeClass('panel-maximize');
+                report('');
+            }
             return;
 
         } else if (cmd == '.close') {
