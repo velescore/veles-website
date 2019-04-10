@@ -34,7 +34,7 @@
                 <div class="col-lg-12 mb-4">
                     <div class="mb-4" role="tablist" aria-multiselectable="true">
                         <div class="card">
-                            <div class="card-header"><h5>Community crowdfunding :</h5></div>
+                            <div class="card-header"><h5>Informations about funding :</h5></div>
                             <div class="card-body" id="card-body-1">
                                 <p><b>Basic rules : </b></p>
                                 <p>1. every crowdfunding have generated only one BTC and VLS address which will never be changed until crowdfunding ends</p>
@@ -42,13 +42,30 @@
                                 <p>3. if crowdfunding dont success all funds will be returned to your deposit address</p>
                                 <p>.............</p>
                                 <hr>
-                                <p><b>All Veles crowdfundings</b></p>
+                                <p><b>State explantation :</b></p>
+                                <p>
+                                    <button disabled id="btn-online" class="btn btn-success"> Open</button>
+                                    -  This state idicates that funding is still in active state, open for public and you can participate .
+                                </p>
+                                <p>
+                                    <button disabled id="btn-offline" class="btn btn-danger"> Expired</button>
+                                    -  This state indicates that funding wasnt successfully finished and funds were returned to donators .
+                                </p>
+                                <p>
+                                    <button disabled id="btn-reload" class="btn btn-primary"> Finished</button>
+                                    - This state indicates that funding was successfully finished , target was reached and now is closed .
+                                </p>
+                                <hr>
+                                <p><b>All Veles crowdfundings :</b></p>
                                 <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
                                     <div class="card">
                                         <div class="card-header" role="tab" id="headingOne">
-                                            <h5 class="h5-resources">
-                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
-                                </h5>
+                                                <h5 class="h5-resources">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
+                                                    <p class="text-right">
+                                                        <button disabled id="btn-reload-fundings" class="btn btn-primary"> Finished</button>
+                                                    </p>
+                                                </h5>
                                         </div>
                                         <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="card-body" id="card-body-1">
@@ -65,7 +82,7 @@
                                                       <div class="modal-content">
                                                         <div class="modal-header card-header">
                                                           <h4 class="modal-title">Qtrade.io listing</h4>
-                                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                          <button disabled id="btn-reload" class="btn btn-primary text-rigth"> Finished</button>
                                                         </div>
                                                         <div class="modal-body">
                                                           <p><b>Deadline : </b><b class="text-orange">9.7.2018</b></p>

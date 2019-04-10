@@ -1599,10 +1599,12 @@ Main components
 }
 
 .h5-resources {
+	max-height: 15px;
 	font-size:17px!important;
 }
 
 #headingOne {
+	margin-bottom: 5px;
 	border: solid 1px #262626;
 	background: #262626bb;
 }
@@ -2431,6 +2433,23 @@ hr.hr-new {
 }
 .modal-footer {
 	border-top: 1px solid #e4b99c44!important;
+}
+button#btn-reload-fundings {
+    margin-top: -35px;
+}
+#btn-online {
+	min-width: 10%;
+	position: relative;
+}
+.btn-danger {
+	min-width: 10%;
+}
+.btn-primary {
+	min-width: 10%;
+}
+.btn:disabled {
+    opacity: 0.85;
+    padding: 2px;
 }
 img.qrcode {
 	border-radius: 10px;
