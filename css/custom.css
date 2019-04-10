@@ -1381,7 +1381,7 @@ Main components
 	height: 100%;
 	width: 3.5px;
 	border-radius: 15px;
-	background: #e4b99c;
+	background: #e4b99cbb;
 }
 
 @media only screen and (min-width: 1170px) {
@@ -1435,7 +1435,7 @@ Main components
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-	box-shadow: 0 0 0 3px #e0c29a, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 3px #e0c29abb, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .cd-timeline-img {
@@ -1459,7 +1459,7 @@ Main components
 	position: relative;
 	margin-left: 60px;
 	margin-right: 30px;
-	background: #26262688;
+	background: #262626bb;
 	border-radius: 2px;
 	padding: 1em;
 	.timeline-content-info {
@@ -1494,7 +1494,7 @@ Main components
 		flex-wrap: wrap;
 		justify-content: center;
 		li {
-			background: #40484D;
+			background: #40484Dbb;
 			border-radius: 2px;
 			display: inline-block;
 			padding: 2px 10px;
@@ -1542,7 +1542,7 @@ Main components
 	height: 0;
 	width: 0;
 	border: 7px solid transparent;
-	border-right: 7px solid #262626;
+	border-right: 7px solid #262626bb;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1573,7 +1573,7 @@ Main components
 		top: 24px;
 		left: 100%;
 		border-color: transparent;
-		border-left-color: #262626;
+		border-left-color: #262626bb;
 	}
 	.cd-timeline-content .cd-date {
 		position: absolute;
@@ -1591,7 +1591,7 @@ Main components
 		left: auto;
 		right: 100%;
 		border-color: transparent;
-		border-right-color: #262626;
+		border-right-color: #262626bb;
 	}
 	.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
 		float: right;
@@ -1608,7 +1608,7 @@ Main components
 
 .card {
 	border: 0;
-	background-color: #26262688;
+	background-color: #262626bb;
 }
 
 .card-header {
@@ -1622,8 +1622,10 @@ Main components
 }
 
 #headingOne {
-	border: solid 1px #262626;
-	background: #262626bb;
+	border-radius: 5px;
+	max-height: 50px;
+	margin-bottom: 5px;
+	background: #16161644;
 }
 
 
@@ -1881,7 +1883,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Breadcrumb */
 .breadcrumb {
-	background: linear-gradient(90deg, #262626b2, #e4b99cb2);
+	background: linear-gradient(90deg, #262626b2, #e4b99c88);
 	transform: skew(-40deg, 0deg) scaleX(1);
 	max-width: 100%;
 	margin-top: 20px;
@@ -2431,6 +2433,10 @@ hr.hr-new {
 	}
 }
 
+.modal {
+	height: unset;
+	max-height: 97%;
+}
 .modal.modal-wide .modal-dialog {
   width: 90%;
 }
@@ -2446,6 +2452,25 @@ hr.hr-new {
 }
 .modal-footer {
 	border-top: 1px solid #e4b99c44!important;
+}
+button#btn-reload-fundings {
+	float: right;
+	margin-bottom: 2px;
+	margin-right: 5px;
+}
+#btn-online {
+	min-width: 10%;
+	position: relative;
+}
+.btn-danger {
+	min-width: 10%;
+}
+.btn-primary {
+	min-width: 10%;
+}
+.btn:disabled {
+    opacity: 0.75;
+    padding: 2px;
 }
 img.qrcode {
 	border-radius: 10px;
@@ -2463,7 +2488,10 @@ img.qrcode {
 	text-align: center;
 	border-radius: 5px;
 }
-
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
 /* Alternative loading bar with spinner
 .pace {
