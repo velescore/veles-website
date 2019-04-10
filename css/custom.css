@@ -1589,7 +1589,7 @@ Main components
 
 .card {
 	border: 0;
-	background-color: #26262688;
+	background-color: #262626bb;
 }
 
 .card-header {
@@ -1603,9 +1603,10 @@ Main components
 }
 
 #headingOne {
+	border-radius: 5px;
 	max-height: 50px;
 	margin-bottom: 5px;
-	background: #262626bb;
+	background: #16161644;
 }
 
 
@@ -1863,7 +1864,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Breadcrumb */
 .breadcrumb {
-	background: linear-gradient(90deg, #262626b2, #e4b99cb2);
+	background: linear-gradient(90deg, #262626b2, #e4b99c88);
 	transform: skew(-40deg, 0deg) scaleX(1);
 	max-width: 100%;
 	margin-top: 20px;

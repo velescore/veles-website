@@ -69,7 +69,14 @@
                                         </div>
                                         <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="card-body" id="card-body-1">
-                                                <p>Dame prda baggins :D></p>
+                                                <p><b>Mining rewards :</b></p>
+                                                <p>Dynamic block rewards are calculated individually on the basis of each algorithm’s hashrate. Eg. if the X11 algorithm is at 200 GH/s while Scrypt is at 5 MH/s, the rewards in the X11 blocks will be ca. 0.2 VLS, while Scrypt will be rewarding miners with ca. 0.003 VLS per block. It is therefore impossible to favour a single algorithm compared to other less used ones. Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles network in a harmony. The reward distribution per algorithm is consistent across the entire network, eg. if X11 accumulated a hashrate of 200 GH/s, the rewards will be comparable to Lyra2z at 30 MH/s. To successfully do a 51% attack, an attacker would have to control 51% of hashrate on each algorithm.</p>
+                                                <hr>
+                                                <p><b>Masternode rewards :</b></p>
+                                                <p>Masternode rewards are smoothly raising from 5% to 60% in period of 5 years.</p>
+                                                <hr>
+                                                <p><b>Development rewards :</b></p>
+                                                <p>Development rewards are smoothly decreasing from 5% to 0% in period of 5 years.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +105,8 @@
                                         </div>
                                         <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="card-body" id="card-body-1">
-                                                <p>Example of gethalvingstatus :
+                                                <p> - * as a first coin * Veles introduce dynamic non-linear halving period - the halving interval will double each time another halving occurs, creating smoother supply curve. Each halving might by automatically delayed  by another length of halving interval if not enough VLS has been mined since the last halving (we have implemented this measure to mitigate some disadvantages of multi-algo dynamic rewards, where less coins are mined if the hashrate is low, to ensure the real supply curve will stay as close as possible to  theoretical model). We have included new RPC command to get the information on the current and past halving periods, current maximum block reward, number of halvings occured, the current halving interval, etc...</p>
+                                                <p><b>Example of gethalvingstatus :</b>
                                                     <br> {
                                                     <br> "halvings_occured": 1,
                                                     <br> "epochs_occured": 5,
