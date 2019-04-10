@@ -672,7 +672,6 @@ div#accordion {
    	bottom: 0px;
    	height: 40px;
    	width: 100%;
-	margin-left: 10px;
 	background-color: transparent;
 	color: white;
 	font-size: 13px;
@@ -689,8 +688,9 @@ div#accordion {
 }
 
 .footer-overlay.footer-panel-expand {
-	height: 60%;
+	height: 50vh;
 	transition: height 0.5s ease-in-out;
+	z-index: 1100;	/* stay over sidebar etc. */
 }
 
 .footer-overlay.footer-panel-expand.panel-maximize {
@@ -701,6 +701,16 @@ div#accordion {
 .footer-overlay.footer-panel-slide {
 	height: 130px;
 	transition: height 0.3s ease-in-out;
+}
+
+.footer .footer-tooltip {
+	transition: bottom 0.5s ease-in-out;
+}
+
+.footer.footer-panel-expand .footer-tooltip {
+	bottom: calc(50vh + 10px);
+	transition: bottom 0.5s ease-in-out;
+	z-index: 1100;	/* stay over sidebar etc. */
 }
 
 #content.footer-panel-slide {
@@ -928,6 +938,15 @@ span.status-label-short {
 
 #chain-pow-tooltip::after {
 	right: 165px;
+}
+
+#price-status {
+	float: left;
+}
+
+#price-status-tooltip {
+	right: unset;
+	left: 199px;
 }
 
 /* Everything smaller than: iPad, iPad pro, ... */

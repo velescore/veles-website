@@ -43,7 +43,7 @@ var velesChain = {
         return "sha256d";
     },
 
-    'formatNumber': function(number, to_fixed = false) {
+    'formatNumber': function(number, to_fixed = false, html_format = true) {
         if (number == 0 || number == null)
             return '0';
 
@@ -52,10 +52,12 @@ var velesChain = {
         else
             number = String(number);
 
-        if (String(number).indexOf('.')) {
-            return '<b>' + number.replace('.', '</b>.');
-        } else {
-            return '<b>' + number + '</b>';
+        if (html_format) {
+            if (String(number).indexOf('.')) {
+                return '<b>' + number.replace('.', '</b>.');
+            } else {
+                return '<b>' + number + '</b>';
+            }
         }
     },
 
@@ -96,9 +98,34 @@ var velesChain = {
 /* Register event handlers with the WS client */
 velesSocketClient.handleEvent = function(e) {
     // Automagically update all fields named as entity property, 
+    // Edit: Now using data-id, deprecating magical classnames
     // for example <span class="chain-tip-height"></span>
     // todo: recursive objects / arrays crawl
     if (e.name == 'state_changed') {
+        // look for elements by deta-entity-id
+        // $('[data-entity-id="' + e['entity-id'] + '"][data-attribute="' + key + '"]').text(e['new-state'][key]+'X');
+        // format items
+        $('[data-entity-id="' + e['entity-id'] + '"]').each(function(){
+            attribute = $(this).attr('data-attribute');
+
+            if (!attribute || !e['new-state'].hasOwnProperty(attribute)) {
+                console.log('no attr' + attribute);
+                ev = e;
+                return;
+            }
+
+            if ($(this).attr('data-format') == 'coin_amount') {
+                $(this).html(velesChain.formatNumber(e['new-state'][attribute], 8));
+
+            } else if ($(this).attr('data-format') == 'hashrate') {
+                 $(this).html(velesChain.formatHashrate(e['new-state'][attribute]));
+
+            } else {
+                $(this).text(e['new-state'][attribute]);
+            }
+        })
+
+        // compatibility for old-style using classnames
         for (var key in e['new-state']) {
             $('.' + e['entity-id'].replace('.', '-') + '-' + key).text(e['new-state'][key]);
 

@@ -400,8 +400,6 @@ var velesSinglePageApp = {
         var url = null;
 
         for (var i = 0; i < tree.length; i++) {
-            console.log(tree[i].title);
-
             if (!tree[i].hasOwnProperty('hideFromNav') && !tree[i].hideFromNav) {
                 if (!tree[i].hasOwnProperty('page'))
                     tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
@@ -453,6 +451,7 @@ var velesSinglePageApp = {
             this.rebuildPageMenu('index', false);
             this.updateTemplate();
             this.autoAddIds();
+            this.runPageHook('init');
             this.hideOverlay();
             this.bindEvents();
 

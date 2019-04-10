@@ -51,8 +51,21 @@ var velesDevConsole = {
 
         if (line.trim()[0] == '.' || velesDevConsole.isInternalCommandAlias(line))
             velesDevConsole.handleInternalCommand(line, report, prevResult);
+
+        else if (line.trim()[0] == ':') {   // special services
+            var args = line.split('|')[0].trim().split(' ');
+            var cmd = args.shift().trim();
+
+            if (!args.length) {
+                report(cmd + ': need at least one argument - method name')
+                return;
+            }
+
+            velesDevConsole.handleServerCommand(args.join(' '), report, prevResult, cmd.replace(':', ''));
+        }
+
         else
-            velesDevConsole.handleWalletCommand(line, report, prevResult);
+            velesDevConsole.handleServerCommand(line, report, prevResult, 'node');
     },
 
     isInternalCommandAlias: function(line) {
@@ -141,20 +154,27 @@ var velesDevConsole = {
         return velesDevConsole.handleCommandNotFound(line, report);
     },
 
-    handleWalletCommand: function(line, report, prevResult = null) {
+    handleServerCommand: function(line, report, prevResult = null, service = 'node') {
         // Allow to chain multiple commands with pipe
         var cmdLine = line.split('|')[0].trim();
 
         if (prevResult)     // if previous result has multiple lines, use just the first one
             cmdLine += ' ' + prevResult.split("\n")[0].trim();
 
-        this.client.get_cmd_result('node', cmdLine, {}, function(data) {
+        this.client.get_cmd_result(service, cmdLine, {}, function(data) {
             // depends on current API impl
-            if (data && data.hasOwnProperty('error'))
+            if (data && data.hasOwnProperty('error')) {  // Veles node errors
                 if (data['error'].hasOwnProperty('code') && data['error']['code'] == -32601)
                     return velesDevConsole.handleCommandNotFound(cmdLine, report);
                 else
                     return velesDevConsole.handleError(cmdLine, report, data['error']);
+
+            } else if (data && data.hasOwnProperty('message-type') && data['message-type'] == 'error') {  // Websocket server errors
+                if (data['name'] == 'commandNotFound')
+                    return velesDevConsole.handleCommandNotFound(cmdLine, report);
+                else
+                    return velesDevConsole.handleError(cmdLine, report, data['error']);
+            }
 
             return velesDevConsole.submitCommandResult(line, report, (typeof data == 'object')
                 ? JSON.stringify(data, null, 4)
@@ -210,10 +230,14 @@ var velesDevConsole = {
         velesSinglePageApp.hideMobileSlider();
         $('#dev-console').show();
         $('.footer-overlay').addClass('footer-panel-expand');
+        $('.footer').addClass('footer-panel-expand');   /* for tooltips to adjust height */
         $('body').addClass('with-overlay');
         $('#mobile-follow-toggle').addClass('inactive');
         $('.console-area').show();
-        $('#console-toggle').add('.console-area').addClass('active');
+        $('#console-toggle').add('.console-area').addClass('active'); 
+
+        if (!$('.sidebar').hasClass('sidebar-expand'))
+            $('.sidebar').fadeOut();   // hide sidebar same as scrollbar does if not expanded ...
 
         if (this.controller)
             this.controller.focus();
@@ -221,10 +245,15 @@ var velesDevConsole = {
 
     hide: function() {
         $('.footer-overlay').removeClass('footer-panel-expand');
+        $('.footer').removeClass('footer-panel-expand');
         $('body').removeClass('with-overlay');
         $('#mobile-follow-toggle').removeClass('inactive');
         $('.console-area').hide();
         $('#console-toggle').add('.console-area').removeClass('active');
+
+        if (!$('.sidebar').hasClass('sidebar-expand'))
+            $('.sidebar').fadeIn();
+
         window.setTimeout(function(){
             $('#dev-console').hide();
         }, 500);    // duration of the animation

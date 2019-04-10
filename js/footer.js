@@ -53,6 +53,19 @@ var velesFooterPanel = {
                 $('#chain-pow-tooltip').show('fast');
             }
         });
+        $('#price-status').click(function(){
+            velesFooterPanel.updateTooltip('price-status');
+
+            if ($('#price-status-tooltip').is(":visible")) {
+                $('#price-status-status').removeClass('active');
+                $('#price-status-tooltip').hide('fast');
+            } else {
+                $('.status-area').removeClass('active');
+                $('.footer-tooltip').hide();
+                $('#price-status-status').addClass('active');
+                $('#price-status-tooltip').show('fast');
+            }
+        });
     },
 
     'updateTooltip': function(name) {
@@ -114,18 +127,22 @@ var velesFooterPanel = {
             });
 
         } else if (name == 'chain-pow') {
-            $('.chain-pow-sha256d-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.sha256d));
-            $('.chain-pow-scrypt-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.scrypt));
-            $('.chain-pow-lyra2z-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.lyra2z));
-            $('.chain-pow-x11-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x11));
-            $('.chain-pow-x16r-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x16r));
-            $('.chain-pow-nist5-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.nist5));
-            velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                $('.chain-pow-supply-target-reached').text(data); 
-            }, 'key=epoch_supply_target_reached');
-            velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                $('.chain-pow-blocks-to-next-epoch').text(data); 
-            }, 'key=blocks_to_next_epoch');
+            try {
+                $('.chain-pow-sha256d-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.sha256d));
+                $('.chain-pow-scrypt-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.scrypt));
+                $('.chain-pow-lyra2z-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.lyra2z));
+                $('.chain-pow-x11-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x11));
+                $('.chain-pow-x16r-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x16r));
+                $('.chain-pow-nist5-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.nist5));
+                velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
+                    $('.chain-pow-supply-target-reached').text(data); 
+                }, 'key=epoch_supply_target_reached');
+                velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
+                    $('.chain-pow-blocks-to-next-epoch').text(data); 
+                }, 'key=blocks_to_next_epoch');
+            } catch {
+                console.log('not all hashrate loaded yet');
+            }
 
         } else
             console.log('Warning: Unknown tooltip: ' + name);

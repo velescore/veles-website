@@ -9,6 +9,7 @@
     <script data-pace-options='{ "eventLag": false, "restartOnPushState": false }' src="js/pace.js"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/jqplot@1.0.9/jquery.jqplot.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/spincube.css" rel="stylesheet">
 </head>
@@ -239,6 +240,8 @@
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
                             <h2>Dynamic character</h2>
+                            <div id="chart2" class="code" style="margin:20px;height:240px; width:640px;"></div>
+                            <pre class="code brush:js"></pre>
                             <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
                             <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward
                                 and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
@@ -379,6 +382,16 @@
                 </li>
             </ul>
         </div>
+        <div class="footer-tooltip" id="price-status-tooltip">
+            <ul>
+                <li> <i class="fa fa-signal"></i> Websocket Status: <b class="label-success websocket-online">online</b> <b class="label-error websocket-offline" style="display: none;">offline</b> </li>
+                <li>
+                    Price BTC
+                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount">0.00000000</span>
+                </li>
+                <li>Price USD<b>25</b></li>
+            </ul>
+        </div>
     </div>
     <!-- Overlay footer -->
     <div class="footer-overlay">
@@ -422,6 +435,14 @@
                         </a>
                       </li>
                     </ul>
+                </div>
+                <div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
+                    <span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
+                    <span class="label">Follow Us</span>
+                </div>
+                <div id="price-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Price:</span>
+                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span> BTC
                 </div>
                 <div id="connection-status" class="status-area">
                     <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE"
@@ -480,6 +501,13 @@
     </div>
     <!-- Common dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript" src="js/src/jquery.jqplot.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.dateAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.categoryAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.ohlcRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.highlighter.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.cursor.js"></script>
     <script src="js/menuTree.js"></script>
     <script src="js/nav.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

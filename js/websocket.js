@@ -133,6 +133,12 @@ velesSocketClient.connect = function()  {
                 velesSocketClient.onResultCallbacks[msg['request-id']](msg['data']);
                 delete velesSocketClient.onResultCallbacks[msg['request-id']];
             }
+
+        } else if (msg['message-type'] == 'error' && msg.hasOwnProperty('request-id')) {
+            if (velesSocketClient.onResultCallbacks.hasOwnProperty(msg['request-id'])) {
+                velesSocketClient.onResultCallbacks[msg['request-id']](msg);
+                delete velesSocketClient.onResultCallbacks[msg['request-id']];
+            }
         }
     };
 };
