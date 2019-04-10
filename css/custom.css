@@ -2434,9 +2434,9 @@ hr.hr-new {
 	border-top: 1px solid #e4b99c44!important;
 }
 button#btn-reload-fundings {
+	float: right;
 	margin-bottom: 2px;
-    margin-left: 5px;
-	margin-right: 15px;
+	margin-right: 5px;
 }
 #btn-online {
 	min-width: 10%;
@@ -2449,7 +2449,7 @@ button#btn-reload-fundings {
 	min-width: 10%;
 }
 .btn:disabled {
-    opacity: 0.85;
+    opacity: 0.75;
     padding: 2px;
 }
 img.qrcode {
