@@ -97,7 +97,7 @@ html {
 	border-top: 0;
 	border-bottom: 0;
 	margin-top: 60px;
-	margin-bottom: 38px;
+	margin-bottom: 39px;
 }
 
 .sidebar a {
@@ -945,6 +945,7 @@ span.status-label-short {
 }
 
 #price-status-tooltip {
+	z-index: 1099;
 	right: unset;
 	left: 199px;
 	width: 350px;
