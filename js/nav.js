@@ -387,7 +387,6 @@ var velesSinglePageApp = {
             this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
 
             if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
-                console.log('oga');
                 $('#content').css('padding-left', this.sidebarPadContent+'px');
             } else {
                 $('#content-wrapper').css('padding-left', 'unset');

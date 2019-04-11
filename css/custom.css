@@ -792,7 +792,7 @@ div#accordion {
 }
 
 .footer-tooltip li:first-child {
-	font-size: 14px;
+	font-size: 15px;
 	padding-bottom: 10px;
 	height: 35px;
 }
@@ -947,6 +947,33 @@ span.status-label-short {
 #price-status-tooltip {
 	right: unset;
 	left: 199px;
+	width: 350px;
+}
+
+#price-status-tooltip .price-usd {
+	font-color: #888;
+	display: inline;
+}
+
+#price-status-tooltip .tooltip-price {
+	text-align: right;
+	float: right;
+}
+
+#price-status-tooltip li.tooltip-row-tall {
+	height: unset;
+}
+
+#price-tooltip-chart {
+	width: 280px;
+	height: 220px;
+}
+
+#price-tooltip-chart .jqplot-cursor-tooltip {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    color: white;
 }
 
 /* Everything smaller than: iPad, iPad pro, ... */

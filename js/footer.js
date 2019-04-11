@@ -144,6 +144,13 @@ var velesFooterPanel = {
                 console.log('not all hashrate loaded yet');
             }
 
+        } else if (name == 'price-status') {
+            velesSocketClient.get_cmd_result('stats', 'dailyprice 10', {}, function(d) { 
+                velesWebCharts.drawPriceTooltipChart(
+                    velesWebCharts.priceStatsToOclh(d)
+                );
+            });
+
         } else
             console.log('Warning: Unknown tooltip: ' + name);
     }

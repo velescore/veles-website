@@ -9,7 +9,7 @@
     <script data-pace-options='{ "eventLag": false, "restartOnPushState": false }' src="js/pace.js"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/jqplot@1.0.9/jquery.jqplot.min.css" rel="stylesheet">
+    <link href="js/src/jquery.jqplot.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/spincube.css" rel="stylesheet">
 </head>
@@ -384,12 +384,21 @@
         </div>
         <div class="footer-tooltip" id="price-status-tooltip">
             <ul>
-                <li> <i class="fa fa-signal"></i> Websocket Status: <b class="label-success websocket-online">online</b> <b class="label-error websocket-offline" style="display: none;">offline</b> </li>
-                <li>
-                    Price BTC
-                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount">0.00000000</span>
+                <li> <i class="fa fa-chart-line"></i> VLS Price: 
+                    <div class="tooltip-price">
+                        <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount">0.00000000</span> BTC<br />
+                        $<span data-entity-id="market.price" data-attribute="price_usd">0.00</span>
+                    </div>
                 </li>
-                <li>Price USD<b>25</b></li>
+                <li class="tooltip-row-tall">
+                    <div id="price-tooltip-chart"></div>
+                </li>
+                <li class="list-separator">
+                    24h Volume: $<span data-entity-id="market.price" data-attribute="24h_volume_usd">
+                </li>
+                <li>
+                    Market Cap: $<span data-entity-id="market.price" data-attribute="market_cap_usd">
+                </li>
             </ul>
         </div>
     </div>
@@ -509,6 +518,7 @@
     <script type="text/javascript" src="js/src/plugins/jqplot.highlighter.js"></script>
     <script type="text/javascript" src="js/src/plugins/jqplot.cursor.js"></script>
     <script src="js/menuTree.js"></script>
+    <script src="js/charts.js"></script>
     <script src="js/nav.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/websocket.js"></script>
