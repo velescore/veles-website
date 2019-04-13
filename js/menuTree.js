@@ -18,7 +18,8 @@ var menuTree = [
 		   { 'title': 'Introduction' },
 		   { 'title': 'Funding' },
 		   { 'title': 'Dynamic-character' },
-		   { 'title': 'Main-features' }
+		   { 'title': 'Main-features' },
+		   { 'title': 'Twitter-feed'}
 	   ],
 	   'hideFromNav': true,
 	},
@@ -67,7 +68,7 @@ var menuTree = [
 	{
 		'title': 'Explorer',
 		'items': [
-			{ 
+			{
 				'title': 'Index',
 				'page': 'explorer-index',
 			  	'url': 'http://35.240.96.108:88'
