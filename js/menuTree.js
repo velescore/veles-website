@@ -98,5 +98,8 @@ var menuTree = [
 				'url': 'http://35.240.96.108:88/info'
 			}
 		]
+	},
+	{
+		'title': 'Contact',
 	}
 ];
