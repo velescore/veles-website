@@ -573,6 +573,91 @@ div#accordion {
     margin-top: 3%;
 }
 
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes vaporize {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes vaporize {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.alchemist-ph .clipped {
+  -webkit-clip-path: url(#clipper);
+          clip-path: url(#clipper);
+}
+.alchemist-ph #sun {
+  -webkit-animation: vaporize 1100ms infinite linear;
+          animation: vaporize 1100ms infinite linear;
+}
+.alchemist-ph #star1 {
+  -webkit-animation: vaporize 900ms infinite linear;
+          animation: vaporize 900ms infinite linear;
+}
+.alchemist-ph #star2 {
+  -webkit-animation: vaporize 850ms infinite linear;
+          animation: vaporize 850ms infinite linear;
+}
+.alchemist-ph #star3 {
+  -webkit-animation: vaporize 750ms infinite linear;
+          animation: vaporize 750ms infinite linear;
+}
+.alchemist-ph .clipped > .chem1 {
+  fill: #e4b99cbb;
+}
+.alchemist-ph .clipped > .chem2 {
+  fill: #262626bb;
+}
+.alchemist-ph .clipped > .chem1 {
+  -webkit-animation: spin 3500ms infinite linear;
+          animation: spin 3500ms infinite linear;
+  -webkit-transform-origin: 30% 82%;
+          transform-origin: 30% 82%;
+}
+.alchemist-ph .clipped > .chem2 {
+  -webkit-animation: spin 5000ms infinite linear;
+          animation: spin 5000ms infinite linear;
+  -webkit-transform-origin: 25% 82%;
+          transform-origin: 25% 82%;
+}
+
 #img-faq {
     padding-bottom: 4px;
     margin-left: -25px;
