@@ -658,6 +658,10 @@ div#accordion {
           transform-origin: 25% 82%;
 }
 
+svg#Layer_1 {
+    max-height: 350px;
+}
+
 #img-faq {
     padding-bottom: 4px;
     margin-left: -25px;
