@@ -711,10 +711,10 @@ svg#Layer_1 {
 }
 
 #img-download {
-	opacity: 0.95;
-	margin-top: 10px;
-	max-height: 180px;
-	margin: auto auto;
+	opacity: 0.85;
+    margin-top: 10px;
+    max-height: 250px;
+    margin: auto auto;
 }
 
 .rounded {
