@@ -17,8 +17,8 @@ var velesWebCharts = {
         ymin = 0;
 
         for (var i = 0; i < dataset.length; i++) {
-            if (ymax < dataset[i][4])
-                ymax = dataset[i][4];
+            if (ymax < dataset[i][2])
+                ymax = dataset[i][2];
             if (ymin > dataset[i][3])
                 ymin = dataset[i][3];
         }
@@ -51,21 +51,23 @@ var velesWebCharts = {
                   gridLineColor: 'transparent', borderWidth: 0},
                   seriesDefaults: { color: '#F19B7E' },
                   series: [{renderer:$.jqplot.OHLCRenderer, rendererOptions:{
-                    candleStick:true, 
+                    candleStick: true, 
                     lineWidth: 1,
-                    //fillUpBody: true,
-                    //fillDownBody: true,
+                    fillUpBody: false,
+                    fillDownBody: false,
                     upBodyColor: '#8cff8c',
                     downBodyColor: '#F19B7E'
                     }}],
                   cursor:{
                       show: true,
                       zoom:false,
-                      tooltipOffset: 10,
-                      tooltipLocation: 'nw'
+                      tooltipOffset: 5,
+                      tooltipLocation: 'nw',
+                      followMouse: true,
+                      tooltipFormatString: '%.4P, %.8f'
                   },
                   highlighter: {
-                      show: true,
+                      show: false   /*,
                       showMarker:true,
                       tooltipAxes: 'xy',
                       yvalues: 4,
@@ -74,7 +76,7 @@ var velesWebCharts = {
                       <tr><td>open:</td><td>%s</td></tr> \
                       <tr><td>hi:</td><td>%s</td></tr> \
                       <tr><td>low:</td><td>%s</td></tr> \
-                      <tr><td>close:</td><td>%s</td></tr></table>'
+                      <tr><td>close:</td><td>%s</td></tr></table>'*/
                   },
             });
     },
@@ -87,9 +89,9 @@ var velesWebCharts = {
             oclh[i] = [
                 stats[i]['date'],
                 (last_close === null) ? stats[i]['close'] : last_close,
-                stats[i]['close'],
+                 stats[i]['high'],
                 stats[i]['low'],
-                stats[i]['high']
+                stats[i]['close']
                 ];
             last_close = stats[i]['close'];
         }

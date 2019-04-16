@@ -394,10 +394,34 @@
                     <div id="price-tooltip-chart"></div>
                 </li>
                 <li class="list-separator">
-                    24h Volume: $<span data-entity-id="market.price" data-attribute="24h_volume_usd">
+                    Volume 24h: $<b><span data-entity-id="market.price" data-attribute="24h_volume_usd"></span></b>
+                </li>
+                <li class="second-row">
+                    Change 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h"></span></b>%
+                </li>
+                <li class="first-row">
+                    Market Cap: $<b><span data-entity-id="market.price" data-attribute="market_cap_usd"></span></b>
+                </li>
+                <li class="second-row">
+                    Change 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d"></span></b>%
                 </li>
                 <li>
-                    Market Cap: $<span data-entity-id="market.price" data-attribute="market_cap_usd">
+                    Total Supply: <b><span 
+                        data-entity-id="market.price" 
+                        data-attribute="total_supply" 
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{total_supply} VLS"
+                        ></span>m</b> 
+                    of maximum <b><span 
+                        data-entity-id="market.price" 
+                        data-attribute="max_supply" 
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{max_supply} VLS"
+                        ></span>m</b> VLS
                 </li>
             </ul>
         </div>

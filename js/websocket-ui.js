@@ -109,20 +109,38 @@ velesSocketClient.handleEvent = function(e) {
             attribute = $(this).attr('data-attribute');
 
             if (!attribute || !e['new-state'].hasOwnProperty(attribute)) {
-                console.log('no attr' + attribute);
+                console.log('Invalid data-entity-id: "' + e['entity-id'] + '"" has no attribute "' + attribute + '"');
                 ev = e;
                 return;
             }
+            var value = e['new-state'][attribute];
+
+            // Format the value
+            if ($(this).attr('data-multiplier'))
+                value *= $(this).attr('data-multiplier');
 
             if ($(this).attr('data-format') == 'coin_amount') {
-                $(this).html(velesChain.formatNumber(e['new-state'][attribute], 8));
+                $(this).html(velesChain.formatNumber(value, 8));
 
             } else if ($(this).attr('data-format') == 'hashrate') {
-                 $(this).html(velesChain.formatHashrate(e['new-state'][attribute]));
+                 $(this).html(velesChain.formatHashrate(value));
+
+            } else if ($(this).attr('data-format') == 'number') {
+                 $(this).html(velesChain.formatNumber(
+                    value, 
+                    $(this).attr('data-fixed-decimals') ? $(this).attr('data-fixed-decimals') : false
+                    ));
 
             } else {
-                $(this).text(e['new-state'][attribute]);
+                $(this).text(value);
             }
+
+            // Set title if required
+            var title, match_var = null;
+
+            if (title = $(this).attr('data-title'))
+                if (match_var = title.match(/{(.*?)}/))
+                    $(this).attr('title', title.replace(match_var[0], e['new-state'][match_var[1]]));
         })
 
         // compatibility for old-style using classnames

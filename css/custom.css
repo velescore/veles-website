@@ -960,12 +960,22 @@ span.status-label-short {
 	float: right;
 }
 
+#price-status-tooltip .tooltip-label-right {
+	text-align: right;
+	float: right;
+	display: inline;
+}
+
 #price-status-tooltip li.tooltip-row-tall {
 	height: unset;
 }
 
+#price-status-tooltip .list-separator {
+	margin-top: 0px;
+}
+
 #price-tooltip-chart {
-	width: 280px;
+	width: 290px;
 	height: 220px;
 }
 
