@@ -659,6 +659,7 @@ div#accordion {
 }
 
 svg#Layer_1 {
+	opacity: 0.75;
     max-height: 350px;
 }
 
@@ -671,14 +672,16 @@ svg#Layer_1 {
 #img-introduction {
 	margin-top: 15px;
 	max-height: 300px;
-	opacity: 0.93;
+	opacity: 0.75;
 }
 
 #img-funding {
+	opacity: 0.75;
 	max-height: 400px;
 }
 
 #img-dynamic {
+	opacity: 0.75;
 	margin-top: 35px;
     height: 200px;
 }
@@ -688,7 +691,7 @@ svg#Layer_1 {
     margin-top: 45px;
     margin-bottom: 13px;
     max-height: 345px;
-    opacity: 0.94;
+    opacity: 0.75;
 }
 
 /* Hide index image on anything smaller than iPad */
