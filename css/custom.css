@@ -711,9 +711,9 @@ svg#Layer_1 {
 }
 
 #img-download {
-	opacity: 0.85;
+	opacity: 0.75;
     margin-top: 10px;
-    max-height: 250px;
+    max-height: 230px;
     margin: auto auto;
 }
 
