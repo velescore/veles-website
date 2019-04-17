@@ -714,14 +714,14 @@ svg#Layer_1 {
 }
 
 #img-download {
-	opacity: 0.75;
+	opacity: 0.65;
     margin-top: 10px;
     max-height: 230px;
     margin: auto auto;
 }
 
 .rounded {
-	border-radius: 5.25rem!important;
+	border-radius: 2.25rem!important;
 }
 
 
