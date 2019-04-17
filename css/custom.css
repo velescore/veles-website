@@ -1743,7 +1743,6 @@ Main components
 
 #headingOne {
 	border-radius: 5px;
-	max-height: 50px;
 	margin-bottom: 5px;
 	background: #16161644;
 }
@@ -2555,7 +2554,6 @@ hr.hr-new {
 
 .modal {
 	height: unset;
-	max-height: 97%;
 }
 .modal.modal-wide .modal-dialog {
   width: 90%;
@@ -2610,7 +2608,7 @@ img.qrcode {
 }
 .modal-open .modal {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 /* Alternative loading bar with spinner
