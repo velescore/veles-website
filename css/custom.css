@@ -2378,7 +2378,7 @@ section::after {
     margin-top: 58px;
     right: calc(50% - 5px);
     margin-left: -5px;
-    border-width: 40px;
+    border-width: 20px;
     border-style: solid;
     border-color: #6f6158 transparent transparent transparent;
 }
@@ -2392,12 +2392,12 @@ section:nth-child(even)::after {
 		height: calc(100vh - 235px);
 	}
 }
-@media only screen and (min-height: 1024px) and (max-width: 1025px) {	/ * two pages for tablets in portrait * /
+@media only screen and (min-height: 1024px) and (max-width: 1025px) {	/* two pages for tablets in portrait */
 	section {
 		height: calc((100vh - 235px) / 2);
 	}
 }
-@media only screen and (min-height: 861px) {	/ * two pages for tablets in portrait * /
+@media only screen and (min-height: 861px) {	/* two pages for tablets in portrait */
 	section {
 		height: calc((100vh - 235px) / 2);
 	}
