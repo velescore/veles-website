@@ -2366,6 +2366,57 @@ ul.osx-dock li span {
 	padding-bottom: 60px;
 }
 
+/* generic section selector to be consistent around whole site,
+ * the section element should be used only for that purpose.
+ */
+section {
+	width: 100%;
+    padding-top: 60px;
+	padding-bottom: 60px;
+	background-image: linear-gradient(180deg,  #e4b99c22, #6f6158);
+	/*
+	background-color: #c4bebe;
+  	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
+	*/
+}
+
+section:nth-child(even) {
+	background-image: linear-gradient(180deg,  #26262622, #383737);
+}
+
+section::after {
+    content: " ";
+    position: absolute;
+    margin-top: 58px;
+    right: calc(50% - 5px);
+    margin-left: -5px;
+    border-width: 40px;
+    border-style: solid;
+    border-color: #6f6158 transparent transparent transparent;
+}
+
+section:nth-child(even)::after {
+    border-color: #383737 transparent transparent transparent;
+}
+
+section:last-child::after {
+	display: none;
+}
+
+
+/*
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    position: absolute;
+    pointer-events: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    */
+}
+
 .download-page .button-effect .sublabel.long {
 	display: none;
 }
