@@ -714,14 +714,14 @@ svg#Layer_1 {
 }
 
 #img-download {
-	opacity: 0.75;
+	opacity: 0.65;
     margin-top: 10px;
     max-height: 230px;
     margin: auto auto;
 }
 
 .rounded {
-	border-radius: 5.25rem!important;
+	border-radius: 2.25rem!important;
 }
 
 
@@ -1762,7 +1762,6 @@ Main components
 
 #headingOne {
 	border-radius: 5px;
-	max-height: 50px;
 	margin-bottom: 5px;
 	background: #16161644;
 }
@@ -2574,7 +2573,6 @@ hr.hr-new {
 
 .modal {
 	height: unset;
-	max-height: 97%;
 }
 .modal.modal-wide .modal-dialog {
   width: 90%;
@@ -2629,7 +2627,7 @@ img.qrcode {
 }
 .modal-open .modal {
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 /* Alternative loading bar with spinner
