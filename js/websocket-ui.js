@@ -43,7 +43,7 @@ var velesChain = {
         return "sha256d";
     },
 
-    'formatNumber': function(number, to_fixed = false, html_format = true) {
+    'formatNumber': function(number, to_fixed = false, html_format = true, thousand_delimiter = ' ') {
         if (number == 0 || number == null)
             return '0';
 
@@ -51,6 +51,17 @@ var velesChain = {
             number = Number(number).toFixed(to_fixed);
         else
             number = String(number);
+
+        if (thousand_delimiter) {
+            x = number.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + thousand_delimiter + '$2');
+            }
+            number = x1 + x2;
+        }
 
         if (html_format) {
             if (String(number).indexOf('.')) {
@@ -103,17 +114,17 @@ velesSocketClient.handleEvent = function(e) {
     // todo: recursive objects / arrays crawl
     if (e.name == 'state_changed') {
         // look for elements by deta-entity-id
-        // $('[data-entity-id="' + e['entity-id'] + '"][data-attribute="' + key + '"]').text(e['new-state'][key]+'X');
-        // format items
         $('[data-entity-id="' + e['entity-id'] + '"]').each(function(){
-            attribute = $(this).attr('data-attribute');
+            var attributes = $(this).attr('data-attribute').split('.');
+            var value = e['new-state'];
 
-            if (!attribute || !e['new-state'].hasOwnProperty(attribute)) {
-                console.log('Invalid data-entity-id: "' + e['entity-id'] + '"" has no attribute "' + attribute + '"');
-                ev = e;
-                return;
+            for (var i = 0; i < attributes.length; i++) {
+                if (!value.hasOwnProperty(attributes[i])) {
+                    console.log('Invalid data-attribute: "' + e['entity-id'] + '"" has no attribute "' + $(this).attr('data-attribute') + '"');
+                    return;
+                }
+                value = value[attributes[i]]
             }
-            var value = e['new-state'][attribute];
 
             // Format the value
             if ($(this).attr('data-multiplier'))
@@ -135,6 +146,13 @@ velesSocketClient.handleEvent = function(e) {
                 $(this).text(value);
             }
 
+            // Add units if required
+            if ($(this).attr('data-unit'))
+                $(this).html($(this).html() + ' ' + $(this).attr('data-unit'));
+
+            if ($(this).attr('data-unit-before'))
+                $(this).html($(this).attr('data-unit-before') + ' ' + $(this).html());
+
             // Set title if required
             var title, match_var = null;
 
@@ -142,15 +160,6 @@ velesSocketClient.handleEvent = function(e) {
                 if (match_var = title.match(/{(.*?)}/))
                     $(this).attr('title', title.replace(match_var[0], e['new-state'][match_var[1]]));
         })
-
-        // compatibility for old-style using classnames
-        for (var key in e['new-state']) {
-            $('.' + e['entity-id'].replace('.', '-') + '-' + key).text(e['new-state'][key]);
-
-            // Format hashrate though
-            if (key.indexOf('hashrate') != -1)
-                $('.' + e['entity-id'].replace('.', '-') + '-' + key + '-human').html(velesChain.formatHashrate(e['new-state'][key]));
-        }
 
         // If we're on block explorer page, trigger it's status update
         // function ASAP when new block is found

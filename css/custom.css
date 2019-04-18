@@ -910,7 +910,7 @@ svg#Layer_1 {
   content: " ";
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
-  right: 140px;
+  right: calc(50% - 5px);
   margin-left: -5px;
   border-width: 10px;
   border-style: solid;
@@ -1179,6 +1179,8 @@ span.status-label-short {
 	}
 }
 
+
+
 /* Footer */
 .footer {
 	margin-bottom: 40px;	/* width of footer-overlay */
@@ -1193,7 +1195,14 @@ span.status-label-short {
 	margin-bottom: 20px;
 }
 
+/* initial state of things that depend on websocket */
+.websocket-offline, .websocket-offline-animate {
+	display: block;
+}
 
+.websocket-online, .websocket-online-animate {
+	display: none;
+}
 
 /*
 .footer-follow-mobile {

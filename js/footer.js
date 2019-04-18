@@ -127,22 +127,12 @@ var velesFooterPanel = {
             });
 
         } else if (name == 'chain-pow') {
-            try {
-                $('.chain-pow-sha256d-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.sha256d));
-                $('.chain-pow-scrypt-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.scrypt));
-                $('.chain-pow-lyra2z-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.lyra2z));
-                $('.chain-pow-x11-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x11));
-                $('.chain-pow-x16r-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.x16r));
-                $('.chain-pow-nist5-hashrate').html(velesChain.formatHashrate(velesChain.state['chain.pow'].hashrates.nist5));
-                velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                    $('.chain-pow-supply-target-reached').text(data); 
-                }, 'key=epoch_supply_target_reached');
-                velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                    $('.chain-pow-blocks-to-next-epoch').text(data); 
-                }, 'key=blocks_to_next_epoch');
-            } catch {
-                console.log('not all hashrate loaded yet');
-            }
+            velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
+                $('.chain-pow-supply-target-reached').text(data); 
+            }, 'key=epoch_supply_target_reached');
+            velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
+                $('.chain-pow-blocks-to-next-epoch').text(data); 
+            }, 'key=blocks_to_next_epoch');
 
         } else if (name == 'price-status') {
             velesSocketClient.get_cmd_result('stats', 'dailyprice 14', {}, function(d) { 

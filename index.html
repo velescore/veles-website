@@ -93,13 +93,27 @@
                                             <div class="header-tile">
                                                 <div class="tile-label">
                                                     Circulating supply
-                                                    <span class="tile-label-value">967 849 VLS</span>
+                                                    <span class="tile-label-value"
+                                                        data-entity-id="market.price" 
+                                                        data-attribute="total_supply"
+                                                        data-format="number"
+                                                        data-fixed-decimals="0"
+                                                        data-title="{total_supply} VLS"
+                                                        data-unit="VLS"
+                                                    ></span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
                                                     Maximum supply
-                                                    <span class="tile-label-value">2 500 000 VLS</span>
+                                                     <span class="tile-label-value"
+                                                        data-entity-id="market.price" 
+                                                        data-attribute="max_supply"
+                                                        data-format="number"
+                                                        data-fixed-decimals="0"
+                                                        data-title="{max_supply} VLS"
+                                                        data-unit="VLS"
+                                                    ></span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
@@ -425,14 +439,19 @@
         </div>
         <div class="footer-tooltip" id="connection-tooltip">
             <ul>
-                <li> <i class="fa fa-signal"></i> Websocket Status: <b class="label-success websocket-online">online</b> <b class="label-error websocket-offline" style="display: none;">offline</b> </li>
+                <li> <i class="fa fa-signal"></i> Websocket Status: 
+                    <b class="label-success websocket-online">online</b> 
+                    <b class="label-error websocket-offline" style="display: none;">offline</b>
+                </li>
                 <li>Peer Connections: <b>8</b></li>
                 <li>Websocket Connections: <b>25</b></li>
             </ul>
         </div>
         <div class="footer-tooltip" id="chain-tip-tooltip">
             <ul>
-                <li><i class="fa fa-cube"></i> Current Block Height: <b class="chain-tip-height">89419</b></li>
+                <li><i class="fa fa-cube"></i> Current Block Height: 
+                    <b data-entity-id="chain.tip" data-attribute="height">0</b>
+                </li>
                 <li>Best block hash: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
                 <li>Found at: <b class="chain-tip-time"></b></li>
                 <li class="first-row">Size: <b class="chain-tip-size-kb">0</b> kB</li>
@@ -442,11 +461,20 @@
         </div>
         <div class="footer-tooltip" id="masternodes-tooltip">
             <ul>
-                <li><i class="fa fa-server"></i> Masternodes Total: <b class="masternodes-count">0</b></li>
-                <li>Enabled: <b class="masternodes-enabled-count label-success">0</b></li>
-                <li style="display: none;">Pre-Enabled: <b class="masternodes-pre-enabled-count label-warning">0</b></li>
-                <li>New Start Required: <b class="masternodes-new-start-required-count label-warning">0</b></li>
-                <li style="display: none;">Expired: <b class="masternodes-expired-count label-error">0</b></li>
+                <li><i class="fa fa-server"></i> Masternodes Total: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+                <li>Enabled: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+                <li style="display: none;">
+                    Pre-Enabled: 
+                    <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
+                </li>
+                <li>
+                    New Start Required: 
+                    <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
+                </li>
+                <li style="display: none;">
+                    Expired: 
+                    <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
+                </li>
                 <li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">0</b> VLS</li>
                 <li>MN block reward part: <b class="masternodes-reward-percent">0</b> %</li>
                 <!--<li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>-->
@@ -457,24 +485,25 @@
                 <li>
                     <i class="fa fa-chart-bar"></i>
                     Hashrate Total:
-                    <span class="chain-pow-totalhashrate-human"></span>
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="first-row">
-                    sha256d: <span class="chain-pow-sha256d-hashrate"></span>
+                    sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="second-row">
-                    scrypt: <span class="chain-pow-scrypt-hashrate"></span>
+                    scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="first-row">
-                    lyra2z: <span class="chain-pow-lyra2z-hashrate"></span>
+                    lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="second-row">
-                    x11: <span class="chain-pow-x11-hashrate"></span></li>
+                    x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
+                </li>
                 <li class="first-row">
-                    x16r: <span class="chain-pow-x16r-hashrate"><b>1</b></span>
+                    x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="second-row">
-                    nist5: <span class="chain-pow-nist5-hashrate"><b>85</b></span>
+                    nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="list-separator">
                     Blocks to next halving check: <b class="chain-pow-blocks-to-next-epoch"></b>
@@ -488,24 +517,26 @@
             <ul>
                 <li> <i class="fa fa-chart-line"></i> VLS Price:
                     <div class="tooltip-price">
-                        <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount">0.00000000</span> BTC<br />
-                        $<span data-entity-id="market.price" data-attribute="price_usd">0.00</span>
+                        <span data-entity-id="market.price" data-attribute="price_btc" 
+                            data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
+                        <span data-entity-id="market.price" data-attribute="price_usd"
+                            data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
                     </div>
                 </li>
                 <li class="tooltip-row-tall">
                     <div id="price-tooltip-chart"></div>
                 </li>
                 <li class="list-separator">
-                    Volume 24h: $<b><span data-entity-id="market.price" data-attribute="24h_volume_usd"></span></b>
+                    Volume 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
-                    Change 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h"></span></b>%
+                    Change 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
                 </li>
                 <li class="first-row">
-                    Market Cap: $<b><span data-entity-id="market.price" data-attribute="market_cap_usd"></span></b>
+                    Market Cap: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
-                    Change 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d"></span></b>%
+                    Change 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
                 </li>
                 <li>
                     Total Supply: <b><span 
@@ -586,18 +617,18 @@
                     <span class="websocket-online" title="Websocket Status: ONLINE"
                         style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
                 </div>
-                <div id="chain-tip-status" class="status-area websocket-online-animate" style="">
+                <div id="chain-tip-status" class="status-area websocket-online-animate">
                     <span class="status-label-wide">Blocks:</span>
-                    <b><span class="chain-tip-height">0</span></b>
+                    <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
                 </div>
-                <div id="masternodes-status" class="status-area websocket-online-animate" style="">
+                <div id="masternodes-status" class="status-area websocket-online-animate">
                     <span class="status-label-wide">Masternodes:</span>
-                    <b><span class="masternodes-count">0</span></b>
+                    <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
                     <span class="status-label-short">MNs</span>
                 </div>
-                <div id="chain-pow-status" class="status-area websocket-online-animate" style="">
+                <div id="chain-pow-status" class="status-area websocket-online-animate">
                     <span class="status-label-wide">Hashrate:</span>
-                    <span class="chain-pow-totalhashrate-human"></span>
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
                 </div>
             </div>
         </div>
