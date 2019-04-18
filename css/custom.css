@@ -713,17 +713,12 @@ svg#Layer_1 {
 	max-height: 65%;
 }
 
-#img-download {
+.img-download {
 	opacity: 0.65;
     margin-top: 10px;
     max-height: 230px;
     margin: auto auto;
 }
-
-.rounded {
-	border-radius: 2.25rem!important;
-}
-
 
 .img5 {
 	margin-left: 20px;
@@ -1183,6 +1178,7 @@ span.status-label-short {
 
 /* Footer */
 .footer {
+	padding-top:  40px; 	/* section separator height */
 	margin-bottom: 40px;	/* width of footer-overlay */
 }
 
@@ -2381,7 +2377,7 @@ section {
 }
 
 section:nth-child(even) {
-	background-image: linear-gradient(180deg,  #26262622, #383737);
+	background-image: linear-gradient(180deg,  transparent, #383737);	/* #26262622 */
 }
 
 section::after {
@@ -2399,10 +2395,11 @@ section:nth-child(even)::after {
     border-color: #383737 transparent transparent transparent;
 }
 
+/*
 section:last-child::after {
 	display: none;
 }
-
+*/
 
 /*
     width: 100px;
