@@ -2342,10 +2342,6 @@ ul.osx-dock li span {
 	/*height: calc(100vh - 262px);*/
 }
 
-.padding-dark {
-	padding-left: 30px;
-}
-
 .row-no-limit {
     height: unset!important;
     min-height: unset!important;
