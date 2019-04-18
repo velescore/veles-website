@@ -2366,10 +2366,6 @@ section {
     padding-top: 60px;
 	padding-bottom: 60px;
 	background-image: linear-gradient(180deg,  #e4b99c22, #6f6158);
-	/*
-	background-color: #c4bebe;
-  	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
-	*/
 }
 
 section:nth-child(even) {
@@ -2391,23 +2387,24 @@ section:nth-child(even)::after {
     border-color: #383737 transparent transparent transparent;
 }
 
-/*
-section:last-child::after {
-	display: none;
+@media only screen and (min-height: 660px) {
+	section {
+		height: calc(100vh - 235px);
+	}
 }
-*/
+@media only screen and (min-height: 1024px) and (max-width: 1025px) {	/ * two pages for tablets in portrait * /
+	section {
+		height: calc((100vh - 235px) / 2);
+	}
+}
+@media only screen and (min-height: 861px) {	/ * two pages for tablets in portrait * /
+	section {
+		height: calc((100vh - 235px) / 2);
+	}
+}
 
-/*
-    width: 100px;
-    height: 100px;
-    -webkit-transform: translateX(-50%) rotate(45deg);
-    transform: translateX(-50%) rotate(45deg);
-    position: absolute;
-    pointer-events: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    */
+section .container {
+	height: 100%;
 }
 
 .download-page .button-effect .sublabel.long {
@@ -2470,24 +2467,6 @@ section:last-child::after {
 	}
 }
 
-
-/*
-@media only screen and (min-height: 660px) {
-	.download-page .row-light, .download-page .row-dark {
-		height: calc(100vh - 295px);
-	}
-}
-@media only screen and (min-height: 1024px) and (max-width: 1025px) {	/ * two pages for tablets in portrait * /
-	.download-page .row-light, .download-page .row-dark {
-		height: calc((100vh - 295px) / 2);
-	}
-}
-@media only screen and (min-height: 861px) {	/ * two pages for tablets in portrait * /
-	.download-page .row-light, .download-page .row-dark {
-		height: calc((100vh - 295px) / 2);
-	}
-}
-*/
 
 hr.hr-new {
 	margin: 0;
