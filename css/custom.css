@@ -2388,22 +2388,22 @@ section:nth-child(even)::after {
 }
 
 @media only screen and (min-height: 660px) {
-	section {
+	.download-page section {
 		height: calc(100vh - 235px);
 	}
 }
 @media only screen and (min-height: 1024px) and (max-width: 1025px) {	/* two pages for tablets in portrait */
-	section {
+	.download-page section {
 		height: calc((100vh - 235px) / 2);
 	}
 }
 @media only screen and (min-height: 861px) {	/* two pages for tablets in portrait */
-	section {
+	.download-page section {
 		height: calc((100vh - 235px) / 2);
 	}
 }
 
-section .container {
+.download-page section .container {
 	height: 100%;
 }
 
