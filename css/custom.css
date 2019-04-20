@@ -135,11 +135,21 @@ html {
 .header {
 	display: block;
 	position: relative;
-	height: calc(100vh - 100px) !important;
+	height: calc(100vh - 98px) !important;
 	background: transparent;
 	overflow: hidden;
 	border-bottom: 0px;
 	z-index: 1;
+}
+
+.movething::after {
+    content: " ";
+    position: absolute;
+    right: calc(50% - 5px);
+    margin-left: -5px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: #262626 transparent transparent transparent;
 }
 
 .movething {

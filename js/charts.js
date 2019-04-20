@@ -53,8 +53,8 @@ var velesWebCharts = {
                   series: [{renderer:$.jqplot.OHLCRenderer, rendererOptions:{
                     candleStick: true, 
                     lineWidth: 1,
-                    fillUpBody: false,
-                    fillDownBody: false,
+                    fillUpBody: true,
+                    fillDownBody: true,
                     upBodyColor: '#8cff8c',
                     downBodyColor: '#F19B7E'
                     }}],
@@ -85,11 +85,11 @@ var velesWebCharts = {
         oclh = [];
         last_close = null;
 
-        for (var i = 0; i < stats.length; i++) {
+        for (var i = stats.length - 1; i >= 0; i--) {
             oclh[i] = [
                 stats[i]['date'],
                 (last_close === null) ? stats[i]['close'] : last_close,
-                 stats[i]['high'],
+                stats[i]['high'],
                 stats[i]['low'],
                 stats[i]['close']
                 ];
