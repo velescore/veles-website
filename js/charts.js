@@ -39,7 +39,7 @@ var velesWebCharts = {
                           showTickMarks: false,
                       },
                       yaxis: {
-                          tickOptions:{ showLabel: false },
+                          tickOptions:{ showLabel: false, formatString: '%.8f' },
                           max: ymax,
                           min: ymin,
                             borderWidth: 0,
@@ -64,7 +64,8 @@ var velesWebCharts = {
                       tooltipOffset: 5,
                       tooltipLocation: 'nw',
                       followMouse: true,
-                      tooltipFormatString: '%.4P, %.8f'
+                      /*tooltipFormatString: '%d: %.8f',
+                      useAxesFormatters: false*/
                   },
                   highlighter: {
                       show: false   /*,
