@@ -94,7 +94,7 @@
                                                 <div class="tile-label">
                                                     Circulating supply
                                                     <span class="tile-label-value"
-                                                        data-entity-id="market.price"
+                                                        data-entity-id="market.price" 
                                                         data-attribute="total_supply"
                                                         data-format="number"
                                                         data-fixed-decimals="0"
@@ -107,7 +107,7 @@
                                                 <div class="tile-label">
                                                     Maximum supply
                                                      <span class="tile-label-value"
-                                                        data-entity-id="market.price"
+                                                        data-entity-id="market.price" 
                                                         data-attribute="max_supply"
                                                         data-format="number"
                                                         data-fixed-decimals="0"
@@ -461,8 +461,8 @@
         </div>
         <div class="footer-tooltip" id="connection-tooltip">
             <ul>
-                <li> <i class="fa fa-signal"></i> Websocket Status:
-                    <b class="label-success websocket-online">online</b>
+                <li> <i class="fa fa-signal"></i> Websocket Status: 
+                    <b class="label-success websocket-online">online</b> 
                     <b class="label-error websocket-offline" style="display: none;">offline</b>
                 </li>
                 <li>Peer Connections: <b>8</b></li>
@@ -471,7 +471,7 @@
         </div>
         <div class="footer-tooltip" id="chain-tip-tooltip">
             <ul>
-                <li><i class="fa fa-cube"></i> Current Block Height:
+                <li><i class="fa fa-cube"></i> Current Block Height: 
                     <b data-entity-id="chain.tip" data-attribute="height">0</b>
                 </li>
                 <li>Best block hash: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
@@ -486,15 +486,15 @@
                 <li><i class="fa fa-server"></i> Masternodes Total: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
                 <li>Enabled: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
                 <li style="display: none;">
-                    Pre-Enabled:
+                    Pre-Enabled: 
                     <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
                 </li>
                 <li>
-                    New Start Required:
+                    New Start Required: 
                     <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
                 </li>
                 <li style="display: none;">
-                    Expired:
+                    Expired: 
                     <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
                 </li>
                 <li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">0</b> VLS</li>
@@ -539,7 +539,7 @@
             <ul>
                 <li> <i class="fa fa-chart-line"></i> VLS Price:
                     <div class="tooltip-price">
-                        <span data-entity-id="market.price" data-attribute="price_btc"
+                        <span data-entity-id="market.price" data-attribute="price_btc" 
                             data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
                         <span data-entity-id="market.price" data-attribute="price_usd"
                             data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
@@ -561,17 +561,17 @@
                     &#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
                 </li>
                 <li>
-                    Total Supply: <b><span
-                        data-entity-id="market.price"
-                        data-attribute="total_supply"
+                    Total Supply: <b><span 
+                        data-entity-id="market.price" 
+                        data-attribute="total_supply" 
                         data-multiplier="0.000001"
                         data-format="number"
                         data-fixed-decimals="1"
                         data-title="{total_supply} VLS"
-                        ></span>m</b>
-                    of maximum <b><span
-                        data-entity-id="market.price"
-                        data-attribute="max_supply"
+                        ></span>m</b> 
+                    of maximum <b><span 
+                        data-entity-id="market.price" 
+                        data-attribute="max_supply" 
                         data-multiplier="0.000001"
                         data-format="number"
                         data-fixed-decimals="1"
@@ -699,9 +699,6 @@
     <script src="js/menuTree.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/nav.js"></script>
-    <script src="js/roadmap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/websocket.js"></script>
     <script src="js/websocket-ui.js"></script>

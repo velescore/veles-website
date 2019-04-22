@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-</head>
+<head></head>
 <body>
     <div id="content-wrapper">
         <!-- Anything outside #content element
@@ -30,163 +29,156 @@
                      <ol class="breadcrumb" id="breadcrumb-1"></ol>
                  </div>
              </div>
-             <section id="cd-timeline" class="cd-container-roadmap">
-                 <div class="timeline">
-                    <div class="timeline-item">
-                       <div class="timeline-photo" id="q1">
-                          <img src="https://i.imgur.com/BaDxuwm.jpg" />
-                          <button class="timeline-cta">READ MORE</button>
-                       </div>
-                       <div class="timeline-headline">
-                          <h2 class="timeline-title">Quarter 1</h2>
-                          <p class="timeline-subtitle">1. January - 31 March 2019</p>
-                          <div class="timeline-excerpt">
-                             <p>VCIP01-first major update<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span> </p>
-                             <p>Improve packaging for releases<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span></p>
-                             <p>Masternode install script update<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span></p>
-                             <p>Review and update all the documentation<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span></p>
-                             <p>Travis CI compatibility<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span></p>
-                          </div>
-                       </div>
-                       <div class="timeline-content">
-                          <h2 class="timeline-title">VCIP01 (Veles Core Improvement Proposal)</h2>
-                          <li> activated on block 50000</li>
-                          <li> dynamic block rewards increase up to 100x depeding on the algo
-                          <li> 10x maximum block reward increase combined with shorter initial halving periods, aimed to release more VLS to circulation to help liquidity and to motivate miners, while still ensuring the same maximum supply and the same inflation curve later on.</li>
-                          <li> multi-algo rewards will be lot more equal among the different algorithms, the calculations are base-lined on average market price of each algo's hasrate per hour</li>
-                          <li> improved dynamic reward system with automatic block reward re-adjustments (within the range of maximum and minimum block reward limits) after each halving period, based on total amount of VLS mined during the halving period</li>
-                          <li> * as a first coin * we have introduced dynamic non-linear halving period - the halving interval will double each time another halving occurs, creating smoother supply curve. Each halving might by automatically delayed  by another length of halving interval if not enough VLS has been mined since the last halving (we have implemented this measure to mitigate some disadvantages of multi-algo dynamic rewards, where less coins are mined if the hashrate is low, to ensure the real supply curve will stay as close as possible to  theoretical model). We have included new RPC command to get the information on the current and past halving periods, current maximum block reward, number of halvings occured, the current halving interval, etc.</li>
-                          <li> smooth masternode reward percentage increase from 5% to 60% of the block reward in approximately 5 years period (the current percentage of masternode rewards was 40%, but with the 10x increase in the block rewards happening in the same time  it means the amount of masternode rewards paid with each block will be slightly * higher * than the current rate)</li>
-                          <li> smooth Veles Developers fund reward percentage decrease from current 5% to 0% after approximately 5 years period, after which the so called "dev-reward" aka "founder-reward" will be completly * disabled *.</li>
-                          <p>The update also includes many improvements and fixes ported from Bitcoin Core v0.17, FXCT v0.17, and other small fixes  and improvements by the Veles Core developers (for example a new RPC command to display the current hashrate, difficulty and related information for each supported algorithm)</p>
-                          <h2 class="timeline-title"> Travis CI (Continuous Integration system)</h2>
-                          <li>Veles Core integration with Travis CI which enables us to perform automated testing on a very regular basis - after every single change in the source code in the public repository, whether in stable or development branch, the source code is built again on most of popular platforms (Linux, Win32, Win64, RaspberryPi and macOS) and automated tests are run. This will increase reliability of future Veles Core releases.</li>
-                          <h2 class="timeline-title"> Veles Masternode Installer</h2>
-                          <li> masternode update functionality is now included as well, no need to use different script to install and then different one to update anymore.</li>
-                          <li>supports following Linux distributions:<b>  Ubuntu, Debian, Linux Mint, Gentoo, Sabayon, Fedora, RHEL, CentOSM</b></li>
-                       </div>
+            <section id="cd-timeline" class="cd-container">
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-picture">
                     </div>
-                    <div class="timeline-item">
-                       <div class="timeline-photo timeline-photo-right" id="q2">
-                          <img src="https://i.imgur.com/BaDxuwm.jpg" />
-                          <button class="timeline-cta">READ MORE</button>
-                       </div>
-                       <div class="timeline-headline">
-                          <h2 class="timeline-title">Quarter 2</h2>
-                          <p class="timeline-subtitle">1. April - 31 June 2019</p>
-                          <div class="timeline-excerpt">
-                             <p>New website and explorer<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span> </p>
-                             <p>New exchange listing (Qtrade.io)<span style="color: #e4b99cbb; font-size: 20px; margin-left:5px;"> ✔</span></p>
-                             <p>VCIP02 second major update</p>
-                             <p>dVPN: Integrate OpenVPN service with masternodes</p>
-                             <p>Webwallet</p>
-                             <p>Listing on sites like masternodes.online</p>
-                          </div>
-                       </div>
-                       <div class="timeline-content">
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dicta officiis culpa dolor fugiat facilis dolorum atque, eum explicabo at iste iure, repellendus distinctio aliquam praesentium consequuntur. In, quaerat doloribus!</p>
-                          <p>Eveniet quas dolor, ratione similique cupiditate quae fugiat unde nesciunt consectetur explicabo obcaecati, tempore architecto odit harum dolorum fugit delectus minus, distinctio soluta. Optio accusamus, nihil nesciunt magni et aspernatur.</p>
-                          <p>Voluptates consequatur officia voluptatibus magnam pariatur, consequuntur quas recusandae perferendis dignissimos inventore asperiores eveniet, eos ipsum saepe quibusdam, deserunt iure. Fugit enim expedita voluptatum harum eligendi suscipit perferendis,
-                             voluptates voluptate.
-                          </p>
-                          <p>Reiciendis repudiandae porro unde et voluptatum nesciunt ipsum atque assumenda est, iusto corrupti illum dignissimos quis exercitationem. Quia, cumque! Voluptates obcaecati sequi aliquid tenetur voluptas, dicta error laudantium quos facere.</p>
-                          <p>Illo omnis sit explicabo ipsum. Vel illo eius nesciunt, ipsum voluptatibus atque. Alias laboriosam eius quo cupiditate eaque in, soluta ex, dolorum consequatur expedita cum, velit rerum doloremque enim deleniti!</p>
-                          <p>Rerum qui accusantium corporis repellendus. Sed necessitatibus temporibus accusamus at! Saepe totam doloribus eveniet modi perspiciatis, neque nesciunt quos, obcaecati suscipit aliquid iste nihil dignissimos atque? Consequatur quidem alias voluptas.</p>
-                          <p>Architecto enim magni non ab quas, vel vitae illum dolor corrupti excepturi dolorem consequuntur voluptatem iure cupiditate veritatis, suscipit alias quaerat quam eligendi aliquam officia perferendis omnis? At, deserunt quo?</p>
-                          <p>Ad tempora quas, maiores laudantium, blanditiis recusandae saepe doloribus sit consequuntur unde voluptate officiis commodi architecto ipsa laboriosam pariatur neque? Enim laboriosam molestias soluta autem debitis error necessitatibus blanditiis
-                             delectus!
-                          </p>
-                          <p>Tenetur eveniet ipsum dignissimos deserunt consequuntur tempora odio quisquam suscipit expedita provident, beatae ipsam! Dolorem sit modi voluptate, distinctio eveniet unde sunt dolorum. Maiores incidunt iste, quisquam minima veritatis inventore!</p>
-                          <p>Illum rerum ipsum numquam voluptates libero suscipit officia quisquam quae beatae expedita ipsam hic voluptatibus, doloremque accusantium sequi vero rem necessitatibus nemo non aspernatur, reprehenderit totam iusto. Amet, illo ipsum.</p>
-                          <p>Fugiat illo doloremque aut vero tenetur enim sapiente aspernatur expedita? Voluptatibus, quos. Repellat dignissimos corporis alias pariatur aliquid ullam magnam quia soluta dolor? Excepturi, fugit deleniti? Similique architecto exercitationem libero!</p>
-                          <p>Quidem assumenda distinctio nostrum iste minima laborum, ipsam, sequi esse eligendi harum facere eius blanditiis hic repellat ab laudantium ullam eaque ut sit animi fuga corrupti. Quaerat quasi aliquid amet!</p>
-                          <p>In eum accusamus, necessitatibus a corrupti inventore quidem molestiae sint eaque tempore quo ducimus expedita dicta deserunt impedit amet doloremque fugit. Earum illo nam maxime sint quas maiores enim sunt.</p>
-                          <p>Pariatur deserunt eveniet quae error. Debitis sapiente tempora neque dolores modi voluptatem architecto dicta illum molestias nobis dolorum sint vitae totam, nihil nisi iusto reiciendis ad quam a suscipit repellat?</p>
-                          <p>Aut unde sed sit ab iure officiis suscipit magni laborum tempore ea quaerat, illo dolorum quisquam, necessitatibus totam est tenetur provident voluptates alias eveniet consequatur ullam magnam. Sapiente, illum in.</p>
-                       </div>
+                    <div class="cd-timeline-content" id="q1">
+                        <h2>Q1 2019</h2>
+                        <div class="timeline-content-info">
+                            <span class="timeline-content-info-title">
+                          <i class="fa fa-certificate" aria-hidden="true"></i>
+                          Development 1. January - 31 March
+                          </span>
+                        </div>
+                        <p>VCIP01-first major update </p>
+                        <ul class="content-skills">
+                            <li>0.17.1 code-base from Bitcoin Core<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>Dynamic non-linear halvings implemented<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>Dynamic reward system improved<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>QT-gui improved<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>Smoother masternode start<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                        </ul>
+                        <p>Improve packaging for releases<p>
+                        <ul class="content-skills">
+                            <li>compatibility with Travis-platform<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>implement process of building .deb packages<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>set-up Ubuntu/Debian repository<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>Windows installer<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>macOS installer<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                        </ul>
+                        <p>Docs: Review and update all the documentation</p>
+                        <ul class="content-skills">
+                            <li>correction of branding<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>update outdated IRC for Discord and other links<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>port MN relevant docs from Dash Core<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                        </ul>
+                        <p>New website and explorer development</p>
+                        <ul class="content-skills">
+                            <li>design in Veles theme<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>intagrate websocket-tech<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>extra blockhain-theme functions impleneted<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>remastering explorer<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>integrate explorer into website<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                        </ul>
                     </div>
-                    <div class="timeline-item">
-                       <div class="timeline-photo" id="q3">
-                          <img src="https://i.imgur.com/BaDxuwm.jpg" />
-                          <button class="timeline-cta">READ MORE</button>
-                       </div>
-                       <div class="timeline-headline">
-                          <h2 class="timeline-title">Quarter 3</h2>
-                          <p class="timeline-subtitle">1. July - 31 September 2019</p>
-                          <div class="timeline-excerpt">
-                             <p>VCIP03 third major update</p>
-                             <p>Deterministic masternodes</p>
-                             <p>dVPN: Implement II. tier masternodes</p>
-                             <p>Mobile wallets and hardware wallet support</p>
-                             <p>Starting with marketing campaign</p>
-                          </div>
-                       </div>
-                       <div class="timeline-content">
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dicta officiis culpa dolor fugiat facilis dolorum atque, eum explicabo at iste iure, repellendus distinctio aliquam praesentium consequuntur. In, quaerat doloribus!</p>
-                          <p>Eveniet quas dolor, ratione similique cupiditate quae fugiat unde nesciunt consectetur explicabo obcaecati, tempore architecto odit harum dolorum fugit delectus minus, distinctio soluta. Optio accusamus, nihil nesciunt magni et aspernatur.</p>
-                          <p>Voluptates consequatur officia voluptatibus magnam pariatur, consequuntur quas recusandae perferendis dignissimos inventore asperiores eveniet, eos ipsum saepe quibusdam, deserunt iure. Fugit enim expedita voluptatum harum eligendi suscipit perferendis,
-                             voluptates voluptate.
-                          </p>
-                          <p>Reiciendis repudiandae porro unde et voluptatum nesciunt ipsum atque assumenda est, iusto corrupti illum dignissimos quis exercitationem. Quia, cumque! Voluptates obcaecati sequi aliquid tenetur voluptas, dicta error laudantium quos facere.</p>
-                          <p>Illo omnis sit explicabo ipsum. Vel illo eius nesciunt, ipsum voluptatibus atque. Alias laboriosam eius quo cupiditate eaque in, soluta ex, dolorum consequatur expedita cum, velit rerum doloremque enim deleniti!</p>
-                          <p>Rerum qui accusantium corporis repellendus. Sed necessitatibus temporibus accusamus at! Saepe totam doloribus eveniet modi perspiciatis, neque nesciunt quos, obcaecati suscipit aliquid iste nihil dignissimos atque? Consequatur quidem alias voluptas.</p>
-                          <p>Architecto enim magni non ab quas, vel vitae illum dolor corrupti excepturi dolorem consequuntur voluptatem iure cupiditate veritatis, suscipit alias quaerat quam eligendi aliquam officia perferendis omnis? At, deserunt quo?</p>
-                          <p>Ad tempora quas, maiores laudantium, blanditiis recusandae saepe doloribus sit consequuntur unde voluptate officiis commodi architecto ipsa laboriosam pariatur neque? Enim laboriosam molestias soluta autem debitis error necessitatibus blanditiis
-                             delectus!
-                          </p>
-                          <p>Tenetur eveniet ipsum dignissimos deserunt consequuntur tempora odio quisquam suscipit expedita provident, beatae ipsam! Dolorem sit modi voluptate, distinctio eveniet unde sunt dolorum. Maiores incidunt iste, quisquam minima veritatis inventore!</p>
-                          <p>Illum rerum ipsum numquam voluptates libero suscipit officia quisquam quae beatae expedita ipsam hic voluptatibus, doloremque accusantium sequi vero rem necessitatibus nemo non aspernatur, reprehenderit totam iusto. Amet, illo ipsum.</p>
-                          <p>Fugiat illo doloremque aut vero tenetur enim sapiente aspernatur expedita? Voluptatibus, quos. Repellat dignissimos corporis alias pariatur aliquid ullam magnam quia soluta dolor? Excepturi, fugit deleniti? Similique architecto exercitationem libero!</p>
-                          <p>Quidem assumenda distinctio nostrum iste minima laborum, ipsam, sequi esse eligendi harum facere eius blanditiis hic repellat ab laudantium ullam eaque ut sit animi fuga corrupti. Quaerat quasi aliquid amet!</p>
-                          <p>In eum accusamus, necessitatibus a corrupti inventore quidem molestiae sint eaque tempore quo ducimus expedita dicta deserunt impedit amet doloremque fugit. Earum illo nam maxime sint quas maiores enim sunt.</p>
-                          <p>Pariatur deserunt eveniet quae error. Debitis sapiente tempora neque dolores modi voluptatem architecto dicta illum molestias nobis dolorum sint vitae totam, nihil nisi iusto reiciendis ad quam a suscipit repellat?</p>
-                          <p>Aut unde sed sit ab iure officiis suscipit magni laborum tempore ea quaerat, illo dolorum quisquam, necessitatibus totam est tenetur provident voluptates alias eveniet consequatur ullam magnam. Sapiente, illum in.</p>
-                       </div>
+                    <!-- cd-timeline-content -->
+                </div>
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block" id="timeline-block-1">
+                    <div class="cd-timeline-img cd-movie">
                     </div>
-                    <div class="timeline-item">
-                       <div class="timeline-photo timeline-photo-right" id="q4">
-                          <img src="https://i.imgur.com/BaDxuwm.jpg" />
-                          <button class="timeline-cta">READ MORE</button>
-                       </div>
-                       <div class="timeline-headline">
-                          <h2 class="timeline-title">Quarter 4</h2>
-                          <p class="timeline-subtitle">1. October - 31 December 2019</p>
-                          <p class="timeline-excerpt">comming soon :D</p>
-                       </div>
-                       <div class="timeline-content">
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dicta officiis culpa dolor fugiat facilis dolorum atque, eum explicabo at iste iure, repellendus distinctio aliquam praesentium consequuntur. In, quaerat doloribus!</p>
-                          <p>Eveniet quas dolor, ratione similique cupiditate quae fugiat unde nesciunt consectetur explicabo obcaecati, tempore architecto odit harum dolorum fugit delectus minus, distinctio soluta. Optio accusamus, nihil nesciunt magni et aspernatur.</p>
-                          <p>Voluptates consequatur officia voluptatibus magnam pariatur, consequuntur quas recusandae perferendis dignissimos inventore asperiores eveniet, eos ipsum saepe quibusdam, deserunt iure. Fugit enim expedita voluptatum harum eligendi suscipit perferendis,
-                             voluptates voluptate.
-                          </p>
-                          <p>Reiciendis repudiandae porro unde et voluptatum nesciunt ipsum atque assumenda est, iusto corrupti illum dignissimos quis exercitationem. Quia, cumque! Voluptates obcaecati sequi aliquid tenetur voluptas, dicta error laudantium quos facere.</p>
-                          <p>Illo omnis sit explicabo ipsum. Vel illo eius nesciunt, ipsum voluptatibus atque. Alias laboriosam eius quo cupiditate eaque in, soluta ex, dolorum consequatur expedita cum, velit rerum doloremque enim deleniti!</p>
-                          <p>Rerum qui accusantium corporis repellendus. Sed necessitatibus temporibus accusamus at! Saepe totam doloribus eveniet modi perspiciatis, neque nesciunt quos, obcaecati suscipit aliquid iste nihil dignissimos atque? Consequatur quidem alias voluptas.</p>
-                          <p>Architecto enim magni non ab quas, vel vitae illum dolor corrupti excepturi dolorem consequuntur voluptatem iure cupiditate veritatis, suscipit alias quaerat quam eligendi aliquam officia perferendis omnis? At, deserunt quo?</p>
-                          <p>Ad tempora quas, maiores laudantium, blanditiis recusandae saepe doloribus sit consequuntur unde voluptate officiis commodi architecto ipsa laboriosam pariatur neque? Enim laboriosam molestias soluta autem debitis error necessitatibus blanditiis
-                             delectus!
-                          </p>
-                          <p>Tenetur eveniet ipsum dignissimos deserunt consequuntur tempora odio quisquam suscipit expedita provident, beatae ipsam! Dolorem sit modi voluptate, distinctio eveniet unde sunt dolorum. Maiores incidunt iste, quisquam minima veritatis inventore!</p>
-                          <p>Illum rerum ipsum numquam voluptates libero suscipit officia quisquam quae beatae expedita ipsam hic voluptatibus, doloremque accusantium sequi vero rem necessitatibus nemo non aspernatur, reprehenderit totam iusto. Amet, illo ipsum.</p>
-                          <p>Fugiat illo doloremque aut vero tenetur enim sapiente aspernatur expedita? Voluptatibus, quos. Repellat dignissimos corporis alias pariatur aliquid ullam magnam quia soluta dolor? Excepturi, fugit deleniti? Similique architecto exercitationem libero!</p>
-                          <p>Quidem assumenda distinctio nostrum iste minima laborum, ipsam, sequi esse eligendi harum facere eius blanditiis hic repellat ab laudantium ullam eaque ut sit animi fuga corrupti. Quaerat quasi aliquid amet!</p>
-                          <p>In eum accusamus, necessitatibus a corrupti inventore quidem molestiae sint eaque tempore quo ducimus expedita dicta deserunt impedit amet doloremque fugit. Earum illo nam maxime sint quas maiores enim sunt.</p>
-                          <p>Pariatur deserunt eveniet quae error. Debitis sapiente tempora neque dolores modi voluptatem architecto dicta illum molestias nobis dolorum sint vitae totam, nihil nisi iusto reiciendis ad quam a suscipit repellat?</p>
-                          <p>Aut unde sed sit ab iure officiis suscipit magni laborum tempore ea quaerat, illo dolorum quisquam, necessitatibus totam est tenetur provident voluptates alias eveniet consequatur ullam magnam. Sapiente, illum in.</p>
-                       </div>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content" id="q2">
+                        <h2>Q2 2019</h2>
+                        <div class="timeline-content-info">
+                            <span class="timeline-content-info-title">
+                          <i class="fa fa-certificate" aria-hidden="true"></i>
+                          Development 1. April - 31 June
+                          </span>
+                        </div>
+                        <p>New website and explorer development</p>
+                        <ul class="content-skills">
+                            <li>new explorer landing page<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>finish interactive map <span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>update hq images<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>update texts<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>fix https cert. on explorer<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                            <li>website and explorer alpha release<span style="color: rgb(187, 255, 170); font-size: 20px; margin-left:5px;"> ✔</span></li>
+                        </ul>
+                    <p>VCIP02 second major update</p>
+                    <ul class="content-skills">
+                        <li>new updated MN collateral</li>
+                        <li>rebase onto bitcoin:0.18</li>
+                        <li>POS activation</li>
+                        <li>PrivateSend / InstantSend activation</li>
+                        <li>finalize packaging</li>
+                        <li>add lang strings for section Masternodes</li>
+                    </ul>
+                    <p>dVPN: Integrate OpenVPN service with masternodes</p>
+                    <ul class="content-skills">
+                        <li>integration as a MN service</li>
+                        <li>reachability and connectivity checks</li>
+                        <li>X11 certificate generation based on VLS private key signature through decentralized Veles Certification Authority</li>
+                        <li>first pre-alpha test version</li>
+                    </ul>
+                </div>
+                    <!-- cd-timeline-content -->
+                </div>
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block" id="q3">
+                    <div class="cd-timeline-img cd-picture">
                     </div>
-                 </div>
-                 <div class="timeline-overlay"></div>
-                 <button class="timeline-back">
-                    <svg viewBox="0 0 24 24">
-                       <path fill="none" background-color="#F19B7E"  d="M6,12.4 L18,12.4 M12.6,7 L18,12.4 L12.6,17.8" transform="matrix(-1 0 0 1 24 0)"></path>
-                    </svg>
-                 </button>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content">
+                        <h2>Q3 2019</h2>
+                        <div class="timeline-content-info">
+                            <span class="timeline-content-info-title">
+                          <i class="fa fa-certificate" aria-hidden="true"></i>
+                          Development 1. July - 31 September
+                          </span>
+                        </div>
+                        <p>VCIP03 third major update</p>
+                        <ul class="content-skills">
+                            <li>DIP 1 integration</li>
+                            <li>DIP 2 integration</li>
+                            <li>Deterministic masternode integration</li>
+                        </ul>
+                        <p>dVPN: Implement II. tier masternodes</p>
+                        <ul class="content-skills">
+                            <li>tier 2 masternode integration</li>
+                            <li>to function as exit nodes</li>
+                            <li>to provide multi-hop routing</li>
+                            <li>IPv6 to IPv4 routing layer to support IPv6 masternodes</li>
+                            <li>management of subscriptions on blockchain</li>
+                        </ul>
+                        <p>New wallets integration</p>
+                        <ul class="content-skills">
+                            <li>webwallet integration</li>
+                            <li>angular-cli client integration</li>
+                            <li>alpha release of Android/IOS wallet</li>
+                            <li>hardware wallet support</li>
+                        </ul>
+                    </div>
+                    <!-- cd-timeline-content -->
+                </div>
+                <!-- cd-timeline-block -->
+                <div class="cd-timeline-block">
+                    <div class="cd-timeline-img cd-location">
+                    </div>
+                    <!-- cd-timeline-img -->
+                    <div class="cd-timeline-content" id="q4">
+                        <h2>Q4 2019</h2>
+                        <div class="timeline-content-info">
+                            <span class="timeline-content-info-title">
+                          <i class="fa fa-certificate" aria-hidden="true"></i>
+                          Development 1. October - 31 December
+                          </span>
+                        </div>
+                        <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
+                        <ul class="content-skills">
+                            <li>VCIP01 Alpha Release</li>
+                            <li>New Website</li>
+                            <li>Start with marketing</li>
+                            <li>Technical paper</li>
+                            <li>Estabilizating core Team</li>
+                        </ul>
+                    </div>
+                    <!-- cd-timeline-content -->
+                </div>
+                <!-- cd-timeline-block -->
             </section>
         </div><!-- /#content -->
     </div>
-    <script src="js/roadmap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </body>
 </html>
