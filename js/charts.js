@@ -30,9 +30,7 @@ var velesWebCharts = {
                   axesStyles: { borderWidth: 0 },
                   axes: {
                       xaxis: {
-                          //autoscale: true,
-                          max: dataset[0][0],
-                          min: dataset[dataset.length - 1][0],
+                          autoscale: true,
                           renderer:$.jqplot.DateAxisRenderer,
                           tickOptions:{ showLabel: false },
                           pad: 1,

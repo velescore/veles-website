@@ -135,7 +135,7 @@ var velesFooterPanel = {
             }, 'key=blocks_to_next_epoch');
 
         } else if (name == 'price-status') {
-            velesSocketClient.get_cmd_result('stats', 'dailyprice 30', {}, function(d) { 
+            velesSocketClient.get_cmd_result('stats', 'dailyprice 14', {}, function(d) { 
                 velesWebCharts.drawPriceTooltipChart(
                     velesWebCharts.priceStatsToOclh(d)
                 );
