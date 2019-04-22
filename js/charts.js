@@ -30,7 +30,9 @@ var velesWebCharts = {
                   axesStyles: { borderWidth: 0 },
                   axes: {
                       xaxis: {
-                          autoscale: true,
+                          //autoscale: true,
+                          max: dataset[0][0],
+                          min: dataset[dataset.length - 1][0],
                           renderer:$.jqplot.DateAxisRenderer,
                           tickOptions:{ showLabel: false },
                           pad: 1,
@@ -39,7 +41,7 @@ var velesWebCharts = {
                           showTickMarks: false,
                       },
                       yaxis: {
-                          tickOptions:{ showLabel: false },
+                          tickOptions:{ showLabel: false, formatString: '%.8f' },
                           max: ymax,
                           min: ymin,
                             borderWidth: 0,
@@ -64,7 +66,8 @@ var velesWebCharts = {
                       tooltipOffset: 5,
                       tooltipLocation: 'nw',
                       followMouse: true,
-                      tooltipFormatString: '%.4P, %.8f'
+                      /*tooltipFormatString: '%d: %.8f',
+                      useAxesFormatters: false*/
                   },
                   highlighter: {
                       show: false   /*,
