@@ -71,11 +71,11 @@ var velesFooterPanel = {
     'updateTooltip': function(name) {
         if (name == 'chain-tip') {
             // fetch new data
-            velesSocketClient.get_cmd_result('node', 'getblock ' + velesChain.state['chain.tip']['hash'], {}, function(d) { 
+            velesSocketClient.get_cmd_result('node', 'getblock ' + velesChain.state['chain.tip']['hash'], {}, function(d) {
                 $('.chain-tip-hash-short').text(velesChain.shortenBlockHash(d.hash));
                 $('.chain-tip-hash-short').attr('href', 'http://explorer.veles.network/block/' + d.hash);
                 $('.chain-tip-hash-short').attr('title', d.hash);
-                $('.chain-tip-previous-hash-short').text(velesChain.shortenBlockHash(d.previousblockhash)); 
+                $('.chain-tip-previous-hash-short').text(velesChain.shortenBlockHash(d.previousblockhash));
                 $('.chain-tip-previous-hash-short').attr('href', 'http://explorer.veles.network/block/' + d.previousblockhash);
                 $('.chain-tip-previous-hash-short').attr('title', d.previousblockhash);
                 $('.chain-tip-time').text(new Date(d.time * 1000).toLocaleString());
@@ -83,7 +83,7 @@ var velesFooterPanel = {
                 $('.chain-tip-ntx').text(d.nTx);
                 $('.chain-tip-algo').text(velesChain.algoNameFromVersionHex(d.versionHex));
                 /*
-                velesSocketClient.get_cmd_result('node', 'getblock ' + d.previousblockhash, {}, function(d) { 
+                velesSocketClient.get_cmd_result('node', 'getblock ' + d.previousblockhash, {}, function(d) {
                     $('.chain-tip-previous-time').text(new Date(d.time * 1000).toLocaleString());
                     $('.chain-tip-previous-size-kb').text(d.size / 1000);
                     $('.chain-tip-previous-ntx').text(d.nTx);
@@ -109,9 +109,9 @@ var velesFooterPanel = {
             else
                 $('.masternodes-new-start-required-count').parent('li').hide();
 
-            velesSocketClient.get_cmd_result('node', 'masternode collateral', {}, function(d) { 
-                $('.masternodes-collateral-amount').text(d); 
-            }); 
+            velesSocketClient.get_cmd_result('node', 'masternode collateral', {}, function(d) {
+                $('.masternodes-collateral-amount').text(d);
+            });
             if (velesChain && velesChain.hasOwnProperty('state') && velesChain.state.hasOwnProperty('chain.tip')) {
                 $('.masternodes-reward-percent').text(Math.round(
                     (0.05 + (0.6 - 0.05) / ((1051200) / (velesChain.state['chain.tip']['height'] - 50000))) * 10000
@@ -119,23 +119,23 @@ var velesFooterPanel = {
             }
 
         } else if (name == 'connection') {
-            velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) { 
-                $('.website-connection-count').text(d); 
+            velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) {
+                $('.website-connection-count').text(d);
             }, 'count');
-            velesSocketClient.get_cmd_result('node', 'getconnectioncount', {}, function(d) { 
-                $('.node-connection-count').text(d); 
+            velesSocketClient.get_cmd_result('node', 'getconnectioncount', {}, function(d) {
+                $('.node-connection-count').text(d);
             });
 
         } else if (name == 'chain-pow') {
             velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                $('.chain-pow-supply-target-reached').text(data); 
+                $('.chain-pow-supply-target-reached').text(data);
             }, 'key=epoch_supply_target_reached');
             velesSocketClient.get_cmd_result('node', 'gethalvingstatus', {}, function(data) {
-                $('.chain-pow-blocks-to-next-epoch').text(data); 
+                $('.chain-pow-blocks-to-next-epoch').text(data);
             }, 'key=blocks_to_next_epoch');
 
         } else if (name == 'price-status') {
-            velesSocketClient.get_cmd_result('stats', 'dailyprice 14', {}, function(d) { 
+            velesSocketClient.get_cmd_result('stats', 'dailyprice 30', {}, function(d) { 
                 velesWebCharts.drawPriceTooltipChart(
                     velesWebCharts.priceStatsToOclh(d)
                 );

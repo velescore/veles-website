@@ -1,5 +1,5 @@
 /*
- * Class to handle charting on Veles website 
+ * Class to handle charting on Veles website
  *
  * Copyright (C) 2019 The Veles Core developers
  * Author: Altcoin Baggins
@@ -30,7 +30,9 @@ var velesWebCharts = {
                   axesStyles: { borderWidth: 0 },
                   axes: {
                       xaxis: {
-                          autoscale: true,
+                          //autoscale: true,
+                          max: dataset[0][0],
+                          min: dataset[dataset.length - 1][0],
                           renderer:$.jqplot.DateAxisRenderer,
                           tickOptions:{ showLabel: false },
                           pad: 1,
@@ -51,7 +53,7 @@ var velesWebCharts = {
                   gridLineColor: 'transparent', borderWidth: 0},
                   seriesDefaults: { color: '#F19B7E' },
                   series: [{renderer:$.jqplot.OHLCRenderer, rendererOptions:{
-                    candleStick: true, 
+                    candleStick: true,
                     lineWidth: 1,
                     fillUpBody: true,
                     fillDownBody: true,
