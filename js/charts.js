@@ -1,5 +1,5 @@
 /*
- * Class to handle charting on Veles website 
+ * Class to handle charting on Veles website
  *
  * Copyright (C) 2019 The Veles Core developers
  * Author: Altcoin Baggins
@@ -53,7 +53,7 @@ var velesWebCharts = {
                   gridLineColor: 'transparent', borderWidth: 0},
                   seriesDefaults: { color: '#F19B7E' },
                   series: [{renderer:$.jqplot.OHLCRenderer, rendererOptions:{
-                    candleStick: true, 
+                    candleStick: true,
                     lineWidth: 1,
                     fillUpBody: true,
                     fillDownBody: true,
