@@ -63,6 +63,7 @@
   top: 85px;
   left: 50%;
   animation: cube_zoom 3s;
+  perspective: 200px;
 }
 
 @keyframes cube_zoom {

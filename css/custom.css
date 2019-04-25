@@ -142,6 +142,7 @@ html {
 	z-index: 1;
 }
 
+/*
 .movething::after {
     content: " ";
     position: absolute;
@@ -151,6 +152,7 @@ html {
     border-style: solid;
     border-color: #262626 transparent transparent transparent;
 }
+*/
 
 .movething {
 	border-radius: 5px;
@@ -160,7 +162,7 @@ html {
 }
 
 .movething .header.with-bg {
-	background-color: #262626;
+	background-color: black;	/*#262626;*/
 	transition: background-color 2.5s ease;
 }
 
@@ -2495,10 +2497,28 @@ hr.hr-new {
 	margin-top: 40px;
 }*/
 
-#large-header canvas {
+#large-header #under-canvas {
 	position: absolute;
 	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	z-index: 50;
+	background-image: url('../images/world-map.jpg');
+	background-position: center center;
+	background-size: cover;
+	opacity: 0.5;
 }
+
+#large-header #canvas {
+	position: absolute;
+	pointer-events: none;
+	z-index: 75;
+}
+
+#large-header h1 {
+	z-index: 100;
+}
+
 #large-header .container .row {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -2523,6 +2543,7 @@ hr.hr-new {
 	height: calc((40vh - 40px) / 2);
 	width: 25%;
 	font-size: 18px;
+	z-index: 90;
 }
 #large-header .header-tile .tile-label {
 	margin: auto auto;
