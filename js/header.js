@@ -32,13 +32,22 @@ var indexHeaderWidget = {};
     }
 
     function initPoints() {
-         // create points
+         // create movable points
         points = [];
-        for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {
+        for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {   /* / 10 */
             for(var y = 0; y < height; y = y + height / 10) {
                 var px = x + Math.random()*width / 10;
                 var py = y + Math.random()*height / 10;
-                var p = {x: px, originX: px, y: py, originY: py };
+                var p = {x: px, originX: px, y: py, originY: py, isStatic: false };
+                points.push(p);
+            }
+        }
+        // create static points
+        for(var x = 0; x < width; x = x + width / 5 / $('.movething').css('zoom')) {
+            for(var y = 0; y < height; y = y + height / 10) {
+                var px = x + Math.random()*width / 10;
+                var py = y + Math.random()*height / 10;
+                var p = {x: px, originX: px, y: py, originY: py, isStatic: true };
                 points.push(p);
             }
         }
@@ -160,11 +169,13 @@ var indexHeaderWidget = {};
     }
 
     function shiftPoint(p) {
-        TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
-            y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
-            onComplete: function() {
-                shiftPoint(p);
-            }});
+        if (!p.isStatic) {
+            TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
+                y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+                onComplete: function() {
+                    shiftPoint(p);
+                }});
+        }
     }
 
     // Canvas manipulation
@@ -192,8 +203,14 @@ var indexHeaderWidget = {};
         this.draw = function() {
             if(!_this.active) return;
             ctx.beginPath();
-            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(228,185,156,'+ _this.active+')';
+            
+            if (pos.isStatic) {
+                ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+                ctx.fillStyle = 'rgba(155, 255,126,' + Math.min(_this.active * 1.2, 1) + ')';
+            } else {
+                ctx.arc(_this.pos.x, _this.pos.y, Math.max(_this.radius - 1, 2), 0, 2 * Math.PI, false);
+                ctx.fillStyle = 'rgba(228,185,156,' + (_this.active * 0.8) + ')';
+            }
             ctx.fill();
         };
     }
