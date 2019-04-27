@@ -184,6 +184,8 @@ velesSocketClient.handleConnect = function() {
     velesSocketClient.get_cmd_result('node', 'masternodelist', {}, function(d) { 
         $('.masternode-list-enabled-length').text(d); 
     }, 'value=ENABLED|count'); */
+
+    velesSinglePageApp.runPageHook('connect');
 };
 velesSocketClient.handleDisconnect = function() {
     $('.websocket-online').hide();

@@ -1,5 +1,8 @@
 // Wrapper object
-var indexHeaderWidget = {};
+var indexHeaderWidget = {
+    'mapRatio': 1.576344086,
+    'mapSelector': '#under-canvas'
+};
 
 (function() {
 
@@ -10,6 +13,14 @@ var indexHeaderWidget = {};
         initHeader();
         initAnimation();
         addListeners();
+        indexHeaderWidget.updateLocation([{"lat": 50.1109, "lon": 8.68213}, {"lat": 52.3909, "lon": 4.66476}, {"lat": 50.9871, "lon": 2.12554}, {"lat": 51.4742, "lon": -0.0797189}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 45.9974, "lon": 15.4784}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 50.475, "lon": 12.365}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 52.4791, "lon": 10.544}, {"lat": 50.117, "lon": 8.72776}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 43.652, "lon": -79.3633}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 48.9167, "lon": 14.1333}, {"lat": 42.7027, "lon": 23.3063}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 40.8302, "lon": -74.1299}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 25.7617, "lon": -80.1918}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 8.29903, "lon": 77.2144}, {"lat": 51.4742, "lon": -0.0797189}, {"lat": 51.5204, "lon": -0.0737773}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 39.776, "lon": -86.0427}, {"lat": 47.6062, "lon": -122.332}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 25.7617, "lon": -80.1918}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 42.7027, "lon": 23.3063}, {"lat": 8.29903, "lon": 77.2144}, {"lat": 51.2529, "lon": 6.80122}, {"lat": 34.0581, "lon": -118.235}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 48.9167, "lon": 14.1331}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 37.3341, "lon": -121.892}, {"lat": 50.6916, "lon": 3.20026}, {"lat": 42.7027, "lon": 23.3063}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 51.5353, "lon": -0.6658}, {"lat": 52.5192, "lon": 13.4061}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 50.3986, "lon": 8.07958}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 47.6062, "lon": -122.332}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 60.1699, "lon": 24.9384}, {"lat": 48.9167, "lon": 14.1331}, {"lat": 45.9974, "lon": 15.4784}, {"lat": 1.32123, "lon": 103.695}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 42.1409, "lon": 24.7523}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 50.3986, "lon": 8.07958}, {"lat": 60.1699, "lon": 24.9384}, {"lat": 51.5204, "lon": -0.0737773}, {"lat": 52.4791, "lon": 10.544}, {"lat": 51.5204, "lon": -0.0737773}, {"lat": 41.9943, "lon": -87.962}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 52.5192, "lon": 13.4061}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 52.3909, "lon": 4.66476}, {"lat": 48.1044, "lon": 11.601}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 51.4742, "lon": -0.0797189}, {"lat": 49.452, "lon": 11.0767}, {"lat": 51.5074, "lon": -0.127758}, {"lat": 39.0438, "lon": -77.4874}, {"lat": 52.4791, "lon": 10.544}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 52.3909, "lon": 4.66476}, {"lat": 48.8683, "lon": 2.36197}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 51.4742, "lon": -0.0797189}, {"lat": 48.5831, "lon": 7.74788}, {"lat": 51.4742, "lon": -0.0797189}, {"lat": 52.5192, "lon": 13.4061}, {"lat": 40.5569, "lon": -74.4847}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 60.404, "lon": 25.0131}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 48.9167, "lon": 14.1331}, {"lat": 43.4598, "lon": 11.8364}, {"lat": 48.1342, "lon": 17.1054}, {"lat": 49.4, "lon": 15.5833}, {"lat": 25.7975, "lon": -80.23}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 55.1516, "lon": 61.4045}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 48.9167, "lon": 14.1331}, {"lat": 33.7777, "lon": -84.4211}, {"lat": 60.404, "lon": 25.0131}, {"lat": 52.4791, "lon": 10.544}, {"lat": 42.6978, "lon": 23.3217}, {"lat": 50.0755, "lon": 14.4378}, {"lat": 50.1109, "lon": 8.68213}, {"lat": 55.1516, "lon": 61.4045}, {"lat": 60.404, "lon": 25.0131}, {"lat": 51.5074, "lon": -0.127758}, {"lat": 51.5204, "lon": -0.0737773}]);
+
+    }
+    indexHeaderWidget.updateLocation = function(gps) {
+        if (gps.length) {
+            initPoints(gps);
+            initAnimation();
+        }
     }
 
     function initHeader() {
@@ -31,7 +42,43 @@ var indexHeaderWidget = {};
         initPoints();
     }
 
-    function initPoints() {
+    indexHeaderWidget.gpsToMapPos = function(lon, lat) {
+        $map = $(indexHeaderWidget.mapSelector);
+        ratio = $map.width() / $map.height();
+        lonOffset = -5;
+
+        lonStepPx = $map.width() / 360;
+        latStepPx = (lonStepPx * indexHeaderWidget.mapRatio) / 2;
+
+
+        //if (ratio > indexHeaderWidget.mapRatio) {
+        offsetY = ((1 - indexHeaderWidget.mapRatio / ratio) / 2) * $map.height();
+        //} else {
+       //     offsetY = ((1 - indexHeaderWidget.mapRatio / ratio) / 2) * $map.width();
+        //}
+
+        lon += lonOffset;
+
+        if (lon < -180)
+            lon += 360;
+
+        if (lon > 180)
+            lon -= 360;
+
+        result = {
+            'lon': lon,
+            'lat': lat,
+            'lonStepPx': lonStepPx,
+            'latStepPx': latStepPx,
+            'offsetY': offsetY,
+            'x': ((lon + 180) * lonStepPx),
+            'y': (((lat * -1) + 90) * latStepPx) - offsetY + 30
+        }
+
+        return result;
+    }
+
+    function initPoints(gps = null) {
          // create movable points
         points = [];
         for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {   /* / 10 */
@@ -43,14 +90,25 @@ var indexHeaderWidget = {};
             }
         }
         // create static points
-        for(var x = 0; x < width; x = x + width / 5 / $('.movething').css('zoom')) {
-            for(var y = 0; y < height; y = y + height / 10) {
-                var px = x + Math.random()*width / 10;
-                var py = y + Math.random()*height / 10;
+        if (gps == null) {   // random points
+            for(var x = 0; x < width; x = x + width / 5 / $('.movething').css('zoom')) {
+                for(var y = 0; y < height; y = y + height / 10) {
+                    var px = x + Math.random()*width / 10;
+                    var py = y + Math.random()*height / 10;
+                    var p = {x: px, originX: px, y: py, originY: py, isStatic: true };
+                    points.push(p);
+                }
+            }
+        } else {
+            for (var i = gps.length - 1; i >= 0; i--) {
+                map_pos = indexHeaderWidget.gpsToMapPos(gps[i].lon, gps[i].lat);
+                var px = map_pos.x;
+                var py = map_pos.y;
                 var p = {x: px, originX: px, y: py, originY: py, isStatic: true };
                 points.push(p);
             }
         }
+
 
         // for each point find the 5 closest points
         for(var i = 0; i < points.length; i++) {
@@ -87,6 +145,7 @@ var indexHeaderWidget = {};
             var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
         }
+        indexHeaderWidget.points = indexHeaderWidget.points;
     }
 
     // Event handling
@@ -220,4 +279,4 @@ var indexHeaderWidget = {};
         return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
     }
 
-})();
+   })();

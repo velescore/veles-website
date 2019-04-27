@@ -31,3 +31,8 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
         $('#twitter-widget-0').contents().find('a.PrettyLink.profile.customisable.h-card').css('color', '#e4b99c');
     }, 4000);
 });
+velesSinglePageApp.addPageHook('index', 'connect', function() {
+    velesSocketClient.get_cmd_result('location', 'gps', {}, function(data) {
+        indexHeaderWidget.updateLocation(data);
+    });
+});
