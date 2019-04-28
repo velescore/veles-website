@@ -1105,6 +1105,10 @@ span.status-label-short {
 	#chain-tip-tooltip::after {
 		right: 45px;
 	}
+	#price-status-tooltip {
+		left: unset;
+		right: 5px;
+	}
 }
 
 @media only screen and (max-width: 415px) {	/* iPhone 6/7/8 Plus and smaller */
@@ -1121,6 +1125,9 @@ span.status-label-short {
 	#masternodes-tooltip::after {
 		right: 98px;
 	}
+	#price-status-tooltip {
+		right: 15px;
+	}
 }
 
 @media only screen and (max-width: 361px) {	/* iPhone 5/SE, Galaxy S5 and smaller */
@@ -1133,6 +1140,12 @@ span.status-label-short {
 	#chain-pow-tooltip ul {
 	    padding-left: 20px;
 	    padding-right: 20px;
+	}
+	#price-status-tooltip {
+		width: unset !important;
+		margin: 0 12px 5px 8px !important;
+		zoom: 0.85 !important;
+		left: 3px;
 	}
 }
 
