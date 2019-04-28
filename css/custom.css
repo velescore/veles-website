@@ -2408,6 +2408,10 @@ section::after {
     border-color: #6f6158 transparent transparent transparent;
 }
 
+section:nth-child(odd)::after {
+    border: none;
+}
+
 section:nth-child(even)::after {
     border-color: #383737 transparent transparent transparent;
 }
