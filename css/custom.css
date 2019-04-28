@@ -782,8 +782,8 @@ svg#Layer_1 {
    	height: 40px;
 	padding: 0px 10px 0px 10px;
 	background-color: black;
-	border-top: 1px solid #322c1e;
-	border-bottom: 1px solid #16130d;
+	/*border-top: 1px solid #322c1e;*/
+	/*border-bottom: 1px solid #16130d;*/
 }
 
 .footer-overlay.footer-panel-expand {
