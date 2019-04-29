@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Veles Core WebAPI Console</title>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/websocket.js"></script>
+    <script type="text/javascript">
+    	velesSocketClient.host = 'localhost';
+    </script>
+</head>
+<!-- <body onload="javascript:velesSocketClient.connect()"> -->
+<body>
+  <ul id="nav">
+  	<li>
+  		<a href="#" onclick="javascript:velesSocketClient.clear_console()">Clear console</a> |
+  		Commands: 
+  		<a href="#" onclick="javascript:velesSocketClient.send_cmd('listClients')">listClients</a> |
+  		<a href="#" onclick="javascript:velesSocketClient.send_cmd('node', 'getblock 00000000000000fec421a7f0d64151360ea95130c65e8b420a0e011328d67e96 2')">getblock [random]</a> |
+  		<a href="#" onclick="javascript:velesSocketClient.send_cmd('node', 'getrawtransaction 6951dbfa352b44912a576d5a10a79cbc28a1cc347a296bce1d9f0aef715fcbe6 true')">getrawtransaction [random]</a> |
+  		<a href="#" onclick="javascript:velesSocketClient.send_cmd('node', 'getmultialgostatus')">getmultialgostatus</a> |
+  		<a href="#" onclick="javascript:velesSocketClient.send_cmd('node', 'gethalvingstatus')">gethalvingstatus</a>
+  	</li>
+  </ul>
+  <ul id="debug-area"></ul>
+</body>
+</html>

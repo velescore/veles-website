@@ -1,307 +1,710 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Veles-network</title>
-    <!-- Core bootstrap CSS -->
+    <title>Veles Network</title>
+    <script data-pace-options='{ "eventLag": false, "restartOnPushState": false }' src="js/pace.js"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- Custom styles CSS -->
+    <link href="js/src/jquery.jqplot.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/spincube.css" rel="stylesheet">
 </head>
-
-<body>
+<body class="with-overlay">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
         <div class="container">
-            <img src="images/veles.ico" />
-            <a class="navbar-brand" href="index.html">Veles</a>
+            <a class="navbar-brand" href="index.html" title="Homepage">
+                <img id="icon" src="images/veles.ico"></img>
+                <div id="brand-text"> Veles</div>
+            </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item template">
+                        <a class="nav-link" href="{{item.url}}">{{item.title}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="download.html">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/velescore/veles/wiki">Wiki</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://explorer.veles.network">Explorer</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="resources.html" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Resources
-                     </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="com-mile.html">Community-milestones</a>
-                            <a class="dropdown-item" href="mining-pools.html">Mining-pools</a>
-                            <a class="dropdown-item" href="coin-specs.html">Coin-specs</a>
+                    <li class="nav-item dropdown template">
+                        <a class="nav-link dropdown-toggle" href="{{item.url}}" id="navbarDropdown-{{item.page}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{item.title}}</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown-{{item.page}}">
+                            <a class="dropdown-item template" href="{{item.url}}">{{item.title}}</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <div id="menu-primary"></div>
-                    </li>
-            </div>
-            </ul>
-        </div>
-        </div>
-    </nav>
-    <header>
-        <div id="carouselSlideIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselSlideIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselSlideIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselSlideIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide One - Set the background image for this slide in the line below -->
-                <div class="carousel-item active" style="background-image: url('images/vpn-official.jpg')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Decentralized VPN</h3>
-                        <p>In process of development.</p>
-                    </div>
-                </div>
-                <!-- Slide Two - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background: url('images/multi-official.jpg')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Multi-algorithmic </h3>
-                        <p>Lyra2z ,X11 ,X16r ,Sha256d ,Scrypt ,Nist5</p>
-                    </div>
-                </div>
-                <!-- Slide Three - Set the background image for this slide in the line below -->
-                <div class="carousel-item" style="background: url('images/dynamic-official.jpg')">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Dynamic</h3>
-                        <p>Dynamic block POW/MN/DEV rewards, dynamic non-linear halvings .</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselSlideIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselSlideIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </header>
-    <!-- Page Content -->
-    <!-- Features Section -->
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-6" id="col-lg-6-start">
-                <h2>Getting started :</h2>
-                <ul>
-                    <p></p>
-                    <a class="btn btn-primary" id="btn-index" href="https://github.com/Velescore/Veles">Download wallet
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                    <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://crex24.com/cs/exchange/VLS-BTC">Buy VLS
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                    <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">Setup masternode
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                    <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://twitter.com/velescore">Follow on Twitter
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                    <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://steemit.com/@velescore">Follow on Steemit
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                    <br>
-                    <a class="btn btn-primary" id="btn-index" href="https://discord.gg/P528fGg">Join Discord
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
                 </ul>
-                <p>Join our social-medias and share your ideas with our development team .</p>
+                <div class="sidebar text-left">
+                    <h4 data-id="page.title"></h4>
+                    <ul>
+                        <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                        <li class="menu-item submenu template">
+                            <a href="{{item.url}}"><span>{{item.title}}</span></a>
+                            <ul>
+                                <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-lg-2" id="col-lg-2-index">
-                <img class="img" id="img-index" src="images/veles-official.png" alt="">
-                <div class="col-lg-3"></div>
-            </div>
-            <div class="col-sm-7"></div>
-            <div class="col-sm-4 text-center">
-                <img src="https://img.shields.io/badge/Main--net-Live-success.svg?style=for-the-badge"><img>
-                <a href"https://github.com/velescore/veles/releases/tag/v0.17.0.22">
-                <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765"><img>
-                </a>
-                <p> Main-net is live from 6th Nov 2018 15:22:08.
-                </p>
-            </div>
-            <div class="col-sm-1"></div>
         </div>
-        <!-- /.row -->
-        <div class="container">
-            <hr>
-            <div class="row">
-                <div class="col-lg-2">
-                    <img class="img" id="img-introduction" src="images/intro-official.png" alt="">
-                </div>
-                <div class="col-lg-3"></div>
-                <div class="col-lg-7">
-                    <h2>Introduction</h2>
-                    <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give up your private data to central authorities.</p>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-lg-7 text-left">
-                    <h2>Funding and Launch</h2>
-                    <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
-                </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 text-left">
-                    <img class="img" id="img-funding" src="images/fund-official.png" alt="">
+    </nav>  <!-- ./Navigation -->
+    <div id="content-overlay">
+        <div class="overlay-gradient"></div>
+        <div class="overlay-shadow">
+            <div class="stage" style="width: 120px; height: 120px;">
+                <div class="cubespinner">
+                    <div class="face1">Syncing blockchain <span class="blink_text">...</span></div>
+                    <div class="face2">Loading <span class="blink_text">...</span></div>
+                    <div class="face3">Connecting blockchain <span class="blink_text">...</span></div>
+                    <div class="face4">Downloading fonts <span class="blink_text">...</span></div>
+                    <div class="face5">Looking up masternodes <span class="blink_text">...</span></div>
+                    <div class="face6">Rendering content<span class="blink_text">...</span></div>
                 </div>
             </div>
-            <hr/>
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-4 text-left">
-                    <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="">
+        </div>
+        <div class="overlay-bottom"></div>
+    </div>
+    <div id="mobile-menu-overlay">
+        <div class="overlay-shadow">
+            <div class="mobile-menu-under container"></div>
+            <div class="mobile-menu-under2 container"></div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div id="content" class="index-page">
+            <header>
+                <div class="movething">
+                    <div class="row row-wide">
+                        <div class="col-lg-12">
+                            <div id="large-header" class="header">
+                                <div id="under-canvas"></div>
+                                <canvas id="canvas"></canvas>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h1 class="main-title"><span class="thin">VELES</span>-NETWORK</h1>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Circulating supply
+                                                    <span class="tile-label-value"
+                                                        data-entity-id="market.price"
+                                                        data-attribute="total_supply"
+                                                        data-format="number"
+                                                        data-fixed-decimals="0"
+                                                        data-title="{total_supply} VLS"
+                                                        data-unit="VLS"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Maximum supply
+                                                     <span class="tile-label-value"
+                                                        data-entity-id="market.price"
+                                                        data-attribute="max_supply"
+                                                        data-format="number"
+                                                        data-fixed-decimals="0"
+                                                        data-title="{max_supply} VLS"
+                                                        data-unit="VLS"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Block time
+                                                    <span class="tile-label-value">2 min</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Maximum block reward
+                                                    <span class="tile-label-value">80 VLS</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Avg. block reward 24h
+                                                    <span class="tile-label-value">22.45 VLS</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Masternode reward
+                                                    <span class="tile-label-value">7.25%</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Development reward
+                                                    <span class="tile-label-value">4.25%</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Masternode collateral
+                                                    <span class="tile-label-value">2000 VLS</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <h2>Dynamic character</h2>
-                    <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
+            </header>
+            <section id="getting-started">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-6">
+                            <h2>Getting started :</h2>
+                            <div class="buttonset-index">
+                                <a target="_blank" href="download.html">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Download wallet</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://qtrade.io">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Buy VLS</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles/wiki/Masternode-Setup-Guide">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Setup MN</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Follow Twitter</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore/">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Follow Steemit</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Join Discord</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="start-text">Join our social-medias and share your ideas with our development team .</div>
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                        <div class="col-lg-1"></div>
+                    </div>
                 </div>
-            </div>
-            <!-- Portfolio Section -->
-            <hr>
-            <h2 class="my-5 text">Main features</h2>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body">
-                            <h4 class="card-title">
-                           <a>Multi-algo</a>
-                        </h4>
-                            <p class="card-text">Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles network in a harmony.Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5
+            </section>
+
+            <section id="introduction">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Introduction</h2>
+                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
+                            <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with
+                                very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike
+                                common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give
+                                up your private data to central authorities.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body-1">
-                            <h4 class="card-title">
+            </section>
+
+            <section id="funding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 text-left">
+                            <h2>Funding and Launch</h2>
+                            <!--img class="img-narrow-screen" id="img-funding" src="images/launch.png" alt="Veles Funding and Launch"-->
+                            <svg class="img-narrow-screen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                <g id="alchemist-logo">
+                                  <g class="alchemist-ph">
+                                    <g id="logo" transform="translate(62.000000, 27.000000)">
+                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
+                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
+                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
+                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
+                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <g>
+                                        <defs>
+                                          <clipPath id="clipper">
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
+                                          </clipPath>
+                                        </defs>
+                                        <!--<g class="clipped">
+                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
+                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
+                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
+                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
+                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
+                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
+                                        </g>-->
+                                      </g>
+                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
+                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
+                                              "/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
+                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
+                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
+                                                  "/>
+                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
+                                          34.578,44.174 				"/>
+                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
+                                                  "/>
+                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
+                                                  "/>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                            </svg>
+                            <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were
+                                part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to
+                                grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing
+                                available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-4 text-center wide-screen">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                <g id="alchemist-logo">
+                                  <g class="alchemist-ph">
+                                    <g id="logo" transform="translate(62.000000, 27.000000)">
+                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
+                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
+                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
+                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
+                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <g>
+                                        <defs>
+                                          <clipPath id="clipper">
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
+                                          </clipPath>
+                                        </defs>
+                                        <g class="clipped">
+                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
+                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
+                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
+                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
+                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
+                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
+                                        </g>
+                                      </g>
+                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
+                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
+                                              "/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
+                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
+                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
+                                                  "/>
+                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
+                                          34.578,44.174 				"/>
+                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
+                                                  "/>
+                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
+                                                  "/>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dynamic-character">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Dynamic character</h2>
+                            <!--<div id="chart2" class="code" style="margin:20px;height:240px; width:640px;"></div>-->
+                            <pre class="code brush:js"></pre>
+                            <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                            <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward
+                                and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main-features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12"><h2>Main features</h2></div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
+                           <a>Multi-algo</a>
+                        </h4>
+                                    <p class="card-text">Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles
+                                        network in a harmony.Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-1">
+                                    <h4 class="card-title">
                            <a>Masternodes</a>
                         </h4>
-                            <p class="card-text">On Veles network is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral for masternode is 2000VLS. More informations you can find on our Wiki</p>
+                                    <p class="card-text">On Veles network is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral
+                                        for masternode is 2000VLS. More informations you can find on our Wiki</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 portfolio-item">
-                    <div class="card h-100">
-                        <div class="card-body" id="card-body-2">
-                            <h4 class="card-title">
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-2">
+                                    <h4 class="card-title">
                            <a>Open source</a>
                         </h4>
-                            <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual.There is opportunity for individuals join the develepment and be rewarde from dev rewards fund. The coin distribution is designed to be as fair as possible.</p>
+                                    <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual.There is opportunity for individuals join the develepment and be rewarde from dev
+                                        rewards fund. The coin distribution is designed to be as fair as possible.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--Our Customers -->
-            <hr/>
-            <div class="col-lg-12 text-center">
-                <h5 id="partners">Where you can find us </h5>
-                <a  href="https://www.mining-dutch.nl">
-                <img class="img" id="img-partners" src="images/dutch.png" alt="">
-                </a>
-                <a href="https://www.coingecko.com/en/coins/veles?utm_content=veles&utm_medium=search_coin&utm_source=coingecko">
-                <img class="img" id="img-partners" src="images/coingecko.webp" alt="">
-                </a>
-                <a href="https://crex24.com/cs/exchange/VLS-BTC">
-                <img class="img" id="img-partners" src="images/crex.webp" alt="">
-                </a>
-                <a href="https://steemit.com/@velescore">
-                <img class="img" id="img-partners" src="images/steemit.png" alt="">
-                </a>
-                <a href="">
-                <img class="img" id="img-partners" src="images/blockfol.png" alt="">
-                </a>
-                <a href="https://bitcointalk.org/index.php?topic=5064523">
-                <img class="img" id="img-partners" src="images/bitcointalk.png" alt="">
-                </a>
-                <a href="https://discord.gg/dBPBY8S">
-                <img class="img" id="img-partners" src="images/dev.png" alt="">
-                </a>
-                <a href="https://discord.gg/P528fGg">
-                <img class="img" id="img-partners" src="images/disc.png" alt="">
-                </a>
-                <a href="https://twitter.com/velescore">
-                <img class="img" id="img-partners" src="images/twit.png" alt="">
-                </a>
-                <a href="https://github.com/velescore">
-                <img class="img" id="img-partners" src="images/git.png" alt="">
-                </a>
-                <a href="">
-                <img class="img" id="img-partners" src="images/medi.png" alt="">
-                </a>
-                <a href="">
-                <img class="img" id="img-partners" src="images/red.png" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-        <br>
-    </div>
-    </div>
-    <!-- /.container -->
-    <br>
+            </section>
+
+            <section id="twitter-feed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--Twitter widget -->
+                            <a class="twitter-timeline" data-height="400" data-dnt="true" width="2000" data-chrome="transparent" data-theme="dark" href="https://twitter.com/velescore?ref_src=twsrc%5Etfw">Tweets by velescore</a>
+                            <!--<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- /#content -->
+    </div> <!-- /#content-wrapper -->
+
     <!-- Footer -->
-    <footer class="py-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 text-left">
-                    <ul class="footer-follow">
-                        <a href="https://bitcointalk.org/index.php?topic=5064523">
-                            <p class="fab fa-bitcoin"></p>
+    <div class="footer container">
+        <div class="tomottoWrap text-center" id="tomotto"> “In such seconds of decision entire futures are made.”― Dan Simmons, Hyperion
+        </div>
+        <div class="row footer-links">
+            <div class="section col-md-3">
+                <h5>Website</h5> <a href="/about.html">About</a> <a href="/download.html">Download</a> <a href="/faq.html">FAQ</a> <a href="/wiki.html">WIKI</a> <a href="/coin-specs.html">Coins-specs</a> <a href="/external-services.html">External-services</a> <a href="/community-milestones">Community-milestones</a></div>
+            <div class="section col-md-3">
+                <h5>Explorer</h5> <a href="http://35.240.96.108:88/">Search</a> <a href="http://35.240.96.108:88/richlist">Richlist</a> <a href="http://35.240.96.108:88/masternodes">Masternodes</a> <a href="http://35.240.96.108:88/coininfo">Coin-info</a>
+                <a
+                href="http://35.240.96.108:88/miningstats">Mining-stats</a> <a href="http://35.240.96.108:88/info">Api</a> </div>
+            <div class="section col-md-3">
+                <h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
+            <div class="section col-md-3">
+                <h5>About Us</h5> <a href="/about.html">About</a> <a href="/roadmap.html">Roadmap</a> <a href="/contact.html">Contact Us</a> <a href="https://github.com/Velescore">Github</a> </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            © Copyright MMXIX The Veles Core developers.<br />
+            Non mihi, non tibi, sed nobis.
+            </div>
+        <div class="footer-badges">
+            <img src="https://img.shields.io/badge/Main--net-Live-success.svg?style=for-the-badge">
+            <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
+        </div>
+        <div class="footer-tooltip" id="connection-tooltip">
+            <ul>
+                <li> <i class="fa fa-signal"></i> Websocket Status:
+                    <b class="label-success websocket-online">online</b>
+                    <b class="label-error websocket-offline" style="display: none;">offline</b>
+                </li>
+                <li>Peer Connections: <b>8</b></li>
+                <li>Websocket Connections: <b>25</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-tip-tooltip">
+            <ul>
+                <li><i class="fa fa-cube"></i> Current Block Height:
+                    <b data-entity-id="chain.tip" data-attribute="height">0</b>
+                </li>
+                <li>Best block hash: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+                <li>Found at: <b class="chain-tip-time"></b></li>
+                <li class="first-row">Size: <b class="chain-tip-size-kb">0</b> kB</li>
+                <li class="second-row">Algo: <b class="chain-tip-algo"></b></li>
+                <li>Transactions: <b class="chain-tip-ntx">0</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="masternodes-tooltip">
+            <ul>
+                <li><i class="fa fa-server"></i> Masternodes Total: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+                <li>Enabled: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+                <li style="display: none;">
+                    Pre-Enabled:
+                    <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
+                </li>
+                <li>
+                    New Start Required:
+                    <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
+                </li>
+                <li style="display: none;">
+                    Expired:
+                    <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
+                </li>
+                <li class="list-separator">Masternode collateral: <b class="masternodes-collateral-amount">0</b> VLS</li>
+                <li>MN block reward part: <b class="masternodes-reward-percent">0</b> %</li>
+                <!--<li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>-->
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-pow-tooltip">
+            <ul>
+                <li>
+                    <i class="fa fa-chart-bar"></i>
+                    Hashrate Total:
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="list-separator">
+                    Blocks to next halving check: <b class="chain-pow-blocks-to-next-epoch"></b>
+                </li>
+                <li>
+                    Epoch supply reached: <b class="chain-pow-supply-target-reached">0%</b> of min 80%
+                </li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="price-status-tooltip">
+            <ul>
+                <li> <i class="fa fa-chart-line"></i> VLS Price:
+                    <div class="tooltip-price">
+                        <span data-entity-id="market.price" data-attribute="price_btc"
+                            data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
+                        <span data-entity-id="market.price" data-attribute="price_usd"
+                            data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
+                    </div>
+                </li>
+                <li class="tooltip-row-tall">
+                    <div id="price-tooltip-chart"></div>
+                </li>
+                <li class="list-separator">
+                    Volume 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+                </li>
+                <li class="second-row">
+                    &#916; 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+                </li>
+                <li class="first-row">
+                    Market Cap: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
+                </li>
+                <li class="second-row">
+                    &#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
+                </li>
+                <li>
+                    Total Supply: <b><span
+                        data-entity-id="market.price"
+                        data-attribute="total_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{total_supply} VLS"
+                        ></span>m</b>
+                    of maximum <b><span
+                        data-entity-id="market.price"
+                        data-attribute="max_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{max_supply} VLS"
+                        ></span>m</b> VLS
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Overlay footer -->
+    <div class="footer-overlay">
+        <div class="row footer-panel-row">
+            <div class="col-md-12 text-left">
+                <div id="console-toggle" class="status-area">
+                    <span class="fa fa-terminal websocket-online" title="Toggle Veles Node Console"></span>
+                    <span class="fa fa-window-close console-area" title="Close Console"></span>
+                </div>
+                <div id="console-maximize" class="status-area console-area">
+                    <span class="fa fa-window-maximize" title="Maximize Console"></span>
+                </div>
+                <div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
+                    <span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
+                    <span class="label">Follow Us</span>
+                </div>
+                <div class="footer-follow-wide">
+                    <ul class="osx-dock">
+                      <li class="active">
+                        <span>Bitcointalk</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                            <i class="fab fa-bitcoin"></i>
                         </a>
-                        <a href="https://twitter.com/velescore"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github/velescore/veles"><i class="fab fa-github"></i></a>
-                        <a href="https://discord.gg/P528fGg"><i class="fab fa-discord"></i></a>
+                      </li>
+                      <li>
+                        <span>Twitter</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>GitHub</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                            <i class="fab fa-github"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>Discord</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                      </li>
                     </ul>
                 </div>
-                <div class="col-md-6 text-center">
-                    <p class="m-0">Copyright © 2018 . Veles
-                        <p>
+                <div id="price-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Price:</span>
+                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
+                     <span class="status-label-wide">BTC</span>
                 </div>
-                <div class="col-md-3 text-right">
+                <div id="connection-status" class="status-area">
+                    <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE"
+                        style="color: rgb(238, 238, 238); display: none;">
+                    </span>
+                    <span class="websocket-online" title="Websocket Status: ONLINE"
+                        style="color: rgb(187, 255, 170); font-size: 20px;">✔</span>️
+                </div>
+                <div id="chain-tip-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Blocks:</span>
+                    <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
+                </div>
+                <div id="masternodes-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Masternodes:</span>
+                    <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
+                    <span class="status-label-short">MNs</span>
+                </div>
+                <div id="chain-pow-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Hashrate:</span>
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
                 </div>
             </div>
         </div>
-        <!-- /.container -->
-    </footer>
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://widgets.coingecko.com/div/coingecko-coin-price-chart-widget-div.js"></script>
+        <div id="dev-console">
+            <div class="jquery-console-message">Loading blockchain client ...</div>
+        </div>
+        <div id="panel-slide"  class="bg-carbon">
+            <div class="slide-iconset">
+                <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                    <i class="fab fa-bitcoin"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <!--
+                <a href="https://www.coingecko.com/en/coins/veles">
+                     <i class="fas fa-coins brand"></i>
+                </a>
+                -->
+                <a target="_blank" rel="noopener noreferrer" href="https://masternodecap.com/coins/VLS">
+                     <i class="fas fa-server brand"></i>
+                </a>
+                <!--
+                <a target="_blank" rel="noopener noreferrer" href="https://coinpaprika.com/coin/vls-veles/">
+                    <i class="fas fa-pepper brand"></i>
+                </a>
+                -->
+            </div>
+        </div>
+    </div>
+    <!-- Common dependencies -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/darkmode.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript" src="js/src/jquery.jqplot.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.dateAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.categoryAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.ohlcRenderer.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.highlighter.js"></script>
+    <script type="text/javascript" src="js/src/plugins/jqplot.cursor.js"></script>
+    <script src="js/menuTree.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/nav.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/websocket-ui.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/console.js"></script>
+    <!-- Resources specific for index page -->
+    <script src="js/TweenLite.min.js"></script>
+    <script src="js/EasePack.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

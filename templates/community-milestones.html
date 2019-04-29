@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+          <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Resources</h1>
+             <div class="row">
+                 <div class="col-sm-12">
+                     <a href="/index.html">
+                         <div class="bread-button bread">
+                             <span class="label">Home</span>
+                             <span class="icon">
+                             <span></span>
+                             </span>
+                             <span class="icon2"></span>
+                         </div>
+                     </a>
+                     <div class="bread-button bread active" id="bread-button">
+                         <span class="label">Community</span>
+                         <span class="icon">
+                         <span></span>
+                         </span>
+                         <span class="icon2"></span>
+                     </div>
+                     <ol class="breadcrumb" id="breadcrumb-1"></ol>
+                 </div>
+             </div>
+            <!-- Content Row -->
+        </br>
+            <div class="row">
+                <!-- Sidebar Column-->
+                <div class="col-lg-12 mb-4">
+                    <div class="mb-4" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header"><h5>Informations about funding</h5></div>
+                            <div class="card-body" id="card-body-1">
+                                <p><b>Basic rules : </b></p>
+                                <p>Veles team always puts community and the people involved in crowdfunding first. With every crowdfunding ,we put an emphasis on the complete transparency and strict abiding of rules.</p>
+                                <hr>
+                                <p><b>1.</b> every crowdfunding have generated only one BTC and VLS address which will never be changed until crowdfunding ends</p>
+                                <p><b>2.</b> every crowdfunding have setup date when end </p>
+                                <p><b>3.</b> if crowdfunding dont success all funds will be returned to your deposit address</p>
+                                <p>.............</p>
+                                <hr>
+                                <p><b>State explantation :</b></p>
+                                <p>
+                                    <button disabled id="btn-online" class="btn btn-success"> Open</button>
+                                    -  This state idicates that funding is still in active state, open for public and you can participate .
+                                </p>
+                                <p>
+                                    <button disabled id="btn-offline" class="btn btn-danger"> Expired</button>
+                                    -  This state indicates that funding wasnt successfully finished and funds were returned to donators .
+                                </p>
+                                <p>
+                                    <button disabled id="btn-reload" class="btn btn-primary"> Finished</button>
+                                    - This state indicates that funding was successfully finished , target was reached and now is closed .
+                                </p>
+                                <hr>
+                                <p><b>All Veles crowdfundings :</b></p>
+                                <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                                <h5 class="h5-resources">
+                                                    <button disabled data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="btn-reload-fundings" class="btn btn-primary"> Finished</button>
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
+                                                </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="card-body" id="card-body-1">
+                                                <p>Veles have opportunity to get listed on  Qtrade.io for action price 0.5 btc , click button below to get more informations about actual status of crowdfunding.</p>
+                                                <div data-toggle="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                    <span class="label">Details</span>
+                                                    <span class="icon">
+                                                    <span></span>
+                                                    </span>
+                                                    <span class="icon2 icon2-modal"></span>
+                                                </div>
+                                                <div id="tallModal" class="modal modal-wide fade">
+                                                    <div class="modal-dialog">
+                                                      <div class="modal-content">
+                                                        <div class="modal-header card-header">
+                                                          <h4 class="modal-title">Qtrade.io listing</h4>
+                                                          <button disabled id="btn-reload" class="btn btn-primary text-rigth"> Finished</button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                          <p><b>Deadline : </b><b class="text-orange">9.7.2018</b></p>
+                                                          <p><b>Target : </b><b class="text-orange">0.5 BTC</b></p>
+                                                          <p><b>Raised : </b><b class="text-orange">0.41 BTC</b></p>
+                                                          <hr>
+                                                          <div class="qrcode-container text-center">
+                                                              <img class="qrcode" src="data:image/gif;base64,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">
+                                                              <span class="qrcode-bitcoin-sign"></span>
+                                                              <input class="input-donate text-center" readonly="" onclick="this.select()" value="1K3Vs8tPu2YkAoWmrkjUQVJuxr7wgPP3Wf">
+                                                          </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                          <div data-dismiss="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                              <span class="label">Close</span>
+                                                              <span class="icon">
+                                                              <span></span>
+                                                              </span>
+                                                              <span class="icon2 icon2-modal"></span>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /#content -->
+</body>
+</html>
