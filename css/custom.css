@@ -224,6 +224,7 @@ html {
 	z-index: 1101;	/* just over gradient */
 }
 
+/*
 #content-overlay  .overlay-bottom {
 	top: 0;
 	left: 0;
@@ -235,7 +236,7 @@ html {
 	position: fixed;
 	z-index: 1000;
 }
-
+*/
 #content {
 	transition: margin-top 0.5s ease-in-out;	/* support for easy transition when sliding out */
 }
