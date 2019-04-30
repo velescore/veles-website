@@ -10,8 +10,6 @@ var velesSinglePageApp = {
     'sidebarPadContent': 0,
     '$window': null,
     '$animationElements': null,
-    'throttleScroll': 10,
-    'throttleScrollCurrent': 0,
     'inViewThresholdPx': 75,
 
     'go': function(page = 'index') {
@@ -462,41 +460,33 @@ var velesSinglePageApp = {
     },
 
     'trackInView': function() {
-        // throttle
-        if (velesSinglePageApp.throttleScrollCurrent > 0) {
-            velesSinglePageApp.throttleScrollCurrent--;
+        var window_height = velesSinglePageApp.$window.height();
+        var window_top_position = velesSinglePageApp.$window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
 
-        } else {
-            velesSinglePageApp.throttleScrollCurrent = velesSinglePageApp.throttleScroll;
-         
-            var window_height = velesSinglePageApp.$window.height();
-            var window_top_position = velesSinglePageApp.$window.scrollTop();
-            var window_bottom_position = (window_top_position + window_height);
+        $.each(velesSinglePageApp.$animationElements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_padding = parseInt($element.css('padding-top'));
+            var element_bottom_padding = parseInt($element.css('padding-bottom'));
+            var element_top_position = $element.offset().top + element_top_padding;
+            var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
 
-            $.each(velesSinglePageApp.$animationElements, function() {
-                var $element = $(this);
-                var element_height = $element.outerHeight();
-                var element_top_padding = parseInt($element.css('padding-top'));
-                var element_bottom_padding = parseInt($element.css('padding-bottom'));
-                var element_top_position = $element.offset().top + element_top_padding;
-                var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
-
-                //check to see if this current container is within viewport
-                //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
-                if ((element_bottom_position >= window_top_position)
-                  && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
-                    if (!$element.hasClass('in-view')) {
-                        $element.addClass('in-view');
-                        $element.addClass('was-in-view');
-                        console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
-                            + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
-                            + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
-                    }
-                } else {
-                    $element.removeClass('in-view');
+            //check to see if this current container is within viewport
+            //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
+            if ((element_bottom_position >= window_top_position)
+              && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
+                if (!$element.hasClass('in-view')) {
+                    $element.addClass('in-view');
+                    $element.addClass('was-in-view');
+                    console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
+                        + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
+                        + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
                 }
-            });
-        }
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
     },
 
     'start': function() {
