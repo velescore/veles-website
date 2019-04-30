@@ -8,6 +8,9 @@ var velesSinglePageApp = {
     'menuTreeIndex': {},
     'menuTemplates': {},
     'sidebarPadContent': 0,
+    '$window': null,
+    '$animationElements': null,
+    'inViewThresholdPx': 75,
 
     'go': function(page = 'index') {
         var pageHash = null;
@@ -60,6 +63,7 @@ var velesSinglePageApp = {
             velesSinglePageApp.runPageHook('init');
             velesSinglePageApp.rebuildPageMenu(page, true);
             velesSinglePageApp.updateTemplate();
+            velesSinglePageApp.initPageAnimations();
             velesSinglePageApp.bindEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
@@ -69,6 +73,7 @@ var velesSinglePageApp = {
                 velesSinglePageApp.rebuildPageMenu(page, false);
                 velesSinglePageApp.updateTemplate();
                 velesSinglePageApp.autoAddIds();
+                velesSinglePageApp.initPageAnimations();
                 velesSinglePageApp.bindEvents();
             }); 
         }
@@ -159,6 +164,11 @@ var velesSinglePageApp = {
                     velesSinglePageApp.go();
             });
             this.eventsBound['popstate'] = true;
+        }
+
+        if (!this.eventsBound.hasOwnProperty('scroll') || !this.eventsBound['scroll']) {
+            $(window).bind('scroll resize', velesSinglePageApp.trackInView);
+            this.eventsBound['scroll'] = true;
         }
 
         if (!this.eventsBound.hasOwnProperty('navbar-toggler') || !this.eventsBound['navbar-toggler']) {
@@ -440,6 +450,45 @@ var velesSinglePageApp = {
         }
     },
 
+    'initPageAnimations': function() {
+        this.$animationElements = $('.track-in-view');
+
+        if (!this.$window)
+            this.$window = $(window)
+
+        this.trackInView(); /* do the first run before rist scroll */
+    },
+
+    'trackInView': function() {
+        var window_height = velesSinglePageApp.$window.height();
+        var window_top_position = velesSinglePageApp.$window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        $.each(velesSinglePageApp.$animationElements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_padding = parseInt($element.css('padding-top'));
+            var element_bottom_padding = parseInt($element.css('padding-bottom'));
+            var element_top_position = $element.offset().top + element_top_padding;
+            var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
+
+            //check to see if this current container is within viewport
+            //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
+            if ((element_bottom_position >= window_top_position)
+              && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
+                if (!$element.hasClass('in-view')) {
+                    $element.addClass('in-view');
+                    $element.addClass('was-in-view');
+                    console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
+                        + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
+                        + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
+                }
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
+    },
+
     'start': function() {
         this.buildMenus();
         this.currentPage = 'index';
@@ -452,6 +501,7 @@ var velesSinglePageApp = {
             this.autoAddIds();
             this.runPageHook('init');
             this.hideOverlay();
+            this.initPageAnimations();
             this.bindEvents();
 
             if (window.location.hash)
