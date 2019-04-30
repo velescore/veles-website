@@ -185,7 +185,7 @@ velesSocketClient.handleConnect = function() {
         $('.masternode-list-enabled-length').text(d); 
     }, 'value=ENABLED|count'); */
 
-    if (typeof variable !== 'undefined')    // skip this on explorer
+    if (typeof velesSinglePageApp !== 'undefined')    // skip this on explorer
         velesSinglePageApp.runPageHook('connect');
 };
 velesSocketClient.handleDisconnect = function() {
