@@ -452,6 +452,8 @@ var velesSinglePageApp = {
 
     'initPageAnimations': function() {
         this.$animationElements = $('.track-in-view');
+        this.$animationElements.removeClass('in-view');
+        this.$animationElements.removeClass('was-in-view');
 
         if (!this.$window)
             this.$window = $(window)

@@ -159,12 +159,9 @@ html {
 	max-width: 100%;
 	overflow: hidden;
 	zoom: 1;
+	background-color: black;
 }
 
-.movething .header.with-bg {
-	background-color: black;	/*#262626;*/
-	transition: background-color 2.5s ease;
-}
 
 .main-title {
    position: absolute;
@@ -710,22 +707,28 @@ svg#Layer_1 {
 }
 
 
-#img-about {
+.img-team-about {
 	max-height: 220px;
 	margin-top: 30px;
 }
 
-#img-team {
+.img-team {
 	margin-right: 20px;
 	max-width: 80%;
 	max-height: 65%;
+	padding: 20px;
 }
 
 .img-download {
-	opacity: 0.65;
     margin-top: 10px;
     max-height: 230px;
-    margin: auto auto;
+}
+.img-download.track-in-view.left-slide-in {
+	padding-right: 100px;
+}
+.img-download.track-in-view.left-slide-in.was-in-view {
+	margin: auto auto;
+	padding-right: 0px;
 }
 
 .img5 {
@@ -2712,7 +2715,7 @@ img.qrcode {
 	opacity: 0;
 }
 .track-in-view.fade-in.was-in-view {
-	opacity: 0.9;
+	opacity: 0.8;
 	transition: all 1s ease-in-out;
 }
 .track-in-view.left-slide-in {
@@ -2721,7 +2724,7 @@ img.qrcode {
 }
 .track-in-view.left-slide-in.was-in-view {
 	margin-left: 0px;
-	opacity: 0.9;
+	opacity: 0.8;
 	transition: all 1s ease-in-out;
 }
 .track-in-view.right-slide-in {
@@ -2730,7 +2733,7 @@ img.qrcode {
 }
 .track-in-view.right-slide-in.was-in-view {
 	margin-right: 0px;
-	opacity: 0.9;
+	opacity: 0.8;
 	transition: all 1s ease-in-out;
 }
 

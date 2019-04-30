@@ -24,7 +24,7 @@ var menuTree = [
 	   'hideFromNav': true,
 	},
 	{
-	   'title': 'About',
+	   'title': 'Team',
 	   'sections': [
 		   { 'title': 'About-us' },
 		   { 'title': 'AltcoinBaggins' },
