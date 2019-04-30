@@ -62,7 +62,7 @@ var menuTree = [
 			{ 'title': 'Coin-specs' },
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
-			{ 'title': 'Community-milestones'}
+			{ 'title': 'Crowdfundings'}
 		]
 	},
 	{
