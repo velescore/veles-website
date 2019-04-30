@@ -16,8 +16,8 @@ var menuTree = [
 	   	'sections': [
 		   { 'title': 'Getting-started' },
 		   { 'title': 'Introduction' },
-		   { 'title': 'Funding' },
 		   { 'title': 'Dynamic-character' },
+		   { 'title': 'Funding' },
 		   { 'title': 'Main-features' },
 		   { 'title': 'Twitter-feed'}
 	   ],

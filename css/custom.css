@@ -688,8 +688,9 @@ svg#Layer_1 {
 }
 
 #img-funding {
+	margin-top: 15px;
+	max-height: 300px;
 	opacity: 0.75;
-	max-height: 400px;
 }
 
 #img-dynamic {
