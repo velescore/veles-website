@@ -8,6 +8,8 @@ var velesSinglePageApp = {
     'menuTreeIndex': {},
     'menuTemplates': {},
     'sidebarPadContent': 0,
+    '$window': null,
+    '$animationElements': null,
 
     'go': function(page = 'index') {
         var pageHash = null;
@@ -159,6 +161,11 @@ var velesSinglePageApp = {
                     velesSinglePageApp.go();
             });
             this.eventsBound['popstate'] = true;
+        }
+
+        if (!this.eventsBound.hasOwnProperty('scroll') || !this.eventsBound['scroll']) {
+            $(window).bind('scroll resize', velesSinglePageApp.trackInView);
+            this.eventsBound['scroll'] = true;
         }
 
         if (!this.eventsBound.hasOwnProperty('navbar-toggler') || !this.eventsBound['navbar-toggler']) {
@@ -438,6 +445,34 @@ var velesSinglePageApp = {
                 prevPage = tree[i].page;
             }
         }
+    },
+
+    'initPageAnimations': function() {
+        this.$animationElements = $('.track-in-view');
+
+        if (!this.$window)
+            this.$window = $(window)
+    },
+
+    'trackInView': function() {
+        var window_height = velesSinglePageApp.$window.height();
+        var window_top_position = velesSinglePageApp.$window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        $.each(velesSinglePageApp.$animationElements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is within viewport
+            if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+                $element.addClass('in-view');
+                $element.addClass('was-in-view');
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
     },
 
     'start': function() {

@@ -1015,7 +1015,7 @@ span.status-label-short {
 	width: 30px;
 	margin-right: -5px;
 	text-align: center;
-	padding-left: 8px;
+	padding: 10px 0px 0px 8px;
 }
 
 #connection-tooltip::after {	/* move just the arrow, keep tooltip whet it is */
@@ -1224,6 +1224,8 @@ span.status-label-short {
 .websocket-online, .websocket-online-animate {
 	display: none;
 }
+
+
 
 /*
 .footer-follow-mobile {
