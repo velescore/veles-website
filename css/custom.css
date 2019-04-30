@@ -671,40 +671,35 @@ div#accordion {
 }
 
 svg#Layer_1 {
-	opacity: 0.75;
     max-height: 350px;
 }
 
 #img-faq {
     padding-bottom: 4px;
-    margin-left: -25px;
+    padding-left: -25px;
     max-height: 45px;
 }
 
 #img-introduction {
-	margin-top: 15px;
+	padding-top: 15px;
 	max-height: 300px;
-	opacity: 0.75;
 }
 
 #img-funding {
-	margin-top: 15px;
+	padding-top: 15px;
 	max-height: 300px;
-	opacity: 0.75;
 }
 
 #img-dynamic {
-	opacity: 0.75;
-	margin-top: 35px;
+	padding-top: 35px;
     height: 200px;
 }
 
 #img-index {
-	margin-left: 30px;
-    margin-top: 45px;
-    margin-bottom: 13px;
+	padding-left: 30px;
+    padding-top: 45px;
+    padding-bottom: 13px;
     max-height: 345px;
-    opacity: 0.75;
 }
 
 /* Hide index image on anything smaller than iPad */
@@ -2711,6 +2706,36 @@ img.qrcode {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* Animation triggered by javascript when in view / first in view */
+.track-in-view.fade-in {
+	opacity: 0;
+}
+.track-in-view.fade-in.was-in-view {
+	opacity: 0.9;
+	transition: all 1s ease-in-out;
+}
+.track-in-view.left-slide-in {
+	margin-left: -100px;
+	opacity: 0;
+}
+.track-in-view.left-slide-in.was-in-view {
+	margin-left: 0px;
+	opacity: 0.9;
+	transition: all 1s ease-in-out;
+}
+.track-in-view.right-slide-in {
+	margin-right: -100px;
+	opacity: 0;
+}
+.track-in-view.right-slide-in.was-in-view {
+	margin-right: 0px;
+	opacity: 0.9;
+	transition: all 1s ease-in-out;
+}
+
+
+
 
 /* Alternative loading bar with spinner
 .pace {
