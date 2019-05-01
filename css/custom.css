@@ -2564,6 +2564,22 @@ hr.hr-new {
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	opacity: 0.5;
+	text-align: right;
+}
+
+#large-header #under-canvas #debug-area {
+	padding-top: 310px;
+    font-size: 10px;
+    line-height: 12px;
+    opacity: 0.2;
+    width: 300px;
+    list-style: none;
+    float: right;
+}
+
+#large-header #under-canvas #debug-area li{
+	padding: 0;
+	margin: 0;
 }
 
 #large-header #canvas {

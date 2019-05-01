@@ -479,6 +479,7 @@ var velesSinglePageApp = {
                 var margin_top = $('.parallax-content').css('margin-top').replace('px', '');
                 var parallax_offset = parallax_scroll / (velesSinglePageApp.parallaxBottom / 300);
                 $('.parallax-content').css('margin-top', parallax_offset + 'px');
+                $('.parallax-content2').css('margin-top', (parallax_offset / 2) + 'px');
             }
         }
 

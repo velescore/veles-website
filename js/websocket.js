@@ -26,11 +26,13 @@ var velesSocketClient = {
     };
 
 velesSocketClient.log = function(msg) {
-    console.log(msg)
+    if (typeof console !== 'undefined')
+        console.log(msg)
+
     if (document.getElementById('debug-area') != null) {
         li = document.createElement('li');
         li.innerHTML = msg;
-        document.getElementById('debug-area').appendChild(li);
+        document.getElementById('debug-area').prepend(li);
     }
 }
 
