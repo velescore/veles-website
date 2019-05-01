@@ -2565,6 +2565,13 @@ hr.hr-new {
 	background-repeat: no-repeat;
 	opacity: 0.5;
 	text-align: right;
+	zoom: 1;
+	transition: width 1.0s ease;
+}
+
+#large-header #under-canvas.parallax-zoom {
+	width: 120%;
+	transition: width 1.0s ease;
 }
 
 #large-header #under-canvas #debug-area {

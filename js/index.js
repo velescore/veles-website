@@ -20,6 +20,20 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
         
     }, 3000);
     */
+   
+        if (!velesSinglePageApp.eventsBound.hasOwnProperty('index-sidebar-hook') 
+                || !velesSinglePageApp.eventsBound['index-sidebar-hook']) {
+            $('.sidebar').on('mouseover', function () {
+                if (!$('#under-canvas').hasClass('parallax-zoom'))
+                    $('#under-canvas').addClass('parallax-zoom');
+            });
+            $('.sidebar').on('mouseout', function () {
+                if ($('#under-canvas').hasClass('parallax-zoom'))
+                    $('#under-canvas').removeClass('parallax-zoom');
+            });
+
+            velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
+        }
 
     // Update twitter feed style
     setTimeout(function(){
