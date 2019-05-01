@@ -11,6 +11,9 @@ var velesSinglePageApp = {
     '$window': null,
     '$animationElements': null,
     'inViewThresholdPx': 75,
+    'scrollMinStep': 50,
+    'scrollLastPos': 0,
+    'parallaxBottom': null,
 
     'go': function(page = 'index') {
         var pageHash = null;
@@ -458,37 +461,60 @@ var velesSinglePageApp = {
         if (!this.$window)
             this.$window = $(window)
 
-        this.trackInView(); /* do the first run before rist scroll */
+        this.trackInView(false); /* do the first run before rist scroll */
     },
 
-    'trackInView': function() {
-        var window_height = velesSinglePageApp.$window.height();
+    'trackInView': function(throttle = true) {
         var window_top_position = velesSinglePageApp.$window.scrollTop();
-        var window_bottom_position = (window_top_position + window_height);
 
-        $.each(velesSinglePageApp.$animationElements, function() {
-            var $element = $(this);
-            var element_height = $element.outerHeight();
-            var element_top_padding = parseInt($element.css('padding-top'));
-            var element_bottom_padding = parseInt($element.css('padding-bottom'));
-            var element_top_position = $element.offset().top + element_top_padding;
-            var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
-
-            //check to see if this current container is within viewport
-            //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
-            if ((element_bottom_position >= window_top_position)
-              && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
-                if (!$element.hasClass('in-view')) {
-                    $element.addClass('in-view');
-                    $element.addClass('was-in-view');
-                    console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
-                        + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
-                        + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
-                }
-            } else {
-                $element.removeClass('in-view');
+        // index parallax
+        if (velesSinglePageApp.currentPage == 'index') {
+            if (velesSinglePageApp.parallaxBottom == null) {
+                var $parallax = $('.parallax-content');
+                velesSinglePageApp.parallaxBottom = $parallax.offset().top + $parallax.outerHeight();
             }
-        });
+            var parallax_scroll = window_top_position - velesSinglePageApp.parallaxBottom;
+
+            if (parallax_scroll < 0) {
+                var margin_top = $('.parallax-content').css('margin-top').replace('px', '');
+                var parallax_offset = parallax_scroll / (velesSinglePageApp.parallaxBottom / 300);
+                $('.parallax-content').css('margin-top', parallax_offset + 'px');
+            }
+        }
+
+        // throttle by steps in px
+        if (velesSinglePageApp.scrollLastPos - window_top_position > velesSinglePageApp.scrollMinStep
+                || window_top_position - velesSinglePageApp.scrollLastPos > velesSinglePageApp.scrollMinStep
+                || !throttle) {
+            velesSinglePageApp.scrollLastPos = window_top_position;
+
+            var window_height = velesSinglePageApp.$window.height();
+            var window_bottom_position = (window_top_position + window_height);
+
+            $.each(velesSinglePageApp.$animationElements, function() {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_padding = parseInt($element.css('padding-top'));
+                var element_bottom_padding = parseInt($element.css('padding-bottom'));
+                var element_top_position = $element.offset().top + element_top_padding;
+                var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
+
+                //check to see if this current container is within viewport
+                //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
+                if ((element_bottom_position >= window_top_position)
+                  && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
+                    if (!$element.hasClass('in-view')) {
+                        $element.addClass('in-view');
+                        $element.addClass('was-in-view');
+                        console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
+                            + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
+                            + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
+                    }
+                } else {
+                    $element.removeClass('in-view');
+                }
+            });
+        }
     },
 
     'start': function() {
