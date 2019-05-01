@@ -811,6 +811,27 @@ svg#Layer_1 {
 	transition: bottom 0.5s ease-in-out;
 	z-index: 1100;	/* stay over sidebar etc. */
 }
+.footer.footer-panel-expand .footer-tooltip.tooltip-expand {
+	bottom: calc(50vh + 10px);
+	transition: bottom 0.5s ease-in-out;
+	z-index: 1100;	/* stay over sidebar etc. */
+}
+
+.footer.footer-panel-expand.panel-maximize .footer-tooltip {
+	top: 97px;
+	bottom: auto;
+	transition: top 0.1s ease-in-out;
+}
+.footer.footer-panel-expand.panel-maximize .footer-tooltip::after {
+	display: none;
+}
+.footer.footer-panel-expand.panel-maximize .footer-tooltip.tooltip-expand {
+	top: 107px;
+	bottom:.footer-panel-expand auto;
+	z-index: 1150;	/* stay over sidebar etc. */
+	transition: top 0.1s ease-in-out;
+}
+
 
 #content.footer-panel-slide {
 	margin-top: -90px;
@@ -864,9 +885,9 @@ svg#Layer_1 {
 
 .footer-tooltip {
 	position: fixed;
-	display: none;
+	opacity: 0;
 	right: 10px;
-	bottom: 48px;
+	bottom: 28px;
 	z-index: 101;
 	width: 300px;
 	background-color: rgba(0, 0, 0, 0.90);
@@ -876,6 +897,15 @@ svg#Layer_1 {
 	-webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
 	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3);
+	transition: all 0.1s ease-in-out;
+	pointer-events: none;
+}
+
+.footer-tooltip.tooltip-expand {
+	opacity: 1;
+	bottom: 48px;
+	transition: all 0.1s ease-out;
+	pointer-events: all;
 }
 
 .footer-tooltip ul {
@@ -1044,7 +1074,7 @@ span.status-label-short {
 }
 
 #price-status-tooltip {
-	z-index: 1099;
+	z-index: 1199;
 	right: unset;
 	left: 199px;
 	width: 350px;

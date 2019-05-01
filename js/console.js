@@ -278,8 +278,10 @@ var velesDevConsole = {
         $('#console-maximize').click(function() {
             if ($('.footer-overlay').hasClass('panel-maximize')) {
                 $('.footer-overlay').removeClass('panel-maximize');
+                $('.footer').removeClass('panel-maximize');
             } else {
                 $('.footer-overlay').addClass('panel-maximize');
+                $('.footer').addClass('panel-maximize');
             }
         });
     },
