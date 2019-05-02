@@ -2796,6 +2796,146 @@ img.qrcode {
 }
 
 
+.dropdown-menu.dropdown-menu-right {
+	margin-top: -10px;
+	opacity: 0;
+	transition: all 0.1s ease-in-out;
+	display: block;
+}
+.dropdown-menu.dropdown-menu-right.show {
+	margin-top: 0px;
+	opacity: 1;
+	transition: all 0.1s ease-in-out;
+}
+
+/*
+  background: #F19B7E;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+  box-shadow: 5px 5px 30px #F19B7E, 0px 0px 20px #F19B7E;
+ */
+
+/* roadmap specific */
+/* Timeline */
+.timeline {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Jura', sans-serif;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  max-width: 80%;
+}
+.timeline h1 {
+  font-family: 'Jura', sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.timeline h2,
+.timeline h3 {
+  font-family: 'Jura', sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+.timeline .event {
+  position: relative;
+  border-left: 4px solid #F19B7E;
+}
+.timeline .event:before,
+.timeline .event:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+.timeline .event:before {
+  left: -160px;
+  color: rgba(255, 255, 255, 0.8);
+  content: attr(data-date);
+  text-align: right;
+  font-weight: 100;
+  font-size: 0.9em;
+  min-width: 120px;
+  font-family: 'Jura', sans-serif;
+  top: 26px;
+}
+.timeline .event.event-milestone:before {
+	top: 47px;
+	font-weight: bold;
+}
+.timeline .event:after {
+  box-shadow: 0 0 0 4px #F19B7E;
+  left: -8px;
+  background: #313534;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+  top: 32px;
+}
+.timeline .event.event-milestone:after {
+	left: -17px;
+    height: 30px;
+    width: 30px;
+    top: 44px;
+}
+.timeline .event:first-of-type:after {
+  top: 0px;
+}
+.timeline .event:first-of-type:before {
+  top: 0px;
+}
+.timeline .event .split-contents {
+	display: flex;
+}
+.timeline .event.event-milestone .split-contents {
+	border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.timeline .event.event-milestone:first-of-type .split-contents {
+	border-top: none;
+}
+.timeline .event .split-left, .timeline .event .split-right {
+	flex: 1;
+  	padding: 25px 25px 50px 50px;
+  	background: rgba(32, 32, 32, 0.8);
+}
+.timeline .event .split-right {
+	background: rgba(32, 32, 32, 0.4);
+	padding-left: 20px;
+}
+.timeline .event:first-child .split-right {
+	border-top-right-radius: 10px;
+}
+.timeline .event:last-child .split-right {
+	border-bottom-right-radius: 10px;
+}
+.timeline li.checked::after {
+	content: '✔';
+	color: rgb(187, 255, 170); 
+	font-size: 20px;
+	float: right;
+	margin-right: -30px;
+}
+.timeline li.checked {
+	padding-right: 30px;
+}
+.timeline li.sub-item {
+	margin-left: 20px;
+	list-style-type: disc;
+}
+
 
 
 /* Alternative loading bar with spinner
