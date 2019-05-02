@@ -2748,6 +2748,7 @@ button#btn-reload-fundings {
     padding: 2px;
 }
 img.qrcode {
+	max-height: 150px;
 	border-radius: 10px;
 	text-align: center;
 	opacity: 0.8;
