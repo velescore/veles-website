@@ -24,6 +24,15 @@ var menuTree = [
 	   'hideFromNav': true,
 	},
 	{
+	   'title': 'Roadmap',
+	   'sections': [
+		   { 'title': 'Q1' },
+		   { 'title': 'Q2' },
+		   { 'title': 'Q3' },
+		   { 'title': 'Q4' }
+	   ]
+	},
+	{
 	   'title': 'Team',
 	   'sections': [
 		   { 'title': 'About-us' },
@@ -46,23 +55,15 @@ var menuTree = [
 	   ]
 	},
 	{
-	   'title': 'Roadmap',
-	   'sections': [
-		   { 'title': 'Q1' },
-		   { 'title': 'Q2' },
-		   { 'title': 'Q3' },
-		   { 'title': 'Q4' }
-	   ]
-	},
-	{
 		'title': 'Resources',
 		'items': [
-			{ 'title': 'FAQ' },
-			{ 'title': 'Wiki' },
 			{ 'title': 'Coin-specs' },
+			{ 'title': 'Whitepaper' },
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
-			{ 'title': 'Crowdfundings'}
+			{ 'title': 'Crowdfundings'},
+			{ 'title': 'FAQ' },
+			{ 'title': 'Wiki' },
 		]
 	},
 	{
