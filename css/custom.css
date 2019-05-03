@@ -2816,7 +2816,7 @@ div#tallModal {
 	transition: all 1s ease-in-out;
 }
 
-
+/*
 .dropdown-menu.dropdown-menu-right {
 	margin-top: -10px;
 	opacity: 0;
@@ -2828,6 +2828,7 @@ div#tallModal {
 	opacity: 1;
 	transition: all 0.1s ease-in-out;
 }
+*/
 
 /*
 	background: #F19B7E;
