@@ -522,7 +522,7 @@ var velesSinglePageApp = {
         this.buildMenus();
         this.currentPage = 'index';
 
-
+/*
         // Maintenance mode
         if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
             $('.stage').addClass('stage-enlarge');
@@ -531,7 +531,7 @@ var velesSinglePageApp = {
             $('.face4').add('.face1').text('Stay tuned');
             return;
         }
-
+*/
 
         // only the index is pre-loaded
         if (this.detectCurrentPage() == 'index') {
