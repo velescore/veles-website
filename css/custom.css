@@ -2783,9 +2783,11 @@ img.qrcode {
 }
 .modal-open .modal {
 	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: hidden;
 }
-
+div#tallModal {
+    height: auto;
+}
 /* Animation triggered by javascript when in view / first in view */
 .track-in-view.fade-in {
 	opacity: 0;
@@ -2867,7 +2869,7 @@ img.qrcode {
 	letter-spacing: 1.5px;
 	font-weight: 400;
 	font-size: 1.3em;
-}		
+}
 .timeline .event {
 	position: relative;
 	border-left: 4px solid #F19B7E;
@@ -2948,7 +2950,7 @@ img.qrcode {
 }
 .timeline li.checked::after {
 	content: '✔';
-	color: rgb(187, 255, 170); 
+	color: rgb(187, 255, 170);
 	font-size: 20px;
 	float: right;
 	margin-right: -30px;
