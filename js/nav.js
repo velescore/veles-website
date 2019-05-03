@@ -522,6 +522,17 @@ var velesSinglePageApp = {
         this.buildMenus();
         this.currentPage = 'index';
 
+
+        // Maintenance mode
+        if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
+            $('.stage').addClass('stage-enlarge');
+            $('.face2').add('.face5').text('Website under maintenance');
+            $('.face3').add('.face6').text('New content coming soon');
+            $('.face4').add('.face1').text('Stay tuned');
+            return;
+        }
+
+
         // only the index is pre-loaded
         if (this.detectCurrentPage() == 'index') {
             this.setActive();

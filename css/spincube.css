@@ -89,5 +89,9 @@
   50% { opacity: 0; }
 }
 
+.stage.stage-enlarge {
+  zoom: 2;
+  transition: zoom 2s ease-in-out;
+}
 
 
