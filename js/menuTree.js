@@ -38,8 +38,9 @@ var menuTree = [
 		   { 'title': 'About-us' },
 		   { 'title': 'AltcoinBaggins' },
 		   { 'title': 'Mdfkbtc' },
+		   { 'title': 'Uhlik' },
 		   { 'title': 'Virtuado' },
-		   { 'title': 'Uhlik' }
+			 { 'title': 'Maty' }
 	   ]
 	},
 	{
