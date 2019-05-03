@@ -7,35 +7,13 @@
              will be ignored by the single page app. -->
         <div id="content" class="roadmap-page">
             <div class="container">
-                <h1 class="mt-4 mb-3">Roadmap</h1>
-                 <div class="row">
-                     <div class="col-sm-12">
-                         <a href="/index.html">
-                             <div class="bread-button bread">
-                                 <span class="label">Home</span>
-                                 <span class="icon">
-                                 <span></span>
-                                 </span>
-                                 <span class="icon2"></span>
-                             </div>
-                         </a>
-                         <div class="bread-button bread active" id="bread-button">
-                             <span class="label">Roadmap</span>
-                             <span class="icon">
-                             <span></span>
-                             </span>
-                             <span class="icon2"></span>
-                        </div>
-                        <ol class="breadcrumb" id="breadcrumb-1"></ol>
-                    </div>
-                </div>
+                <h1 class="mt-4 mb-3"><span class="grey">The</span> Roadmap</h1>
             </div>
-
             <section>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
-                            <ul class="timeline">
+                            <ul class="timeline track-in-view right-slide">
                                 <li class="event milestone" data-date="Q4 2018">
                                     <div class="split-contents">
                                         <div class="split-left">
@@ -123,17 +101,15 @@
                                 <li class="event" data-date="Apr 2019">
                                     <div class="split-contents">
                                         <div class="split-left">
-                                            <h3>Maximum Supply Reduction/h3>
-                                            <p>Officialy announced reduction of maximum supply from 12.5m to 2m VLS</p>
+                                            <h3>Maximum Supply Reduction</h3>
+                                            <p>Officialy announced reduction of maximum supply from 12.5m to 2.5m VLS (non-consensus breaking)</p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li class="checked">12.5m VLS the legacy maximum supply defined at the Veles project start</li>
-                                            <li class="checked">6 months after the network launch, because of the nature of our dynamic reward system on Veles blockchain we've decided to reduce the maximum supply to the
-                                            current theoretical limit based on maximum block rewards, hence not leaving a space for a further possible changes to consensus that could increase current inflation rate of VLS</li>
-                                            <li class="checked">2.5m VLS official coin supply announced
-                                            <li class="checked">Prepared a plan to implement decrease of Veles masternode collateral from 2000 to 500 VLS to match the new supply limit, to enable sufficient number of tier I. masternode to exist to be implemented in next major release (v0.18), because v0.17.1 already in a feature-freeze and public testing stage.</li>
-                                            <li class="checked">Maximum supply safety enforcemnent also to be implemented in v0.18 (to prevent very unlikely occasion that might happen in over 100 years time - but to be formally enforced in the code)</li>
+                                            <li class="checked">Reduction of official supply limit of 12.5 milion VLS to 2.5 milion VLS to match the current theoretical maximum supply based on mining consensus estabilished by VCIP01
+                                            </li> 
+                                            </li>future-proofing the current supply curve to stay intact and ensure decreasing inflation of VLS</li>
+                                            <li class="checked">Prepared a plan to implement decrease of Veles masternode collateral from 2000 to 500 VLS to match the new supply limit, alongside with the maximum supply formal enforcement, in the next major release (v0.18)</li>
                                         </ul>
                                         </div>
                                     </div>
@@ -180,7 +156,7 @@
                                     </div>
                                 </li>
 
-                                <li class="event milestone proposal" data-date="Q2 2019">
+                                <li class="event milestone proposal track-in-view right-slide-in" data-date="Q2 2019">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>VCIP02 PoS Implementation Stage</h1>
@@ -293,19 +269,20 @@
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Transformation Phase</h1>
-                                            <p>Time window to implement and battle-test all the governance processes before functioning as fully decentralized organisation with the support of Veles Core team.</p>
+                                            <p>Implement and battle-test governance processes</p>
                                             </p>
-                                            <p>Maintenance of the dVPN network and implementation of the new features and use-cases suggested by the community as users, node operators and developers.
+                                            <p>dVPN network maincenance and improvement, new features, integrations and ideas
                                             </p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li></li>
+                                            <li>Time window to implement and battle-test all the governance processes before functioning as fully decentralized organisation with the support of Veles Core team.</li>
+                                            <li>Maintenance of the dVPN network and implementation of the new features, ideas, integrations or use-cases suggested by the community as users, node operators and developers.</li>
                                         </div>
                                     </div>
                                 </li>
 
-                                <li class="event proposal" data-date="2024">
+                                <li class="event milestone proposal" data-date="2024 - &infin;">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Full Community Takeover</h1>
@@ -323,155 +300,6 @@
                        </div>
             </section>
     
-            <section id="cd-timeline" class="cd-container">
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img cd-picture">
-                    </div>
-                    <div class="cd-timeline-content" id="q1">
-                        <h2>Q1 2019</h2>
-                        <div class="timeline-content-info">
-                            <span class="timeline-content-info-title">
-                          <i class="fa fa-certificate" aria-hidden="true"></i>
-                          Development 1. January - 31 March
-                          </span>
-                        </div>
-                        <p>VCIP01-first major update </p>
-                        <ul class="content-skills">
-                            <li>0.17.1 code-base from Bitcoin Core</li>
-                            <li>Dynamic non-linear halvings implemented</li>
-                            <li>Dynamic reward system improved</li>
-                            <li>QT-gui improved</li>
-                            <li>Smoother masternode start</li>
-                        </ul>
-                        <p>Improve packaging for releases<p>
-                        <ul class="content-skills">
-                            <li>compatibility with Travis-platform</li>
-                            <li>implement process of building .deb packages</li>
-                            <li>set-up Ubuntu/Debian repository</li>
-                            <li>Windows installer</li>
-                            <li>macOS installer</li>
-                        </ul>
-                        <p>Docs: Review and update all the documentation</p>
-                        <ul class="content-skills">
-                            <li>correction of branding</li>
-                            <li>update outdated IRC for Discord and other links</li>
-                            <li>port MN relevant docs from Dash Core</li>
-                        </ul>
-                        <p>New website and explorer development</p>
-                        <ul class="content-skills">
-                            <li>design in Veles theme</li>
-                            <li>intagrate websocket-tech</li>
-                            <li>extra blockhain-theme functions impleneted</li>
-                            <li>remastering explorer</li>
-                            <li>integrate explorer into website</li>
-                        </ul>
-                    </div>
-                    <!-- cd-timeline-content -->
-                </div>
-                <!-- cd-timeline-block -->
-                <div class="cd-timeline-block" id="timeline-block-1">
-                    <div class="cd-timeline-img cd-movie">
-                    </div>
-                    <!-- cd-timeline-img -->
-                    <div class="cd-timeline-content" id="q2">
-                        <h2>Q2 2019</h2>
-                        <div class="timeline-content-info">
-                            <span class="timeline-content-info-title">
-                          <i class="fa fa-certificate" aria-hidden="true"></i>
-                          Development 1. April - 31 June
-                          </span>
-                        </div>
-                        <p>New website and explorer development</p>
-                        <ul class="content-skills">
-                            <li>new explorer landing page</li>
-                            <li>finish interactive map </li>
-                            <li>update hq images</li>
-                            <li>update texts</li>
-                            <li>fix https cert. on explorer</li>
-                            <li>website and explorer alpha release</li>
-                        </ul>
-                    <p>VCIP02 second major update</p>
-                    <ul class="content-skills">
-                        <li>new updated MN collateral</li>
-                        <li>rebase onto bitcoin:0.18</li>
-                        <li>POS activation</li>
-                        <li>PrivateSend / InstantSend activation</li>
-                        <li>finalize packaging</li>
-                        <li>add lang strings for section Masternodes</li>
-                    </ul>
-                    <p>dVPN: Integrate OpenVPN service with masternodes</p>
-                    <ul class="content-skills">
-                        <li>integration as a MN service</li>
-                        <li>reachability and connectivity checks</li>
-                        <li>X11 certificate generation based on VLS private key signature through decentralized Veles Certification Authority</li>
-                        <li>first pre-alpha test version</li>
-                    </ul>
-                </div>
-                    <!-- cd-timeline-content -->
-                </div>
-                <!-- cd-timeline-block -->
-                <div class="cd-timeline-block" id="q3">
-                    <div class="cd-timeline-img cd-picture">
-                    </div>
-                    <!-- cd-timeline-img -->
-                    <div class="cd-timeline-content">
-                        <h2>Q3 2019</h2>
-                        <div class="timeline-content-info">
-                            <span class="timeline-content-info-title">
-                          <i class="fa fa-certificate" aria-hidden="true"></i>
-                          Development 1. July - 31 September
-                          </span>
-                        </div>
-                        <p>VCIP03 third major update</p>
-                        <ul class="content-skills">
-                            <li>DIP 1 integration</li>
-                            <li>DIP 2 integration</li>
-                            <li>Deterministic masternode integration</li>
-                        </ul>
-                        <p>dVPN: Implement II. tier masternodes</p>
-                        <ul class="content-skills">
-                            <li>tier 2 masternode integration</li>
-                            <li>to function as exit nodes</li>
-                            <li>to provide multi-hop routing</li>
-                            <li>IPv6 to IPv4 routing layer to support IPv6 masternodes</li>
-                            <li>management of subscriptions on blockchain</li>
-                        </ul>
-                        <p>New wallets integration</p>
-                        <ul class="content-skills">
-                            <li>webwallet integration</li>
-                            <li>angular-cli client integration</li>
-                            <li>alpha release of Android/IOS wallet</li>
-                            <li>hardware wallet support</li>
-                        </ul>
-                    </div>
-                    <!-- cd-timeline-content -->
-                </div>
-                <!-- cd-timeline-block -->
-                <div class="cd-timeline-block">
-                    <div class="cd-timeline-img cd-location">
-                    </div>
-                    <!-- cd-timeline-img -->
-                    <div class="cd-timeline-content" id="q4">
-                        <h2>Q4 2019</h2>
-                        <div class="timeline-content-info">
-                            <span class="timeline-content-info-title">
-                          <i class="fa fa-certificate" aria-hidden="true"></i>
-                          Development 1. October - 31 December
-                          </span>
-                        </div>
-                        <p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
-                        <ul class="content-skills">
-                            <li>VCIP01 Alpha Release</li>
-                            <li>New Website</li>
-                            <li>Start with marketing</li>
-                            <li>Technical paper</li>
-                            <li>Estabilizating core Team</li>
-                        </ul>
-                    </div>
-                    <!-- cd-timeline-content -->
-                </div>
-                <!-- cd-timeline-block -->
-            </section>
         </div><!-- /#content -->
     </div>
 </body>

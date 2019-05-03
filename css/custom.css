@@ -198,8 +198,11 @@ html {
 }
 
 #content-wrapper h1:first-child {
-	margin-bottom: 5px!important;
-	padding-top: 20px;
+	margin-bottom: 35px!important;
+	padding-top: 50px;
+}
+#content-wrapper h1 .grey {
+	color: #A0a0a0;
 }
 
 #content-overlay .overlay-gradient {
@@ -2827,7 +2830,7 @@ img.qrcode {
 	border-top-right-radius: 4px;
 	color: rgba(255, 255, 255, 0.8);
 	font-family: 'Jura', sans-serif;
-	margin: 50px auto;
+	margin: 0px auto;
 	letter-spacing: 0.5px;
 	position: relative;
 	line-height: 1.4em;
