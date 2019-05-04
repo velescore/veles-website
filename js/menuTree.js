@@ -76,10 +76,6 @@ var menuTree = [
 			  	'url': 'http://35.240.96.108:88'
 			},
 			{
-				'title': 'Search',
-				'url': 'http://35.240.96.108:88'
-			},
-			{
 				'title': 'Richlist',
 				'url': 'http://35.240.96.108:88/Richlist'
 			},
@@ -88,8 +84,8 @@ var menuTree = [
 				'url': 'http://35.240.96.108:88/masternodes'
 			},
 			{
-				'title': 'Coin-info',
-				'url': 'http://35.240.96.108:88/coininfo'
+				'title': 'Movement',
+				'url': 'http://35.240.96.108:88/movement'
 			},
 			{
 				'title': 'Mining-stats',
