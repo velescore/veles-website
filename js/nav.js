@@ -28,7 +28,7 @@ var velesSinglePageApp = {
 
         if (page == '')
             page = (this.currentPage) ? this.currentPage : 'index';
-        
+
         // just scroll to top if its the same page
         if (this.currentPage == page || page == '') {
             if (pageHash && $(pageHash).length) {
@@ -78,13 +78,13 @@ var velesSinglePageApp = {
                 velesSinglePageApp.autoAddIds();
                 velesSinglePageApp.initPageAnimations();
                 velesSinglePageApp.bindEvents();
-            }); 
+            });
         }
 
         // just start scrolling to the top
         if (pageHash && $(pageHash).length)
             $('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
-        else 
+        else
             window.scrollTo(0,0);
     },
 
@@ -141,7 +141,7 @@ var velesSinglePageApp = {
 
         if (page == 'index')    // main index link is a special one
             $('a.navbar-brand').addClass('nav-active');
-        
+
         else
             $('a[href$="' + page + this.pageSuffix + '"].nav-link').parent('li').addClass('nav-active');
     },
@@ -220,7 +220,7 @@ var velesSinglePageApp = {
 
         $('#content').addClass(overlayName + '-initial');
         $('#' + overlayName).addClass(overlayName + '-initial');
-        
+
         window.setTimeout(function() {
             if (!fade)
                 $('#' + overlayName).hide();
@@ -243,7 +243,7 @@ var velesSinglePageApp = {
 
         // some extra UI stuff
         this.hideMobileSlider();
-        
+
         $('#' + overlayName).addClass(overlayName + '-initial');
         $('#content').addClass(overlayName + '-initial');
         $('#content').addClass(overlayName);
@@ -306,7 +306,7 @@ var velesSinglePageApp = {
 
         this.buildMenuLevel(menuTree, $('#navbarResponsive ul.navbar-nav'), this.menuTemplates['navbar']);
         //this.buildMenuLevel(menuTree, $('.sidebar ul'), this.menuTemplates['sidebar']);
-       
+
         $('.navbar .template').removeClass('template');
     },
 
@@ -321,7 +321,7 @@ var velesSinglePageApp = {
         if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].sections,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page,
                 isSectionLinks = true
@@ -331,7 +331,7 @@ var velesSinglePageApp = {
         } else if (this.menuTreeIndex[page].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].items,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page
             );
@@ -340,7 +340,7 @@ var velesSinglePageApp = {
         } else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[this.menuTreeIndex[page].parent].items,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page.parent
             );
@@ -387,7 +387,7 @@ var velesSinglePageApp = {
             if (!$('.sidebar').hasClass('sidebar-expand')) {
                 $('.sidebar').addClass('sidebar-expand');
             }
-        }        
+        }
     },
 
     'sidebarCollapse': function() {
@@ -404,7 +404,7 @@ var velesSinglePageApp = {
             } else {
                 $('#content-wrapper').css('padding-left', 'unset');
             }
-        }        
+        }
     },
 
     'buildMenuLevel': function(tree, $parent, templates, parentPage = null, isSectionLinks = false) {
@@ -416,25 +416,37 @@ var velesSinglePageApp = {
                 if (!tree[i].hasOwnProperty('page'))
                     tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
-                url = (isSectionLinks) 
+                url = (isSectionLinks)
                     ? '#' +  tree[i].page
                     : tree[i].page + this.pageSuffix;
 
+                var hackH = false;
+
+                if(typeof tree[i].url !== "undefined") {
+                    url = tree[i].url;
+                    hackH = true;
+                }
                 if (tree[i].hasOwnProperty('items')) {
                     var $item = $(templates['menuDropdown']
                         .replace('{{item.title}}', tree[i].title)
                         .replace('{{item.url}}', url)
                         .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
+                        .replace('class="', (hackH ? 'class="nav-external-app ' : 'class="'))
                         );
-                    $subMenu = $item.appendTo($parent).find('div');
+
+                    $subMenu = $lastItem = $item.appendTo($parent).find('div');
                     this.buildMenuLevel(tree[i].items, $subMenu, templates, tree[i].page);
 
                 } else {
                     var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
                         .replace('{{item.title}}', tree[i].title)
-                        .replace('{{item.url}}', url);
-                    $parent.append(item);
+                        .replace('{{item.url}}', url)
+                        .replace('class="', (hackH ? 'class="nav-external-app ' : 'class="'));
+
+                    $lastItem = $parent.append(item);
                 }
+                if(typeof tree[i].url !== "undefined")
+                    $lastItem.addClass('external-rul');
             }
 
             // Index to the smarter structure
@@ -556,5 +568,3 @@ var velesSinglePageApp = {
 $(document).ready(function() {
     velesSinglePageApp.start();
 });
-
-
