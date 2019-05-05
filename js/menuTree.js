@@ -72,27 +72,27 @@ var menuTree = [
 		'items': [
 			{
 				'title': 'Index',
-			  	'url': 'http://explorer.veles.network'
+			  	'url': 'https://explorer.veles.network'
 			},
 			{
 				'title': 'Richlist',
-				'url': 'http://explorer.veles.network/Richlist'
+				'url': 'https://explorer.veles.network/Richlist'
 			},
 			{
 				'title': 'Masternodes',
-				'url': 'http://explorer.veles.network/masternodes'
+				'url': 'https://explorer.veles.network/masternodes'
 			},
 			{
 				'title': 'Movement',
-				'url': 'http://explorer.veles.network/movement'
+				'url': 'https://explorer.veles.network/movement'
 			},
 			{
 				'title': 'Mining-stats',
-				'url': 'http://explorer.veles.network/miningstats'
+				'url': 'https://explorer.veles.network/miningstats'
 			},
 			{
 				'title': 'Api',
-				'url': 'http://explorer.veles.network/info'
+				'url': 'https://explorer.veles.network/info'
 			}
 		]
 	}
