@@ -15,6 +15,8 @@
 var velesChain = {
     // Holds the current state, updated from events
     'state': {},
+    // Holds raw persistent events
+    'stateEvents': {},
 
     // Utility functions related to chain data
     'algoNameFromVersionHex': function(hash, length = 10) {
@@ -113,6 +115,9 @@ velesSocketClient.handleEvent = function(e) {
     // for example <span class="chain-tip-height"></span>
     // todo: recursive objects / arrays crawl
     if (e.name == 'state_changed') {
+        // persist the last event of kind
+        velesChain.stateEvents[e['entity-id']] = e;
+
         // look for elements by deta-entity-id
         $('[data-entity-id="' + e['entity-id'] + '"]').each(function(){
             var attributes = $(this).attr('data-attribute').split('.');
@@ -173,6 +178,14 @@ velesSocketClient.handleEvent = function(e) {
         // Update tooltips if open
         velesFooterPanel.updateTooltip(e['entity-id'].replace('.', '-'));
     }
+};
+velesSocketClient.replayEvents = function() {
+    var eventKeys = Object.keys(velesChain.stateEvents);
+
+    for (var i = eventKeys.length - 1; i >= 0; i--) {
+        velesSocketClient.handleEvent(velesChain.stateEvents[eventKeys[i]]);
+    }
+    
 };
 velesSocketClient.handleConnect = function() {
     $('.websocket-offline').hide();

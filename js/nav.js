@@ -68,6 +68,7 @@ var velesSinglePageApp = {
             velesSinglePageApp.updateTemplate();
             velesSinglePageApp.initPageAnimations();
             velesSinglePageApp.bindEvents();
+            velesSocketClient.replayEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
@@ -78,6 +79,7 @@ var velesSinglePageApp = {
                 velesSinglePageApp.autoAddIds();
                 velesSinglePageApp.initPageAnimations();
                 velesSinglePageApp.bindEvents();
+                velesSocketClient.replayEvents();
             });
         }
 
