@@ -60,7 +60,7 @@ var menuTree = [
 		'items': [
 			{ 'title': 'Coin-specs' },
 			{ 'title': 'Whitepaper' },
-			{ 'title': 'Masternode guide' },
+			{ 'title': 'Masternode-guide' },
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
 			{ 'title': 'Crowdfundings'},
