@@ -2305,7 +2305,7 @@ body::-webkit-scrollbar-thumb:hover {
 	}
 	.img-narrow-screen {
 		display: block;
-		max-height: 30vw !important;
+		max-height: 30vh !important;
 		margin: 0 auto !important;
 		padding: 0 !important;
 	}
