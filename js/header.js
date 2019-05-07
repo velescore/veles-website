@@ -79,22 +79,27 @@ var indexHeaderWidget = {
     }
 
     function initPoints(gps = null) {
+        var density = 10;
+
+        if (width < 800)
+            density = 6;
+
          // create movable points
         points = [];
-        for(var x = 0; x < width; x = x + width / 10 / $('.movething').css('zoom')) {   /* / 10 */
-            for(var y = 0; y < height; y = y + height / 10) {
-                var px = x + Math.random()*width / 10;
-                var py = y + Math.random()*height / 10;
+        for(var x = 0; x < width; x = x + width / density / $('.movething').css('zoom')) {   /* / density */
+            for(var y = 0; y < height; y = y + height / density) {
+                var px = x + Math.random()*width / density;
+                var py = y + Math.random()*height / density;
                 var p = {x: px, originX: px, y: py, originY: py, isStatic: false };
                 points.push(p);
             }
         }
         // create static points
         if (gps == null) {   // random points
-            for(var x = 0; x < width; x = x + width / 5 / $('.movething').css('zoom')) {
-                for(var y = 0; y < height; y = y + height / 10) {
-                    var px = x + Math.random()*width / 10;
-                    var py = y + Math.random()*height / 10;
+            for(var x = 0; x < width; x = x + width / (density / 2) / $('.movething').css('zoom')) {
+                for(var y = 0; y < height; y = y + height / density) {
+                    var px = x + Math.random()*width / density;
+                    var py = y + Math.random()*height / density;
                     var p = {x: px, originX: px, y: py, originY: py, isStatic: true };
                     points.push(p);
                 }
