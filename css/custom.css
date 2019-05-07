@@ -19,8 +19,11 @@ body {
 	line-height: 28px;
 	color: #fff;
 	font-weight: 500;
+	background: url(../images/bg-pattern.png);
+	/*
 	background-color: #c4bebe;
-		background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
+	*/
 	text-rendering: optimizeLegibility;
 	margin: 0;
 	margin-top: 20px;
@@ -415,7 +418,7 @@ hr {
 
 .navbar {
 	background-color: black;
-	border-bottom: 1px solid #322c1e;
+	border-bottom: 1px solid #1b1810;
 	padding: 0 16px;
 }
 
