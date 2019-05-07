@@ -8,6 +8,12 @@ var velesSinglePageApp = {
     'menuTreeIndex': {},
     'menuTemplates': {},
     'sidebarPadContent': 0,
+    '$window': null,
+    '$animationElements': null,
+    'inViewThresholdPx': 75,
+    'scrollMinStep': 50,
+    'scrollLastPos': 0,
+    'parallaxBottom': null,
 
     'go': function(page = 'index') {
         var pageHash = null;
@@ -22,7 +28,7 @@ var velesSinglePageApp = {
 
         if (page == '')
             page = (this.currentPage) ? this.currentPage : 'index';
-        
+
         // just scroll to top if its the same page
         if (this.currentPage == page || page == '') {
             if (pageHash && $(pageHash).length) {
@@ -60,7 +66,9 @@ var velesSinglePageApp = {
             velesSinglePageApp.runPageHook('init');
             velesSinglePageApp.rebuildPageMenu(page, true);
             velesSinglePageApp.updateTemplate();
+            velesSinglePageApp.initPageAnimations();
             velesSinglePageApp.bindEvents();
+            velesSocketClient.replayEvents();
         } else {
             $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
@@ -69,14 +77,16 @@ var velesSinglePageApp = {
                 velesSinglePageApp.rebuildPageMenu(page, false);
                 velesSinglePageApp.updateTemplate();
                 velesSinglePageApp.autoAddIds();
+                velesSinglePageApp.initPageAnimations();
                 velesSinglePageApp.bindEvents();
-            }); 
+                velesSocketClient.replayEvents();
+            });
         }
 
         // just start scrolling to the top
         if (pageHash && $(pageHash).length)
             $('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
-        else 
+        else
             window.scrollTo(0,0);
     },
 
@@ -133,7 +143,7 @@ var velesSinglePageApp = {
 
         if (page == 'index')    // main index link is a special one
             $('a.navbar-brand').addClass('nav-active');
-        
+
         else
             $('a[href$="' + page + this.pageSuffix + '"].nav-link').parent('li').addClass('nav-active');
     },
@@ -159,6 +169,11 @@ var velesSinglePageApp = {
                     velesSinglePageApp.go();
             });
             this.eventsBound['popstate'] = true;
+        }
+
+        if (!this.eventsBound.hasOwnProperty('scroll') || !this.eventsBound['scroll']) {
+            $(window).bind('scroll resize', velesSinglePageApp.trackInView);
+            this.eventsBound['scroll'] = true;
         }
 
         if (!this.eventsBound.hasOwnProperty('navbar-toggler') || !this.eventsBound['navbar-toggler']) {
@@ -207,7 +222,7 @@ var velesSinglePageApp = {
 
         $('#content').addClass(overlayName + '-initial');
         $('#' + overlayName).addClass(overlayName + '-initial');
-        
+
         window.setTimeout(function() {
             if (!fade)
                 $('#' + overlayName).hide();
@@ -230,7 +245,7 @@ var velesSinglePageApp = {
 
         // some extra UI stuff
         this.hideMobileSlider();
-        
+
         $('#' + overlayName).addClass(overlayName + '-initial');
         $('#content').addClass(overlayName + '-initial');
         $('#content').addClass(overlayName);
@@ -293,7 +308,7 @@ var velesSinglePageApp = {
 
         this.buildMenuLevel(menuTree, $('#navbarResponsive ul.navbar-nav'), this.menuTemplates['navbar']);
         //this.buildMenuLevel(menuTree, $('.sidebar ul'), this.menuTemplates['sidebar']);
-       
+
         $('.navbar .template').removeClass('template');
     },
 
@@ -308,7 +323,7 @@ var velesSinglePageApp = {
         if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].sections,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page,
                 isSectionLinks = true
@@ -318,7 +333,7 @@ var velesSinglePageApp = {
         } else if (this.menuTreeIndex[page].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[page].items,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page
             );
@@ -327,7 +342,7 @@ var velesSinglePageApp = {
         } else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items')) {
             this.buildMenuLevel(
                 this.menuTreeIndex[this.menuTreeIndex[page].parent].items,
-                $('.sidebar ul'), 
+                $('.sidebar ul'),
                 this.menuTemplates['sidebar'],
                 page.parent
             );
@@ -374,7 +389,7 @@ var velesSinglePageApp = {
             if (!$('.sidebar').hasClass('sidebar-expand')) {
                 $('.sidebar').addClass('sidebar-expand');
             }
-        }        
+        }
     },
 
     'sidebarCollapse': function() {
@@ -391,7 +406,7 @@ var velesSinglePageApp = {
             } else {
                 $('#content-wrapper').css('padding-left', 'unset');
             }
-        }        
+        }
     },
 
     'buildMenuLevel': function(tree, $parent, templates, parentPage = null, isSectionLinks = false) {
@@ -403,25 +418,37 @@ var velesSinglePageApp = {
                 if (!tree[i].hasOwnProperty('page'))
                     tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
 
-                url = (isSectionLinks) 
+                url = (isSectionLinks)
                     ? '#' +  tree[i].page
                     : tree[i].page + this.pageSuffix;
 
+                var hackH = false;
+
+                if(typeof tree[i].url !== "undefined") {
+                    url = tree[i].url;
+                    hackH = true;
+                }
                 if (tree[i].hasOwnProperty('items')) {
                     var $item = $(templates['menuDropdown']
                         .replace('{{item.title}}', tree[i].title)
                         .replace('{{item.url}}', url)
                         .replace('{{item.page}}', tree[i].page).replace('{{item.page}}', tree[i].page)
+                        .replace('class="', (hackH ? 'class="nav-external-app ' : 'class="'))
                         );
-                    $subMenu = $item.appendTo($parent).find('div');
+
+                    $subMenu = $lastItem = $item.appendTo($parent).find('div');
                     this.buildMenuLevel(tree[i].items, $subMenu, templates, tree[i].page);
 
                 } else {
                     var item = ((parentPage) ? templates['subMenuItem'] : templates['menuItem'])
                         .replace('{{item.title}}', tree[i].title)
-                        .replace('{{item.url}}', url);
-                    $parent.append(item);
+                        .replace('{{item.url}}', url)
+                        .replace('class="', (hackH ? 'class="nav-external-app ' : 'class="'));
+
+                    $lastItem = $parent.append(item);
                 }
+                if(typeof tree[i].url !== "undefined")
+                    $lastItem.addClass('external-rul');
             }
 
             // Index to the smarter structure
@@ -440,9 +467,91 @@ var velesSinglePageApp = {
         }
     },
 
+    'initPageAnimations': function() {
+        this.$animationElements = $('.track-in-view');
+        this.$animationElements.removeClass('in-view');
+        this.$animationElements.removeClass('was-in-view');
+
+        if (!this.$window)
+            this.$window = $(window)
+
+        this.trackInView(false); /* do the first run before rist scroll */
+    },
+
+    'trackInView': function(throttle = true) {
+
+        if (velesSinglePageApp.$window.outerWidth() < 800) {
+            velesSinglePageApp.$animationElements.addClass('was-in-view');
+            return;
+        }
+
+        var window_top_position = velesSinglePageApp.$window.scrollTop();
+
+        // index parallax
+        if (velesSinglePageApp.currentPage == 'index') {
+            if (velesSinglePageApp.parallaxBottom == null) {
+                var $parallax = $('.parallax-content');
+                velesSinglePageApp.parallaxBottom = $parallax.offset().top + $parallax.outerHeight();
+            }
+            var parallax_scroll = window_top_position - velesSinglePageApp.parallaxBottom;
+
+            if (parallax_scroll < 0) {
+                var margin_top = $('.parallax-content').css('margin-top').replace('px', '');
+                var parallax_offset = parallax_scroll / (velesSinglePageApp.parallaxBottom / 300);
+                $('.parallax-content').css('margin-top', parallax_offset + 'px');
+                $('.parallax-content2').css('margin-top', (parallax_offset / 2) + 'px');
+            }
+        }
+
+        // throttle by steps in px
+        if (velesSinglePageApp.scrollLastPos - window_top_position > velesSinglePageApp.scrollMinStep
+                || window_top_position - velesSinglePageApp.scrollLastPos > velesSinglePageApp.scrollMinStep
+                || !throttle) {
+            velesSinglePageApp.scrollLastPos = window_top_position;
+
+            var window_height = velesSinglePageApp.$window.height();
+            var window_bottom_position = (window_top_position + window_height);
+
+            $.each(velesSinglePageApp.$animationElements, function() {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_padding = parseInt($element.css('padding-top'));
+                var element_bottom_padding = parseInt($element.css('padding-bottom'));
+                var element_top_position = $element.offset().top + element_top_padding;
+                var element_bottom_position = $element.offset().top + element_height - element_bottom_padding;
+
+                //check to see if this current container is within viewport
+                //if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)
+                if ((element_bottom_position >= window_top_position)
+                  && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
+                    if (!$element.hasClass('in-view')) {
+                        $element.addClass('in-view');
+                        $element.addClass('was-in-view');;
+                        console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
+                            + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
+                            + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
+                    }
+                } else {
+                    $element.removeClass('in-view');
+                }
+            });
+        }
+    },
+
     'start': function() {
         this.buildMenus();
         this.currentPage = 'index';
+
+/*
+        // Maintenance mode
+        if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
+            $('.stage').addClass('stage-enlarge');
+            $('.face2').add('.face5').text('Website under maintenance');
+            $('.face3').add('.face6').text('New content coming soon');
+            $('.face4').add('.face1').text('Stay tuned');
+            return;
+        }
+*/
 
         // only the index is pre-loaded
         if (this.detectCurrentPage() == 'index') {
@@ -452,6 +561,7 @@ var velesSinglePageApp = {
             this.autoAddIds();
             this.runPageHook('init');
             this.hideOverlay();
+            this.initPageAnimations();
             this.bindEvents();
 
             if (window.location.hash)
@@ -466,5 +576,3 @@ var velesSinglePageApp = {
 $(document).ready(function() {
     velesSinglePageApp.start();
 });
-
-

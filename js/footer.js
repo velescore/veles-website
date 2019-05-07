@@ -4,66 +4,66 @@ var velesFooterPanel = {
         $('#connection-status').click(function(){
             velesFooterPanel.updateTooltip('connection');
 
-            if ($('#connection-tooltip').is(":visible")) {
+            if ($('#connection-tooltip').hasClass("tooltip-expand")) {
                 $('#connection-status').removeClass('active');
-                $('#connection-tooltip').hide('fast');
+                $('#connection-tooltip').removeClass("tooltip-expand");
             } else {
                 $('.status-area').removeClass('active');
-                $('.footer-tooltip').hide();
+                $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#connection-status').addClass('active');
-                $('#connection-tooltip').show('fast');
+                $('#connection-tooltip').addClass("tooltip-expand");
             }
         });
         $('#chain-tip-status').click(function(){
             velesFooterPanel.updateTooltip('chain-tip');
 
-            if ($('#chain-tip-tooltip').is(":visible")) {
+            if ($('#chain-tip-tooltip').hasClass("tooltip-expand")) {
                 $('#chain-tip-status').removeClass('active');
-                $('#chain-tip-tooltip').hide('fast');
+                $('#chain-tip-tooltip').removeClass("tooltip-expand");
             } else {
                 $('.status-area').removeClass('active');
-                $('.footer-tooltip').hide();
+                $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#chain-tip-status').addClass('active');
-                $('#chain-tip-tooltip').show('fast');
+                $('#chain-tip-tooltip').addClass("tooltip-expand");
             }
         });
         $('#masternodes-status').click(function(){
             velesFooterPanel.updateTooltip('masternodes');
 
-            if ($('#masternodes-tooltip').is(":visible")) {
+            if ($('#masternodes-tooltip').hasClass("tooltip-expand")) {
                 $('#masternodes-status').removeClass('active');
-                $('#masternodes-tooltip').hide('fast');
+                $('#masternodes-tooltip').removeClass("tooltip-expand");
             } else {
                 $('.status-area').removeClass('active');
-                $('.footer-tooltip').hide();
+                $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#masternodes-status').addClass('active');
-                $('#masternodes-tooltip').show('fast');
+                $('#masternodes-tooltip').addClass("tooltip-expand");
             }
         });
         $('#chain-pow-status').click(function(){
             velesFooterPanel.updateTooltip('chain-pow');
 
-            if ($('#chain-pow-tooltip').is(":visible")) {
+            if ($('#chain-pow-tooltip').hasClass("tooltip-expand")) {
                 $('#chain-pow-status').removeClass('active');
-                $('#chain-pow-tooltip').hide('fast');
+                $('#chain-pow-tooltip').removeClass("tooltip-expand");
             } else {
                 $('.status-area').removeClass('active');
-                $('.footer-tooltip').hide();
+                $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#chain-pow-status').addClass('active');
-                $('#chain-pow-tooltip').show('fast');
+                $('#chain-pow-tooltip').addClass("tooltip-expand");
             }
         });
         $('#price-status').click(function(){
             velesFooterPanel.updateTooltip('price-status');
 
-            if ($('#price-status-tooltip').is(":visible")) {
+            if ($('#price-status-tooltip').hasClass("tooltip-expand")) {
                 $('#price-status-status').removeClass('active');
-                $('#price-status-tooltip').hide('fast');
+                $('#price-status-tooltip').removeClass("tooltip-expand");
             } else {
                 $('.status-area').removeClass('active');
-                $('.footer-tooltip').hide();
+                $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#price-status-status').addClass('active');
-                $('#price-status-tooltip').show('fast');
+                $('#price-status-tooltip').addClass("tooltip-expand");
             }
         });
     },

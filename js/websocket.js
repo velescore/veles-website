@@ -13,9 +13,13 @@
 var velesSocketClient = {
     host: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
         ? 'localhost'
-        : 'explorer.veles.network',
-    port: 8882,
-    protocol: 'ws',     // protocol: wss of ws
+        : 'api.veles.network',
+    port: (window.location.pathname.indexOf('/veles/') != -1)
+        ? 8882
+        : 8884,
+    protocol: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
+        ? 'ws'
+        : 'wss',     // protocol: wss of ws
     retries: 300,
     connected: false,
     handleEvent: null,
@@ -26,11 +30,13 @@ var velesSocketClient = {
     };
 
 velesSocketClient.log = function(msg) {
-    console.log(msg)
+    if (typeof console !== 'undefined')
+        console.log(msg)
+
     if (document.getElementById('debug-area') != null) {
         li = document.createElement('li');
         li.innerHTML = msg;
-        document.getElementById('debug-area').appendChild(li);
+        document.getElementById('debug-area').prepend(li);
     }
 }
 

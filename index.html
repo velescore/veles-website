@@ -67,7 +67,6 @@
                 </div>
             </div>
         </div>
-        <div class="overlay-bottom"></div>
     </div>
     <div id="mobile-menu-overlay">
         <div class="overlay-shadow">
@@ -82,7 +81,9 @@
                     <div class="row row-wide">
                         <div class="col-lg-12">
                             <div id="large-header" class="header">
-                                <div id="under-canvas"></div>
+                                <div id="under-canvas" class="parallax-content">
+                                    <ul id="debug-area" class="parallax-content2"></ul>
+                                </div>
                                 <canvas id="canvas"></canvas>
                                 <div class="container">
                                     <div class="row">
@@ -114,7 +115,7 @@
                                                         data-fixed-decimals="0"
                                                         data-title="{max_supply} VLS"
                                                         data-unit="VLS"
-                                                    ></span>
+                                                    >2 500 000 VLS</span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
@@ -126,31 +127,55 @@
                                             <div class="header-tile">
                                                 <div class="tile-label">
                                                     Maximum block reward
-                                                    <span class="tile-label-value">80 VLS</span>
-                                                </div>
-                                            </div>
-                                            <div class="header-tile">
-                                                <div class="tile-label">
-                                                    Avg. block reward 24h
-                                                    <span class="tile-label-value">22.45 VLS</span>
-                                                </div>
-                                            </div>
-                                            <div class="header-tile">
-                                                <div class="tile-label">
-                                                    Masternode reward
-                                                    <span class="tile-label-value">7.25%</span>
-                                                </div>
-                                            </div>
-                                            <div class="header-tile">
-                                                <div class="tile-label">
-                                                    Development reward
-                                                    <span class="tile-label-value">4.25%</span>
+                                                     <span class="tile-label-value"
+                                                        data-entity-id="chain.halving.status"
+                                                        data-attribute="max_block_reward"
+                                                        data-format="number"
+                                                        data-fixed-decimals="2"
+                                                        data-unit="VLS"
+                                                    >5 VLS</span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
                                                     Masternode collateral
                                                     <span class="tile-label-value">2000 VLS</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Masternode reward
+                                                    <span class="tile-label-value"
+                                                        data-entity-id="chain.stats.mining"
+                                                        data-attribute="block_reward_mn_percent"
+                                                        data-format="number"
+                                                        data-fixed-decimals="2"
+                                                        data-unit="%"
+                                                    >9 %</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Development reward
+                                                    <span class="tile-label-value"
+                                                        data-entity-id="chain.stats.mining"
+                                                        data-attribute="block_reward_dev_percent"
+                                                        data-format="number"
+                                                        data-fixed-decimals="2"
+                                                        data-unit="%"
+                                                    >4.65 %</span>
+                                                </div>
+                                            </div>
+                                            <div class="header-tile">
+                                                <div class="tile-label">
+                                                    Avg. block reward 24h
+                                                    <span class="tile-label-value"
+                                                        data-entity-id="chain.stats.mining"
+                                                        data-attribute="block_reward_average"
+                                                        data-format="number"
+                                                        data-fixed-decimals="2"
+                                                        data-unit="VLS"
+                                                    >5 VLS</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -235,18 +260,40 @@
                 <div class="container">
                     <div class="row" >
                         <div class="col-lg-4 text-center wide-screen">
-                            <img class="img" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
+                            <img class="img track-in-view left-slide-in" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
                             <h2>Introduction</h2>
-                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
-                            <p class="my-6">Veles will provide both VPN encryption security and allow payments within the network with community based proof-of-work cryptocurrency. This payment option, unlike any fiat payment, will be private, nearly instant and with
-                                very low fees.To achieve that we will build decentralised, opensource network based on blockchain technology. Veles network will act as marketplace, where our users can both rent their unused traffic or buy VPN service.Unlike
-                                common VPN providers, we will use peer-to-peer network to provide VPN using blockchain technology so everyone of our users will participate in service equally, meaning that there is no central entity that can sell or give
-                                up your private data to central authorities.
+                            <p class="my-6">
+                                Veles is open-source software project that aims to help the Internet community to improve freedom
+                                of access to information, to prevent Internet censorship, and to improve
+                                anonymity of the communications on the Internet.
+                                We believe that blockchain technology, can help us to build more fairly distributed, reliable and robust networks than existing solutions that rely on volunteer
+                                based networks.<br />
+                                Our vision is to build and bootstrap successful self-incentivized, self-supporting and self-governing decentralized network and ecosystem, resistant to
+                                the censorship, providing reliable decentralized VPN and anonymization services to the Internet users.<br />
+                                Veles Network will provide DEX marketplace within the ecosystems, where our users can both rent their unused tokenized traffic or pre-pay VPN service.
                             </p>
+                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dynamic-character">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 text-left">
+                            <h2>Dynamic character</h2>
+                            <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based hashrate , also dynamic MN reward which are increasing continuosouly from 5 - 60% of block reward
+                                and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view right-slide-in" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                        </div>
+                        <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
                     </div>
                 </div>
             </section>
@@ -254,62 +301,9 @@
             <section id="funding">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-7 text-left">
-                            <h2>Funding and Launch</h2>
-                            <!--img class="img-narrow-screen" id="img-funding" src="images/launch.png" alt="Veles Funding and Launch"-->
-                            <svg class="img-narrow-screen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <g id="alchemist-logo">
-                                  <g class="alchemist-ph">
-                                    <g id="logo" transform="translate(62.000000, 27.000000)">
-                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
-                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
-                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
-                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
-                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
-                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
-                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
-                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
-                                      <g>
-                                        <defs>
-                                          <clipPath id="clipper">
-                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
-                                          </clipPath>
-                                        </defs>
-                                        <!--<g class="clipped">
-                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
-                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
-                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
-                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
-                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
-                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
-                                        </g>-->
-                                      </g>
-                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
-                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
-                                              "/>
-                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
-                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
-                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
-                                                  "/>
-                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
-                                          34.578,44.174 				"/>
-                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
-                                                  "/>
-                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
-                                                  "/>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                            </svg>
-                            <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were
-                                part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to
-                                grow this project to selfsutain phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing
-                                available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-4 text-center wide-screen">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve"
+                                class="track-in-view left-slide-in">
                                 <g id="alchemist-logo">
                                   <g class="alchemist-ph">
                                     <g id="logo" transform="translate(62.000000, 27.000000)">
@@ -355,24 +349,60 @@
                                 </g>
                             </svg>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="dynamic-character">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 text-center wide-screen">
-                            <img class="img" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
-                        </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Dynamic character</h2>
+                            <h2>Funding and Launch</h2>
+                            <p class="my-6">Veles had a fair launch , no premine , no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50000VLS which was used for swap for early adopters which were
+                                part of early test phase. Faster development is secured with Dev reward,which have dynamic character similiar to masternode reward. Dev rewards are decreasing from 5% to 0% in 5 years. We believe that should be enough to
+                                grow this project to self-sustained phase. We are experimenting with the Community funding model. As an individual, company, or institution, you see the potential in the Veles network, where we share the development of existing
+                                available technologies, we are humble and we are asking if you would consider a financial contribution to the project.</p>
                             <!--<div id="chart2" class="code" style="margin:20px;height:240px; width:640px;"></div>-->
                             <pre class="code brush:js"></pre>
-                            <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
-                            <p class="my-6 text-left">Veles have dynamic character .Starting from basic block-rewards, not like many , Veles have dynamic POW rewards based on high of hashrate , also dynamic MN reward which are incrasing continuosouly from 5 - 60% of block reward
-                                and dynamic Dev reward which are decreasing from 5 - 0 % .cca in 5 years . Most specific for Veles is dynamic non-linear halvings based on amount of circulating supply realeased in actual phase.</p>
+                            <svg class="img-narrow-screen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                <g id="alchemist-logo">
+                                  <g class="alchemist-ph">
+                                    <g id="logo" transform="translate(62.000000, 27.000000)">
+                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
+                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
+                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
+                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
+                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <g>
+                                        <defs>
+                                          <clipPath id="clipper">
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
+                                          </clipPath>
+                                        </defs>
+                                        <!--<g class="clipped">
+                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
+                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
+                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
+                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
+                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
+                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
+                                        </g>-->
+                                      </g>
+                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
+                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
+                                              "/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
+                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
+                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
+                                                  "/>
+                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
+                                          34.578,44.174 				"/>
+                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
+                                                  "/>
+                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
+                                                  "/>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -382,36 +412,36 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12"><h2>Main features</h2></div>
-                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
                             <div class="card h-100">
                                 <div class="card-body" id="card-body">
                                     <h4 class="card-title">
                            <a>Multi-algo</a>
                         </h4>
                                     <p class="card-text">Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles
-                                        network in a harmony.Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5
+                                        network in a harmony. Avaliable algorithms : Scrypt ,Lyra2z ,Sha256d ,X16r ,X11 ,Nist5.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-1">
                                     <h4 class="card-title">
                            <a>Masternodes</a>
                         </h4>
-                                    <p class="card-text">On Veles network is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral
-                                        for masternode is 2000VLS. More informations you can find on our Wiki</p>
+                                    <p class="card-text">On Veles network there is a opportunity to run a masternode.Veles masternodes have dynamic charecter of rewards, rewards are raising from 5%(activated on block 51000) to 60% in next 5 years (from block 51000). Collateral
+                                        for masternode is 2000VLS. More information you can find on our Wiki</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-2">
                                     <h4 class="card-title">
                            <a>Open source</a>
                         </h4>
-                                    <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual.There is opportunity for individuals join the develepment and be rewarde from dev
+                                    <p class="card-text">Veles is developed openly, by developers distributed all over the world. It's not controlled by any company, foundation or individual. There is opportunity for individual to join the development and be rewarded from dev
                                         rewards fund. The coin distribution is designed to be as fair as possible.</p>
                                 </div>
                             </div>
@@ -419,18 +449,19 @@
                     </div>
                 </div>
             </section>
-
+            <!--
             <section id="twitter-feed">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <!--Twitter widget -->
+                            < ! - - Twitter widget - - >
                             <a class="twitter-timeline" data-height="400" data-dnt="true" width="2000" data-chrome="transparent" data-theme="dark" href="https://twitter.com/velescore?ref_src=twsrc%5Etfw">Tweets by velescore</a>
-                            <!--<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+                            < ! - - < script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> - -  >
                         </div>
                     </div>
                 </div>
             </section>
+            -->
         </div> <!-- /#content -->
     </div> <!-- /#content-wrapper -->
 
@@ -440,15 +471,15 @@
         </div>
         <div class="row footer-links">
             <div class="section col-md-3">
-                <h5>Website</h5> <a href="/about.html">About</a> <a href="/download.html">Download</a> <a href="/faq.html">FAQ</a> <a href="/wiki.html">WIKI</a> <a href="/coin-specs.html">Coins-specs</a> <a href="/external-services.html">External-services</a> <a href="/community-milestones">Community-milestones</a></div>
+                <h5>Website</h5> <a href="/index.html">Home</a> <a href="/download.html">Download</a> <a href="/faq.html">FAQ</a> <a href="/wiki.html">WIKI</a> <a href="/coin-specs.html">Coins-specs</a> <a href="/external-services.html">External-services</a> <a href="/crowdfundings">Crowdfundings</a> <a href="/mining-pools">Mining-pools</a></div>
             <div class="section col-md-3">
-                <h5>Explorer</h5> <a href="http://35.240.96.108:88/">Search</a> <a href="http://35.240.96.108:88/richlist">Richlist</a> <a href="http://35.240.96.108:88/masternodes">Masternodes</a> <a href="http://35.240.96.108:88/coininfo">Coin-info</a>
+                <h5>Explorer</h5> <a href="https://explorer.veles.network/">Search</a> <a href="https://explorer.veles.network/richlist">Richlist</a> <a href="https://explorer.veles.network/masternodes">Masternodes</a> <a href="https://explorer.veles.network/movement">Movement</a>
                 <a
-                href="http://35.240.96.108:88/miningstats">Mining-stats</a> <a href="http://35.240.96.108:88/info">Api</a> </div>
+                href="https://explorer.veles.network/miningstats">Mining-stats</a> <a href="https://explorer.veles.network/info">Api</a> </div>
             <div class="section col-md-3">
                 <h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
             <div class="section col-md-3">
-                <h5>About Us</h5> <a href="/about.html">About</a> <a href="/roadmap.html">Roadmap</a> <a href="/contact.html">Contact Us</a> <a href="https://github.com/Velescore">Github</a> </div>
+                <h5>About Us</h5> <a href="/team.html">Team</a> <a href="/roadmap.html">Roadmap</a> <a href="/contact.html">Contact Us</a> <a href="https://github.com/Velescore">Github</a> </div>
         </div>
         <div class="footer-copyright text-center py-3">
             © Copyright MMXIX The Veles Core developers.<br />

@@ -16,21 +16,31 @@ var menuTree = [
 	   	'sections': [
 		   { 'title': 'Getting-started' },
 		   { 'title': 'Introduction' },
-		   { 'title': 'Funding' },
 		   { 'title': 'Dynamic-character' },
+		   { 'title': 'Funding' },
 		   { 'title': 'Main-features' },
 		   { 'title': 'Twitter-feed'}
 	   ],
 	   'hideFromNav': true,
 	},
 	{
-	   'title': 'About',
+	   'title': 'Roadmap',
+	   'sections': [
+		   { 'title': 'Q1' },
+		   { 'title': 'Q2' },
+		   { 'title': 'Q3' },
+		   { 'title': 'Q4' }
+	   ]
+	},
+	{
+	   'title': 'Team',
 	   'sections': [
 		   { 'title': 'About-us' },
 		   { 'title': 'AltcoinBaggins' },
 		   { 'title': 'Mdfkbtc' },
+		   { 'title': 'Uhlik' },
 		   { 'title': 'Virtuado' },
-		   { 'title': 'Uhlik' }
+			 { 'title': 'Maty' }
 	   ]
 	},
 	{
@@ -46,23 +56,15 @@ var menuTree = [
 	   ]
 	},
 	{
-	   'title': 'Roadmap',
-	   'sections': [
-		   { 'title': 'Q1' },
-		   { 'title': 'Q2' },
-		   { 'title': 'Q3' },
-		   { 'title': 'Q4' }
-	   ]
-	},
-	{
 		'title': 'Resources',
 		'items': [
-			{ 'title': 'FAQ' },
-			{ 'title': 'Wiki' },
 			{ 'title': 'Coin-specs' },
+			{ 'title': 'Whitepaper' },
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
-			{ 'title': 'Community-milestones'}
+			{ 'title': 'Crowdfundings'},
+			{ 'title': 'FAQ' },
+			{ 'title': 'Wiki' },
 		]
 	},
 	{
@@ -70,36 +72,28 @@ var menuTree = [
 		'items': [
 			{
 				'title': 'Index',
-				'page': 'explorer-index',
-			  	'url': 'http://35.240.96.108:88'
-			},
-			{
-				'title': 'Search',
-				'url': 'http://35.240.96.108:88'
+			  	'url': 'https://explorer.veles.network'
 			},
 			{
 				'title': 'Richlist',
-				'url': 'http://35.240.96.108:88/Richlist'
+				'url': 'https://explorer.veles.network/Richlist'
 			},
 			{
 				'title': 'Masternodes',
-				'url': 'http://35.240.96.108:88/masternodes'
+				'url': 'https://explorer.veles.network/masternodes'
 			},
 			{
-				'title': 'Coin-info',
-				'url': 'http://35.240.96.108:88/coininfo'
+				'title': 'Movement',
+				'url': 'https://explorer.veles.network/movement'
 			},
 			{
 				'title': 'Mining-stats',
-				'url': 'http://35.240.96.108:88/miningstats'
+				'url': 'https://explorer.veles.network/miningstats'
 			},
 			{
 				'title': 'Api',
-				'url': 'http://35.240.96.108:88/info'
+				'url': 'https://explorer.veles.network/info'
 			}
 		]
-	},
-	{
-		'title': 'Contact',
 	}
 ];

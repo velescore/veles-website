@@ -11,13 +11,29 @@
  * of the License, or (at your option) any later version.
  */
 velesSinglePageApp.addPageHook('index', 'init', function() {
-    // Set the bg for animation effect just after overlay gets faded,
-    // otherwise it causes bug with the fading effect.
     indexHeaderWidget.init();
+    /*
+    // Used to set the bg for animation effect just after overlay gets faded,
+    // otherwise it cause(d) bug with the fading effect.
     setTimeout(function(){
         $('.movething .header').addClass('with-bg');
         
     }, 3000);
+    */
+   
+        if (!velesSinglePageApp.eventsBound.hasOwnProperty('index-sidebar-hook') 
+                || !velesSinglePageApp.eventsBound['index-sidebar-hook']) {
+            $('.sidebar').on('mouseover', function () {
+                if (!$('#under-canvas').hasClass('parallax-zoom'))
+                    $('#under-canvas').addClass('parallax-zoom');
+            });
+            $('.sidebar').on('mouseout', function () {
+                if ($('#under-canvas').hasClass('parallax-zoom'))
+                    $('#under-canvas').removeClass('parallax-zoom');
+            });
+
+            velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
+        }
 
     // Update twitter feed style
     setTimeout(function(){
