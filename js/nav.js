@@ -479,6 +479,12 @@ var velesSinglePageApp = {
     },
 
     'trackInView': function(throttle = true) {
+
+        if (velesSinglePageApp.$window.outerWidth() < 800) {
+            velesSinglePageApp.$animationElements.addClass('was-in-view');
+            return;
+        }
+
         var window_top_position = velesSinglePageApp.$window.scrollTop();
 
         // index parallax
@@ -520,7 +526,7 @@ var velesSinglePageApp = {
                   && (element_top_position <= window_bottom_position - velesSinglePageApp.inViewThresholdPx)) {
                     if (!$element.hasClass('in-view')) {
                         $element.addClass('in-view');
-                        $element.addClass('was-in-view');
+                        $element.addClass('was-in-view');;
                         console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
                             + ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
                             + ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);

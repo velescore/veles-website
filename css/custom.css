@@ -2305,10 +2305,9 @@ body::-webkit-scrollbar-thumb:hover {
 	}
 	.img-narrow-screen {
 		display: block;
-		float: right;
-		width: 40vw;
-		margin: 5px;
-		margin-top: 30px;
+		max-height: 30vw !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
 	}
 	/* Smaller font and line height */
 	#content {
@@ -2921,7 +2920,7 @@ div#tallModal {
 	top: 44px;
 }
 .timeline .event:first-of-type:after {
-	top: 0px;
+	top: 4px;
 }
 .timeline .event:first-of-type:before {
 	top: 0px;
@@ -2950,6 +2949,50 @@ div#tallModal {
 .timeline .event:last-child .split-right {
 	border-bottom-right-radius: 10px;
 }
+
+@media only screen and (max-width: 800px) {	/* only screen and (max-height: 480px) */
+	.timeline .event .split-contents {
+		display: block;
+	}
+	.timeline .event:before {
+		top: 5px;
+	    left: 10px;
+	    text-align: left;
+	    opacity: 0.6;
+	}
+	.timeline .event.milestone:before {
+		top: 5px;
+	    left: 10px;
+	    text-align: left;
+	    opacity: 0.6;
+	}
+	.timeline .event:first-of-type:before {
+		top: 10px;
+		left: 30px;
+	}
+	.timeline .event .split-left, .timeline .event .split-right {
+		padding: 30px 20px 20px 20px;
+	}
+	.timeline .event .split-right ul {
+		padding-left: 15px;
+	}
+	.timeline {
+		max-width: 95%;
+	}
+	.roadmap-page section {
+		padding-top: 0px;
+	}
+
+	/* undercanvas fixes */
+	#large-header #under-canvas {
+		background-size: auto 100%;
+	    margin-top: unset;
+	    margin-bottom: 0px;
+	    background-position: -73vh -30vh;
+	    opacity: 0.2;	
+	}
+}
+
 .timeline li.checked::after {
 	content: '✔';
 	color: rgb(187, 255, 170);
