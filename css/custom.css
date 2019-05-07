@@ -2469,11 +2469,14 @@ section:last-child::after {
 	border: none;
 }
 
+/*
 @media only screen and (min-height: 660px) {
 	.download-page section {
 		height: calc(100vh - 235px);
 	}
 }
+*/
+
 @media only screen and (min-height: 1024px) and (max-width: 1025px) {	/* two pages for tablets in portrait */
 	.download-page section {
 		height: calc((100vh - 235px) / 2);
@@ -2484,6 +2487,12 @@ section:last-child::after {
 		height: calc((100vh - 235px) / 2);
 	}
 }
+@media only screen and (max-width: 800px) {
+	.download-page .img-download {
+		height: 30vh !important;
+	}
+}
+
 
 .download-page section .container {
 	height: 100%;
@@ -2990,6 +2999,13 @@ div#tallModal {
 	    margin-bottom: 0px;
 	    background-position: -73vh -30vh;
 	    opacity: 0.2;	
+	}
+	/* section fixes */
+	section {
+		padding-top: 40px;
+	}
+	h1 {
+		padding-top: 30px;
 	}
 }
 
