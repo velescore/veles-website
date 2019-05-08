@@ -1886,8 +1886,20 @@ Main components
 	margin-bottom: 5px;
 	background: #16161644;
 }
-
-
+/*coin-specs section*/
+.card-coin-specs {
+	max-width: 93.5%;
+}
+.coin-specs-page section {
+	padding-top: 0px;
+	background: transparent !important;
+}
+.coin-specs-collapse{
+		background-color: #36363644;
+    border: solid #26262688 1px;
+    border-radius: 5px;
+}
+/*end of section*/
 .text-orange {
 	font-size: 15px;
 	color: #e4b99c;
