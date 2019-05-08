@@ -766,7 +766,7 @@ img.image-exchange {
 	max-width: 93.5%;
 }
 @media only screen and (max-width: 768px) {
-	.row-externl-services {
+	.row-external-services {
 		max-width: 100%;
 	}
 }
