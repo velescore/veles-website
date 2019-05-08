@@ -5,97 +5,101 @@
     <div id="content-wrapper">
         <!-- Anything outside #content element
              will be ignored by the single page app. -->
-        <div id="content" class="container">
-          <!-- Page Heading/Breadcrumbs -->
-            <h1 class="mt-4 mb-3">C<span class="grey">rowdfundings</span></h1>
-            <!-- Content Row -->
-        </br>
-            <div class="row">
-                <!-- Sidebar Column-->
-                <div class="col-lg-12 mb-4">
-                    <div class="mb-4" role="tablist" aria-multiselectable="true">
-                        <div class="card">
-                            <div class="card-header"><h5>Informations about funding</h5></div>
-                            <div class="card-body" id="card-body-1">
-                                <p><b>Basic rules : </b></p>
-                                <p>Veles team always puts community and the people involved in crowdfunding first. With every crowdfunding ,we put an emphasis on the complete transparency and abiding of rules.</p>
-                                <li>Only one Bitcoin and Veles address will be generated for each individual crowdfunding. Please use only this address to participate.</li>
-                                <li>Donate only from the address where your funds may be refunded if we do not collect enough funds by the deadline.</li>
-                                <li>Evrytime before donating , check status of crowdfundings. <b>Never</b> send funds on crowdfunding address with <b>Expired</b> or <b>Finished</b> status.
-                                <hr>
-                                <p><b>State explantation :</b></p>
-                                <p>
-                                    <button disabled id="btn-online" class="btn btn-success"> Open</button>
-                                    This state idicates that funding is still in active state, open for public and you can participate .
-                                </p>
-                                <p>
-                                    <button disabled id="btn-offline" class="btn btn-danger"> Expired</button>
-                                    This state indicates that funding wasnt successfully finished and funds were returned to donators .
-                                </p>
-                                <p>
-                                    <button disabled id="btn-reload" class="btn btn-primary"> Finished</button>
-                                     This state indicates that funding was successfully finished , target was reached and now is closed .
-                                </p>
-                                <hr>
-                                <p><b>All Veles crowdfundings :</b></p>
-                                <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingOne">
-                                                <h5 class="h5-resources">
-                                                    <button disabled data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="btn-reload-fundings" class="btn btn-primary"> Finished</button>
-                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
-                                                </h5>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-                                            <div class="card-body" id="card-body-1">
-                                                <p>Veles have opportunity to get listed on <a href="https://qtrade.io">Qtrade.io</a> exchange for action price 0.5 btc. click button below to get more informations about actual status of crowdfunding.</p>
-                                                <div data-toggle="modal" href="#tallModal" class="button-effect new" id="btn-contact">
-                                                    <span class="label">Details</span>
-                                                    <span class="icon">
-                                                    <span></span>
-                                                    </span>
-                                                    <span class="icon2 icon2-modal"></span>
-                                                </div>
-                                                <div id="tallModal" class="modal modal-wide fade">
-                                                    <div class="modal-dialog">
-                                                      <div class="modal-content">
-                                                        <div class="modal-header card-header">
-                                                          <h4 class="modal-title">Qtrade.io listing</h4>
-                                                          <button disabled id="btn-reload" class="btn btn-primary text-rigth"> Finished</button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                          <p><b>Start : </b><b class="text-orange">29.3.2019</b></p>
-                                                          <p><b>Finished : </b><b class="text-orange">10.4.2019</b></p>
-                                                          <p><b>Raised : </b><b class="text-orange">0.5 BTC</b></p>
-                                                          <hr>
-                                                          <div class="qrcode-container text-center">
-                                                              <img class="qrcode" src="data:image/png;base64,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">
-                                                              <span class="qrcode-bitcoin-sign"></span>
-                                                              <input class="input-donate text-center" readonly="" onclick="this.select()" value="3L9AGnJv3grQFbbqnVYTUBUyCCGa6Ko462">
-                                                          </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                          <div data-dismiss="modal" href="#tallModal" class="button-effect new" id="btn-contact">
-                                                              <span class="label">Close</span>
-                                                              <span class="icon">
-                                                              <span></span>
-                                                              </span>
-                                                              <span class="icon2 icon2-modal"></span>
-                                                          </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div id="content" class="crowdfundings-page">
+             <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3">Crowd<span class="grey">fundings</span></h1>
             </div>
-        </div>
-    </div>
-</div><!-- /#content -->
+            <section>
+                <div class="container">
+                    <div class="row row-crowdfundings">
+                        <!-- Sidebar Column-->
+                        <div class="col-lg-12 mb-4">
+                            <div class="mb-4" role="tablist" aria-multiselectable="true">
+                                <div class="card">
+                                    <div class="card-header"><h5>Informations about funding</h5></div>
+                                    <div class="card-body" id="card-body-1">
+                                        <p><b>Basic rules : </b></p>
+                                        <p>Veles team always puts community and the people involved in crowdfunding first. With every crowdfunding ,we put an emphasis on the complete transparency and abiding of rules.</p>
+                                        <li>Only one Bitcoin and Veles address will be generated for each individual crowdfunding. Please use only this address to participate.</li>
+                                        <li>Donate only from the address where your funds may be refunded if we do not collect enough funds by the deadline.</li>
+                                        <li>Evrytime before donating , check status of crowdfundings. <b>Never</b> send funds on crowdfunding address with <b>Expired</b> or <b>Finished</b> status.
+                                        <hr>
+                                        <p><b>State explantation :</b></p>
+                                        <p>
+                                            <button disabled id="btn-online" class="btn btn-success"> Open</button>
+                                            This state idicates that funding is still in active state, open for public and you can participate .
+                                        </p>
+                                        <p>
+                                            <button disabled id="btn-offline" class="btn btn-danger"> Expired</button>
+                                            This state indicates that funding wasnt successfully finished and funds were returned to donators .
+                                        </p>
+                                        <p>
+                                            <button disabled id="btn-reload" class="btn btn-primary"> Finished</button>
+                                             This state indicates that funding was successfully finished , target was reached and now is closed .
+                                        </p>
+                                        <hr>
+                                        <p><b>All Veles crowdfundings :</b></p>
+                                        <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="card">
+                                                <div class="card-header" role="tab" id="headingOne">
+                                                        <h5 class="h5-resources">
+                                                            <button disabled data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="btn-reload-fundings" class="btn btn-primary"> Finished</button>
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">#1  Qtrade.io listing</a>
+                                                        </h5>
+                                                </div>
+                                                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="card-body" id="card-body-1">
+                                                        <p>Veles have opportunity to get listed on <a href="https://qtrade.io">Qtrade.io</a> exchange for action price 0.5 btc. click button below to get more informations about actual status of crowdfunding.</p>
+                                                        <div data-toggle="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                            <span class="label">Details</span>
+                                                            <span class="icon">
+                                                            <span></span>
+                                                            </span>
+                                                            <span class="icon2 icon2-modal"></span>
+                                                        </div>
+                                                        <div id="tallModal" class="modal modal-wide fade">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header card-header">
+                                                                        <h4 class="modal-title">Qtrade.io listing</h4>
+                                                                        <button disabled id="btn-reload" class="btn btn-primary text-rigth"> Finished</button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                      <p><b>Start : </b><b class="text-orange">29.3.2019</b></p>
+                                                                      <p><b>Finished : </b><b class="text-orange">10.4.2019</b></p>
+                                                                      <p><b>Raised : </b><b class="text-orange">0.5 BTC</b></p>
+                                                                      <hr>
+                                                                      <div class="qrcode-container text-center">
+                                                                          <img class="qrcode" src="data:image/png;base64,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">
+                                                                          <span class="qrcode-bitcoin-sign"></span>
+                                                                          <input class="input-donate text-center" readonly="" onclick="this.select()" value="3L9AGnJv3grQFbbqnVYTUBUyCCGa6Ko462">
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                      <div data-dismiss="modal" href="#tallModal" class="button-effect new" id="btn-contact">
+                                                                          <span class="label">Close</span>
+                                                                          <span class="icon">
+                                                                          <span></span>
+                                                                          </span>
+                                                                          <span class="icon2 icon2-modal"></span>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div><!-- /#content -->
+  </div>
 </body>
 </html>

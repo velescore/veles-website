@@ -683,24 +683,6 @@ svg#Layer_1 {
 	padding-left: -25px;
 	max-height: 45px;
 }
-/*coin-specs section*/
-.card-coin-specs {
-	max-width: 93.5%;
-}
-@media only screen and (max-width: 768px) {
-	.card-coin-specs {
-		max-width: 100%;
-	}
-}
-.coin-specs-page section {
-	padding-top: 0px;
-	background: transparent !important;
-}
-.coin-specs-collapse{
-		background-color: #36363644;
-    border: solid #26262688 1px;
-    border-radius: 5px;
-}
 /*ecxchange*/
 .exchanges-page section {
 	padding-top: 0px;
@@ -744,6 +726,24 @@ img.image-exchange {
 		letter-spacing: 3px!important;
 	}
 }
+/*coin-specs section*/
+.card-coin-specs {
+	max-width: 93.5%;
+}
+@media only screen and (max-width: 768px) {
+	.card-coin-specs {
+		max-width: 100%;
+	}
+}
+.coin-specs-page section {
+	padding-top: 0px;
+	background: transparent !important;
+}
+.coin-specs-collapse{
+		background-color: #36363644;
+    border: solid #26262688 1px;
+    border-radius: 5px;
+}
 /*mining-pools*/
 .mining-pools-page section {
 	padding-top: 0px;
@@ -757,6 +757,46 @@ img.image-exchange {
 		max-width: 100%;
 	}
 }
+/*external services*/
+.external-services-page section {
+	padding-top: 0px;
+	background-color: transparent!important;
+}
+.row-external-services {
+	max-width: 93.5%;
+}
+@media only screen and (max-width: 768px) {
+	.row-externl-services {
+		max-width: 100%;
+	}
+}
+/*faq*/
+.faq-page section {
+	padding-top: 0px;
+	background-color: transparent!important;
+}
+.row-faq {
+	max-width: 93.5%;
+}
+@media only screen and (max-width: 768px) {
+	.row-faq {
+		max-width: 100%;
+	}
+}
+/*crowdfundings section*/
+.crowdfundings-page section {
+	padding-top: 0px;
+	background-color: transparent!important;
+}
+.row-crowdfundings {
+	max-width: 93.5%;
+}
+@media only screen and (max-width: 768px) {
+	.row-crowdfundings {
+		max-width: 100%;
+	}
+}
+/*end of section*/
 #img-introduction {
 	padding-top: 15px;
 	max-height: 300px;
