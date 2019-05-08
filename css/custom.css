@@ -683,6 +683,33 @@ svg#Layer_1 {
 	padding-left: -25px;
 	max-height: 45px;
 }
+/*ecxchange*/
+.exchanges-page section {
+	padding-top: 0px;
+	background: transparent !important;
+}
+
+#btn-exchange {
+  max-width: 75%;
+}
+
+img.image-exchange {
+  float: right;
+  max-height: 100%;
+}
+
+.icon-image {
+	z-index: 100;
+	opacity: 0.9;
+}
+
+.label-big {
+  line-height: 3.5;
+  padding: 5%;
+  font-size: 25px;
+	letter-spacing: 10px;
+}
+/*end exchange*/
 
 #img-introduction {
 	padding-top: 15px;
@@ -3001,7 +3028,7 @@ div#tallModal {
 	    margin-top: unset;
 	    margin-bottom: 0px;
 	    background-position: -73vh -30vh;
-	    opacity: 0.2;	
+	    opacity: 0.2;
 	}
 	/* section fixes */
 	section {

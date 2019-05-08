@@ -61,11 +61,11 @@ var menuTree = [
 			{ 'title': 'Coin-specs' },
 			{ 'title': 'Whitepaper' },
 			{ 'title': 'Masternode-guide' },
+			{ 'title': 'Exchanges' },
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
 			{ 'title': 'Crowdfundings'},
 			{ 'title': 'FAQ' },
-			{ 'title': 'Wiki' },
 		]
 	},
 	{
