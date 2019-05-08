@@ -693,6 +693,16 @@ svg#Layer_1 {
   max-width: 75%;
 }
 
+@media only screen and (max-width: 768px) {
+	#btn-exchange {
+		max-width: 100%;
+	}
+	.label-big {
+	  font-size: 17px;
+		letter-spacing: 5px;
+	}
+
+
 img.image-exchange {
   float: right;
   max-height: 100%;
