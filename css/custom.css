@@ -585,11 +585,6 @@ li.nav-item.nav-active {
 	text-align: center;
 }
 
-div#accordion {
-	margin-top: 3%;
-}
-
-
 @-webkit-keyframes spin {
 	0% {
 	-webkit-transform: rotate(0deg);
