@@ -698,8 +698,7 @@ svg#Layer_1 {
 		max-width: 100%;
 	}
 	.label-big {
-	  font-size: 17px;
-		letter-spacing: 5px;
+		letter-spacing: 5px!important;
 	}
 
 
