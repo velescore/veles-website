@@ -744,8 +744,19 @@ img.image-exchange {
 		letter-spacing: 3px!important;
 	}
 }
-/*end exchange*/
-
+/*mining-pools*/
+.mining-pools-page section {
+	padding-top: 0px;
+	background-color: transparent!important;
+}
+.row-mining-pools {
+	max-width: 93.5%;
+}
+@media only screen and (max-width: 768px) {
+	.row-mining-pools {
+		max-width: 100%;
+	}
+}
 #img-introduction {
 	padding-top: 15px;
 	max-height: 300px;
@@ -800,7 +811,6 @@ img.image-exchange {
 	margin: auto auto;
 	padding-right: 0px;
 }
-
 .img-wp {
 	margin: 10px auto;
 	max-height: 400px;
@@ -814,7 +824,12 @@ img.image-exchange {
 	padding-top: 0px;
 	background: transparent !important;
 }
-
+/*masternode section*/
+.masternode-guide-page section {
+	padding-top: 0px;
+	background: transparent !important;
+}
+/*end of section*/
 .img5 {
 	margin-left: 20px;
 	margin-bottom: 20px;
