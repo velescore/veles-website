@@ -724,9 +724,9 @@ img.image-exchange {
 		max-width: 100%;
 	}
 	.label-big {
-		line-height: 2.5!important;
-		font-size: 17px!important;
-		letter-spacing: 2px!important;
+		line-height: 4!important;
+		font-size: 20px!important;
+		letter-spacing: 3px!important;
 	}
 }
 /*end exchange*/
