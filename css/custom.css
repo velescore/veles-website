@@ -747,7 +747,7 @@ img.image-exchange {
 /*mining-pools*/
 .mining-pools-page section {
 	padding-top: 0px;
-	background-color: transparent!important;
+	background: transparent!important;
 }
 .row-mining-pools {
 	max-width: 93.5%;
@@ -760,7 +760,7 @@ img.image-exchange {
 /*external services*/
 .external-services-page section {
 	padding-top: 0px;
-	background-color: transparent!important;
+	background: transparent!important;
 }
 .row-external-services {
 	max-width: 93.5%;
@@ -773,7 +773,7 @@ img.image-exchange {
 /*faq*/
 .faq-page section {
 	padding-top: 0px;
-	background-color: transparent!important;
+	background: transparent!important;
 }
 .row-faq {
 	max-width: 93.5%;
@@ -786,7 +786,7 @@ img.image-exchange {
 /*crowdfundings section*/
 .crowdfundings-page section {
 	padding-top: 0px;
-	background-color: transparent!important;
+	background: transparent!important;
 }
 .row-crowdfundings {
 	max-width: 93.5%;
