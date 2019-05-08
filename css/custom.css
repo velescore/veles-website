@@ -693,15 +693,6 @@ svg#Layer_1 {
   max-width: 75%;
 }
 
-@media only screen and (max-width: 768px) {
-	#btn-exchange {
-		max-width: 100%;
-	}
-	.label-big {
-		letter-spacing: 5px!important;
-	}
-}
-
 img.image-exchange {
   float: right;
   max-height: 100%;
@@ -717,6 +708,26 @@ img.image-exchange {
   padding: 5%;
   font-size: 25px;
 	letter-spacing: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+	#btn-exchange {
+		max-width: 100%;
+	}
+	.label-big {
+		letter-spacing: 5px!important;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	#btn-exchange {
+		max-width: 100%;
+	}
+	.label-big {
+		line-height: 2.5!important;
+		font-size: 17px!important;
+		letter-spacing: 2px!important;
+	}
 }
 /*end exchange*/
 
