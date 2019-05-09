@@ -21,10 +21,9 @@ var velesSocketClient = {
         ? 'ws'
         : 'wss',     // protocol: wss of ws
     retries: 300,
+    retryTimeout: 2000,
     connected: false,
-    handleEvent: null,
-    handleConnect: null,
-    handleDisconnect: null,
+    hooks: {},
     onResultCallbacks: {},
     requestID: 1
     };
@@ -40,25 +39,11 @@ velesSocketClient.log = function(msg) {
     }
 }
 
-velesSocketClient.insert_reconnect_link = function() {
-    if (document.getElementById('debug-area') != null) {
-        li = document.createElement('li');
-        li.innerHTML = '... (not connected) ';
-        a = document.createElement('a');
-        a.setAttribute('href', 'javascript:velesSocketClient.connect()');
-        a.innerHTML = 'reconnect';
-        li.appendChild(a);
-        document.getElementById('debug-area').appendChild(li);
-    }
-}
-
 velesSocketClient.clear_console = function(msg) {
     if (document.getElementById('debug-area') != null) {
         document.getElementById('debug-area').innerHTML = '';
         
-        if (!this.connected) {
-            velesSocketClient.insert_reconnect_link();
-        } else {
+        if (this.connected) {
             li = document.createElement('li');
             li.innerHTML = '... (connected)';
             document.getElementById('debug-area').appendChild(li);
@@ -98,6 +83,28 @@ velesSocketClient.get_cmd_result = function(service, name, data, callback, filte
     }
 };
 
+velesSocketClient.handle = function(hook_name, data = null) {
+     if (!velesSocketClient.hooks.hasOwnProperty(hook_name)) {
+        velesSocketClient.log('No handlers found for ' + hook_name)
+        return;
+     }
+    if (velesSocketClient.hooks.hasOwnProperty(hook_name)) {
+        for (var i = velesSocketClient.hooks[hook_name].length - 1; i >= 0; i--) {
+            if (data)
+                velesSocketClient.hooks[hook_name][i](data);
+            else
+                velesSocketClient.hooks[hook_name][i]();
+        }
+    }
+};
+
+velesSocketClient.on = function(hook_name, callback) {
+    if (!velesSocketClient.hooks.hasOwnProperty(hook_name))
+        velesSocketClient.hooks[hook_name] = [];
+
+    velesSocketClient.hooks[hook_name].push(callback);
+};
+
 velesSocketClient.connect = function()  {
     velesSocketClient.log("Connecting to " + velesSocketClient.host + " ...")
     var ws = new WebSocket(velesSocketClient.protocol + "://" + velesSocketClient.host + ":" + velesSocketClient.port + "/ws/");
@@ -105,9 +112,7 @@ velesSocketClient.connect = function()  {
         velesSocketClient.log('WebSocket connected, waiting for events');
         velesSocketClient.ws = ws;
         velesSocketClient.connected = true;
-
-        if (velesSocketClient.handleConnect != null)
-            velesSocketClient.handleConnect();
+        velesSocketClient.handle('connect');
     };
     ws.onerror = function() {
         velesSocketClient.log('WebSocket error');
@@ -115,15 +120,13 @@ velesSocketClient.connect = function()  {
     ws.onclose = function() {
         velesSocketClient.log('WebSocket closed');
         velesSocketClient.connected = false;
-        if (velesSocketClient.handleDisconnect != null)
-            velesSocketClient.handleDisconnect();
+        velesSocketClient.handle('disconnect');
 
         if (velesSocketClient.retries) {
-            velesSocketClient.retries--;
-            velesSocketClient.connect();
-        } else {
-            velesSocketClient.insert_reconnect_link();
-            velesSocketClient.retries++
+            window.setTimeout(function() {
+                velesSocketClient.retries--;
+                velesSocketClient.connect();
+            }, velesSocketClient.retryTimeout);
         }
     };
     ws.onmessage = function(msgevent) {
@@ -131,8 +134,8 @@ velesSocketClient.connect = function()  {
         velesSocketClient.log('<< ' + payload);
         var msg = JSON.parse(payload);
 
-        if (msg['message-type'] == 'event' && velesSocketClient.handleEvent != null) {
-            velesSocketClient.handleEvent(msg);
+        if (msg.hasOwnProperty('message-type') && msg['message-type'] == 'event' && msg.hasOwnProperty('name')) {
+            velesSocketClient.handle(msg.name, msg);
 
         } else if (msg['message-type'] == 'response') {
             if (velesSocketClient.onResultCallbacks.hasOwnProperty(msg['request-id'])) {
