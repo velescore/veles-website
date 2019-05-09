@@ -685,7 +685,8 @@ svg#Layer_1 {
 }
 
 #btn-exchange {
-  max-width: 75%;
+    background-color: #26262688;
+    max-width: 75%;
 }
 
 img.image-exchange {
@@ -1938,9 +1939,9 @@ Main components
 }
 
 .card-header {
-	background: #e4b99c44;
+	border-bottom: solid 1px #e4b99cbb;
+	background: transparent;
 	margin-bottom: 0;
-	border-bottom: 0;
 }
 
 .h5-resources {
@@ -1948,6 +1949,7 @@ Main components
 }
 
 #headingOne {
+	padding: 0.75rem 1.25rem;
 	border-radius: 5px;
 	margin-bottom: 5px;
 	background: #16161644;
