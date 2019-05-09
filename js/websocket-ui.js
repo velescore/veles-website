@@ -14,9 +14,11 @@
 // Veles blockchain.
 var velesChain = {
     // Holds the current state, updated from events
-    'state': {},
+    state: {},
     // Holds raw persistent events
-    'stateEvents': {},
+    stateEvents: {},
+    // Holds hook to chain-related events
+    hooks: {},
 
     // Utility functions related to chain data
     'algoNameFromVersionHex': function(hash, length = 10) {
@@ -110,10 +112,39 @@ var velesChain = {
         var eventKeys = Object.keys(velesChain.stateEvents);
 
         for (var i = eventKeys.length - 1; i >= 0; i--) {
-            velesSocketClient.handleEvent(velesChain.stateEvents[eventKeys[i]]);
+            var event = velesChain.stateEvents[eventKeys[i]];
+            velesSocketClient.handle(event.name, event);
         }   
+    },
+
+    handle: function(hook_name, data = null) {
+        if (velesChain.hooks.hasOwnProperty(hook_name)) {
+            for (var i = velesChain.hooks[hook_name].length - 1; i >= 0; i--) {
+                if (data)
+                    velesChain.hooks[hook_name][i](data);
+                else
+                    velesChain.hooks[hook_name][i]();
+            }
+        }
+    },
+
+    on: function(hook_name, callback) {
+        if (!velesChain.hooks.hasOwnProperty(hook_name))
+            velesChain.hooks[hook_name] = [];
+
+        velesChain.hooks[hook_name].push(callback);
     }
 }
+
+velesChain.on('chain.tip:state_changed', function(e) {
+    // If we're on block explorer page, trigger it's status update
+    // function ASAP when new block is found
+    try {
+        update_stats();
+    } catch {
+        // noop
+    }
+});
 
 /* Register UI-specific event handlers with the WS client */
 velesSocketClient.on('connect', function() {
@@ -192,13 +223,9 @@ velesSocketClient.on('state_changed', function(e) {
                 $(this).attr('title', title.replace(match_var[0], e['new-state'][match_var[1]]));
     })
 
-    // If we're on block explorer page, trigger it's status update
-    // function ASAP when new block is found
-    try {
-        update_stats();
-    } catch {
-        // noop
-    }
+    // Call other hooks
+    velesChain.handle(e['entity-id'] + ':state_changed', e);
+
     // Save the last state
     velesChain.state[e['entity-id']] = e['new-state'];
     // Update tooltips if open
