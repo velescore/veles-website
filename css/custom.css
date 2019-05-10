@@ -1179,7 +1179,20 @@ span.status-label-short {
 	width: 30px;
 	margin-right: -5px;
 	text-align: center;
-	padding: 10px 0px 0px 8px;
+	padding: 0px 0px 0px 8px;
+	height: 40px;
+	overflow: hidden;
+}
+
+#connection-status .websocket-online {
+	font-size: 11px;
+	margin-top: 11px;
+	display: block;
+}
+#connection-status .websocket-offline {
+	font-size: 11px;
+	margin-top: 10px;
+	color: rgb(238, 238, 238);
 }
 
 #connection-tooltip::after {	/* move just the arrow, keep tooltip whet it is */
