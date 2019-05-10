@@ -1188,6 +1188,7 @@ span.status-label-short {
 	font-size: 11px;
 	margin-top: 11px;
 	display: block;
+	color: rgb(187, 255, 170);
 }
 #connection-status .websocket-offline {
 	font-size: 11px;
