@@ -3156,6 +3156,51 @@ div#tallModal {
 }
 
 
+ul.news-list {
+	font-size: 14px;
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+ul.news-list .news-date{
+	font-size: 13px;
+	float: right;
+	color: #aaaaaa;
+	padding: 5px 15px 0px 10px;
+}
+
+ul.news-list li {
+	padding: 0px;
+	background-color: rgba(32, 32, 32, 0.8);
+	margin-bottom: 3px;
+	height: 100px;
+	overflow: hidden;
+	color: #e0e0e0
+}
+
+
+ul.news-list span.news-teaser {
+	padding: 12px;
+	display: block;
+	margin-left: 10px;
+}
+
+ul.news-list .news-icon {
+	display: block;
+	float: left;
+    height: 100%;
+    margin-right: 15px;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+ul.news-list li:hover .news-icon {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+
 
 /* Alternative loading bar with spinner
 .pace {
