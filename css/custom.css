@@ -571,6 +571,7 @@ li.nav-item.nav-active {
 	font-size: 15px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	text-align: justify;
 }
 
 .my-7 {
@@ -3200,6 +3201,17 @@ ul.news-list li:hover .news-icon {
 }
 
 
+.index-page .col-lg-4 {
+	display: flex
+}
+
+.index-page .col-lg-4 .track-in-view.was-in-view {
+	margin: auto;
+}
+
+#funding .col-lg-4 {
+	display: block;
+}
 
 
 /* Alternative loading bar with spinner
