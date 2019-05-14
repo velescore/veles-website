@@ -1,2 +1,5 @@
 RewriteEngine on 
 RewriteRule ^([^/\.]+).html$ index.html [L]
+
+# Old website redirects
+Redirect 301 /how-to-get-vls /exchanges.html
