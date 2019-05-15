@@ -204,7 +204,7 @@ html {
 	margin-bottom: 35px!important;
 	padding-top: 50px;
 }
-#content-wrapper h1 .grey {
+#content-wrapper h1 .grey, #content-wrapper span.grey {
 	color: #A0a0a0;
 }
 
@@ -3208,6 +3208,18 @@ ul.news-list li:hover .news-icon {
 .index-page .col-lg-4 .track-in-view.was-in-view {
 	margin: auto;
 }
+
+#main-features ul {
+	list-style-type: circle;
+}
+
+#main-features li {
+	width: 50%;
+}
+
+/*#main-features li:nth-child(odd) {
+	float: right;
+} - to make two rows */
 
 #funding .col-lg-4 {
 	display: block;
