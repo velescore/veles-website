@@ -2659,8 +2659,26 @@ section:last-child::after {
 .download-page .button-effect .sublabel {
 	padding: 10px 0 10px 10px;
 }
-
-
+button.add-button {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	text-align: inherit;
+	width: inherit;
+	margin-left: 15px!important;
+}
+button.add-button:focus{
+	outline: unset;
+}
+button#btn-index{
+	margin:0
+}
+.hidden-button {
+	display: none;
+}
+button.add-button:focus + .hidden-button {
+	display: block;
+}
 /* fullscreen download page row on desktop screens */
 
 @media only screen and (max-width: 395px) {
