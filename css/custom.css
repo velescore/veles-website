@@ -3209,6 +3209,10 @@ ul.news-list li:hover .news-icon {
 	margin: auto;
 }
 
+.index-page .img {
+	max-height: 300px;
+}
+
 #main-features ul {
 	list-style-type: circle;
 }
@@ -3225,6 +3229,9 @@ ul.news-list li:hover .news-icon {
 	display: block;
 }
 
+#icon {
+	width: 32px;
+}
 
 /* Alternative loading bar with spinner
 .pace {
