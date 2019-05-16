@@ -446,7 +446,7 @@
             </section>
 
 
-            <section id="dynamic-character">
+            <section id="sane-economic-model">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
@@ -506,7 +506,11 @@
                                     <p class="card-text">Multi-algorithmic mining enables the network to be
                                     secured by large number of miners with different devices, such as GPU rigs or
                                     ASICs, which in our opinion improves the network decentralization 
-                                    and reward distribution. <br /><br />
+                                    and reward distribution.
+                                    To complement multi-algo PoW we're already working on a PoS implementation
+                                    as an additional consensus algorithm. 
+
+                                    <br /><br />
                                     <b>Currently supported:</b></p>
                                     <ul>
                                         <li>Scrypt</li>
@@ -529,8 +533,11 @@
                                     as they will be providing the core of our decentralized services. Our
                                     masternode network is steadily growing, as we need to reach sufficient number 
                                     of masternodes for a smooth launch of the dVPN and other services.<br />
-                                    We invite anyone to run a masternode (tier I), the collateral is currently
-                                    at 2000 VLS and scheduled to be decreased to 500 VLS in v0.18. <br /><br />
+                                    We invite anyone to run a masternode (Tier I), the collateral is currently
+                                    at 2000 VLS and scheduled to be decreased to 500 VLS in v0.18. <br />
+                                    Later on Tier II masternodes will also be implemented to function as
+                                    lightweight exit-nodes. We're experimenting with Proof-of-Location
+                                    concept to for better node distribution.<br /><br />
                                     <a href="masternode-guide.html">Veles Masternode Guide</a>
                                     </div>
                             </div>
@@ -542,7 +549,8 @@
                            <a>Dynamic</a>
                         </h4>
                                     <p class="card-text">
-                                        &#9702; Dynamic PoW rewards based on hashrate<br />
+                                        &#9702; Dynamic PoW rewards based on hashrate, automatically adjusted
+                                        after each halving check interval to get closer to the ideal supply release model<br />
                                         &#9702; Dynamic block reward halvings based on amount of circulating supply realeased since the last halving.<br />
                                         &#9702; Dynamic block spacing enables blocks to be mined steadily even if some PoW algorithms
                                         would have low or no hashrate by adapting to the situation.<br />
