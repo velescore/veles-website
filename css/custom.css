@@ -2601,13 +2601,12 @@ section:last-child::after {
 	border: none;
 }
 
-/*
+
 @media only screen and (min-height: 660px) {
 	.download-page section {
-		height: calc(100vh - 235px);
+		height: calc(100vh - 230px);
 	}
 }
-*/
 
 @media only screen and (min-height: 1024px) and (max-width: 1025px) {	/* two pages for tablets in portrait */
 	.download-page section {
@@ -2626,7 +2625,8 @@ section:last-child::after {
 }
 
 
-.download-page section .container {
+.download-page section .container,
+.download-page section .row {
 	height: 100%;
 }
 
@@ -2670,6 +2670,44 @@ button.add-button {
 button.add-button:focus{
 	outline: unset;
 }
+
+.download-page .build-details-info .label {
+    display: block;
+    opacity: 0.75;
+    padding: 10px 10px 10px 14px;
+    background: rgba(38, 38, 38, 0.9);
+    margin-bottom: 0px;
+}
+
+.download-page .build-details-info ul {
+	max-height: 0px;
+    padding: 0px 10px 0px 30px;
+	overflow: hidden;
+	list-style-type: none;
+    background: #2c2c2c;
+    font-size: 0.9em;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.download-page .build-details-info:hover ul {
+	max-height: 200px;
+    padding: 10px 10px 10px 30px;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.download-page .build-details-info {
+	border-left: 4px solid #2c2c2c;
+}
+
+.download-page .build-details-info:hover {
+    border-left: 4px solid #F19B7E;
+}
+
+.download-page .download-btn:hover {
+	text-decoration: none;
+}
+
+
 button#btn-index{
 	margin:0
 }
