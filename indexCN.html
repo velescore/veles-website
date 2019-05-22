@@ -666,7 +666,7 @@
         </div>
         <div class="footer-tooltip" id="price-status-tooltip">
             <ul>
-                <li> <i class="fa fa-chart-line"></i> VLS Price:
+                <li> <i class="fa fa-chart-line"></i> VLS 价格:
                     <div class="tooltip-price">
                         <span data-entity-id="market.price" data-attribute="price_btc"
                             data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
@@ -678,34 +678,34 @@
                     <div id="price-tooltip-chart"></div>
                 </li>
                 <li class="list-separator">
-                    Volume 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+                    成交量 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
                     &#916; 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
                 </li>
                 <li class="first-row">
-                    Market Cap: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
+                    市值: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
                     &#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
                 </li>
                 <li>
-                    Total Supply: <b><span
+                    总量: <b><span
                         data-entity-id="market.price"
                         data-attribute="total_supply"
                         data-multiplier="0.000001"
                         data-format="number"
                         data-fixed-decimals="1"
                         data-title="{total_supply} VLS"
-                        ></span>m</b>
-                    of maximum <b><span
+                        ></span>万</b>
+                    最大供应量 <b><span
                         data-entity-id="market.price"
                         data-attribute="max_supply"
                         data-multiplier="0.000001"
                         data-format="number"
                         data-fixed-decimals="1"
                         data-title="{max_supply} VLS"
-                        ></span>m</b> VLS
+                        ></span>万</b> VLS
                 </li>
             </ul>
         </div>
@@ -754,7 +754,7 @@
                     </ul>
                 </div>
                 <div id="price-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">Price:</span>
+                    <span class="status-label-wide">价格:</span>
                     <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
                      <span class="status-label-wide">BTC</span>
                 </div>
@@ -766,16 +766,16 @@
                     </span>️
                 </div>
                 <div id="chain-tip-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">Blocks:</span>
+                    <span class="status-label-wide">区块数:</span>
                     <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
                 </div>
                 <div id="masternodes-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">Masternodes:</span>
+                    <span class="status-label-wide">主节点数量:</span>
                     <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
                     <span class="status-label-short">MNs</span>
                 </div>
                 <div id="chain-pow-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">Hashrate:</span>
+                    <span class="status-label-wide">算力:</span>
                     <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
                 </div>
             </div>
