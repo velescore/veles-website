@@ -484,17 +484,11 @@
                             <div class="card h-100">
                                 <div class="card-body" id="card-body">
                                     <h4 class="card-title">
-                           <a>多算法挖矿PoW</a>
+                           <a>多算法POW机制</a>
                         </h4>
-                                    <p class="card-text">Multi-algorithmic mining enables the network to be
-                                    secured by large number of miners with different devices, such as GPU rigs or
-                                    ASICs, which in our opinion improves the network decentralization
-                                    and reward distribution.
-                                    To complement multi-algo PoW we're already working on a PoS implementation
-                                    as an additional consensus algorithm.
-
+                                    <p class="card-text">多算法挖矿使网络被大量具有不同设备的矿工保护，例如，GPU或ASIC，我们认为这可以改善网络的分布情况和奖励分配。为了进一步完善多算法PoW机制，我们已经开始将PoS机制作为额外的共识算法。
                                     <br /><br />
-                                    <b>Currently supported:</b></p>
+                                    <b>目前支持：</b></p>
                                     <ul>
                                         <li>Scrypt</li>
                                         <li>Lyra2z</li>
@@ -512,16 +506,10 @@
                                     <h4 class="card-title">
                            <a>主节点</a>
                         </h4>
-                                    <p class="card-text">Masternodes play important role in the Veles Network
-                                    as they will be providing the core of our decentralized services. Our
-                                    masternode network is steadily growing, as we need to reach sufficient number
-                                    of masternodes for a smooth launch of the dVPN and other services.<br />
-                                    We invite anyone to run a masternode (Tier I), the collateral is currently
-                                    at 2000 VLS and scheduled to be decreased to 500 VLS in v0.18. <br />
-                                    Later on Tier II masternodes will also be implemented to function as
-                                    lightweight exit-nodes. We're experimenting with Proof-of-Location
-                                    concept to for better node distribution.<br /><br />
-                                    <a href="masternode-guide.html">Veles Masternode Guide</a>
+                                    <p class="card-text">主节点在Veles网络中发挥着重要作用，因为它们将提供分布式服务的核心功能。我们的主节点网络正在稳步增长，我们需要达到足够数量的主节点，以便顺利启动dVPN和其他服务。<br />
+                                    我们邀请任何人运行主节点（Tier I），抵押代币量目前为2000 VLS，并计划在v0.18中降至500 VLS。<br />
+                                    稍后，Tier II主节点将实现为轻量级出口节点。我们正在尝试使用地点证明的概念来实现更好的节点分发。<br /><br />
+                                    <a href="masternode-guide.html">Veles主节点搭建指南</a>
                                     </div>
                             </div>
                         </div>
@@ -529,26 +517,24 @@
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-2">
                                     <h4 class="card-title">
-                           <a>Dynamic</a>
+                           <a>动态奖励</a>
                         </h4>
                                     <p class="card-text">
-                                        &#9702; Dynamic PoW rewards based on hashrate, automatically adjusted
-                                        after each halving check interval to get closer to the ideal supply release model<br />
-                                        &#9702; Dynamic block reward halvings based on amount of circulating supply realeased since the last halving.<br />
-                                        &#9702; Dynamic block spacing enables blocks to be mined steadily even if some PoW algorithms
-                                        would have low or no hashrate by adapting to the situation.<br />
-                                        &#9702; Dynamic block reward shares:<br />
-                                        &nbsp; &#8226; <b>increasing MN reward</b><br />
-                                        5% - 60% in 5y, now <span
+                                        &#9702; 基于哈希值的动态PoW奖励，在每个减半周期后自动调整，以更接近理想的供应释放模型。<br />
+                                        &#9702; 基于前次减半后流通量的动态区块奖励减半。<br />
+                                        &#9702; 动态区块容量使得出块稳定，即使某些PoW算法算力过低或算力为零均可以保障整个网络的稳定出块。<br />
+                                        &#9702; 动态区块奖励份额：<br />
+                                        &nbsp; &#8226; <b>递增的主节点奖励</b><br />
+                                        5年内从5％增加至60％，现在是 <span
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_mn_percent"
                                                         data-format="number"
                                                         data-fixed-decimals="2"
                                                         data-unit="%"
                                                     >9 %</span><br />
-                                        &nbsp; to compensate PoW halvings<br />
-                                        &nbsp; &#8226; <b>decreasing dev reward</b><br />
-                                        5% - 0% in 5y, now <span
+                                        &nbsp; 用来弥补PoW奖励减半。<br />
+                                        &nbsp; &#8226; <b>递减的开发团队奖励</b><br />
+                                        5年内的5％递减至0％，现在是 <span
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_dev_percent"
                                                         data-format="number"
