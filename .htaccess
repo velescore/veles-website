@@ -1,5 +1,9 @@
 RewriteEngine on 
-RewriteRule ^([^/\.]+).html$ index.html [L]
+# Different languages
+RewriteRule ^([^/\.]+).en.html$ index.en.html [L]
+RewriteRule ^([^/\.]+).cn.html$ index.cn.html [L]
+# Default languages
+RewriteRule ^([^/\.]+).html$ index.en.html [L]
 
 # Old website redirects
 Redirect 301 /how-to-get-vls /exchanges.html

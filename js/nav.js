@@ -1,9 +1,11 @@
 var velesSinglePageApp = {
     'explorerUrl': 'http://35.240.96.108:88',
     'currentPage': null,
+    'language': 'en',
+    'defaultLanguage': 'en',
     'pageSuffix': '.html',
     'pageHooks': {},
-    'cachedPages': {},
+    'cachedPages': {'en': {}, 'cn': {}},
     'eventsBound': {},
     'menuTreeIndex': {},
     'menuTemplates': {},
@@ -17,11 +19,17 @@ var velesSinglePageApp = {
 
     'go': function(page = 'index') {
         var pageHash = null;
+        var pageLanguage = self.language;
 
         if (page.indexOf('#') != -1) {
             pageHash = '#' + page.split('#')[1];
             page = page.split('#')[0];
         }
+
+        if (page.indexOf('.') != -1) {
+             pageLanguage = page.split('.')[1];             
+             page = page.split('.')[0];
+         }
 
         //} else if (window.location.hash)
         //    pageHash = window.location.hash;
@@ -40,17 +48,24 @@ var velesSinglePageApp = {
         }
 
         // cache the previous HTML, index is always cached
-        this.cachedPages[this.currentPage] = $('#content-wrapper').html();
+        this.cachedPages[this.language][this.currentPage] = $('#content-wrapper').html();
 
         // change the current page pointers and links
         this.currentPage = page;
         this.setActive(page);
 
+        // change the current language according to the page address
+        this.language = pageLanguage;
+
         // change browser's url filed
         if (history.pushState) {
-            window.history.pushState({'currentPage': page}, this.getTitle(), "./" + page + this.pageSuffix);
+            window.history.pushState(
+                {'currentPage': page}, 
+                this.getTitle(), 
+                "./" + page + '.' + this.language + this.pageSuffix
+                );
         } else {
-            document.location.href = "./" + page + this.pageSuffix;
+            document.location.href = "./" + page + '.' + this.language + this.pageSuffix;
         }
 
         // close the menu if open
@@ -59,8 +74,8 @@ var velesSinglePageApp = {
         //
 
         // load the content if not cached, init the page scripts
-        if (this.cachedPages.hasOwnProperty(page)) {
-            $('#content-wrapper').html(this.cachedPages[page]);
+        if (this.cachedPages[this.language].hasOwnProperty(page)) {
+            $('#content-wrapper').html(this.cachedPages[this.language][page]);
             velesSinglePageApp.hideOverlay();
             velesSinglePageApp.hideMobileMenu();
             velesSinglePageApp.runPageHook('init');
@@ -70,7 +85,7 @@ var velesSinglePageApp = {
             velesSinglePageApp.bindEvents();
             velesChain.replayEvents();
         } else {
-            $('#content-wrapper').load('./templates/' + page + '.html #content', null, function() {
+            $('#content-wrapper').load('./templates/' + this.language + '/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
                 velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');
@@ -148,10 +163,19 @@ var velesSinglePageApp = {
             $('a[href$="' + page + this.pageSuffix + '"].nav-link').parent('li').addClass('nav-active');
     },
 
-    'detectCurrentPage': function() {
+    'detectCurrentPageAddr': function() {
         var filename = $(window.location.pathname.split('/')).get(-1);
+        var page = (filename) ? filename.replace('.html', '') : 'index.en';
 
-        return (filename) ? filename.replace('.html', '') : 'index';
+        return page;
+    },
+
+    'getAddrPageName': function(page) {
+        return (page.indexOf('.') != -1) ? page.split('.')[0] : page;
+    },
+
+    'getAddrPageLanguage': function(page) {
+        return (page.indexOf('.') != -1) ? page.split('.')[1] : this.defaultLanguage;
     },
 
     'getTitle': function(page = null) {
@@ -420,7 +444,7 @@ var velesSinglePageApp = {
 
                 url = (isSectionLinks)
                     ? '#' +  tree[i].page
-                    : tree[i].page + this.pageSuffix;
+                    : tree[i].page + '.' + this.language + this.pageSuffix;
 
                 var hackH = false;
 
@@ -539,9 +563,10 @@ var velesSinglePageApp = {
     },
 
     'start': function() {
-        this.buildMenus();
+        var pageAddr = this.detectCurrentPageAddr();
+        this.language = this.getAddrPageLanguage(pageAddr);
         this.currentPage = 'index';
-
+        
 /*
         // Maintenance mode
         if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
@@ -553,8 +578,10 @@ var velesSinglePageApp = {
         }
 */
 
+        this.buildMenus();
+
         // only the index is pre-loaded
-        if (this.detectCurrentPage() == 'index') {
+        if (this.getAddrPageName(pageAddr) == 'index') {
             this.setActive();
             this.rebuildPageMenu('index', false);
             this.updateTemplate();
@@ -567,7 +594,7 @@ var velesSinglePageApp = {
             if (window.location.hash)
                 $('html, body').animate({ scrollTop: ($(window.location.hash).offset().top - 60) },50);
         } else {
-            this.go(this.detectCurrentPage() + window.location.hash);
+            this.go(pageAddr + window.location.hash);
         }
     }
 }
