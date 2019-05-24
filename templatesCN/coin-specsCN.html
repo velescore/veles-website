@@ -18,11 +18,11 @@
                                 <div class="card card-coin-specs">
                                     <div class="card-header"><h5>General specifications :</h5></div>
                                     <div class="card-body" id="card-body-1">
-                                        <p><b>最大供应量 : </b><b class="text-orange">2 500 000 VLS</b></p>
-                                        <p><b>区块时间 : </b><b class="text-orange">2 minutes</b></p>
+                                        <p><b>总量 : </b><b class="text-orange">2 500 000 VLS</b></p>
+                                        <p><b>Block time : </b><b class="text-orange">2 minutes</b></p>
                                         <p><b>Swap premine : </b><b class="text-orange">50000 VLS</b></p>
-                                        <p><b>主节点质押数量 : </b><b class="text-orange">2000 VLS</b></p>
-                                        <p><b>目前支持 : </b><b class="text-orange">Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</b></p>
+                                        <p><b>Masternode collateral : </b><b class="text-orange">2000 VLS</b></p>
+                                        <p><b>Supported algorithms : </b><b class="text-orange">Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</b></p>
                                         <p><b>Dev. address : </b><b class="text-orange">VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj</b></p>
                                     </div>
                                 </div>
@@ -33,8 +33,8 @@
                                 <div class="card card-coin-specs">
                                     <div class="card-header"><h5>Reward system :</h5></div>
                                     <div class="card-body" id="card-body-1">
-                                        <p><b>最大区块奖励 : </b><b class="text-orange">5 VLS</b></p>
-                                        <p><b>起码区块奖励 : </b><b class="text-orange">0.01 VLS</b></p>
+                                        <p><b>Maximal POW block reward : </b><b class="text-orange">5 VLS</b></p>
+                                        <p><b>Minimal POW block reward : </b><b class="text-orange">0.01 VLS</b></p>
                                         <p><b>Actual masternode reward : </b><b class="masternodes-reward-percent text-orange">0</b><b class="text-orange">%</b></p>
                                         <p><b>Actual dev. reward : </b><b class="text-orange">0.01 VLS</b></p>
                                         <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
@@ -48,15 +48,13 @@
                                                 <div id="collapseOne" class="collapse coin-specs-collapse" role="tabpanel" aria-labelledby="headingOne">
                                                     <div class="card-body" id="card-body-1">
                                                         <p><b>Mining rewards :</b></p>
-                                                        <p>动态区块奖励会根据每个算法的哈希值单独计算。例如：如果 X11 算法为 200GH/S，而 Scrypt 为
-                                                           5MH/S，则 X11 算法中的出块奖励为大约 0.2 VLS，而 Scrypt 的出块奖励为 0.003 VLS。因此，不
-                                                           可能出现单一算法获得大量出块奖励的情况。</p>
+                                                        <p>Dynamic block rewards are calculated individually on the basis of each algorithm’s hashrate. Eg. if the X11 algorithm is at 200 GH/s while Scrypt is at 5 MH/s, the rewards in the X11 blocks will be ca. 0.2 VLS, while Scrypt will be rewarding miners with ca. 0.003 VLS per block. It is therefore impossible to favour a single algorithm compared to other less used ones. Multi-algorithmic mining gives a large number of miners the opportunity to mine, which in our opinion improves the network decentralization and reward distribution. This allows both GPU and ASIC miners to join the Veles network in a harmony. The reward distribution per algorithm is consistent across the entire network, eg. if X11 accumulated a hashrate of 200 GH/s, the rewards will be comparable to Lyra2z at 30 MH/s.</p>
                                                         <hr>
                                                         <p><b>Masternode rewards :</b></p>
-                                                        <p>5年内从5％增加至60％。</p>
+                                                        <p>Masternode rewards are smoothly raising from 5% to 60% in period of 5 years.</p>
                                                         <hr>
                                                         <p><b>Development rewards :</b></p>
-                                                        <p>5年内的5％递减至0％。</p>
+                                                        <p>Development rewards are smoothly decreasing from 5% to 0% in period of 5 years.</p>
                                                     </div>
                                                 </div>
                                             </div>

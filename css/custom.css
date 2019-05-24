@@ -686,7 +686,7 @@ svg#Layer_1 {
 }
 
 #btn-exchange {
-    background-color: #26262688;
+		margin-bottom: 0;
     max-width: 75%;
 }
 
@@ -703,7 +703,7 @@ img.image-exchange {
 .label-big {
   line-height: 3.5;
   padding: 5%;
-  font-size: 25px;
+  font-size: 20px;
 	letter-spacing: 10px;
 }
 
