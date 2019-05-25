@@ -14,12 +14,13 @@ var menuTree = [
 		'page': 'index',
 	   	'title': 'Home',
 	   	'sections': [
-		   { 'title': 'Getting-started' },
-		   { 'title': 'Introduction' },
-		   { 'title': 'Dynamic-character' },
-		   { 'title': 'Funding' },
-		   { 'title': 'Main-features' },
-		   { 'title': 'Twitter-feed'}
+		   { 'title': 'Getting Started' },
+		   { 'title': 'Restoring Privacy' },
+		   { 'title': 'Innovative Network' },
+		   { 'title': 'Funding and Launch' },
+			 { 'title': 'Economic Model' },
+			 { 'title': 'Open Governance' },
+		   { 'title': 'Main Features' }
 	   ],
 	   'hideFromNav': true,
 	},

@@ -15,11 +15,12 @@ var menuTree = [
 	   	'title': '首页',
 	   	'sections': [
 		   { 'title': '准备开始' },
-		   { 'title': '介绍' },
-		   { 'title': '动态特征' },
-		   { 'title': '启动资金' },
-		   { 'title': '主要功能' },
-		   { 'title': '推特'}
+		   { 'title': '重塑线上隐私' },
+		   { 'title': '创新网络' },
+		   { 'title': '资金和启动' },
+		   { 'title': '合理的经济模型' },
+		   { 'title': '开放治理'},
+			 { 'title': '主要功能'}
 	   ],
 	   'hideFromNav': true,
 	},
