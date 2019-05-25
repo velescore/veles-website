@@ -51,9 +51,7 @@ var menuTree = [
 		   { 'title': 'Windows Wallet' },
 		   { 'title': 'macOS Wallet' },
 		   { 'title': 'RaspberryPi Wallet' },
-		   { 'title': 'Source-code' },
-		   { 'title': 'Whitepaper' }
-
+		   { 'title': 'Source-code' }
 	   ]
 	},
 	{
@@ -66,7 +64,7 @@ var menuTree = [
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
 			{ 'title': 'Crowdfundings'},
-			{ 'title': 'FAQ' },
+			{ 'title': 'FAQ' }
 		]
 	},
 	{
