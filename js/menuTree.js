@@ -18,7 +18,7 @@ var menuTree = [
 		   { 'title': 'Restoring Privacy' },
 		   { 'title': 'Innovative Network' },
 		   { 'title': 'Funding and Launch' },
-			 { 'title': 'Economic Model' },
+			 { 'title': 'Sane Economic Model' },
 			 { 'title': 'Open Governance' },
 		   { 'title': 'Main Features' }
 	   ],
