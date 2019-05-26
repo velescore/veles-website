@@ -14,12 +14,13 @@ var menuTree = [
 		'page': 'index',
 	   	'title': 'Home',
 	   	'sections': [
-		   { 'title': 'Getting-started' },
-		   { 'title': 'Introduction' },
-		   { 'title': 'Dynamic-character' },
-		   { 'title': 'Funding' },
-		   { 'title': 'Main-features' },
-		   { 'title': 'Twitter-feed'}
+		   { 'title': 'Getting Started' },
+		   { 'title': 'Restoring Privacy' },
+		   { 'title': 'Innovative Network' },
+		   { 'title': 'Funding Launch' },
+			 { 'title': 'Economic Model' },
+			 { 'title': 'Open Governance' },
+		   { 'title': 'Main Features' }
 	   ],
 	   'hideFromNav': true,
 	},
@@ -50,9 +51,7 @@ var menuTree = [
 		   { 'title': 'Windows Wallet' },
 		   { 'title': 'macOS Wallet' },
 		   { 'title': 'RaspberryPi Wallet' },
-		   { 'title': 'Source-code' },
-		   { 'title': 'Whitepaper' }
-
+		   { 'title': 'Source-code' }
 	   ]
 	},
 	{
@@ -65,7 +64,7 @@ var menuTree = [
 			{ 'title': 'Mining-pools'},
 			{ 'title': 'External-service'},
 			{ 'title': 'Crowdfundings'},
-			{ 'title': 'FAQ' },
+			{ 'title': 'FAQ' }
 		]
 	},
 	{

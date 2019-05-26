@@ -9,17 +9,18 @@
  * as published by the Free Software Foundation, either version 3
  * of the License, or (at your option) any later version.
  */
-var menuTree = [
+var menuTreeCN = [
 	{
-		'page': 'indexCN',
+		'page': 'index.cn',
 	   	'title': '首页',
 	   	'sections': [
 		   { 'title': '准备开始' },
-		   { 'title': '介绍' },
-		   { 'title': '动态特征' },
-		   { 'title': '启动资金' },
-		   { 'title': '主要功能' },
-		   { 'title': '推特'}
+		   { 'title': '重塑线上隐私' },
+		   { 'title': '创新网络' },
+		   { 'title': '资金和启动' },
+		   { 'title': '合理的经济模型' },
+		   { 'title': '开放治理'},
+			 { 'title': '主要功能'}
 	   ],
 	   'hideFromNav': true,
 	},
@@ -50,9 +51,7 @@ var menuTree = [
 		   { 'title': 'Windows 钱包' },
 		   { 'title': 'macOS 钱包' },
 		   { 'title': 'RaspberryPi 钱包' },
-		   { 'title': '源代码' },
-		   { 'title': '白皮书' }
-
+		   { 'title': '源代码' }
 	   ]
 	},
 	{
@@ -60,11 +59,12 @@ var menuTree = [
 		'items': [
 			{ 'title': '代币规则' },
 			{ 'title': '白皮书' },
+			{ 'title': '主节点搭建指南'},
+			{ 'title': '交易所'},
 			{ 'title': '矿池'},
-			{ 'title': '外部服务'},
-			{ 'title': '众筹'},
-			{ 'title': '常见问题' },
-			{ 'title': '百科' },
+			{ 'title': '外部服务' },
+			{ 'title': '融资' },
+			{ 'title': '常见问题' }
 		]
 	},
 	{
