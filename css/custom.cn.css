@@ -25,3 +25,7 @@ body {
 	padding: 0;
 	transition: 0.5s;
 }
+
+div#brand-text .subtitle {
+	font-size: 17px;
+}

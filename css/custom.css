@@ -166,7 +166,7 @@ html {
 }
 
 
-.main-title {
+.main-title, .main-subtitle {
 	 position: absolute;
 	 margin: 0;
 	 padding: 0;
@@ -178,16 +178,23 @@ html {
 	 transform: translate3d(-50%, -50%, 0);
 }
 
-.movething .main-title {
+.movething .main-title, .movething .main-subtitle {
 	 text-transform: uppercase;
-	 font-size: 4.2em;
-	 letter-spacing: 0.1em;
+	 font-size: 75px;
+	 letter-spacing: 7.56px;
 	 white-space: nowrap;
 }
 
-.main-title .thin {
-	 font-weight: 200;
+.movething .main-subtitle {
+	font-size: 37px;
+	color: #eee;
+	top: calc(50% + 80px);
+	padding-top: 25px;
 }
+
+/*.main-title .thin {
+	 font-weight: 200;
+}*/
 
 @media only screen and (max-width: 768px) {
 	 .movething .main-title {
@@ -437,6 +444,12 @@ div#brand-text {
 	display: inline;
 	margin-inline-start: 0.02rem;
 }
+
+div#brand-text .subtitle {
+	color: #eee;
+	font-weight: normal;
+}
+
 
 .navbar-brand:hover {
 	color: #fff;
@@ -2809,7 +2822,7 @@ hr.hr-new {
 	z-index: 75;
 }
 
-#large-header h1 {
+#large-header h1, #large-header h2 {
 	z-index: 100;
 }
 
