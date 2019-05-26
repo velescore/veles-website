@@ -12,47 +12,47 @@
 var menuTree = [
 	{
 		'page': 'index',
-	   	'title': 'Home',
-	   	'sections': [
-		   { 'title': 'Getting Started' },
-		   { 'title': 'Restoring Privacy' },
-		   { 'title': 'Innovative Network' },
-		   { 'title': 'Funding Launch' },
-			 { 'title': 'Economic Model' },
-			 { 'title': 'Open Governance' },
-		   { 'title': 'Main Features' }
-	   ],
-	   'hideFromNav': true,
+			'title': 'Home',
+			'sections': [
+		  	{ 'title': 'Getting Started' },
+		  	{ 'title': 'Restoring Privacy' },
+		  	{ 'title': 'Innovative Network' },
+		  	{ 'title': 'Funding Launch' },
+			{ 'title': 'Economic Model' },
+			{ 'title': 'Open Governance' },
+			{ 'title': 'Main Features' }
+		],
+		'hideFromNav': true,
 	},
 	{
-	   'title': 'Roadmap',
-	   'sections': [
-		   { 'title': 'Q1' },
-		   { 'title': 'Q2' },
-		   { 'title': 'Q3' },
-		   { 'title': 'Q4' }
-	   ]
+		'title': 'Roadmap',
+		'sections': [
+			{ 'title': 'Q1' },
+			{ 'title': 'Q2' },
+			{ 'title': 'Q3' },
+			{ 'title': 'Q4' }
+		]
 	},
 	{
-	   'title': 'Team',
-	   'sections': [
-		   { 'title': 'About-us' },
-		   { 'title': 'AltcoinBaggins' },
-		   { 'title': 'Mdfkbtc' },
-		   { 'title': 'Uhlik' },
-		   { 'title': 'Virtuado' },
-			 { 'title': 'Maty' }
-	   ]
+		'title': 'Team',
+		'sections': [
+			{ 'title': 'About-us' },
+			{ 'title': 'AltcoinBaggins' },
+			{ 'title': 'Mdfkbtc' },
+			{ 'title': 'Uhlik' },
+			{ 'title': 'Virtuado' },
+			{ 'title': 'Maty' }
+		]
 	},
 	{
-	   'title': 'Download',
-	   'sections': [
-		   { 'title': 'Linux Wallet' },
-		   { 'title': 'Windows Wallet' },
-		   { 'title': 'macOS Wallet' },
-		   { 'title': 'RaspberryPi Wallet' },
-		   { 'title': 'Source-code' }
-	   ]
+		'title': 'Download',
+		'sections': [
+			{ 'title': 'Linux Wallet' },
+			{ 'title': 'Windows Wallet' },
+			{ 'title': 'macOS Wallet' },
+			{ 'title': 'RaspberryPi Wallet' },
+			{ 'title': 'Source-code' }
+		]
 	},
 	{
 		'title': 'Resources',

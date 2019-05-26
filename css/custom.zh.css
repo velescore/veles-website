@@ -2,14 +2,13 @@
 
 /* IMPORT FONTS ------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css?family=Jura:300,400,600,700');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC|ZCOOL+QingKe+HuangYou&display=swap');
 
 
 /* GENERAL STYLES ----------------------------------------------------------- */
 
 body {
-	font-family: 'Jura', sans-serif;
+	font-family: 'Noto Sans SC', sans-serif;
 	font-size: 18px;
 	line-height: 30px;
 	color: #fff;
@@ -26,6 +25,26 @@ body {
 	transition: 0.5s;
 }
 
-div#brand-text .subtitle {
-	font-size: 17px;
+div#brand-text {
+	font-family: 'Jura', sans-serif;
+}
+
+div#brand-text .title-local {
+	font-family: 'ZCOOL QingKe HuangYou';
+	font-weight: normal;
+    font-size: 17px;
+}
+
+.movething .main-title,
+.movething .main-subtitle  {
+	font-family: 'ZCOOL QingKe HuangYou';
+}
+
+#large-header .header-tile .tile-label-value {
+	font-family: 'Jura', sans-serif;
+}
+
+/* Images */
+#large-header #under-canvas {
+	background-image: url('../images/world-map-alt.jpg');
 }

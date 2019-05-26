@@ -445,12 +445,6 @@ div#brand-text {
 	margin-inline-start: 0.02rem;
 }
 
-div#brand-text .subtitle {
-	color: #eee;
-	font-weight: normal;
-}
-
-
 .navbar-brand:hover {
 	color: #fff;
 	border-bottom: 2px solid #F19B7E;
