@@ -2581,6 +2581,7 @@ section {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background-image: linear-gradient(180deg,	#e4b99c22, #6f6158);
+	overflow-x: hidden;
 }
 
 section:nth-child(even) {
@@ -3289,11 +3290,7 @@ ul.news-list li:hover .news-icon {
 	float: right;
 } - to make two rows */
 
-#funding .col-lg-4 {
-	display: block;
-}
-
-#funding .col-lg-4 . {
+#funding-and-launch .col-lg-4 {
 	display: block;
 }
 
