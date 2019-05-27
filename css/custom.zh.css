@@ -69,6 +69,7 @@ div#brand-text .title-local {
 }
 
 /* footer */
+.footer *[data-entity-id],
 .footer-overlay *[data-entity-id] {
 	font-size: 13px;
 }
