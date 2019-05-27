@@ -26,8 +26,16 @@ body {
 }
 
 
+/* English expressions on the website */
 body
  :lang(en) {
+	font-family: 'Jura', sans-serif;
+	font-size: 16px;
+}
+
+
+/* all auto-updated values are in english format by default */
+*[data-entity-id] {
 	font-family: 'Jura', sans-serif;
 	font-size: 16px;
 }
@@ -58,4 +66,9 @@ div#brand-text .title-local {
 /* Images */
 #large-header #under-canvas {
 	background-image: url('../images/world-map-alt.jpg');
+}
+
+/* footer */
+.footer-overlay *[data-entity-id] {
+	font-size: 13px;
 }
