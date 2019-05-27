@@ -3324,6 +3324,10 @@ ul.news-list li:hover .news-icon {
 	opacity: 1;
 }
 
+.footer-copyright .grey {
+	color: #888;
+} 
+
 
 /* Alternative loading bar with spinner
 .pace {
