@@ -25,6 +25,12 @@ body {
 	transition: 0.5s;
 }
 
+
+.latin {	/* To distinguish Latin-based symbols to keep original font */
+	font-family: 'Jura', sans-serif;
+	font-size: 16px;
+}
+
 div#brand-text {
 	font-family: 'Jura', sans-serif;
 }
@@ -52,4 +58,3 @@ div#brand-text .title-local {
 #large-header #under-canvas {
 	background-image: url('../images/world-map-alt.jpg');
 }
-
