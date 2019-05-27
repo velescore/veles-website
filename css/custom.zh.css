@@ -44,7 +44,12 @@ div#brand-text .title-local {
 	font-family: 'Jura', sans-serif;
 }
 
+.cubespinner div {
+  font-size: 28px;
+}
+
 /* Images */
 #large-header #under-canvas {
 	background-image: url('../images/world-map-alt.jpg');
 }
+
