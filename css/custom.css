@@ -679,6 +679,7 @@ li.nav-item.nav-active {
 
 svg#Layer_1 {
 	max-height: 350px;
+	margin-top: 50px;
 }
 
 #img-faq {
@@ -3011,10 +3012,12 @@ div#tallModal {
 }
 .track-in-view.right-slide-in {
 	margin-right: -100px;
+	margin-left: 100px;
 	opacity: 0;
 }
 .track-in-view.right-slide-in.was-in-view {
 	margin-right: 0px;
+	margin-left: 0px;
 	opacity: 0.8;
 	transition: all 1s ease-in-out;
 }
@@ -3268,12 +3271,10 @@ ul.news-list li:hover .news-icon {
 	display: flex
 }
 
-.index-page .col-lg-4 .track-in-view.was-in-view {
-	margin: auto;
-}
-
 .index-page .img {
 	max-height: 300px;
+	margin-top: auto;
+    margin-bottom: auto;
 }
 
 #main-features ul {
@@ -3289,6 +3290,10 @@ ul.news-list li:hover .news-icon {
 } - to make two rows */
 
 #funding .col-lg-4 {
+	display: block;
+}
+
+#funding .col-lg-4 . {
 	display: block;
 }
 
