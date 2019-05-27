@@ -3296,6 +3296,35 @@ ul.news-list li:hover .news-icon {
 	width: 32px;
 }
 
+
+.language-selector {
+	margin-left: 20px;
+}
+
+.language-selector img {
+	height: 20px;
+	margin-left: 5px;
+}
+
+.language-selector .grey {
+	color: #aaa;
+}
+
+#languageSelectorBar {
+	max-width: 120px;
+	display: block;
+}
+
+#languageSelectorBar .current-language {
+	opacity: 0.5;
+	font-size: 13px;
+}
+
+#languageSelectorBar:hover .current-language {
+	opacity: 1;
+}
+
+
 /* Alternative loading bar with spinner
 .pace {
 	-webkit-pointer-events: none;
