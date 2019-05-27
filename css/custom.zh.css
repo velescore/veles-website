@@ -6,40 +6,16 @@
 
 
 /* GENERAL STYLES ----------------------------------------------------------- */
-
-body {
-	font-family: 'Noto Sans SC', sans-serif;
-	font-size: 17px;
-	line-height: 28px;
-	color: #fff;
-	font-weight: 500;
-	background: url(../images/bg-pattern.png);
-	/*
-	background-color: #c4bebe;
-	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAU0lEQVQIHQXBwRGDIBAAwO2/AMcCDHAcPjIRxjJ8Je1kl1uqUgphsWu6w0sIG6npLpcUBql4e/wsVRKabrkNTacIYbMrwsF06rqUhsnXVKVT+Hj+Ue4rPSONk4kAAAAASUVORK5CYII=);
-	*/
-	text-rendering: optimizeLegibility;
-	margin: 0;
-	margin-top: 20px;
-	padding: 0;
-	transition: 0.5s;
-}
-
-
-/* English expressions on the website */
-body
- :lang(en) {
+:lang(en) {
 	font-family: 'Jura', sans-serif;
-	font-size: 16px;
 }
-
 
 /* all auto-updated values are in english format by default */
 *[data-entity-id] {
 	font-family: 'Jura', sans-serif;
-	font-size: 16px;
 }
 
+/* header */
 div#brand-text {
 	font-family: 'Jura', sans-serif;
 }
@@ -50,6 +26,7 @@ div#brand-text .title-local {
     font-size: 17px;
 }
 
+/* index */
 .movething .main-title,
 .movething .main-subtitle  {
 	font-family: 'ZCOOL QingKe HuangYou';
@@ -66,10 +43,24 @@ div#brand-text .title-local {
 /* Images */
 #large-header #under-canvas {
 	background-image: url('../images/world-map-alt.jpg');
-}
+}ura
 
 /* footer */
 .footer *[data-entity-id],
-.footer-overlay *[data-entity-id] {
-	font-size: 13px;
+.footer-overlay *[data-entity-id],
+*[class^="chain-"] {
+	font-family: 'Jura', sans-serif;
 }
+
+/*
+.footer-tooltip li:first-child *[data-entity-id],
+.footer-tooltip li:first-child *[class^="chain-"]
+{
+    font-size: 15px;
+}
+
+.footer-tooltip {
+	font-size: 
+}
+
+*/
