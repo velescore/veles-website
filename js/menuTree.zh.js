@@ -57,12 +57,12 @@ var menuTree = [
 			{ 'title': '源代码' }
 		]
 	},
-	{ 'page': 'whitepaper', 'title': '白皮书' },
 	{
 		'page': 'resources',
 		'title': '相关资源',
 		'items': [
 			{ 'page': 'coin-specs', 'title': '代币规则'},
+			{ 'page': 'whitepaper', 'title': '白皮书' },
 			{ 'page': 'masternode-guide', 'title': '主节点搭建指南'},
 			{ 'page': 'exchanges', 'title': '交易所'},
 			{ 'page': 'mining-pools', 'title': '矿池'},
