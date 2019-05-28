@@ -189,10 +189,10 @@ html {
 }
 
 .movething .main-subtitle {
-	font-size: 37px;
+	font-size: 29px;
 	color: #eee;
 	top: calc(50% + 80px);
-	padding-top: 25px;
+	padding-top: 10px;
 }
 
 /*.main-title .thin {
