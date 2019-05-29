@@ -62,7 +62,7 @@ var menuTree = [
 			{ 'title': 'Masternode-guide' },
 			{ 'title': 'Exchanges' },
 			{ 'title': 'Mining-pools'},
-			{ 'title': 'External-service'},
+			{ 'title': 'External-services'},
 			{ 'title': 'Crowdfundings'},
 			{ 'title': 'FAQ' }
 		]
