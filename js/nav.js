@@ -31,6 +31,11 @@ var velesSinglePageApp = {
              page = page.split('.')[0];
          }
 
+        // check for supported languages
+        if (!this.cachedPages.hasOwnProperty(pageLanguage)) {
+            pageLanguage = this.defaultLanguage;
+        }
+
         //} else if (window.location.hash)
         //    pageHash = window.location.hash;
 
@@ -226,6 +231,7 @@ var velesSinglePageApp = {
         $('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
             .add('.nav-vertical a').add('.breadcrumb-item a')
             .add('.sidebar a')
+            .add('a.nav-page')
             .not('.nav-external-app').not('.spa').click(function(e) {
            e.preventDefault();
            velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));

@@ -3266,6 +3266,21 @@ ul.news-list li:hover .news-icon {
     transition: opacity 0.5s;
 }
 
+/* Text base icons */
+ul.news-list div.news-icon {
+    width: 100px;
+    background: black;
+    font-size: 25px;
+    padding: 10px;
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+}
+
+ul.news-list div.news-icon span {
+    display: block;
+    margin: auto;
+}
 
 .index-page .col-lg-4 {
 	display: flex
@@ -3328,6 +3343,10 @@ ul.news-list li:hover .news-icon {
 .footer-copyright .grey {
 	color: #888;
 } 
+
+#content {
+	line-height: 24px;
+}
 
 
 /* Alternative loading bar with spinner
