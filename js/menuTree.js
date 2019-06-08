@@ -14,10 +14,10 @@ var menuTree = [
 		'page': 'index',
 			'title': 'Home',
 			'sections': [
-		  	{ 'title': 'Getting Started' },
-		  	{ 'title': 'Restoring Privacy' },
-		  	{ 'title': 'Innovative Network' },
-		  	{ 'title': 'Funding and Launch' },
+		  { 'title': 'Getting Started' },
+		  { 'title': 'Restoring Privacy' },
+		  { 'title': 'Innovative Network' },
+		  { 'title': 'Funding and Launch' },
 			{ 'title': 'Economic Model' },
 			{ 'title': 'Open Governance' },
 			{ 'title': 'Main Features' }
