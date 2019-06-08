@@ -10,95 +10,95 @@
  * of the License, or (at your option) any later version.
  */
 var menuTree = [
-	{
-		'page': 'index',
-			'title': 'Home',
-			'sections': [
-		  { 'title': 'Getting Started' },
-		  { 'title': 'Restoring Privacy' },
-		  { 'title': 'Innovative Network' },
-		  { 'title': 'Funding and Launch' },
-			{ 'title': 'Economic Model' },
-			{ 'title': 'Open Governance' },
-			 { 'title': 'Main Features' }
-		],
-		'hideFromNav': true,
-	},
-	{
-		'page': 'roadmap',
-      'title': 'Roadmap'
+    {
+        'page': 'index',
+            'title': 'Inicio',
+            'sections': [
+          { 'title': 'Donde comenzar' },
+          { 'title': 'Restaurando la privacidad online' },
+          { 'title': 'Red Innovadora' },
+          { 'title': 'Recaudación de fondos y Lanzamiento' },
+            { 'title': 'Un modelo económico sensato' },
+            { 'title': 'Gobierno abierto' },
+             { 'title': 'Caracterìsticas' }
+        ],
+        'hideFromNav': true,
+    },
+    {
+        'page': 'roadmap',
+      'title': 'Hoja de ruta'
       'sections': [
-			{ 'title': 'Q1' },
-			{ 'title': 'Q2' },
-			{ 'title': 'Q3' },
-			 { 'title': 'Q4' }
-		]
-	},
-	{
+            { 'title': 'Q1' },
+            { 'title': 'Q2' },
+            { 'title': 'Q3' },
+             { 'title': 'Q4' }
+        ]
+    },
+    {
     'page': 'team',
-  		'title': 'Team',
-  		'sections': [
-  		{ 'title': 'About-us' },
-  		{ 'title': 'AltcoinBaggins' },
-  		{ 'title': 'Mdfkbtc' },
-  		{ 'title': 'Uhlik' },
-  		{ 'title': 'Virtuado' },
-  		 { 'title': 'Maty' }
-		]
-	},
-	{
+        'title': 'Equipo',
+        'sections': [
+        { 'title': 'Acerca de' },
+        { 'title': 'AltcoinBaggins' },
+        { 'title': 'Mdfkbtc' },
+        { 'title': 'Uhlik' },
+        { 'title': 'Virtuado' },
+         { 'title': 'Maty' }
+        ]
+    },
+    {
     'page': 'download',
-  		'title': 'Download',
-  		'sections': [
-  		  { 'title': 'Linux Wallet' },
-  			{ 'title': 'Windows Wallet' },
-  			{ 'title': 'macOS Wallet' },
-  			{ 'title': 'RaspberryPi Wallet' },
-  			 { 'title': 'Source-code' }
-		]
-	},
-	{
+        'title': 'Descargas',
+        'sections': [
+          { 'title': 'Linux Wallet' },
+            { 'title': 'Windows Wallet' },
+            { 'title': 'macOS Wallet' },
+            { 'title': 'RaspberryPi Wallet' },
+             { 'title': 'Còdigo fuente' }
+        ]
+    },
+    {
     'page': 'resources'
-  		'title': 'Resources',
-  		'items': [
-  			{ 'title': 'Coin-specs' },
-  			{ 'title': 'Whitepaper' },
-  			{ 'title': 'Masternode-guide' },
-  			{ 'title': 'Exchanges' },
-  			{ 'title': 'Mining-pools'},
-  			{ 'title': 'External-services'},
-  			{ 'title': 'Crowdfundings'},
-  			{ 'title': 'FAQ' }
-		]
-	},
-	{
+        'title': 'Recursos',
+        'items': [
+            { 'title': 'Especificaciones' },
+            { 'title': 'Whitepaper' },
+            { 'title': 'Guìa de MNs' },
+            { 'title': 'Exchanges' },
+            { 'title': 'Pools de Minado'},
+            { 'title': 'Servicios externps'},
+            { 'title': 'Recaudaciònes comunitarias'},
+            { 'title': 'FAQ' }
+        ]
+    },
+    {
     'page': 'Explorer',
-  		'title': 'Explorer',
-  		'items': [
-  			{
-  				'title': 'Index',
-  			  	'url': 'https://explorer.veles.network'
-  			},
-  			{
-  				'title': 'Richlist',
-  				'url': 'https://explorer.veles.network/Richlist'
-  			},
-  			{
-  				'title': 'Masternodes',
-  				'url': 'https://explorer.veles.network/masternodes'
-  			},
-  			{
-  				'title': 'Movement',
-  				'url': 'https://explorer.veles.network/movement'
-  			},
-  			{
-  				'title': 'Mining-stats',
-  				'url': 'https://explorer.veles.network/miningstats'
-  			},
-  			{
-  				'title': 'Api',
-  				'url': 'https://explorer.veles.network/info'
-  			}
-		]
-	}
+        'title': 'Explorador',
+        'items': [
+            {
+                'title': 'Inicio',
+                'url': 'https://explorer.veles.network'
+            },
+            {
+                'title': 'Richlist',
+                'url': 'https://explorer.veles.network/Richlist'
+            },
+            {
+                'title': 'Masternodes',
+                'url': 'https://explorer.veles.network/masternodes'
+            },
+            {
+                'title': 'Movimiento',
+                'url': 'https://explorer.veles.network/movement'
+            },
+            {
+                'title': 'Estadìsticas de minado',
+                'url': 'https://explorer.veles.network/miningstats'
+            },
+            {
+                'title': 'Api',
+                'url': 'https://explorer.veles.network/info'
+            }
+        ]
+    }
 ];
