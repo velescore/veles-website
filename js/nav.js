@@ -5,7 +5,7 @@ var velesSinglePageApp = {
     'defaultLanguage': 'en',
     'pageSuffix': '.html',
     'pageHooks': {},
-    'cachedPages': {'en': {}, 'zh': {}},
+    'cachedPages': {'en': {}, 'zh': {}, 'es':{}},
     'eventsBound': {},
     'menuTreeIndex': {},
     'menuTemplates': {},
@@ -27,7 +27,7 @@ var velesSinglePageApp = {
         }
 
         if (page.indexOf('.') != -1) {
-             pageLanguage = page.split('.')[1];             
+             pageLanguage = page.split('.')[1];
              page = page.split('.')[0];
          }
 
@@ -65,8 +65,8 @@ var velesSinglePageApp = {
         // change browser's url filed
         if (history.pushState) {
             window.history.pushState(
-                {'currentPage': page}, 
-                this.getTitle(), 
+                {'currentPage': page},
+                this.getTitle(),
                 "./" + page + '.' + this.language + this.pageSuffix
                 );
         } else {
@@ -572,7 +572,7 @@ var velesSinglePageApp = {
         var pageAddr = this.detectCurrentPageAddr();
         this.language = this.getAddrPageLanguage(pageAddr);
         this.currentPage = 'index';
-        
+
 /*
         // Maintenance mode
         if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
