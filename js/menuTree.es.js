@@ -9,7 +9,7 @@
  * as published by the Free Software Foundation, either version 3
  * of the License, or (at your option) any later version.
  */
-var menuTree = [ 
+var menuTree = [
   {
     'page': 'index',
       'title': 'Inicio',
@@ -26,7 +26,7 @@ var menuTree = [
   },
   {
     'page': 'roadmap',
-      'title': 'Hoja de ruta'
+      'title': 'Hoja de ruta',
       'sections': [
         { 'title': 'Q1' },
         { 'title': 'Q2' },
@@ -58,7 +58,7 @@ var menuTree = [
       ]
   },
   {
-    'page': 'resources'
+    'page': 'resources',
       'title': 'Recursos',
       'items': [
         { 'title': 'Especificaciones' },
