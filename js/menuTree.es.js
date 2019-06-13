@@ -66,7 +66,7 @@ var menuTree = [
         { 'title': 'Guìa de MNs' },
         { 'title': 'Exchanges' },
         { 'title': 'Pools de Minado'},
-        { 'title': 'Servicios externps'},
+        { 'title': 'Servicios externos'},
         { 'title': 'Recaudaciònes comunitarias'},
         { 'title': 'FAQ' }
       ]
