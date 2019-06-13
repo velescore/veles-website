@@ -15,10 +15,10 @@ var menuTree = [
       'title': 'Inicio',
       'sections': [
       { 'title': 'Donde comenzar' },
-      { 'title': 'Restaurando la privacidad online' },
+      { 'title': 'Privacidad online' },
       { 'title': 'Red Innovadora' },
-      { 'title': 'Recaudación de fondos y Lanzamiento' },
-      { 'title': 'Un modelo económico sensato' },
+      { 'title': 'Lancamiento inicial' },
+      { 'title': 'Modelo económico' },
       { 'title': 'Gobierno abierto' },
        { 'title': 'Caracterìsticas' }
     ],
