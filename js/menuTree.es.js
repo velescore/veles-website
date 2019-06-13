@@ -61,14 +61,14 @@ var menuTree = [
     'page': 'resources',
       'title': 'Recursos',
       'items': [
-        { 'title': 'Especificaciones' },
-        { 'title': 'Whitepaper' },
-        { 'title': 'Guìa de MNs' },
-        { 'title': 'Exchanges' },
-        { 'title': 'Pools de Minado'},
-        { 'title': 'Servicios externos'},
-        { 'title': 'Recaudaciònes comunitarias'},
-        { 'title': 'FAQ' }
+        { 'page': 'coin-specs', 'title': 'Especificaciones' },
+        { 'page': 'whitepaper', 'title': 'Whitepaper' },
+        { 'page': 'masternode-guide', 'title': 'Guìa de MNs' },
+        { 'page': 'exchanges', 'title': 'Exchanges' },
+        { 'page': 'mining-pools', 'title': 'Pools de Minado'},
+        { 'page': 'external-services', 'title': 'Servicios externos'},
+        { 'page': 'crowdfundings', 'title': 'Recaudaciònes comunitarias'},
+        { 'page': 'faq', 'title': 'FAQ' }
       ]
   },
   {
