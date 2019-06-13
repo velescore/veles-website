@@ -66,7 +66,7 @@ var menuTree = [
         { 'page': 'masternode-guide', 'title': 'Guìa de MNs' },
         { 'page': 'exchanges', 'title': 'Exchanges' },
         { 'page': 'mining-pools', 'title': 'Pools de Minado'},
-        { 'page': 'external-services', 'title': 'Servicios externos'},
+        { 'page': 'external-service', 'title': 'Servicios externos'},
         { 'page': 'crowdfundings', 'title': 'Recaudaciònes comunitarias'},
         { 'page': 'faq', 'title': 'FAQ' }
       ]
