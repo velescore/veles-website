@@ -3013,6 +3013,7 @@ div#tallModal {
 	margin-left: 0px;
 	opacity: 0.8;
 	transition: all 1s ease-in-out;
+  margin-bottom: 30px;
 }
 .track-in-view.right-slide-in {
 	margin-right: -100px;
@@ -3342,7 +3343,7 @@ ul.news-list div.news-icon span {
 
 .footer-copyright .grey {
 	color: #888;
-} 
+}
 
 #content {
 	line-height: 24px;
