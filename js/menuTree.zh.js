@@ -45,7 +45,7 @@ var menuTree = [
 			{ 'title': 'Virtuado' },
 			{ 'title': 'Maty' },
 			{ 'title': 'Binarydna' },
-        { 'title': 'AlexDeLarge' } 
+        { 'title': 'AlexDeLarge' }
 		]
 	},
 	{
@@ -56,7 +56,7 @@ var menuTree = [
 			{ 'title': 'Windows 钱包' },
 			{ 'title': 'macOS 钱包' },
 			{ 'title': 'RaspberryPi 钱包' },
-			{ 'title': '源代码' }
+			{ 'title': 'Veles 源代码' }
 		]
 	},
 	{
