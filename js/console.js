@@ -14,6 +14,10 @@ var velesDevConsole = {
             + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
             + "This feature is highly EXPERIMENTAL, please use at your own risk.\n"
             + "Type .help for more information about available commands.\n\n",
+        'es': "Veles Core Websocket client version v0.17 \"Aged Amnesia\"\n"
+            + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
+            + "Esta herramienta es altamente EXPERIMENTAL, por favor usar bajo su propio riesgo.\n"
+            + "Tipear .help para más información acerca de los comandos disponibles.\n\n",
     },
 
     init: function(websocketClient) {
@@ -39,7 +43,7 @@ var velesDevConsole = {
                     welcomeMessage: velesDevConsole.welcomeMessage[velesSinglePageApp.language]
                 });
                 velesDevConsole.controller.promptText('.help');
-            }); 
+            });
             // auto-focus when mouse over console
             $('#dev-console').mouseover(function() {
                 if (velesDevConsole.isShown())
@@ -52,7 +56,7 @@ var velesDevConsole = {
     },
 
     handleCommand: function(line, report, prevResult = null) {
-        if (line == "") 
+        if (line == "")
             return true;
 
         if (line.trim()[0] == '.' || velesDevConsole.isInternalCommandAlias(line))
@@ -91,7 +95,7 @@ var velesDevConsole = {
             return velesDevConsole.controller.clearScreen();
 
         } else if (cmd == '.help') {
-            return this.submitCommandResult(line, report, 
+            return this.submitCommandResult(line, report,
                 "Internal console commands start with dot '.', all other commands are handled by the Veles Core daemon. \n"
                 + "However, some commands might be disabled in the web console, such as commands directly related to wallet \n"
                 + "manipulation or payment handling.\n\n"
@@ -115,9 +119,9 @@ var velesDevConsole = {
                     return report("Usage: COMMAND | .grep PATTERN");
 
                 return this.submitCommandResult(line, report, $.grep(
-                    prevResult.split("\n"), 
+                    prevResult.split("\n"),
                     function(n, i) {
-                        return n.indexOf(args[0]) != -1; 
+                        return n.indexOf(args[0]) != -1;
                         }
                     ).join("\n"));
             } else {
@@ -240,7 +244,7 @@ var velesDevConsole = {
         $('body').addClass('with-overlay');
         $('#mobile-follow-toggle').addClass('inactive');
         $('.console-area').show();
-        $('#console-toggle').add('.console-area').addClass('active'); 
+        $('#console-toggle').add('.console-area').addClass('active');
 
         if (!$('.sidebar').hasClass('sidebar-expand'))
             $('.sidebar').fadeOut();   // hide sidebar same as scrollbar does if not expanded ...
