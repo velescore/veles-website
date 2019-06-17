@@ -41,7 +41,9 @@ var menuTree = [
 			{ 'title': 'Mdfkbtc' },
 			{ 'title': 'Uhlik' },
 			{ 'title': 'Virtuado' },
-			{ 'title': 'Maty' }
+			{ 'title': 'Maty' },
+			{ 'title': 'Binarydna' },
+        { 'title': 'AlexDeLarge' }
 		]
 	},
 	{
