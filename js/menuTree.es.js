@@ -50,12 +50,12 @@ var menuTree = [
   },
   {
     'page': 'download',
-      'title': 'Descargas',
+      'title': 'Descargar',
       'sections': [
-        { 'title': 'Linux Wallet' },
-        { 'title': 'Windows Wallet' },
-        { 'title': 'macOS Wallet' },
-        { 'title': 'RaspberryPi Wallet' },
+        { 'title': 'Billetera Linux' },
+        { 'title': 'Billetera Windows' },
+        { 'title': 'Billetera macOS' },
+        { 'title': 'Billetera RaspberryPi' },
          { 'title': 'Còdigo fuente' }
       ]
   },
