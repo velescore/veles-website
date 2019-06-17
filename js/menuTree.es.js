@@ -56,7 +56,7 @@ var menuTree = [
         { 'title': 'Billetera Windows' },
         { 'title': 'Billetera macOS' },
         { 'title': 'Billetera RaspberryPi' },
-         { 'title': 'Còdigo fuente' }
+         { 'title': 'Codigo fuente' }
       ]
   },
   {
