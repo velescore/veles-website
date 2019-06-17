@@ -1,0 +1,10 @@
+/* Español version customizations */
+
+
+.footer-tooltip li:first-child {
+  font-size: 13px;
+}
+
+.footer-tooltip li.first-row {
+    width: 100%;
+}
