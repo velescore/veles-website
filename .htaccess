@@ -2,7 +2,7 @@ RewriteEngine on
 # Different languages
 RewriteRule ^([^/\.]+).en.html$ index.en.html [L]
 RewriteRule ^([^/\.]+).zh.html$ index.zh.html [L]
-RewriteRule ^([^/\.]+).zh.html$ index.es.html [L]
+RewriteRule ^([^/\.]+).es.html$ index.es.html [L]
 # Default languages
 RewriteRule ^([^/\.]+).html$ index.en.html [L]
 
