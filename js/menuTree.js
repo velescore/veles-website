@@ -70,6 +70,35 @@ var menuTree = [
 		]
 	},
 	{
+		'title': 'Wallet',
+		'items': [
+			{
+				'title': 'Index',
+			  	'url': 'https://wallet.veles.network'
+			},
+			{
+				'title': 'Login',
+				'url': 'https://wallet.veles.network/#wallet'
+			},
+			{
+				'title': 'Generate',
+				'url': 'https://wallet.veles.network/#newAddress'
+			},
+			{
+				'title': 'Verify',
+				'url': 'https://wallet.veles.network/#verify'
+			},
+			{
+				'title': 'Sign',
+				'url': 'https://wallet.veles.network/#sign'
+			},
+			{
+				'title': 'Broadcast',
+				'url': 'https://wallet.veles.network/#broadcast'
+			}
+		]
+	},
+	{
 		'title': 'Explorer',
 		'items': [
 			{

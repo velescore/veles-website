@@ -74,6 +74,36 @@ var menuTree = [
       ]
   },
   {
+  'page': 'Wallet',
+      'title': 'Billetera',
+      'items': [
+          {
+            'title': 'Inicio',
+              'url': 'https://wallet.veles.network'
+          },
+          {
+            'title': 'Ingresar',
+            'url': 'https://wallet.veles.network/#wallet'
+          },
+          {
+            'title': 'Generar',
+            'url': 'https://wallet.veles.network/#newAddress'
+          },
+          {
+            'title': 'Verificar',
+            'url': 'https://wallet.veles.network/#verify'
+          },
+          {
+            'title': 'Firmar',
+            'url': 'https://wallet.veles.network/#sign'
+          },
+          {
+            'title': 'Broadcast',
+            'url': 'https://wallet.veles.network/#broadcast'
+          }
+      ]
+  },
+  {
   'page': 'Explorer',
       'title': 'Explorador',
       'items': [

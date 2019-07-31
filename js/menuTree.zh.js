@@ -74,6 +74,36 @@ var menuTree = [
 		]
 	},
 	{
+  'page': 'Wallet',
+      'title': '钱包',
+      'items': [
+          {
+            'title': '搜索',
+              'url': 'https://wallet.veles.network'
+          },
+          {
+            'title': '登录',
+            'url': 'https://wallet.veles.network/#wallet'
+          },
+          {
+            'title': '生成',
+            'url': 'https://wallet.veles.network/#newAddress'
+          },
+          {
+            'title': '验证',
+            'url': 'https://wallet.veles.network/#verify'
+          },
+          {
+            'title': '签名',
+            'url': 'https://wallet.veles.network/#sign'
+          },
+          {
+            'title': '广播',
+            'url': 'https://wallet.veles.network/#broadcast'
+          }
+      ]
+  },
+	{
 		'page': 'Explorer',
 		'title': '浏览器',
 		'items': [
