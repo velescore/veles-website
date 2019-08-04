@@ -1,4 +1,8 @@
-# How to contribute to the Veles webpage
+[![Build Status](https://travis-ci.com/velescore/veles-website.svg?branch=master)](https://travis-ci.org/velescore/veles-website)  
+[![Followers](https://img.shields.io/twitter/follow/velescore.svg?style=social&label=Follow)](https://twitter.com/velescore)
+
+
+# Velescore website
 
 Ensure you have a Github account. Then:
 
