@@ -6,15 +6,15 @@ var velesDevConsole = {
     cmdDeferred: null,
     cmdResult: false,
     welcomeMessage: {
-        'zh': "Veles Core Websocket client version v0.17 \"Aged Amnesia\"\n"
+        'zh': "Veles Core Websocket client version v0.18.1.2 \"Blockchain Barracuda\"\n"
             + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
             + "此功能是高度实验性的，请自行承担风险使用。\n"
             + "有关可用命令的详细信息，请键入.help。\n\n",
-        'en': "Veles Core Websocket client version v0.17 \"Aged Amnesia\"\n"
+        'en': "Veles Core Websocket client version v0.18.1.2 \"Blockchain Barracuda\"\n"
             + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
             + "This feature is highly EXPERIMENTAL, please use at your own risk.\n"
             + "Type .help for more information about available commands.\n\n",
-        'es': "Veles Core Websocket client version v0.17 \"Aged Amnesia\"\n"
+        'es': "Veles Core Websocket client version v0.18.1.2 \"Blockchain Barracuda\"\n"
             + " ____   ____     .__                _________  \n_\\___\\_/___/____ |  |   ____   _____\\_   ___ \\  ___________   ____  \n\\___________/__ \\|  | _/ __ \\ /  ___/    \\  \\/ /  _ \\_  __ \\_/ __ \\ \n   \\  Y  /\\  ___/|  |_\\  ___/ \\___ \\\\     \\___(  <_> )  | \\/\\  ___/ \n    \\___/  \\___  >____/\\___  >____  >\\______  /\\____/|__|    \\___  >\n               \\/          \\/     \\/        \\/                   \\/ \n"
             + "Esta herramienta es altamente EXPERIMENTAL, por favor usar bajo su propio riesgo.\n"
             + "Tipear .help para más información acerca de los comandos disponibles.\n\n",
