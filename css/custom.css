@@ -1956,7 +1956,14 @@ Main components
 	}
 }
 
-
+div.roadmap-delay-info {
+    margin: 0px 15px 0px 0px;
+    border: 1px solid #26262622;
+    background: #31708f66;
+    min-height: 50%;
+    padding: 15px;
+    border-radius: 3px;
+}
 /*End ROADMAP*/
 
 .card {
@@ -3207,7 +3214,17 @@ div#tallModal {
 		padding-top: 30px;
 	}
 }
-
+.timeline li.in-progress::after {
+	content: "\f110";
+	color: rgb(187, 255, 170);
+	font-size: 20px;
+	font-family: FontAwesome;
+	float: right;
+	margin-right: -30px;
+}
+.timeline li.in-progress {
+	padding-right: 30px;
+}
 .timeline li.checked::after {
 	content: '✔';
 	color: rgb(187, 255, 170);
@@ -3218,6 +3235,7 @@ div#tallModal {
 .timeline li.checked {
 	padding-right: 30px;
 }
+
 .timeline li.sub-item {
 	margin-left: 20px;
 	list-style-type: disc;
