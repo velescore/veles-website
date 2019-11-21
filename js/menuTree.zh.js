@@ -24,6 +24,14 @@ var menuTree = [
 		],
 		'hideFromNav': true,
 	},
+	{	
+		'page': 'vpn',	
+		'title': 'Vpn',
+		'sections': [
+			{ 'title': 'DVPN launch' },
+       		{ 'title': 'Join testing' }
+		]
+	},
 	{
 		'page': 'roadmap',
 		'title': '路线图',
@@ -44,8 +52,8 @@ var menuTree = [
 			{ 'title': 'Uhlik' },
 			{ 'title': 'Virtuado' },
 			{ 'title': 'Maty' },
-			{ 'title': 'Binarydna' },
-        { 'title': 'AlexDeLarge' }
+        	{ 'title': 'AlexDeLarge' },
+        { 'title': 'Clover' }	
 		]
 	},
 	{
