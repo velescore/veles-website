@@ -48,7 +48,7 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
     }, 4000);
 });
 
- velesSinglePageApp.addPageHook('vpn', 'init', function() {
+ velesSinglePageApp.addPageHook('dvpn', 'init', function() {
      indexHeaderWidget.init();
      
      setInterval(function(){
