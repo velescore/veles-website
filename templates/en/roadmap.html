@@ -165,7 +165,7 @@
                                             </p>
                                             <div class="roadmap-delay-info">
                                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                                <p> Morbi id hendrerit mauris. In ultrices purus ipsum, a aliquam purus pellentesque nec. Suspendisse feugiat, purus non mollis fermentum, magna ligula tristique orci, ac maximus massa ex tincidunt nisl. Nullam elit augue, pharetra vitae orci id, dapibus eleifend orci. Donec posuere vulputate eleifend. Proin nec dolor nisi. Morbi imperdiet elit quis tristique faucibus.</p>
+                                                <p>POS launch have been suspended due to multiple vulnerabilities dicovered by Veles blockchain research team in all current PoS implementations. As our priority is to ensure safe and smooth network operation, we have decided to postpone PoS lauch until our team develops sufficently secure consensus alogithm as an alternative to the current PoS design.</p>
                                             </div>
                                         </div>
                                         <div class="split-right">
@@ -186,23 +186,27 @@
                                             <h1>VCIP03 dVPN Integration Stage</h1>
                                             <p>Updates to the blockchain and the network to provide the best environment for the needs of dVPN service as DIP0002 Special Transactions. Pre-alpha dVPN service for testing and development.
                                             </p>
-                                            <div class="roadmap-delay-info">
-                                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                                <p> Morbi id hendrerit mauris. In ultrices purus ipsum, a aliquam purus pellentesque nec. Suspendisse feugiat, purus non mollis fermentum, magna ligula tristique orci, ac maximus massa ex tincidunt nisl. Nullam elit augue, pharetra vitae orci id, dapibus eleifend orci. Donec posuere vulputate eleifend. Proin nec dolor nisi. Morbi imperdiet elit quis tristique faucibus.</p>
-                                            </div>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
                                             <li><strike>Port DIP0002 Special Transactions to enable storing of VPN subscriptions on-blockchain in a correct manner</strike></li>
+                                            <li class="checked"><i>To ensure maximum anonymity and security of Veles dVPN we have based payments for the service on substantialy more anonymous and secure solutions than DIP0002 block entries.
+                                            </i></li>
                                             <li><strike>Integrate DIP0003 Deterministic Masternodes implementation, reliable on-blockchain masternode sync</strike></li>
+                                            <li class="checked"><i>DIP003 integration have been discontinued and replaced by custom Veles Masternode system that suits the needs of the project more closely and enables much better extendability,
+                                            </i></li>
                                             <li class="checked">Development of decentralized Certification Authority for RSA certificates used for dVPN connection</li>
                                             <li><strike>Start of DEX development for use within the ecosystem to enable trade of tokens representing hours of VPN connection time to provide better store-of-value, price discovery and free transfer of pre-paid VPN time.</strike></li>
-                                            <li class="checked">Development of VPN provisioning, orchestration and port multiplexing that enable successfuly serving Veles daemon and VPN service from the very same port</li>
+                                            <li class="checked"><i>DEX development has been postponed as our main priority is dVPN
+                                                implentation and to implement native and efficient VPN price discovery using VLS token
+                                                in a first place.
+                                            </i></li>
+                                            <li class="checked">Development of VPN provisioning, orchestration and port multiplexing that enable successfuly serving Veles daemon and VPN service.</li>
                                             <li class="checked">Pre-alpha dVPN dapp on voluntary masternodes for testing and client development</li>
                                             <li class="checked">Integration ElectrumX server for further usage</li>
-                                            <li class="in-progress">Preparation of Privatesent for activation anonymized payements (detailed testing, debugging)</li>
-                                            <li class="checked">Fixing currently found bugs</li>
-                                            <li class="in-progress">Begin with native Mobile-Wallet IOS/Android development </li>
+                                            <li class="checked">Preparation of PrivateSent for activation anonymized payements (detailed testing, debugging)</li>
+                                            <li class="checked">Continuously working on improvements and bugfixes in the latest Veles Core version</li>
+                                            <li class="checked">Start of native Mobile-Wallet IOS/Android development </li>
                                         </div>
                                     </div>
                                 </li>
@@ -216,14 +220,22 @@
                                         <div class="split-right">
                                             <ul class="content-skills">
                                             <li class="checked">Optional pre-alpha dVPN dapp for masternode operators to enable live testing</li>   
-                                            <li><strike>Tier II masternode implementation to function as exit nodes to provide multi-hop routing</strike></li>
-                                            <li><strike>IPv6 to IPv4 routing layer to support IPv6 exit nodes</strike></li>
-                                            <li><strike>Management of subscriptions on blockchain</strike></li>
+                                            <li><strike>Tier II masternode implementation to function as exit nodes to provide multi-hop routing</strike></li> <li class="checked"><i>During the development phase we have discovered several possible
+                                                alternative multi-tiered multi-hop dVPN configurations that could significantly
+                                                improve the original concept and need to be tested and assesed during the public alpha testing.
+                                            </i></li>
+                                            <li><strike>IPv6 to IPv4 routing layer to support IPv6 exit nodes</strike></li>      
+                                            <li><i>A the current IPv6 infrastructure still haven't reached worldwide coverage and as we need to prioritize on 
+                                                smooth provisioning of services on IPv4, we have posponed the IPv6 to IPv4 transport implementation.
+                                            </i></li>
+                                            <li class="checked">Management of subscriptions on blockchain. <i>Service subscription and discovery has 
+                                             been implemented, dVPN payment implementation will be finalized at the end of public alpha testing.</i></li>
                                             <li>Public alpha testing version of dVPN using voluntary nodes</li>
                                             <li>PrivateSend activation</li>
-                                            <li>Development of Veles supervisor</li>
-                                            <li>Start with development of installation script for dVPN&MN</li>
-                                            <li>Fixing reported <a href="https://github.com/velescore/veles/issues">issues</a> on github</li>
+                                            <li class="checked">Development of new Veles Masternode framework with Service Manager etc.</li>
+                                            <li class="checked">Development of new Veles Masternode installation script with dapp support such as dVPN</li>
+                                            <li class="checked">New masternode synchronisation system with extended data support and decentralized API<li>
+                                            <li class="checked">Integration of Decentralized cashing DNS system<li>
                                         </div>
                                     </div>
                                 </li>
@@ -232,19 +244,21 @@
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>dVPN Launch Stage</h1>
-                                            <p><strike>Transition period for all the masternodes to enable dVPN service.</strike></p>
-                                            <p><strike>Network Official launch of dVPN for a public use during Q1.</strike></p>
-                                            <p><strike>Public alpha testing version of DEX within Veles Ecosystem.</strike></p>
+                                            <p>Transition period for all the masternodes to enable dVPN service.</p>
+                                            <p>Network Official launch of dVPN for a public use during Q1.</p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li><strike>dVPN live for public use</strike></li>
-                                            <li>Release installation script for dVPN & MN</li>
+                                            <li>Release of installation script for dVPN & MN</li>
+                                            <li>dVPN live for public use</li>
+                                            <li>Development of decentralized domain name system. <i>Already in progress</i></li>
                                             <li>Tier II masternode implementation to function as exit nodes to provide multi-hop routing</li>
+                                            <i>The exact implementation will be based on the best multi-tiered multi-hop routing
+                                                system chosen according to the real-life data from alpha testing stage.</i>
                                             <li>Transition period for dVPN dapp to be mandatory for masternode operators</li>
-                                            <li>IPv6 to IPv4 routing layer to support IPv6 exit nodes</li>
-                                            <li>Management of subscriptions on blockchain</li>
-                                            <li><strike>Public alpha testing version of DEX for a dVPN connection time tokens</strike></li>
+                                            <li>IPv6 to IPv4 routing layer to support IPv6 exit nodes.<i> Already assigned with lower
+                                                priority, </i></li>
+                                            <li>Management of dVPN subscriptions on blockchain</li>
                                             <li>Release of native Mobile wallet app</li>
                                         </div>
                                     </div>
@@ -265,7 +279,6 @@
                                             <li>Improve and refactor dVPN implementation for betters scaling</li>
                                             <li>Research on new viable scaling solutions using the data from the Q1.</li>
                                             <li>Start development and testing of the concept of Proof-Of-Geolocation to enable more decentralized and better distribution of VLS exitnodes around the world.</li>
-                                            <li>Next Roadmap update</li>
                                         </div>
                                     </div>
                                 </li>
