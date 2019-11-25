@@ -25,11 +25,10 @@ var menuTree = [
     'hideFromNav': true,
   },
   { 
-    'page': 'vpn', 
-    'title': 'Vpn',
+    'page': 'dvpn', 
+    'title': 'dVPN',
     'sections': [
-      { 'title': 'DVPN launch' },
-       { 'title': 'Join testing' }
+      { 'title': 'DVPN launch' }
     ],
   },
   {
