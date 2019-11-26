@@ -163,6 +163,11 @@
 											                      <p><b>Lanzamiento de Veles Core v0.18 "Blockchain Baracuda"</b></p>
 											                      <p>Implementación y lanzamiento de Proof-Of-Stake
                                             </p>
+                                            <div class="roadmap-delay-info">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                    <p>
+                                                        El lanzamiento de POS ha sido suspendido debido a que el equipo de investigación en Blockchain de Veles ha descubierto múltiples vulnerabilidades en todas las implementaciones actuales de PoS. Como nuestra prioridad es asegurar un funcionamiento estable y seguro de nuestra red, hemos decidido posponer el lanzamiento de PoS hasta que nuestro equipo desarrolle un algoritmo de consenso lo suficientemente seguro como alternativa a los actuales.</p>
+                                                </div>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
@@ -171,8 +176,9 @@
 											                      <li class="checked">Adapatación del código al lanzamiento Bitcoin v0.18, implementando nuevas características tales como utilidad de backup de billetera, y proveer las bases para futuro soporte de billeteras hardware</li>
 											                      <li>Período de transformación para decrementar el colateral requerido para masternodes de 2000 a 500 VLS para equipararlo con la nueva cantidad máxima de unidades</li>
 											                      <li class="checked">Nuevas mejoras en el soporte de la internalización del cliente GUI</li>
-											                      <li class="checked">Lanzamiento de dapp dVPN pre-alpha para los operadores de masternodes, para futuros testeos
-											                      </li>
+											                      <li class="checked"><strike>Lanzamiento de dapp dVPN pre-alpha para los operadores de masternodes, para futuros testeos.</strike>
+                                                                  </li>
+                                                                  <li class="checked"> Lanzamiento de una billetera web Veles para el lado cliente basada en navegadores.</li>
                                         </div>
                                     </div>
                                 </li>
@@ -185,11 +191,24 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>Portar Transacciones Especiales DIP0002 para permitir el almacenado de suscripciones VPN en la blockchain de manera correcta.</li>
-											                      <li>Integrar implementación de sincronización fiable en la blockchain de masternodes determinísticos DIP0003</li>
+                                                                  <li><strike>Portar Transacciones Especiales DIP0002 para permitir el almacenado de suscripciones VPN en la blockchain de manera correcta.</strike></li>
+                                                                  <li class="checked"><i>
+                                                                    Para asegurar una máxima seguridad y anonimato de la dVPN Veles hemos basado los pagos para el servicio en soluciones sustancialmente mas anónimas y seguras que entradas de bloques DIP0002.
+                                                                    </i></li>
+                                                                  <li><strike>Integrar implementación de sincronización fiable en la blockchain de masternodes determinísticos DIP0003</strike></li>
+                                                                  <li class="checked"><i>La integración DIP003 fue discontinuada y reemplazada por un sistema de Masternodes Veles propio que satisface en mejor forma las necesidades del proyecto y permite una ampliación mucho mejor.
+                                                                    </i></li>
 											                      <li>Desarrollo de Certificacion de Autoridad descentralizada para certificados RSA utilizados en las conecciones dVPN</li>
-											                           <li>Comienzo de desarrollo del DEX para uso dentro del ecosistema para permitir el intercambio de tokens representando horas de coneccion a VPN para permitir una mejor reserva de valor, descubrimiento de precio y transferencia gratuita de tiempo VPN prepago.</li>
-											                      <li>Lanzamiento pre-alpha de la dapp dVPN para masternodes voluntarios, para testeo y desarrollo del cliente</li>
+                                                                       <li><strike>Comienzo de desarrollo del DEX para uso dentro del ecosistema para permitir el intercambio de tokens representando horas de coneccion a VPN para permitir una mejor reserva de valor, descubrimiento de precio y transferencia gratuita de tiempo VPN prepago.</strike></li>
+                                                                       <li class="checked"><i>El desarrollo del DEX ha sido pospuesto ya que nuestra prioridad principal es la implementación de la dVPN y un proceso de descubrimiento de precio de VPN eficiente usando las token VLS en primer lugar.
+                                                                        </i></li>
+                                                                        <li class="checked"> 
+                                                                            Desarrollo del provisionamiento, orquestración y multiplexado de puertos en VPN que permite servir el proceso Veles y el servicio VPN.</li>
+                                                                  <li>Lanzamiento pre-alpha de la dapp dVPN para masternodes voluntarios, para testeo y desarrollo del cliente</li>
+                                                                  <li class="checked"> Integración del servidor ElectrumX para futuro uso</li>
+                                            <li class="checked">>Preparación de PrivateSent para activación de pagos anónimos (testeo detallado, debugging)</li>
+                                            <li class="checked">Continuamente trabajando en mejoras y correcciones de bugs en la última version del core de Veles</li>
+                                            <li class="checked">Inicio del desarrollo de billeteras nativas IOS/Android</li>
                                         </div>
                                     </div>
                                 </li>
@@ -202,11 +221,21 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>Implementación de masternodes de Nivel II para funcionar como nodos de salida para proveer ruteo por múltiples saltos</li>
-											                      <li>Capa de ruteo de IPv6 a IPv4  para soportar nodos de salida IPv6</li>
-											                      <li>Administración de suscripciones en la blockchain</li>
-											                      <li> Integración en desktop y móvil del cliente de billetera dVPN con VPN</li>
-											                      <li>Testeo público de la versión alpha de las dVPN usando nodos voluntarios</li>
+                                                    <li class="checked">dapp opcional de dVPN pre-alpha para operadores de masternodes para permitir el testeo</li>   
+                                                    <li><strike>Implementación de masternodes Tier II para funcionar como nodos de salida para proveer ruteo de múltiples saltos</strike></li> <li class="checked"><i>
+                                                        Durante la fase de desarrollo hemos descubierto varias configuraciones alternativas de dVPN de multiples saltos y multiples capas que podrían incrementar significativamente el concepto original y que necesitan ser testeadas y evaluadas durante la etapa de testeo alpha público.
+                                                    </i></li>
+                                                    <li><strike>Capa de ruteo IPv6 a IPv4 para soportar nodos de salida IPv6</strike></li>      
+                                                    <li><i>La infraestructura IPv6 todavía no ha alcanzado cobertura mundial y como necesitamos un provisionamiento adecuado de servicios en IPv4, hemos pospuesto la implementación del transporte IPv6 a IPv4.
+                                                    </i></li>
+                                                    <li class="checked"> Administración  de suscripciones en blockchain. <i> 
+                                                        Suscripción y descubrimiento de servicio ha sido implementado, pago de dVPN será finalizado al final de la etapa de testing alpha público.</i></li>
+                                                    <li>Testeo de versión alpha de dVPN usando nodos voluntarios</li>
+                                                    <li>Activación de PrivateSend</li>
+                                                    <li class="checked">Desarrollo de un nuevo framework de Masternodes Veles con Administrador de Servicios, etc.</li>
+                                                    <li class="checked">Desarrollo de un nuevo script de instalación con soporte a dapps como dVPN</li>
+                                                    <li class="checked">Nuevo sistema de sincronización de masternodes con soporte extendido a datos y una API descentralizada<li>
+                                                    <li class="checked">Integración de sistem de casheo descentralizado de DNS<li>
                                         </div>
                                     </div>
                                 </li>
@@ -217,15 +246,19 @@
 											                      <h1>Etapa de lanzamiento de dVPN</h1>
 											                      <p>Período de transición para todos los masternodes para habilitar el servicio dVPN</p>
 											                      <p>Lanzamiento oficial de la red para uso público de dVPN durante Q1</p>
-											                      <p>Testeo público de la version alpha del DEX dentro del ecosistema Veles.</p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>Habilitación del servicio dVPN para el público general</li>
+                                                    <li>Lanzamiento de script de instalación para dVPN & MN</li>
+                                                                  <li>Habilitación del servicio dVPN para el público general</li>
+                                                                  <li>Desarrollo de on sistema de nombres de dominio descentralizado <i>Actualmente en progreso</i></li>
+                                                                  <li>Implementación de masternodes Tier II para funcionar como nodos de salida para proveer ruteo de múltiples saltos</li>
+                                            <i>La implementación exacta estará basada en el mejor sistema multi-salto multi-capa de acuerdo a las pruebas con datos reales en la etapa de testeo alpha.</i>
 											                      <li>Período de transición para que la dapp de dVPN sea obligatoria para todos los operadores de masternodes</li>
-											                      <li>Capa de ruteo de IPv6 a IPv4  para soportar nodos de salida IPv6</li>
+											                      <li>Capa de ruteo de IPv6 a IPv4  para soportar nodos de salida IPv6<i>Actualmente asignada con baja prioridad</i></li>
 											                      <li>Version de testeo alpha pública del DEX para tokens de tiempo de conexión a dVPN</li>
-											                      <li>Explorar la idea de tokenización e intercambio de alquiler de hashrate en el DEX, lo cual puede proveer además un mercado descentralizado de precio sobre el hashrate para ser usado en ajustes más avanzados de recompensas por bloque dinámicas para PoW.</li>
+											                      <li> Administración de suscripciones a dVPN en blockchain</li>
+                                            <li>Lanzamiento de billetera mobile nativa</li>
                                         </div>
                                     </div>
                                 </li>
@@ -236,15 +269,14 @@
 											                      <h1>Etapa de escalado de dVPN</h1>
 											                      <p>Mejorar las dVPN para un mejor escalado utilizando los datos recabados en Q1, desarrollo de Proof-Of-Geolocation.
                                             </p>
-											                      <p>Lanzamiento público del DEX de Veles</p>
+											                      <p><strike>Lanzamiento público del DEX de Veles</strike></p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>Mejorar la implementación de dVPN para un mejor escalado</li>
+                                                                  <li>Servicio dVPN habilitado para el público general</li>
+                                                                  <li>Mejorar la implementación de dVPN para un mejor escalado</li>
 											                      <li>Investigar nuevas soluciones viables de escalado utilizando la información recabado en Q1.</li>
 											                      <li>Comenzar el desarrollo y testeo del concepto de Proof-Of-Geolocation para permitir contar con nodos de salida más descentralizados y mejor distribuidos alrededor del mundo.</li>
-											                      <li>Servicio dVPN habilitado para el público general</li>
-											                      <li>Lanzamiento oficial del DEX de Veles e interfaz web.</li>
                                         </div>
                                     </div>
                                 </li>
@@ -258,7 +290,10 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>Desarrollo de medios e infraestructura para una gobernabilidad descentralizada justa sobre todos los procesos de decisión involucrados en el mantenimiento y desarrollo del ecosistema Veles.</li>
+                                                                  <li>Desarrollo de medios e infraestructura para una gobernabilidad descentralizada justa sobre todos los procesos de decisión involucrados en el mantenimiento y desarrollo del ecosistema Veles.</li>
+                                                                  <li> SInicio de desarrollo de DEX para uso en el ecosistema para comerciar tokens representando horas de conexión VPNpara proveer una mejor retención de valor, descubrimiento de precio y transferencia gratuita de tiempo VPN pre-pago.</li>
+                                            <li>Explorar la idea de tokenización de alquiler de hashrate en el DEX, lo que puede proveer datos descentralizados de un mercado de hashrate para utilizar en ajustes dinámicos más avanzados de recompensas de PoW.</li>
+                                                                  <li>Lanzamiento oficial del DEX de Veles e interfaz web.</li>
                                         </div>
                                     </div>
                                 </li>
@@ -274,7 +309,7 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-											                      <li>TVentana de tiempo para implementar y testear todos los procesos de gobernabilidad antes de funcionar como una organización realmente descentralizada con el soporte del equipo de Veles Core</li>
+											                      <li>Ventana de tiempo para implementar y testear todos los procesos de gobernabilidad antes de funcionar como una organización realmente descentralizada con el soporte del equipo de Veles Core</li>
 											                      <li>Mantenimiento de la red dVPN e implementación de nuevas características, ideas, integraciones o casos de uso sugeridos por la comunidad como usuarios, operadores de nodos y desarrolladores.</li>
                                         </div>
                                     </div>
