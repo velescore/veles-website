@@ -3428,7 +3428,7 @@ ul.news-list div.news-icon span {
 	}
 }
 
-@media only screen and and (max-width: 320px) and (max-height: 568px) {
+@media only screen and and (max-width: 321px) and (max-height: 569px) {
 	.countdown-text{
 		font-size: 11px!important;
 	}
@@ -3446,7 +3446,7 @@ ul.news-list div.news-icon span {
 	}
 }
 
-@media only screen and and (max-width: 320px) and (max-height: 568px) {
+@media only screen and and (max-width: 321px) and (max-height: 569px) {
 	.clock-time{
 		font-size: 13px!important;
 	}
