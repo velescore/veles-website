@@ -156,26 +156,31 @@
                                     </div>
                                 </li>
 
-                                <li class="event milestone" data-date="Q2 2019">
+                                <li class="event" data-date="Q2 2019">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1><span lang="en">VCIP02 PoS</span>实施阶段</h1>
                                             <p><b>发布<span lang="en">Veles Core v0.18“Blockchain Baracuda”</span></b></p>
                                             <p>实现并启动<span lang="en">PoS</span>机制
                                             </p>
+                                            <div class="roadmap-delay-info">
+                                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                <p>由于<span lang="en">Veles</span>区块链研究团队在所有当前POS实现方案中发现了多个漏洞，POS发布已暂停。由于我们的首要任务是确保网络安全平稳运行，因此我们决定推迟PoS启动，直到我们的团队开发出足够安全的共识，作为当前PoS设计的替代方案。</p>
+                                            </div>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li>实现并启动<span lang="en">PoS</span>共识机制，作为<span lang="en">PoW</span>的补充，从而建立更强大，更安全的网络</li>
-                                            <li>激活隐私发送 / 即时发送</li>
+                                            <li><strike>实现并启动<span lang="en">PoS</span>共识机制，作为<span lang="en">PoW</span>的补充，从而建立更强大，更安全的网络</strike></li>
+                                            <li><strike>激活匿名支付</strike></li>
                                             <li class="checked">将代码重新引入最新的比特币<span lang="en">Core v0.18</span>，实现几个新功能作为钱包备份实用程序，并为将来支持硬件钱包奠定基础</li>
                                             <li class="checked">新的主节点质押（从<span lang="en">2000</span>减少到<span lang="en">500 VLS</span>）转换期，以匹配最大的供应量</li>
                                             <li class="checked">进一步改善界面客户端的内部支持</li>
-                                            <li>在主节点自主选择运行的内测版<span lang="en">dVPN</span>的<span lang="en">dapp</span>，以支持将来的实时测试</li>
+                                            <li><strike>在主节点自主选择运行的内测版<span lang="en">dVPN</span>的<span lang="en">dapp</span>，以支持将来的实时测试</strike></li>
+                                            <li class="checked">发布基于浏览器的网页版钱包</li>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="event proposal" data-date="Q3 2019">
+                                <li class="event milestone" data-date="Q3 2019">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1><span lang="en">VCIP03 dVPN</span>的整合阶段</h1>
@@ -184,15 +189,26 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li>端口<span lang="en">DIP0002</span>特殊事务，以正确的方式开启在区块链上存储<span lang="en">VPN</span>订阅</li>
-                                            <li>集成<span lang="en">DIP0003</span>的确定性主节点，可靠的链上主节点同步</li>
-                                            <li>开发用于<span lang="en">dVPN</span>连接的<span lang="en">RSA</span>证书的分布式授权审核</li>
-                                            <li>开始在生态系统内开发<span lang="en">DEX</span>（去中心化交易所），以实现代表VPN连接时间的代币交易，从而提供更好的价值存储，价格发现和预付费<span lang="en">VPN</span>时间的免费交易</li>
-                                            <li>用于测试和客户端开发的志愿者主节点，配置<span lang="en">dVPN dapp</span></li>
+                                            <li><strike>端口<span lang="en">DIP0002</span>特殊事务，以正确的方式开启在区块链上存储<span lang="en">VPN</span>订阅</strike></li>
+                                            <li class="checked"><i>为了最大限度的保证匿名性和安全性，我们已经找到了更多的匿名安全解决方案，比<span lang="en">DIP0002</span>更安全的解决方案。
+                                            </i></li>
+                                            <li><strike>集成<span lang="en">DIP0003</span>的确定性主节点，可靠的链上主节点同步</strike></li>
+                                            <li class="checked"><i><span lang="en">DIP0003</span>集成方案已经取消，取而代之的是定制的<span lang="en">Veles Masternode</span>系统，该系统更适合项目的需要，并且具有更好的可扩展性。
+                                            </i></li>
+                                            <li class="checked">开发用于<span lang="en">dVPN</span>连接的<span lang="en">RSA</span>证书的分布式授权审核</li>
+                                            <li><strike>开始在生态系统内开发<span lang="en">DEX</span>（去中心化交易所），以实现代表VPN连接时间的代币交易，从而提供更好的价值存储，价格发现和预付费<span lang="en">VPN</span>时间的免费交易</strike></li>
+                                            <li class="checked"><i>由于我们的首要任务是实现<span lang="en">dVPN</span>，并实现使用<span lang="en">VLS</span>作为<span lang="en">dVPN</span>的货币，因此<span lang="en">DEX</span>的开发被推迟了。
+                                            </i></li>
+                                            <li class="checked"><span lang="en">VPN</span>的配置、编排、端口重复利用的开发，让同一端口能运行<span lang="en">Veles</span>的守护服务和<span lang="en">VPN</span>服务</li>
+                                            <li class="checked">用于测试和客户端开发的志愿者主节点，配置<span lang="en">dVPN dapp</span></li>
+                                            <li class="checked">集成<span lang="en">ElectrumX</span>服务器以供进一步使用</li>
+                                            <li class="checked">准备私有化，激活匿名支付（详细的测试与调试）</li>
+                                            <li class="checked">在最新的Veles核心版本中不断改进和修正错误</li>
+                                            <li class="checked">开始手机钱包<span lang="en">IOS/Android</span>的开发</li>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="event proposal" data-date="Q4 2019">
+                                <li class="event milestone" data-date="Q4 2019">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1><span lang="en">dVPN</span>实施阶段</h1>
@@ -201,11 +217,19 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li><span lang="en">Tier II</span> 主节点实现用作提供多级路由功能的出口节点</li>
-                                            <li><span lang="en">IPv6</span>到<span lang="en">IPv4</span>路由层以支持<span lang="en">IPv6</span>出口节点</li>
-                                            <li>区块链订阅管理</li>
-                                            <li>桌面和移动版本集成<span lang="en">VPN</span>的<span lang="en">dVPN</span>客户端钱包</li>
+                                            <li class="checked"><span lang="en">pre-alpha dVPN</span>将作为一个配置项在主节点中，节点拥有者可以随时开放并且测试</li> 
+                                            <li><strike><span lang="en">Tier II</span> 主节点实现用作提供多级路由功能的出口节点</strike></li>
+                                            <li class="checked"><i>在开发阶段，我们发现了一些可能的替代性多层多跳<span lang="en">dVPN</span>配置，这些配置可以显著改进原始概念，需要在alpha期间进行测试和评估。
+                                            </i></li>
+                                            <li><strike><span lang="en">IPv6</span>到<span lang="en">IPv4</span>路由层以支持<span lang="en">IPv6</span>出口节点</strike></li>
+                                            <li><i>当前的<span lang="en">IPv6</span>基础设施仍未覆盖全球，因此我们需要优先考虑在IPv4上顺利提供服务，我们已经实现了<span lang="en">IPv6</span>到<span lang="en">IPv4</span>的传输。</i></li>
+                                            <li class="checked"><strike>区块链订阅管理。服务订阅已经实现，<span lang="en">dVPN</span>支付的实现将在<span lang="en">alpha</span>测试结束时完成。</strike></i></li>
                                             <li>使用志愿者节点做<span lang="en">dVPN</span>公开内测版本测试</li>
+                                            <li>匿名发送完成</li>
+                                            <li class="checked">利用服务管理器等工具开发新的<span lang="en">Veles</span>主节点框架。</li>
+                                            <li class="checked">开发新的主节点安装脚本，让他支持<span lang="en">dVPN</span></li>
+                                            <li class="checked">开发具有扩展数据和分散<span lang="en">API</span>的新型<span lang="en">Masternode</span>同步系统</li>
+                                            <li class="checked">分散<span lang="en">DNS</span>系统的集成</li>
                                         </div>
                                     </div>
                                 </li>
@@ -216,16 +240,17 @@
                                             <h1><span lang="en">dVPN</span>启动阶段</h1>
                                             <p>过渡期后，所有主节点启用<span lang="en">dVPN</span>服务</p>
                                             <p>官方网络在第一季度正式推出<span lang="en">dVPN</span>供公众使用</p>
-                                            <p><span lang="en">Veles</span>生态系统中<span lang="en">DEX</span>的公共内测版本</p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li><span lang="en">dVPN</span>上线供公众使用</li>
+                                            <li>安装<span lang="en">DVPN</span>和<span lang="en">MN</span>的一键脚本发布</li>
+                                            <li>开发分布式的域名系统 <i>正在进行中</i></li>
+                                            <li>实现主节点 II 作为退出节点提供多跳路由</li>
+                                            <i>根据alpha测试阶段的数据，实现最佳的多层多跳路由。</i>
                                             <li>主节点运行<span lang="en">dVPN dapp</span>必须要有转换周期</li>
-                                            <li><span lang="en">IPv6</span>到<span lang="en">IPv4</span>路由层以支持<span lang="en">IPv6</span>出口节点</li>
-                                            <li><span lang="en">dVPN</span>上线供公众使用</li>
-                                            <li>用于购买<span lang="en">dVPN</span>连接时间的代币交易<span lang="en">DEX</span>公共<span lang="en">alpha</span>测试版</li>
-                                            <li>探索<span lang="en">DEX</span>上的算力租赁代币化和交易的理念，它还可以提供有关算力市场价格的分布式数据，以供更合适的动态<span lang="en">PoW</span>奖励调整使用</li>
+                                            <li><span lang="en">IPv6</span>到<span lang="en">IPv4</span>路由层以支持<span lang="en">IPv6</span>出口节点<i> 已分配较低的优先级 </i></li>
+                                            <li>区块链的订阅管理</li>
+                                            <li>手机钱包发布</li>
                                         </div>
                                     </div>
                                 </li>
@@ -236,15 +261,15 @@
                                             <h1><span lang="en">dVPN</span>拓展阶段</h1>
                                             <p>使用来自季度一的数据，开发<span lang="en">Proof-Of-Geolocation</span>（地理定位证明），改进<span lang="en">dVPN</span>以实现更好的扩展性
                                             </p>
-                                            <p>发布<span lang="en">Veles DEX</span>公测版</p>
+                                            <p><strike>发布<span lang="en">Veles DEX</span>公测版</strike></p>
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
+                                            <li><span lang="en">dVPN live</span>公布</li>
                                             <li>改进和重构<span lang="en">dVPN</span>以实现更好的扩展性</li>
                                             <li>使用季度一的数据研究新的扩展可行性解决方案</li>
                                             <li>开始开发和测试地理定位证明的概念，以便在全球范围内实现更加分布式和更优质地分发<span lang="en">VLS</span>出口节点</li>
-                                            <li><span lang="en">dVPN</span>上线供公众使用</li>
-                                            <li>公开发布<span lang="en">Veles DEX</span>和<span lang="en">web</span>界面</li>
+                                            <li>更新路线图</li>
                                         </div>
                                     </div>
                                 </li>
@@ -258,7 +283,10 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li>为<span lang="en">Veles</span>生态系统维护和开发所涉及的所有决策过程开发公平且分布式的治理方式和基础设施</li>
+                                            <li>为<span lang="en">Veles</span>生态系统维护和开发交易所涉及的所有决策过程开发公平且分布式的治理方式和基础设施</li>
+                                            <li>开始在生态系统中开发<span lang="en">DEX</span>，让代表<span lang="en">VPN</span>连接时间的代币能够交易、免费传输，并且提供更好的价值存储、价格可期性。</li>
+                                            <li>探索在<span lang="en">DEX</span>上进行<span lang="en">Hashrate</span>租用标记和交换的想法，提供关于<span lang="en">Hashrate</span>市场价格的分散数据，供更高级的动态PoW奖励调整使用</li>
+                                            <li><span lang="en">Veles DEX</span>和网站界面公开发布</li> 
                                         </div>
                                     </div>
                                 </li>
