@@ -15,6 +15,11 @@
 	font-family: 'Jura', sans-serif;
 }
 
+/* dvpn page launch title */
+.thin-zh-tc {
+	font-size: 50px;
+	letter-spacing: 10px;
+}
 /* header */
 div#brand-text {
 	font-family: 'Jura', sans-serif;

@@ -24,6 +24,13 @@ var menuTree = [
     ],
     'hideFromNav': true,
   },
+  { 
+    'page': 'dvpn', 
+    'title': 'dVPN',
+    'sections': [
+      { 'title': 'DVPN launch' }
+    ],
+  },
   {
     'page': 'roadmap',
       'title': 'Hoja de ruta',
@@ -44,8 +51,8 @@ var menuTree = [
       { 'title': 'Uhlik' },
       { 'title': 'Virtuado' },
       { 'title': 'Maty' },
-      { 'title': 'Binarydna' },
-        { 'title': 'AlexDeLarge' }
+      { 'title': 'AlexDeLarge' },
+        { 'title': 'Clover' }
       ]
   },
   {

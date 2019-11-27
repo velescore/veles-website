@@ -12,14 +12,14 @@
 var menuTree = [
 	{
 		'page': 'index',
-			'title': '首页',
+			'title': '首頁',
 			'sections': [
-			{ 'title': '准备开始' },
-			{ 'title': '重塑线上隐私' },
-			{ 'title': '创新网络' },
-			{ 'title': '资金和启动' },
-			{ 'title': '合理的经济模型' },
-			{ 'title': '开放治理'},
+			{ 'title': '準備開始' },
+			{ 'title': '重塑線上隱私' },
+			{ 'title': '創新網络' },
+			{ 'title': '資金和啟動' },
+			{ 'title': '合理的經濟模型' },
+			{ 'title': '開放治理'},
 			 { 'title': '主要功能'}
 		],
 		'hideFromNav': true,
@@ -33,7 +33,7 @@ var menuTree = [
 	},
 	{
 		'page': 'roadmap',
-		'title': '路线图',
+		'title': '路線圖',
 		'sections': [
 			{ 'title': 'Q1' },
 			{ 'title': 'Q2' },
@@ -43,9 +43,9 @@ var menuTree = [
 	},
 	{
 		'page': 'team',
-		'title': '团队情况',
+		'title': '團隊情況',
 		'sections': [
-			{ 'title': '关于我们' },
+			{ 'title': '關於我們' },
 			{ 'title': 'AltcoinBaggins' },
 			{ 'title': 'Mdfkbtc' },
 			{ 'title': 'Uhlik' },
@@ -57,39 +57,39 @@ var menuTree = [
 	},
 	{
 		'page': 'download',
-		'title': '下载',
+		'title': '下載',
 		'sections': [
-			{ 'title': 'Linux 钱包' },
-			{ 'title': 'Windows 钱包' },
-			{ 'title': 'macOS 钱包' },
-			{ 'title': 'RaspberryPi 钱包' },
-			{ 'title': 'Veles 源代码' }
+			{ 'title': 'Linux 錢包' },
+			{ 'title': 'Windows 錢包' },
+			{ 'title': 'macOS 錢包' },
+			{ 'title': 'RaspberryPi 錢包' },
+			{ 'title': 'Veles 源代碼' }
 		]
 	},
 	{
 		'page': 'resources',
-		'title': '相关资源',
+		'title': '相關資源',
 		'items': [
-			{ 'page': 'coin-specs', 'title': '代币规则'},
-			{ 'page': 'whitepaper', 'title': '白皮书' },
-			{ 'page': 'masternode-guide', 'title': '主节点搭建指南'},
+			{ 'page': 'coin-specs', 'title': '代幣規則'},
+			{ 'page': 'whitepaper', 'title': '白皮書' },
+			{ 'page': 'masternode-guide', 'title': '主節點搭建指南'},
 			{ 'page': 'exchanges', 'title': '交易所'},
-			{ 'page': 'mining-pools', 'title': '矿池'},
-			{ 'page': 'external-services', 'title': '外部服务' },
-			{ 'page': 'crowdfundings', 'title': '融资' },
-			{ 'page': 'faq', 'title': '常见问题' }
+			{ 'page': 'mining-pools', 'title': '礦池'},
+			{ 'page': 'external-services', 'title': '外部服務' },
+			{ 'page': 'crowdfundings', 'title': '融資' },
+			{ 'page': 'faq', 'title': '常見問題' }
 		]
 	},
 	{
   'page': 'Wallet',
-      'title': '钱包',
+      'title': '錢包',
       'items': [
           {
             'title': '搜索',
               'url': 'https://wallet.veles.network'
           },
           {
-            'title': '登录',
+            'title': '登錄',
             'url': 'https://wallet.veles.network/#wallet'
           },
           {
@@ -97,41 +97,41 @@ var menuTree = [
             'url': 'https://wallet.veles.network/#newAddress'
           },
           {
-            'title': '验证',
+            'title': '驗證',
             'url': 'https://wallet.veles.network/#verify'
           },
           {
-            'title': '签名',
+            'title': '簽名',
             'url': 'https://wallet.veles.network/#sign'
           },
           {
-            'title': '广播',
+            'title': '廣播',
             'url': 'https://wallet.veles.network/#broadcast'
           }
       ]
   },
 	{
 		'page': 'Explorer',
-		'title': '浏览器',
+		'title': '瀏覽器',
 		'items': [
 			{
 				'title': '搜索',
 			  	'url': 'https://explorer.veles.network'
 			},
 			{
-				'title': '代币富豪榜',
+				'title': '代幣富豪榜',
 				'url': 'https://explorer.veles.network/Richlist'
 			},
 			{
-				'title': '主节点',
+				'title': '主節點',
 				'url': 'https://explorer.veles.network/masternodes'
 			},
 			{
-				'title': '代币流通',
+				'title': '代幣流通',
 				'url': 'https://explorer.veles.network/movement'
 			},
 			{
-				'title': '挖矿状态',
+				'title': '挖礦状態',
 				'url': 'https://explorer.veles.network/miningstats'
 			},
 			{

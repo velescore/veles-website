@@ -5,7 +5,7 @@ var velesSinglePageApp = {
     'defaultLanguage': 'en',
     'pageSuffix': '.html',
     'pageHooks': {},
-    'cachedPages': {'en': {}, 'zh': {}, 'es':{}},
+    'cachedPages': {'en': {}, 'zh': {}, 'es':{}, 'tc':{}},
     'eventsBound': {},
     'menuTreeIndex': {},
     'menuTemplates': {},
