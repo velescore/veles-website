@@ -58,9 +58,7 @@
                         <div class="col-lg-7">
                             <h2>Configuring</h2>
                             <p class="my-6">
-                                <b>For CLI Users follow this steps.</b>
-                                <br />
-                                Download our configuration from masternode you choosen (This IP is only example and will be replaced by that you connecting) and move to it's repository by typing:
+                                Download our configuration from masternode you choosen ( IP used in this case serve only as example and need to replaced by that you connecting ) and move to it's repository by typing:
                                 <br />
                             </p>
                             <div class="code-background">
@@ -69,6 +67,17 @@
                                     <li><code>sudo mv /etc/openvpn/client/veles.ovpn</code></li>
                                 </ul>
                             </div>
+                            <p class="my-6">
+                                <br />
+                                To stay protected against DNS leaks use this command ( IP used in this case serve only as example and need to replaced by one from new Masternode list )
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>echo -e "#Veles decentralized DNS\nnameserver 111.111.111.111"</code></li>
+                                </ul>
+                            </div>
+                        </br>
                             <p class="my-6">
                                 <b>For GUI Users follow this steps.</b>
                                 </br>
