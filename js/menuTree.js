@@ -26,8 +26,13 @@ var menuTree = [
 	},
 	{
 		'title': 'dVPN',
-		'sections': [
-		   	{ 'title': 'DVPN launch' }
+		'items': [
+		   	{ 'title': 'dVPN' },
+		   	{ 'title': 'Linux' },
+		   	{ 'title': 'Windows' },
+		   	{ 'title': 'OS X' },
+		   	{ 'title': 'Android' },
+		   	{ 'title': 'iOS' }
 		]
 	},
 	{

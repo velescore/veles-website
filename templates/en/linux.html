@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="Linux-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey">Linux </span>dVPN </span>Guide</span></h1>
+            </div>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/linux-wallet.png" alt="Linux Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Installing</h2>
+                            <p class="my-6">
+                                If you are using Linux, there are a variety of tools that you can use depending on your distribution. Your desktop environment or network manager might also include connection utilities.
+                                The most universal way of connecting, however, is to just use the OpenVPN software.
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                On Ubuntu or Debian, you can install it just as you did on the server by typing:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo apt-get update</code></li>
+                                    <li><code>sudo apt-get install openvpn</code></li>
+                                </ul>
+                            </div>
+                             <p class="my-6">
+                                On CentOS you can enable the EPEL repositories and then install it by typing:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo yum install epel-release</code></li>
+                                    <li><code>sudo yum install openvpn</code></li>
+                                </ul>
+                            </div>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Configuring</h2>
+                            <p class="my-6">
+                                <b>For CLI Users follow this steps.</b>
+                                <br />
+                                Download our configuration from masternode you choosen (This IP is only example and will be replaced by that you connecting) and move to it's repository by typing:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>wget https://111.111.111.111/api/getOpenVPNConfig</code></li>
+                                    <li><code>sudo mv /etc/openvpn/client/veles.ovpn</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                <b>For GUI Users follow this steps.</b>
+                                </br>
+                                At first click with right mouse button on network manager icon and and click on "Edit Connections..." like on image below:
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/edit-connections.png">
+                            <p class="my-6">
+                                Now we will press "+" symbol to add new connection
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/add-new-connection.png">
+                            <p class="my-6">
+                                We will choose "Import a saved configuration file..." option for importing oru config
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/import-vpn-config.png">
+                            <p class="my-6">
+                                Now go to config location , in our case it will /etc/openvpn/client/ and pick veles.ovpn
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/select-vpn-config.png">
+                            <p class="my-6">
+                                You dont need to touch nothing it will automatically create Veles VPN profile for you just press "Save"
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/save-vpn-config.png">
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Connecting</h2>
+                            <p class="my-6">
+                                <b>For CLI Users follow this steps.</b>
+                                <br />
+                                Now, you can connect to the VPN by just pointing the openvpn command to the client configuration file:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo openvpn --config /etc/openvpn/client/veles.ovpn</code></li>
+                                </ul>
+                            </div>
+                        <br />
+                            <p class="my-6">
+                                <b>For GUI Users follow this steps.</b>
+                                <br />
+                                Open Network Manager by clicking with right mouse button on it's icon. There you will see "VPN Connections" section. Click on it. Mark "veles" and enjoy your connection !
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/connect-to-vpn.png">
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>
