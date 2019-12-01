@@ -2,185 +2,105 @@
 <html lang="en">
 <head></head>
 <body>
-   <div id="content-wrapper">
-   <div id="content" class="Windows-page">
-   <!-- Anything outside #content element
-                   will be ignored by the single page app. -->
-   <!-- Page Heading/Breadcrumbs -->
-   <div class="container">
-   <h1 class="mt-4 mb-3">
-   <span class="grey">
-   <span lang="en">Windows</span>
-   </span>
-   <span lang="en">dVPN</span>
-   </span>教程
-   </span>
-   </h1>
-   </div>
-   <section>
-      <div class="container">
-      <div class="row">
-      <div class="col-lg-2 text-center col-image">
-      <img class="img-download track-in-view left-slide-in" src="images/download/windows-wallet.png" alt="Windows Guide">
-      </div>
-      <div class="col-lg-1 wide-screen"></div>
-      <div class="col-lg-7">
-      <h2>安裝</h2>
-      <p class="my-6">
-                                      可在
-      <a href="https://openvpn.net/community-downloads/">
-      <span lang="en">OpenVPN</span>的下載頁
-      </a>上找到適用於您
-      <span lang="en">Windows</span>的
-      <span lang="en">OpenVPN</span>客戶端。
-                                      
-      <br />
-      </p>
-      <div class="dvpn-guide-note">
-      <p>
-         <i class="fa fa-info-circle" aria-hidden="true"></i>
-         <span lang="en">OpenVPN</span>需要管理員許可權才能安裝。
-      </p>
-      </div>
-      <p class="my-6">
-                                      安裝
-      <span lang="en">OpenVPN</span>後，下載
-      <a href="https://explorer.veles.network/dapi/getOpenVPNConfig">
-      <b>配置</b>
-      </a>檔
-      <br/>，並且將檔複製到你的配置檔夾中，例如：
-                                  
-      </p>
-      <div class="code-background">
-      <ul class="code">
-      <li>
-         <code>
-         <span lang="en">C:\Program Files\OpenVPN\config</span>
-         </code>
-      </li>
-      </ul>
-      </div>
-      <p class="my-6">
-                                      當您啟動
-      <span lang="en">OpenVPN</span>時，它將自動尋找配置檔並啟動他。
-                                      
-      <br/>
-      </p>
-      <p class="my-6">
-      <span lang="en">OpenVPN</span>每次使用時都必須以管理員身份運行，您不必每次使用
-      <span lang="en">OpenVPN</span>時右鍵單擊並選擇
-      <b>以管理員身份運行</b>，您可以對此進行預設，但這必須通過管理帳戶進行。這也意味著標準用戶需要輸入管理員密碼才能使用
-      <span lang="en">OpenVPN</span>。另一方面，除非客戶端上的
-      <span lang="en">OpenVPN</span>具有管理員許可權，否則標準用戶無法正確連接到伺服器，因此需要提升許可權。
-                                      
-      <br/>
-      </p>
-      <p class="my-6">
-                                      如果要將
-      <span lang="en">OpenVPN</span>設置為始終以管理員身份運行，請右鍵單擊其快捷方式圖示，然後選擇
-      <b>屬性</b>。在
-      <b>相容性</b>選項卡的底部，單擊按鈕為所有用戶更改設置。在新窗口中，選
-      <b>以管理員身份運行</b>。
-                                      
-      <br/>
-      </p>
-      <div class="col-lg-2"></div>
-      </div>
-      </div>
-   </section>
-   <section>
-      <div class="container">
-      <div class="row">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-1 wide-screen"></div>
-      <div class="col-lg-7">
-      <h2>連接</h2>
-      <p class="my-6">
-                                      每次啟動
-      <span lang="en">OpenVPN GUI</span>時，
-      <span lang="en">Windows</span>都會詢問是否允許程式對電腦進行更改單擊
-      <b>是（
-      <span lang="en">yes</span>）
-      </b>。啟動
-      <span lang="en">OpenVPN</span>客戶端應用程式後，他會隱藏在右下角託盤中，以便可以根據需要連接和斷開
-      <span lang="en">VPN</span>，事實上他不會默認進行
-      <span lang="en">VPN</span>連接。
-                                      
-      <br />
-      </p>
-      <p class="my-6">
-                                      進入右下角系統託盤並右鍵單擊
-      <span lang="en">OpenVPN</span>圖示，啟動連接。這將打開菜單。在菜單頂部選擇
-      <b>
-      <span lang="en">veles</span>
-      </b>（這是我們的
-      <code>
-      <span lang="en">veles.ovpn</span>
-      </code>配置檔），然後選擇
-      <b>連接</b>。
-                                      
-      </br>
-      </p>
-      <p class="my-6">
-                                      在建立連接時，將打開一個狀態窗口，顯示日誌輸出，並在連接客戶端後顯示一條消息。
-                                      
-      </br>
-      </p>
-      <p class="my-6">
-                                      以同樣的方式斷開與VPN的連接：進入右下角系統託盤，右鍵單擊
-      <span lang="en">OpenVPN</span>小圖示，選擇客戶端配置檔，然後單擊
-      <b>斷開連接</b>。
-                                      
-      </br>
-      </p>
-      <div class="col-lg-2"></div>
-      </div>
-      </div>
-   </section>
-   <section>
-      <div class="container">
-      <div class="row">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-1 wide-screen"></div>
-      <div class="col-lg-7">
-      <h2>測試您的
-         <span lang="en">VPN</span>連接
-      </h2>
-      <p class="my-6">
-                                      一旦所有的東西都安裝好了，只需要一個簡單的檢查就可以確認他是否運作。在未啟用
-      <span lang="en">VPN</span>連接的情況下，打開流覽器並轉到 
-      <a href="https://www.dnsleaktest.com/">
-      <span lang="en">DNSLeakTest</span>
-      </a>。
-      </br>
-                                      該站點將返回由您的網路服務提供商分配的
-      <span lang="en">IP</span>地址，以及您在世界其他地方顯示的
-      <span lang="en">IP</span>地址。若要通過同一網站檢查您的
-      <span lang="en">DNS</span>設置，請單擊
-      <b>擴展測試（
-      <span lang="en">Extended Test</span>）
-      </b>，它會告訴您正在使用的
-      <span lang="en">DNS</span>伺服器。
-      <br>
-                                      現在，連接到您的
-      <span lang="en">VPN</span>客戶端並刷新流覽器，應該會顯示與您的
-      <span lang="en">VPN</span>伺服器的完全不同的
-      <span lang="en">IP</span>地址。然後再次進行
-      <b>擴展測試（
-      <span lang="en">Extended Test</span>）
-      </b>檢查您的
-      <span lang="en">DNS</span>設置，並確認您正在使用
-      <span lang="en">Veles dVPN</span>推送的
-      <span lang="en">DNS</span>解析。
-                                  
-      </p>
-      <div class="col-lg-2"></div>
-      </div>
-      </div>
-   </section>
-   </div>
-   </div>
-   <!-- /#content -->
-   </div>
+    <div id="content-wrapper">
+        <div id="content" class="Windows-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Windows</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
+            </div>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/windows-wallet.png" alt="Windows Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>安裝</h2>
+                            <p class="my-6">
+                                可在<a href="https://openvpn.net/community-downloads/"><span lang="en">OpenVPN</span>的下載頁</a>上找到適用於您<span lang="en">Windows</span>的<span lang="en">OpenVPN</span>客戶端。
+                                <br />
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <span lang="en">OpenVPN</span>需要管理員許可權才能安裝。</p>
+                            </div>
+                            <p class="my-6">
+                                安裝<span lang="en">OpenVPN</span>後，下載<a href="https://explorer.veles.network/dapi/getOpenVPNConfig"><b>配置</b></a>檔<br/>，並且將檔複製到你的配置檔夾中，例如：
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code><span lang="en">C:\Program Files\OpenVPN\config</span></code></li>
+                                </ul>
+                            </div>
+                             <p class="my-6">
+                                當您啟動<span lang="en">OpenVPN</span>時，它將自動尋找配置檔並啟動他。
+                                <br/>
+                            </p>
+                            <p class="my-6">
+                                <span lang="en">OpenVPN</span>每次使用時都必須以管理員身份運行，您不必每次使用<span lang="en">OpenVPN</span>時右鍵單擊並選擇<b>以管理員身份運行</b>，您可以對此進行預設，但這必須通過管理帳戶進行。這也意味著標準用戶需要輸入管理員密碼才能使用<span lang="en">OpenVPN</span>。另一方面，除非客戶端上的<span lang="en">OpenVPN</span>具有管理員許可權，否則標準用戶無法正確連接到伺服器，因此需要提升許可權。
+                                <br/>
+                            </p>
+                            <p class="my-6">
+                                如果要將<span lang="en">OpenVPN</span>設置為始終以管理員身份運行，請右鍵單擊其快捷方式圖示，然後選擇<b>屬性</b>。在<b>相容性</b>選項卡的底部，單擊按鈕為所有用戶更改設置。在新窗口中，選<b>以管理員身份運行</b>。
+                                <br/>
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>連接</h2>
+                            <p class="my-6">
+                                每次啟動<span lang="en">OpenVPN GUI</span>時，<span lang="en">Windows</span>都會詢問是否允許程式對電腦進行更改單擊<b>是（<span lang="en">yes</span>）</b>。啟動<span lang="en">OpenVPN</span>客戶端應用程式後，他會隱藏在右下角託盤中，以便可以根據需要連接和斷開<span lang="en">VPN</span>，事實上他不會默認進行<span lang="en">VPN</span>連接。
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                進入右下角系統託盤並右鍵單擊<span lang="en">OpenVPN</span>圖示，啟動連接。這將打開菜單。在菜單頂部選擇<b><span lang="en">veles</span></b>（這是我們的<code><span lang="en">veles.ovpn</span></code>配置檔），然後選擇<b>連接</b>。
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                在建立連接時，將打開一個狀態窗口，顯示日誌輸出，並在連接客戶端後顯示一條消息。
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                以同樣的方式斷開與VPN的連接：進入右下角系統託盤，右鍵單擊<span lang="en">OpenVPN</span>小圖示，選擇客戶端配置檔，然後單擊<b>斷開連接</b>。
+                                </br>
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>測試您的<span lang="en">VPN</span>連接</h2>
+                            <p class="my-6">
+                                一旦所有的東西都安裝好了，只需要一個簡單的檢查就可以確認他是否運作。在未啟用<span lang="en">VPN</span>連接的情況下，打開流覽器並轉到 <a href="https://www.dnsleaktest.com/"><span lang="en">DNSLeakTest</span></a>。</br>
+                                該站點將返回由您的網路服務提供商分配的<span lang="en">IP</span>地址，以及您在世界其他地方顯示的<span lang="en">IP</span>地址。若要通過同一網站檢查您的<span lang="en">DNS</span>設置，請單擊<b>擴展測試（<span lang="en">Extended Test</span>）</b>，它會告訴您正在使用的<span lang="en">DNS</span>伺服器。<br>
+                                現在，連接到您的<span lang="en">VPN</span>客戶端並刷新流覽器，應該會顯示與您的<span lang="en">VPN</span>伺服器的完全不同的<span lang="en">IP</span>地址。然後再次進行<b>擴展測試（<span lang="en">Extended Test</span>）</b>檢查您的<span lang="en">DNS</span>設置，並確認您正在使用<span lang="en">Veles dVPN</span>推送的<span lang="en">DNS</span>解析。
+                            </p>
+                            
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
 </body>
 </html>
