@@ -8,7 +8,7 @@
              will be ignored by the single page app. -->
         <!-- Page Heading/Breadcrumbs -->
             <div class="container">
-                <h1 class="mt-4 mb-3"><span class="grey">Linux </span>dVPN </span>Guide</span></h1>
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Linux</span> </span><span lang="en">dVPN</span> </span>Guide</span></h1>
             </div>
             <section>
                 <div class="container">
@@ -18,14 +18,14 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Installing</h2>
+                            <h2>安裝</h2>
                             <p class="my-6">
-                                If you are using Linux, there are a variety of tools that you can use depending on your distribution. Your desktop environment or network manager might also include connection utilities.
-                                The most universal way of connecting, however, is to just use the OpenVPN software.
+                                如果您使用的是<span lang="en">Linux</span>，根據您的發行版，可以使用多種工具。
+                                當然，最普遍的連接方式是使用<span lang="en">OpenVPN</span>軟體。
                                 <br />
                             </p>
                             <p class="my-6">
-                                On Ubuntu or Debian, you can install it just as you did on the server by typing:
+                                在<span lang="en">Ubuntu</span>或<span lang="en">Debian</span>上，您可以使用這樣的命令
                                 <br/>
                             </p>
                             <div class="code-background">
@@ -35,7 +35,7 @@
                                 </ul>
                             </div>
                              <p class="my-6">
-                                On CentOS you can enable the EPEL repositories and then install it by typing:
+                                在<span lang="en">CentOS</span>上，您可以啟用<span lang="en">EPEL</span>存儲庫，然後通過以下命令安裝：
                                 <br/>
                             </p>
                             <div class="code-background">
@@ -56,9 +56,9 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Configuring</h2>
+                            <h2>配置</h2>
                             <p class="my-6">
-                                Download Veles configuration file and move to it's repository by typing:
+                                下載<span lang="en">Veles</span>配置檔並輸入以下內容移動到其存儲庫：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -69,7 +69,7 @@
                             </div>
                             <p class="my-6">
                                 <br />
-                                To stay protected against DNS leaks use this command ( IP used in this case serve only as example and need to replaced by one from new Masternode list )
+                                防止<span lang="en">DNS</span>洩漏，請使用此命令（本例中使用的<span lang="en">IP</span>僅作為示例，需要替換為新主節點列表中的<span lang="en">IP</span>）
                                 <br />
                             </p>
                             <div class="code-background">
@@ -79,25 +79,25 @@
                             </div>
                         </br>
                             <p class="my-6">
-                                <b>For GUI Users follow this steps.</b>
+                                <b>對於<span lang="en">GUI</span>用戶，請遵循以下步驟。</b>
                                 </br>
-                                At first click with right mouse button on network manager icon and and click on <b>"Edit Connections..."</b> like on image below:
+                                首先用滑鼠右鍵單擊網路管理器圖示，然後單擊<b>編輯連接</b>
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/edit-connections.png">
                             <p class="my-6">
-                                Now we will press <b>"+"</b> symbol to add new connection
+                                現在，我們將點擊<b>“+”</b>符號添加新連接
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/add-new-connection.png">
                             <p class="my-6">
-                                We will choose <b>"Import a saved configuration file..."</b> option for importing oru config
+                                我們將選擇<b>“導入保存的配置檔...”</b>導入我們的配置
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/import-vpn-config.png">
                             <p class="my-6">
-                                Now go to config location , in our case it will <code>/etc/openvpn/client/</code> and pick <code>veles.ovpn</code>
+                                現在找到我們的配置位置，在我們的例子中，它是在<code><span lang="en">/etc/openvpn/client/</span></code>並選擇<code><span lang="en">veles.ovpn</span></code>
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/select-vpn-config.png">
                             <p class="my-6">
-                                You dont need to touch nothing it will automatically create Veles VPN profile for you just press <b>"Save"</b>
+                                您不需要幹其他事情了，它會自動為您創建<span lang="en">Veles VPN</span>配置檔，您只需按<b>“保存”</b>
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/save-vpn-config.png">
                         <div class="col-lg-2">
@@ -112,11 +112,11 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Connecting</h2>
+                            <h2>連接</h2>
                             <p class="my-6">
-                                <b>For CLI Users follow this steps.</b>
+                                <b>對於<span lang="en">CLI</span>用戶，請遵循以下步驟。</b>
                                 <br />
-                                Now, you can connect to the VPN by just pointing the openvpn command to the client configuration file:
+                                現在，只需將<span lang="en">openvpn</span>指向配置檔，就可以連接到<span lang="en">VPN</span>：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -126,9 +126,9 @@
                             </div>
                         <br />
                             <p class="my-6">
-                                <b>For GUI Users follow this steps.</b>
+                                <b>對於<span lang="en">GUI</span>用戶，請遵循以下步驟。</b>
                                 <br />
-                                Open Network Manager by clicking with right mouse button on it's icon. There you will see <b>"VPN Connections"</b> section. Click on it. Mark "veles" and enjoy your connection !
+                                用滑鼠右鍵單擊網路管理器的圖示打開它。在這裏您將看到<b>“VPN連接”</b>。點擊它。標記“<span lang="en">veles</span>”並享受您的連接！
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/connect-to-vpn.png">
                         <div class="col-lg-2">
@@ -143,11 +143,11 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Test Your VPN Connection</h2>
+                            <h2>測試您的<span lang="en">VPN</span>連接</h2>
                             <p class="my-6">
-                                Once everything is installed, a simple check confirms everything is working properly. Without having a VPN connection enabled, open a browser and go to <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
-                                The site will return the IP address assigned by your internet service provider and as you appear to the rest of the world. To check your DNS settings through the same website, click on <b>Extended Test</b> and it will tell you which DNS servers you are using.<br>
-                                Now connect to your VPN client and refresh the browser. The completely different IP address of your VPN server should now appear. That is now how you appear to the world. Again, <a href="https://www.dnsleaktest.com/">DNSLeakTest’s</a> <b>Extended Test</b> will check your DNS settings and confirm you are now using the DNS resolvers pushed by Veles dVPN.
+                                一旦所有的東西都安裝好了，只需要一個簡單的檢查就可以確認他是否運作。在未啟用<span lang="en">VPN</span>連接的情況下，打開流覽器並轉到 <a href="https://www.dnsleaktest.com/"><span lang="en">DNSLeakTest</span></a>。</br>
+                                該站點將返回由您的網路服務提供商分配的<span lang="en">IP</span>地址，以及您在世界其他地方顯示的<span lang="en">IP</span>地址。若要通過同一網站檢查您的<span lang="en">DNS</span>設置，請單擊<b>擴展測試（<span lang="en">Extended Test</span>）</b>，它會告訴您正在使用的<span lang="en">DNS</span>伺服器。<br>
+                                現在，連接到您的<span lang="en">VPN</span>客戶端並刷新流覽器，應該會顯示與您的<span lang="en">VPN</span>伺服器的完全不同的<span lang="en">IP</span>地址。然後再次進行<b>擴展測試（<span lang="en">Extended Test</span>）</b>檢查您的<span lang="en">DNS</span>設置，並確認您正在使用<span lang="en">Veles dVPN</span>推送的<span lang="en">DNS</span>解析。
                             </p>
                             
                         <div class="col-lg-2">
