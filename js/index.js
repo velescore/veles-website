@@ -50,7 +50,15 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
 
  velesSinglePageApp.addPageHook('dvpn', 'init', function() {
      indexHeaderWidget.init();
-     
+});
+/*
+velesSinglePageApp.addPageHook('index', 'connect', function() {
+    velesSocketClient.get_cmd_result('location', 'gps', {}, function(data) {
+        indexHeaderWidget.updateLocation(data);
+    });
+});
+*/
+ /*   
      setInterval(function(){
          var date = new Date(2019, 11, 1, 0, 0);
          var dateNow = new Date();
@@ -69,12 +77,4 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
         $("#hours").text(hh);
         $("#minutes").text(mm);
         $("#seconds").text(ss);
-    }, 1000); 
-});
-/*
-velesSinglePageApp.addPageHook('index', 'connect', function() {
-    velesSocketClient.get_cmd_result('location', 'gps', {}, function(data) {
-        indexHeaderWidget.updateLocation(data);
-    });
-});
-*/
+    }, 1000);*/ 
