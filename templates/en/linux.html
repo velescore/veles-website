@@ -58,12 +58,12 @@
                         <div class="col-lg-7">
                             <h2>Configuring</h2>
                             <p class="my-6">
-                                Download our configuration from masternode you choosen ( IP used in this case serve only as example and need to replaced by that you connecting ) and move to it's repository by typing:
+                                Download Veles configuration file and move to it's repository by typing:
                                 <br />
                             </p>
                             <div class="code-background">
                                 <ul class="code">
-                                    <li><code>wget https://111.111.111.111/api/getOpenVPNConfig</code></li>
+                                    <li><code>wget https://explorer.veles.network/dapi/getOpenVPNConfig</code></li>
                                     <li><code>sudo mv /etc/openvpn/client/veles.ovpn</code></li>
                                 </ul>
                             </div>
@@ -81,23 +81,23 @@
                             <p class="my-6">
                                 <b>For GUI Users follow this steps.</b>
                                 </br>
-                                At first click with right mouse button on network manager icon and and click on "Edit Connections..." like on image below:
+                                At first click with right mouse button on network manager icon and and click on <b>"Edit Connections..."</b> like on image below:
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/edit-connections.png">
                             <p class="my-6">
-                                Now we will press "+" symbol to add new connection
+                                Now we will press <b>"+"</b> symbol to add new connection
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/add-new-connection.png">
                             <p class="my-6">
-                                We will choose "Import a saved configuration file..." option for importing oru config
+                                We will choose <b>"Import a saved configuration file..."</b> option for importing oru config
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/import-vpn-config.png">
                             <p class="my-6">
-                                Now go to config location , in our case it will /etc/openvpn/client/ and pick veles.ovpn
+                                Now go to config location , in our case it will <code>/etc/openvpn/client/</code> and pick <code>veles.ovpn</code>
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/select-vpn-config.png">
                             <p class="my-6">
-                                You dont need to touch nothing it will automatically create Veles VPN profile for you just press "Save"
+                                You dont need to touch nothing it will automatically create Veles VPN profile for you just press <b>"Save"</b>
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/save-vpn-config.png">
                         <div class="col-lg-2">
@@ -128,9 +128,28 @@
                             <p class="my-6">
                                 <b>For GUI Users follow this steps.</b>
                                 <br />
-                                Open Network Manager by clicking with right mouse button on it's icon. There you will see "VPN Connections" section. Click on it. Mark "veles" and enjoy your connection !
+                                Open Network Manager by clicking with right mouse button on it's icon. There you will see <b>"VPN Connections"</b> section. Click on it. Mark "veles" and enjoy your connection !
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/connect-to-vpn.png">
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Test Your VPN Connection</h2>
+                            <p class="my-6">
+                                Once everything is installed, a simple check confirms everything is working properly. Without having a VPN connection enabled, open a browser and go to <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
+                                The site will return the IP address assigned by your internet service provider and as you appear to the rest of the world. To check your DNS settings through the same website, click on <b>Extended Test</b> and it will tell you which DNS servers you are using.<br>
+                                Now connect to your VPN client and refresh the browser. The completely different IP address of your VPN server should now appear. That is now how you appear to the world. Again, <a href="https://www.dnsleaktest.com/">DNSLeakTest’s</a> <b>Extended Test</b> will check your DNS settings and confirm you are now using the DNS resolvers pushed by Veles dVPN.
+                            </p>
+                            
                         <div class="col-lg-2">
                         </div>
                     </div>

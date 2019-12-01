@@ -30,7 +30,7 @@ var menuTree = [
 		   	{ 'title': 'dVPN' },
 		   	{ 'title': 'Linux' },
 		   	{ 'title': 'Windows' },
-		   	{ 'title': 'OS X' },
+		   	{ 'title': 'OSX' },
 		   	{ 'title': 'Android' },
 		   	{ 'title': 'iOS' }
 		]

@@ -8,54 +8,74 @@
              will be ignored by the single page app. -->
         <!-- Page Heading/Breadcrumbs -->
             <div class="container">
-                <h1 class="mt-4 mb-3"><span class="grey">Frequently </span>Asked </span>Questions</span></h1>
+                <h1 class="mt-4 mb-3"><span class="grey">iOS </span>dVPN </span>Guide</span></h1>
             </div>
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6 col-image text-center">
-                            <img class="img-download track-in-view left-slide-in" src="images/download/linux-wallet.png" alt="Linux Wallet">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/mac-wallet.png" alt="iOS Guide">
                         </div>
-                        <div class="col-md-6 col-text">
-                            <h3>Linux Wallet<span class="grey">, Daemon</span></h3>
-                            <ul>
-                              <li>v0.18.1.3 "Blockchain Barracuda"</li>
-                              <li>For more information check the <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.3.md">release-notes</a></li>
-                            </ul>
-                            <a class="download-btn" href="https://github.com/velescore/veles/releases/download/v0.18.1.3/veles-0.18.1.3-generic-linux-amd64.tar.gz">
-                              <div class="button-effect new">
-                                  <span class="label"><b>Download</b></span>
-                                  <span class="sublabel long">generic linux 64-bit</span>
-                                  <span class="sublabel short">generic linux</span>
-                                  <span class="icon">
-                                  <span></span>
-                                  </span>
-                                  <span class="icon2"></span>
-                              </div>
-                            </a>
-                            <div class="build-details-info button-effect">
-                                <span class="label">Select distro or build</span>
-                                <ul>
-                                    <li><a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/veles-0.18.1.3-debian-ubuntu-amd64.tar.gz">veles-0.18.1.3-debian-ubuntu-amd64.tar.gz</a></li>
-                                    <li><a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/veles-0.18.1.3-generic-linux-amd64.tar.gz">veles-0.18.1.3-generic-linux-amd64.tar.gz</a></li>
-                                    <li><a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/veles-0.18.1.3-generic-linux-armhf.tar.gz">veles-0.18.1.3-generic-linux-armhf.tar.gz</a></li>
-                                </ul>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Installing</h2>
+                            <p class="my-6">
+                                From the App Store, search for and install <b>OpenVPN Connect</b>, the official iOS OpenVPN client application.
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-dvpn-download.png">
+                            <p class="my-6">
+                                Download <a href="https://explorer.veles.network/dapi/getOpenVPNConfig"> <b>config</b></a> file and open with OpenVPN Connect by pressing <b>Copy to OpenVPN</b>.
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-open-config.png">
+                            <p class="my-6">
+                                Import profile file into OpenVPN Connect by pressing <b>Add</b>.
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-import-config.png">
+                            <p class="my-6">
+                                You should see <b>"Profile successfully imported"</b> and now just <b>Add</b> profile to your OpenVPN Connect.
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-add-profile.png">
+                        </div>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Connecting</h2>
+                            <p class="my-6">
+                                OpenVPN is now ready to use with the new profile. Start the connection by sliding the <b>Connect</b> button to the <b>On</b> position. Disconnect by sliding the same button to <b>Off</b>.
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-connect-vpn.png">
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> The VPN switch under <b>Settings</b> cannot be used to connect to the VPN. If you try, you will receive a notice to only connect using the OpenVPN app.</p>
                             </div>
-                            <!--
-                            <div class="build-details-info button-effect">
-                                <span class="label">Checksums</span>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/MD5SUMS">MD5SUMS</a>
-                                        <a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/MD5SUMS">MD5SUMS.sign</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/SHA256SUMS">SHA256SUMS</a>
-                                        <a href="https://github.com/velescore/veles/releases/download/v0.18.1.3/SHA256SUMS">SHA256SUMS.sign</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            -->
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Test Your VPN Connection</h2>
+                            <p class="my-6">
+                                Once everything is installed, a simple check confirms everything is working properly. Without having a VPN connection enabled, open a browser and go to <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
+                                The site will return the IP address assigned by your internet service provider and as you appear to the rest of the world. To check your DNS settings through the same website, click on <b>Extended Test</b> and it will tell you which DNS servers you are using.<br>
+                                Now connect to your VPN client and refresh the browser. The completely different IP address of your VPN server should now appear. That is now how you appear to the world. Again, <a href="https://www.dnsleaktest.com/">DNSLeakTest’s</a> <b>Extended Test</b> will check your DNS settings and confirm you are now using the DNS resolvers pushed by Veles dVPN.
+                            </p>
+                            
+                        <div class="col-lg-2">
                         </div>
                     </div>
                 </div>

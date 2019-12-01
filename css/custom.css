@@ -3481,6 +3481,19 @@ ul.code{
 	margin: 5px 0px 5px 0px;
 
 }
+div.dvpn-guide-note {
+    border: 1px solid #26262622;
+    background: #31708f66;
+    /* min-height: 50%; */
+    padding: 10px 10px 0px 10px;
+    border-radius: 3px;
+}
+img.img-dvpn-ios {
+	max-width: 50%;
+}
+.track-in-view.track-in-view-ios.left-slide-in.was-in-view {
+	margin-left:25%;
+}
 /* Alternative loading bar with spinner
 .pace {
 	-webkit-pointer-events: none;
