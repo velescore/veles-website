@@ -26,11 +26,14 @@ var velesdAPIClientUI = {
         this.client = velesdAPIClient();
     },
 
-    drawServicenodeTable: function(id="masternode-list-table", true) {
-        console.log(this.client.getMasterndeList());
-    }
+    drawServicenodeTable: function(id="servicenode-table", true) {
+        this.client.getMasterndeList(function(data){
+            list = data.result
+            $('#'+id).appendChild('<tr>''</tr>');
+        });
+    },
 
-    drawMasternodeTable: function(id="servicenode-list-table", false) {
+    drawMasternodeTable: function(id="masternode-table", false) {
         console.log(this.client.getMasterndeList());
     }
 };
