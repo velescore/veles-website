@@ -27,7 +27,7 @@ var menuTree = [
 	{	
 		'page': 'dvpn',	
 		'title': 'dVPN',
-		'sections': [
+		'items': [
 			{ 'title': 'dVPN' },
 			{ 'title': 'Linux' },
 			{ 'title': 'Windows' },
