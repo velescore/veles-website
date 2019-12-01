@@ -3466,7 +3466,34 @@ ul.news-list div.news-icon span {
     padding-top: 10px;
 }
 /* End of countdown */
+ul.code{
+	list-style-type: none;
+	margin-bottom: 0px;
+}
+.code-background {
+    border-radius: 3px;
+    padding: 5px 0px 5px 0px;
+    background-color: #262626;
+}
+.img-dvpn-guide {
+	max-width: 100%!important;
+	max-height: 100%;
+	margin: 5px 0px 5px 0px;
 
+}
+div.dvpn-guide-note {
+    border: 1px solid #26262622;
+    background: #31708f66;
+    /* min-height: 50%; */
+    padding: 10px 10px 0px 10px;
+    border-radius: 3px;
+}
+img.img-dvpn-ios {
+	max-width: 50%;
+}
+.track-in-view.track-in-view-ios.left-slide-in.was-in-view {
+	margin-left:25%;
+}
 /* Alternative loading bar with spinner
 .pace {
 	-webkit-pointer-events: none;
