@@ -40,7 +40,8 @@ var menuTree = [
             'sections': [
               { 'title': 'OpenVPN Guide' },
               { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'}
+              { 'title': 'ObfsProxy Guide'},
+              { 'title': 'Test Connection' }
             ]
           },
           { 
@@ -49,7 +50,8 @@ var menuTree = [
             'sections': [
               { 'title': 'OpenVPN Guide' },
               { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'}
+              { 'title': 'ObfsProxy Guide'},
+              { 'title': 'Test Connection' }
             ]
           },
           { 
@@ -57,7 +59,8 @@ var menuTree = [
             'title': 'OSX Guide',
             'sections': [
               { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' }
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'Test Connection' }
             ]
           },
           { 
@@ -65,14 +68,16 @@ var menuTree = [
             'title': 'Android Guide',
             'sections': [
               { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' }
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'Test Connection' }
             ]
           },
           { 
             'page': 'ios-guide',
             'title': 'iOS Guide',
             'sections': [
-              { 'title': 'OpenVPN Guide' }
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Test Connection' }
             ]
           }
       ]

@@ -25,58 +25,63 @@ var menuTree = [
 		'hideFromNav': true,
 	},
     {
-	    'title': 'dVPN',
-	    'items': [
-	        { 
-	          'title': 'dVPN',
-	          'sections': [
-	            { 'title': 'dVPN Launch' },
-	            { 'title': 'Download Config' }
-	          ]
-	        },
-	        { 
-	          'page': 'linux-guide',
-	          'title': 'Linux Guide',
-	          'sections': [
-	            { 'title': 'OpenVPN Guide' },
-	            { 'title': 'Stunnel Guide' },
-	            { 'title': 'ObfsProxy Guide'}
-	          ]
-	        },
-	        { 
-	          'page': 'windows-guide',	
-	          'title': 'Windows Guide',
-	          'sections': [
-	            { 'title': 'OpenVPN Guide' },
-	            { 'title': 'Stunnel Guide' },
-	            { 'title': 'ObfsProxy Guide'}
-	          ]
-	        },
-	        { 
-	          'page': 'osx-guide',
-	          'title': 'OSX Guide',
-	          'sections': [
-	            { 'title': 'OpenVPN Guide' },
-	            { 'title': 'Stunnel Guide' }
-	          ]
-	        },
-	        { 
-	          'page': 'android-guide',
-	          'title': 'Android Guide',
-	          'sections': [
-	            { 'title': 'OpenVPN Guide' },
-	            { 'title': 'Stunnel Guide' }
-	          ]
-	        },
-	        { 
-	          'page': 'ios-guide',
-	          'title': 'iOS Guide',
-	          'sections': [
-	            { 'title': 'OpenVPN Guide' }
-	          ]
-	        }
-	    ]
-  	},
+      'title': 'dVPN',
+      'items': [
+          { 
+            'title': 'dVPN',
+            'sections': [
+              { 'title': 'dVPN Launch' },
+              { 'title': 'Download Config' }
+            ]
+          },
+          { 
+            'page': 'linux-guide',
+            'title': 'Linux Guide',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'ObfsProxy Guide'},
+              { 'title': 'Test Connection' }
+            ]
+          },
+          { 
+            'page': 'windows-guide',  
+            'title': 'Windows Guide',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'ObfsProxy Guide'},
+              { 'title': 'Test Connection' }
+            ]
+          },
+          { 
+            'page': 'osx-guide',
+            'title': 'OSX Guide',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'Test Connection' }
+            ]
+          },
+          { 
+            'page': 'android-guide',
+            'title': 'Android Guide',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Stunnel Guide' },
+              { 'title': 'Test Connection' }
+            ]
+          },
+          { 
+            'page': 'ios-guide',
+            'title': 'iOS Guide',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': 'Test Connection' }
+            ]
+          }
+      ]
+    },
 	{
 		'page': 'roadmap',
 		'title': '路線圖',
