@@ -24,12 +24,16 @@ var menuTree = [
     ],
     'hideFromNav': true,
   },
-  { 
-    'page': 'dvpn', 
+  {
     'title': 'dVPN',
-    'sections': [
-      { 'title': 'DVPN launch' }
-    ],
+    'items': [
+        { 'title': 'dVPN' },
+        { 'title': 'Linux' },
+        { 'title': 'Windows' },
+        { 'title': 'OSX' },
+        { 'title': 'Android' },
+        { 'title': 'iOS' }
+    ]
   },
   {
     'page': 'roadmap',
