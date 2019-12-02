@@ -24,18 +24,59 @@ var menuTree = [
 		],
 		'hideFromNav': true,
 	},
-	{	
-		'page': 'dvpn',	
-		'title': 'dVPN',
-		'items': [
-			{ 'title': 'dVPN' },
-			{ 'title': 'Linux' },
-			{ 'title': 'Windows' },
-			{ 'title': 'OSX' },
-			{ 'title': 'Android' },
-			{ 'title': 'iOS' }
-		]
-	},
+	{
+	    'title': 'dVPN',
+	    'items': [
+	        { 
+	          'title': 'dVPN',
+	          'sections': [
+	            { 'title': 'dVPN Launch' },
+	            { 'title': 'Download Config' }
+	          ]
+	        },
+	        { 
+	          'page': 'linux-guide',
+	          'title': 'Linux Guide',
+	          'sections': [
+	            { 'title': 'OpenVPN Guide' },
+	            { 'title': 'Stunnel Guide' },
+	            { 'title': 'ObfsProxy Guide'}
+	          ]
+	        },
+	        { 
+	          'page': 'windows-guide',	
+	          'title': 'Windows Guide',
+	          'sections': [
+	            { 'title': 'OpenVPN Guide' },
+	            { 'title': 'Stunnel Guide' },
+	            { 'title': 'ObfsProxy Guide'}
+	          ]
+	        },
+	        { 
+	          'page': 'osx-guide',
+	          'title': 'OSX Guide',
+	          'sections': [
+	            { 'title': 'OpenVPN Guide' },
+	            { 'title': 'Stunnel Guide' }
+	          ]
+	        },
+	        { 
+	          'page': 'android-guide',
+	          'title': 'Android Guide',
+	          'sections': [
+	            { 'title': 'OpenVPN Guide' },
+	            { 'title': 'Stunnel Guide' }
+	          ]
+	        },
+	        { 
+	          'page': 'ios-guide',
+	          'title': 'iOS Guide',
+	          'sections': [
+	            { 'title': 'OpenVPN Guide' }
+	          ]
+	        }
+	    ]
+  	},
 	{
 		'page': 'roadmap',
 		'title': '路线图',
