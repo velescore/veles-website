@@ -1,74 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
-<head></head>
-<body>
+  <head></head>
+  <body>
     <div id="mobile-menu-overlay">
-        <div class="overlay-shadow">
-            <div class="mobile-menu-under container"></div>
-            <div class="mobile-menu-under2 container"></div>
-        </div>
+      <div class="overlay-shadow">
+        <div class="mobile-menu-under container"></div>
+        <div class="mobile-menu-under2 container"></div>
+      </div>
     </div>
     <div id="content-wrapper">
-        <div id="content" class="vpn-page">
-            <header>
-                <div class="movething">
-                    <div class="row row-wide">
-                        <div class="col-lg-12">
-                            <div id="large-header" class="header">
-                                <div id="under-canvas" class="parallax-content">
-                                    <!-- <ul id="debug-area" class="parallax-content2"></ul> -->
-                                </div>
-                                <canvas id="canvas"></canvas>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <h1 class="main-title"><span class="thin">DVPN pre-alpha</span></h1>
-                                            <h1 class="main-subtitle vpn-main-subtitle"><span class="thin">Lanzamiento en</span> </h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <section id="dvpn-launch">
-                <div class="container">
-                    <div class="row" >
-                        <div class="col-lg-4 text-center wide-screen">
-                            <img class="img track-in-view left-slide-in" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
-                        <div class="col-lg-7">
-                            <h2>Lanzamiento de DVPN pre-alpha</h2>
-                            <p class="my-6">
-                                El equipo de Veles se encuentra preparando el lanzamiento del servicio de dVPN en su etapa pre-alpha para el 1ro. de Diciembre. El testeo público pre-alpha estará basado en servicios hosteados en servidores de desarrollo y será provisto de forma gratuita. Prontó habrá novedades!                            </p>
-                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
-                        </div>
-                    </div>
-                </div>
-            </section>
-<!--
-            <section id="join-testing">
-                <div class="container">
+      <div id="content" class="dvpn-page">
+        <header>
+          <div class="movething">
+            <div class="row row-wide">
+              <div class="col-lg-12">
+                <div id="large-header" class="header">
+                  <div id="under-canvas" class="parallax-content">
+                    <!-- <ul id="debug-area" class="parallax-content2"></ul> -->
+                  </div>
+                  <canvas id="canvas"></canvas>
+                  <div class="container">
                     <div class="row">
-                        <div class="col-lg-7">
-                            <h2>Join pre-alpha testing</h2>
-                            <p class="my-6">
-                            Nunc vitae leo dictum, facilisis tortor viverra, malesuada purus. Fusce sodales auctor elit. Cras id tempor tellus.
-                            <br />Donec lacinia, mi id mollis interdum, erat est egestas justo, vel condimentum odio enim ut enim. Vivamus arcu leo, suscipit in purus nec, tempor lacinia nunc. Curabitur vestibulum, justo hendrerit blandit pellentesque, nunc arcu viverra dolor, nec semper orci mauris quis massa.
-                            </p>
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
-                        <div class="col-lg-4 text-center wide-screen">
-                            <img class="img track-in-view right-slide-in" id="img-debug" src="images/debug.png" alt="Join testing">
-                        </div>
-                        <img class="img-narrow-screen" id="img-debug" src="images/debug.png" alt="Join testing">
+                      <div class="col-lg-12">
+                        <h1 class="main-title">
+                          <span class="thin">DVPN Pre-alpha</span>
+                        </h1>
+                        <h1 class="main-subtitle vpn-main-subtitle">
+                          <span class="thin">
+                            <a href="#download-config"
+                              >Comienza a usar la dVPN ahora</a
+                            >
+                          </span>
+                        </h1>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </section> 
-        -->
-        </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section id="dvpn-launch">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 text-center wide-screen">
+                <img
+                  class="img track-in-view left-slide-in"
+                  id="img-introduction"
+                  src="images/veles-official.png"
+                  alt="Veles Introduction"
+                />
+              </div>
+              <div class="col-lg-1 wide-screen"></div>
+              <div class="col-lg-7">
+                <h2>Testeo alpha de la dVPN pública de Veles</h2>
+                <p class="my-6">
+                  El testeo alpha gratuito y público ha comenzado y los primeros
+                  masnternodos con soporte total a la dVPN se encuentran
+                  levantados y activos. Cualquiera puede sumarse a esta etapa de
+                  testeo y usar el servicio de dVPN de manera gratuita, o correr
+                  su propio masternodo con soporte a dVPN. Los datos de
+                  benchmark recabados de este testeo público nos servirán para
+                  mejorar aun más la red dVPN de Veles para su futura puesta en
+                  producción. <br />
+                  Mantente alerta para más información que vendrá pronto acerca
+                  de los Masternodos de 2da generación !
+                </p>
+                <img
+                  class="img-narrow-screen"
+                  id="img-introduction"
+                  src="images/veles-official.png"
+                  alt="Veles Introduction"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="download-config">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7">
+                <h2>Comienza tu testeo gratuito de la dVPN de Veles ahora</h2>
+                <p>
+                    Descarga tus archivos de configuración (generados por en Masternodo aleatorio), elegí la guía adecuada para tu plataforma desde el menú dVPN y empieza a navegar utilizando la dVPN de Veles ahora mismo! <br /><br />
+                  <a href="https://explorer.veles.network/dapi/getOpenVPNConfig"
+                    >Abrir configuración OpenVPN</a
+                  ><br />
+                  <a
+                    href="https://explorer.veles.network/dapi/getOpenVPNShieldedConfig"
+                    >Configuración OpenVPN [protegida por stunnel]</a
+                  ><br />
+                  <a href="https://explorer.veles.network/dapi/getStunnelConfig"
+                    >Configuración de cliente Stunnel</a
+                  ><br />
+                  <a
+                    href="https://explorer.veles.network/dapi/getStunnelCertificate"
+                    >Certificado de cliente Stunnel</a
+                  ><br />
+                  <br />
+                  Si encuentras dificultados conectándote a través del método OpenVPN, por ejemplo debido a restricciones muy fuertes en tu firewall, utilizá OpenVPN+stunnel.
+                </p>
+              </div>
+              <div class="col-lg-1 wide-screen"></div>
+              <div class="col-lg-4 text-center wide-screen">
+                <img
+                  class="img track-in-view right-slide-in"
+                  id="img-debug"
+                  src="images/debug.png"
+                  alt="Join testing"
+                />
+              </div>
+              <img
+                class="img-narrow-screen"
+                id="img-debug"
+                src="images/debug.png"
+                alt="Join testing"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-</body>
+  </body>
 </html>
