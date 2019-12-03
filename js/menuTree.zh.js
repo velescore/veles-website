@@ -30,54 +30,54 @@ var menuTree = [
           { 
             'title': 'dVPN',
             'sections': [
-              { 'title': 'dVPN Launch' },
-              { 'title': 'Download Config' }
+              { 'title': 'dVPN 上线' },
+              { 'title': '下载配置' }
             ]
           },
           { 
             'page': 'linux-guide',
-            'title': 'Linux Guide',
+            'title': 'Linux 教程',
             'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'},
-              { 'title': 'Test Connection' }
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': 'ObfsProxy 教程'},
+              { 'title': '测试连接' }
             ]
           },
           { 
             'page': 'windows-guide',  
-            'title': 'Windows Guide',
+            'title': 'Windows 教程',
             'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'},
-              { 'title': 'Test Connection' }
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': 'ObfsProxy 教程'},
+              { 'title': '测试连接' }
             ]
           },
           { 
             'page': 'osx-guide',
-            'title': 'OSX Guide',
+            'title': 'OSX 教程',
             'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'Test Connection' }
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': '测试连接' }
             ]
           },
           { 
             'page': 'android-guide',
-            'title': 'Android Guide',
+            'title': 'Android 教程',
             'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'Test Connection' }
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': '测试连接' }
             ]
           },
           { 
             'page': 'ios-guide',
-            'title': 'iOS Guide',
+            'title': 'iOS 教程',
             'sections': [
               { 'title': 'OpenVPN Guide' },
-              { 'title': 'Test Connection' }
+              { 'title': '测试连接' }
             ]
           }
       ]
