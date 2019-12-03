@@ -8,7 +8,7 @@
              will be ignored by the single page app. -->
         <!-- Page Heading/Breadcrumbs -->
             <div class="container">
-                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Linux</span> </span><span lang="en">dVPN</span> </span>Guide</span></h1>
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Linux</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
             </div>
             <section>
                 <div class="container">
@@ -121,13 +121,13 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Installing Stunnel</h2>
+                            <h2>安装 <span lang="en">Stunnel</span></h2>
                             <p class="my-6">
-                                This explains the process of installing Stunnel as a client in Linux.
+                                我会介绍怎么在<span lang="en">Linux</span>中将<span lang="en">Stunnel</span>作为客户端安装的过程。
                                 <br />
                             </p>
                             <p class="my-6">
-                                On Ubuntu or Debian, you can install it just as you did on the server by typing:
+                                在<span lang="en">Ubuntu</span>或<span lang="en">Debian</span>上，输入如下命令：
                                 <br/>
                             </p>
                             <div class="code-background">
@@ -136,7 +136,7 @@
                                 </ul>
                             </div>
                              <p class="my-6">
-                                On CentOS you can install Stunnel by typing:
+                                在<span lang="en">CentOS</span>上，输入如下命令：
                                 <br/>
                             </p>
                             <div class="code-background">
@@ -145,9 +145,9 @@
                                 </ul>
                             </div>
                         <br /><br />
-                            <h2>Configuring Stunnel</h2>
+                            <h2>配置 <span lang="en">Stunnel</span></h2>
                             <p class="my-6">
-                                Download Veles Stunnel configuration files and move to it's repositories by typing:
+                                下载<span lang="en">Veles Stunnel</span>配置文件，通过如下命令移动到其存储库：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -161,11 +161,11 @@
                                 </ul>
                             </div>
                         <br /><br />
-                            <h2>Connecting OpenVPN Client with Stunnel</h2>
+                            <h2>用<span lang="en">Stunnel</span>连接<span lang="en">OpenVPN</span>客户端</h2>
                             <p class="my-6">
-                                <b>For CLI Users follow this steps.</b>
+                                <b>对于命令行用户使用如下步骤</b>
                                 <br />
-                                Now, you can connect to the VPN trough Stunnel by just turning on Stunnel and pointing the OpenVPN command to the client configuration file:
+                                现在，只需打开<span lang="en">Stunnel</span>并将<span lang="en">OpenVPN</span>命令指向客户端配置文件，就可以通过<span lang="en">Stunnel</span>连接到<span lang="en">VPN</span>：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -176,9 +176,9 @@
                             </div>
                         <br />
                             <p class="my-6">
-                                <b>For GUI Users follow this steps.</b>
+                                <b>对于图形化界面的用户使用如下步骤</b>
                                 <br />
-                                Follow steps from OpenVPN guide and import <code>veles-shield.ovpn</code> and don't forget turn on <b>Stunnel</b>
+                                按照<span lang="en">OpenVPN</span>指南中的步骤导入<span lang="en">veles-shield.ovpn</span>，不要忘记打开<span lang="en">Stunnel</span>
                             </p>
                             <div class="col-lg-2">
                             </div>
@@ -193,13 +193,13 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Installing Obfuscation Proxy</h2>
+                            <h2>安装 <span lang="en">Obfuscation Proxy</span></h2>
                             <p class="my-6">
-                                This explains the process of installing ObfsProxy as a client in Linux.
+                                我会介绍怎么在<span lang="en">Linux</span>中将<span lang="en">ObfsProxy</span>作为客户端安装的过程。
                                 <br />
                             </p>
                             <p class="my-6">
-                                On Ubuntu or Debian, you can install it just as you did on the server by typing:
+                                在<span lang="en">Ubuntu</span>或<span lang="en">Debian</span>上，输入如下命令：
                                 <br/>
                             </p>
                             <div class="code-background">
@@ -208,9 +208,9 @@
                                 </ul>
                             </div>
                        <br /><br />
-                            <h2>Configuring</h2>
+                            <h2>配置</h2>
                             <p class="my-6">
-                                Download Veles configuration files and move to it's repositories by typing:
+                                下载<span lang="en">Veles Stunnel</span>配置文件，通过如下命令移动到其存储库：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -222,9 +222,9 @@
                         <br /><br />
                             <h2>Connecting OpenVPN Client with ObfsProxy</h2>
                             <p class="my-6">
-                                <b>For CLI Users follow this steps.</b>
+                                <b>对于命令行用户使用如下步骤</b>
                                 <br />
-                                Now, you can connect to the VPN by just turning on ObfsProxy and pointing the OpenVPN command to the client configuration file:
+                                现在，只需打开<span lang="en">ObfsProxy</span>并将<span lang="en">OpenVPN</span>命令指向客户端配置文件，就可以连接到VPN：
                                 <br />
                             </p>
                             <div class="code-background">
@@ -235,13 +235,13 @@
                             </div>
                         <br /><br />    
                             <div class="dvpn-guide-note">
-                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>The destination IP address (*in this case --dest 80.211.132.243) should be replaced with IP of masternode you are connecting.</b> We will use this password only in pre-alpha testing phase. In future instead of password will be used random string.</p>
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>目标<span lang="en">IP</span>地址（* 在这种情况下为<span lang="en">--dest 80.211.132.243</span>）应该替换为您要连接的主节点的<span lang="en">IP</span>。</b>我们仅在<span lang="en">Alpha</span>测试前阶段使用此密码。 未来会使用随机字符串代替密码。</p>
                             </div>
                         <br />
                             <p class="my-6">
-                                <b>For GUI Users follow this steps.</b>
+                                <b>对于图形化界面的用户使用如下步骤</b>
                                 <br />
-                                Follow steps from OpenVPN guide and import <code>veles-shield.ovpn</code> and don't forget turn on <b>ObfsProxy</b>
+                                按照<span lang="en">OpenVPN</span>指南中的步骤导入<code><span lang="en">veles-shield.ovpn</span></code>并不要忘记打开<b><span lang="en">ObfsProxy</span></b>
                             </p>   
                         <div class="col-lg-2">
                         </div>
