@@ -30,7 +30,7 @@ var menuTree = [
           { 
             'title': 'dVPN',
             'sections': [
-              { 'title': 'Lanzamiento de dVPN' },
+              { 'title': 'Lanzamiento dVPN' },
               { 'title': 'Descargar Configuración' }
             ]
           },
@@ -68,7 +68,6 @@ var menuTree = [
             'title': 'Guía Android',
             'sections': [
               { 'title': 'Guía OpenVPN' },
-              { 'title': 'Guía Stunnel' },
               { 'title': 'Testear Conexión' }
             ]
           },

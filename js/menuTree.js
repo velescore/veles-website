@@ -68,7 +68,6 @@ var menuTree = [
             'title': 'Android Guide',
             'sections': [
               { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
               { 'title': 'Test Connection' }
             ]
           },
