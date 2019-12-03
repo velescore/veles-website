@@ -10,7 +10,7 @@
             <div class="container">
                 <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Windows</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
             </div>
-            <section id="openvpn-guide">
+            <section>
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2 text-center col-image">
@@ -27,7 +27,7 @@
                                 <p><i class="fa fa-info-circle" aria-hidden="true"></i> <span lang="en">OpenVPN</span>需要管理員許可權才能安裝。</p>
                             </div>
                         <br /><br />    
-                            <h2>Configuring OpenVPN</h2>    
+                            <h2>配置 <span lang="en">OpenVPN</span></h2>
                             <p class="my-6">
                                 安裝<span lang="en">OpenVPN</span>後，下載<a href="https://explorer.veles.network/dapi/getOpenVPNConfig"><b>配置</b></a>檔<br/>，並且將檔複製到你的配置檔夾中，例如：
                             </p>
@@ -48,7 +48,7 @@
                                 如果要將<span lang="en">OpenVPN</span>設置為始終以管理員身份運行，請右鍵單擊其快捷方式圖示，然後選擇<b>屬性</b>。在<b>相容性</b>選項卡的底部，單擊按鈕為所有用戶更改設置。在新窗口中，選<b>以管理員身份運行</b>。
                                 <br/>
                             </p>
-                        <br /><br />
+                        <br /><br />    
                             <h2>連接</h2>
                             <p class="my-6">
                                 每次啟動<span lang="en">OpenVPN GUI</span>時，<span lang="en">Windows</span>都會詢問是否允許程式對電腦進行更改單擊<b>是（<span lang="en">yes</span>）</b>。啟動<span lang="en">OpenVPN</span>客戶端應用程式後，他會隱藏在右下角託盤中，以便可以根據需要連接和斷開<span lang="en">VPN</span>，事實上他不會默認進行<span lang="en">VPN</span>連接。
@@ -78,51 +78,51 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>Installing Stunnel</h2>
+                            <h2>安裝 <span lang="en">Stunnel</span></h2>
                             <p class="my-6">
-                                Download and install Stunnel client by following this steps:
+                                按照以下步驟下載並安裝<span lang="en">Stunnel</span>客戶端：
                             </p>
                             <div class="dvpn-guide-note">
-                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Stunnel needs administrative privileges to install.</p>
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i><span lang="en">Stunnel</span>需要管理權限才能安裝。</p>
                             </div>
                             <p class="my-6">
-                                Download official <a href="https://www.stunnel.org/downloads.html"><b>Stunnel client</b></a> right click on icon and press <b>Run as Administrator</b>.
+                                下載官方的<a href="https://www.stunnel.org/downloads.html"><b><span lang="en">Stunnel</span> 客戶端</b></a> 右鍵點擊小圖示 <b>以管理員身份運行</b>.
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-install.png">
                             <p class="my-6">
-                                Click <b>"Agree"</b>.
+                                選擇 <b>"同意"</b>.
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-agree-install.png">
                             <p class="my-6">
-                                Choose <b>“Install for anyone using this computer”</b>.
+                                選擇 <b>“為任何人使用此電腦的安裝” </b>。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-next-step.png">
                             <p class="my-6">
-                                Don’t changing anything here.
+                                在這塊，什麼都不要更改。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-components.png">
                             <p class="my-6">
-                                Choose directory for install Stunnel.
+                                選擇安裝的目錄。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-choose-dir.png">
                             <p class="my-6">
-                                In the end of install, it will open new console window. You can input any information to these fields or let it blanc. It doesn’t matter and don’t have any affect to your connection.
+                                在安裝結束時，它會打開新的控制臺窗口。 您可以輸入任何資訊，也可以留空。 怎麼做都沒關係，對您的連接沒有任何影響。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-skip-cert.png">
                             <p class="my-6">
-                                Don’t mark “Start stunnel after installation", just <b>click “Finish”</b>.
+                                不要勾選“安裝完成開始使用隧道”，只需<b>單擊“完成” </b>就可以。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-finish-installation.png">
                         <br /><br />
-                            <h2>Configuring Stunnel</h2>
+                            <h2>配置 <span lang="en">Stunnel</span></h2>
                             <p class="my-6">
-                                Download <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b>Stunnel client config</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b>Stunnel client certificate</b></a> .
+                                下載 <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b><span lang="en">Stunnel</span> 客戶端配置</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b><span lang="en">Stunnel</span> 客戶端證書</b></a> .
                             </p>
                             <p class="my-6">
-                                After you finish downloading , You will go into Stunnel directory , there you can remove all files and copy there <code>veles.stunnel.conf</code> and <code>stunnel.pem</code>
+                                下載完成後，進入<span lang="en">Stunnel</span>配置目錄，您可以刪除所有檔，並且複製之前下載的檔到這個目錄裏面<code> <span lang="en">veles.stunnel.conf</span></code>和<code> <span lang="en">stunnel.pem</span></code>
                             </p>
                             <div class="dvpn-guide-note">
-                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Probably you will need rename veles.stunnel.conf to <b>stunnel.conf</b></p>
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> 可能需要將<span lang="en">veles.stunnel.conf</span>重命名為<b> <span lang="en">stunnel.conf</span> </b> </p>
                             </div>
                         <br />
                             <div class="code-background">
@@ -132,7 +132,7 @@
                             </div>
                         <br />    
                             <p class="my-6">
-                                Now download <a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"><b>Shielded OpenVPN config</b></a> file and copy the file to:
+                                現在下載 <a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"><b>隱蔽的<span lang="en">OpenVPN</span>配置</b></a> 檔並且複製檔到:
                                     <br/>
                             </p>
                             <div class="code-background">
@@ -141,17 +141,17 @@
                                 </ul>
                             </div>
                         <br /><br />    
-                            <h2>Connecting OpenVPN client with Stunnel</h2>
+                            <h2>將<span lang="en">OpenVPN</span>客戶端與<span lang="en">Stunnel</span>連接</h2>
                             <p class="my-6">
-                                At first turn on Stunnel. Once Stunnel is started turn on OpenVPN client and initiate a connection by going into the system tray applet and right-clicking on the OpenVPN applet icon. This opens the context menu. Select <b>veles-shielded</b> at the top of the menu (that’s our <code>veles-shielded.ovpn</code> profile) and choose <b>Connect</b>.
+                                首先打開<span lang="en">Stunnel</span>。 然後打開<span lang="en">OpenVPN</span>客戶端，右鍵單擊<span lang="en">OpenVPN</span>小圖示來啟動連接。 打開菜單，選擇菜單頂部的<b> <span lang="en">veles-shielded</span> </b>（這是我們之前下載的<code> <span lang="en">veles-shielded.ovpn</span> </code>配置檔），然後<b> 連接 </b>。
                                 </br>
                             </p>
                             <p class="my-6">
-                                A status window will open showing the log output while the connection is established, and a message will show once the client is connected.
+                                建立連接後，將打開狀態窗口，顯示日誌輸出，連接客戶端後將顯示一條成功的消息。
                                 </br>
                             </p>
                             <p class="my-6">
-                                Disconnect from the VPN the same way: Go into the system tray applet, right-click the OpenVPN applet icon, select the client profile and click <b>Disconnect</b>.
+                                以相同的方式斷開與VPN的連接：右鍵單擊右下角的<span lang="en">OpenVPN</span>小圖示，選擇對應客戶端配置，然後點擊<b>斷開連接</b>。
                                 </br>
                             </p>
                         <div class="col-lg-2">
@@ -166,15 +166,15 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                           <h2>Installing Obfsproxy</h2>
+                           <h2>安裝 <span lang="en">Obfsproxy</span></h2>
                             <p class="my-6">
-                                Now we are going <b>build Obfsproxy</b>. Obfsproxy <b>requires Python</b>, an open source programming language, so you’ll need to download it. Go to <a href="https://www.python.org"><b>www.python.org</b></a> and download <b>version 2.7</b> and install it accepting all the defaults. 
+                                現在，我們要<b>構建<span lang="en">Obfsproxy</span> </b>。 <span lang="en">Obfsproxy</span> <b>需要使用<span lang="en">Python</span> </b>（一種開源編程語言），因此您需要下載它。 轉到<a href="https://www.python.org"> <b> <span lang="en">www.python.org</span> </b> </a>並下載<b>版本<span lang="en">2.7</span> </b>，請使用默認選項進行安裝。
                             </p> 
                             <p class="my-6">
-                                You’ll also need to get Visual C for Python, which you can download from <a href="http://aka.ms/vcpython27"><b>http://aka.ms/vcpython27</b></a>, once you have downloaded it, install it with the default options. 
+                                您還需要<span lang="en">Visual C for Python</span>，可以從<a href="http://aka.ms/vcpython27"> <b> <span lang="en">http://aka.ms/vcpython27</span> </b> 下載</a>，下載後，請使用默認選項進行安裝。
                             </p>
                             <p class="my-6">
-                                Ok now that you have Python installed, you’re ready to get obfsproxy. Open a <b>CMD shell window</b> and go to C:Python27Scripts by typing :
+                                現在，您已經安裝了<span lang="en">Python</span> ，現在就可以開始使用<span lang="en">Obfsproxy</span>。 打開<b> <span lang="en">CMD shell</span>窗口</b>，然後輸入以下內容
                             </p>
                             <div class="code-background">
                                 <ul class="code">
@@ -182,7 +182,7 @@
                                 </ul>
                             </div>
                             <p class="my-6">
-                                Now we will <b>install Obfsproxy</b> by typing:
+                                現在，我們將通過輸入以下內容<b>安裝<span lang="en">Obfsproxy</span></b>：
                             </p>
                             <div class="code-background">
                                 <ul class="code">
@@ -190,14 +190,14 @@
                                 </ul>
                             </div>
                             <p class="my-6">
-                                This will download the various requisite modules and build obfsproxy – it might take a few minutes……
-                                Once complete, you should have the <b>obfsproxy.exe</b> executable in <b>C:Python27Scripts</b>
+                                這將下載各種必需的模組並構建<span lang="en">Obfsproxy</span>這可能需要幾分鐘的時間……
+                                完成後，應該在<b> <span lang="en">C:Python27\Scripts</span> </b>中出現了可執行檔<b> <span lang="en">obfsproxy.exe</span> </b>。
                             </p>
                             <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/obfuscation-executables.png">
                         <br /><br />
-                            <h2>Configuring Obfsproxy</h2>
+                            <h2>配置 <span lang="en">Obfsproxy</span></h2>
                             <p class="my-6">
-                                Obfsproxy don't need some configuration files like in Stunnel so we will now just configure OpenVPN . Download <a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"><b>Shielded OpenVPN config</b></a> file and copy the file to:
+                                <span lang="en">Obfsproxy</span>不需要像<span lang="en">Stunnel</span>那樣的配置檔，因此我們現在只需配置<span lang="en">OpenVPN</span>即可。 下載<a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"> <b>隱蔽的<span lang="en">OpenVPN</span>配置</b> </a>檔，並將該檔複製到：
                                     <br/>
                             </p>
                             <div class="code-background">
@@ -206,9 +206,9 @@
                                 </ul>
                             </div>
                         <br /><br />    
-                            <h2>Connecting OpenVPN client with Obfsproxy</h2>
+                            <h2>將<span lang="en">OpenVPN</span>客戶端與<span lang="en">Obfsproxy</span>連接</h2>
                             <p class="my-6">
-                                Open a <b>CMD shell window</b> and go to C:Python27Scripts by typing:
+                                打開<b> <span lang="en">CMD shell</span>窗口</b>，然後輸入以下內容：
                             </p>
                             <div class="code-background">
                                 <ul class="code">
@@ -216,7 +216,7 @@
                                 </ul>
                             </div>
                             <p class="my-6">
-                                <b>Start Obfsproxy</b> by typing:
+                                輸入以下內容啟動<b><span lang="en">Obfsproxy</span></b>：
                             </p>
                             <div class="code-background">
                                 <ul class="code">
@@ -225,21 +225,21 @@
                             </div>
                         <br /><br />    
                             <div class="dvpn-guide-note">
-                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>The destination IP address (*in this case --dest 80.211.132.243) should be replaced with IP of masternode you are connecting.</b> We will use this password only in pre-alpha testing phase. In future instead of password will be used random string.</p>
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>目標<span lang="en">IP</span>地址（* 在這種情況下為<span lang="en">--dest 80.211.132.243</span>）應該替換為您要連接的主節點的<span lang="en">IP</span>。</b>我們僅在<span lang="en">Alpha</span>測試前階段使用此密碼。 未來會使用隨機字串代替密碼。</p>
                             </div>
                         <br />    
                             <p class="my-6">
-                                Once Obfsproxy is started turn on OpenVPN client and initiate a connection by going into the system tray applet and right-clicking on the OpenVPN applet icon. This opens the context menu. Select <b>veles-shielded</b> at the top of the menu (that’s our <code>veles-shielded.ovpn</code> profile) and choose <b>Connect</b>.
+                                <span lang="en">Obfsproxy</span>啟動後，打開<span lang="en">OpenVPN</span>客戶端，右鍵單擊<span lang="en">OpenVPN</span>小圖示來啟動連接。 打開菜單，選擇菜單頂部的<b> <span lang="en">veles-shielded</span> </b>（這是我們之前下載的<code> <span lang="en">veles-shielded.ovpn</span> </code>配置檔），然後<b> 連接 </b>。
                                 </br>
                             </p>
                             <p class="my-6">
-                                A status window will open showing the log output while the connection is established, and a message will show once the client is connected.
+                                建立連接後，將打開狀態窗口，顯示日誌輸出，連接客戶端後將顯示一條成功的消息。
                                 </br>
                             </p>
                             <p class="my-6">
-                                Disconnect from the VPN the same way: Go into the system tray applet, right-click the OpenVPN applet icon, select the client profile and click <b>Disconnect</b>.
+                                以相同的方式斷開與VPN的連接：右鍵單擊右下角的<span lang="en">OpenVPN</span>小圖示，選擇對應客戶端配置，然後點擊<b>斷開連接</b>。
                                 </br>
-                            </p>   
+                            </p>
                         <div class="col-lg-2">
                         </div>
                     </div>
