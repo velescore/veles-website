@@ -24,12 +24,62 @@ var menuTree = [
     ],
     'hideFromNav': true,
   },
-  { 
-    'page': 'dvpn', 
-    'title': 'dVPN',
-    'sections': [
-      { 'title': 'DVPN launch' }
-    ],
+  {
+      'title': 'dVPN',
+      'items': [
+          { 
+            'title': 'dVPN',
+            'sections': [
+              { 'title': 'Lanzamiento dVPN' },
+              { 'title': 'Descargar Configuración' }
+            ]
+          },
+          { 
+            'page': 'linux-guide',
+            'title': 'Guía Linux',
+            'sections': [
+              { 'title': 'Guía OpenVPN' },
+              { 'title': 'Guía Stunnel' },
+              { 'title': 'Guía ObfsProxy'},
+              { 'title': 'Testear Conexión' }
+            ]
+          },
+          { 
+            'page': 'windows-guide',  
+            'title': 'Guía Windows',
+            'sections': [
+              { 'title': 'Guía OpenVPN' },
+              { 'title': 'Guía Stunnel' },
+              { 'title': 'Guía ObfsProxy'},
+              { 'title': 'Testear Conexión' }
+            ]
+          },
+          { 
+            'page': 'osx-guide',
+            'title': 'Guía OSX',
+            'sections': [
+              { 'title': 'Guía OpenVPN' },
+              { 'title': 'Guía Stunnel' },
+              { 'title': 'Testear Conexión' }
+            ]
+          },
+          { 
+            'page': 'android-guide',
+            'title': 'Guía Android',
+            'sections': [
+              { 'title': 'Guía OpenVPN' },
+              { 'title': 'Testear Conexión' }
+            ]
+          },
+          { 
+            'page': 'ios-guide',
+            'title': 'Guía iOS',
+            'sections': [
+              { 'title': 'Guía OpenVPN' },
+              { 'title': 'Testear Conexión' }
+            ]
+          }
+      ]
   },
   {
     'page': 'roadmap',

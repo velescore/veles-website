@@ -3,14 +3,14 @@
 <head></head>
 <body>
     <div id="content-wrapper">
-        <div id="content" class="Android-page">
+        <div id="content" class="ios-page">
         <!-- Anything outside #content element
              will be ignored by the single page app. -->
         <!-- Page Heading/Breadcrumbs -->
             <div class="container">
-                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Android</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">iOS</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
             </div>
-            <section>
+            <section id="openvpn-教程">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2 text-center col-image">
@@ -18,47 +18,41 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>安装</h2>
+                            <h2>安装<span lang="en">OpenVPN</span></h2>
                             <p class="my-6">
-                                打开谷歌应用商店。搜索并安装<span lang="en">Android OpenVPN Connect</span>，这是<span lang="en">Android OpenVPN</span>的官方的应用程序。
-                                <br />
+                                从<span lang="en">App Store</span>中，搜索并安装正式的<span lang="en">OpenVPN</span>客户端应用<b><span lang="en">OpenVPN Connect</span></b>。
                             </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-dvpn-download.png">
+                        <br />
+                            <h2>配置<span lang="en">OpenVPN</span></h2>    
                             <p class="my-6">
-                                下载 <a href=""><b>配置</b></a> 文件.
-                                <br />
+                                下载 <a href="https://explorer.veles.network/dapi/getOpenVPNConfig"> <b>配置</b></a> 文件 ，并通过<b>复制到<span lang="en">OpenVPN</span></b>来打开<span lang="en">OpenVPN Connect</span>。
                             </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-open-config.png">
                             <p class="my-6">
-                                开启<span lang="en">OpenVPN</span>应用并点击菜单导入<b>配置</b>文件。
+                                点击<b>添加（<span lang="en">Add</span>）</b>将配置文件导入
                             </p>
-                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/android/android-import.png">
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-import-config.png">
                             <p class="my-6">
-                                然后选择保存的配置文件的位置（截图中使用<code><span lang="en">/sdcard/Download/</span></code>）并选择文件，应用会提示你配置文件已导入。
-                                </br>
+                                然后应该看到<b>配置导入成功<span lang="en">“Profile successfully imported”</span></b>，现在只需把<b>配置添加到您的<span lang="en">OpenVPN</span>连接。
                             </p>
-                            <img class="img-dvpn-guide track-in-view track-in-view-ios left-slide-in" src="images/dvpn-guide/android/android-download-config.png">
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-add-profile.png">
+                        <br />
+                            <h2>连接<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                <span lang="en">OpenVPN</span>现在可以与新的配置文件一起使用了。将连接按钮滑动到<b>开</b>位置，开始连接。通过将同一按钮滑动到关闭位置，断开连接。
+                            </p>
+                            <img class="img-dvpn-ios track-in-view-ios track-in-view left-slide-in text-center" src="images/dvpn-guide/ios/ios-connect-vpn.png">
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i>无法使用<b>设置</b>下的连接到VPN。如果您尝试，您将会收到通知，只使用<span lang="en">OpenVPN</span>应用连接。
+                            </div>
+                        </div>
                         <div class="col-lg-2">
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
-                        <div class="col-lg-7">
-                            <h2>连接</h2>
-                            <p class="my-6">
-                                只需点击<b>连接</b>按钮即可连接，有时会询问您是否信任<span lang="en">OpenVPN</span>应用程序，选择“确定”启动连接。要断开与<span lang="en">VPN</span>的连接，请返回<span lang="en">OpenVPN</span>应用并选择“断开连接”。
-                            </p>
-                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/android/android-connect-vpn.png">
-                        <div class="col-lg-2">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
+            <section id="测试连接">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">

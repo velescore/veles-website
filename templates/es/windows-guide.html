@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="Windows-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey">Guía </span>dVPN </span>para Windows</span></h1>
+            </div>
+            <section id="guía-openvpn">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/windows-wallet.png" alt="Windows Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando OpenVPN</h2>
+                            <p class="my-6">
+                                El cliente de OpenVPN para Windows puede encontrarse en la <a href="https://openvpn.net/community-downloads/">página de descargas de OpenVPN</a>. Elige el instalador apropiado para tu versión de Windows.
+                                <br />
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> OpenVPN necesita privilegios administrativos para instalarse.</p>
+                            </div>
+                        <br /><br />
+                            <h2>Configurando OpenVPN</h2>
+                            <p class="my-6">
+                                Luego de instalar OpenVPN, descarga los archivos de <a href="https://explorer.veles.network/dapi/getOpenVPNConfig"><b>configuración</b></a> y copia el archivo a:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>C:\Program Files\OpenVPN\config</code>(o la ubicación correspondiente para tu idioma)</li>
+                                </ul>
+                            </div>
+                             <p class="my-6">
+                                Cuando ejecutas OpenVPN, detectará automáticamente el perfil y lo dejará disponible.
+                                <br/>
+                            </p>
+                            <p class="my-6">
+                                OpenVPN debe ser ejectuado como administrador cada vez que vaya a ser utilizado, incluso por cuentas administrativas. Para hacer esto sin necesidad de hacer click derecho y seleccionar <b>Correr como administrador</b> cada vez que use la VPN, puede presetear esto, pero debe hacerlo desde una cuenta con derechos administrativos. Esto implica que usuarios regulares deberán ingresar el password de administrador para usar OpenVPN. Por otra parte, usuarios regulares no pueden conectarse de manera correcta a al servidor a menos que la aplicación de OpenVPN tengo derechos de administrador, por lo que permisos elevados son necesarios.
+                                <br/>
+                            </p>
+                            <p class="my-6">
+                                Para setear que la aplicación OpenVPN se ejecute siempre en modo de administrador, haga click derecho en su ícono y vaya a <b>Propiedades</b>. Al final de la pestaña de <b>Compatibilidad</b>, click en el botón para <b>cambiar configuración</b> para todos los usuarios. En la nueva ventana, marca <b>Correr este programa como administrador</b>.
+                                <br/>
+                            </p>
+                        <br /><br />
+                            <h2>Conectando el cliente OpenVPN</h2>
+                            <p class="my-6">
+                                Cada vez que ejecutes la GUI de OpenVPN, Windows preguntará si quieres permitir que se hagan cambios en tu computadora. Clickea <b>Sí</b>. Lanzar el cliente de OpenVPN solamente pone el ícono en la bandeja de sistema para que la VPN puede ser conectada y desconectada según la necesidad; no levanta la conexión VPN en sí.
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                Una vez que OpenVPN se ejecutó, inicia una conexión yendo a la bandeja de sistema y haciendo click derecho en el ícono de OpenVPN. Esta abre un menú contextual. Selecciona <b>veles</b> en la parte superior del menú (éste es nuestro perfil <code>veles.ovpn</code>) y clickea <b>Conectarse</b>.
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                Una ventana de estado se abrirá mostrando el log cuando la conexión sea establecida, y un mensaje mse mostrará una vez que el ciente esté conectado.
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                Desconecte la VPN de la misma forma: Click derecho en el ícono de OpenVPN en la bandeja de sistema, elija el perfil del cliente y click en <b>Desconectarse</b>.
+                                </br>
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guía-stunnel">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando Stunnel</h2>
+                            <p class="my-6">
+                                Descargue e instale el cliente de Stunnel siguiendo estos pasos:
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Stunnel requiere permisos administrativos para instalarse.</p>
+                            </div>
+                            <p class="my-6">
+                                Descarga el <a href="https://www.stunnel.org/downloads.html"><b>cliente oficial de Stunnel</b></a>, click derecho y presiona <b>Correr como Administrador</b>.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-install.png">
+                            <p class="my-6">
+                                Click en <b>"Estoy de acuerdo"</b>.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-agree-install.png">
+                            <p class="my-6">
+                                Elegir <b>“Instalar para cualquiera que use esta computadora”</b>.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-next-step.png">
+                            <p class="my-6">
+                                No cambiar nada aquí.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-components.png">
+                            <p class="my-6">
+                                Elegir el directorio de instalación para Stunnel.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-choose-dir.png">
+                            <p class="my-6">
+                                Al final de la instalación, abrirá una ventana de consola. Puedes completar estos campos como quieras, o dejarlos en blanco. Esto no tendrá ningún efecto sobre tu conexión.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-skip-cert.png">
+                            <p class="my-6">
+                                NO marques “Iniciar stunnel al finalizar", 
+                                sólo <b>clickear “Finalizar”</b>.
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/stunnel-finish-installation.png">
+                        <br /><br />
+                            <h2>Congidurando Stunnel</h2>
+                            <p class="my-6">
+                                Descarga la <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b>configuración de cliente de Stunnel</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b>certificado de cliente de Stunnel</b></a> .
+                            </p>
+                            <p class="my-6">
+                                Luego de que finalice la descarga, ve al directorio de Stunnel, allí puede eliminar todos los archivos y copiar allí los archivos  <code>veles.stunnel.conf</code> y <code>stunnel.pem</code>
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Probablemente debas renombrar veles.stunnel.conf a <b>stunnel.conf</b></p>
+                            </div>
+                        <br />
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>C:\Program Files\Stunnel\config\</code></li>
+                                </ul>
+                            </div>
+                        <br />    
+                            <p class="my-6">
+                                Ahora, descarga la <a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"><b>configuración de Shielded OpenVPN</b></a> y copia el archivo a:
+                                    <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>C:\Program Files\OpenVPN\config\</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />    
+                            <h2>Conectando OpenVPN con Stunnel</h2>
+                            <p class="my-6">
+                                Primeramente, inicie Stunnel. Una vez que haya iniciado, ejecute el cliente de OpenVPN e inicie una conexión mediente click derecho en el ícono en la bandeja de sistema. Esto abrirá el menú contextual, donde deberá seleccionar <b>veles-shielded</b> en la parte superior del menú (éste es nuestro perfil <code>veles.ovpn</code>) y clickea <b>Conectarse</b>.
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                    Una ventana de estado se abrirá mostrando el log cuando la conexión sea establecida, y un mensaje mse mostrará una vez que el ciente esté conectado.
+                                    </br>
+                                </p>
+                                <p class="my-6">
+                                    Desconecte la VPN de la misma forma: Click derecho en el ícono de OpenVPN en la bandeja de sistema, elija el perfil del cliente y click en <b>Desconectarse</b>.
+                                    </br>
+                                </p>
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guía-obfsproxy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                           <h2>Instalando Obfsproxy</h2>
+                            <p class="my-6">
+                                Ahora debemos de <b>construir Obfsproxy</b>. Obfsproxy <b>requiere Python</b>, un lenguaje de programación de código abierto, por lo que berás descargarlo. Ve a <a href="https://www.python.org"><b>www.python.org</b></a> y descarga la <b>version 2.7</b>, e instálala aceptando todo por defecto.             
+                            </p> 
+                            <p class="my-6">
+                                También deberás instalar Visual C para Python, las cuales puedes descargar desde <a href="http://aka.ms/vcpython27"><b>http://aka.ms/vcpython27</b></a>, una vez que lo has descargado, instálala con las opciones por defecto. 
+                            </p>
+                            <p class="my-6">
+                                Ya con Python instalado se debe construir obfsproxy. Abrir una <b>ventana de shell de CMD</b> y ve a C:Python27Scripts ingresando:
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>cd C:\Python27\Scripts</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Ahora instalaremos <b>Obfsproxy</b> ingresando:
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>pip install obfsproxy</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Esto descargará los varios módulos de requisitos y construirá obfsproxy – esto puede llevar unos minutos……
+                                Una vez que esto se complete, deberias de tener el ejecutable <b>obfsproxy.exe</b> en <b>C:Python27Scripts</b>
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/windows/obfuscation-executables.png">
+                        <br /><br />
+                            <h2>Configurando Obfsproxy</h2>
+                            <p class="my-6">
+                                Obfsproxy no necesita archivos de configuración como Stunnel por lo que sólo configuraremos OpenVPN. Descarga el archivo de <a href="https://explorer.veles.network/dapi/getShieldedOpenVPNConfig"><b>configuración de Shielded OpenVPN</b></a> y copiarlo a:
+                                    <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>C:\Program Files\OpenVPN\config\</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />    
+                            <h2>Conectando el cliente OpenVPN con Obfsproxy</h2>
+                            <p class="my-6">
+                                Abrir una <b> ventana de shell de CMD</b> y ve a C:Python27Scripts ingresando:
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>cd C:\Python27\Scripts</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                <b>Inicia Obfsproxy</b> ingresando:
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>obfsproxy scramblesuit --dest 80.211.132.243:21343 --password=SSSTIZ3LG5SSS43OMSSSM4LKGQFASSSS client 127.0.0.1:21337</code>
+                                </ul>
+                            </div>
+                        <br /><br />    
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>La IP de destino (*en este caso --dest 80.211.132.243) debe ser reemplazado con la IP del Masternode al que te estás conectando.</b> Usaremos este password sólo en la fase de testeo pre-alpha. En el futuro en lugar del password usaremos un string aleatorio.</p>
+                            </div>
+                        <br />    
+                            <p class="my-6">
+                                Una vez que Obfsproxy  Una vez que haya iniciado, ejecute el cliente de OpenVPN e inicie una conexión mediente click derecho en el ícono en la bandeja de sistema. Esto abrirá el menú contextual, donde deberá seleccionar <b>veles-shielded</b> en la parte superior del menú (éste es nuestro perfil <code>veles.ovpn</code>) y clickea <b>Conectarse</b>.
+                            </br>
+                        </p>
+                        <p class="my-6">
+                                Una ventana de estado se abrirá mostrando el log cuando la conexión sea establecida, y un mensaje mse mostrará una vez que el ciente esté conectado.
+                                </br>
+                            </p>
+                            <p class="my-6">
+                                Desconecte la VPN de la misma forma: Click derecho en el ícono de OpenVPN en la bandeja de sistema, elija el perfil del cliente y click en <b>Desconectarse</b>.
+                                </br>
+                            </p>
+                        </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="testear-conexión">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Test Your VPN Connection</h2>
+                            <p class="my-6">
+                                    Una vez que todo se encuentra instalado, un simple chequeo confirma que todo funciona correectamente. Sin tener la conexión VPN activada, abre el navegador y ve a <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
+                                    El sitio retornará la dirección IP que se te ha sido asignada por tu proveedor de internet y cómo apareces antes el resto del mundo.
+                                    Para chequear tu configuración DNS a través del mismo sitio, clickea en <b>Extended Test</b> y te informará que servidores DNS estás usando.<br>
+                                    Ahora, conecta tu cliente VPN y refresca el navegador. Debería aparecer la IP completamente nueva de tu servidor VPN. Así es como aparecerás al mundo. Nuevamente, el <b>Extended Test</b> de <a href="https://www.dnsleaktest.com/">DNSLeakTest</a> chequeará tu configuración DNS y confirmará que ahora estás usando los servidores DNS publicados por la dVPN de Veles.
+                                </p>                            
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>

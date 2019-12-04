@@ -24,18 +24,63 @@ var menuTree = [
 		],
 		'hideFromNav': true,
 	},
-	{	
-		'page': 'dvpn',	
-		'title': 'dVPN',
-		'items': [
-			{ 'title': 'dVPN' },
-			{ 'title': 'Linux' },
-			{ 'title': 'Windows' },
-			{ 'title': 'OSX' },
-			{ 'title': 'Android' },
-			{ 'title': 'iOS' }
-		]
-	},
+	{
+      'title': 'dVPN',
+      'items': [
+          { 
+            'title': 'dVPN',
+            'sections': [
+              { 'title': 'dVPN 上线' },
+              { 'title': '下载配置' }
+            ]
+          },
+          { 
+            'page': 'linux-guide',
+            'title': 'Linux 教程',
+            'sections': [
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': 'ObfsProxy 教程'},
+              { 'title': '测试连接' }
+            ]
+          },
+          { 
+            'page': 'windows-guide',  
+            'title': 'Windows 教程',
+            'sections': [
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': 'ObfsProxy 教程'},
+              { 'title': '测试连接' }
+            ]
+          },
+          { 
+            'page': 'osx-guide',
+            'title': 'OSX 教程',
+            'sections': [
+              { 'title': 'OpenVPN 教程' },
+              { 'title': 'Stunnel 教程' },
+              { 'title': '测试连接' }
+            ]
+          },
+          { 
+            'page': 'android-guide',
+            'title': 'Android 教程',
+            'sections': [
+              { 'title': 'OpenVPN 教程' },
+              { 'title': '测试连接' }
+            ]
+          },
+          { 
+            'page': 'ios-guide',
+            'title': 'iOS 教程',
+            'sections': [
+              { 'title': 'OpenVPN Guide' },
+              { 'title': '测试连接' }
+            ]
+          }
+      ]
+    },
 	{
 		'page': 'roadmap',
 		'title': '路线图',

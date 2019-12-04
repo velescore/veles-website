@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="osx-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <<div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">OS X </span></span><span lang="en">dVPN</span> </span>教程</span></h1>
+            </div>
+            <section id="openvpn-教程">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/mac-wallet.png" alt="OS X Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>安裝<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                <a href="https://tunnelblick.net/"><span lang="en">Tunnelblick</span></a>是一個免費的開源<span lang="en">OpenVPN</span>客戶端，適用於<span lang="en">Mac OS X</span>。您可以從<a href="https://tunnelblick.net/downloads.html"><span lang="en">Tunnelblick</span>下載頁面</a>下載最新的磁片映像。雙擊下載的<code><span lang="en">.dmg</span></code>檔並按照提示進行安裝。
+                                <br />
+                            </p>
+                        <br /><br />    
+                            <h2>配置<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                安裝過程快結束時，<span lang="en">Tunnelblick</span>將詢問您是否有任何配置檔，選擇<b>否</b>。下載<span lang="en">Veles</span><a href="https://explorer.Veles.network/dapi/getOpenVPNConfig"><b>配置</b></a>檔並雙擊<code><span lang="en">Veles.ovpn</span></code>，<span lang="en">Tunnelblick</span>將安裝客戶端配置檔（需要管理權限）。
+                                <br/>
+                            </p>
+                        <br /><br />
+                            <h2>連接<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                雙擊啟動<span lang="en">Tunnelblick</span>。啟動<span lang="en">Tunnelblick</span>後，螢幕右上角的菜單欄中將顯示一個<span lang="en">Tunnelblick</span>圖示，用於控制連接。單擊圖示，然後單擊<b>連接</b>菜單項啟動<span lang="en">VPN</span>連接。選擇<b>veles</b>進行連接。
+                            </p>    
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="stunnel-教程">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>安裝 <span lang="en">Stunnel</span></h2>
+                            <p class="my-6">
+                                按 <b><span lang="en">Command+Space</span></b> 輸入 <b><span lang="en">Terminal</span></b> 然後按 <b><span lang="en">enter/return</span></b> 鍵. 在終端中運行下麵的命令，然後按<b><span lang="en">enter/return</span></b> 鍵.
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                如果提示您輸入密碼，請輸入Mac的用戶密碼。當你輸入密碼時，密碼不會顯示在螢幕上。所以只要輸入密碼並按回車鍵就可以了。然後輸入如下命令：
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>brew install stunnel</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>配置 <span lang="en">Stunnel</span></h2>
+                            <p class="my-6">
+                                下載 <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b><span lang="en">Stunnel</span> 客戶端配置</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b><span lang="en">Stunnel</span> 客戶端證書</b></a> .
+                            </p>
+                            <p class="my-6">
+                                下載完成後，進入<span lang="en">Stunnel</span>目錄<code><span lang="en">/usr/local/etc/Stunnel/</span></code>，複製下載的<code><span lang="en">veles.Stunnel.conf</span></code>和<code><span lang="en">Stunnel.pem</span></code>
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> 可能需要將<span lang="en">veles.stunnel.conf</span>重命名為<b><span lang="en">stunnel.conf</span></b> </p>
+                            </div>
+                        <br />    
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                下載<span lang="en">Veles</span>配置檔並雙擊<span lang="en">veles-shielded.ovpn</span></code>。<span lang="en">Tunnelblick</span>將安裝客戶端配置檔。需要管理權限。
+                                <br />
+                            </p>
+                        <br /><br />    
+                            <h2>用<span lang="en">Stunnel</span>連接<span lang="en">OpenVPN</span>客戶端</h2>
+                            <p class="my-6">
+                                按 <b><span lang="en">Command+Space</span></b> 輸入 <b><span lang="en">Terminal</span></b> 然後按 <b><span lang="en">enter/return</span></b> 鍵. 我們通過如下命令開啟<span lang="en">Stunnel</span>：
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>stunnel</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                現在雙擊應用程式檔夾中的<span lang="en">Tunnelblick</span>啟動<span lang="en">Tunnelblick</span>。啟動<span lang="en">Tunnelblick</span>後，螢幕右上角的菜單欄中將顯示一個<span lang="en">Tunnelblick</span>圖示，用於控制連接。單擊圖示，然後單擊“連接”啟動<span lang="en">VPN</span>連接。選擇<b><span lang="en">veles-shielded</span></b>連接。
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="測試連接">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>測試您的<span lang="en">VPN</span>連接</h2>
+                            <p class="my-6">
+                                一旦所有的東西都安裝好了，只需要一個簡單的檢查就可以確認他是否運作。在未啟用<span lang="en">VPN</span>連接的情況下，打開流覽器並轉到 <a href="https://www.dnsleaktest.com/"><span lang="en">DNSLeakTest</span></a>。</br>
+                                該站點將返回由您的網路服務提供商分配的<span lang="en">IP</span>地址，以及您在世界其他地方顯示的<span lang="en">IP</span>地址。若要通過同一網站檢查您的<span lang="en">DNS</span>設置，請單擊<b>擴展測試（<span lang="en">Extended Test</span>）</b>，它會告訴您正在使用的<span lang="en">DNS</span>伺服器。<br>
+                                現在，連接到您的<span lang="en">VPN</span>客戶端並刷新流覽器，應該會顯示與您的<span lang="en">VPN</span>伺服器的完全不同的<span lang="en">IP</span>地址。然後再次進行<b>擴展測試（<span lang="en">Extended Test</span>）</b>檢查您的<span lang="en">DNS</span>設置，並確認您正在使用<span lang="en">Veles dVPN</span>推送的<span lang="en">DNS</span>解析。
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>

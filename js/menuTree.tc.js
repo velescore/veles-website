@@ -16,7 +16,7 @@ var menuTree = [
 			'sections': [
 			{ 'title': '準備開始' },
 			{ 'title': '重塑線上隱私' },
-			{ 'title': '創新網络' },
+			{ 'title': '創新網路' },
 			{ 'title': '資金和啟動' },
 			{ 'title': '合理的經濟模型' },
 			{ 'title': '開放治理'},
@@ -24,16 +24,61 @@ var menuTree = [
 		],
 		'hideFromNav': true,
 	},
-	{	
-		'page': 'dvpn',	
+	{
 		'title': 'dVPN',
 		'items': [
-			{ 'title': 'dVPN' },
-			{ 'title': 'Linux' },
-			{ 'title': 'Windows' },
-			{ 'title': 'OSX' },
-			{ 'title': 'Android' },
-			{ 'title': 'iOS' }
+			{ 
+			'title': 'dVPN',
+			'sections': [
+				{ 'title': 'dVPN 上線' },
+				{ 'title': '下載配置' }
+			]
+			},
+			{ 
+			'page': 'linux-guide',
+			'title': 'Linux 教程',
+			'sections': [
+				{ 'title': 'OpenVPN 教程' },
+				{ 'title': 'Stunnel 教程' },
+				{ 'title': 'ObfsProxy 教程'},
+				{ 'title': '測試連接' }
+			]
+			},
+			{ 
+			'page': 'windows-guide',  
+			'title': 'Windows 教程',
+			'sections': [
+				{ 'title': 'OpenVPN 教程' },
+				{ 'title': 'Stunnel 教程' },
+				{ 'title': 'ObfsProxy 教程'},
+				{ 'title': '測試連接' }
+			]
+			},
+			{ 
+			'page': 'osx-guide',
+			'title': 'OSX 教程',
+			'sections': [
+				{ 'title': 'OpenVPN 教程' },
+				{ 'title': 'Stunnel 教程' },
+				{ 'title': '測試連接' }
+			]
+			},
+			{ 
+			'page': 'android-guide',
+			'title': 'Android 教程',
+			'sections': [
+				{ 'title': 'OpenVPN 教程' },
+				{ 'title': '測試連接' }
+			]
+			},
+			{ 
+			'page': 'ios-guide',
+			'title': 'iOS 教程',
+			'sections': [
+				{ 'title': 'OpenVPN Guide' },
+				{ 'title': '測試連接' }
+			]
+			}
 		]
 	},
 	{
