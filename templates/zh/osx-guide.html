@@ -10,7 +10,7 @@
             <<div class="container">
                 <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">OS X </span></span><span lang="en">dVPN</span> </span>教程</span></h1>
             </div>
-            <section>
+            <section id="openvpn-教程">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2 text-center col-image">
@@ -18,28 +18,19 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>安装</h2>
+                            <h2>安装<span lang="en">OpenVPN</span></h2>
                             <p class="my-6">
                                 <a href="https://tunnelblick.net/"><span lang="en">Tunnelblick</span></a>是一个免费的开源<span lang="en">OpenVPN</span>客户端，适用于<span lang="en">Mac OS X</span>。您可以从<a href="https://tunnelblick.net/downloads.html"><span lang="en">Tunnelblick</span>下载页面</a>下载最新的磁盘映像。双击下载的<code><span lang="en">.dmg</span></code>文件并按照提示进行安装。
                                 <br />
                             </p>
+                        <br /><br />    
+                            <h2>配置<span lang="en">OpenVPN</span></h2>
                             <p class="my-6">
                                 安装过程快结束时，<span lang="en">Tunnelblick</span>将询问您是否有任何配置文件，选择<b>否</b>。下载<span lang="en">Veles</span><a href="https://explorer.Veles.network/dapi/getOpenVPNConfig"><b>配置</b></a>文件并双击<code><span lang="en">Veles.ovpn</span></code>，<span lang="en">Tunnelblick</span>将安装客户端配置文件（需要管理权限）。
                                 <br/>
                             </p>
-                        <div class="col-lg-2">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
-                        <div class="col-lg-7">
-                            <h2>连接</h2>
+                        <br /><br />    
+                            <h2>连接<span lang="en">OpenVPN</span></h2>
                             <p class="my-6">
                                 双击启动<span lang="en">Tunnelblick</span>。启动<span lang="en">Tunnelblick</span>后，屏幕右上角的菜单栏中将显示一个<span lang="en">Tunnelblick</span>图标，用于控制连接。单击图标，然后单击<b>连接</b>菜单项启动<span lang="en">VPN</span>连接。选择<b>veles</b>进行连接。
                             </p>
@@ -48,7 +39,71 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="stunnel-教程">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Installing Stunnel</h2>
+                            <p class="my-6">
+                                Press <b>Command+Space</b> and type <b>Terminal</b> and press <b>enter/return</b> key. Run in Terminal app and press <b>enter/return</b> key.
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                If the screen prompts you to enter a password, please enter your Mac's user password to continue. When you type the password, it won't be displayed on screen, but the system would accept it. So just type your password and press <b>ENTER/RETURN</b> key. Then wait for the command to finish. After that type:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>brew install stunnel</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Configuring Stunnel</h2>
+                            <p class="my-6">
+                                Download <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b>Stunnel client config</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b>Stunnel client certificate</b></a> .
+                            </p>
+                            <p class="my-6">
+                                After you finish downloading , You will go into Stunnel directory <code>/usr/local/etc/stunnel/ </code> and copy there downloaded <code>veles.stunnel.conf</code> and <code>stunnel.pem</code>
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Probably you will need rename veles.stunnel.conf to <b>stunnel.conf</b></p>
+                            </div>
+                        <br />    
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Download Veles configuration file and double-click <code>veles-shielded.ovpn</code>. Tunnelblick will install the client profile. Administrative privileges are required.
+                                <br />
+                            </p>
+                        <br /><br />    
+                            <h2>Connecting OpenVPN client with Stunnel</h2>
+                            <p class="my-6">
+                                Press <b>Command+Space</b> and type <b>Terminal</b> and press <b>enter/return</b> key. Now we will <b>turn on Stunnel</b> by typing :
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>stunnel</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Now launch Tunnelblick by double-clicking Tunnelblick in the Applications folder. Once Tunnelblick has been launched, there will be a Tunnelblick icon in the menu bar at the top right of the screen for controlling connections. Click on the icon, and then the Connect menu item to initiate the VPN connection. Select the <b>veles-shielded</b> connection.
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="测试连接">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -61,7 +116,6 @@
                                 该站点将返回由您的网络服务提供商分配的<span lang="en">IP</span>地址，以及您在世界其他地方显示的<span lang="en">IP</span>地址。若要通过同一网站检查您的<span lang="en">DNS</span>设置，请单击<b>扩展测试（<span lang="en">Extended Test</span>）</b>，它会告诉您正在使用的<span lang="en">DNS</span>服务器。<br>
                                 现在，连接到您的<span lang="en">VPN</span>客户端并刷新浏览器，应该会显示与您的<span lang="en">VPN</span>服务器的完全不同的<span lang="en">IP</span>地址。然后再次进行<b>扩展测试（<span lang="en">Extended Test</span>）</b>检查您的<span lang="en">DNS</span>设置，并确认您正在使用<span lang="en">Veles dVPN</span>推送的<span lang="en">DNS</span>解析。
                             </p>
-                            
                         <div class="col-lg-2">
                         </div>
                     </div>
