@@ -13,10 +13,10 @@
 var velesSocketClient = {
     host: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
         ? 'localhost'
-        : 'api.veles.network',
+        : 'explorer.veles.network',
     port: (window.location.pathname.indexOf('/veles/') != -1)
         ? 8882
-        : 8884,
+        : 443,
     protocol: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
         ? 'ws'
         : 'wss',     // protocol: wss of ws
