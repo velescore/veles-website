@@ -46,7 +46,7 @@ var velesDevConsole = {
                     autofocus: true,
                     welcomeMessage: velesDevConsole.welcomeMessage[velesSinglePageApp.language]
                 });
-                velesDevConsole.controller.promptText('.help');
+                velesDevConsole.controller.promptText('help');
             });
             // auto-focus when mouse over console
             $('#dev-console').mouseover(function() {
