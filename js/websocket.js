@@ -20,8 +20,10 @@ var velesSocketClient = {
     protocol: (window.location.pathname.indexOf('/veles/') != -1)   // dev machines
         ? 'ws'
         : 'wss',     // protocol: wss of ws
-    retries: 300,
-    retryTimeout: 2000,
+    retries: 3000,
+    silentRetries: 12,
+    currentSilentRetries: 0,
+    retryTimeout: 250,
     connected: false,
     hooks: {},
     onResultCallbacks: {},
@@ -112,6 +114,7 @@ velesSocketClient.connect = function()  {
         velesSocketClient.log('WebSocket connected, waiting for events');
         velesSocketClient.ws = ws;
         velesSocketClient.connected = true;
+        velesSocketClient.currentSilentRetries = velesSocketClient.silentRetries;
         velesSocketClient.handle('connect');
     };
     ws.onerror = function() {
@@ -120,14 +123,21 @@ velesSocketClient.connect = function()  {
     ws.onclose = function() {
         velesSocketClient.log('WebSocket closed');
         velesSocketClient.connected = false;
-        velesSocketClient.handle('disconnect');
+        velesSocketClient.handle('reconnect');
+        
+        if (!velesSocketClient.currentSilentRetries) {
+            velesSocketClient.handle('disconnect'); // we can silently try to reconnect few times
+
+        }
 
         if (velesSocketClient.retries) {
             window.setTimeout(function() {
                 velesSocketClient.retries--;
+                velesSocketClient.currentSilentRetries--;
                 velesSocketClient.connect();
             }, velesSocketClient.retryTimeout);
         }
+
     };
     ws.onmessage = function(msgevent) {
         var payload = msgevent.data;    //JSON.parse(msgevent.data);
