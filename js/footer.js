@@ -120,10 +120,10 @@ var velesFooterPanel = {
 
         } else if (name == 'connection') {
             velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) {
-                $('.website-connection-count').text(d);
+                $('#connection-tooltip li').eq(2).find('b').text(d);    // todo: give the element proper ID
             }, 'count');
             velesSocketClient.get_cmd_result('node', 'getconnectioncount', {}, function(d) {
-                $('.node-connection-count').text(d);
+                $('#connection-tooltip li').eq(1).find('b').text(d);
             });
 
         } else if (name == 'chain-pow') {
