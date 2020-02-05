@@ -2,12 +2,12 @@
 var velesFooterPanel = {
     'bindEvents': function() {
         $('#connection-status').click(function(){
-            velesFooterPanel.updateTooltip('connection');
-
             if ($('#connection-tooltip').hasClass("tooltip-expand")) {
                 $('#connection-status').removeClass('active');
                 $('#connection-tooltip').removeClass("tooltip-expand");
             } else {
+                velesFooterPanel.updateTooltip('connection');
+
                 $('.status-area').removeClass('active');
                 $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#connection-status').addClass('active');
@@ -15,12 +15,12 @@ var velesFooterPanel = {
             }
         });
         $('#chain-tip-status').click(function(){
-            velesFooterPanel.updateTooltip('chain-tip');
-
             if ($('#chain-tip-tooltip').hasClass("tooltip-expand")) {
                 $('#chain-tip-status').removeClass('active');
                 $('#chain-tip-tooltip').removeClass("tooltip-expand");
             } else {
+                velesFooterPanel.updateTooltip('chain-tip');
+
                 $('.status-area').removeClass('active');
                 $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#chain-tip-status').addClass('active');
@@ -28,12 +28,12 @@ var velesFooterPanel = {
             }
         });
         $('#masternodes-status').click(function(){
-            velesFooterPanel.updateTooltip('masternodes');
-
             if ($('#masternodes-tooltip').hasClass("tooltip-expand")) {
                 $('#masternodes-status').removeClass('active');
                 $('#masternodes-tooltip').removeClass("tooltip-expand");
             } else {
+                velesFooterPanel.updateTooltip('masternodes');
+
                 $('.status-area').removeClass('active');
                 $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#masternodes-status').addClass('active');
@@ -41,12 +41,12 @@ var velesFooterPanel = {
             }
         });
         $('#chain-pow-status').click(function(){
-            velesFooterPanel.updateTooltip('chain-pow');
-
             if ($('#chain-pow-tooltip').hasClass("tooltip-expand")) {
                 $('#chain-pow-status').removeClass('active');
                 $('#chain-pow-tooltip').removeClass("tooltip-expand");
             } else {
+                velesFooterPanel.updateTooltip('chain-pow');
+
                 $('.status-area').removeClass('active');
                 $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#chain-pow-status').addClass('active');
@@ -54,12 +54,12 @@ var velesFooterPanel = {
             }
         });
         $('#price-status').click(function(){
-            velesFooterPanel.updateTooltip('price-status');
-
             if ($('#price-status-tooltip').hasClass("tooltip-expand")) {
                 $('#price-status-status').removeClass('active');
                 $('#price-status-tooltip').removeClass("tooltip-expand");
             } else {
+                velesFooterPanel.updateTooltip('price-status');
+
                 $('.status-area').removeClass('active');
                 $('.footer-tooltip').removeClass('tooltip-expand');
                 $('#price-status-status').addClass('active');
@@ -120,10 +120,10 @@ var velesFooterPanel = {
 
         } else if (name == 'connection') {
             velesSocketClient.get_cmd_result('webapi', 'listClients', {}, function(d) {
-                $('.website-connection-count').text(d);
+                $('#connection-tooltip li').eq(2).find('b').text(d);    // todo: give the element proper ID
             }, 'count');
             velesSocketClient.get_cmd_result('node', 'getconnectioncount', {}, function(d) {
-                $('.node-connection-count').text(d);
+                $('#connection-tooltip li').eq(1).find('b').text(d);
             });
 
         } else if (name == 'chain-pow') {

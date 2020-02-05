@@ -152,6 +152,7 @@ velesSocketClient.on('connect', function() {
     $('.websocket-online').show();
     $('.websocket-offline-animate').hide("fast");
     $('.websocket-online-animate').show("fast");
+    $('.footer-tooltip').show();
 
     /* example of direct query, not needed, all gets handled by events 
     velesSocketClient.get_cmd_result('node', 'masternodelist', {}, function(d) { 
