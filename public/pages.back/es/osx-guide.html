@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="osx-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <<div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey">Guía </span>dVPN </span>para OS X</span></h1>
+            </div>
+            <section id="guía-openvpn">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/mac-wallet.png" alt="OS X Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando OpenVPN</h2>
+                            <p class="my-6">
+                                <a href="https://tunnelblick.net/">Tunnelblick</a> es un cliente OpenVPN gratuito de software libre para Mac OS X. Puedes descargar la última imagen de disco desde la <a href="https://tunnelblick.net/downloads.html">página de descargas de Tunnelblick</a>. Haz doble click en el archivo <code>.dmg</code> descargado y sigue las instrucciones en pantalla para instalar.
+                                <br />
+                            </p>
+                        <br /><br />
+                            <h2>Configurando OpenVPN</h2>    
+                            <p class="my-6">
+                                Llegando al final de la instalación, Tunnelblick preguntará si tiene archivos de configuración. Es más sencillo responder que <b>No</b> y dejar que Tunnelblick finalice. 
+                                Luego descarga los <a href="https://explorer.veles.network/dapi/getOpenVPNConfig"><b>archivos de configuración</b></a> de Veles y haz doble click en <code>veles.ovpn</code>. Tunnelblick instalará el perfil del cliente. Privilegios de administrador son requeridos.
+                                <br/>
+                            </p>
+                        <br /><br />
+                            <h2>Conectando el cliente OpenVPN</h2>
+                            <p class="my-6">
+                                Lanza Tunnelblick haciendo doble click enTunnelblick en la <b>carpeta de Aplicaciones</b>. una vez que Tunnelblick inició, habrá un ícono de Tunnelblick en la barra de menú en la parte superior derecha de la pantalla para controlar las conexiones.
+                                Click en el ícono, y a continuación en el ítem de menú <b>Conectar (Connect)</b> para iniciar la conexión VPN. Selecciona la conexión <b>veles</b>.
+                            </p>    
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guía-stunnel">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Installing Stunnel</h2>
+                            <p class="my-6">
+                                Presiona <b>Command+Espacio</b>, ingresa  <b>Terminal</b> y presiona <b>enter/return</b>.Corre en la aplicación Terminal y presiona <b>enter/return</b>.
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Si se te requiere un password, por favor ingresa el de tu usuario de Mac para continuar. Cuando lo ingreses, el mismo no será mostrado en pantalla, pero el sistema lo aceptará. Por lo tano, sólo ingresa tu password y presionar <b>ENTER/RETURN</b>.
+                                Luego, espera a que el comando finalice. Despues de eso ingresa:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>brew install stunnel</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Configurando Stunnel</h2>
+                            <p class="my-6">
+                                Descarga la <a href="https://explorer.veles.network/dapi/getStunnelConfig"><b>configuración de cliente de Stunnel</b></a>, <a href="https://explorer.veles.network/dapi/getStunnelCertificate"><b>certificado de cliente Stunnel</b></a> .
+                            </p>
+                            <p class="my-6">
+                                Luega de descargar los archivos, dirígete al directorio de Stunnel <code>/usr/local/etc/stunnel/ </code> y copia alli los archivos descargados <code>veles.stunnel.conf</code> y <code>stunnel.pem</code>
+                            </p>
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> Probablemente debas renombrar veles.stunnel.conf a <b>stunnel.conf</b></p>
+                            </div>
+                        <br />    
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Descarga el archivo de configuración de Veles y haz doble click en
+                                 <code>veles-shielded.ovpn</code>. Tunnelblick instalará el perfil del cliente. Se requieren privilegios administrativos.
+                                <br />
+                            </p>
+                        <br /><br />    
+                            <h2>Conectando el cliente OpenVPN client con Stunnel</h2>
+                            <p class="my-6">
+                                Presiona <b>Command+Space</b>, ingresa <b>Terminal</b> y presiona <b>enter/return</b>. Luego, <b>ejecuta Stunnel</b> ingresando:
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>stunnel</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                Luego, ejecuta Tunnelblick haciendo doble click en Tunnelblick en la carpeta de Aplicaciones. Una vez que Tunnelblick esté en ejecución, habrá un ícono de Tunnelblick en la barra de menú en la esquina superior derecha de la pantalla para controlar las conexiones. Click en el ícono, y luego en el menú Conectar para iniciar la conexión VPN. Selecciona la conexión <b>veles-shielded</b>.
+                            </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="testear-conexión">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                                <h2>Testeá tu conexión VPN</h2>
+                                <p class="my-6">
+                                    Una vez que todo se encuentra instalado, un simple chequeo confirma que todo funciona correectamente. Sin tener la conexión VPN activada, abre el navegador y ve a <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
+                                    El sitio retornará la dirección IP que se te ha sido asignada por tu proveedor de internet y cómo apareces antes el resto del mundo.
+                                    Para chequear tu configuración DNS a través del mismo sitio, clickea en <b>Extended Test</b> y te informará que servidores DNS estás usando.<br>
+                                    Ahora, conecta tu cliente VPN y refresca el navegador. Debería aparecer la IP completamente nueva de tu servidor VPN. Así es como aparecerás al mundo. Nuevamente, el <b>Extended Test</b> de <a href="https://www.dnsleaktest.com/">DNSLeakTest</a> chequeará tu configuración DNS y confirmará que ahora estás usando los servidores DNS publicados por la dVPN de Veles.
+                                </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>

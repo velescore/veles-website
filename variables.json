@@ -1,0 +1,25 @@
+{
+	"title": "Veles Network",
+	"body": {
+		"css": [
+			{"comment": "Font Awesome v5", "href": "https://use.fontawesome.com/releases/v5.0.7/css/all.css"},
+			{"comment": "Material Design Icons", "href": "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"},
+			{"comment": "Bootstrap", "href": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"},
+			{"comment": "DataTables", "href": "https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"},
+			{"href": "css/theme.css"}
+		],
+		"js": [
+			{"comment": "jQuery", "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"},
+			{"comment": "DataTables", "src": "https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"},
+			{"comment": "Bootstrap", "src": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"},
+			{"comment": "ChartJS", "src": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"},
+			{"src": "js/nav.js"},
+			{"src": "js/main.js"}
+		]
+	},
+	"app": {
+		"version": "0.0.02",
+		"copyright_year": 2020,
+		"copyright_year_roman": "MMXX"
+	}
+}

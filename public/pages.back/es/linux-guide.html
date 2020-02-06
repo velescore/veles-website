@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="Linux-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey">Guía </span>dVPN </span>para Linux</span></h1>
+            </div>
+            <section id="guía-openvpn">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/linux-wallet.png" alt="Linux Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando OpenVPN</h2>
+                            <p class="my-6">
+                                Si estás usando Linux, hay una gran variedad de herramientas que puedes utilizar, dependiendo de tu distribución. Tu entorno de escritorio o administrador de conexiones pueden también incluir utilidades de conexión. La manera mas universal de conectarse, de todas formas, es utilizar el software OpenVPN. <br />
+                            </p>
+                            <p class="my-6">
+                                En Ubuntu o Debian, puedes instalarlo de la misma forma que en el servidor ingresando:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo apt-get update</code></li>
+                                    <li><code>sudo apt-get install openvpn</code></li>
+                                </ul>
+                            </div>
+                             <p class="my-6">
+                                 En CentOS puedes habilitar los repositorios EPEL y luego instalarlo ingresando:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo yum install epel-release</code></li>
+                                    <li><code>sudo yum install openvpn</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Configurando OpenVPN</h2>
+                            <p class="my-6">
+                                Descarga los archivos de configuración de Veles y muévelos a su repositorio ingresando:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>wget https://explorer.veles.network/dapi/getOpenVPNConfig</code></li>
+                                    <li><code>sudo mv veles.ovpn /etc/openvpn/client/</code></li>
+                                </ul>
+                            </div>
+                            <p class="my-6">
+                                <br />
+                                Para permanecer protegido contra leaks de DNS usa el siguiente comando (IP utilizada en este caso sirve solamente como ejemplo y debe ser reemplazada por una de la nueva lista de Masternodes )
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>echo -e "#Veles decentralized DNS\nnameserver 111.111.111.111" | sudo tee -a /etc/resolv.conf >> /dev/null</code></li>
+                                </ul>
+                            </div>
+                        <br/>
+                            <p class="my-6">
+                                <b>Usuarios de interfaz gráfica deben seguir los siguientes pasos.</b>
+                                </br>
+                                Primeramente clickear con el botón derecho en el ícono del administrador de conexiones de red y clickear en <b>"Editar Conexiones... (Edit Connections...)"</b> como se muestra a continuación:
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/edit-connections.png">
+                            <p class="my-6">
+                                Ahora debemos presionar <b>"+"</b> para agregar una nueva conexión
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/add-new-connection.png">
+                            <p class="my-6">
+                                Elegimos la opción <b>"Importar un archivo de configuración guardado" ("Import a saved configuration file..."</b> para importar nuestra configuración
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/import-vpn-config.png">
+                            <p class="my-6">
+                                Ahora, ir a la ubicación de la configuración, en nuestro caso será <code>/etc/openvpn/client/</code> y elegir <code>veles.ovpn</code>
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/select-vpn-config.png">
+                            <p class="my-6">
+                                No debes alterar nada, se creará automáticamente el perfil VPN de Veles y sólo debes presionar <b>"Guardar" ("Save")</b>
+                            </p>
+                            <br /><br />
+                            <h2>Conectando el cliente OpenVPN</h2>
+                            <p class="my-6">
+                                <b>Usuarios de CLI deben seguir estos pasos.</b>
+                                <br />
+                                Ahora, puedes conectarte a la VPN simplemente apuntando el comando al archivo de configuración del cliente:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo openvpn --config /etc/openvpn/client/veles.ovpn</code></li>
+                                </ul>
+                            </div>
+                        <br />
+                            <p class="my-6">
+                                <b>Usuarios de interfaz gráfica deben seguir los siguientes pasos.</b>
+                                <br />
+                                Abrir el Administrador de Conexiones de Red haciendo click derecho en su ícono. Allí verás la sección <b>"Conexiones VPN"("VPN Connections")</b>. Click en ella. Marca "veles" y disfrutá tu conexión!
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/linux/connect-to-vpn.png">
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guía-stunnel">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando Stunnel</h2>
+                            <p class="my-6">
+                                Aquí explicamos el proceso de instalación del cliente Stunnel como cliente en Linux.
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                En Ubuntu o Debian, puedes instalarlo ingresando:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo apt-get install stunnel</code></li>
+                                </ul>
+                            </div>
+                             <p class="my-6">
+                                En CentOS puedes instalar Stunnel ingresando:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>yum install stunnel</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Configurando Stunnel</h2>
+                            <p class="my-6">
+                                Descarga los archivos de configuración de Veles para Stunnel y mueva sus repositorios ingresando:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>wget https://explorer.veles.network/dapi/getStunnelConfig</code></li>
+                                    <li><code>wget https://explorer.veles.network/dapi/getStunnelCertificate</code></li>
+                                    <li><code>wget https://explorer.veles.network/dapi/getShieldedOpenVPNConfig</code></li>
+                                    <li><code>sudo mv shielded-veles.ovpn /etc/openvpn/client/</code></li>
+                                    <li><code>sudo mv veles.stunnel.conf /etc/stunnel/stunnel.conf</code></li>
+                                    <li><code>sudo mv stunnel.pem /etc/stunnel/</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Concetando el cliente OpenVPN con Stunnel</h2>
+                            <p class="my-6">
+                                <b>Usuarios de CLI deben seguir los siguientes pasos.</b>
+                                <br />
+                                Puedes conectarte a la VPN a través de Stunnel simplemente encendiendo Stunnel y apuntando el comando openVPN al archivo de configuración del cliente:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo stunnel</code>
+                                    <li><code>sudo openvpn --config /etc/openvpn/client/veles-shield.ovpn</code></li>
+                                </ul>
+                            </div>
+                        <br />
+                            <p class="my-6">
+                                <b>Usuarios de interfaz gráfica deben seguir los siguientes pasos.</b>
+                                <br />
+                                Sigue los pasos de la guía OpenVPN e importa <code>veles-shield.ovpn</code> y no olvides encender <b>Stunnel</b>
+                            </p>
+                            <div class="col-lg-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="guía-obfsproxy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Instalando el proxy de Ofuscación</h2>
+                            <p class="my-6">
+                                Aquí explicamos el proceso de instalar ObfsProxy como cliente en Linux.
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                En Ubuntu o Debian, puedes instalarlo ingresando:
+                                <br/>
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo apt-get install obfsproxy</code></li>
+                                </ul>
+                            </div>
+                       <br /><br />
+                            <h2>Configurando</h2>
+                            <p class="my-6">
+                                Descarga los archivos de configuraciín de Veles y muevelos a sus repositorios ingresando:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>wget https://explorer.veles.network/dapi/getShieldedOpenVPNConfig</code></li>
+                                    <li><code>sudo mv shielded-veles.ovpn /etc/openvpn/client/</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <h2>Conecctando el cliente OpenVPN con ObfsProxy</h2>
+                            <p class="my-6">
+                                <b>Usuarios de CLI deben seguir los siguientes pasos.</b>
+                                <br />
+                                Conecta  a la VPN iniciando ObfsProxy y apuntando el comando OpenVPN Al archivo de configuración del cliente:
+                                <br />
+                            </p>
+                            <div class="code-background">
+                                <ul class="code">
+                                    <li><code>sudo obfsproxy scramblesuit --dest 80.211.132.243:21343 --password=SSSTIZ3LG5SSS43OMSSSM4LKGQFASSSS client 127.0.0.1:21337</code>
+                                    <li><code>sudo openvpn --config /etc/openvpn/client/veles-shield.ovpn</code></li>
+                                </ul>
+                            </div>
+                        <br /><br />
+                            <div class="dvpn-guide-note">
+                                <p><i class="fa fa-info-circle" aria-hidden="true"></i> <b>La IP de destino (* en este caso --dest 80.211.132.243) debe ser reemplazada con la IP del Masternode al que te estás conectando.</b> Usaremos este password sólo en la etapa de testeo pre-alpha. En el futuro en lugar del password se utilizará un string aleatorio.</p>
+                            </div>
+                        <br />
+                            <p class="my-6">
+                                <b>Usuarios de interfaz gráfica deben seguir los siguientes pasos.</b>
+                                <br />
+                                Siga los pasos de la guía de OpenVPN e importe <code>veles-shield.ovpn</code> sin olvidar iniciar <b>ObfsProxy</b>
+                            </p>   
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="testear-conexión">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                                <h2>Testeá tu conexión VPN</h2>
+                                <p class="my-6">
+                                    Una vez que todo se encuentra instalado, un simple chequeo confirma que todo funciona correectamente. Sin tener la conexión VPN activada, abre el navegador y ve a <a href="https://www.dnsleaktest.com/">DNSLeakTest</a>.</br>
+                                    El sitio retornará la dirección IP que se te ha sido asignada por tu proveedor de internet y cómo apareces antes el resto del mundo.
+                                    Para chequear tu configuración DNS a través del mismo sitio, clickea en <b>Extended Test</b> y te informará que servidores DNS estás usando.<br>
+                                    Ahora, conecta tu cliente VPN y refresca el navegador. Debería aparecer la IP completamente nueva de tu servidor VPN. Así es como aparecerás al mundo. Nuevamente, el <b>Extended Test</b> de <a href="https://www.dnsleaktest.com/">DNSLeakTest</a> chequeará tu configuración DNS y confirmará que ahora estás usando los servidores DNS publicados por la dVPN de Veles.
+                                </p>
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <div id="content" class="Android-page">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+                <h1 class="mt-4 mb-3"><span class="grey"><span lang="en">Android</span> </span><span lang="en">dVPN</span> </span>教程</span></h1>
+            </div>
+            <section id="openvpn-教程">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center col-image">
+                            <img class="img-download track-in-view left-slide-in" src="images/download/mac-wallet.png" alt="iOS Guide">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>安装<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                打开谷歌应用商店。搜索并安装<span lang="en">Android OpenVPN Connect</span>，这是<span lang="en">Android OpenVPN</span>的官方的应用程序。
+                                <br />
+                            </p>
+                        <br />
+                            <h2>配置<span lang="en">OpenVPN</span></h2>    
+                            <p class="my-6">
+                                下载 <a href=""><b>配置</b></a> 文件.
+                                <br />
+                            </p>
+                            <p class="my-6">
+                                开启<span lang="en">OpenVPN</span>应用并点击菜单导入<b>配置</b>文件。
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/android/android-import.png">
+                            <p class="my-6">
+                                然后选择保存的配置文件的位置（截图中使用<code><span lang="en">/sdcard/Download/</span></code>）并选择文件，应用会提示你配置文件已导入。
+                                </br>
+                            </p>
+                            <img class="img-dvpn-guide track-in-view track-in-view-ios left-slide-in" src="images/dvpn-guide/android/android-download-config.png">
+                        <br />    
+                            <h2>连接<span lang="en">OpenVPN</span></h2>
+                            <p class="my-6">
+                                只需点击<b>连接</b>按钮即可连接，有时会询问您是否信任<span lang="en">OpenVPN</span>应用程序，选择“确定”启动连接。要断开与<span lang="en">VPN</span>的连接，请返回<span lang="en">OpenVPN</span>应用并选择“断开连接”。
+                            </p>
+                            <img class="img-dvpn-guide track-in-view left-slide-in" src="images/dvpn-guide/android/android-connect-vpn.png">
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="测试连接">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>测试您的<span lang="en">VPN</span>连接</h2>
+                            <p class="my-6">
+                                一旦所有的东西都安装好了，只需要一个简单的检查就可以确认他是否运作。在未启用<span lang="en">VPN</span>连接的情况下，打开浏览器并转到 <a href="https://www.dnsleaktest.com/"><span lang="en">DNSLeakTest</span></a>。</br>
+                                该站点将返回由您的网络服务提供商分配的<span lang="en">IP</span>地址，以及您在世界其他地方显示的<span lang="en">IP</span>地址。若要通过同一网站检查您的<span lang="en">DNS</span>设置，请单击<b>扩展测试（<span lang="en">Extended Test</span>）</b>，它会告诉您正在使用的<span lang="en">DNS</span>服务器。<br>
+                                现在，连接到您的<span lang="en">VPN</span>客户端并刷新浏览器，应该会显示与您的<span lang="en">VPN</span>服务器的完全不同的<span lang="en">IP</span>地址。然后再次进行<b>扩展测试（<span lang="en">Extended Test</span>）</b>检查您的<span lang="en">DNS</span>设置，并确认您正在使用<span lang="en">Veles dVPN</span>推送的<span lang="en">DNS</span>解析。
+                            </p>
+                            
+                        <div class="col-lg-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>
