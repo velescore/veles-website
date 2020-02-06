@@ -27,7 +27,7 @@ class WebPageBuilder(object):
 
     def load_static_vars(self, path):
         if os.path.isfile(path):
-            with open(path, 'r') as json_file:
+            with codecs.open(path, 'r', 'utf-8') as json_file:
                 data = json_file.read()
 
             return json.loads(data)
