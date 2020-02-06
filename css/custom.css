@@ -1214,6 +1214,10 @@ span.status-label-short {
 	color: rgb(238, 238, 238);
 }
 
+#connection-status .fa-signal {
+	padding-right: 10px;
+}
+
 #connection-tooltip::after {	/* move just the arrow, keep tooltip whet it is */
 	right: 3px;
 }
