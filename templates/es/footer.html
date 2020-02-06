@@ -1,0 +1,261 @@
+    <!-- Footer -->
+    <div class="footer container">
+        <div class="tomottoWrap text-center" id="tomotto">{{footer.motto}}</div>
+        <div class="row footer-links">
+            <div class="section col-md-3">
+                        <h5>Sitio Web</h5> <a href="index.es.html">Inicio</a> <a href="download.es.html">Descargas</a> <a href="faq.es.html">FAQ</a> <a href="coin-specs.es.html">Especificaciones</a> <a href="whitepaper.es.html">Whitepaper</a> <a href="masternode-guide.es.html">Guía de Masternodes</a> <a href="exchanges.es.html">Exchanges</a> <a href="external-services.es.html">Servicios Externos</a> <a href="crowdfundings.es.html">Crowdfundings</a> <a href="mining-pools.es.html">Pools de minado</a> <a href="team.es.html">Equipo</a> <a href="roadmap.es.html">Roadmap</a></div>
+            <div class="section col-md-3">
+                    <h5>Billetera</h5><a href="https://wallet.veles.network/">Inicio</a><a href="https://wallet.veles.network/#wallet">Ingresar</a><a href="https://wallet.veles.network/#newAddress">Nueva Dirección</a><a href="https://wallet.veles.network/#newSegWit">Nueva SegWit</a><a href="https://wallet.veles.network/#newMultiSig">Nueva MultiSig</a><a href="https://wallet.veles.network/#newTimeLocked">Nueva TimeLocked</a><a href="https://wallet.veles.network/#newHDaddress">Nueva HD Dirección</a><a href="https://wallet.veles.network/#newTransaction">Nueva Transaction</a><a href="https://wallet.veles.network/#sign">Firmar</a><a href="https://wallet.veles.network/#verify">Verificar</a><a href="https://wallet.veles.network/#broadcast">Broadcast</a> </div>
+            <div class="section col-md-3">
+                        <h5>Explorador</h5> <a href="https://explorer.veles.network/">Buscar</a> <a href="https://explorer.veles.network/richlist">Lista de Ricos</a> <a href="https://explorer.veles.network/masternodes">Masternodes</a> <a href="https://explorer.veles.network/movement">Movimiento</a>
+                <a
+                href="https://explorer.veles.network/miningstats">Estadísticas de minado</a> <a href="https://explorer.veles.network/info">Api</a> </div>
+            <div class="section col-md-3">
+                <h5>Comunidad</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a>  <a href="https://coinmarketcap.com/currencies/veles/">Coinmarketcap</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            © Copyright MMXVIII - {{app.copyright_year_roman}} The Veles Core developers.<br />
+            Quis custodiet ipsos custodes
+            </div>
+        <div class="footer-badges">
+            <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
+            <img src="images/contact-addr.svg">
+        </div>
+        <div class="footer-tooltip" id="connection-tooltip">
+            <ul>
+                        <li> <i class="fa fa-signal"></i> Estado de Websocket:
+                    <b class="label-success websocket-online">online</b>
+                    <b class="label-error websocket-offline" style="display: none;">offline</b>
+                </li>
+                        <li>Conexiones a pares <b>8</b></li>
+                        <li>Conexiones a Websocket: <b>25</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-tip-tooltip">
+            <ul>
+                        <li><i class="fa fa-cube"></i> Número de bloque actual:
+                    <b data-entity-id="chain.tip" data-attribute="height">0</b>
+                </li>
+                        <li>Hash de mejor bloque: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+                      <li>Minado en: <b class="chain-tip-time"></b></li>
+                        <li class="first-row">Tamaño: <b class="chain-tip-size-kb">0</b> kB</li>
+                        <li class="second-row">Algoritmo: <b class="chain-tip-algo"></b></li>
+                        <li>Transacciones: <b class="chain-tip-ntx">0</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="masternodes-tooltip">
+            <ul>
+                        <li><i class="fa fa-server"></i>Total de masternodes: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+                        <li>Activos: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+                <li style="display: none;">
+                              Pre-activados:
+                    <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
+                </li>
+                <li>
+                              Requiriendo un nuevo inicio:
+                    <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
+                </li>
+                <li style="display: none;">
+                              Expirados:
+                    <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
+                </li>
+                        <li class="list-separator"> Colateral de Masternode: <b class="masternodes-collateral-amount">0</b> VLS</li>
+                        <li>Porcentaje de recompensa de bloque para masternode: <b class="masternodes-reward-percent">0</b> %</li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-pow-tooltip">
+            <ul>
+                <li>
+                    <i class="fa fa-chart-bar"></i>
+                    Hashrate Total:
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row">
+                    x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row">
+                    nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="list-separator">
+                              Bloques hasta el siguiente halving: <b class="chain-pow-blocks-to-next-epoch"></b>
+                </li>
+                <li>
+                              Unidades emitidas del halving actual: <b class="chain-pow-supply-target-reached">0%</b> de min 80%
+                </li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="price-status-tooltip">
+            <ul>
+                        <li> <i class="fa fa-chart-line"></i> Precio de VLS:
+                    <div class="tooltip-price">
+                        <span data-entity-id="market.price" data-attribute="price_btc"
+                            data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
+                        <span data-entity-id="market.price" data-attribute="price_usd"
+                            data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
+                    </div>
+                </li>
+                <li class="tooltip-row-tall">
+                    <div id="price-tooltip-chart"></div>
+                </li>
+                <li class="list-separator">
+                              Volumen 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+                </li>
+                <li class="second-row">
+                    &#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
+                </li>
+                <li class="first-row">
+                </li>
+                <li class="second-row">
+                    &#916; 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+                </li>
+                <li class="first-row">
+                              Capitalización de mercado: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
+                </li>
+                <li>
+                              Unidades totales: <b><span
+                        data-entity-id="market.price"
+                        data-attribute="total_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="2"
+                        data-title="{total_supply} VLS"
+                        ></span>m</b>
+                              de <b><span
+                        data-entity-id="market.price"
+                        data-attribute="max_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{max_supply} VLS"
+                        ></span>m</b> VLS
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Overlay footer -->
+    <div class="footer-overlay">
+        <div class="row footer-panel-row">
+            <div class="col-md-12">
+                <div id="console-toggle" class="status-area">
+                    <span class="fa fa-terminal websocket-online" title="Toggle Veles Node Console"></span>
+                    <span class="fa fa-window-close console-area" title="Close Console"></span>
+                </div>
+                <div id="console-maximize" class="status-area console-area">
+                    <span class="fa fa-window-maximize" title="Maximize Console"></span>
+                </div>
+                <div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
+                    <span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
+                              <span class="label">Síguenos</span>
+                </div>
+                <div class="footer-follow-wide">
+                    <ul class="osx-dock">
+                      <li class="active">
+                        <span>Bitcointalk</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                            <i class="fab fa-bitcoin"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>Twitter</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>GitHub</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                            <i class="fab fa-github"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>Discord</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+                <div id="price-status" class="status-area websocket-online-animate">
+                              <span class="status-label-wide">Precio:</span>
+                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
+                     <span class="status-label-wide">BTC</span>
+                </div>
+                <div id="connection-status" class="status-area">
+                    <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE">
+                    </span>
+                    <span class="fa fa-signal websocket-online" title="Websocket Status: ONLINE"
+                        style="display: none;">
+                    </span>️
+                </div>
+                <div id="chain-tip-status" class="status-area websocket-online-animate">
+                              <span class="status-label-wide">Bloques:</span>
+                    <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
+                </div>
+                <div id="masternodes-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Masternodes:</span>
+                    <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
+                    <span class="status-label-short">MNs</span>
+                </div>
+                <div id="chain-pow-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">Hashrate:</span>
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
+                </div>
+            </div>
+        </div>
+        <div id="dev-console">
+                  <div class="jquery-console-message">Cargando cliente blockchain...</div>
+        </div>
+        <div id="panel-slide"  class="bg-carbon">
+            <div class="slide-iconset">
+                <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                    <i class="fab fa-bitcoin"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <!--
+                <a href="https://www.coingecko.com/en/coins/veles">
+                     <i class="fas fa-coins brand"></i>
+                </a>
+                -->
+                <a target="_blank" rel="noopener noreferrer" href="https://masternodecap.com/coins/VLS">
+                     <i class="fas fa-server brand"></i>
+                </a>
+                <!--
+                <a target="_blank" rel="noopener noreferrer" href="https://coinpaprika.com/coin/vls-veles/">
+                    <i class="fas fa-pepper brand"></i>
+                </a>
+                -->
+            </div>
+        </div>
+    </div>
+    <!-- Language specific JS includes -->
+    <script src="js/menuTree.es.js"></script>
+    <!-- Common JS includes -->
+{%- for js in body.js %}
+    <script src="{{js.src}}"></script>
+    {%- if 'comment' in js -%}
+    <!-- // {{js.comment}} --> 
+    {%- endif -%}
+{% endfor -%}
+</body>
+
+</html>
