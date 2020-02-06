@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>维列斯网络 | Veles Network</title>
+    <title>Veles Network</title>
     <script data-pace-options='{ "eventLag": false, "restartOnPushState": false }' src="js/pace.js"></script>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="js/src/jquery.jqplot.css" rel="stylesheet">
-    <link href="css/spincube.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <link href="css/custom.zh.css" rel="stylesheet">
+    <link href="css/custom.es.css" rel="stylesheet">
+    <link href="css/spincube.css" rel="stylesheet">
 </head>
 <body class="with-overlay">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.zh.html" title="Homepage">
+            <a class="navbar-brand" href="index.es.html" title="Homepage">
                 <img id="icon" src="images/veles.ico"></img>
-                <div id="brand-text"> Veles <span class="title-local">维列斯</span></div>
+                <div id="brand-text"> Veles</div>
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
+{#
+    Template variables in the following block will get parsed by Javascript frontend
+    and will be skipped by Jinja2.
+#}
+{% raw %}
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item template">
@@ -52,17 +57,18 @@
                     </ul>
                 </div>
             </div>
+{% endraw %}
             <div class="collapse navbar-collapse" id="languageSelectorBar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown language-selector">
-                        <a class="nav-link dropdown-toggle" href="index.zh.html" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="current-language">简体中文</span> <img src="./images/lang-zh.png"/>
+                        <a class="nav-link dropdown-toggle" href="index.es.html" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="current-language">Español</span> <img src="./images/lang.png"/>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-                            <a class="dropdown-item nav-external-app" href="index.en.html"><span lang="en">English</span></a>
-                            <a class="dropdown-item nav-external-app" href="index.es.html"><span lang="en">Español</span></a>
-                            <a class="dropdown-item nav-external-app" href="index.tc.html">繁體中文</a>
-                            <a class="dropdown-item nav-external-app grey" href="index.zh.html">简体中文</a>
+                						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                                            <a class="dropdown-item nav-external-app" href="index.zh.html">简体中文</a>
+                                            <a class="dropdown-item nav-external-app" href="index.tc.html">繁體中文</a>
+                                            <a class="dropdown-item nav-external-app" href="index.en.html">English</a>
+                							<a class="dropdown-item nav-external-app grey" href="index.es.html">Español</a>
                         </div>
                     </li>
                 </ul>
@@ -73,13 +79,13 @@
         <div class="overlay-gradient"></div>
         <div class="overlay-shadow">
             <div class="stage" style="width: 120px; height: 120px;">
-                <div class="cubespinner">
-                    <div class="face1">正在执行区块链同步 <span class="blink_text">...</span></div>
-                    <div class="face2">正在加载 <span class="blink_text">...</span></div>
-                    <div class="face3">正在进行区块链连接 <span class="blink_text">...</span></div>
-                    <div class="face4">正在下载字体 <span class="blink_text">...</span></div>
-                    <div class="face5">正在扫描主节点 <span class="blink_text">...</span></div>
-                    <div class="face6">渲染内容 <span class="blink_text">...</span></div>
+				        <div class="cubespinner">
+                    <div class="face1">Sincronizando blockchain <span class="blink_text">...</span></div>
+                    <div class="face2">Cargando <span class="blink_text">...</span></div>
+                    <div class="face3">Conectando la blockchain <span class="blink_text">...</span></div>
+                    <div class="face4">Descargando fuentes <span class="blink_text">...</span></div>
+                    <div class="face5">Recolectando información de masternodes <span class="blink_text">...</span></div>
+                    <div class="face6">Renderizando contenido<span class="blink_text">...</span></div>
                 </div>
             </div>
         </div>
@@ -104,14 +110,13 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <h1 class="main-title">维列斯网络</h1>
-                                            <h2 class="main-subtitle"><span lang="en">Veles Network</span></h2>
+                                            <h1 class="main-title"><span class="thin">VELES</span> NETWORK</h1>
                                         </div>
                                     </div>
                                     <div class="row">
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    流通量
+                                                    Unidades en circulación
                                                     <span class="tile-label-value"
                                                         data-entity-id="market.price"
                                                         data-attribute="total_supply"
@@ -124,7 +129,7 @@
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    最大供应量
+                                                    Unidades máximas
                                                      <span class="tile-label-value"
                                                         data-entity-id="market.price"
                                                         data-attribute="max_supply"
@@ -137,13 +142,13 @@
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    区块时间
+                                                    Tiempo de Bloque
                                                     <span class="tile-label-value">2 min</span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    最大区块奖励
+													                           Recompensa máxima por bloque
                                                      <span class="tile-label-value"
                                                         data-entity-id="chain.halving.status"
                                                         data-attribute="max_block_reward"
@@ -155,13 +160,13 @@
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    主节点质押数量
+													                          Colateral de masternodes
                                                     <span class="tile-label-value">500 VLS</span>
                                                 </div>
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    主节点奖励
+													                          Recompensa de masternode
                                                     <span class="tile-label-value"
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_mn_percent"
@@ -173,7 +178,7 @@
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    开发奖励
+													                          Recompensa a desarrolladores
                                                     <span class="tile-label-value"
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_dev_percent"
@@ -185,7 +190,7 @@
                                             </div>
                                             <div class="header-tile">
                                                 <div class="tile-label">
-                                                    24小时平均区块奖励
+													                          Recompensa por bloque promedio en 24 hs
                                                     <span class="tile-label-value"
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_average"
@@ -195,41 +200,41 @@
                                                     >5 VLS</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
-            <section id="准备开始">
+             <section id="donde-comenzar">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-5">
-                            <h2>准备开始 :</h2>
+							              <h2>Dónde comenzar:</h2>
                             <div class="buttonset-index">
-                                <a href="download.zh.html" class="nav-page">
+                                <a href="download.es.html" class="nav-page">
                                     <div class="button-effect btn-index">
-                                        <span class="label">下载钱包</span>
+										                    <span class="label">Descargar billetera</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
                                         <span class="icon2"></span>
                                     </div>
                                 </a>
-                                <a href="exchanges.zh.html" class="nav-page">
+                                <a href="exchanges.es.html" class="nav-page">
                                     <div class="button-effect btn-index">
-                                        <span class="label">购买<span lang="en">VLS</span></span>
+										                    <span class="label">Comprar VLS</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
                                         <span class="icon2"></span>
                                     </div>
                                 </a>
-                                <a href="masternode-guide.zh.html" class="nav-page">
+                                <a href="masternode-guide.es.html" class="nav-page">
                                     <div class="button-effect btn-index">
-                                        <span class="label">设置主节点</span>
+										                    <span class="label">Configurar Masternode</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
@@ -238,25 +243,28 @@
                                 </a>
                                 <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
                                     <div class="button-effect btn-index">
-                                        <span class="label">关注推特</span>
+										                    <span class="label">Síguenos en Twitter</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
                                         <span class="icon2"></span>
                                     </div>
                                 </a>
-                                <!-- <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore/">
+                                <!--
+                                <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore/">
                                     <div class="button-effect btn-index">
-                                        <span class="label">关注<span lang="en">Steemit</span></span>
+                                        <span class="label">Follow Steemit</span>
+										<span class="label">Síguenos en Steemit</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
                                         <span class="icon2"></span>
                                     </div>
-                                </a> -->
+                                </a>
+                                -->
                                 <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
                                     <div class="button-effect btn-index">
-                                        <span class="label">加入<span lang="en">Discord</span></span>
+										                    <span class="label">Únete en Discord</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
@@ -264,65 +272,65 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="start-text">加入我们的社交媒体，与开发团队分享好的建议</div>
+							              <div class="start-text">Únete a nuestras comunidades en redes sociales y comparte tus ideas con los desarrolladores.</div>
                         </div>
                         <div class="col-lg-6">
-                            最新消息:
+							              Últimas noticias:
                             <ul class="news-list">
                                 <li><span class="news-date">1/12/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser"><span lang="en">Pre-alpha </span>版本上线啦！快来使用 <a href="dvpn.zh.html"><span lang="en">dVPN</span></a> 吧！</span>
+                                   <span class="news-teaser">La version pre-alpha ha sido lanzada. Comienza a usar la <a href="dvpn.es.html">dVPN</a> ahora!</span>
                                 </li>
-                                <li><span class="news-date" lang="en">24/11/2019</span>
+                                <li><span class="news-date">24/11/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">倒计时！迎接<a href="dvpn.zh.html"><span lang="en">dVPN</span></a> <span lang="en">pre-alpha</span>发布！</span>
+                                   <span class="news-teaser">Cuenta regresiva pública para el lanzamiento pre-alpha de la <a href="vpn.es.html">dVPN</a>!</span>
                                 </li>
-                                <li><span class="news-date" lang="en">24/11/2019</span>
+                                <li><span class="news-date">24/11/2019</span>
                                    <div class="news-icon"><span>維列斯</span></div>
-                                   <span class="news-teaser"><a href="index.tc.html">繁体中文</a>的<span lang="en">Veles</span>官网已经发布.
+                                   <span class="news-teaser">Lanzamiento de versión en <a href="index.tc.html">Chino Tradicional</a> del sitio web.
                                 </li>
-                                <li><span class="news-date" lang="en">20/11/2019</span>
+                                <li><span class="news-date">20/11/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">想知道更多的开发进展，来看看我们最新的<a href="roadmap.zh.html">路线图</a>！</span>
+                                   <span class="news-teaser">Entérate de los futuros desarrollos. Chequea la actualización de nuestro <a href="roadmap.es.html"> Roadmap</a>!</span>
                                 </li>
                                 <!--
-                                <li><span class="news-date" lang="en">13/11/2019</span>
+                                <li><span class="news-date">13/11/2019</span>
                                    <img class="news-icon" src="images/team/clover.jpeg" />
-                                   <span class="news-teaser">一名新成员加入了<span lang="en">Veles</span>团队，快来查看<a href="team.zh.html"><span lang="en">Clover</span></a>吧.</span>
+                                   <span class="news-teaser"> Una nueva adición el equipo Veles! Chequea el perfil de <a href="team.es.html"> Clover</a>.</span>
                                 </li>
                                 <li><span class="news-date">04/11/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">新钱包已经发布了 <a href="download.html">Veles Core 0.18.1.3</a>！查看<a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.3.md">发行说明</a>。</span>
+                                   <span class="news-teaser">Lanzamiento de la nueva versión de la billetera <a href="download.html">Veles Core 0.18.1.3</a> ! Más <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.3.md">información </a>en las notas de la versión.</span>
                                 </li>
-                                <li><span class="news-date" lang="en">25/10/2019</span>
+                                <li><span class="news-date">25/10/2019</span>
                                    <img class="news-icon" src="images/exchanges/gj.png" />
-                                   <span class="news-teaser" lang="en"> 在<a href="https://www.gj.com/trade/vlsusdt">GJ.com</a>上交易已经激活！</span>
+                                   <span class="news-teaser"> El intercambio en <a href="https://www.gj.com/trade/vlsusdt">GJ.com</a> se encuentra activo!</span>
                                 </li>
                                 <li><span class="news-date">02/10/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">新钱包已经发布了 <a href="download.html"><span lang="en">Veles Core 0.18.1.2</span></a>！查看<a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.2.md">发行说明</a>。</span>
+                                   <span class="news-teaser">Lanzamiento de la nueva versión de la billetera <a href="download.html">Veles Core 0.18.1.2</a> ! Más <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.2.md">información </a>en las notas de la versión.</span>
                                 </li>
                                 <li><span class="news-date">14/08/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">新钱包已经发布了 <a href="download.html"><span lang="en">Veles Core 0.18.1</span></a>！查看<a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.md">发行说明</a>。</span>
+                                   <span class="news-teaser">Lanzamiento de la nueva versión de la billetera <a href="download.html">Veles Core 0.18.1</a> ! Más <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.md">información </a>en las notas de la versión.</span>
                                 </li>
                                 <li><span class="news-date">12/07/2019</span>
                                    <img class="news-icon" src="images/news/veles-square.png" />
-                                   <span class="news-teaser">新钱包已经发布了 <a href="download.html"><span lang="en">Veles Core 0.18.0</span></a>！查看<a href="https://github.com/velescore/veles/blob/0.18/doc/release-notes/veles/release-notes-0.18.0.md">发行说明</a>。</span>
+                                   <span class="news-teaser">Lanzamiento de la nueva versión de la billetera <a href="download.html">Veles Core 0.18.0</a> ! Más <a href="https://github.com/velescore/veles/blob/0.18/doc/release-notes/veles/release-notes-0.18.0.md">información </a>en las notas de la versión.</span>
                                 </li>
                                 <li><span class="news-date">04/07/2019</span>
-                                   <div class="news-icon"><span lang="en">ES</span></div>
-                                   <span class="news-teaser">西班牙版的网站已经推出。</span>
+                                   <div class="news-icon"><span>ES</span></div>
+                                   <span class="news-teaser">La versión en español del sitio web ha sido lanzada</span>
                                 </li>
-                                <li><span class="news-date" lang="en">02/06/2019</span>
+                                <li><span class="news-date">02/06/2019</span>
                                    <div class="news-icon"><span>维列斯</span></div>
-                                   <span class="news-teaser">新的简体中文网站已经启动。</span>
+								                   <span class="news-teaser">La versión en Chino Simplificado del sitio web ha sido lanzada.</span>
                                 </li>
-                                <li><span class="news-date" lang="en">23/05/2019</span>
+                                <li><span class="news-date">23/05/2019</span>
                                    <img class="news-icon" src="images/exchanges/freiexchange.jpg" />
-                                   <span class="news-teaser" lang="en"> 在<a href="https://freiexchange.com/market/VLS/BTC">Freiexchange.com</a>上交易已经激活！</span>
-                                </li>
-                            -->
+                                   <span class="news-teaser"> El intercambio en <a href="https://freiexchange.com/market/VLS/BTC">Freiexchange.com</a> se encuentra activo!</span>
+								                </li>
+                                 -->               
                             </ul>
                         </div>
                         <div class="col-lg-1"></div>
@@ -330,7 +338,7 @@
                 </div>
             </section>
 
-            <section id="restoring-privacy">
+            <section id="privacidad-online">
                 <div class="container">
                     <div class="row" >
                         <div class="col-lg-4 text-center wide-screen">
@@ -338,13 +346,13 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>重塑线上隐私</h2>
+							              <h2>Restaurando la privacidad online</h2>
                             <p class="my-6">
-                                <span lang="en">Veles Core</span>是一个开源软件项目，旨在通过构建分布式VPN和多跳转支持等服务，帮助互联网用户保持信息访问自由，并通过互联网改善通信隐私。
+								                Veles Core es un proyecto de software de código abierto que apunta a ayudar a las personas en Internet a retener su libertad de acceder a la información y de aumentar la privacidad de las comunicaciones en Internet mediante servicios tales cómo Redes Privadas Virtuales descentralizadas &#40;descentralized Virtual Private Networks - dVPN&#41; con soporte a múltiples saltos.
                                 <br />
-                                区块链技术十多年的发展为人类在构建分布式系统方面带来了重大进步。然而，当前的网络连接匿名服务主要是由中心化的商业服务或基于志愿者的网络服务商提供。
+								                Cerca de una década de desarrollo en la tencología Blockchain trajo a la humanidad avances significativos en la construcción de sistemas descentralizados y distribuidos. Sin embargo, los servicios de anonimatización de conecciones a Internet actuales son o bien servicios comerciales; o bien basados en redes voluntarias.
                                 <br />
-                                为了填补技术空白并提供安全，无需信任的解决方案，我们利用这项技术来实现我们的目标，通过建立经济上自我支持和社区自治的网络，显著提高网络的匿名性和自由度。
+								                Para cubrir el vacío y proveer una solución segura, no basada en confianza entre pares nos aprovechamos de esta tecnología para conseguir nuestro objetivo mediante la construcción de redes autosoportadas en el aspecto económico, las cuales eventualmente puedan autogobernarse, siendo las mismas significativamente más resistentes a disrupción o a los intentos de violar la privacidad de un usuario por parte de un tercero como ser un gobierno opresivo.
                                 <br/>
                             </p>
                             <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
@@ -353,14 +361,15 @@
                 </div>
             </section>
 
-            <section id="innovative-network">
+            <section id="red-innovadora">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h2>创新网络</h2>
+							              <h2>Red innovadora</h2>
                             <p class="my-6">
-                            为了提供最适合<span lang="en">dVPN</span>和其他隐私保障分布式服务需求的环境，我们构建了定制区块链和主节点网络，旨在实现稳定，安全和可靠的网络服务。
-                            <br />借鉴区块链技术普及后出现的常见问题，我们通过独立的多算法<span lang="en">PoW</span>和其他针对<span lang="en">51％</span>攻击的方法解决了这些问题，实现了瞬时算力切换保护，死锁保护，可变区块空间等概念。未来我们将进一步执行我们的创新型技术，例如带有自适应供应控制的动态区块奖励或动态非线性减半调整机制。
+							              Para proveer el entorno que mejor se ajuste a las necesidades de las dVPN y otros servicios descentralizados de recuperación de la privacidad hemos contruido una red de masternodes y blockchain a medida, enfocados en la robustez, seguridad y fiabilidad.
+                            <br /> Aprendiendo de los problemas usuales que emergen desde que la tecnología de blockchain comenzó a ser ampliamente utilizada, hemos encarado tales problemas mediante soluciones tales como PoW basado en multi-algoritmos independientes y otros enfoques para prevenir ataques de 51%, protección contra el minado instantáneo, tamaño de bloques dinámico, etc.
+							              Además, hemos llevado tales tecnologías a un siguiente nivel con la introducción de conceptos innovadores tales como recompensas dinámicas de bloques limitadas con control adaptativo de unidades o también un cronograma dinámico no-lineal de reducción de recompensas.
                             </p>
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
@@ -372,7 +381,7 @@
                 </div>
             </section>
 
-            <section id="funding-and-launch">
+           <section id="lancamiento-inicial">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 text-center wide-screen">
@@ -392,7 +401,7 @@
                                       <g>
                                         <defs>
                                           <clipPath id="clipper">
-                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578                     "/>
                                           </clipPath>
                                         </defs>
                                         <g class="clipped">
@@ -407,12 +416,12 @@
                                       <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
                                         44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
                                               "/>
-                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0            "/>
                                       <g id="pinas" transform="translate(60.314607, 84.300601)">
                                         <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
                                                   "/>
                                         <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
-                                          34.578,44.174 				"/>
+                                          34.578,44.174                 "/>
                                         <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
                                                   "/>
                                         <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
@@ -425,16 +434,20 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>资金和启动</h2>
-                            <p class="my-6"><span lang="en">Veles</span>实现了公平的项目启动，没有预挖，没有<span lang="en">ICO</span>或任何类型的融资。 <span lang="en">Veles</span>链上的第一个区块于<span lang="en">2018</span>年<span lang="en">11</span>月<span lang="en">6</span>日<span lang="en">15:22:08</span>被挖出，该区块的奖励数量为<span lang="en">50000 VLS</span>（最大供应量的<span lang="en">2％</span>），用于早期实践者的代币交换，这是早期测试阶段的奖励。
-                            按照事先公布的计划，在<span lang="en">50000</span>区块激活<span lang="en">VCIP01</span>之后，开始慢速<span lang="en">PoW</span>阶段，具有区块低奖励和完整的<span lang="en">PoW</span>奖励阶段。<br />
-                            为了支持项目在初始阶段的发展，开发者基金将获得区块奖励的一小部分，在5年内，<span lang="en">从5％</span>降至<span lang="en">0％</span>（目前为 <span class="tile-label-value"
+							              <h2>Recaudación de fondos y Lanzamiento</h2>
+                            <p class="my-6">
+							              Veles contó con un lanzamiento equitativo, sin minado previo para los desarrolladores, sin ICO a algún otro tipo de recaudación de fondos. El primer bloque en la cadena de Veles fue minado el 6 de noviembre de 2018 a las 15:22:08, con una cantidad de bloque de 50 000 VLS (2% de las unidades máximas a emitir) el cual fue usado para brindar a los adoptantes tempranos que fueron parte de la etapa de primeros testeos.
+							              <br />
+							              El comienzo fue con una fase de PoW lento, con recompensas por bloque bajas y una fase de PoW completo luego del bloque 50 000
+                            por activación VCIP01, hecho que fuera anunciado públicamente con anticipación.
+							              <br />
+							              Para apoyar el desarrollo del proyecto en sus etapas iniciales, un fondo de desarrollo recibe porcentajes decrecientes de las recompensas de bloque, pasando de 5% to 0% en 5 años (actualmente en <span class="tile-label-value"
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_dev_percent"
                                                         data-format="number"
                                                         data-fixed-decimals="2"
                                                         data-unit="%"
-                                                    >4.65 %</span>）。我们认为该资金足以将项目发展到自我维持阶段。除了开发者基金，我们还开放了社区融资渠道，用于众筹与捐赠。
+                                                    >4.65 %</span>). Creemos que eso será suficiente para hacer crecer el proyecto hasta que el mismo sea autosustentable. Además del fondo de desarrolladores utilizamos un modelo abierto de recaudación de fondos a través de la comunidad basado en donaciones para propuestas de recaudación comunitaria específicas.
                             </p>
                             <!--<div id="chart2" class="code" style="margin:20px;height:240px; width:640px;"></div>-->
                             <pre class="code brush:js"></pre>
@@ -453,7 +466,7 @@
                                       <g>
                                         <defs>
                                           <clipPath id="clipper">
-                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578 					"/>
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578                     "/>
                                           </clipPath>
                                         </defs>
                                         <!--<g class="clipped">
@@ -468,12 +481,12 @@
                                       <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
                                         44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
                                               "/>
-                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0 			"/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0            "/>
                                       <g id="pinas" transform="translate(60.314607, 84.300601)">
                                         <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
                                                   "/>
                                         <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
-                                          34.578,44.174 				"/>
+                                          34.578,44.174                 "/>
                                         <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
                                                   "/>
                                         <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
@@ -489,16 +502,21 @@
             </section>
 
 
-            <section id="sane-economic-model">
+
+            <section id="modelo-económico">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h2>合理的经济模型</h2>
+							              <h2>Un modelo económico sensato</h2>
                             <p class="my-6">
-                                稳健的货币政策对于<span lang="en">VLS</span>的长期价值起着重要作用。<br />
-                                与传统的<span lang="en">PoW</span>系统不同，<span lang="en">Veles Network</span>不可能通过在一种算法上的低哈希值来获得完整区块奖励，以实现低成本挖矿，这要归功于基于哈希率的动态区块奖励制度。
-                                我们决定使用非线性减半的释放机制，以防止在<span lang="en">PoW</span>期间产生不健康的长期通胀，但同时还可以保持稳定的代币供应量。
-                                这确保了正确的供应曲线和具有价值储备特点的通货膨胀率。超过最大供应量<span lang="en">50％</span>的代币将在2年内释放，并在5年内的释放量超过<span lang="en">70％</span>。
+								                Políticas monetarias sólidas juegan un papel preponderante para asegurar la reserva de valor en el largo plazo.
+								                <br />
+								                Al contrario de sistemas tradicionales de PoW, en Veles Network no es posible el minado de monedas de bajo costo mediante la consecución de un bloque completo con un bajo hashrate en alguno de los algoritmos, gracias al uso de recompensas dinámicas de blque basadas en el hashrate actual.
+								                <br />
+								                Hemos decidido utilizar nuestro concepto de reducciones de recompensa dinámicas de forma no-lineal para prevenir un innecesario período de inflación alta durante el lanzamiento de la etapa de PoW pero preservando un ritmo parejo de inflación en el tiempo.
+								                <br />
+								                Esto asegura una curva de oferta y una ritmo de inflación adecuados a un modelo de reserva de valor.
+								                Mas de un 50% de las unidades máximas alcanzadas en 2 años, y mas de un 70% en 5 años.
                             </p>
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
@@ -511,7 +529,7 @@
             </section>
 
 
-            <section id="open-governance">
+            <section id="gobierno-abierto">
                 <div class="container">
                     <div class="row" >
                         <div class="col-lg-4 text-center wide-screen">
@@ -519,38 +537,42 @@
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
                         <div class="col-lg-7">
-                            <h2>开放治理</h2>
+							              <h2>Gobierno abierto</h2>
                             <p class="my-6">
-                                最后，我们最重要的目标是将项目开发和管理的全部控制权交给所有网络参与者，实现公平控制的分布式社区组织。现在，每个人都可以参与<span lang="en">Veles Core</span>的开发，我们会密切关注社区反馈。<br />
-                                我们已经使用主节点实施提案提交和投票，并且在接下来的5到7年内，团队将构建和测试生态系统分布式治理的必要手段，由自治和自我激励的分散组织管理。它拥有透明的资金，项目管理和开发团队。
+								                Por último, pero no por eso menos importante es nuestro objetivo de dejar el control total del desarrollo y administración del proyecto en las manos de una organización descentralizada controlada de manera equitativa por todos los participantes de la red. Incluso en estas etapas tempranas, todos pueden participar del desarrollo de Veles, y tomamos muy en cuenta la opinión de nuestra comunidad.
+								                <br />
+								                En la actualidad ya hemos desarrollado el envío de propuestas y votado de las mismas a través de los masternodes, y dentro de los siguientes 5 - 7 años el equipo desarrollará y testeará todo lo necesario para un gobierno descentralizado, de manera que el ecosistema sea gobernado por una organización autónoma autosustentable con su propia recaudación transparente de fondos, administración de proyecto y equipos propios de desarrollo.
                             </p>
-                            <img class="img-narrow-screen" src="images/governance.png" alt="Open Governance">
+							              <img class="img-narrow-screen" src="images/governance.png" alt="Gobierno abierto">
                         </div>
                     </div>
                 </div>
             </section>
 
 
-            <section id="main-features">
+            <section id="caracterìsticas">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12"><h2>主要功能</h2></div>
+						            <div class="col-sm-12"><h2>Principal <span class="grey">Actual</span> Características</h2></div>
                         <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
                             <div class="card h-100">
                                 <div class="card-body" id="card-body">
                                     <h4 class="card-title">
-                           <a>多算法<span lang="en">POW</span>机制</a>
-                        </h4>
-                                    <p class="card-text">多算法挖矿使网络被大量具有不同设备的矿工保护，例如，<span lang="en">GPU</span>或<span lang="en">ASIC</span>，我们认为这可以改善网络的分布情况和奖励分配。为了进一步完善多算法<span lang="en">PoW</span>机制，我们已经开始将<span lang="en">PoS</span>机制作为额外的共识算法。
+						               <a>PoW Multi-algorítmico</a>
+                         </h4>
+                                    <p class="card-text">
+									                  El minado multi-algorítmico permite a la red estar asegurada por un gran número de mineros a través de diferentes dispositivos, tales como rigs GPU o ASICs, lo cual en nuestra opinión mejora la descentralización de la red y la distribución de recompensas.
+									                  Para complementar el PoW multi-algorítmico nos encontramos actualmente trabajando en la implementación de PoS como un mecanismo de consenso adicional.
+
                                     <br /><br />
-                                    <b>目前支持：</b></p>
+									                  <b>Soportados actualmente:</b></p>
                                     <ul>
-                                        <li><span lang="en">Scrypt</span></li>
-                                        <li><span lang="en">Lyra2z</span></li>
-                                        <li><span lang="en">Sha256d</span></li>
-                                        <li><span lang="en">X16r</span></li>
-                                        <li><span lang="en">X11</span></li>
-                                        <li><span lang="en">Nist5</span></li>
+                                        <li>Scrypt</li>
+                                        <li>Lyra2z</li>
+                                        <li>Sha256d</li>
+                                        <li>X16r</li>
+                                        <li>X11</li>
+                                        <li>Nist5</li>
                                     </ul>
                                 </div>
                             </div>
@@ -559,37 +581,45 @@
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-1">
                                     <h4 class="card-title">
-                           <a>主节点</a>
+                           <a>Masternodes</a>
                         </h4>
-                                    <p class="card-text">主节点在<span lang="en">Veles</span>网络中发挥着重要作用，因为它们将提供分布式服务的核心功能。我们的主节点网络正在稳步增长，我们需要达到足够数量的主节点，以便顺利启动<span lang="en">dVPN</span>和其他服务。<br />
-                                    我们邀请任何人运行主节点<span lang="en">（Tier I）</span>，抵押代币量目前为<span lang="en">2000 VLS</span>，并计划在<span lang="en">v0.18</span>中降至<span lang="en">500 VLS</span>。<br />
-                                    稍后，<span lang="en">Tier II</span>主节点将实现为轻量级出口节点。我们正在尝试使用地点证明的概念来实现更好的节点分发。<br /><br />
-                                    <a href="masternode-guide.zh.html"><span lang="en">Veles</span>主节点搭建指南</a>
-                                    </div>
+                                    <p class="card-text">
+									                  Los masternodes juegan un papel preponderante en la red Veles ya que los mismos proveerán el núcleo de nuestros servicios descentralizados. Nuestra red de masternodes se encuentra en crecimiento continuo, ya que necesitamos alcanzar un número suficiente de los mismos para alcanzar un lanzamiento adecuado del servicio de dVPN y otros servicios.
+									                  <br />
+									                  Invitamos a todos a correr su propio masternode &#40;Nivel I&#41;, el colateral es actualmente 2000 VLS, y se encuentra programada una reducción a 500 VLS en la v0.18.
+									                  <br />
+									                  Más adelante los masternodes Nivel II serán implementados para funcionar como nodos de salida livianos. Estamos experimentando con el concepto de Proof-of-Location para una mejor distribución de los nodos.
+									                  <br /><br />
+									                  <a href="masternode-guide.es.html">Guía de Masternodes de Veles</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-2">
                                     <h4 class="card-title">
-                           <a>动态奖励</a>
+						               <a>Dinámica</a>
                         </h4>
                                     <p class="card-text">
-                                        &#9702; 基于哈希值的动态<span lang="en">PoW</span>奖励，在每个减半周期后自动调整，以更接近理想的供应释放模型。<br />
-                                        &#9702; 基于前次减半后流通量的动态区块奖励减半。<br />
-                                        &#9702; 动态区块容量使得出块稳定，即使某些<span lang="en">PoW</span>算法算力过低或算力为零均可以保障整个网络的稳定出块。<br />
-                                        &#9702; 动态区块奖励份额：<br />
-                                        &nbsp; &#8226; <b>递增的主节点奖励</b><br />
-                                        5年内从<span lang="en">5％</span>增加至<span lang="en">60％</span>，现在是 <span
+										&#9702; Recompensas dinámicas de PoW basadas en el hashrate, ajustadas automáticamente luego de cada intervalo de chequeo de halving para estar lo más cerca posible del modelo de lanzamiento de unidades ideal.
+										<br />
+                                        &#9702; Reducción dinámica de recompensas de bloques basadas en la cantidad de unidades circulantes emitidas desde el último halving.
+										<br />
+                                        &#9702; Espaciado dinámico de bloques permite un minado continuo y parejo incluso si algunos algoritmos PoW puedan tener un hashrate bajo o cero, adaptándose a la situación.
+										<br />
+                                        &#9702; Porcentajes de las recompensas dinámicas de bloques:
+										<br />
+                                        &nbsp; &#8226; <b>Incremento en recompensa de MNs</b><br />
+                                        5% - 60% en 5 años, actualmente <span
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_mn_percent"
                                                         data-format="number"
                                                         data-fixed-decimals="2"
                                                         data-unit="%"
                                                     >9 %</span><br />
-                                        &nbsp; 用来弥补<span lang="en">PoW</span>奖励减半。<br />
-                                        &nbsp; &#8226; <b>递减的开发团队奖励</b><br />
-                                        5年内的<span lang="en">5％</span>递减至<span lang="en">0％</span>，现在是 <span
+                                        &nbsp; para compensar las reducciones en PoW<br />
+                                        &nbsp; &#8226; <b>decrementeo de recompensa de desarrolladores</b><br />
+                                        5% - 0% en 5 años, actualmente <span
                                                         data-entity-id="chain.stats.mining"
                                                         data-attribute="block_reward_dev_percent"
                                                         data-format="number"
@@ -621,23 +651,23 @@
 
     <!-- Footer -->
     <div class="footer container">
-        <div class="tomottoWrap text-center" id="tomotto"> <span lang="en">“In such seconds of decision entire futures are made.”― Dan Simmons, Hyperion</span>
+		    <div class="tomottoWrap text-center" id="tomotto"> “En unos segundos de decisión futuros enteros son hechos.”― Dan Simmons, Hyperion
         </div>
         <div class="row footer-links">
             <div class="section col-md-3">
-                <h5>网站</h5> <a href="index.zh.html">首页</a> <a href="download.zh.html">下载</a> <a href="faq.zh.html">常见问题</a> <a href="coin-specs.zh.html">代币规则</a> <a href="whitepaper.zh.html">白皮书</a> <a href="masternode-guide.zh.html">主节点指南</a> <a href="exchanges.zh.html">交易所</a> <a href="external-services.zh.html">外部服务</a> <a href="crowdfundingsCN">众筹</a> <a href="mining-poolsCN">矿池</a><a href="team.zh.html">关于我们</a> <a href="roadmap.zh.html">路线图</a></div>
+				        <h5>Sitio Web</h5> <a href="index.es.html">Inicio</a> <a href="download.es.html">Descargas</a> <a href="faq.es.html">FAQ</a> <a href="coin-specs.es.html">Especificaciones</a> <a href="whitepaper.es.html">Whitepaper</a> <a href="masternode-guide.es.html">Guía de Masternodes</a> <a href="exchanges.es.html">Exchanges</a> <a href="external-services.es.html">Servicios Externos</a> <a href="crowdfundings.es.html">Crowdfundings</a> <a href="mining-pools.es.html">Pools de minado</a> <a href="team.es.html">Equipo</a> <a href="roadmap.es.html">Roadmap</a></div>
             <div class="section col-md-3">
-                <h5>钱包</h5><a href="https://wallet.veles.network/">搜索</a><a href="https://wallet.veles.network/#wallet">登录</a><a href="https://wallet.veles.network/#newAddress">新地址</a><a href="https://wallet.veles.network/#newSegWit">新<span lang="en">SegWit</span>地址</a><a href="https://wallet.veles.network/#newMultiSig">新<span lang="en">MultiSig</span>地址</a><a href="https://wallet.veles.network/#newTimeLocked">新<span lang="en">TimeLocked</span>地址</a><a href="https://wallet.veles.network/#newHDaddress">新<span lang="en">HD</span>地址</a><a href="https://wallet.veles.network/#newTransaction">新交易</a><a href="https://wallet.veles.network/#sign">签名</a><a href="https://wallet.veles.network/#verify">验证</a><a href="https://wallet.veles.network/#broadcast">广播</a> </div>
+            		<h5>Billetera</h5><a href="https://wallet.veles.network/">Inicio</a><a href="https://wallet.veles.network/#wallet">Ingresar</a><a href="https://wallet.veles.network/#newAddress">Nueva Dirección</a><a href="https://wallet.veles.network/#newSegWit">Nueva SegWit</a><a href="https://wallet.veles.network/#newMultiSig">Nueva MultiSig</a><a href="https://wallet.veles.network/#newTimeLocked">Nueva TimeLocked</a><a href="https://wallet.veles.network/#newHDaddress">Nueva HD Dirección</a><a href="https://wallet.veles.network/#newTransaction">Nueva Transaction</a><a href="https://wallet.veles.network/#sign">Firmar</a><a href="https://wallet.veles.network/#verify">Verificar</a><a href="https://wallet.veles.network/#broadcast">Broadcast</a> </div>
             <div class="section col-md-3">
-                <h5>浏览器</h5> <a href="https://explorer.veles.network/">搜索</a> <a href="https://explorer.veles.network/richlist">代币富豪榜</a> <a href="https://explorer.veles.network/masternodes">主节点</a> <a href="https://explorer.veles.network/movement">代币流通</a>
+				        <h5>Explorador</h5> <a href="https://explorer.veles.network/">Buscar</a> <a href="https://explorer.veles.network/richlist">Lista de Ricos</a> <a href="https://explorer.veles.network/masternodes">Masternodes</a> <a href="https://explorer.veles.network/movement">Movimiento</a>
                 <a
-                href="https://explorer.veles.network/miningstats">挖矿状态</a> <a href="https://explorer.veles.network/info"><span lang="en">Api</span></a> </div>
+                href="https://explorer.veles.network/miningstats">Estadísticas de minado</a> <a href="https://explorer.veles.network/info">Api</a> </div>
             <div class="section col-md-3">
-                <h5>社区</h5> <a href="https://twitter.com/velescore">推特</a> <a href="https://discord.gg/P528fGg"><span lang="en">Discord</span></a> <a href="https://steemit.com/@velescore/"><span lang="en">Steemit</span></a> <a href="https://bitcointalk.org/index.php?topic=5064523"><span lang="en">Bitcointalk</span></a>                            <a href="https://www.coingecko.com/en/coins/veles"><span lang="en">Coingecko</span></a> <a href="https://coinpaprika.com/coin/vls-veles/"><span lang="en">Coinpaprika</span></a> <a href="https://coinmarketcap.com/currencies/veles/"><span lang="en">Coinmarketcap</span></a> <a href="https://masternodecap.com/coins/VLS"><span lang="en">Masternodecap</span></a> </div>
+                <h5>Comunidad</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a>  <a href="https://coinmarketcap.com/currencies/veles/">Coinmarketcap</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a> </div>
         </div>
         <div class="footer-copyright text-center py-3">
-            <span lang="en">© Copyright </span>〢〇〡久<span lang="en"> The Veles Core developers.</span><br />
-            世上无难事,只怕有心人。
+            © Copyright MMXVIII - {{app.copyright_year_roman}} The Veles Core developers.<br />
+            Quis custodiet ipsos custodes
             </div>
         <div class="footer-badges">
             <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
@@ -645,83 +675,82 @@
         </div>
         <div class="footer-tooltip" id="connection-tooltip">
             <ul>
-                <li> <i class="fa fa-signal"></i> Websocket 状态:
-                    <b class="label-success websocket-online">在线</b>
-                    <b class="label-error websocket-offline" style="display: none;">脱机</b>
+				        <li> <i class="fa fa-signal"></i> Estado de Websocket:
+                    <b class="label-success websocket-online">online</b>
+                    <b class="label-error websocket-offline" style="display: none;">offline</b>
                 </li>
-                <li>节点连接: <b>8</b></li>
-                <li>Websocket 连接: <b>25</b></li>
+				        <li>Conexiones a pares <b>8</b></li>
+				        <li>Conexiones a Websocket: <b>25</b></li>
             </ul>
         </div>
         <div class="footer-tooltip" id="chain-tip-tooltip">
             <ul>
-                <li><i class="fa fa-cube"></i> 当前区块高度:
+				        <li><i class="fa fa-cube"></i> Número de bloque actual:
                     <b data-entity-id="chain.tip" data-attribute="height">0</b>
                 </li>
-                <li>最佳区块哈希值: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
-                <li>当前区块时间: <b class="chain-tip-time"></b></li>
-                <li class="first-row">容量: <b class="chain-tip-size-kb">0</b> kB</li>
-                <li class="second-row">算法: <b class="chain-tip-algo"></b></li>
-                <li>交易: <b class="chain-tip-ntx">0</b></li>
+				        <li>Hash de mejor bloque: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+  				      <li>Minado en: <b class="chain-tip-time"></b></li>
+				        <li class="first-row">Tamaño: <b class="chain-tip-size-kb">0</b> kB</li>
+				        <li class="second-row">Algoritmo: <b class="chain-tip-algo"></b></li>
+				        <li>Transacciones: <b class="chain-tip-ntx">0</b></li>
             </ul>
         </div>
         <div class="footer-tooltip" id="masternodes-tooltip">
             <ul>
-                <li><i class="fa fa-server"></i> 主节点总: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
-                <li>已生效: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+				        <li><i class="fa fa-server"></i>Total de masternodes: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+				        <li>Activos: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
                 <li style="display: none;">
-                    待生效:
+					          Pre-activados:
                     <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
                 </li>
                 <li>
-                    需要重启:
+					          Requiriendo un nuevo inicio:
                     <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
                 </li>
                 <li style="display: none;">
-                    已过期:
+					          Expirados:
                     <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
                 </li>
-                <li class="list-separator">主节点质押数量: <span lang="en"><b class="masternodes-collateral-amount">0</b> VLS</span></li>
-                <li>主节点区块奖励部分: <span lang="en"><b class="masternodes-reward-percent">0</b> %</span></li>
-                <!--<li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>-->
+				        <li class="list-separator"> Colateral de Masternode: <b class="masternodes-collateral-amount">0</b> VLS</li>
+				        <li>Porcentaje de recompensa de bloque para masternode: <b class="masternodes-reward-percent">0</b> %</li>
             </ul>
         </div>
         <div class="footer-tooltip" id="chain-pow-tooltip">
             <ul>
                 <li>
                     <i class="fa fa-chart-bar"></i>
-                    总哈希值:
+                    Hashrate Total:
                     <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="first-row" lang="en">
+                <li class="first-row">
                     sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="second-row" lang="en">
+                <li class="second-row">
                     scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="first-row" lang="en">
+                <li class="first-row">
                     lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="second-row" lang="en">
+                <li class="second-row">
                     x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="first-row" lang="en">
+                <li class="first-row">
                     x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
                 </li>
-                <li class="second-row" lang="en">
+                <li class="second-row">
                     nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
                 </li>
                 <li class="list-separator">
-                    区块奖励下一次减半检查: <b class="chain-pow-blocks-to-next-epoch"></b>
+					          Bloques hasta el siguiente halving: <b class="chain-pow-blocks-to-next-epoch"></b>
                 </li>
-                <li lang="en">
-                    首批供应量达到最小:80%供应的<b class="chain-pow-supply-target-reached">0%</b>
+                <li>
+					          Unidades emitidas del halving actual: <b class="chain-pow-supply-target-reached">0%</b> de min 80%
                 </li>
             </ul>
         </div>
         <div class="footer-tooltip" id="price-status-tooltip">
             <ul>
-                <li> <i class="fa fa-chart-line"></i> <span lang="en">VLS</span> 价格:
+				        <li> <i class="fa fa-chart-line"></i> Precio de VLS:
                     <div class="tooltip-price">
                         <span data-entity-id="market.price" data-attribute="price_btc"
                             data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
@@ -733,34 +762,36 @@
                     <div id="price-tooltip-chart"></div>
                 </li>
                 <li class="list-separator">
-                    成交量 <span lang="en">24h:</span> <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+					          Volumen 24h: <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
-                    &#916; <span lang="en">24h:</span> <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+                    &#916; 7d: <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
                 </li>
                 <li class="first-row">
-                    市值: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
                 </li>
                 <li class="second-row">
-                    &#916; <span lang="en">7d:</span> <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
+                    &#916; 24h: <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+                </li>
+                <li class="first-row">
+					          Capitalización de mercado: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
                 </li>
                 <li>
-                    总量: <b><span
+					          Unidades totales: <b><span
                         data-entity-id="market.price"
                         data-attribute="total_supply"
                         data-multiplier="0.000001"
                         data-format="number"
-                        data-fixed-decimals="1"
+                        data-fixed-decimals="2"
                         data-title="{total_supply} VLS"
-                        ></span>万</b>
-                    最大供应量 <b><span
+                        ></span>m</b>
+					          de <b><span
                         data-entity-id="market.price"
                         data-attribute="max_supply"
                         data-multiplier="0.000001"
                         data-format="number"
                         data-fixed-decimals="1"
                         data-title="{max_supply} VLS"
-                        ></span>万</b> <span lang="en">VLS</span>
+                        ></span>m</b> VLS
                 </li>
             </ul>
         </div>
@@ -778,7 +809,7 @@
                 </div>
                 <div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
                     <span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
-                    <span class="label">Follow Us</span>
+					          <span class="label">Síguenos</span>
                 </div>
                 <div class="footer-follow-wide">
                     <ul class="osx-dock">
@@ -809,9 +840,9 @@
                     </ul>
                 </div>
                 <div id="price-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">价格:</span>
+					          <span class="status-label-wide">Precio:</span>
                     <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
-                     <span class="status-label-wide" lang="en">BTC</span>
+                     <span class="status-label-wide">BTC</span>
                 </div>
                 <div id="connection-status" class="status-area">
                     <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE">
@@ -821,22 +852,22 @@
                     </span>️
                 </div>
                 <div id="chain-tip-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">区块数:</span>
+					          <span class="status-label-wide">Bloques:</span>
                     <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
                 </div>
                 <div id="masternodes-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">主节点数量:</span>
+                    <span class="status-label-wide">Masternodes:</span>
                     <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
                     <span class="status-label-short">MNs</span>
                 </div>
                 <div id="chain-pow-status" class="status-area websocket-online-animate">
-                    <span class="status-label-wide">算力:</span>
+                    <span class="status-label-wide">Hashrate:</span>
                     <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
                 </div>
             </div>
         </div>
         <div id="dev-console">
-            <div class="jquery-console-message">Loading blockchain client ...</div>
+			      <div class="jquery-console-message">Cargando cliente blockchain...</div>
         </div>
         <div id="panel-slide"  class="bg-carbon">
             <div class="slide-iconset">
@@ -877,7 +908,7 @@
     <script type="text/javascript" src="js/src/plugins/jqplot.ohlcRenderer.js"></script>
     <script type="text/javascript" src="js/src/plugins/jqplot.highlighter.js"></script>
     <script type="text/javascript" src="js/src/plugins/jqplot.cursor.js"></script>
-    <script src="js/menuTree.zh.js"></script>
+    <script src="js/menuTree.es.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/nav.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

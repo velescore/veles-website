@@ -90,7 +90,7 @@ var velesSinglePageApp = {
             velesSinglePageApp.bindEvents();
             velesChain.replayEvents();
         } else {
-            $('#content-wrapper').load('./templates/' + this.language + '/' + page + '.html #content', null, function() {
+            $('#content-wrapper').load('./pages/' + this.language + '/' + page + '.html #content', null, function() {
                 velesSinglePageApp.hideOverlay();
                 velesSinglePageApp.hideMobileMenu();
                 velesSinglePageApp.runPageHook('init');

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="roadmap-page">
+            <div class="container">
+				        <h1 class="mt-4 mb-3"><span class="grey">Hoja de</span> Ruta</h1>
+            </div>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="timeline track-in-view right-slide">
+                                <li class="event milestone" data-date="Q4 2018">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de impulso de la Red</h1>
+											                      <p>Lanzamiento público del proyecto.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul>
+												                        <li class="checked">Lanzamiento de la red (legada)</li>
+												                        <li class="checked">Publicación de primer fuente <a href="https://github.com/velescore/veles-legacy-r1">Veles Core R1</a></li>
+												                        <li class="checked">Reescritura completa del código<a href="https://github.com/velescore/veles-legacy-r2">Veles Core R2</a> lanzada</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event" data-date="Nov 2018">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Lanzamiento de la red de Producción</h3>
+											                      <p>Lanzamiento oficial de la main-net para la red en producción actual.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+												                        <li class="checked">Reescritura completa del código<a href="https://github.com/velescore/veles-legacy-r3">Veles Core R3</a> basado en Bitcoin Core v0.17 y FXTC con soporte para múltiples algoritmos y masternodes</li>
+												                        <li class="checked">Intercambio (swap) de 50k VLS para adoptantes tempranos</li>
+												                        <li class="checked">Destrucción del preminado original</li>
+												                        <li class="checked">Recompensas de bloque mínimas hasta completar la etapa VCIP01</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event milestone" data-date="Feb 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de minado PoW VCIP01</h1>
+											                      <p><b>Lanzamiento de Veles Core v0.17 "Aged Amnesia"</b></p>
+											                      <p>Comienzo de la etapa de recompensas completas al minado luego de la actualización a mecanismos de consenso PoW de mayor uso, al finalizar la etapa de impulso de la red.
+                                            </p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked">Incremento significativo de las recompensas por bloque para proveer la cantidad necesaria de unidades</li>
+											                      <li class="checked">Intervalos de halving no lineales para acortar el período de inflación</li>
+											                      <li class="checked">Equilibrar las recompensas dinámicas entre los distintos algoritmos</li>
+											                      <li class="checked">Control adaptativo de oferta de unidades con reprogramación automática de halvings y aumento automático de recompensas.</li>
+											                      <li class="checked"> Incremento gradual de recompensas para masternodes desde 5% a 60% en un período de 5 años.</li>
+                                            <li class="checked">Decremento gradual de las recompensas a desarrolladores desde 5% a 0% en un período de 5 años.</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event" data-date="Feb 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Instalador de Masternodes de Veles</h3>
+											                      <p>Solución para hacer la configuración de masternodes Veles autoalojados en Linux más sencillo para el común de las personas</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked"><a href="https://github.com/AltcoinBaggins/veles-installer">Instalador de Masternode Veles </a> lanzado para simplificar la instalación de masternodes en Linux.</li>
+											                      <li class="checked">Soporte para muchas distribuciones incluyendo Ubuntu, Debian, Gentoo, RedHat, Fedora, CentOS etc.</li>
+											                      <li class="checked">Como solución alternativa, una adaptación para Veles del popular script de instalación <a href="https://github.com/velescore/nodemaster">Nodemaster</a></li> se encuentra también disponible.</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event" data-date="Mar 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Actualización de GUI de Cliente</h3>
+											                      <p>Completo rediseño gráfico de la billetera QT GUI wallet para todas las plataformas desktop, con nuevas características para soportar un cambio de estilo sencillo.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked">Rediseño completo de la interfaz de la billetera QT wallet para plataformas desktop</li>
+											                      <li class="checked">Indicativo claro acerca de si se está utilizando un lanzamiento estable o un pre-lanzamiento</li>
+											                      <li class="checked">Soporte para exportación y carga de estilos QSS para permitir a diseñadores un rediseño visual sencillo sin necesidad de conocer C++</li>
+											                      <li class="checked">Comienzo del desarrollo experimental de una GUI alternativa basada en Angular</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                                <li class="event" data-date="Apr 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Reducción de la cantidad de unidades máximas</h3>
+											                      <p>Anuncio oficial de la reducción de la cantidad máxima de unidades de 12.5m a 2.5m VLS (sin implicancias para el mecanismo de consenso)</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked"> Reducción oficial de la cantidad máxima de 12.5 millones de VLS a 2.5 millones de VLS para equiparar la cantidad máxima real con el máximo teórico basado en el consense de minado establecido en VCIP01
+                                            </li>
+											                      </li>Asegurado a futuro de la curva actual de oferta para mantener la misma intacta y asegurar un decrecimiento en la inflación en VLS</li>
+											                      <li class="checked">Preparación de un plan para decrementar el colateral requerido para un masternode Veles de 2000 a 500 VLS para equipararlo con la nueva cantidad máxima forzada, en el siguiente lanzamiento (v0.18)</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event" data-date="Feb - Apr 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Actualización Veles Core v0.17.1</h3>
+											                      <p>La siguiente actualización estable del cliente de Veles Core y servidor, incluyendo todos las actualizaciones y correcciones recientes.</p>
+											                      <p>Nuevos instaladores para la gran mayoría de máquinas desktop y plataformas de servidor populares incluyendo Raspberry PI.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked">Correcciones hechas por el equipo de Veles Core cubriendo problemas surgidos en la etapa de testeo.</li>
+											                      <li class="checked"> Portación de todos las actualizaciones de Bitcoin Core v0.17.1</li>
+											                      <li class="checked">Soporte para la Integración Continua Travis y el testeo automático</li>
+											                      <li class="checked">Instalador para Windows 32/64 bit</li>
+											                      <li class="checked">Paquetes de instalación .deb y repositorio apt-get para Linux Ubuntu/Debian</li>
+											                      <li class="checked">Binarios para Raspberry Pi vanilla Linux y paquetes .deb para Raspbian</li>
+											                      <li class="checked">Archivo de instalación .dmg para macOS</li>
+											                      <li class="checked">Revisado y actualización de la documentación del proyecto, agregado de documentación acerca de masternodes</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event" data-date="Q2 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h3>Sitio web e infrastructura Veles Core</h3>
+											                      <p>Nuevo sitio Web y explorador integrado con la Blockchain Veles proveyendo datos en tiempo real acerca de la red.</p>
+											                      <p>Nueva API REST para alta carga y websocket de alta velocidad para server-push</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li class="checked">Nuevo sitio Web del proyecto con información actualizada y un nuevo diseño</li>
+											                      <li class="checked">Rediseño del explorador de bloques e integración del mismo con el sitio web</li>
+											                      <li class="checked">Provisión de datos en tiempo real y estadísticas de la blockchain utilizando websockets y server-push</li>
+											                      <li class="checked">Servicio de back-end de alta carga que provee una carga balanceada a las APIs públicas</li>
+											                      <li>Traducciones internacionales del whitepaper y el sitio web</li>
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event milestone" data-date="Q2 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de implementación de PoS VCIP02</h1>
+											                      <p><b>Lanzamiento de Veles Core v0.18 "Blockchain Baracuda"</b></p>
+											                      <p>Implementación y lanzamiento de Proof-Of-Stake
+                                            </p>
+                                            <div class="roadmap-delay-info">
+                                                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                                    <p>
+                                                        El lanzamiento de PoS ha sido suspendido debido a que el equipo de investigación en Blockchain de Veles ha descubierto múltiples vulnerabilidades en todas las implementaciones actuales de PoS. Como nuestra prioridad es asegurar un funcionamiento estable y seguro de nuestra red, hemos decidido posponer el lanzamiento de PoS hasta que nuestro equipo desarrolle un algoritmo de consenso lo suficientemente seguro como alternativa a los actuales.</p>
+                                                </div>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li>Implementación y lanzamiento de  mecanismos de consenso Proof-Of-Stake para complementar mecanismos PoW en pos de una red mas robusta y segura</li>
+											                      <li>Activación de PrivateSend / InstantSend</li>
+											                      <li class="checked">Adapatación del código al lanzamiento Bitcoin v0.18, implementando nuevas características tales como utilidad de backup de billetera, y proveer las bases para futuro soporte de billeteras hardware</li>
+											                      <li>Período de transformación para decrementar el colateral requerido para masternodes de 2000 a 500 VLS para equipararlo con la nueva cantidad máxima de unidades</li>
+											                      <li class="checked">Nuevas mejoras en el soporte de la internalización del cliente GUI</li>
+											                      <li class="checked"><strike>Lanzamiento de dapp dVPN pre-alpha para los operadores de masternodes, para futuros testeos.</strike>
+                                                                  </li>
+                                                                  <li class="checked"> Lanzamiento de una billetera web Veles para el lado cliente basada en navegadores.</li>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event milestone" data-date="Q3 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de integración de dVPN VCIP03</h1>
+											                       <p>Actualizaciones a la blockchain y la red para proveer el mejor entorno para las necesidades del servicio dVPN como Transacciones Especiales DIP0002. Lanzamiento pre-alpha del servicio dVPN para testeo y desarrollo.
+                                            </p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+                                                                  <li><strike>Portar Transacciones Especiales DIP0002 para permitir el almacenado de suscripciones VPN en la blockchain de manera correcta.</strike></li>
+                                                                  <li class="checked"><i>
+                                                                    Para asegurar una máxima seguridad y anonimato de la dVPN Veles hemos basado los pagos para el servicio en soluciones sustancialmente mas anónimas y seguras que entradas de bloques DIP0002.
+                                                                    </i></li>
+                                                                  <li><strike>Integrar implementación de sincronización fiable en la blockchain de masternodes determinísticos DIP0003</strike></li>
+                                                                  <li class="checked"><i>La integración DIP003 fue discontinuada y reemplazada por un sistema de Masternodes Veles propio que satisface en mejor forma las necesidades del proyecto y permite una ampliación mucho mejor.
+                                                                    </i></li>
+											                      <li>Desarrollo de Certificacion de Autoridad descentralizada para certificados RSA utilizados en las conecciones dVPN</li>
+                                                                       <li><strike>Comienzo de desarrollo del DEX para uso dentro del ecosistema para permitir el intercambio de tokens representando horas de coneccion a VPN para permitir una mejor reserva de valor, descubrimiento de precio y transferencia gratuita de tiempo VPN prepago.</strike></li>
+                                                                       <li class="checked"><i>El desarrollo del DEX ha sido pospuesto ya que nuestra prioridad principal es la implementación de la dVPN y un proceso de descubrimiento de precio de VPN eficiente usando las token VLS en primer lugar.
+                                                                        </i></li>
+                                                                        <li class="checked"> 
+                                                                            Desarrollo del provisionamiento, orquestración y multiplexado de puertos en VPN que permite servir el proceso Veles y el servicio VPN.</li>
+                                                                  <li>Lanzamiento pre-alpha de la dapp dVPN para masternodes voluntarios, para testeo y desarrollo del cliente</li>
+                                                                  <li class="checked"> Integración del servidor ElectrumX para futuro uso</li>
+                                            <li class="checked">>Preparación de PrivateSent para activación de pagos anónimos (testeo detallado, debugging)</li>
+                                            <li class="checked">Continuamente trabajando en mejoras y correcciones de bugs en la última version del core de Veles</li>
+                                            <li class="checked">Inicio del desarrollo de billeteras nativas IOS/Android</li>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="event milestone" data-date="Q4 2019">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de implementación de dVPN</h1>
+                                            <p>
+                                            </p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+                                                    <li class="checked">dapp opcional de dVPN pre-alpha para operadores de masternodes para permitir el testeo</li>   
+                                                    <li><strike>Implementación de masternodes Tier II para funcionar como nodos de salida para proveer ruteo de múltiples saltos</strike></li> <li class="checked"><i>
+                                                        Durante la fase de desarrollo hemos descubierto varias configuraciones alternativas de dVPN de multiples saltos y multiples capas que podrían incrementar significativamente el concepto original y que necesitan ser testeadas y evaluadas durante la etapa de testeo alpha público.
+                                                    </i></li>
+                                                    <li><strike>Capa de ruteo IPv6 a IPv4 para soportar nodos de salida IPv6</strike></li>      
+                                                    <li><i>La infraestructura IPv6 todavía no ha alcanzado cobertura mundial y como necesitamos un provisionamiento adecuado de servicios en IPv4, hemos pospuesto la implementación del transporte IPv6 a IPv4.
+                                                    </i></li>
+                                                    <li class="checked"> Administración  de suscripciones en blockchain. <i> 
+                                                        Suscripción y descubrimiento de servicio ha sido implementado, pago de dVPN será finalizado al final de la etapa de testing alpha público.</i></li>
+                                                    <li>Testeo de versión alpha de dVPN usando nodos voluntarios</li>
+                                                    <li>Activación de PrivateSend</li>
+                                                    <li class="checked">Desarrollo de un nuevo framework de Masternodes Veles con Administrador de Servicios, etc.</li>
+                                                    <li class="checked">Desarrollo de un nuevo script de instalación con soporte a dapps como dVPN</li>
+                                                    <li class="checked">Nuevo sistema de sincronización de masternodes con soporte extendido a datos y una API descentralizada<li>
+                                                    <li class="checked">Integración de sistem de casheo descentralizado de DNS<li>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event milestone proposal" data-date="Q1 2020">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de lanzamiento de dVPN</h1>
+											                      <p>Período de transición para todos los masternodes para habilitar el servicio dVPN</p>
+											                      <p>Lanzamiento oficial de la red para uso público de dVPN durante Q1</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+                                                    <li>Lanzamiento de script de instalación para dVPN & MN</li>
+                                                                  <li>Habilitación del servicio dVPN para el público general</li>
+                                                                  <li>Desarrollo de on sistema de nombres de dominio descentralizado <i>Actualmente en progreso</i></li>
+                                                                  <li>Implementación de masternodes Tier II para funcionar como nodos de salida para proveer ruteo de múltiples saltos</li>
+                                            <i>La implementación exacta estará basada en el mejor sistema multi-salto multi-capa de acuerdo a las pruebas con datos reales en la etapa de testeo alpha.</i>
+											                      <li>Período de transición para que la dapp de dVPN sea obligatoria para todos los operadores de masternodes</li>
+											                      <li>Capa de ruteo de IPv6 a IPv4  para soportar nodos de salida IPv6<i>Actualmente asignada con baja prioridad</i></li>
+											                      <li>Version de testeo alpha pública del DEX para tokens de tiempo de conexión a dVPN</li>
+											                      <li> Administración de suscripciones a dVPN en blockchain</li>
+                                            <li>Lanzamiento de billetera mobile nativa</li>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event proposal" data-date="Q2 2020">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de escalado de dVPN</h1>
+											                      <p>Mejorar las dVPN para un mejor escalado utilizando los datos recabados en Q1, desarrollo de Proof-Of-Geolocation.
+                                            </p>
+											                      <p><strike>Lanzamiento público del DEX de Veles</strike></p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+                                                                  <li>Servicio dVPN habilitado para el público general</li>
+                                                                  <li>Mejorar la implementación de dVPN para un mejor escalado</li>
+											                      <li>Investigar nuevas soluciones viables de escalado utilizando la información recabado en Q1.</li>
+											                      <li>Comenzar el desarrollo y testeo del concepto de Proof-Of-Geolocation para permitir contar con nodos de salida más descentralizados y mejor distribuidos alrededor del mundo.</li>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                                <li class="event milestone proposal" data-date="Q3 - Q4 2020">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de impulso de gobernancia</h1>
+											                      <p>Desarrollo de la infraestructura descentralizada, procesos y contratos inteligentes para permitir una futura gobernabilidad del proyecto por parte de la comunidad.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+                                                                  <li>Desarrollo de medios e infraestructura para una gobernabilidad descentralizada justa sobre todos los procesos de decisión involucrados en el mantenimiento y desarrollo del ecosistema Veles.</li>
+                                                                  <li> SInicio de desarrollo de DEX para uso en el ecosistema para comerciar tokens representando horas de conexión VPNpara proveer una mejor retención de valor, descubrimiento de precio y transferencia gratuita de tiempo VPN pre-pago.</li>
+                                            <li>Explorar la idea de tokenización de alquiler de hashrate en el DEX, lo que puede proveer datos descentralizados de un mercado de hashrate para utilizar en ajustes dinámicos más avanzados de recompensas de PoW.</li>
+                                                                  <li>Lanzamiento oficial del DEX de Veles e interfaz web.</li>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                                <li class="event proposal" data-date="2020 - 2023">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Etapa de transformación</h1>
+											                      <p>Implementación y testeo de procesos de gobierno</p>
+											                      <p>Desarrollo y mantenimiento de la red dVPN, nuevas características, integraciones e ideas
+                                            </p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li>Ventana de tiempo para implementar y testear todos los procesos de gobernabilidad antes de funcionar como una organización realmente descentralizada con el soporte del equipo de Veles Core</li>
+											                      <li>Mantenimiento de la red dVPN e implementación de nuevas características, ideas, integraciones o casos de uso sugeridos por la comunidad como usuarios, operadores de nodos y desarrolladores.</li>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="event milestone proposal" data-date="2024 - &infin;">
+                                    <div class="split-contents">
+                                        <div class="split-left">
+											                      <h1>Control total de la comunidad</h1>
+											                      <p>A esta altura el gobierno sobre la red y el desarrollo del código debería descansar enteramente en las manos de la organización descentralizada manejada por la comunidad de participantes de la red, adeptos y desarrolladores.</p>
+                                        </div>
+                                        <div class="split-right">
+                                            <ul class="content-skills">
+											                      <li>Los miembros actuales del equipo de Veles Core continuarán ayudando a la comunidad en el desarrollo del ecosistema Veles ya que es nuestra pasión el continuar cambiando el mundo tanto como podamos.</li>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                       </div>
+            </section>
+
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>

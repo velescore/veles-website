@@ -26,6 +26,11 @@
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
+{#
+    Template variables in the following block will get parsed by Javascript frontend
+    and will be skipped by Jinja2.
+#}
+{% raw %}
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item template">
@@ -51,6 +56,7 @@
                     </ul>
                 </div>
             </div>
+{% endraw %}
             <div class="collapse navbar-collapse" id="languageSelectorBar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown language-selector">
@@ -672,7 +678,7 @@
                 <h5>Community</h5> <a href="https://twitter.com/velescore">Twitter</a> <a href="https://discord.gg/P528fGg">Discord</a> <a href="https://steemit.com/@velescore/">Steemit</a> <a href="https://bitcointalk.org/index.php?topic=5064523">Bitcointalk</a>                            <a href="https://www.coingecko.com/en/coins/veles">Coingecko</a> <a href="https://coinpaprika.com/coin/vls-veles/">Coinpaprika</a> <a href="https://coinmarketcap.com/currencies/veles/">Coinmarketcap</a> <a href="https://masternodecap.com/coins/VLS">Masternodecap</a>  </div>
         </div>
         <div class="footer-copyright text-center py-3">
-            © Copyright MMXVIII - MMXX The Veles Core developers.<br />
+            © Copyright MMXVIII - {{app.copyright_year_roman}} The Veles Core developers.<br />
             Quis custodiet ipsos custodes
             </div>
         <div class="footer-badges">

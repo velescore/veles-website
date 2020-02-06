@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="coin-specs-page">
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="container">
+				        <h1 class="mt-4 mb-3"><span class="grey">Especificaciones </span>de la moneda</h1>
+            </div>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="mb-4" role="tablist" aria-multiselectable="true">
+                                <div class="card card-coin-specs">
+									                  <div class="card-header"><h5>Especificaciones generales:</h5></div>
+                                    <div class="card-body" id="card-body-1">
+										                    <p><b>Unidades máximas: </b><b class="text-orange">2 500 000 VLS</b></p>
+										                    <p><b>Tiempo de bloque: </b><b class="text-orange">2 minutos</b></p>
+										                    <p><b>Minado previo para swap: </b><b class="text-orange">50000 VLS</b></p>
+										                    <p><b>Colateral de masternode: </b><b class="text-orange">500 VLS</b></p>
+										                    <p><b>Algoritmos soportados: </b><b class="text-orange">Lyra2z, X11, X16R, Sha256d, Scrypt, Nist5</b></p>
+										                    <p><b>Billetera de los desarrolladores: </b><b class="text-orange">VKtig9w7wfx6Ep9B4NnbwxLj1bkY2kHXBj</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="mb-4" role="tablist" aria-multiselectable="true">
+                                <div class="card card-coin-specs">
+									                  <div class="card-header"><h5>Sistema de recompensa:</h5></div>
+                                    <div class="card-body" id="card-body-1">
+                    										<p><b>Recompensa máxima por bloque en PoW: </b><b class="text-orange">5 VLS</b></p>
+                    										<p><b>Recompensa mínima por bloque en PoW: </b><b class="text-orange">0.01 VLS</b></p>
+                    										<p><b>Recompensa actual para masternodes: </b><b class="masternodes-reward-percent text-orange">0</b><b class="text-orange">%</b></p>
+                    										<p><b>Recompensa actual a desarrolladores: </b><b class="text-orange">0.01 VLS</b></p>
+                                        <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                                           <div class="card card-coin-specs">
+                                               <div role="tab" id="headingOne">
+                                                   <h5 class="h5-resources">
+													                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Explicación del sistema dinámico de recompensas
+                                                       </a>
+                                                   </h5>
+                                                </div>
+                                                <div id="collapseOne" class="collapse coin-specs-collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="card-body" id="card-body-1">
+                            														<p><b>Recompensas por minado:</b></p>
+                            														<p> Las recompensas por bloque dinámicas son calculadas individualmente en base al hashrate de cada algoritmo. Por ejemplo, si el algortimo X11 cuenta con 200 GH/s mientras que Scrypt tiene 5 MH/s, las recompensas para bloques X11 serán aproximadamente 0.2 VLS, mientras que Scrypt recompensará a los mineros con aproximadamente 0.003 VLS per block. Es por lo tanto imposible el favorecer a un algoritmo particular comparada con otros menos usados.
+                            														El minado multi-algorítmico le da a una gran cantidad de mineros la oportunidad de minar, lo que en nuestra opinión mejora la descentralización de la red y la distribución de recompensas.
+                            														Esto permite que tanto mineros GPU como ASIC se unan en la red Veles en armonía. La distribución de recompensas entre algoritmos es consistente en la totalidad de la red, por ejemplo, si X11 acumulo un hashrate de 200 GH/s, las recompensas serán comparables a aquellas de Lyra2z a 30 MH/s.</p>
+                                                        <hr>
+														                            <p><b>Recompensas a masternodes:</b></p>
+														                            <p>Las recompensas a masternodes se incrementan paulatinamente desde 5% a 60% en un período de 5 años.</p>
+                                                        <hr>
+														                            <p><b>Recompensas a desarrolladores:</b></p>
+                                                        <p>Las recompensas a desarrolladores se decrementan paulatinamente desde 5% a 0% en un período de 5 años.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="mb-4" role="tablist" aria-multiselectable="true">
+                                <div class="card card-coin-specs">
+									                  <div class="card-header"><h5>Sistema de reducción de recompensa - halving:</h5></div>
+                                    <div class="card-body" id="card-body-1">
+										                    <p><b>Bloques hasta la siguiente reducción: </b><b class="chain-pow-blocks-to-next-epoch text-orange">0</b> bloques</p>
+										                    <p><b>Unidades alcanzadas de la época: </b><b class="chain-pow-supply-target-reached text-orange">0</b> de min 80%</p>
+										                    <p> Veles tiene su propio método de reducciones dinámicas no lineales. Aquí hay una explicación del su funcionamiento y uso. Puedes chequear el estado de halving de Veles usando el comando rpc "gethalvingstatus".</p>
+                                        <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="card card-coin-specs">
+                                                <div role="tab" id="headingOne">
+                                                    <h5 class="h5-resources">
+														                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Explicación del sistema dinámico de recompensas
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse coin-specs-collapse" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="card-body" id="card-body-1">
+														                                <p> - Veles introduce un período dinñamico no lineal de reducciones de recompensa - el intervalo de halving se duplica cada vez que un halving ocurra, creando de esta forma una curva de oferta mas moderada.
+														                                 Cada reducción puede ser automáticamente dilatada por otro intervalo de tiempo dado el caso de que no se hayan minado suficientes VLS desde el ultimo halving (hemos implementado esta medida para mitigar algunas desventajas de recompensas dinámicas para múltiples algoritmos, donde menos monedas son minadas si el hashrate es bajo, para asegurar de esta forma que la curva de ferta se asemeja tanto como sea posible al modelo teórico de la misma). Hemos incluido un nuevo comando RPC para recuperar la información del período actual de halving y los pasados, mñaxima recompensa por bloque actual, intervalo actual de halving, etc...</p>
+														                                <p><b>Ejemplo de gethalvingstatus (en inglés, como es recuperado):</b>
+                                                            <br> {
+                                                            <br> "halvings_occured": 1,
+                                                            <br> "epochs_occured": 5,
+                                                            <br> "halving_interval": 4000,
+                                                            <br> "blocks_to_next_epoch": 1579,
+                                                            <br> "epoch_supply_target_reached": "14%",
+                                                            <br> "min_epoch_supply_to_halve": "80%",
+                                                            <br> }
+                                                            <br>
+                                                            <hr>
+															                              <p><a> El mismo comienza con la información más básica, el ejemplo en particular muestra que el siguiente halving debe ocurrir en 1579 bloques desde ahora, pero es probable que esto no sea así, ya que sólo se han minado un 14% del 80% requerido de recompensa por bloque teórica máxima desde el último halving (ya que la recompensa dinámica depende del hashrate - numero de mineros).
+															                              Si el halving finalmente no ocurre, el mismo será dilatado por otros 4000 bloques. Sin embargo la recompensa dinámica por bloques en realidad se incrementará (en lugar de decrementarse) para lograr alcanzar el objetivo de unidades a minar hasta el próximo halving de manera más rapida, y de esta forma no estar demorando el siguiente halving demasiado innecesariamente, incluso cuando el hashrate actual es menor al ideal. Un ejemplo más específico del "impulso" provisto por las recompensas por bloque dinámicas se muestra a continuación... la salido contiene información de todos las 5 "épocas de halving".</a></p>
+                                                            <hr> "epochs": [
+                                                            <br> {
+                                                            <br> "epoch_name": "ALPHA",
+                                                            <br> "started_by_halving": false,
+                                                            <br> "start_block": 50000,
+                                                            <br> "end_block": 51999,
+                                                            <br> "max_block_reward": 80.00000000,
+                                                            <br> "dynamic_rewards_boost": false,
+                                                            <br> "start_supply": 71864.16989983,
+                                                            <br> "end_supply": 154133.54077063,
+                                                            <br> "supply_target": 160000.00000000,
+                                                            <br> "supply_this_epoch": 82269.37087080,
+                                                            <br> "supply_since_halving": 82269.37087080,
+                                                            <br> "supply_target_reached": "51%" //<b>80% not reached, halving delayed</b>
+                                                            <br> },
+                                                            <br> {
+                                                            <br> "epoch_name": "ALPHA_H0_E1",
+                                                            <br> "started_by_halving": false,
+                                                            <br> "start_block": 52000,
+                                                            <br> "end_block": 53999,
+                                                            <br> "max_block_reward": 80.00000000,
+                                                            <br> "dynamic_rewards_boost": "+50%", //<b>the reward adjustment kicked in</b>
+                                                            <br> "start_supply": 154133.54077063,
+                                                            <br> "end_supply": 273041.50588623,
+                                                            <br> "supply_target": 160000.00000000,
+                                                            <br> "supply_this_epoch": 118907.96511560,
+                                                            <br> "supply_since_halving": 201177.33598640,
+                                                            <br> "supply_target_reached": "125%"
+                                                            <br> },
+                                                            <br> {
+                                                            <br> "epoch_name": "ALPHA_H1_E0",
+                                                            <br> "started_by_halving": true, //<b>successful halving</b>
+                                                            <br> "start_block": 54000,
+                                                            <br> "end_block": 57999,
+                                                            <br> "max_block_reward": 40.00000000,
+                                                            <br> "dynamic_rewards_boost": false,
+                                                            <br> "start_supply": 273041.50588623,
+                                                            <br> "end_supply": false,
+                                                            <br> "supply_target": 160000.00000000,
+                                                            <br> "supply_this_epoch": 23011.73077920,
+                                                            <br> "supply_since_halving": 23011.73077920,
+                                                            <br> "supply_target_reached": "14%"
+                                                            <br> }
+                                                            <br>
+                                                            <hr>
+														                                <p><a> Aquí podemos ver, por ejemplo, que el halving no ha ocurrido en el bloque 52k ya que sólo habia un 51% del objetivo de VLS minadas, del 80% requerido. La recompensa por bloque máxima era de  80 VLS.</a></p>
+                                                            Thanks to this mechanism we can see that at the and of this epoch the initial target was actually fulfilled by 125% (as the time has increased too, those extra %  are just fine)</a></p> -->
+														                                <p><a> Como se puede ver, el halving fue dilatado por otros 2k bloques lo que constituye otra época de halving (APLHA_H0_E1), donde la recompensa máxima max_block_reward continúa en 80 VLS, pero el "impulso" entra en acción e incrementa las recompensas dinámicas en un 50% (pero siempre dentro del rango establecido de un máximo de 80 VLS).
+														                                Gracias a este mecanismo podemos ver que al final de la época el objetivo inicial fue completado en un 125% (como eltiempo también ha sido incrementado el 25% extra no implica problema).</a></p>
+														                                <p><a>Como el objetivo fue alcanzado, la tercer sección muestra que las recompensas por bloque fueron reducidas exitosamente en el bloque 54K a 40 VLS y el "impulso" dynamic_rewards_boost fue apagado, el siguiente chequeo y reajuste será realizad con el inicio de una nueva época en el bloque 58k.
+														                               </a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /#content -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="footer-wrapper">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/apploader.js"></script>
+    </div>
+</body>
+</html>

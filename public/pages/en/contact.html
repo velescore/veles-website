@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="content-wrapper">
+        <!-- Anything outside #content element
+             will be ignored by the single page app. -->
+        <div id="content" class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Contact</h1>
+             <div class="row">
+                 <div class="col-sm-12">
+                     <a href="/index.html">
+                         <div class="bread-button bread">
+                             <span class="label">Home</span>
+                             <span class="icon">
+                             <span></span>
+                             </span>
+                             <span class="icon2"></span>
+                         </div>
+                     </a>
+                     <div class="bread-button bread active">
+                         <span class="label">Contact</span>
+                         <span class="icon">
+                         <span></span>
+                         </span>
+                         <span class="icon2"></span>
+                     </div>
+                     <ol class="breadcrumb" id="breadcrumb-1"></ol>
+                 </div>
+             </div>
+             <br>
+            <!-- Content Row -->
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <h3>Send us a Message</h3>
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Nickname:</label>
+                                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block"></p>
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Email Address:</label>
+                                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            </div>
+                        </div>
+                        <div class="control-group form-group">
+                            <div class="controls">
+                                <label>Message:</label>
+                                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            </div>
+                        </div>
+                        <div id="success"></div>
+                        <!-- For success/fail messages -->
+                        <div class="button-effect new" id="sendMessageButton">
+                            <span class="label">Send Message</span>
+                            <span class="icon">
+                            <span></span>
+                            </span>
+                            <span class="icon2"></span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Map Column -->
+                <div class="col-lg-4 text-center">
+                    <h3>Contact Details :</h3>
+                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                        <div class="button-effect new" id="btn-contact">
+                            <span class="label">Discord</span>
+                            <span class="icon">
+                            <span></span>
+                            </span>
+                            <span class="icon2"></span>
+                        </div>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore/">
+                        <div class="button-effect new" id="btn-contact">
+                            <span class="label">Steemit</span>
+                            <span class="icon">
+                            <span></span>
+                            </span>
+                            <span class="icon2"></span>
+                        </div>
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                        <div class="button-effect new" id="btn-contact">
+                            <span class="label">Twitter</span>
+                            <span class="icon">
+                            <span></span>
+                            </span>
+                            <span class="icon2"></span>
+                        </div>
+                    </a>
+                    <p>
+                        <a title="velesdevs@gmail.com">velesdevs@gmail.com
+                      </a>
+                    </p>
+                    <p>
+                        <a title="velesdevs@protonmail.com">velesdevs@protonmail.com
+                      </a>
+                    </p>
+                </div>
+            </div>
+        </div><!-- /#content -->
+    </div>
+</body>
+</html>
