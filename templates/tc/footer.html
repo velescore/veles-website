@@ -1,0 +1,260 @@
+    <!-- Footer -->
+    <div class="footer container">
+        <div class="tomottoWrap text-center" id="tomotto" lang="en">{{footer.motto}}</div>
+        <div class="row footer-links">
+            <div class="section col-md-3">
+                <h5>網站</h5> <a href="index.zh.html">首頁</a> <a href="download.zh.html">下載</a> <a href="faq.zh.html">常見問題</a> <a href="coin-specs.zh.html">代幣規則</a> <a href="whitepaper.zh.html">白皮書</a> <a href="masternode-guide.zh.html">主節點指南</a> <a href="exchanges.zh.html">交易所</a> <a href="external-services.zh.html">外部服務</a> <a href="crowdfundingsCN">眾筹</a> <a href="mining-poolsCN">礦池</a><a href="team.zh.html">關於我們</a> <a href="roadmap.zh.html">路線圖</a></div>
+            <div class="section col-md-3">
+                <h5>錢包</h5><a href="https://wallet.veles.network/">搜索</a><a href="https://wallet.veles.network/#wallet">登錄</a><a href="https://wallet.veles.network/#newAddress">新地址</a><a href="https://wallet.veles.network/#newSegWit">新<span lang="en">SegWit</span>地址</a><a href="https://wallet.veles.network/#newMultiSig">新<span lang="en">MultiSig</span>地址</a><a href="https://wallet.veles.network/#newTimeLocked">新<span lang="en">TimeLocked</span>地址</a><a href="https://wallet.veles.network/#newHDaddress">新<span lang="en">HD</span>地址</a><a href="https://wallet.veles.network/#newTransaction">新交易</a><a href="https://wallet.veles.network/#sign">簽名</a><a href="https://wallet.veles.network/#verify">驗證</a><a href="https://wallet.veles.network/#broadcast">廣播</a> </div>
+            <div class="section col-md-3">
+                <h5>瀏覽器</h5> <a href="https://explorer.veles.network/">搜索</a> <a href="https://explorer.veles.network/richlist">代幣富豪榜</a> <a href="https://explorer.veles.network/masternodes">主節點</a> <a href="https://explorer.veles.network/movement">代幣流通</a>
+                <a
+                href="https://explorer.veles.network/miningstats">挖礦状態</a> <a href="https://explorer.veles.network/info"><span lang="en">Api</span></a> </div>
+            <div class="section col-md-3">
+                <h5>社區</h5> <a href="https://twitter.com/velescore">推特</a> <a href="https://discord.gg/P528fGg"><span lang="en">Discord</span></a> <a href="https://steemit.com/@velescore/"><span lang="en">Steemit</span></a> <a href="https://bitcointalk.org/index.php?topic=5064523"><span lang="en">Bitcointalk</span></a>                            <a href="https://www.coingecko.com/en/coins/veles"><span lang="en">Coingecko</span></a> <a href="https://coinpaprika.com/coin/vls-veles/"><span lang="en">Coinpaprika</span></a> <a href="https://coinmarketcap.com/currencies/veles/"><span lang="en">Coinmarketcap</span></a> <a href="https://masternodecap.com/coins/VLS"><span lang="en">Masternodecap</span></a> </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            <span lang="en">© Copyright </span>〢〇〡久<span lang="en"> The Veles Core developers.</span><br />
+            世上無難事,只怕有心人。
+            </div>
+        <div class="footer-badges">
+            <img src="https://camo.githubusercontent.com/94196f0d2a07534cd6b6584cb9df02bdf4cee5db/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f72656c656173652f76656c6573636f72652f76656c65732e7376673f7374796c653d666f722d7468652d6261646765">
+            <img src="images/contact-addr.svg">
+        </div>
+        <div class="footer-tooltip" id="connection-tooltip">
+            <ul>
+                <li> <i class="fa fa-signal"></i> Websocket 状態:
+                    <b class="label-success websocket-online">在線</b>
+                    <b class="label-error websocket-offline" style="display: none;">脫機</b>
+                </li>
+                <li>節點連接: <b>8</b></li>
+                <li>Websocket 連接: <b>25</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-tip-tooltip">
+            <ul>
+                <li><i class="fa fa-cube"></i> 當前區塊高度:
+                    <b data-entity-id="chain.tip" data-attribute="height">0</b>
+                </li>
+                <li>最佳區塊哈希值: <b><a class="chain-tip-hash-short" href="#"></a></b></li>
+                <li>當前區塊時間: <b class="chain-tip-time"></b></li>
+                <li class="first-row">容量: <b class="chain-tip-size-kb">0</b> kB</li>
+                <li class="second-row">算法: <b class="chain-tip-algo"></b></li>
+                <li>交易: <b class="chain-tip-ntx">0</b></li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="masternodes-tooltip">
+            <ul>
+                <li><i class="fa fa-server"></i> 主節點总: <b data-entity-id="masternodes" data-attribute="count">0</b></li>
+                <li>已生效: <b data-entity-id="masternodes" data-attribute="enabled-count" class="label-success">0</b></li>
+                <li style="display: none;">
+                    待生效:
+                    <b data-entity-id="masternodes" data-attribute="pre-enabled-count" class="label-warning">0</b>
+                </li>
+                <li>
+                    需要重啟:
+                    <b data-entity-id="masternodes" data-attribute="new-start-required-count"  class="abel-warning">0</b>
+                </li>
+                <li style="display: none;">
+                    已過期:
+                    <b data-entity-id="masternodes" data-attribute="expired-count" class="label-error">0</b>
+                </li>
+                <li class="list-separator">主節點質押數量: <span lang="en"><b class="masternodes-collateral-amount">0</b> VLS</span></li>
+                <li>主節點區塊獎勵部分: <span lang="en"><b class="masternodes-reward-percent">0</b> %</span></li>
+                <!--<li class="list-separator tooltip-icons"><i class="fab fa-wikipedia-w"></i></li>-->
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="chain-pow-tooltip">
+            <ul>
+                <li>
+                    <i class="fa fa-chart-bar"></i>
+                    总哈希值:
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row" lang="en">
+                    sha256d: <span data-entity-id="chain.pow" data-attribute="multialgo.sha256d.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row" lang="en">
+                    scrypt: <span data-entity-id="chain.pow" data-attribute="multialgo.scrypt.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row" lang="en">
+                    lyra2z: <span data-entity-id="chain.pow" data-attribute="multialgo.lyra2z.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row" lang="en">
+                    x11: <span data-entity-id="chain.pow" data-attribute="multialgo.x11.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="first-row" lang="en">
+                    x16r: <span data-entity-id="chain.pow" data-attribute="multialgo.x16r.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="second-row" lang="en">
+                    nist5: <span data-entity-id="chain.pow" data-attribute="multialgo.nist5.hashrate" data-format="hashrate">0</span>
+                </li>
+                <li class="list-separator">
+                    區塊獎勵下一次減半檢查: <b class="chain-pow-blocks-to-next-epoch"></b>
+                </li>
+                <li lang="en">
+                    首批供應量達到最小:80%供應的<b class="chain-pow-supply-target-reached">0%</b>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-tooltip" id="price-status-tooltip">
+            <ul>
+                <li> <i class="fa fa-chart-line"></i> <span lang="en">VLS</span> 價格:
+                    <div class="tooltip-price">
+                        <span data-entity-id="market.price" data-attribute="price_btc"
+                            data-format="coin_amount" data-unit="BTC">0.00000000</span> <br />
+                        <span data-entity-id="market.price" data-attribute="price_usd"
+                            data-format="number" data-fixed-decimals="2" data-unit-before="$">0.00</span>
+                    </div>
+                </li>
+                <li class="tooltip-row-tall">
+                    <div id="price-tooltip-chart"></div>
+                </li>
+                <li class="list-separator">
+                    成交量 <span lang="en">24h:</span> <b><span data-entity-id="market.price" data-attribute="24h_volume_usd" data-unit-before="$"></span></b>
+                </li>
+                <li class="second-row">
+                    &#916; <span lang="en">24h:</span> <b><span data-entity-id="market.price" data-attribute="percent_change_24h" data-unit="%"></span></b>
+                </li>
+                <li class="first-row">
+                    市值: <b><span data-entity-id="market.price" data-attribute="market_cap_usd" data-unit-before="$"></span></b>
+                </li>
+                <li class="second-row">
+                    &#916; <span lang="en">7d:</span> <b><span data-entity-id="market.price" data-attribute="percent_change_7d" data-unit="%"></span></b>
+                </li>
+                <li>
+                    总量: <b><span
+                        data-entity-id="market.price"
+                        data-attribute="total_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{total_supply} VLS"
+                        ></span>萬</b>
+                    最大供應量 <b><span
+                        data-entity-id="market.price"
+                        data-attribute="max_supply"
+                        data-multiplier="0.000001"
+                        data-format="number"
+                        data-fixed-decimals="1"
+                        data-title="{max_supply} VLS"
+                        ></span>萬</b> <span lang="en">VLS</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Overlay footer -->
+    <div class="footer-overlay">
+        <div class="row footer-panel-row">
+            <div class="col-md-12">
+                <div id="console-toggle" class="status-area">
+                    <span class="fa fa-terminal websocket-online" title="Toggle Veles Node Console"></span>
+                    <span class="fa fa-window-close console-area" title="Close Console"></span>
+                </div>
+                <div id="console-maximize" class="status-area console-area">
+                    <span class="fa fa-window-maximize" title="Maximize Console"></span>
+                </div>
+                <div id="mobile-follow-toggle" class="status-area footer-follow-mobile">
+                    <span class="fa brand-color fa-share-alt" title="Veles Core console"></span>
+                    <span class="label">Follow Us</span>
+                </div>
+                <div class="footer-follow-wide">
+                    <ul class="osx-dock">
+                      <li class="active">
+                        <span>Bitcointalk</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                            <i class="fab fa-bitcoin"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>Twitter</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>GitHub</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                            <i class="fab fa-github"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span>Discord</span>
+                        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+                <div id="price-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">價格:</span>
+                    <span data-entity-id="market.price" data-attribute="price_btc" data-format="coin_amount"></span>
+                     <span class="status-label-wide" lang="en">BTC</span>
+                </div>
+                <div id="connection-status" class="status-area">
+                    <span class="fa fa-spinner fa-spin websocket-offline" title="Websocket Status: OFFLINE">
+                    </span>
+                    <span class="fa fa-signal websocket-online" title="Websocket Status: ONLINE"
+                        style="display: none;">
+                    </span>️
+                </div>
+                <div id="chain-tip-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">區塊数:</span>
+                    <b><span data-entity-id="chain.tip" data-attribute="height">0</span></b>
+                </div>
+                <div id="masternodes-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">主節點数量:</span>
+                    <b><span data-entity-id="masternodes" data-attribute="count">0</span></b>
+                    <span class="status-label-short">MNs</span>
+                </div>
+                <div id="chain-pow-status" class="status-area websocket-online-animate">
+                    <span class="status-label-wide">算力:</span>
+                    <span data-entity-id="chain.pow" data-attribute="totalhashrate" data-format="hashrate"></span>
+                </div>
+            </div>
+        </div>
+        <div id="dev-console">
+            <div class="jquery-console-message">Loading blockchain client ...</div>
+        </div>
+        <div id="panel-slide"  class="bg-carbon">
+            <div class="slide-iconset">
+                <a target="_blank" rel="noopener noreferrer" href="https://bitcointalk.org/index.php?topic=5064523">
+                    <i class="fab fa-bitcoin"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/velescore/veles">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/P528fGg">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <!--
+                <a href="https://www.coingecko.com/en/coins/veles">
+                     <i class="fas fa-coins brand"></i>
+                </a>
+                -->
+                <a target="_blank" rel="noopener noreferrer" href="https://masternodecap.com/coins/VLS">
+                     <i class="fas fa-server brand"></i>
+                </a>
+                <!--
+                <a target="_blank" rel="noopener noreferrer" href="https://coinpaprika.com/coin/vls-veles/">
+                    <i class="fas fa-pepper brand"></i>
+                </a>
+                -->
+            </div>
+        </div>
+    </div>
+    <!-- Language specific JS includes -->
+    <script src="js/menuTree.tc.js"></script>
+    <!-- Common JS includes -->
+{%- for js in body.js %}
+    <script src="{{js.src}}"></script>
+    {%- if 'comment' in js -%}
+    <!-- // {{js.comment}} --> 
+    {%- endif -%}
+{% endfor -%}
+</body>
+
+</html>

@@ -2,24 +2,41 @@
 	"title": "Veles Network",
 	"body": {
 		"css": [
-			{"comment": "Font Awesome v5", "href": "https://use.fontawesome.com/releases/v5.0.7/css/all.css"},
-			{"comment": "Material Design Icons", "href": "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"},
-			{"comment": "Bootstrap", "href": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"},
-			{"comment": "DataTables", "href": "https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"},
-			{"href": "css/theme.css"}
+			{"comment": "Font Awesome v5", "href": "https://use.fontawesome.com/releases/v5.6.3/css/all.css"},
+			{"comment": "Bootstrap", "href": "vendor/bootstrap/css/bootstrap.min.css"},
+			{"comment": "jQPlot", "href": "js/src/jquery.jqplot.css"},
+			{"href": "css/custom.css"},
+			{"href": "css/spincube.css"}
 		],
 		"js": [
-			{"comment": "jQuery", "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"},
-			{"comment": "DataTables", "src": "https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"},
-			{"comment": "Bootstrap", "src": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"},
-			{"comment": "ChartJS", "src": "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"},
+			{"comment": "jQuery", "src": "https://code.jquery.com/jquery-3.3.1.js"},
+			{"comment": "CanvasJS", "src": "https://canvasjs.com/assets/script/jquery.canvasjs.min.js"},
+			{"comment": "jQPlot", "src": "js/src/jquery.jqplot.js"},
+			{"src": "js/src/plugins/jqplot.dateAxisRenderer.js"},
+			{"src": "js/src/plugins/jqplot.categoryAxisRenderer.js"},
+			{"src": "js/src/plugins/jqplot.ohlcRenderer.js"},
+			{"src": "js/src/plugins/jqplot.highlighter.js"},
+			{"src": "js/src/plugins/jqplot.cursor.js"},
+			{"src": "js/charts.js"},
 			{"src": "js/nav.js"},
-			{"src": "js/main.js"}
+			{"comment": "Bootstrap", "src": "vendor/bootstrap/js/bootstrap.bundle.min.js"},
+			{"src": "js/websocket.js"},
+			{"src": "js/websocket-ui.js"},
+			{"src": "js/dapi.js"},
+			{"src": "js/footer.js"},
+			{"src": "js/console.js"},
+			{"comment": "Index effect", "src": "js/TweenLite.min.js"},
+			{"comment": "Index effect", "src": "js/EasePack.min.js"},
+			{"src": "js/header.js"},
+			{"src": "js/index.js"}
 		]
 	},
 	"app": {
 		"version": "0.0.02",
 		"copyright_year": 2020,
 		"copyright_year_roman": "MMXX"
+	},
+	"footer": {
+		"motto": "\"Give a man a gun and he can rob a bank, but give a man a bank, and he can rob the world.\" — Tyrell Wellick"
 	}
 }
