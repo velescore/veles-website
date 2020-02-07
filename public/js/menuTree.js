@@ -117,18 +117,30 @@ var menuTree = [
 		'title': 'Resources',
 		'items': [
 			{ 'title': 'Coin Specs' },
-			{ 'title': 'Whitepaper' },
-			{ 'title': 'Crowdfundings'},
+			{ 'title': 'Whitepaper PDF' },
+			{ 'title': 'Masternode Guide PDF' },
 			{ 'title': 'Exchanges' },
 			{ 'title': 'Mining Pools'},
 			{ 'title': 'External Services'},
+			{ 'title': 'Crowdfundings'},
 			{ 'title': 'FAQ' }
 		]
 	},
 	{
 		'title': 'Wiki',
 		'items': [
-			{ 'title': 'Masternode-guide' },
+			{ 
+				'title': 'Index', 
+				'page': 'wiki:Home' 
+			},
+			{ 
+				'title': 'Masternode Setup Guide', 
+				'page': 'wiki:Masternode-Setup-Guide' 
+			},
+			{ 
+				'title': 'Whitepaper', 
+				'page': 'wiki:Whitepaper' 
+			}
 		]
 	},
 	{

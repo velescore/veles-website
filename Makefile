@@ -11,6 +11,9 @@ build:
 	@make assert_python_present > /dev/null
 	@echo "Rebuilding from templates ..."
 	@$(PYTHON_CMD) manage.py rebuild index
+	@make pull_wiki
+	@make build_wiki
+	@echo "[ Success ]"
 
 assert_python_present:
 	@command -v $(PYTHON_CMD) > /dev/null || ( command -v apt-get > /dev/null && apt-get install -qy python3 || ("Error: Python3 is not installed" ; exit 1 ))
@@ -27,6 +30,8 @@ pull_wiki:
 build_wiki:
 	@echo -n "Compiling Wiki pages [English] ... "
 	@ls data/wiki/en | xargs -I {} md-to-html -i data/wiki/en/{} -o public/wiki/en/{}.html
+	@sed -i 's/<body>/<body><div id="content" class="wiki-page"><div class="container">/g' public/wiki/*/*
+	@sed -i 's/<\/body>/<\/div><\/div><\/body>/g' public/wiki/*/*
 	@echo -e "done\n"
 	@ls public/wiki/en
 

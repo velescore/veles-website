@@ -6,7 +6,8 @@
 			{"comment": "Bootstrap", "href": "vendor/bootstrap/css/bootstrap.min.css"},
 			{"comment": "jQPlot", "href": "js/src/jquery.jqplot.css"},
 			{"href": "css/custom.css"},
-			{"href": "css/spincube.css"}
+			{"href": "css/spincube.css"},
+			{"href": "css/wiki.css"}
 		],
 		"js": [
 			{"comment": "jQuery", "src": "https://code.jquery.com/jquery-3.3.1.js"},
