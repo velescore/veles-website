@@ -116,14 +116,19 @@ var menuTree = [
 	{
 		'title': 'Resources',
 		'items': [
-			{ 'title': 'Coin-specs' },
+			{ 'title': 'Coin Specs' },
 			{ 'title': 'Whitepaper' },
-			{ 'title': 'Masternode-guide' },
-			{ 'title': 'Exchanges' },
-			{ 'title': 'Mining-pools'},
-			{ 'title': 'External-services'},
 			{ 'title': 'Crowdfundings'},
+			{ 'title': 'Exchanges' },
+			{ 'title': 'Mining Pools'},
+			{ 'title': 'External Services'},
 			{ 'title': 'FAQ' }
+		]
+	},
+	{
+		'title': 'Wiki',
+		'items': [
+			{ 'title': 'Masternode-guide' },
 		]
 	},
 	{

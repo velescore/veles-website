@@ -1,8 +1,8 @@
 PYTHON_CMD = $(shell python3 --version | grep "Python 3" > /dev/null && echo "python3" || (command -v python > /dev/null && echo "python"))
 PIP_CMD = $(shell pip3 --version | grep "python 3" > /dev/null && echo "pip3" || (command -v pip > /dev/null && echo "pip"))
 
-LANG := C.UTF-8
-LC_ALL := C.UTF-8
+LANG := en_US.UTF-8
+LC_ALL := en_US.UTF-8
 
 export LANG
 export LC_ALL
@@ -19,6 +19,16 @@ init:
 	make assert_python_present
 	@echo "Installing Python dependencies ..."
 	$(PIP_CMD) install -r requirements.txt || $(PIP_CMD) install -r requirements.txt --user
+
+pull_wiki:
+	@rm -rf data/wiki ; mkdir data/wiki
+	git clone https://git.veles.network/velesnetwork/veles-wiki.wiki.git data/wiki/en
+
+build_wiki:
+	@echo -n "Compiling Wiki pages [English] ... "
+	@ls data/wiki/en | xargs -I {} md-to-html -i data/wiki/en/{} -o public/wiki/en/{}.html
+	@echo -e "done\n"
+	@ls public/wiki/en
 
 vars:
 	echo $(PIP_CMD)
