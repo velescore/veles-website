@@ -1,0 +1,34 @@
+/*
+ * Veles Core Wiki stylesheet
+ *
+ * Copyright (C) 2019-2020 The Veles Core developers
+ *
+ * This program is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ */
+.wiki-page section {
+  padding: 50px;
+}
+
+.wiki-page img {
+  max-width: 90%;
+}
+
+.article-info {
+	display: block;
+	padding: 20px 20px 35px 20px;
+}
+
+.article-info span { 
+	float: right;
+	color: #bbb;
+}
+
+.article-info a {
+	float: right;
+	border-left: 1px solid #6b6767;
+	margin-left: 10px;	
+	padding-left: 10px;
+}

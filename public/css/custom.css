@@ -2056,8 +2056,7 @@ div.roadmap-delay-info {
 	line-height: 36px;
 	margin: auto;
 	position: relative;
-	margin-top: 15px;
-	margin-bottom: 25px;
+	margin: 15px 110px 25px 110px;
 	font-size: 16px;
 }
 

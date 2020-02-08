@@ -99,7 +99,7 @@ var velesSinglePageApp = {
 				pagePrefix = page.split(':')[0];
 
 			if (pagePrefix == 'wiki') { // better explicitly specify known directories
-				pageFile = page.substring(page.indexOf(':') + 1) + '.md.html';
+				pageFile = page.substring(page.indexOf(':') + 1) + '.html';
 				pageDir = 'wiki';
 			}
 			
