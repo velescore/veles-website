@@ -13,6 +13,7 @@ import os
 import argparse
 
 from app.builder import WebPageBuilder
+from app.wiki import WikiBuilder
 
 # Basic commandline interface
 def main():
@@ -22,9 +23,7 @@ def main():
     parser.add_argument('--path', default=package_dir,
         help='path to the veles-website package base directory')
     parser.add_argument('action', 
-        help='supported actions: rebuild')
-    parser.add_argument('page', nargs='?',
-        help='page name to manage, needed for "rebuild" action')
+        help='supported actions: build-index, build-wiki')
     args = parser.parse_args()
 
     # Sanity check for the path argument
@@ -38,12 +37,13 @@ def main():
         raise ValueError('invalid --path: not a veles-website base directory: {}'.format(args.path))
 
     # Actions
-    if args.action == 'rebuild':
-        if not args.page:
-            raise ValueError('action "rebuild" requires second positional argument [page]')
-
+    if args.action == 'build-index':
         builder = WebPageBuilder(args.path)
-        builder.build(args.page)
+        builder.build('index')
+
+    elif args.action == 'build-wiki':
+        builder = WikiBuilder(args.path)
+        builder.build_articles()
 
     else:
         raise ValueError('unsupported action: {}'.format(args.action))

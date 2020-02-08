@@ -1,0 +1,36 @@
+{#-
+Veles Core Website
+
+Copyright (C) 2019 - 2020 The Veles Core developers
+
+This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+-#}
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    {# Anything above doesn't get shown in the app, just should be valid HTML #}
+    <div id="content" class="wiki-page">
+<!--
+# Last update:
+Author:   {{article.author}}
+Date:     {{article.updated_at}}
+Commit:	  {{article.commit}}
+
+{{article.commit_message}}
+-->
+    	<div class="container">
+			<div class="article-info">
+				<a href="https://git.veles.network/velesnetwork/veles-wiki/wiki/{{article.alias}}/_revision" target="_blank">
+					History
+				</a>
+    			<span>Last update {{article.updated_at}} by {{article.author}}</span>
+    		</div>
+        	{{article.html}}
+        </div>
+    </div>
+</body>
+</html>

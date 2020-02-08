@@ -10,9 +10,9 @@ export LC_ALL
 build:
 	@make assert_python_present > /dev/null
 	@echo "Rebuilding from templates ..."
-	@$(PYTHON_CMD) manage.py rebuild index
+	@$(PYTHON_CMD) manage.py build-index
 	@make pull_wiki
-	@make build_wiki
+	@$(PYTHON_CMD) manage.py build-wiki
 	@echo "[ Success ]"
 
 assert_python_present:
@@ -26,15 +26,6 @@ init:
 pull_wiki:
 	@rm -rf data/wiki ; mkdir -p data/wiki
 	git clone https://git.veles.network/velesnetwork/veles-wiki.wiki.git data/wiki/en
-
-build_wiki:
-	@echo -n "Compiling Wiki pages [English] ... "
-	@rm -rf public/wiki/en ; mkdir -p public/wiki/en
-	@ls data/wiki/en | xargs -I {} md-to-html -i data/wiki/en/{} -o public/wiki/en/{}.html
-	@sed -i 's/<body>/<body><div id="content" class="wiki-page"><div class="container">/g' public/wiki/*/*
-	@sed -i 's/<\/body>/<\/div><\/div><\/body>/g' public/wiki/*/*
-	@echo -e "done\n"
-	@ls public/wiki/en
 
 vars:
 	echo $(PIP_CMD)
