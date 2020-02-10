@@ -18,6 +18,7 @@ var velesSinglePageApp = {
 	'parallaxBottom': null,
 
 	'go': function(page = 'index') {
+		console.log("GO:" + page);
 		var pageHash = null;
 		var pageLanguage = self.language;
 
@@ -42,8 +43,8 @@ var velesSinglePageApp = {
 		if (page == '')
 			page = (this.currentPage) ? this.currentPage : 'index';
 
-		// just scroll to top if its the same page
-		if (this.currentPage == page || page == '') {
+		// just scroll to top if its the same page in the same language
+		if ((this.currentPage == page && this.language == pageLanguage) || page == '') {
 			if (pageHash && $(pageHash).length) {
 				$('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
 			} else {
@@ -121,6 +122,12 @@ var velesSinglePageApp = {
 			$('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
 		else
 			window.scrollTo(0,0);
+
+		// update language-selector menu to point to other language mutations
+		// of the current page		
+		$('#languageSelectorBar').find('a').each(function(){
+			console.log($(this).attr('href', $(this).attr('href').replace('index', velesSinglePageApp.currentPage))); 
+		});
 	},
 
 	'autoAddIds': function() {
