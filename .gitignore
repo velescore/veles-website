@@ -1,7 +1,3 @@
 __pycache__
 public/index.*.html
-data/wiki/*
-public/wiki/en/*
-public/wiki/es/*
-public/wiki/zh/*
-public/wiki/tc/*
+public/wiki/*

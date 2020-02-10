@@ -131,15 +131,15 @@ var menuTree = [
 		'items': [
 			{ 
 				'title': 'Index', 
-				'page': 'wiki:Home' 
+				'page': 'Home.wiki' 
 			},
 			{ 
 				'title': 'Masternode Setup Guide', 
-				'page': 'wiki:Masternode-Setup-Guide' 
+				'page': 'Masternode-Setup-Guide.wiki' 
 			},
 			{ 
 				'title': 'Whitepaper', 
-				'page': 'wiki:Whitepaper' 
+				'page': 'Whitepaper.wiki' 
 			}
 		]
 	},

@@ -10,6 +10,7 @@ of the License, or (at your option) any later version.
 """
 import codecs
 import os
+import re
 
 import jinja2
 import markdown
@@ -35,13 +36,18 @@ class MarkdownTemplateView(AbstractView):
         """Creates the object, needs path to the jinja template directory"""
         self.tpl_path = template_path
 
-    def render(self, variables = {}):
+    def render(self, variables = {}, language = 'en'):
         """Render the dashboard view"""
         input_file = codecs.open(self.tpl_path, mode="r", encoding="utf-8")
         text = input_file.read()
         html = markdown.markdown(text, extensions=[
-            WikiLinkExtension(base_url='wiki:', end_url='.html'),
+            WikiLinkExtension(base_url='', end_url='.wiki.' + language + '.html', build_url = self.build_url),
             'meta'
             ])
 
         return str(html)
+
+    def build_url(self, label, base, end):
+        """ Build a url from the label, a base, and an end. """
+        clean_label = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '-', label)
+        return '{}{}{}'.format(base, clean_label, end)

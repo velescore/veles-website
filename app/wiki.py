@@ -18,10 +18,10 @@ from app.builder import WebPageBuilder
 from app.view import MarkdownTemplateView
 
 class WikiBuilder(WebPageBuilder):
-	articles_dir = 'data/wiki'
+	articles_dir = 'public/wiki/articles'
 	article_tpl = 'wiki-article'
 	# Overrides of parent's values
-	html_dir = 'public/wiki'
+	html_dir = 'public/wiki/pages'
 	lang_in_extension = False
 
 	""" Constructor, needs base path of website """
@@ -40,7 +40,7 @@ class WikiBuilder(WebPageBuilder):
 					view = MarkdownTemplateView(filepath)
 					article = {
 						'alias': name_parts[0],
-						'html': view.render()
+						'html': view.render(language = lang)
 					}
 					article.update(self.get_article_metadata(filepath))
 

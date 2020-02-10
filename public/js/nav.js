@@ -17,24 +17,31 @@ var velesSinglePageApp = {
 	'scrollLastPos': 0,
 	'parallaxBottom': null,
 
-	'go': function(page = 'index') {
-		console.log("GO:" + page);
+	'go': function(page) {
+		//console.log("GO:" + page);
 		var pageHash = null;
 		var pageLanguage = self.language;
+		var pageType = null;
+		var pageNameParts = page.split('.');
 
-		if (page.indexOf('#') != -1) {
-			pageHash = '#' + page.split('#')[1];
-			page = page.split('#')[0];
-		}
+		// parse "extensions" separated by dots in page's name
+		if (pageNameParts.length > 1)
+			pageLanguage = pageNameParts.pop();	// pop language part
 
-		if (page.indexOf('.') != -1) {
-			 pageLanguage = page.split('.')[1];
-			 page = page.split('.')[0];
-		 }
+		if (pageNameParts.length > 1)
+			pageType = pageNameParts[pageNameParts.length - 1];	// don't pop, keep in page's name
+
+		page = pageNameParts.join('.');
 
 		// check for supported languages
 		if (!this.cachedPages.hasOwnProperty(pageLanguage)) {
 			pageLanguage = this.defaultLanguage;
+		}
+
+		// pages with hash just to scroll to target anrchor
+		if (page.indexOf('#') != -1) {
+			pageHash = '#' + page.split('#')[1];
+			page = page.split('#')[0];
 		}
 
 		//} else if (window.location.hash)
@@ -53,7 +60,9 @@ var velesSinglePageApp = {
 			return;
 		}
 
-		// cache the previous HTML, index is always cached
+		// cache the previous HTML, remove classname that marks the events has been bound,
+		// as we'll need to restore them again after loading from cache.
+		$('#content-wrapper').find('.spa').removeClass('spa');
 		this.cachedPages[this.language][this.currentPage] = $('#content-wrapper').html();
 
 		// change the current page pointers and links
@@ -90,21 +99,13 @@ var velesSinglePageApp = {
 			velesSinglePageApp.initPageAnimations();
 			velesSinglePageApp.bindEvents();
 			velesChain.replayEvents();
-
 		} else {
-			var pageDir = 'pages';
-			var pageFile = page + '.html';
-			var pagePrefix = null;
-	
-			if (page.indexOf(':') != -1)
-				pagePrefix = page.split(':')[0];
+			var pageSource = './pages/';
 
-			if (pagePrefix == 'wiki') { // better explicitly specify known directories
-				pageFile = page.substring(page.indexOf(':') + 1) + '.html';
-				pageDir = 'wiki';
-			}
-			
-			$('#content-wrapper').load('./' + pageDir + '/' + this.language + '/' + pageFile + ' #content', null, function() {
+			if (pageType == 'wiki')
+				pageSource = './wiki/pages/';
+
+			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
 				velesSinglePageApp.hideOverlay();
 				velesSinglePageApp.hideMobileMenu();
 				velesSinglePageApp.runPageHook('init');
@@ -200,7 +201,7 @@ var velesSinglePageApp = {
 	},
 
 	'getAddrPageLanguage': function(page) {
-		return (page.indexOf('.') != -1) ? page.split('.')[1] : this.defaultLanguage;
+		return (page.indexOf('.') != -1) ? $(page.split('.')).get(-1) : this.defaultLanguage;
 	},
 
 	'getTitle': function(page = null) {
@@ -248,10 +249,13 @@ var velesSinglePageApp = {
 		}
 
 		// Click events on navigation links
-		$('.nav-link').not('.dropdown-toggle').add('.navbar-brand').add('.dropdown-item')
+		$('.nav-link').not('.dropdown-toggle')
+			.add('.navbar-brand')
+			.add('.dropdown-item')
 			.add('.nav-vertical a').add('.breadcrumb-item a')
 			.add('.sidebar a')
 			.add('a.nav-page')
+			.add('a.wikilink')
 			.not('.nav-external-app').not('.spa').click(function(e) {
 		   e.preventDefault();
 		   velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
