@@ -24,10 +24,13 @@ Commit:	  {{article.commit}}
 -->
     	<div class="container">
 			<div class="article-info">
-				<a href="https://git.veles.network/velesnetwork/veles-wiki/wiki/{{article.alias}}/_revision" target="_blank">
-					History
-				</a>
-    			<span>Last update {{article.updated_at}} by {{article.author}}</span>
+                <a href="wiki/articles/en/{{article.alias}}.md" target="_blank">
+                    Raw
+                </a>
+                <a href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
+                    History
+                </a>
+    			<span>Last update {{article.updated_at}}{# by {{article.author}} # unused, tiny icon could be fine #}</span>
     		</div>
         	{{article.html}}
         </div>
