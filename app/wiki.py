@@ -31,16 +31,25 @@ class WikiBuilder(WebPageBuilder):
 
 	def build_articles(self):
 		""" Build all wiki pages, for each language """
+		wiki_config = self.load_static_vars(os.path.join(self.path, 'wiki.json'))
+
 		for lang in os.listdir(os.path.join(self.path, self.articles_dir)):
+			lang_config = copy.copy(wiki_config)
+
+			# Load extra language-specific variables
+			if os.path.isfile(os.path.join(self.path, self.tpl_dir, lang, 'wiki.json')):
+				lang_config.update(self.load_static_vars(os.path.join(self.path, self.tpl_dir, lang, 'wiki.json')))
+
 			for filename in os.listdir(os.path.join(self.path, self.articles_dir, lang)):
 				name_parts = os.path.splitext(filename)
 
 				if name_parts[1] == '.md':
 					filepath = os.path.join(self.path, self.articles_dir, lang, filename)
-					view = MarkdownTemplateView(filepath)
+					view = MarkdownTemplateView(filepath, lang_config)
 					article = {
 						'alias': name_parts[0],
-						'html': view.render(language = lang)
+						'html': view.render(language = lang),
+						'meta': view.get_meta_info()
 					}
 					article.update(self.get_article_metadata(filepath))
 

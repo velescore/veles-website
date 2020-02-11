@@ -13,7 +13,7 @@ of the License, or (at your option) any later version.
 <head></head>
 <body>
     {# Anything above doesn't get shown in the app, just should be valid HTML #}
-    <div id="content" class="wiki-page">
+    <div id="content" class="wiki-page wiki-{{article.alias | lower}}">
 <!--
 # Last update:
 Author:   {{article.author}}
@@ -25,13 +25,47 @@ Commit:	  {{article.commit}}
     	<div class="container">
 			<div class="article-info">
                 <a href="wiki/articles/en/{{article.alias}}.md" target="_blank">
-                    Raw
+                    Source
                 </a>
                 <a href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
                     History
                 </a>
     			<span>Last update {{article.updated_at}}{# by {{article.author}} # unused, tiny icon could be fine #}</span>
     		</div>
+{% if article.meta|length %}
+            <table class="infobox">
+                <caption>{{article.meta.name}}</caption>
+    {% if 'image' in article.meta %}
+                <tr>
+                    <td colspan="2"><img src="wiki{{article.meta.image}}" alt="{{article.meta.name}}" /></td>
+                </tr>
+    {% endif %}
+
+    {% for name, value in article.meta.items() %}
+        {% if name not in ['name', 'image'] %}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>
+            {# Make links clickable, also relative ones #}
+            {% if value.startswith('/') or value.startswith('https://') %}
+                        <a href="{{value}}" target="_blank">
+                {# Magically shorten the value #}
+                {% if value|length > 20 %}
+                    /{{value | basename}}
+                {% else %}
+                    {{value | urlparse(netloc)}}
+                {% endif %}
+                        </a>
+            {% else %}
+                        {{value}}
+            {% endif %}        
+                    </td>
+                </tr>
+        {% endif %}
+    {% endfor %}
+                <tr><td colspan="2">&nbsp;</td></tr>
+            </table>
+{% endif %}
         	{{article.html}}
         </div>
     </div>

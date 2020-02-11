@@ -42,6 +42,7 @@
     border: 1px solid transparent;
     border-radius: .25rem;
     background: #00000066;
+    display: flow-root;	/* not mess with boxes on the right */
 }
 
 .admonition.warning .admonition-title,
@@ -63,6 +64,7 @@
 /* Wiki tables */
 table {
 	min-width: 50%;
+	margin-bottom: 20px;
 }
 
 table td,
@@ -83,6 +85,8 @@ figure {
 	clear: both;
 	background: #22222288;
 	border: 1px solid #e4b99c55;
+	margin-left: 20px;
+	margin-bottom: 20px;
 	padding: 5px;
 }
 
@@ -96,20 +100,56 @@ figcaption {
 	padding: 3px 3px 0 3px;
 }
 
+/* Article infobox on the page's right, as on Wikipedia */
+.infobox {
+	width: 260px;
+	min-width: 250px;
+	float: right;
+	clear: both;
+	background: #22222288;
+	border: 1px solid #e4b99c55;
+	font-size: 13px;
+	padding: 5px;
+	margin: 20px 0 20px 20px;
+}
 
+.infobox img {
+	max-width: 150px;
+}
 
-/* 11 - 18 jula elena4ka
-co som ja posielala pani prieloznej hana bodka prilozna
+table.infobox td,
+table.infobox th {
+	border: none;
+	line-height: 17px;
+}
 
-prilozit pani bankovej
+table.infobox tr:first-of-type {
+	text-align: center;
+}
 
-dankova emka 2017 v beatrice
+table.infobox tr td:first-of-type {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 20px;
+}
 
+table.infobox tr:last-of-type td {
+	line-height: 5px;	/* hack, with extra column, but theese tables ... */
+}
 
+.infobox caption {
+    font-size: 125%;
+    font-weight: 600;
+    color: white;
+    padding: 0.2em;
+    text-align: center;
+    caption-side: top;
+}
 
-
-gavlakova spa
-
-
-
-*/
+/*
+ * Page specific styles
+ */
+.wiki-masternode-setup-guide ul {
+	list-style: none;
+}
