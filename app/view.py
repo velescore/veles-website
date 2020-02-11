@@ -31,6 +31,8 @@ class JinjaTemplateView(AbstractView):
         return tpl.render(**variables).strip()
 
 class MarkdownTemplateView(AbstractView):
+    assets_base_url = 'wiki/'
+
     """View for the index page of dashboard, requires template dir path"""
     def __init__(self, template_path):
         """Creates the object, needs path to the jinja template directory"""
@@ -44,8 +46,9 @@ class MarkdownTemplateView(AbstractView):
             WikiLinkExtension(base_url='', end_url='.wiki.' + language + '.html', build_url = self.build_url),
             'meta'
             ])
+        html = str(html).replace('src="/', 'src="' + self.assets_base_url)
 
-        return str(html)
+        return html
 
     def build_url(self, label, base, end):
         """ Build a url from the label, a base, and an end. """

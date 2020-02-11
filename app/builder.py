@@ -26,6 +26,9 @@ class WebPageBuilder(object):
         self.page_extension = page_extension
 
     def save_result(self, filename, result):
+        if not os.path.isdir(os.path.dirname(filename)):
+            os.makedirs(os.path.dirname(filename))
+
         with codecs.open(filename, 'w', 'utf-8') as fh:
             fh.write(result)
 
