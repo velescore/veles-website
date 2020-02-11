@@ -24,15 +24,8 @@ init:
 	$(PIP_CMD) install -r requirements.txt || $(PIP_CMD) install -r requirements.txt --user
 
 pull_wiki:
-	@rm -rf public/wiki 2> /dev/null
-	@mkdir -p public/wiki/articles
-	git clone https://git.veles.network/velesnetwork/veles-wiki.wiki.git public/wiki/articles/en
-	git clone https://git.veles.network/velesnetwork/veles-wiki-es.wiki.git public/wiki/articles/es
-	git clone https://git.veles.network/velesnetwork/veles-wiki-zh.wiki.git public/wiki/articles/zh
-	git clone https://git.veles.network/velesnetwork/veles-wiki-tc.wiki.git public/wiki/articles/tc
-	@mkdir -p public/wiki/assets
-	git clone https://git.veles.network/velesnetwork/veles-wiki.git public/wiki/assets
-	@mkdir -p public/wiki/pages/en ; mkdir public/wiki/pages/es ; mkdir public/wiki/pages/zh ; mkdir public/wiki/pages/tc
+	@ls public/wiki/.git > /dev/null || ( rm -rf public/wiki ; git clone https://github.com/velescore/veles-wiki.git public/wiki )
+	@cd public/wiki && git pull origin master || ( git reset --hard 4e44f68be4445443062f994d2b4f5b88605f4859 && git pull origin master )
 
 vars:
 	echo $(PIP_CMD)
