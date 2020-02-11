@@ -8,6 +8,7 @@ modify it under the terms of the GNU General Public License
 as published by the Free Software Foundation, either version 3
 of the License, or (at your option) any later version.
 """
+
 import codecs
 import os
 import re
@@ -17,6 +18,8 @@ import markdown
 from markdown.extensions.wikilinks import WikiLinkExtension
 
 from app.interfaces import AbstractView
+from app.mdextensions import FigureFromTitleExtension
+
 
 class JinjaTemplateView(AbstractView):
     """View for the index page of dashboard, requires template dir path"""
@@ -31,7 +34,10 @@ class JinjaTemplateView(AbstractView):
         return tpl.render(**variables).strip()
 
 class MarkdownTemplateView(AbstractView):
-    assets_base_url = 'wiki/'
+    replacements = [
+        ['src="/', 'src="wiki/'],
+        ['href="/', 'href="wiki/'],
+        ]
 
     """View for the index page of dashboard, requires template dir path"""
     def __init__(self, template_path):
@@ -42,11 +48,16 @@ class MarkdownTemplateView(AbstractView):
         """Render the dashboard view"""
         input_file = codecs.open(self.tpl_path, mode="r", encoding="utf-8")
         text = input_file.read()
-        html = markdown.markdown(text, extensions=[
+        html = str(markdown.markdown(text, extensions=[
             WikiLinkExtension(base_url='', end_url='.wiki.' + language + '.html', build_url = self.build_url),
-            'meta'
-            ])
-        html = str(html).replace('src="/', 'src="' + self.assets_base_url)
+            FigureFromTitleExtension(),
+            'meta',
+            'admonition',
+            'tables'
+            ]))
+
+        for item in self.replacements:
+            html = html.replace(item[0], item[1])
 
         return html
 
