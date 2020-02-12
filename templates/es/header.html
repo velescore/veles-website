@@ -49,6 +49,10 @@
                     </li>
                 </ul>
                 <div class="sidebar">
+                    <select class="form-control wikiAutoComplete" name="wiki-select"
+                        placeholder="Type to search the wiki"   {# TODO: translate #}
+                        autocomplete="off"></select>
+                    <span id="wikiNoResultsText" style="display: none;">No results from wiki</span> {# TODO: translate #}
                     <h4 data-id="page.title"></h4>
                     <ul>
                         <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>

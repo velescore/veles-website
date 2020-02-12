@@ -13,7 +13,7 @@ import os
 import argparse
 
 from app.builder import WebPageBuilder
-from app.wiki import WikiBuilder
+from app.wiki.builder import WikiBuilder
 
 # Basic commandline interface
 def main():

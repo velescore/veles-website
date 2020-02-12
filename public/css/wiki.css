@@ -154,6 +154,9 @@ table.infobox img {
 	margin-top: 5px;
 }
 
+.infobox a {
+	font-size: 12px;
+}
 
 /*
  * Page specific styles
