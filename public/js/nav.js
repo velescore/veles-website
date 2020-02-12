@@ -370,8 +370,16 @@ var velesSinglePageApp = {
 		$('.sidebar ul').html('');
 
 		if (!this.menuTreeIndex.hasOwnProperty(page)){
-			console.log('[Sidebar] Page tree not indexed: ' + page);
-			return;
+			// auto-"index" wiki pages
+			if (page.indexOf('.') && page.split('.')[1] == 'wiki') {
+				console.log('[Sidebar] Page tree auto-indexing: ' + page);
+				this.menuTreeIndex[page] = {
+					'parent': 'wiki'
+				}
+			} else {
+				console.log('[Sidebar] Page tree not indexed: ' + page);
+				return;
+			}
 		}
 
 		if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
