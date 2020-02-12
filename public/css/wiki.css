@@ -154,6 +154,27 @@ table.infobox img {
 /*
  * Page specific styles
  */
-.wiki-masternode-setup-guide ul {
-	list-style: none;
+.wiki-exchanges ul {
+    list-style: none;
+    font-size: 22px;
+    letter-spacing: 2px;
+    min-width: 70%;
+}
+
+.wiki-exchanges li img{
+	max-height: 64px;
+	float: right;
+	margin-top: -15px;
+	margin-right: -15px;
+} 
+
+.wiki-exchanges li {
+	height: 64px;
+	background: #22222288;
+	overflow: hidden;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+.wiki-exchanges li:hover(even) {
+	background: #3a3a3a88;
 }
