@@ -37,7 +37,7 @@ Commit:	  {{article.commit}}
                 <caption>{{article.meta.name}}</caption>
     {% if 'image' in article.meta %}
                 <tr>
-                    <td colspan="2"><img src="wiki{{article.meta.image}}" alt="{{article.meta.name}}" /></td>
+                    <td colspan="2"><img src="{{ 'wiki/' if article.meta.image.startswith('/') }}{{article.meta.image}}" alt="{{article.meta.name}}" /></td>
                 </tr>
     {% endif %}
 

@@ -147,6 +147,10 @@ table.infobox tr:last-of-type td {
     caption-side: top;
 }
 
+table.infobox img {
+	margin-top: 5px;
+}
+
 /*
  * Page specific styles
  */
