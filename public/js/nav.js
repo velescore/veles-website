@@ -16,9 +16,13 @@ var velesSinglePageApp = {
 	'scrollMinStep': 50,
 	'scrollLastPos': 0,
 	'parallaxBottom': null,
+	'wikiIndex': null,
+	'wikiIndexUrl': 'wiki/pages/{language}/pages.json',
 
 	'go': function(page) {
-		//console.log("GO:" + page);
+		if (!page)	// prevent error if wrong link/element's event gets bound with this method 
+			return;
+
 		var pageHash = null;
 		var pageLanguage = self.language;
 		var pageType = null;
@@ -162,10 +166,17 @@ var velesSinglePageApp = {
 	},
 
 	'addPageHook': function(pageName, hookName, callback) {
+		if (!pageName)
+			pageName = '*';
+
 		if (!this.pageHooks.hasOwnProperty(pageName))
 			this.pageHooks[pageName] = {}
 
 		this.pageHooks[pageName][hookName] = callback;
+	},
+
+	'addHook': function(hookName, callback) {
+		this.addPageHook(null, hookName, callback);
 	},
 
 	'runPageHook': function(hookName, pageName = null) {
@@ -174,6 +185,10 @@ var velesSinglePageApp = {
 
 		if (this.pageHooks.hasOwnProperty(pageName) && this.pageHooks[pageName].hasOwnProperty(hookName))
 			this.pageHooks[pageName][hookName]();
+
+		// events applicable for all pages
+		if (this.pageHooks.hasOwnProperty('*') && this.pageHooks['*'].hasOwnProperty(hookName))
+			this.pageHooks['*'][hookName]();
 	},
 
 	'setActive': function(page = null) {
@@ -252,11 +267,14 @@ var velesSinglePageApp = {
 		$('.nav-link').not('.dropdown-toggle')
 			.add('.navbar-brand')
 			.add('.dropdown-item')
-			.add('.nav-vertical a').add('.breadcrumb-item a')
+			.add('.nav-vertical a')
+			.add('.breadcrumb-item a')
 			.add('.sidebar a')
 			.add('a.nav-page')
 			.add('a.wikilink')
-			.not('.nav-external-app').not('.spa').click(function(e) {
+			.not('.bootstrap-autocomplete a')	// just in case
+			.not('.nav-external-app')
+			.not('.spa').click(function(e) {
 		   e.preventDefault();
 		   velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
 		}).addClass('spa');
@@ -600,11 +618,73 @@ var velesSinglePageApp = {
 		}
 	},
 
+	'initWikiAutocomplete': function() {
+		// Pre-load the article index first, as the list is not intended to be large
+		$.getJSON(this.wikiIndexUrl.replace('{language}', this.language), function (data) {
+			velesSinglePageApp.wikiIndex = data;
+		});
+
+		// Set-up autocomplete
+		$('.wikiAutoComplete').autoComplete({
+			'minLength': 1,
+			'autoSelect': true,
+			'resolver': 'custom',
+			'events': {
+				'search': function(qry, callback, origJQElement) {
+					if (!velesSinglePageApp.wikiIndex) {
+						console.log('Warning: wikiAutoComplete not ready yet')
+						callback([])
+						return;
+					}
+
+					var queryResult = [];
+					var lastAdded = -1;
+
+					for (var i = velesSinglePageApp.wikiIndex.length - 1; i >= 0; i--) {
+						var item = velesSinglePageApp.wikiIndex[i];
+						var words = item['title'].toLowerCase().split(' ');
+
+						// search every word of the item
+						for (var j = words.length - 1; j >= 0; j--) {
+							if (words[j].substring(0, qry.length) == qry.toLowerCase()) {
+								queryResult.push({'value': item['page'], 'text': item['title']})
+							}
+						}
+					}
+					callback(queryResult);
+				}
+			}
+		});
+
+		// Bind events
+		if (!this.eventsBound.hasOwnProperty('wiki-autocomplete') || !this.eventsBound['wiki-autocomplete']) {
+			$('.wikiAutoComplete').focusin(function(){
+				$('.sidebar').addClass('menu-disabled');
+			});
+			$('.wikiAutoComplete').focusout(function(){
+				$('.sidebar').removeClass('menu-disabled');
+			});
+			$('.wikiAutoComplete').on('autocomplete.select', function(el,item) {
+				// Got to the selected wiki page
+				if (item.value != velesSinglePageApp.currentPage) {
+					$('.wikiAutoComplete').val('loading ...');
+					velesSinglePageApp.addHook('init', function() { $('.wikiAutoComplete').val(''); });
+					window.setTimeout(function() { $('.wikiAutoComplete').val('') }, 5000);	// just in case something goes very wrong ... 
+					velesSinglePageApp.go(item.value + '.' + velesSinglePageApp.language);
+				} else {
+					$('.wikiAutoComplete').val('[ The page is already open ]');
+					window.setTimeout(function() { $('.wikiAutoComplete').val('') }, 1000);
+					window.scrollTo(0,0);
+				}
+			});
+			this.eventsBound['wiki-autocomplete'] = true;
+		}
+	},
+
 	'start': function() {
 		var pageAddr = this.detectCurrentPageAddr();
 		this.language = this.getAddrPageLanguage(pageAddr);
 		this.currentPage = 'index';
-
 /*
 		// Maintenance mode
 		if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
@@ -615,7 +695,6 @@ var velesSinglePageApp = {
 			return;
 		}
 */
-
 		this.buildMenus();
 
 		// only the index is pre-loaded
@@ -634,6 +713,9 @@ var velesSinglePageApp = {
 		} else {
 			this.go(pageAddr + window.location.hash);
 		}
+
+		// needs to be done only once
+		this.initWikiAutocomplete();
 	}
 }
 

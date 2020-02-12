@@ -497,7 +497,8 @@ div#brand-text {
 	border-left: 4px solid transparent;
 }
 
-.dropdown-item:hover {
+.dropdown-item:hover,
+.dropdown-item.active {
 	color: #fff;
 	border-left: 4px solid #F19B7E;
 	background-color: rgba(100, 100, 100, 0.3)
@@ -2041,6 +2042,34 @@ div.roadmap-delay-info {
 	color: #fff;
 	border: 0;
 }
+
+.sidebar .menu-item,
+.sidebar .submenu-item {
+	opacity: 1;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+.sidebar.menu-disabled .menu-item,
+.sidebar.menu-disabled .submenu-item {
+	opacity: 0;
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+	color: black;
+}
+
+/* Autocomplete */
+.sidebar .wikiAutoComplete {
+	margin-left: 23px;
+    margin-top: 3px;
+}
+.sidebar .bootstrap-autocomplete.dropdown-menu {
+	margin-top: 4px;
+}
+
 
 /* end of sidebar */
 

@@ -35,29 +35,41 @@ class WikiBuilder(WebPageBuilder):
 
 		for lang in os.listdir(os.path.join(self.path, self.articles_dir)):
 			lang_config = copy.copy(wiki_config)
+			page_list = []
 
 			# Load extra language-specific variables
-			if os.path.isfile(os.path.join(self.path, self.tpl_dir, lang, 'wiki.json')):
-				lang_config.update(self.load_static_vars(os.path.join(self.path, self.tpl_dir, lang, 'wiki.json')))
+			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, 'wiki.json')):
+				lang_config.update(self.load_static_vars(os.path.join(self.path, self.articles_dir, lang, 'wiki.json')))
 
 			for filename in os.listdir(os.path.join(self.path, self.articles_dir, lang)):
 				name_parts = os.path.splitext(filename)
 
-				if name_parts[1] == '.md':
+				if name_parts[1] == '.md' and name_parts[0] != 'README':
 					filepath = os.path.join(self.path, self.articles_dir, lang, filename)
 					view = MarkdownTemplateView(filepath, lang_config)
 					article = {
 						'alias': name_parts[0],
 						'html': view.render(language = lang),
 						'meta': view.get_meta_info()
-					}
-					article.update(self.get_article_metadata(filepath))
+						}
+					page_list += [{
+						'page': name_parts[0] + '.wiki', 
+						'title': self.article_alias_to_title(name_parts[0])
+						}]
 
+					article.update(self.get_article_metadata(filepath))
 					self.build(
 						self.article_tpl, 
 						variables = {'article': article}, 
 						output_file = '{}.{}'.format(article['alias'], self.page_extension)
 						)
+
+			print(os.path.join(self.path, self.html_dir, lang, 'pages.json'), '[meta-data]')
+			self.save_result(
+				os.path.join(self.path, self.html_dir, lang, 'pages.json'),
+				json.dumps(page_list)
+				)
+
 
 	def get_article_metadata(self, filepath):
 		cmd = 'git --no-pager log -n 1 -- {}'.format(os.path.basename(filepath))
@@ -88,3 +100,6 @@ class WikiBuilder(WebPageBuilder):
 				print('Error obtaining metadata: ', filename, e)
 
 		return data
+
+	def article_alias_to_title(self, alias):
+		return alias.replace('-', ' ')
