@@ -158,6 +158,23 @@ table.infobox img {
 	font-size: 12px;
 }
 
+/* Datatables, while only used on wiki, if used elsewhere, move to new file */
+.dataTables_wrapper {
+	display: block;
+}
+
+/* so datatables css don't override ours */
+.wiki-page table.dataTable {
+	border-collapse: collapse !important;
+}
+.wiki-page .dataTables_info {
+	display: none;
+}
+.wiki-page .dataTables_info:nth-child(1) {	/* a kind of cosmetic bug, likely with the display block here */
+	display: block;
+}
+
+
 /*
  * Page specific styles
  */

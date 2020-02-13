@@ -64,10 +64,16 @@ class WikiBuilder(WebPageBuilder):
 					article_tags = str(article['meta']['tags']).replace(' ', '').split(',') if 'tags' in article['meta'] else []
 					article_info += [{
 						'alias': article['alias'],
+						'title': page_list[-1]['title'],
 						'abstract': article['abstract'],
 						'tags': article_tags,
 						'url': article['alias'] + '.wiki.' + lang + '.html' 
 					}]
+					article['infobox'] = copy.copy(article['meta'])
+
+					# Remove special tags from infobox
+					if 'tags' in article['infobox']:
+						del(article['infobox']['tags'])
 					
 					# index tags to better structure
 					for tag in article_tags:

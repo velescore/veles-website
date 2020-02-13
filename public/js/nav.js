@@ -175,7 +175,7 @@ var velesSinglePageApp = {
 		this.pageHooks[pageName][hookName] = callback;
 	},
 
-	'addCategoryHook': function(catName, hookName, callback) {
+	'addCategoryHook': function(hookName, catName, callback) {
 		this.addPageHook('.' + catName, hookName, callback);
 	},
 

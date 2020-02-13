@@ -49,23 +49,20 @@ by authors {{article.authors | join(', ')}}
     			<span title="{{article.author}}: {{article.commit_message}}">
                     Last edit on {{article.updated_at}}</span>
     		</div>
-{% if article.meta|length %}
+{% if article.infobox|length %}
             <table class="infobox">
-                <caption>{{article.meta.name}}</caption>
-    {% if 'image' in article.meta %}
+                <caption>{{article.infobox.name}}</caption>
+    {% if 'image' in article.infobox %}
                 <tr>
-                    <td colspan="2"><img src="{{ 'wiki/' if article.meta.image.startswith('/') }}{{article.meta.image}}" alt="{{article.meta.name}}" /></td>
+                    <td colspan="2"><img src="{{ 'wiki/' if article.infobox.image.startswith('/') }}{{article.infobox.image}}" alt="{{article.infobox.name}}" /></td>
                 </tr>
     {% endif %}
 
-    {% for name, value in article.meta.items() %}
+    {% for name, value in article.infobox.items() %}
         {% if name not in ['name', 'image'] %}
                 <tr>
                     <td>{{name}}</td>
-                    <td>
-            {# Make links clickable if present #}
-            {{value|urlize(25, target='_blank')}}        
-                    </td>
+                    <td>{{value|urlize(25, target='_blank')}}</td>
                 </tr>
         {% endif %}
     {% endfor %}

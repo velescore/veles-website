@@ -5,6 +5,7 @@
 			{"comment": "Font Awesome v5", "href": "https://use.fontawesome.com/releases/v5.6.3/css/all.css"},
 			{"comment": "Bootstrap", "href": "vendor/bootstrap/css/bootstrap.min.css"},
 			{"comment": "jQPlot", "href": "js/src/jquery.jqplot.css"},
+			{"comment": "DataTables", "href": "https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css"},
 			{"href": "css/custom.css"},
 			{"href": "css/spincube.css"},
 			{"href": "css/wiki.css"}
@@ -22,6 +23,8 @@
 			{"src": "js/nav.js"},
 			{"comment": "Bootstrap", "src": "vendor/bootstrap/js/bootstrap.bundle.min.js"},
 			{"comment": "Bootstrap Autocomplete", "src": "https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.0/dist/latest/bootstrap-autocomplete.min.js"},
+			{"comment": "DataTables", "src": "https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"},
+			{"comment": "DataTables Bootstrap module", "src": "https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"},
 			{"src": "js/websocket.js"},
 			{"src": "js/websocket-ui.js"},
 			{"src": "js/footer.js"},
