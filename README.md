@@ -2,8 +2,38 @@
 
 
 # Velescore website
+This repository holds the frontend application for Veles Core website and wiki,
+the custom and elegant builder to enable easy compilation of static parts of 
+the application using Python's Jinja2 templates or extended Markdown templates
+from [Veles Core Wiki repository]. Trest is handled by the single-page javascript 
+frontend communicating with the [Veles Core Websocket](https://github.com/velescore/veles-webapi) 
+asynchronous Python backend server to receive push notifications about 
+the blockchain state changes and update the UI accordingly. 
 
-Ensure you have a Github account. Then:
+## Development
+## Building
+For local testing and development you can clone
+this repository to your webroot and compile the page by running the following command 
+from within the projects's directory:
+```make```
+or alternatively, to build specific parts
+```./manage.py build-index```
+```./manage.py build-wiki```
+
+Now you can point your browser to file `public/index.en.html` (URL depends on the settings of your webserver) 
+to access the development version of the website.
+
+*Note: To apply any changes in Jinja templates it is neccessary to rebuild index page.*
+
+## Requirements
+- Webserver - Apache, Lighttpd, Nginx, etc. (setting up a webserver is a issue outside of the scope of this
+file.)
+- Python 3.6+ (`apt-get install python3 pip3`)
+- Jinja2, markdown - (`pip install -r requirements.txt` or `pip3 install -r requirements.txt`)
+
+
+## Contribution
+Anyone is welcome to contribute, ensure you have a Github account. Then:
 
 **1. Fork the website**
 * On https://github.com/velescore/veles-website , click Fork.
