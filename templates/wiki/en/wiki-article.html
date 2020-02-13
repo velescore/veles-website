@@ -28,47 +28,9 @@ Commits total:  {{article.commit_count}}
 -->
     	<div class="container">
 			<div class="article-info">
-                <a title="Show Markdown source code" href="wiki/articles/en/{{article.alias}}.md" target="_blank">
-                    Source
-                </a>
-                <a title="
-{%- if article.commit_count == 1 -%}
-1 revision &nbsp;
-{%- else -%}
-{{article.commit_count}} revisions &nbsp; 
-{%- endif -%} 
-{%- if article.authors | length == 1 -%}
-by author {{article.author}}
-{%- else -%}
-by authors {{article.authors | join(', ')}}
-{%- endif -%}
-"
-                    href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
-                    Edit History
-                </a>
-    			<span title="{{article.author}}: {{article.commit_message}}">
-                    Last edit on {{article.updated_at}}</span>
+                {% include 'article-header.html' %}
     		</div>
-{% if article.infobox|length %}
-            <table class="infobox">
-                <caption>{{article.infobox.name}}</caption>
-    {% if 'image' in article.infobox %}
-                <tr>
-                    <td colspan="2"><img src="{{ 'wiki/' if article.infobox.image.startswith('/') }}{{article.infobox.image}}" alt="{{article.infobox.name}}" /></td>
-                </tr>
-    {% endif %}
-
-    {% for name, value in article.infobox.items() %}
-        {% if name not in ['name', 'image'] %}
-                <tr>
-                    <td>{{name}}</td>
-                    <td>{{value|urlize(25, target='_blank')}}</td>
-                </tr>
-        {% endif %}
-    {% endfor %}
-                <tr><td colspan="2">&nbsp;</td></tr>
-            </table>
-{% endif %}
+            {% include 'infobox.html' %}
         	{{article.html}}
         </div>
     </div>

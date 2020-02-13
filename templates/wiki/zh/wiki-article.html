@@ -1,5 +1,5 @@
 {#-
-Body for the wiki article. [TODO: translate]
+Body for the wiki article.  [ TODO: translate, please ]
 
 Copyright (C) 2020 The Veles Core developers
 
@@ -28,50 +28,9 @@ Commits total:  {{article.commit_count}}
 -->
     	<div class="container">
 			<div class="article-info">
-                <a title="Show Markdown source code" href="wiki/articles/en/{{article.alias}}.md" target="_blank">
-                    Source
-                </a>
-                <a title="
-{%- if article.commit_count == 1 -%}
-1 revision &nbsp;
-{%- else -%}
-{{article.commit_count}} revisions &nbsp; 
-{%- endif -%} 
-{%- if article.authors | length == 1 -%}
-by author {{article.author}}
-{%- else -%}
-by authors {{article.authors | join(', ')}}
-{%- endif -%}
-"
-                    href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
-                    Edit History
-                </a>
-    			<span title="{{article.author}}: {{article.commit_message}}">
-                    Last edit on {{article.updated_at}}</span>
+                {% include 'article-header.html' %}
     		</div>
-{% if article.meta|length %}
-            <table class="infobox">
-                <caption>{{article.meta.name}}</caption>
-    {% if 'image' in article.meta %}
-                <tr>
-                    <td colspan="2"><img src="{{ 'wiki/' if article.meta.image.startswith('/') }}{{article.meta.image}}" alt="{{article.meta.name}}" /></td>
-                </tr>
-    {% endif %}
-
-    {% for name, value in article.meta.items() %}
-        {% if name not in ['name', 'image'] %}
-                <tr>
-                    <td>{{name}}</td>
-                    <td>
-            {# Make links clickable if present #}
-            {{value|urlize(25, target='_blank')}}        
-                    </td>
-                </tr>
-        {% endif %}
-    {% endfor %}
-                <tr><td colspan="2">&nbsp;</td></tr>
-            </table>
-{% endif %}
+            {% include 'infobox.html' %}
         	{{article.html}}
         </div>
     </div>
