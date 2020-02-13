@@ -30,20 +30,19 @@ class WikiMarkdownTemplateView(MarkdownTemplateView):
         ]
     last_meta = None
 
-    def render(self, variables = {}, language = 'en'):
-        """Render the dashboard view"""
-        input_file = codecs.open(self.tpl_path, mode="r", encoding="utf-8")
-        text = input_file.read()
-        md = markdown.Markdown(extensions=[
-            WikiLinkExtension(base_url='', end_url='.wiki.' + language + '.html', build_url = self.build_url),
+    def setup_markdown(self):
+        return markdown.Markdown(extensions=[
+            WikiLinkExtension(base_url='', end_url='.wiki.' + self.language + '.html', build_url = self.build_url),
             FigureFromTitleExtension(),
             'meta',
             'admonition',
             'tables',
             'attr_list'
             ])
-        html = str(md.convert(text))
-        self.last_meta = md.Meta
+
+    def post_render_filter(self, html, variables):
+        """Gets called after rendering, can alter the output"""
+        self.save_meta_info(variables)
 
         for item in self.replacements:
             html = html.replace(item[0], item[1])
@@ -55,16 +54,18 @@ class WikiMarkdownTemplateView(MarkdownTemplateView):
         return self.last_meta
 
     def get_meta_info(self):
-        """Returns article metadata in human-readable format"""
-        joined = {}
+        """Returns human-readable meta data of the last rendered article"""
+        return self.last_meta_info
+
+    def save_meta_info(self, config):
+        """Saves article metadata in human-readable format"""
+        self.last_meta = self.md.Meta
+        self.last_meta_info = {}
 
         for name, value in self.last_meta.items():
-            if 'meta' in self.config and 'titles' in self.config['meta'] and name in self.config['meta']['titles']:
-                name = self.config['meta']['titles'][name]
-            joined[name] = ' '.join(value).strip()
-
-        return joined
-
+            if 'meta' in config and 'titles' in config['meta'] and name in config['meta']['titles']:
+                name = config['meta']['titles'][name]
+            self.last_meta_info[name] = ' '.join(value).strip()
 
     def build_url(self, label, base, end):
         """ Build a url from the label, a base, and an end. """

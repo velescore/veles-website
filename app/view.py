@@ -43,19 +43,22 @@ class JinjaTemplateView(AbstractView):
 
 class MarkdownTemplateView(AbstractView):
     """View for the index page of dashboard, requires template dir path"""
-    def __init__(self, template_path, config = {}):
+    def __init__(self, template_path, language = 'en'):
         """Creates the object, needs path to the jinja template directory"""
         self.tpl_path = template_path
-        self.config = config
+        self.language = language
+        self.md = self.setup_markdown()
 
     def render(self, variables = {}):
         """Render the dashboard view"""
         input_file = codecs.open(self.tpl_path, mode="r", encoding="utf-8")
         text = input_file.read()
-        md = markdown.Markdown(extensions=(self.config['extensions'] if 'extensions' in self.config else []))
-        html = str(md.convert(text))
+        html = str(self.md.convert(text))
+        return self.post_render_filter(html, variables)
 
-        for item in self.replacements:
-            html = html.replace(item[0], item[1])
+    def setup_markdown(self):
+        return markdown.Markdown(extensions=[])
 
+    def post_render_filter(self, html):
+        """Gets called after rendering, can alter the output"""
         return html

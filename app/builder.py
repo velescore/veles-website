@@ -16,7 +16,7 @@ import os
 from app.view import JinjaTemplateView
 
 class WebPageBuilder(object):
-    tpl_dir = 'templates'
+    tpl_dir = 'templates/web'
     html_dir = 'public'
     lang_in_extension = True
 

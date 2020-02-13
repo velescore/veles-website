@@ -22,6 +22,7 @@ class WikiBuilder(WebPageBuilder):
 	articles_dir = 'public/wiki/articles'
 	article_tpl = 'wiki-article'
 	# Overrides of parent's values
+	tpl_dir = 'templates/wiki'
 	html_dir = 'public/wiki/pages'
 	lang_in_extension = False
 	max_abstract_len = 120
@@ -50,10 +51,10 @@ class WikiBuilder(WebPageBuilder):
 
 				if name_parts[1] == '.md' and name_parts[0] != 'README':
 					filepath = os.path.join(self.path, self.articles_dir, lang, filename)
-					view = WikiMarkdownTemplateView(filepath, lang_config)
+					view = WikiMarkdownTemplateView(filepath, lang)
 					article = {
 						'alias': name_parts[0],
-						'html': view.render(language = lang),
+						'html': view.render(),
 						'meta': view.get_meta_info()
 						}
 					page_list += [{
@@ -85,7 +86,7 @@ class WikiBuilder(WebPageBuilder):
 					article.update(self.get_article_metadata(filepath))
 					self.build(
 						self.article_tpl, 
-						variables = {'article': article}, 
+						variables = {'article': article, 'wiki': lang_config}, 
 						output_file = '{}.{}'.format(article['alias'], self.page_extension)
 						)
 
