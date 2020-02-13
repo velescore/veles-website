@@ -27,11 +27,12 @@ var velesSocketClient = {
     connected: false,
     hooks: {},
     onResultCallbacks: {},
-    requestID: 1
+    requestID: 1,
+    debug: false,
     };
 
 velesSocketClient.log = function(msg) {
-    if (typeof console !== 'undefined')
+    if (velesSocketClient.debug && typeof console !== 'undefined')
         console.log(msg)
 
     if (document.getElementById('debug-area') != null) {
