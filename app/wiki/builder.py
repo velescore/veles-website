@@ -12,6 +12,7 @@ import codecs
 import copy
 import json
 import os
+import re
 import subprocess
 
 from app.builder import WebPageBuilder
@@ -23,6 +24,7 @@ class WikiBuilder(WebPageBuilder):
 	# Overrides of parent's values
 	html_dir = 'public/wiki/pages'
 	lang_in_extension = False
+	max_abstract_len = 120
 
 	""" Constructor, needs base path of website """
 	def __init__(self, path, page_extension = 'html', article_extension = 'md'):
@@ -36,6 +38,8 @@ class WikiBuilder(WebPageBuilder):
 		for lang in os.listdir(os.path.join(self.path, self.articles_dir)):
 			lang_config = copy.copy(wiki_config)
 			page_list = []
+			article_info = []
+			tag_index = {}
 
 			# Load extra language-specific variables
 			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, 'wiki.json')):
@@ -56,6 +60,21 @@ class WikiBuilder(WebPageBuilder):
 						'page': name_parts[0] + '.wiki', 
 						'title': self.article_alias_to_title(name_parts[0])
 						}]
+					article['abstract'] = self.get_html_article_abstract(article['html'])
+					article_tags = str(article['meta']['tags']).replace(' ', '').split(',') if 'tags' in article['meta'] else []
+					article_info += [{
+						'alias': article['alias'],
+						'abstract': article['abstract'],
+						'tags': article_tags,
+						'url': article['alias'] + '.wiki.' + lang + '.html' 
+					}]
+					
+					# index tags to better structure
+					for tag in article_tags:
+						if not tag in tag_index:
+							tag_index[tag] = []
+
+						tag_index[tag] += [article['alias']]
 
 					article.update(self.get_article_metadata(filepath))
 					self.build(
@@ -69,7 +88,31 @@ class WikiBuilder(WebPageBuilder):
 				os.path.join(self.path, self.html_dir, lang, 'pages.json'),
 				json.dumps(page_list)
 				)
+			self.save_result(
+				os.path.join(self.path, self.html_dir, lang, 'articles.json'),
+				json.dumps(article_info, indent=4)
+				)
+			self.save_result(
+				os.path.join(self.path, self.html_dir, lang, 'tags.json'),
+				json.dumps(tag_index)
+				)
 
+	def get_html_article_abstract(self, html):
+		abstract = self.get_html_first_child_text(html, 'p')
+
+		if not len(abstract):
+			abstract = self.get_html_first_child_text(html, 'h1')
+
+		if not len(abstract):
+			abstract = self.get_html_first_child_text(html, 'h2')
+
+		return abstract if len(abstract) < self.max_abstract_len else abstract[:(self.max_abstract_len - 4)] + ' ...'
+
+	def get_html_first_child_text(self, html, el):
+		match = re.search("<" + el + ">.*?</" + el + ">", html, re.IGNORECASE | re.MULTILINE)
+		result = str(match.group()) if match else ""	# extract first HTML element we need
+		tags_re = re.compile(r'<.*?>')	# look for HTML tags to remove
+		return tags_re.sub('', result)
 
 	def get_article_metadata(self, filepath, get_all_commits = True):
 		cmd = 'git --no-pager log {} -- {}'.format('--follow' if get_all_commits else '-n 1 ', os.path.basename(filepath))
