@@ -97,7 +97,7 @@ var velesSinglePageApp = {
 			$('#content-wrapper').html(this.cachedPages[this.language][page]);
 			velesSinglePageApp.hideOverlay();
 			velesSinglePageApp.hideMobileMenu();
-			velesSinglePageApp.runPageHook('init');
+			velesSinglePageApp.runPageHook('init', page, pageType);
 			velesSinglePageApp.rebuildPageMenu(page, true);
 			velesSinglePageApp.updateTemplate();
 			velesSinglePageApp.initPageAnimations();
@@ -112,7 +112,7 @@ var velesSinglePageApp = {
 			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
 				velesSinglePageApp.hideOverlay();
 				velesSinglePageApp.hideMobileMenu();
-				velesSinglePageApp.runPageHook('init');
+				velesSinglePageApp.runPageHook('init', page, pageType);
 				velesSinglePageApp.rebuildPageMenu(page, false);
 				velesSinglePageApp.updateTemplate();
 				velesSinglePageApp.autoAddIds();
@@ -175,18 +175,24 @@ var velesSinglePageApp = {
 		this.pageHooks[pageName][hookName] = callback;
 	},
 
+	'addCategoryHook': function(catName, hookName, callback) {
+		this.addPageHook('.' + catName, hookName, callback);
+	},
+
 	'addHook': function(hookName, callback) {
 		this.addPageHook(null, hookName, callback);
 	},
 
-	'runPageHook': function(hookName, pageName = null) {
-		if (!pageName)
-			pageName = this.currentPage;
-
+	'runPageHook': function(hookName, pageName = null, pageType = null) {
+		// run hooks for a specific page, eg. index
 		if (this.pageHooks.hasOwnProperty(pageName) && this.pageHooks[pageName].hasOwnProperty(hookName))
 			this.pageHooks[pageName][hookName]();
 
-		// events applicable for all pages
+		// run hooks for certain page types, defined in the index by dot 
+		if (pageType && (this.pageHooks.hasOwnProperty('.' + pageType) && this.pageHooks['.' + pageType].hasOwnProperty(hookName)))
+			this.pageHooks['.' + pageType][hookName]();
+
+		// and call listeners applicable for all pages
 		if (this.pageHooks.hasOwnProperty('*') && this.pageHooks['*'].hasOwnProperty(hookName))
 			this.pageHooks['*'][hookName]();
 	},
@@ -703,7 +709,7 @@ var velesSinglePageApp = {
 			this.rebuildPageMenu('index', false);
 			this.updateTemplate();
 			this.autoAddIds();
-			this.runPageHook('init');
+			this.runPageHook('init', 'index');
 			this.hideOverlay();
 			this.initPageAnimations();
 			this.bindEvents();

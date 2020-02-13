@@ -29,7 +29,8 @@
 			{"comment": "Index effect", "src": "js/TweenLite.min.js"},
 			{"comment": "Index effect", "src": "js/EasePack.min.js"},
 			{"src": "js/header.js"},
-			{"src": "js/index.js"}
+			{"src": "js/index.js"},
+			{"src": "js/wiki.js"}
 		]
 	},
 	"app": {
