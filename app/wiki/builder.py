@@ -21,6 +21,11 @@ from app.wiki.view import WikiMarkdownTemplateView
 class WikiBuilder(WebPageBuilder):
 	articles_dir = 'public/wiki/articles'
 	article_tpl = 'wiki-article'
+	json_config = 'wiki.json'
+	page_type = 'wiki'
+	pages_file = 'pages.json'
+	articles_file = 'articles.json'
+	tags_file = 'tags.json'
 	# Overrides of parent's values
 	tpl_dir = 'templates/wiki'
 	html_dir = 'public/wiki/pages'
@@ -34,7 +39,7 @@ class WikiBuilder(WebPageBuilder):
 
 	def build_articles(self):
 		""" Build all wiki pages, for each language """
-		wiki_config = self.load_static_vars(os.path.join(self.path, 'wiki.json'))
+		wiki_config = self.load_static_vars(os.path.join(self.path, self.json_config))
 
 		for lang in os.listdir(os.path.join(self.path, self.articles_dir)):
 			lang_config = copy.copy(wiki_config)
@@ -43,22 +48,22 @@ class WikiBuilder(WebPageBuilder):
 			tag_index = {}
 
 			# Load extra language-specific variables
-			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, 'wiki.json')):
-				lang_config.update(self.load_static_vars(os.path.join(self.path, self.articles_dir, lang, 'wiki.json')))
+			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, self.json_config)):
+				lang_config.update(self.load_static_vars(os.path.join(self.path, self.articles_dir, lang, self.json_config)))
 
 			for filename in os.listdir(os.path.join(self.path, self.articles_dir, lang)):
 				name_parts = os.path.splitext(filename)
 
 				if name_parts[1] == '.md' and name_parts[0] != 'README':
 					filepath = os.path.join(self.path, self.articles_dir, lang, filename)
-					view = WikiMarkdownTemplateView(filepath, lang)
+					view = self.get_markdown_view(filepath, lang)
 					article = {
 						'alias': name_parts[0],
 						'html': view.render(),
 						'meta': view.get_meta_info()
 						}
 					page_list += [{
-						'page': name_parts[0] + '.wiki', 
+						'page': name_parts[0] + '.' + self.page_type, 
 						'title': self.article_alias_to_title(name_parts[0])
 						}]
 					article['abstract'] = self.get_html_article_abstract(article['html'])
@@ -68,7 +73,7 @@ class WikiBuilder(WebPageBuilder):
 						'title': page_list[-1]['title'],
 						'abstract': article['abstract'],
 						'tags': article_tags,
-						'url': article['alias'] + '.wiki.' + lang + '.html' 
+						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' 
 					}]
 					article['infobox'] = copy.copy(article['meta'])
 
@@ -86,23 +91,26 @@ class WikiBuilder(WebPageBuilder):
 					article.update(self.get_article_metadata(filepath))
 					self.build(
 						self.article_tpl, 
-						variables = {'article': article, 'wiki': lang_config}, 
+						variables = {'article': article, self.page_type: lang_config}, 
 						output_file = '{}.{}'.format(article['alias'], self.page_extension)
 						)
 
-			print(os.path.join(self.path, self.html_dir, lang, 'pages.json'), '[meta-data]')
+			print(os.path.join(self.path, self.html_dir, lang, self.pages_file), '[meta-data]')
 			self.save_result(
-				os.path.join(self.path, self.html_dir, lang, 'pages.json'),
+				os.path.join(self.path, self.html_dir, lang, self.pages_file),
 				json.dumps(page_list)
 				)
 			self.save_result(
-				os.path.join(self.path, self.html_dir, lang, 'articles.json'),
+				os.path.join(self.path, self.html_dir, lang, self.articles_file),
 				json.dumps(article_info, indent=4)
 				)
 			self.save_result(
-				os.path.join(self.path, self.html_dir, lang, 'tags.json'),
+				os.path.join(self.path, self.html_dir, lang, self.tags_file),
 				json.dumps(tag_index)
 				)
+
+	def get_markdown_view(self, filepath, language):
+		return WikiMarkdownTemplateView(filepath, language)
 
 	def get_html_article_abstract(self, html):
 		abstract = self.get_html_first_child_text(html, 'p')

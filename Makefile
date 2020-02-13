@@ -11,6 +11,7 @@ build:
 	@make assert_python_present > /dev/null
 	@echo "Rebuilding from templates ..."
 	@$(PYTHON_CMD) manage.py build-index
+	@$(PYTHON_CMD) manage.py build-news
 	@make pull_wiki
 	@$(PYTHON_CMD) manage.py build-wiki
 	@echo "[ Success ]"

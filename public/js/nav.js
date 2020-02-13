@@ -109,6 +109,9 @@ var velesSinglePageApp = {
 			if (pageType == 'wiki')
 				pageSource = './wiki/pages/';
 
+			if (pageType == 'news')
+				pageSource = './news/pages/';
+
 			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
 				velesSinglePageApp.hideOverlay();
 				velesSinglePageApp.hideMobileMenu();
@@ -127,12 +130,6 @@ var velesSinglePageApp = {
 			$('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
 		else
 			window.scrollTo(0,0);
-
-		// update language-selector menu to point to other language mutations
-		// of the current page		
-		$('#languageSelectorBar').find('a').each(function(){
-			console.log($(this).attr('href', $(this).attr('href').replace('index', velesSinglePageApp.currentPage))); 
-		});
 	},
 
 	'autoAddIds': function() {
@@ -391,14 +388,21 @@ var velesSinglePageApp = {
 	},
 
 	'rebuildPageMenu': function(page, cachedPage = false) {
+		// update language-selector menu to point to other language mutations
+		// of the current page
+		$('#languageSelectorBar').find('a').each(function(){
+			$(this).attr('href', page + '.' + $(this).attr('href').split('.')[1] + velesSinglePageApp.pageSuffix); 
+		});
+
+		// Rebuild sidebar
 		$('.sidebar ul').html('');
 
 		if (!this.menuTreeIndex.hasOwnProperty(page)){
-			// auto-"index" wiki pages
-			if (page.indexOf('.') && page.split('.')[1] == 'wiki') {
+			// auto-"index" pages with known parend according to their type
+			if (page.indexOf('.') && this.menuTreeIndex.hasOwnProperty(page.split('.')[1])) {
 				console.log('[Sidebar] Page tree auto-indexing: ' + page);
 				this.menuTreeIndex[page] = {
-					'parent': 'wiki'
+					'parent': page.split('.')[1]
 				}
 			} else {
 				console.log('[Sidebar] Page tree not indexed: ' + page);
