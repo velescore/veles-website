@@ -59,7 +59,7 @@ class WikiBuilder(WebPageBuilder):
 					view = self.get_markdown_view(filepath, lang)
 					article = {
 						'alias': name_parts[0],
-						'html': view.render(),
+						'html': view.render(lang_config),
 						'meta': view.get_meta_info()
 						}
 					page_list += [{
