@@ -144,6 +144,10 @@ var menuTree = [
 				'page': 'Masternode-Setup-Guide.wiki' 
 			},
 			{ 
+				'title': 'dVPN Setup Guide', 
+				'page': 'dVPN-Setup-Guide.wiki' 
+			},
+			{ 
 				'title': 'Whitepaper', 
 				'page': 'Whitepaper.wiki' 
 			}
