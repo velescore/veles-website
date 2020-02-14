@@ -1,14 +1,10 @@
-[![Build Status](https://travis-ci.com/velescore/veles-website.svg?branch=master)](https://travis-ci.org/velescore/veles-website)[![Followers](https://img.shields.io/twitter/follow/velescore.svg?style=social&label=Follow)](https://twitter.com/velescore)
-
+[![Followers](https://img.shields.io/twitter/follow/velescore.svg?style=social&label=Follow)](https://twitter.com/velescore)
 
 # Velescore website
-This repository holds the frontend application for Veles Core website and wiki,
-the custom and elegant builder to enable easy compilation of static parts of 
-the application using Python's Jinja2 templates or extended Markdown templates
-from [Veles Core Wiki repository]. Trest is handled by the single-page javascript 
-frontend communicating with the [Veles Core Websocket](https://github.com/velescore/veles-webapi) 
-asynchronous Python backend server to receive push notifications about 
-the blockchain state changes and update the UI accordingly. 
+This repository holds the frontend application for Veles Core website and wiki.
+Static pages and parts of the application are pre-compiled using Python's Jinja2 
+templates or extended Markdown templates (wiki articles from from 
+[Veles Core Wiki repository]).
 
 ## Development
 ## Building
@@ -23,8 +19,14 @@ or alternatively, to build specific parts
 Now you can point your browser to file `public/index.en.html` (URL depends on the settings of your webserver) 
 to access the development version of the website.
 
-*Note: To apply any changes in Jinja templates it is neccessary to rebuild index page.*
-
+### Development notes
+- To apply any changes in Jinja templates it is neccessary to rebuild index page.
+- By the default the javascript app will connect to the production backend, not to the
+  one on your development machine, you can see public/js/websocket.js for more info,
+  as the app needs to communicate with the [Veles Core Websocket](https://github.com/velescore/veles-webapi) 
+  asynchronous Python backend server to receive push notifications about state changes 
+  to update the UI accordingly. By the default it will connect to the 
+  production backend, you can see public/js/websocket.js to change it to your dev machine.
 ## Requirements
 - Webserver - Apache, Lighttpd, Nginx, etc. (setting up a webserver is a issue outside of the scope of this
 file.)
