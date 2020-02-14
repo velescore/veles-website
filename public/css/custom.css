@@ -3495,13 +3495,18 @@ ul.news-list div.news-icon span {
 }
 .countdown-main-subtitle {
 	top: calc(90% + 80px)!important;
-    padding-top: 10px;
+        padding-top: 10px;
 }
 /* End of countdown */
 code{
-	list-style-type: none;
-    background-color: #2626268b;
-	padding: 5px;
+	line-height: 4;
+    	list-style-type: none;
+    	background-color: #2626268b;
+    	position: relative;
+    	padding: .75rem 1.25rem;
+    	border: 1px solid transparent;
+    	border-radius: .25rem;
+    	background: #00000066;
 }
 
 /* dvpn */
