@@ -1,0 +1,11 @@
+{
+	"meta": {
+		"titles": {
+			"pdf": 					"PDF",
+			"url": 					"Website",
+			"contentlicense":		"Content license",
+			"programminglanguage":	"Written in",
+			"docs":					"Docs"
+		}
+	}
+}

@@ -13,15 +13,22 @@ import copy
 import json
 import os
 
-from app.view import WebIndexView
+from app.view import JinjaTemplateView
 
 class WebPageBuilder(object):
+    tpl_dir = 'templates/web'
+    html_dir = 'public'
+    lang_in_extension = True
+
     """ Constructor, needs base path of website """
     def __init__(self, path, page_extension = 'html'):
         self.path = path
         self.page_extension = page_extension
 
     def save_result(self, filename, result):
+        if not os.path.isdir(os.path.dirname(filename)):
+            os.makedirs(os.path.dirname(filename))
+
         with codecs.open(filename, 'w', 'utf-8') as fh:
             fh.write(result)
 
@@ -35,26 +42,33 @@ class WebPageBuilder(object):
             print('WebPageBuilder: Warning: static variable file not found: {}'.format(path))
             return {}
 
-    def build(self, page = 'index', variables = {}):
+    def build(self, page, variables = {}, output_file = None):
         tpl_vars = self.load_static_vars(os.path.join(self.path, 'variables.json'))
 
-        for lang in os.listdir(os.path.join(self.path, 'templates')):
+        for lang in os.listdir(os.path.join(self.path, self.tpl_dir)):
             lang_vars = copy.copy(tpl_vars)
 
             # Load extra language-specific variables
-            if os.path.isfile(os.path.join(self.path, 'templates', lang, 'variables.json')):
-                lang_vars.update(self.load_static_vars(os.path.join(self.path, 'templates', lang, 'variables.json')))
+            if os.path.isfile(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')):
+                lang_vars.update(self.load_static_vars(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')))
 
             # Overwrite with variables explicitly given
             lang_vars.update(variables)
 
-            if page == 'index':
-                print(os.path.join(self.path, 'templates', lang))
-                view = WebIndexView(os.path.join(self.path, 'templates', lang))
-                result = view.render(lang_vars)
-                filename = '{}.{}.{}'.format(os.path.join(self.path, 'public', page), lang, self.page_extension)
-                self.save_result(filename, result)
-                print(filename)
+            source = os.path.join(self.path, self.tpl_dir, lang, '{}.{}'.format(page, self.page_extension))
+
+            if output_file:
+                destination = os.path.join(self.path, self.html_dir, lang, output_file)
+            elif (self.lang_in_extension):
+                destination = '{}.{}.{}'.format(os.path.join(self.path, self.html_dir, page), lang, self.page_extension)
+            else:
+                destination = '{}.{}'.format(os.path.join(self.path, self.html_dir, lang, page), self.page_extension)
+
+            if os.path.isfile(source):
+                view = JinjaTemplateView(source)
+                
+                self.save_result(destination, view.render(lang_vars))
+                print(destination)
 
             else:
-                raise ValueError('unknown page: {}'.format(page))
+                raise ValueError('Unknown page: {}'.format(source))

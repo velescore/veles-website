@@ -1,38 +1,41 @@
 [![Followers](https://img.shields.io/twitter/follow/velescore.svg?style=social&label=Follow)](https://twitter.com/velescore)
 
-# Velescore Website
-This repository hosts source code for the official Veles Core website, everybody is welcome to contribute, see Contrubuting section below.
+# Velescore website
+This repository holds the frontend application for Veles Core website and wiki.
+Static pages and parts of the application are pre-compiled using Python's Jinja2 
+templates or extended Markdown templates (wiki articles from from 
+[Veles Core Wiki repository]).
 
-## The architectire
-The Javascript frontend of Veles Core website in the client's browser keeps persistent connection to the 
-Python backend server [Veles Core Websocket API](https://github.com/velescore/veles-webapi) to extecute 
-various queries about blockchain state and metrics as well as to receive near real-time updates on the 
-events such as state-changes of the Veles Core blockchain to update related UI values accordingly.
-
-In this architecture it would be meaningless generating the web application and the website content "on the fly" 
-during each request instead of serving static files which are cache and proxy friendly, improving performance.
-These files are built on the web server regularly on each update from Python Jinja2 templates using automated
-build system.
-
+## Development
 ## Building
-For local testing and development you can clone this repository to your webroot and compile the page
-by running following command from within the projects's directory:
+For local testing and development you can clone
+this repository to your webroot and compile the page by running the following command 
+from within the projects's directory:
 ```make```
+or alternatively, to build specific parts
+```./manage.py build-index```
+```./manage.py build-wiki```
 
-Now you can point your browser to file `public/index.html` (URL depends on the settings of your webserver) 
-to access your development version of the website. 
+Now you can point your browser to file `public/index.en.html` (URL depends on the settings of your webserver) 
+to access the development version of the website.
 
-*Note: To apply any changes in Jinja templates it is neccessary to rebuild specific page(s) using `make`. For debugging and more info see `./manage.py --help`.*
-
-### Requirements
-- Webserver - Apache / Lighttpd / Nginx, etc. (setting up a webserver is a issue outside of the scope of this
+### Development notes
+- To apply any changes in Jinja templates it is neccessary to rebuild index page.
+- By the default the javascript app will connect to the production backend, not to the
+  one on your development machine, you can see public/js/websocket.js for more info,
+  as the app needs to communicate with the [Veles Core Websocket](https://github.com/velescore/veles-webapi) 
+  asynchronous Python backend server to receive push notifications about state changes 
+  to update the UI accordingly. By the default it will connect to the 
+  production backend, you can see public/js/websocket.js to change it to your dev machine.
+## Requirements
+- Webserver - Apache, Lighttpd, Nginx, etc. (setting up a webserver is a issue outside of the scope of this
 file.)
 - Python 3.6+ (`apt-get install python3 pip3`)
-- Jinja2 - (`pip install -r requirements.txt` or `pip3 install -r requirements.txt`)
+- Jinja2, markdown - (`pip install -r requirements.txt` or `pip3 install -r requirements.txt`)
 
-## Contributing
-### Fork your branch
-Ensure you have a Github account. Then:
+
+## Contribution
+Anyone is welcome to contribute, ensure you have a Github account. Then:
 
 **1. Fork the website**
 * On https://github.com/velescore/veles-website , click Fork.
