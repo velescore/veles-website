@@ -202,3 +202,17 @@ table.infobox img {
 .wiki-exchanges li:hover(even) {
 	background: #3a3a3a88;
 }
+/*
+ * Colored Font and specific classes
+ */ 
+.green {
+	font-weight: bold; 
+	color: #00aa00; 
+}
+.red { 
+	color: #dc143c;
+	font-weight: bold; 
+}
+.cntr {
+	text-align: center;
+}
