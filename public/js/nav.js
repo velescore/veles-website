@@ -113,6 +113,7 @@ var velesSinglePageApp = {
 				pageSource = './news/pages/';
 
 			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
+				velesSinglePageApp.runPageHook('load', page, pageType);
 				velesSinglePageApp.hideOverlay();
 				velesSinglePageApp.hideMobileMenu();
 				velesSinglePageApp.runPageHook('init', page, pageType);

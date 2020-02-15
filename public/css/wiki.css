@@ -174,10 +174,26 @@ table.infobox img {
 	display: block;
 }
 
+/*
+ * Colored Font and specific classes
+ */ 
+.green {
+	font-weight: bold; 
+	color: #00aa00; 
+}
+.red { 
+	color: #dc143c;
+	font-weight: bold; 
+}
+.cntr {
+	text-align: center;
+}
+
 
 /*
  * Page specific styles
  */
+/* Exchanges */
 .wiki-exchanges ul {
     list-style: none;
     font-size: 22px;
@@ -202,17 +218,18 @@ table.infobox img {
 .wiki-exchanges li:hover(even) {
 	background: #3a3a3a88;
 }
-/*
- * Colored Font and specific classes
- */ 
-.green {
-	font-weight: bold; 
-	color: #00aa00; 
-}
-.red { 
-	color: #dc143c;
-	font-weight: bold; 
-}
-.cntr {
+
+/* dVPN Setup Guide */
+.wiki-dvpn-setup-guide td,
+.wiki-dvpn-setup-guide th {
 	text-align: center;
+}
+
+.wiki-dvpn-setup-guide th {
+	font-weight: bold;
+}
+
+.wiki-dvpn-setup-guide td:first-of-type {
+	font-weight: bold;
+	text-align: left;
 }
