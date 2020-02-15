@@ -392,7 +392,9 @@ var velesSinglePageApp = {
 		// update language-selector menu to point to other language mutations
 		// of the current page
 		$('#languageSelectorBar').find('a').each(function(){
-			$(this).attr('href', page + '.' + $(this).attr('href').split('.')[1] + velesSinglePageApp.pageSuffix); 
+			// extract the previous lang
+			var parts = $(this).attr('href').split('.'); 
+			$(this).attr('href', page + '.' + $(parts).get(-2) + '.' + $(parts).get(-1)); 
 		});
 
 		// Rebuild sidebar
