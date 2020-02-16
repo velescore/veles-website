@@ -8,6 +8,7 @@ var velesSinglePageApp = {
 	'cachedPages': {'en': {}, 'zh': {}, 'es':{}, 'tc':{}},
 	'eventsBound': {},
 	'menuTreeIndex': {},
+	'menuTreePages': [],
 	'menuTemplates': {},
 	'sidebarPadContent': 0,
 	'$window': null,
@@ -173,7 +174,10 @@ var velesSinglePageApp = {
 		if (!this.pageHooks.hasOwnProperty(pageName))
 			this.pageHooks[pageName] = {}
 
-		this.pageHooks[pageName][hookName] = callback;
+		if (!this.pageHooks[pageName].hasOwnProperty(hookName))
+			this.pageHooks[pageName][hookName] = []
+
+		this.pageHooks[pageName][hookName].push(callback);
 	},
 
 	'addCategoryHook': function(hookName, catName, callback) {
@@ -187,15 +191,21 @@ var velesSinglePageApp = {
 	'runPageHook': function(hookName, pageName = null, pageType = null) {
 		// run hooks for a specific page, eg. index
 		if (this.pageHooks.hasOwnProperty(pageName) && this.pageHooks[pageName].hasOwnProperty(hookName))
-			this.pageHooks[pageName][hookName]();
+			for (var i = 0; i < this.pageHooks[pageName][hookName].length; i++) {
+				this.pageHooks[pageName][hookName][i]();
+			}
 
 		// run hooks for certain page types, defined in the index by dot 
 		if (pageType && (this.pageHooks.hasOwnProperty('.' + pageType) && this.pageHooks['.' + pageType].hasOwnProperty(hookName)))
-			this.pageHooks['.' + pageType][hookName]();
+			for (var i = 0; i < this.pageHooks['.' + pageType][hookName].length; i++) {
+				this.pageHooks['.' + pageType][hookName][i]();
+			}
 
 		// and call listeners applicable for all pages
 		if (this.pageHooks.hasOwnProperty('*') && this.pageHooks['*'].hasOwnProperty(hookName))
-			this.pageHooks['*'][hookName]();
+			for (var i = 0; i < this.pageHooks['*'][hookName].length; i++) {
+				this.pageHooks['*'][hookName][i]();
+			}
 	},
 
 	'setActive': function(page = null) {
@@ -392,6 +402,29 @@ var velesSinglePageApp = {
 	},
 
 	'rebuildPageMenu': function(page, cachedPage = false) {
+		// make sure page is in manutree index
+		if (!this.menuTreeIndex.hasOwnProperty(page)){
+			// auto-"index" pages with known parend according to their type
+			if (page.indexOf('.') && this.menuTreeIndex.hasOwnProperty(page.split('.')[1])) {
+				this.menuTreeIndex[page] = {
+					'parent': page.split('.')[1]
+				}
+			} else {
+				console.log('[Sidebar] Page tree not indexed: ' + page);
+				return;
+			}
+		}
+
+		// if it's not cached page, and has special items,  we need to wait till jsonPreload is done
+		if ((this.menuTreeIndex[page].hasOwnProperty('itemsFromJsonID') 
+				|| this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('itemsFromJsonID')
+				) && !cachedPage && !this.isJsonPreloaded()) {
+			velesSinglePageApp.addHook('jsonPreload', function() {
+				velesSinglePageApp.rebuildPageMenu(page, false);
+			});
+			return;
+		}
+
 		// update language-selector menu to point to other language mutations
 		// of the current page
 		$('#languageSelectorBar').find('a').each(function(){
@@ -402,19 +435,15 @@ var velesSinglePageApp = {
 
 		// Rebuild sidebar
 		$('.sidebar ul').html('');
+		$('#sidebar-caption').text($('#sidebar-caption').attr('data-default'));	// set default caption
 
-		if (!this.menuTreeIndex.hasOwnProperty(page)){
-			// auto-"index" pages with known parend according to their type
-			if (page.indexOf('.') && this.menuTreeIndex.hasOwnProperty(page.split('.')[1])) {
-				console.log('[Sidebar] Page tree auto-indexing: ' + page);
-				this.menuTreeIndex[page] = {
-					'parent': page.split('.')[1]
-				}
-			} else {
-				console.log('[Sidebar] Page tree not indexed: ' + page);
-				return;
-			}
-		}
+		// we need to check if us or our parent has special items from JSON data
+		if (this.menuTreeIndex[page].hasOwnProperty('itemsFromJsonID'))
+			this.menuTreeIndex[page].items = this.jsonPreload[this.menuTreeIndex[page].itemsFromJsonID];
+
+		if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('itemsFromJsonID'))
+			this.menuTreeIndex[this.menuTreeIndex[page].parent].items = this.jsonPreload[this.menuTreeIndex[this.menuTreeIndex[page].parent].itemsFromJsonID];
+
 
 		if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
 			this.buildMenuLevel(
@@ -426,8 +455,6 @@ var velesSinglePageApp = {
 			);
 			if (this.menuTreeIndex[page].hasOwnProperty('sidebarCaption'))
 				$('#sidebar-caption').text(this.menuTreeIndex[page].sidebarCaption);
-			else
-				$('#sidebar-caption').text($('#sidebar-caption').attr('data-default'));
 
 			this.sidebarCollapse();
 
@@ -561,7 +588,7 @@ var velesSinglePageApp = {
 					$lastItem.addClass('external-rul');
 			}
 
-			// Index into the smarter structure
+			// Index into the smarter structures
 			if (!this.menuTreeIndex.hasOwnProperty(tree[i].page)) {
 				this.menuTreeIndex[tree[i].page] = tree[i];
 				this.menuTreeIndex[tree[i].page].next = null;
@@ -573,6 +600,9 @@ var velesSinglePageApp = {
 					this.menuTreeIndex[tree[i].page].prev = prevPage;
 				}
 				prevPage = tree[i].page;
+
+				// same for page index used by autocomplete
+				this.menuTreePages.push({'page': tree[i].page, 'title': tree[i].title});
 			}
 		}
 	},
@@ -648,76 +678,118 @@ var velesSinglePageApp = {
 		}
 	},
 
-	'preloadJsonFiles': function() {
-		// Pre-load the article index first, as the list is not intended to be large
-		for (var i = this.jsonPreloadConfig.length - 1; i >= 0; i--) {
-			item = this.jsonPreloadConfig[i]
+	'isJsonPreloaded': function() {
+		return (Object.keys(this.jsonPreload).length > 0);
+	},
 
+	'preloadJsonFiles': function() {
+		if (this.isJsonPreloaded()) {
+			console.log('JSON already preloaded');
+			return;	// already called
+		}
+
+		var sharedResults = {}
+		
+		for (var i = this.jsonPreloadConfig.length - 1; i >= 0; i--) {
+			item = this.jsonPreloadConfig[i];
+		
 			$.ajax({
     			url: item.url.replace('{language}', this.language),
-    			context: item,
+    			context: {'id': item.id, 'index': i, 'results': sharedResults},	// ensure passing by reference
     			success: function (data) {
-					velesSinglePageApp.jsonPreload[this.id] = data;
-				}
+					this.results[this.id] = data;
+
+					if (this.index === 0) {	// save when fully loaded
+						velesSinglePageApp.jsonPreload = this.results;;
+						velesSinglePageApp.runPageHook('jsonPreload');
+					}
+				},
 			});
 		}
 	},
 
-	'initWikiAutocomplete': function() {
+	'initSearchAutocomplete': function() {
 		// Set-up autocomplete
-		$('.wikiAutoComplete').autoComplete({
-			'minLength': 1,
-			'autoSelect': true,
-			'resolver': 'custom',
-			'events': {
-				'search': function(qry, callback, origJQElement) {
-					if (!velesSinglePageApp.jsonPreload['wiki-pages-json']) {
-						console.log('Warning: wikiAutoComplete not ready yet')
-						callback([])
-						return;
-					}
+		var doSetup = function() {
+			$('.searchAutoComplete').autoComplete({
+				'minLength': 1,
+				'autoSelect': true,
+				'resolver': 'custom',
+				'events': {
+					'search': function(qry, callback, origJQElement) {
+						var queryResult = [];
+						var lastAdded = -1;
+						var searchable = [
+							{'category': 'wiki', 'items': velesSinglePageApp.jsonPreload['wiki-pages-json']},
+							{'category': 'news', 'items': velesSinglePageApp.jsonPreload['news-pages-json']},
+							{'category': 'web', 'items': velesSinglePageApp.menuTreePages},
+							];
 
-					var queryResult = [];
-					var lastAdded = -1;
+						for (var h = 0; h < searchable.length; h++) {	
+							for (var i = searchable[h].items.length - 1; i >= 0; i--) {
+								var item = searchable[h].items[i];
+								var words = item['title'].toLowerCase().split(' ');
 
-					for (var i = velesSinglePageApp.jsonPreload['wiki-pages-json'].length - 1; i >= 0; i--) {
-						var item = velesSinglePageApp.jsonPreload['wiki-pages-json'][i];
-						var words = item['title'].toLowerCase().split(' ');
-
-						// search every word of the item
-						for (var j = words.length - 1; j >= 0; j--) {
-							if (words[j].substring(0, qry.length) == qry.toLowerCase()) {
-								queryResult.push({'value': item['page'], 'text': item['title']})
+								// search every word of the item
+								for (var j = words.length - 1; j >= 0; j--) {
+									if (words[j].substring(0, qry.length) == qry.toLowerCase()) {
+										queryResult.push({
+											'value': item['page'], 
+											'text': item['title'],
+											'category': searchable[h].category
+										});
+									}
+								}
 							}
 						}
+						callback(queryResult);
 					}
-					callback(queryResult);
-				}
-			}
-		});
+				},
+				/* // will be used for badges, currenty bootstrap autocomplete has a sort of issue with highlighting 
+				formatResult: function (item) {
+					return {
+						value: item.id,
+						text: "[" + item.id + "] " + item.text,
+						html: [
+								item.text,
+								$('<span>').addClass('categoryLabel').addClass(item.category).text(item.category)
+							] 
+					};
+				},
+				*/
+			});
+			velesSinglePageApp.bindSearchEvents();
+		};
 
+		if (this.isJsonPreloaded())
+			doSetup();
+		else 
+			this.addHook('jsonPreload', doSetup);
+	},
+
+	'bindSearchEvents': function() {
 		// Bind events
-		if (!this.eventsBound.hasOwnProperty('wiki-autocomplete') || !this.eventsBound['wiki-autocomplete']) {
-			$('.wikiAutoComplete').focusin(function(){
+		if (!this.eventsBound.hasOwnProperty('search-autocomplete') || !this.eventsBound['search-autocomplete']) {
+			$('.searchAutoComplete').focusin(function(){
 				$('.sidebar').addClass('menu-disabled');
 			});
-			$('.wikiAutoComplete').focusout(function(){
+			$('.searchAutoComplete').focusout(function(){
 				$('.sidebar').removeClass('menu-disabled');
 			});
-			$('.wikiAutoComplete').on('autocomplete.select', function(el,item) {
+			$('.searchAutoComplete').on('autocomplete.select', function(el,item) {
 				// Got to the selected wiki page
 				if (item.value != velesSinglePageApp.currentPage) {
-					$('.wikiAutoComplete').val('loading ...');
-					velesSinglePageApp.addHook('init', function() { $('.wikiAutoComplete').val(''); });
-					window.setTimeout(function() { $('.wikiAutoComplete').val('') }, 5000);	// just in case something goes very wrong ... 
+					$('.searchAutoComplete').val('loading ...');
+					velesSinglePageApp.addHook('init', function() { $('.searchAutoComplete').val(''); });
+					window.setTimeout(function() { $('.searchAutoComplete').val('') }, 5000);	// just in case something goes very wrong ... 
 					velesSinglePageApp.go(item.value + '.' + velesSinglePageApp.language);
 				} else {
-					$('.wikiAutoComplete').val('[ The page is already open ]');
-					window.setTimeout(function() { $('.wikiAutoComplete').val('') }, 1000);
+					$('.searchAutoComplete').val('[ The page is already open ]');
+					window.setTimeout(function() { $('.searchAutoComplete').val('') }, 1000);
 					window.scrollTo(0,0);
 				}
 			});
-			this.eventsBound['wiki-autocomplete'] = true;
+			this.eventsBound['search-autocomplete'] = true;
 		}
 	},
 
@@ -756,7 +828,7 @@ var velesSinglePageApp = {
 
 		// needs to be done only once
 		this.preloadJsonFiles();
-		this.initWikiAutocomplete();
+		this.initSearchAutocomplete();
 	}
 }
 

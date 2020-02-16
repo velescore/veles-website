@@ -13,8 +13,8 @@ var menuTree = [
 /* Hidden special sections */
 	{
 		'page': 'index',
-			'title': 'Home',
-			'sections': [
+		'title': 'Home',
+		'sections': [
 			{ 'title': 'Getting Started' },
 			{ 'title': 'Restoring Privacy' },
 			{ 'title': 'Innovative Network' },
@@ -26,8 +26,10 @@ var menuTree = [
 		'hideFromNav': true,
 	},
 	{
+		'page': 'news',
 		'title': 'News',
-		'hideFromNav': true
+		'hideFromNav': true,
+		'itemsFromJsonID': 'news-pages-json'
 	},
 /* Sections visible on navigation menu */
 	{

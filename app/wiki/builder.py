@@ -10,10 +10,13 @@ of the License, or (at your option) any later version.
 """
 import codecs
 import copy
+import dateutil.parser
 import json
 import os
 import re
 import subprocess
+import time
+from datetime import datetime
 
 from app.builder import WebPageBuilder
 from app.wiki.view import WikiMarkdownTemplateView
@@ -62,19 +65,19 @@ class WikiBuilder(WebPageBuilder):
 						'html': view.render(lang_config),
 						'meta': view.get_meta_info()
 						}
-					page_list += [{
+					page_list_item = {
 						'page': name_parts[0] + '.' + self.page_type, 
 						'title': self.article_alias_to_title(name_parts[0])
-						}]
+						}
 					article['abstract'] = self.get_html_article_abstract(article['html'])
 					article_tags = str(article['meta']['tags']).replace(' ', '').split(',') if 'tags' in article['meta'] else []
-					article_info += [{
+					article_info_item = {
 						'alias': article['alias'],
-						'title': page_list[-1]['title'],
+						'title': page_list_item['title'],
 						'abstract': article['abstract'],
 						'tags': article_tags,
 						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' 
-					}]
+					}
 					article['infobox'] = copy.copy(article['meta'])
 
 					# Remove special tags from infobox
@@ -89,6 +92,17 @@ class WikiBuilder(WebPageBuilder):
 						tag_index[tag] += [article['alias']]
 
 					article.update(self.get_article_metadata(filepath))
+
+					# parse the datetime string from metadata
+					dt = dateutil.parser.parse(article['updated_at'])
+					article['updated_at'] = dt		# pythonic datetime object passed to Jinja2
+					page_list_item['timestamp'] = int(time.mktime(dt.timetuple()))
+
+					# add collected info to the lists
+					page_list += [page_list_item]
+					article_info += [article_info_item]
+
+					# build current article
 					self.build(
 						self.article_tpl, 
 						variables = {'article': article, self.page_type: lang_config}, 
