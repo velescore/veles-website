@@ -138,6 +138,18 @@ html {
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+.sidebar h5 {
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+    text-transform: uppercase;
+    margin: 25px 20px 0px 25px;
+    padding: 0px 0px 8px 9px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+
+
 .header {
 	display: block;
 	position: relative;
@@ -2043,6 +2055,7 @@ div.roadmap-delay-info {
 	border: 0;
 }
 
+.sidebar h5,
 .sidebar .menu-item,
 .sidebar .submenu-item {
 	opacity: 1;
@@ -2050,8 +2063,9 @@ div.roadmap-delay-info {
 	-moz-transition: opacity 1s ease-in-out;
 	-ms-transition: opacity 1s ease-in-out;
 	-o-transition: opacity 1s ease-in-out;
-	transition: opacity 1s ease-in-out;
+	transition: all 1s ease-in-out;
 }
+.sidebar.menu-disabled h5,
 .sidebar.menu-disabled .menu-item,
 .sidebar.menu-disabled .submenu-item {
 	opacity: 0;

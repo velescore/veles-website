@@ -421,6 +421,11 @@ var velesSinglePageApp = {
 				page,
 				isSectionLinks = true
 			);
+			if (this.menuTreeIndex[page].hasOwnProperty('sidebarCaption'))
+				$('#sidebar-caption').text(this.menuTreeIndex[page].sidebarCaption);
+			else
+				$('#sidebar-caption').text($('#sidebar-caption').attr('data-default'));
+
 			this.sidebarCollapse();
 
 		} else if (this.menuTreeIndex[page].hasOwnProperty('items')) {
@@ -430,6 +435,10 @@ var velesSinglePageApp = {
 				this.menuTemplates['sidebar'],
 				page
 			);
+			if (this.menuTreeIndex[page].hasOwnProperty('sidebarCaption'))
+				$('#sidebar-caption').text(this.menuTreeIndex[page].sidebarCaption);
+			else
+				$('#sidebar-caption').text(this.menuTreeIndex[page].title);	// page's name as sidebar title
 			this.sidebarCollapse();
 
 		} else if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items')) {
@@ -439,6 +448,11 @@ var velesSinglePageApp = {
 				this.menuTemplates['sidebar'],
 				page.parent
 			);
+			if (this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('sidebarCaption'))
+				$('#sidebar-caption').text(this.menuTreeIndex[this.menuTreeIndex[page].parent].sidebarCaption);
+			else
+				$('#sidebar-caption').text(this.menuTreeIndex[this.menuTreeIndex[page].parent].title);
+
 			// expand sidebar when parent is menu, on larger screens
 			this.sidebarExpand();
 

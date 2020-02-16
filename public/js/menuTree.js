@@ -134,6 +134,7 @@ var menuTree = [
 	},
 	{
 		'title': 'Wiki',
+		'sidebarCaption': 'Pinned Articles',
 		'items': [
 			{ 
 				'title': 'Index', 
