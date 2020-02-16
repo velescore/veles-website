@@ -16,8 +16,11 @@ var velesSinglePageApp = {
 	'scrollMinStep': 50,
 	'scrollLastPos': 0,
 	'parallaxBottom': null,
-	'wikiIndex': null,
-	'wikiIndexUrl': 'wiki/pages/{language}/pages.json',
+	'jsonPreloadConfig': [
+		{'id': 'wiki-pages-json', 'url': 'wiki/pages/{language}/pages.json'},
+		{'id': 'news-pages-json', 'url': 'news/pages/{language}/pages.json'}
+	],
+	'jsonPreload': {},
 
 	'go': function(page) {
 		if (!page)	// prevent error if wrong link/element's event gets bound with this method 
@@ -645,12 +648,22 @@ var velesSinglePageApp = {
 		}
 	},
 
-	'initWikiAutocomplete': function() {
+	'preloadJsonFiles': function() {
 		// Pre-load the article index first, as the list is not intended to be large
-		$.getJSON(this.wikiIndexUrl.replace('{language}', this.language), function (data) {
-			velesSinglePageApp.wikiIndex = data;
-		});
+		for (var i = this.jsonPreloadConfig.length - 1; i >= 0; i--) {
+			item = this.jsonPreloadConfig[i]
 
+			$.ajax({
+    			url: item.url.replace('{language}', this.language),
+    			context: item,
+    			success: function (data) {
+					velesSinglePageApp.jsonPreload[this.id] = data;
+				}
+			});
+		}
+	},
+
+	'initWikiAutocomplete': function() {
 		// Set-up autocomplete
 		$('.wikiAutoComplete').autoComplete({
 			'minLength': 1,
@@ -658,7 +671,7 @@ var velesSinglePageApp = {
 			'resolver': 'custom',
 			'events': {
 				'search': function(qry, callback, origJQElement) {
-					if (!velesSinglePageApp.wikiIndex) {
+					if (!velesSinglePageApp.jsonPreload['wiki-pages-json']) {
 						console.log('Warning: wikiAutoComplete not ready yet')
 						callback([])
 						return;
@@ -667,8 +680,8 @@ var velesSinglePageApp = {
 					var queryResult = [];
 					var lastAdded = -1;
 
-					for (var i = velesSinglePageApp.wikiIndex.length - 1; i >= 0; i--) {
-						var item = velesSinglePageApp.wikiIndex[i];
+					for (var i = velesSinglePageApp.jsonPreload['wiki-pages-json'].length - 1; i >= 0; i--) {
+						var item = velesSinglePageApp.jsonPreload['wiki-pages-json'][i];
 						var words = item['title'].toLowerCase().split(' ');
 
 						// search every word of the item
@@ -742,6 +755,7 @@ var velesSinglePageApp = {
 		}
 
 		// needs to be done only once
+		this.preloadJsonFiles();
 		this.initWikiAutocomplete();
 	}
 }
