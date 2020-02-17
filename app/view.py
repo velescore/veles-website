@@ -28,7 +28,7 @@ class JinjaTemplateView(AbstractView):
     def __init__(self, template_path, config = {}):
         """Creates the object, needs path to the jinja template directory"""
         self.tpl_path = template_path
-        self.config.pdate(config)
+        self.config.update(config)
         self.jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath=os.path.dirname(template_path)))
         self.jinja_env.filters.update({
             'basename': self.basename,
