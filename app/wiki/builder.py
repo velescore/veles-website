@@ -94,9 +94,12 @@ class WikiBuilder(WebPageBuilder):
 					article.update(self.get_article_metadata(filepath))
 
 					# parse the datetime string from metadata
-					dt = dateutil.parser.parse(article['updated_at'])
-					article['updated_at'] = dt		# pythonic datetime object passed to Jinja2
-					page_list_item['timestamp'] = int(time.mktime(dt.timetuple()))
+					if 'updated_at' in article:
+						dt = dateutil.parser.parse(article['updated_at'])
+						article['updated_at'] = dt		# pythonic datetime object passed to Jinja2
+						page_list_item['timestamp'] = int(time.mktime(dt.timetuple()))
+					else:
+						print('Warning: Wiki article {} not is not on the git repository')
 
 					# add collected info to the lists
 					page_list += [page_list_item]
