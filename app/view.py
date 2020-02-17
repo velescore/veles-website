@@ -12,7 +12,6 @@ of the License, or (at your option) any later version.
 import codecs
 import os
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 from urllib.parse import urlparse
 
 import jinja2
@@ -33,7 +32,6 @@ class JinjaTemplateView(AbstractView):
         self.jinja_env.filters.update({
             'basename': self.basename,
             'urlparse': self.urlparse,
-            'timedelta': self.timedelta
             });
 
     def render(self, variables = {}):
@@ -48,15 +46,6 @@ class JinjaTemplateView(AbstractView):
     def urlparse(self, path, component):
         """Filter to parse urls to html links"""
         return urlparse(path)[component]
-
-    def timedelta(self, dt):
-        """Converts datetime to human readable form of time delta, eg. 2 seconds ago"""
-        attrs = ['years', 'months', 'days', 'hours', 'minutes', 'seconds']
-        human_readable = lambda delta: [
-            '%d %s' % (getattr(delta, attr), getattr(delta, attr) != 1 and attr or attr[:-1])
-                for attr in attrs if getattr(delta, attr) or attr == attrs[-1]
-        ]
-        return " and ".join(human_readable(relativedelta(datetime.now(), dt))[:2]) + ' ago' 
 
     def timeformat(self, dt, format):
         return dt.strftime(format)

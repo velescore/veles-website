@@ -16,13 +16,10 @@ there are also extra filters that can be customized or added in [/app/view.py). 
 
 - **basename**(path) - Return the base name of pathname path, see Python's 
   [os.path.basename](https://docs.python.org/2/library/os.path.html#os.path.basename)
-- **urlparse**(url) - Parses URL into 6 components and returns specified component of the result,
-  see [urllib.parse.urlparse](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlparse)
-- **timedelta**(datetime) - Returns humand readable format of time delta of given datetime object,
-  for example "2 days and 3 hours ago". [currently under development and only english is supported)
 - **timeformat**(datetime) - Converts datetime object to the specified format, see 
   [strftime[)](https://docs.python.org/2/library/datetime.html#strftime-strptime-behavior)
-
+- **urlparse**(url) - Parses URL into 6 components and returns specified component of the result,
+  see [urllib.parse.urlparse](https://docs.python.org/3/library/urllib.parse.html#urllib.parse.urlparse)
 
 ## Markdown Format
 Content of Wiki and news articles is compiled from templates written in
