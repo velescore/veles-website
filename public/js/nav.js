@@ -601,8 +601,12 @@ var velesSinglePageApp = {
 				}
 				prevPage = tree[i].page;
 
-				// same for page index used by autocomplete
-				this.menuTreePages.push({'page': tree[i].page, 'title': tree[i].title});
+				// Same for the page index used by autocomplete,
+				// skip pages that belong to category as those are indexed
+				// separetely (pages with category have dots in the name).
+				// Also skip categories themselves, without page.
+				if (tree[i].page.indexOf('.') == -1 && !tree[i].hasOwnProperty('items'))
+					this.menuTreePages.push({'page': tree[i].page, 'title': tree[i].title});
 			}
 		}
 	},
