@@ -29,5 +29,5 @@ by authors {{article.authors | join(', ')}}
                     Edit History
                 </a>
     			<span title="{{article.author}}: {{article.commit_message}}">
-                    Last edit on {{article.updated_at}}</span>
+                    Last edit on {{article.updated_at | timedelta}}</span>
     		</div>
