@@ -156,6 +156,11 @@ table.infobox img {
 
 .infobox a {
 	font-size: 12px;
+    max-width: 160px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 15px;
 }
 
 /* Datatables, while only used on wiki, if used elsewhere, move to new file */
@@ -232,4 +237,9 @@ table.infobox img {
 .wiki-dvpn-setup-guide td:first-of-type {
 	font-weight: bold;
 	text-align: left;
+}
+
+/* Coin specs */
+.wiki-coin-specifications tr td:nth-child(2) {
+	font-weight: bold;
 }

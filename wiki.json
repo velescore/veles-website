@@ -5,7 +5,12 @@
 			"url": 					"Website",
 			"contentlicense":		"Content license",
 			"programminglanguage":	"Written in",
-			"docs":					"Docs"
+			"docs":					"Docs",
+			"ticker":				"Ticker Symbol",
+			"initialrelease":		"Initial Release",
+			"bitcointalk":			"Bitcointalk Thread",
+			"consensusmechanism":	"Consensus Mechanism",
+			"developmentstatus":	"Development Status"
 		}
 	}
 }

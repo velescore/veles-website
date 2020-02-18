@@ -10,13 +10,15 @@ of the License, or (at your option) any later version.
 """
 import codecs
 import copy
-import dateutil.parser
 import json
 import os
 import re
 import subprocess
 import time
 from datetime import datetime
+
+import dateutil.parser
+import markdown
 
 from app.builder import WebPageBuilder
 from app.wiki.view import WikiMarkdownTemplateView
@@ -38,6 +40,7 @@ class WikiBuilder(WebPageBuilder):
 	""" Constructor, needs base path of website """
 	def __init__(self, path, page_extension = 'html', article_extension = 'md'):
 		self.article_extension = article_extension
+		self.inline_md_renderer = markdown.Markdown(extensions=['mdx_urlize'])
 		super().__init__(path, page_extension)
 
 	def build_articles(self):
@@ -78,7 +81,7 @@ class WikiBuilder(WebPageBuilder):
 						'tags': article_tags,
 						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' 
 					}
-					article['infobox'] = copy.copy(article['meta'])
+					article['infobox'] = self.make_infobox_from_meta(article['meta'], view.replacements)
 
 					# Remove special tags from infobox
 					if 'tags' in article['infobox']:
@@ -125,9 +128,6 @@ class WikiBuilder(WebPageBuilder):
 				os.path.join(self.path, self.html_dir, lang, self.tags_file),
 				json.dumps(tag_index)
 				)
-
-	def get_markdown_view(self, filepath, language):
-		return WikiMarkdownTemplateView(filepath, language)
 
 	def get_html_article_abstract(self, html):
 		abstract = self.get_html_first_child_text(html, 'p')
@@ -193,6 +193,22 @@ class WikiBuilder(WebPageBuilder):
 				print('Error obtaining metadata: ', filename, e)
 
 		return data
+
+
+	def make_infobox_from_meta(self, meta, replacements = []):
+		data = {}
+		replacements += ['<p>', ''], ['</p>', '']
+
+		for name, text in meta.items():
+			data[name] = str(self.inline_md_renderer.convert(text))
+
+			for item in replacements:
+				data[name] = data[name].replace(item[0], item[1])
+
+		return data
+
+	def get_markdown_view(self, filepath, language):
+		return WikiMarkdownTemplateView(filepath, language)
 
 	def article_alias_to_title(self, alias):
 		return alias.replace('-', ' ')
