@@ -181,6 +181,23 @@ table.infobox img {
 	display: block;
 }
 
+
+/*
+ * Classes for coloring stuff like checkmarks by JS
+ */ 
+.green {
+	font-weight: bold; 
+	color: #aeed6a; 
+}
+.red { 
+	color: #F19B7E;
+	font-weight: bold; 
+}
+.cntr {
+	text-align: center;
+}
+
+
 /*
  * Page specific styles
  */

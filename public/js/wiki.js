@@ -12,9 +12,11 @@
 
 velesSinglePageApp.addCategoryHook('load', 'wiki', function() {
     var replacements = [
-        // ad colors to special glyphs
+        // ad colors to special glyphs, and aliases how to enter them
         [/✔/g, '<span class="green">✔</span>'],
-        [/✖/g, '️<span class="red">✖</span>']
+        [/✖/g, '️<span class="red">✖</span>'],
+        [/\[Y\]/g, '<span class="green">✔</span>'],
+        [/\[N\]/g, '️<span class="red">✖</span>']
     ];
     var html = $('#content').html();
 
