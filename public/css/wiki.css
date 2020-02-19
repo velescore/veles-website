@@ -109,6 +109,7 @@ figcaption {
 	min-width: 250px;
 	float: right;
 	clear: both;
+	color: #ddd;
 	background: #22222288;
 	border: 1px solid #e4b99c55;
 	font-size: 13px;
@@ -163,6 +164,7 @@ table.infobox img {
     max-height: 15px;
 }
 
+
 /* Datatables, while only used on wiki, if used elsewhere, move to new file */
 .dataTables_wrapper {
 	display: block;
@@ -178,22 +180,6 @@ table.infobox img {
 .wiki-page .dataTables_info:nth-child(1) {	/* a kind of cosmetic bug, likely with the display block here */
 	display: block;
 }
-
-/*
- * Colored Font and specific classes
- */ 
-.green {
-	font-weight: bold; 
-	color: #00aa00; 
-}
-.red { 
-	color: #dc143c;
-	font-weight: bold; 
-}
-.cntr {
-	text-align: center;
-}
-
 
 /*
  * Page specific styles
@@ -240,6 +226,12 @@ table.infobox img {
 }
 
 /* Coin specs */
-.wiki-coin-specifications tr td:nth-child(2) {
+.wiki-coin-specifications .wiki-table tr td:nth-child(2) {
 	font-weight: bold;
+	color: #fff;
+}
+
+.wiki-coin-specifications .ws, 
+.wiki-coin-specifications .wiki-table tr td.ws {
+	color: #aeed6a;
 }

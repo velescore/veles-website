@@ -27,6 +27,7 @@ class WikiMarkdownTemplateView(MarkdownTemplateView):
     replacements = [
         ['src="/', 'src="wiki/'],
         ['href="/', 'href="wiki/'],
+        ['<table>', '<table class="wiki-table">']
         ]
     last_meta = None
 
