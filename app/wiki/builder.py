@@ -197,12 +197,12 @@ class WikiBuilder(WebPageBuilder):
 
 	def make_infobox_from_meta(self, meta, replacements = []):
 		data = {}
-		replacements += ['<p>', ''], ['</p>', '']
+		infobox_repl = replacements + [['<p>', ''], ['</p>', '']]
 
 		for name, text in meta.items():
 			data[name] = str(self.inline_md_renderer.convert(text))
 
-			for item in replacements:
+			for item in infobox_repl:
 				data[name] = data[name].replace(item[0], item[1])
 
 		return data
