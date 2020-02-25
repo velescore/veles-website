@@ -95,7 +95,6 @@ var menuTree = [
 		'page': 'team',
 		'title': '團隊情況',
 		'sections': [
-			{ 'title': '關於我們' },
 			{ 'title': 'AltcoinBaggins' },
 			{ 'title': 'Mdfkbtc' },
 			{ 'title': 'Uhlik' },

@@ -23,7 +23,6 @@ var menuTree = [
 	{
 		'title': 'Team',
 		'sections': [
-			{ 'title': 'About Us' },
 			{ 'title': 'AltcoinBaggins' },
 			{ 'title': 'Mdfkbtc' },
 			{ 'title': 'Uhlik' },
