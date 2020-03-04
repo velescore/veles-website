@@ -32,6 +32,7 @@ class JinjaTemplateView(AbstractView):
         self.jinja_env.filters.update({
             'basename': self.basename,
             'urlparse': self.urlparse,
+            'timeformat': self.timeformat,
             });
 
     def render(self, variables = {}):

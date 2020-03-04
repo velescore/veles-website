@@ -12,29 +12,25 @@
  */
 velesSinglePageApp.addPageHook('index', 'init', function() {
     indexHeaderWidget.init();
-    /*
-    // Used to set the bg for animation effect just after overlay gets faded,
-    // otherwise it cause(d) bug with the fading effect.
-    setTimeout(function(){
-        $('.movething .header').addClass('with-bg');
-        
-    }, 3000);
-    */
-   
-        if (!velesSinglePageApp.eventsBound.hasOwnProperty('index-sidebar-hook') 
-                || !velesSinglePageApp.eventsBound['index-sidebar-hook']) {
-            $('.sidebar').on('mouseover', function () {
-                if (!$('#under-canvas').hasClass('parallax-zoom'))
-                    $('#under-canvas').addClass('parallax-zoom');
-            });
-            $('.sidebar').on('mouseout', function () {
-                if ($('#under-canvas').hasClass('parallax-zoom'))
-                    $('#under-canvas').removeClass('parallax-zoom');
-            });
 
-            velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
-        }
+    // Sidebar animations to react with map background
+    if (!velesSinglePageApp.eventsBound.hasOwnProperty('index-sidebar-hook') 
+            || !velesSinglePageApp.eventsBound['index-sidebar-hook']) {
+        $('.sidebar').on('mouseover', function () {
+            if (!$('#under-canvas').hasClass('parallax-zoom'))
+                $('#under-canvas').addClass('parallax-zoom');
+        });
+        $('.sidebar').on('mouseout', function () {
+            if ($('#under-canvas').hasClass('parallax-zoom'))
+                $('#under-canvas').removeClass('parallax-zoom');
+        });
 
+        velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
+    }
+
+    // Show news
+
+/*
     // Update twitter feed style
     setTimeout(function(){
         $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px');
@@ -46,6 +42,7 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
         $('#twitter-widget-0').contents().find('a.PrettyLink.hashtag.customisable').css('color', '#e4b99c');
         $('#twitter-widget-0').contents().find('a.PrettyLink.profile.customisable.h-card').css('color', '#e4b99c');
     }, 4000);
+*/
 });
 
  velesSinglePageApp.addPageHook('dvpn', 'init', function() {

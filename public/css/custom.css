@@ -3391,6 +3391,10 @@ ul.news-list div.news-icon span {
 	margin: auto;
 }
 
+.news-loaded {
+	display: none;
+}
+
 .index-page .col-lg-4 {
 	display: flex
 }

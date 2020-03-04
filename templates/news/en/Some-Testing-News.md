@@ -1,3 +1,5 @@
+Published:    Tue Feb 25 17:42:40 2019 +0100
+
 # Veles Core Wiki
 The repository to maintain Veles Core wiki articles and related assets.
 

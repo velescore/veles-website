@@ -30,6 +30,8 @@ class WikiBuilder(WebPageBuilder):
 	page_type = 'wiki'
 	pages_file = 'pages.json'
 	articles_file = 'articles.json'
+	recent_articles_file = 'recentArticles.json'
+	recent_articles_count = 10
 	tags_file = 'tags.json'
 	# Overrides of parent's values
 	tpl_dir = 'templates/wiki'
@@ -96,11 +98,11 @@ class WikiBuilder(WebPageBuilder):
 
 					article.update(self.get_article_metadata(filepath))
 
-					# parse the datetime string from metadata
-					if 'updated_at' in article:
-						dt = dateutil.parser.parse(article['updated_at'])
+					# parse the datetime string from metadata, date metadata can override this
+					if 'published' in article['meta'] or 'updated_at' in article:
+						dt = dateutil.parser.parse(article['meta']['published'] if 'published' in article['meta'] else article['updated_at'])
 						article['updated_at'] = dt		# pythonic datetime object passed to Jinja2
-						page_list_item['timestamp'] = int(time.mktime(dt.timetuple()))
+						article_info_item['timestamp'] = page_list_item['timestamp'] = int(time.mktime(dt.timetuple()))
 					else:
 						print('Warning: Wiki article {} not is not on the git repository')
 
@@ -125,9 +127,14 @@ class WikiBuilder(WebPageBuilder):
 				json.dumps(article_info, indent=4)
 				)
 			self.save_result(
+				os.path.join(self.path, self.html_dir, lang, self.recent_articles_file),
+				json.dumps(sorted(article_info, key=lambda item: item['timestamp'], reverse=True)[:self.recent_articles_count], indent=4)
+				)
+			self.save_result(
 				os.path.join(self.path, self.html_dir, lang, self.tags_file),
 				json.dumps(tag_index)
 				)
+
 
 	def get_html_article_abstract(self, html):
 		abstract = self.get_html_first_child_text(html, 'p')

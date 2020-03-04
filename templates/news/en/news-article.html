@@ -15,16 +15,16 @@ of the License, or (at your option) any later version.
     {# Anything above doesn't get shown in the app, just should be valid HTML #}
     <div id="content" class="news-page news-{{article.alias | lower}}">
 <!--
-Author:   {{article.author}}
-Date:     {{article.updated_at}}
-Commit:	  {{article.commit}}
+Author:        {{article.author}}
+Published On:  {{article.updated_at}}
+Last Commit:   {{article.commit}}
 
 {{article.commit_message}}
 -->
     	<div class="container">
 			<div class="article-info">
     			<span title="{{article.author}}: {{article.commit_message}}">
-                    Posted on {{article.updated_at}}</span>
+                    Published on {{article.updated_at | timeformat("%d %B %Y at %H:%M GMT")}}</span>
     		</div>
         	{{article.html}}
         </div>

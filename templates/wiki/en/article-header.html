@@ -29,5 +29,5 @@ by authors {{article.authors | join(', ')}}
                     History
                 </a>
     			<span title="{{article.author}}: {{article.commit_message}}">
-                    Updated on {{article.updated_at}}</span>
+                    Updated on {{article.updated_at | timeformat("%d %B %Y at %H:%M")}}</span>
     		</div>
