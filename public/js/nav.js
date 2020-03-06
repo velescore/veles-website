@@ -540,12 +540,14 @@ var velesSinglePageApp = {
 		if ($('body').width() > 990 ) {
 			if (!$('.sidebar').hasClass('sidebar-expand')) {
 				$('.sidebar').addClass('sidebar-expand');
+				$('.nav-search-icon').addClass('hide-search-icon');
 			}
 		}
 	},
 
 	'sidebarCollapse': function() {
 		$('.sidebar').removeClass('sidebar-expand');
+		$('.nav-search-icon').removeClass('hide-search-icon');
 	},
 
 	'sidebarResizePage': function() {

@@ -470,6 +470,40 @@ div#brand-text {
 	border-bottom: 2px solid #e4b99c;
 }
 
+/* navbar search icon */
+.nav-search-icon {
+    background: #222;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 5px;
+    color: #ccc;
+    display: block;
+    height: 39px;
+    left: -5px;
+    margin-top: 10px;
+    opacity: 0.9;
+    padding: 5px 5px 5px 10px;
+    position: absolute;
+    top: 0px;
+	transition: all 0.5s ease-in-out;
+    width: 35px;
+    z-index: 110;
+}
+
+.nav-search-icon:hover,
+.nav-search-icon.hide-search-icon {
+	background-color: transparent;
+	left: -10px;
+	top: 52px;
+	opacity: 0.2;
+	border: 1px solid rgba(100, 100, 100, 0);
+}
+
+@media (max-width: 992px) {
+	.nav-search-icon {
+		display: none;
+	}
+}
+
 /*navbar toggler */
 .navbar-toggler:focus {
 	outline:0;

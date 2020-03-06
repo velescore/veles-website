@@ -14,16 +14,36 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
     indexHeaderWidget.init();
 
     // Sidebar animations to react with map background
+    // and to work with search icon
     if (!velesSinglePageApp.eventsBound.hasOwnProperty('index-sidebar-hook') 
             || !velesSinglePageApp.eventsBound['index-sidebar-hook']) {
-        $('.sidebar').on('mouseover', function () {
+        $('.sidebar').add('.nav-search-icon').on('mouseover', function () {
             if (!$('#under-canvas').hasClass('parallax-zoom'))
                 $('#under-canvas').addClass('parallax-zoom');
+
+            if (!$('.sidebar').hasClass('sidebar-expand')) {
+                $('.sidebar').addClass('expand-temporary');
+                $('.sidebar').addClass('sidebar-expand');
+            }
+            $('.nav-search-icon').addClass('hide-search-icon'); 
         });
+
         $('.sidebar').on('mouseout', function () {
             if ($('#under-canvas').hasClass('parallax-zoom'))
                 $('#under-canvas').removeClass('parallax-zoom');
+
+            if ($('.sidebar').hasClass('expand-temporary')) {
+                $('.sidebar').removeClass('sidebar-expand');
+                $('.sidebar').removeClass('expand-temporary');
+                $('.nav-search-icon').removeClass('hide-search-icon'); 
+            }
+            
         });
+        // fix if we want to avoid the menu with the mouse
+        $('.navbar-brand').on('mouseout', function() {
+            $('.sidebar').mouseout();
+        });
+
 
         velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
     }
