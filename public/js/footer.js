@@ -141,8 +141,8 @@ var velesFooterPanel = {
                 );
             });
 
-        } else
-            console.log('Warning: Unknown tooltip: ' + name);
+        }/* else
+            console.log('Warning: Unknown tooltip: ' + name);*/
     }
 }
 
