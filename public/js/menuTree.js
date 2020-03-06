@@ -156,8 +156,9 @@ var menuTree = [
 	{
 		'page': 'news',
 		'title': 'News',
+		'sidebarCaption': 'Latest News',
 		'hideFromNav': true,
-		'itemsFromJsonID': 'news-pages-json'
+		'itemsFromJsonID': 'news/recentArticles.json'
 	},
 	{ 'page': 'crowdfundings', 'title': 'Crowdfundings', 'hideFromNav': true},
 	{ 'page': 'faq', 'title': 'FAQ', 'hideFromNav': true }

@@ -3351,14 +3351,24 @@ ul.news-list li {
 	margin-bottom: 3px;
 	height: 100px;
 	overflow: hidden;
-	color: #e0e0e0
+	color: #e0e0e0;
+	cursor: pointer;
 }
 
-
 ul.news-list span.news-teaser {
-	padding: 12px;
+	padding: 5px 12px 12px 12px;
 	display: block;
 	margin-left: 10px;
+}
+
+.news-title {
+	font-weight: bold;
+	display: block;
+	padding-top: 12px;
+}
+
+ul.news-list li:hover .news-title {
+	color: #F19B7E;
 }
 
 ul.news-list .news-icon {
@@ -3391,9 +3401,15 @@ ul.news-list div.news-icon span {
 	margin: auto;
 }
 
-.news-loaded {
-	display: none;
+.news-load-recent {
+	opacity: 0.2;
+	transition: opacity 3s;
 }
+
+.news-load-recent.news-loaded {
+	opacity: 1;
+}
+
 
 .index-page .col-lg-4 {
 	display: flex

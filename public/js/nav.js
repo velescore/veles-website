@@ -498,12 +498,15 @@ var velesSinglePageApp = {
 			// expand sidebar when parent is menu, on larger screens
 			this.sidebarExpand();
 
-			if (!cachedPage)
-				this.sidebarResizePage();
+			/*if (!cachedPage)
+				this.sidebarResizePage();*/
 
 		} else {
 			this.sidebarCollapse();
 		}
+
+		//if (!cachedPage)
+		this.sidebarResizePage();
 	},
 
 	'extractTemplates': function(context = null) {
@@ -546,15 +549,19 @@ var velesSinglePageApp = {
 	},
 
 	'sidebarResizePage': function() {
-		if ($('body').width() > 990) {
-			$('#content').css('padding-left', 0);
-			this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
+		if ($('.sidebar').hasClass('sidebar-expand')) {
+			if ($('body').width() > 990) {
+				$('#content').css('padding-left', 0);
+				this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
 
-			if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
-				$('#content').css('padding-left', this.sidebarPadContent+'px');
-			} else {
-				$('#content-wrapper').css('padding-left', 'unset');
+				if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
+					$('#content').css('padding-left', this.sidebarPadContent+'px');
+				} else {
+					$('#content-wrapper').css('padding-left', 'unset');
+				}
 			}
+		} else {
+			$('#content').css('padding-left', 'unset');
 		}
 	},
 

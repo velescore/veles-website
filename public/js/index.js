@@ -27,51 +27,33 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
 
         velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
     }
-
-    // Show news
-
-/*
-    // Update twitter feed style
-    setTimeout(function(){
-        $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css('font-size', '20px');
-        $('#twitter-widget-0').contents().find('.timeline-Tweet-text').css("font-family: 'Jura', sans-serif");
-        $('#twitter-widget-0').contents().find('a.link.customisable').css('color', '#e4b99c');
-        $('#twitter-widget-0').contents().find('a.customisable-highlight').css('color', '#e4b99c');
-        $('#twitter-widget-0').contents().find('a.u-floatLeft').css('color', '#e4b99c');
-        $('#twitter-widget-0').contents().find('a.u-floatRight').css('color', '#e4b99c');
-        $('#twitter-widget-0').contents().find('a.PrettyLink.hashtag.customisable').css('color', '#e4b99c');
-        $('#twitter-widget-0').contents().find('a.PrettyLink.profile.customisable.h-card').css('color', '#e4b99c');
-    }, 4000);
-*/
 });
 
- velesSinglePageApp.addPageHook('dvpn', 'init', function() {
-     indexHeaderWidget.init();
-});
-/*
-velesSinglePageApp.addPageHook('index', 'connect', function() {
-    velesSocketClient.get_cmd_result('location', 'gps', {}, function(data) {
-        indexHeaderWidget.updateLocation(data);
+// Show news
+velesSinglePageApp.addPageHook('index', 'jsonPreload', function() {
+    $('.news-list li').each(function (i, row) {
+        // we just need to be sure that number of rows doesn't exceed
+        // pre-set minimum number of recet articles, which is 10 by
+        // default, we need about 4 to show on index.
+        var $row = $(row),
+            item = velesSinglePageApp.jsonPreload['news/recentArticles.json'][i];
+
+        // populate existing empty row with json item's content
+        $row.attr('data-news-id', item['alias']);
+        $row.find('.news-title').text(item['title']);
+        $row.find('.news-teaser').text(item['abstract']);
+
+        // fade in news section when filled with data
+        $('.news-load-recent').addClass('news-loaded'); 
     });
-});
-*/
- /*   
-     setInterval(function(){
-         var date = new Date(2019, 11, 1, 0, 0);
-         var dateNow = new Date();
-         var diff = date - dateNow;
-         var msec = diff;
-         var dd = Math.floor(msec / 1000 / 60 / 60 / 24);
-         msec -= dd * 1000 * 60 * 60 * 24;
-         var hh = Math.floor(msec / 1000 / 60 / 60);
-         msec -= hh * 1000 * 60 * 60;
-         var mm = Math.floor(msec / 1000 / 60);
-         msec -= mm * 1000 * 60;
-         var ss = Math.floor(msec / 1000);
-         msec -= ss * 1000;
 
-        $("#days").text(dd);
-        $("#hours").text(hh);
-        $("#minutes").text(mm);
-        $("#seconds").text(ss);
-    }, 1000);*/ 
+    // make rows clickable
+    $('.news-link').not('.spa').click(function(e) {
+       velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
+    }).addClass('spa');
+});
+    
+// Effect for dVPN subpage, will be removed when dVPN page fully moved to index / wiki
+//velesSinglePageApp.addPageHook('dvpn', 'init', function() {
+//     indexHeaderWidget.init();
+//});
