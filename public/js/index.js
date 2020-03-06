@@ -62,15 +62,16 @@ velesSinglePageApp.addPageHook('index', 'jsonPreload', function() {
         $row.attr('data-news-id', item['alias']);
         $row.find('.news-title').text(item['title']);
         $row.find('.news-teaser').text(item['abstract']);
+        $row.click(function(e) {
+            velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
+        });
 
         // fade in news section when filled with data
         $('.news-load-recent').addClass('news-loaded'); 
     });
 
     // make rows clickable
-    $('.news-link').not('.spa').click(function(e) {
-       velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
-    }).addClass('spa');
+    $('.news-link').not('.spa').addClass('spa');
 });
     
 // Effect for dVPN subpage, will be removed when dVPN page fully moved to index / wiki
