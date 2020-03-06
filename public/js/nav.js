@@ -18,8 +18,9 @@ var velesSinglePageApp = {
 	'scrollLastPos': 0,
 	'parallaxBottom': null,
 	'jsonPreloadConfig': [
-		{'id': 'wiki-pages-json', 'url': 'wiki/pages/{language}/pages.json'},
-		{'id': 'news-pages-json', 'url': 'news/pages/{language}/pages.json'}
+		{'id': 'wiki/pages.json', 'url': 'wiki/pages/{language}/pages.json'},
+		{'id': 'news/pages.json', 'url': 'news/pages/{language}/pages.json'},
+		{'id': 'news/recentArticles.json', 'url': 'news/pages/{language}/recentArticles.json'}
 	],
 	'jsonPreload': {},
 
@@ -99,6 +100,9 @@ var velesSinglePageApp = {
 		// load the content if not cached, init the page scripts
 		if (this.cachedPages[this.language].hasOwnProperty(page)) {
 			$('#content-wrapper').html(this.cachedPages[this.language][page]);
+			if (velesSinglePageApp.isJsonPreloaded())
+				velesSinglePageApp.runPageHook('jsonPreload');
+
 			velesSinglePageApp.hideOverlay();
 			velesSinglePageApp.hideMobileMenu();
 			velesSinglePageApp.runPageHook('init', page, pageType);
@@ -117,6 +121,9 @@ var velesSinglePageApp = {
 				pageSource = './news/pages/';
 
 			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
+				if (velesSinglePageApp.isJsonPreloaded())
+					velesSinglePageApp.runPageHook('jsonPreload');
+
 				velesSinglePageApp.runPageHook('load', page, pageType);
 				velesSinglePageApp.hideOverlay();
 				velesSinglePageApp.hideMobileMenu();
@@ -189,6 +196,10 @@ var velesSinglePageApp = {
 	},
 
 	'runPageHook': function(hookName, pageName = null, pageType = null) {
+		// if no specific page given, use the current one
+		if (pageName == null)
+			pageName = this.currentPage;
+
 		// run hooks for a specific page, eg. index
 		if (this.pageHooks.hasOwnProperty(pageName) && this.pageHooks[pageName].hasOwnProperty(hookName))
 			for (var i = 0; i < this.pageHooks[pageName][hookName].length; i++) {
@@ -421,6 +432,7 @@ var velesSinglePageApp = {
 				) && !cachedPage && !this.isJsonPreloaded()) {
 			velesSinglePageApp.addHook('jsonPreload', function() {
 				velesSinglePageApp.rebuildPageMenu(page, false);
+				velesSinglePageApp.bindEvents(); 	// we need to bind menu items again
 			});
 			return;
 		}
@@ -724,8 +736,8 @@ var velesSinglePageApp = {
 						var queryResult = [];
 						var lastAdded = -1;
 						var searchable = [
-							{'category': 'wiki', 'items': velesSinglePageApp.jsonPreload['wiki-pages-json']},
-							{'category': 'news', 'items': velesSinglePageApp.jsonPreload['news-pages-json']},
+							{'category': 'wiki', 'items': velesSinglePageApp.jsonPreload['wiki/pages.json']},
+							{'category': 'news', 'items': velesSinglePageApp.jsonPreload['news/pages.json']},
 							{'category': 'web', 'items': velesSinglePageApp.menuTreePages},
 							];
 
