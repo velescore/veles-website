@@ -1,5 +1,6 @@
 var velesSinglePageApp = {
-	'explorerUrl': 'http://35.240.96.108:88',
+	'frontendVersion': '1.10.0',
+	'walletVersion': '0.18.1.2',	// default to be overriden by value from WS
 	'currentPage': null,
 	'language': 'en',
 	'defaultLanguage': 'en',
@@ -23,10 +24,13 @@ var velesSinglePageApp = {
 		{'id': 'news/recentArticles.json', 'url': 'news/pages/{language}/recentArticles.json'}
 	],
 	'jsonPreload': {},
+	'debugMode': false, 
 
 	'go': function(page) {
 		if (!page)	// prevent error if wrong link/element's event gets bound with this method 
 			return;
+
+		this.debug('app.go(' + page + ')', 'nav');
 
 		var pageHash = null;
 		var pageLanguage = self.language;
@@ -822,6 +826,9 @@ var velesSinglePageApp = {
 		var pageAddr = this.detectCurrentPageAddr();
 		this.language = this.getAddrPageLanguage(pageAddr);
 		this.currentPage = 'index';
+
+		this.printVersionInfo();
+
 /*
 		// Maintenance mode
 		if (window.location.host == 'veles.network' || window.location.host == 'www.veles.network') {
@@ -854,6 +861,25 @@ var velesSinglePageApp = {
 		// needs to be done only once
 		this.preloadJsonFiles();
 		this.initSearchAutocomplete();
+	},
+
+	/**
+	 * Logs a debug message, eg. outputs to console if debug mode enabled
+	 * @param  msg Debug log message
+	 * @param  category Debug message category
+	 */
+	'debug': function(msg, category = 'nav') {
+		if (this.debugMode == category)
+			console.log('[' + category + ']' + msg);
+	},
+
+	'printVersionInfo': function() {
+		console.log(
+			"%cVeles Core Web %c " + this.frontendVersion + " %c " + this.walletVersion, 
+			"background: #57BA35; color: white; padding: 3px 0px 3px 7px; border-radius:5px 0 0 5px; border-right: none;",
+			"background: #fd7e14; color: white; padding: 3px 0; border-right: none;",
+			"background: #6c757d; color: white; padding: 3px 7px 3px 0px; border-radius:0 5px 5px 0; border-right: none;"
+			);
 	}
 }
 
