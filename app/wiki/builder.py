@@ -81,6 +81,7 @@ class WikiBuilder(WebPageBuilder):
 						'title': page_list_item['title'],
 						'abstract': article['abstract'],
 						'tags': article_tags,
+						'page': name_parts[0] + '.' + self.page_type, 
 						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' 
 					}
 					article['infobox'] = self.make_infobox_from_meta(article['meta'], view.replacements)

@@ -481,12 +481,26 @@ var velesSinglePageApp = {
 		$('#sidebar-caption').text($('#sidebar-caption').attr('data-default'));	// set default caption
 
 		// we need to check if us or our parent has special items from JSON data
-		if (this.menuTreeIndex[page].hasOwnProperty('itemsFromJsonID'))
-			this.menuTreeIndex[page].items = this.jsonPreload[this.menuTreeIndex[page].itemsFromJsonID];
+		/*
+		if (this.menuTreeIndex[page].hasOwnProperty('itemsFromJsonID') && !this.menuTreeIndex[page].hasOwnProperty('items')) {
+			var subItems = this.jsonPreload[this.menuTreeIndex[page].itemsFromJsonID];
 
-		if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('itemsFromJsonID'))
-			this.menuTreeIndex[this.menuTreeIndex[page].parent].items = this.jsonPreload[this.menuTreeIndex[this.menuTreeIndex[page].parent].itemsFromJsonID];
+			for (var i = subItems.length - 1; i >= 0; i--) {
+				subItems[i].parent = '1' + page;
+			}
 
+			this.menuTreeIndex[page].items = subItems;
+		}
+		*/
+		if (this.menuTreeIndex[page].parent && this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('itemsFromJsonID') && !this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('items')) {
+			var subItems = this.jsonPreload[this.menuTreeIndex[this.menuTreeIndex[page].parent].itemsFromJsonID];
+
+			for (var i = subItems.length - 1; i >= 0; i--) {
+				subItems[i].parent = this.menuTreeIndex[page].parent;
+			}
+
+			this.menuTreeIndex[this.menuTreeIndex[page].parent].items = subItems;
+		}
 
 		if (this.menuTreeIndex[page].hasOwnProperty('sections')) {
 			this.buildMenuLevel(
@@ -519,7 +533,7 @@ var velesSinglePageApp = {
 				this.menuTreeIndex[this.menuTreeIndex[page].parent].items,
 				$('.sidebar ul'),
 				this.menuTemplates['sidebar'],
-				page.parent
+				this.menuTreeIndex[page].parent
 			);
 			if (this.menuTreeIndex[this.menuTreeIndex[page].parent].hasOwnProperty('sidebarCaption'))
 				$('#sidebar-caption').text(this.menuTreeIndex[this.menuTreeIndex[page].parent].sidebarCaption);
