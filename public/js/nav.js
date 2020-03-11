@@ -310,6 +310,33 @@ var velesSinglePageApp = {
 		   e.preventDefault();
 		   velesSinglePageApp.go($(this).attr('href').replace(velesSinglePageApp.pageSuffix, ''));
 		}).addClass('spa');
+
+		if (!velesSinglePageApp.eventsBound.hasOwnProperty('search-sidebar-hook') 
+            || !velesSinglePageApp.eventsBound['search-sidebar-hook']) {
+	        $('.sidebar').add('.nav-search-icon').on('mouseover', function () {
+	            if (!$('.sidebar').hasClass('sidebar-expand')) {
+	                $('.sidebar').addClass('expand-temporary');
+	                $('.sidebar').addClass('sidebar-expand');
+	            }
+	            $('.nav-search-icon').addClass('hide-search-icon'); 
+	        });
+
+	        $('.sidebar').on('mouseout', function () {
+	            if ($('.sidebar').hasClass('expand-temporary')) {
+	                $('.sidebar').removeClass('sidebar-expand');
+	                $('.sidebar').removeClass('expand-temporary');
+	                $('.nav-search-icon').removeClass('hide-search-icon'); 
+	            }
+	            
+	        });
+
+	        // fix if we want to avoid the menu with the mouse
+	        $('.navbar-brand').on('mouseout', function() {
+	            $('.sidebar').mouseout();
+	        });
+
+	        velesSinglePageApp.eventsBound['search-sidebar-hook'] = true;
+	    }
 	},
 
 	'hideOverlay': function(overlayName = null, fade = true, delay = 3000) {
@@ -546,6 +573,7 @@ var velesSinglePageApp = {
 				$('.sidebar').addClass('sidebar-expand');
 				$('.nav-search-icon').addClass('hide-search-icon');
 			}
+			$('.sidebar').removeClass('expand-temporary');
 		}
 	},
 
