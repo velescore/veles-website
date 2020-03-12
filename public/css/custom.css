@@ -208,7 +208,24 @@ html {
 }
 
 .movething .main-toptitle {
-	top: calc(50% - 80px);
+    top: 0;
+    position: absolute;
+    padding-top: 40px;
+    opacity: 0.5;
+}
+
+.movething .main-toptitle-cursor {
+	color: #eee;
+	font-weight: bold;
+	animation: toptitle-cursor-blinker 1s linear infinite;
+ }
+@keyframes toptitle-cursor-blinker {
+	50% {
+	opacity: 0;
+	}
+	51% {
+		opacity: 1;
+	}
 }
 
 /*.main-title .thin {

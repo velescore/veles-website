@@ -10,8 +10,45 @@
  * as published by the Free Software Foundation, either version 3
  * of the License, or (at your option) any later version.
  */
+
+var indexTypeWriter = {
+    'titles': [
+        'free dVPN testing stage is still active',
+        'new mobile wallet public release coming soon',
+        'Check out our new Wiki and News sections',
+    ],
+    'class': 'index-typewrite',
+    'pos': 0, 
+    'char': 0,
+    'init': function() {
+        this.typeNextChar();
+    },
+    'typeNextChar': function() {
+        if (this.char >= this.titles[this.pos].length) {
+            this.char = 0;
+            
+            $('.' + this.class).text("");
+            this.pos++;
+        }
+
+        if (this.pos >= this.titles.length) {
+            this.pos = 0;
+            this.char = 0;
+        } else {
+            $('.' + this.class).text($('.' + this.class).text() + this.titles[this.pos][this.char]);
+            this.char++;
+        }
+
+        if (this.char == this.titles[this.pos].length)
+            setTimeout(function(){ indexTypeWriter.typeNextChar(); }, 1000);
+        else
+            setTimeout(function(){ indexTypeWriter.typeNextChar(); }, 100);
+    }
+}
+
 velesSinglePageApp.addPageHook('index', 'init', function() {
     indexHeaderWidget.init();
+    indexTypeWriter.init();
 
     // Sidebar animations to react with map background
     // and to work with search icon
@@ -55,7 +92,8 @@ velesSinglePageApp.addPageHook('index', 'jsonPreload', function() {
     // make rows clickable
     $('.news-link').not('.spa').addClass('spa');
 });
-    
+
+
 // Effect for dVPN subpage, will be removed when dVPN page fully moved to index / wiki
 //velesSinglePageApp.addPageHook('dvpn', 'init', function() {
 //     indexHeaderWidget.init();
