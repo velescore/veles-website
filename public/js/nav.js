@@ -738,9 +738,9 @@ var velesSinglePageApp = {
 					if (!$element.hasClass('in-view')) {
 						$element.addClass('in-view');
 						$element.addClass('was-in-view');;
-						console.log('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
+						velesSinglePageApp.debug('Went in view: ' + $element.attr('id') + ' - eh: ' + element_height
 							+ ' etp: ' + element_top_position + ' ebp: ' + element_bottom_position
-							+ ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position);
+							+ ' wh: ' + window_height + ' wtp: ' + window_top_position + ' wbp: ' + window_bottom_position, 'animation');
 					}
 				} else {
 					$element.removeClass('in-view');
