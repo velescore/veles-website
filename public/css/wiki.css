@@ -138,6 +138,10 @@ table.infobox tr td:first-of-type {
 	line-height: 20px;
 }
 
+table.infobox tr:first-of-type td:first-of-type {
+	text-align: center;
+}
+
 table.infobox tr:last-of-type td {
 	line-height: 5px;	/* hack, with extra column, but theese tables ... */
 }

@@ -208,7 +208,10 @@ class WikiBuilder(WebPageBuilder):
 		infobox_repl = replacements + [['<p>', ''], ['</p>', '']]
 
 		for name, text in meta.items():
-			data[name] = str(self.inline_md_renderer.convert(text))
+			if name == 'image':
+				data[name] = text
+			else:
+				data[name] = str(self.inline_md_renderer.convert(text))
 
 			for item in infobox_repl:
 				data[name] = data[name].replace(item[0], item[1])
