@@ -3629,14 +3629,19 @@ ul.news-list div.news-icon span {
 }
 /* End of countdown */
 code{
-	line-height: 4;
+		font-size: 15px;
+	    font-family: 'Inconsolata', sans-serif;
+	    line-height: 19px;
+	    color: #aeed6a;
+	    display: block;
 		list-style-type: none;
 		background-color: #2626268b;
-		position: relative;
-		padding: .75rem 1.25rem;
 		border: 1px solid transparent;
 		border-radius: .25rem;
 		background: #00000066;
+		margin: 5px;
+		position: relative;
+		padding: .5rem 1.25rem;
 }
 
 /* dvpn */
