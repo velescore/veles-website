@@ -30,7 +30,7 @@ velesSinglePageApp.addCategoryHook('load', 'wiki', function() {
 //
 // Scripts triggered for specific Wiki pages
 //
-velesSinglePageApp.addPageHook('All-Pages.wiki', 'load', function() {
+velesSinglePageApp.addPageHook('All-Articles.wiki', 'load', function() {
         $.getJSON("wiki/pages/" + velesSinglePageApp.language + "/articles.json", function (data) {
             for (var i = data.length - 1; i >= 0; i--) {
                 data[i]['link'] = '<a href="' + data[i]['url'] + '" class="wikilink">' + data[i]['title'] + '</a>';

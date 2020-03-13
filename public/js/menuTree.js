@@ -47,12 +47,24 @@ var menuTree = [
 		'sidebarCaption': 'Pinned Articles',
 		'items': [
 			{ 
-				'title': 'Wiki Homepage', 
-				'page': 'Home.wiki' 
+				'title': 'Wiki Home', 
+				'page': 'Wiki-Home.wiki' 
 			},
 			{ 
 				'title': 'Coin Specifications', 
 				'page': 'Coin-Specifications.wiki' 
+			},
+			{ 
+				'title': 'Exchanges', 
+				'page': 'Exchanges.wiki' 
+			},
+			{ 
+				'title': 'Mining Pools', 
+				'page': 'Mining-Pools.wiki' 
+			},
+			{ 
+				'title': 'External Services', 
+				'page': 'External-Services.wiki' 
 			},
 			{ 
 				'title': 'Whitepaper', 
@@ -67,16 +79,8 @@ var menuTree = [
 				'page': 'Masternode-Setup-Guide.wiki' 
 			},
 			{ 
-				'title': 'Exchanges', 
-				'page': 'Exchanges.wiki' 
-			},
-			{ 
-				'title': 'Mining Pools', 
-				'page': 'Mining-Pools.wiki' 
-			},
-			{ 
-				'title': 'External Services', 
-				'page': 'External-Services.wiki' 
+				'title': 'All Wiki Articles', 
+				'page': 'All-Articles.wiki' 
 			}
 		]
 	},
