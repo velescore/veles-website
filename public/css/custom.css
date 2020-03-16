@@ -104,6 +104,7 @@ html {
 	border-bottom: 0;
 	margin-top: 60px;
 	margin-bottom: 39px;
+	min-width: 280px;
 }
 
 .sidebar a {
