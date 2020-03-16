@@ -149,7 +149,9 @@ var menuTree = [
 		'sections': [
 			{ 'title': 'Getting Started' },
 			{ 'title': 'Restoring Privacy' },
-			{ 'title': 'Innovative Network' },
+			{ 'title': 'Veles dVPN'},
+			{ 'title': 'Innovative Blockchain' },
+			{ 'title': 'Robust Service Layer' },
 			{ 'title': 'Funding and Launch' },
 			{ 'title': 'Economic Model' },
 			{ 'title': 'Open Governance' },
