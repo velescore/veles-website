@@ -148,9 +148,18 @@ of the License, or (at your option) any later version.
                                         <span class="icon2"></span>
                                     </div>
                                 </a>
-                                <a href="masternode-guide.en.html" class="nav-page">
+                                <a href="Masternode-Setup-Guide.wiki.en.html" class="nav-page">
                                     <div class="button-effect btn-index">
                                         <span class="label">Setup MN</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a href="dVPN-Setup-Guide.wiki.en.html" class="nav-page">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Connect to dVPN</span>
                                         <span class="icon">
                                         <span></span>
                                         </span>
@@ -287,14 +296,34 @@ of the License, or (at your option) any later version.
                         <div class="col-lg-7">
                             <h2>Restoring Online Privacy</h2>
                             <p class="my-6">
-                                Veles Core is an open-source software project that aims to help the people of Internet to retain their freedom of access to an information and to improve privacy of the communications over the Internet by building services such as decentralized VPN with multi-hop support.
+                                Veles Core is an open-source software project that aims to help people to retain their freedom of access to an information and their privacy on the Internet. Most of current solutions are either commercial centralized services 
+                                or are based on volunteer networks which are prone to misuse and censorship. Too fill the gap and provide secure, trustless solution the project take an advantage of developments in distributed systems and blockchain technology,
+                                to build economically self-supporting and eventually self-governing network, significantly more resistant to disruptions or or censorship.<br />
+                                The network currently provides decentralized VPN and tunelling as well as decentralized recursive DNS. More services
+                                will be gradually implemented over time, such as distributed Instant Messaging platform or trustless software
+                                builds.
+                                <!--{#
+
+                                 and
+                                distributed systems
+
+                                We have built a strong decentralized network 
+                                backed by the blockchain, which provides the basis for provisioning decentralized services such as dVPN / tunneling, recursive dDNS,  
+                                that are already accessible for the public. Many more will be gradually implemented along the way,
+                                such as decentralized Git mirrors, distributed private instant messaging,
+                                distributed bulletin boards, or trustless software builds.
+
+                                Veles Core is an open-source software project that aims to help people to retain their freedom of access to an information and their privacy on the Internet. We have built a strong decentralized network 
+                                backed by the blockchain, which provides the basis for provisioning decentralized services such as dVPN / tunneling, recursive dDNS,  
+                                that are already accessible for the public. Many more will be gradually implemented along the way,
+                                such as decentralized Git mirrors, distributed private instant messaging,
+                                distributed bulletin boards, or trustless software builds.<!
                                 <br />
                                 Over a decade of development in the blockchain technology has brought humanity significant advancements
                                 in building distributed and decentralized systems. However, current Internet connection
                                 anonymization services are mostly either commercial services or based on volunteer networks.
-                                <br />
                                 To fill the gap and provide secure, trustless solution we take an advantage of this technology to accomplish our goal by building economically self-supporting and eventually self-governing network, significantly more resistant to a disruption or to attempts to one's privacy violation by a third party such as an oppresive government.
-                                <br/>
+                                <br/> #}-->
                             </p>
                             <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
                         </div>
@@ -302,42 +331,19 @@ of the License, or (at your option) any later version.
                 </div>
             </section>
 
-            <section id="dvpn-launch">
-                <div class="container">
-                    <div class="row" id="veles-dvpn public alpha-testing">
-                        <div class="col-lg-4 text-center wide-screen">
-                            <img class="img track-in-view left-slide-in was-in-view in-view" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
-                        </div>
-                        <div class="col-lg-1 wide-screen"></div>
-                        <div class="col-lg-7">
-                            <h2>Veles dVPN public alpha-testing</h2>
-                            <p class="my-6">
-                                The free public alpha-testing has started and there are first masternodes with full dVPN support
-                                already up and running. Everyone can join this testing phase and use dVPN service for free,
-                                or run his own dVPN-enabled Veles Masternode. Benchmark data gathered from this public testing
-                                will help us to improve Veles dVPN for future launch to production. <br>
-                                Stay tuned for more information on Veles Masternode Gen 2 coming soon!
-                            </p>
-                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="download-config">
+            <section id="veles-dvpn">
                 <div class="container">
                     <div class="row" id="start-free testing of veles dvpn now">
                         <div class="col-lg-7">
-                            <h2>Start using Veles dVPN / shadowsocks</h2>
-                                <p> Dowload your configuration files (generated by random Masternode), choose guide for your platform from dVPN menu
-                                    and start browsing through Veles dVPN now!  <br><br>
-                                    <a href="https://explorer.veles.network/dapi/getOpenVPNConfig">OpenVPN config</a><br>
-                                    <a href="https://explorer.veles.network/dapi/getOpenVPNShieldedConfig">OpenVPN config [stunnel shielded]</a><br>
-                                    <a href="https://explorer.veles.network/dapi/getStunnelConfig">Stunnel client config</a><br>
-                                    <a href="https://explorer.veles.network/dapi/getStunnelCertificate">Stunnel client certificate</a><br>
-                                    <br>
-                                    If you have a difficulties connecting using OpenVPN method, 
-                                    for example because of a too strict firewall, use OpenVPN+stunnel.
+                            <h2>Start using Veles dVPN</h2>
+                                <p>The free public alpha-testing is still active and there are several Masternodes with full dVPN support up and running. Everyone can join this testing phase and use dVPN service for free, or run his own dVPN-enabled Veles Masternode. Benchmark data gathered from this public testing will help us to improve Veles dVPN for future launch to production.</p>
+                                <p>See <a href="dVPN-Setup-Guide.wiki.en.html" class="wikilink">dVPN Setup Guide</a> to start using it now on the most popular platforms
+                                such as Windows, Linux, OSX, iOS and Android,
+                                or directly download <a href="dVPN-Configuration-Files.wiki.en.html" class="wikilink">dVPN Configuration Files</a> and Certificates.
+                                </p>
+                                <p>Currently supported protocols for dVPN are <b>OpenVPN, Shadowsocks</b> with extra obfuscation layers 
+                                such as <b>Stunnel</b> and <b>Obfsproxy</b>. These layers will also be used for multi-hop implementation,
+                                based on the effectivness observed during this public testing stage.
                                 </p>
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
@@ -349,21 +355,50 @@ of the License, or (at your option) any later version.
                 </div>
             </section>
 
-            <section id="innovative-network">
+           <section id="innovative-blockchain">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view right-slide-in" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Innovative Blockchain</h2>
+                            <p class="my-6">
+                            At the core of the ecosystem is the Veles Core blochchain that employs innovative solutions to overcome
+                            common issues with the current blockchain implementations.<br />
+                            Independent multi-algorithmic PoW mining and other approaches against 51% attacks ensure secure and reliable
+                            blockchain.<br /> 
+                            Flexible block spacing, insta-mine protection, and dynamic capped block rewards based on hashrate 
+                            ensure fairer mining opportunities on all the available algorithm and protects against low-cost opportunistic mining,
+                            keeping costs of the mining more consistent and hence suporting more balanced price discovery.<br />
+                            Dynamic hashrate-based block reward system is complemented by adaptive non-linear halving 
+                            mechanism tied to current coin supply, ensuring the correct emmision rate to achieve
+                            both low inflation and long-term sustainability.
+                            </p>
+                        </div>
+                        <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                    </div>
+                </div>
+            </section>
+
+            <section id="robust-service-layer">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h2>Innovative Network</h2>
+                            <h2>Flexible Service Layer</h2>
                             <p class="my-6">
-                            To provide the environment to best fit the needs of dVPN and other privacy-restoring
-                            decentralized services we have built custom blockchain and masternode network aimed
-                            at robustness, security and reliability.
-                            <br />Learning from the common problems that have emerged since the blockchain
-                            technology became widespread, we've addressed those issues by solutions such as independent
-                            multi-algo PoW and other approaches against 51% attacks, insta-mine protection, dead-lock
-                            protection, flexible block spacing, etc. We've further leveraged this technology
-                            by implementing our new innovative concepts such as capped dynamic block rewards
-                            with adaptive supply control or dynamic non-linear halving scheduler.
+                            Veles Network is built using a multi-tiered decentralized network approach 
+                            based on Masternodes concept, further leveraging it with a flexible and robust 
+                            service layer. Latest generation of the Veles Masternodes ensures that the all the
+                            services provided by the Veles Network are served in a redundant decentralzied
+                            manner focused on service quality and availability. <br />
+                            Veles Masternode 2nd generation have been in public testing phase through Q1 2020,
+                            providing extra services such as dVPN, recursive dDNS or optional
+                            decentralized Shadowsocks tunnels for no extra fees while metrics are being gathered.<br />
+                            After the end of the public testing phase and enabling payment system for MN services, 
+                            the operators will be able to earn extra frees for the services they provide,
+                            according to their available resources and selected Masternode Tier.<br />
                             </p>
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
@@ -500,13 +535,33 @@ of the License, or (at your option) any later version.
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-7">
-                            <h2>Sane Economic Model</h2>
+                            <h2>Solid Economic Model</h2>
                             <p class="my-6">
-                                Solid monetary policy plays an important role to ensure store of value of VLS for the long-term.<br />
-                                Unlike in traditional PoW systems, on Veles Network is not possible to mine low-cost coins by getting a full block reward with low hashrate on one of algorithms, thanks to dynamic block rewards based on hasrate.<br />
-                                We have decided to use our concept non-linear, decreasing halving frequency to prevent unneccessary long inflation period during the PoW launch but preserves long steady supply rate.<br />
+                                Sane monetary policy plays an important role to ensure store of value of VLS cryptocurrency.<br />
+                                Dynamic hashrate-based block rewards ensures fairer mining opportunities and prevents low-cost
+                                mining would a hashrate drop on any algorithm. Adaptive non-linear halving system tied to
+                                real emission rate compliments the dynamic block rewards and ensures ideal supply curve 
+                                with already low inflation rates while preserving long-term sustainability.<br />
+                                Although well-calculated token emission rate and faird reward share play fundamental role in any successful
+                                monetary model, the most important part for the long-term economic self-sufficiency of the project will play
+                                the payments for extra services and resources provided by the Masternode operators.
+                                <!--{#
+                                Unlike in traditional PoW systems, on Veles Network is not possible to mine low-cost coins by getting a full block reward with low hashrate on one of algorithms, due to dynamic block rewards based on hasrate.<br />
+                                We have developed the concept non-linear, decreasing halving frequency to prevent unneccessary long inflation period during the PoW launch but preserves long steady supply rate.
+
                                 This ensures correct supply curve and inflation rate with the store of value in mind.
-                                Over 50% of the max. supply will reached within 2 years and over 70% within 5 years.
+                                Over 50% of the max. supply have been reached within first 2 years, and over 70% will be mined
+                                within about next 5 years, the rest will take more than century to mine, helping long-term
+                                sustainability.<br />
+                                The share of the reward for the mined block it's also intended to better reflect the network's proggress.
+                                Starting from the 90% PoW reward, 5% Masternode and 5% dev fund reward, progressing gradually to the 40% Pow and  
+                                60% Masternode reward, and 0% dev reward within 5 - 7 years (by then the development will be funded through
+                                decentralized organisation).
+                                Although well-calculated token emission rate and faird reward share play fundamental role in any successful
+                                economic model, the most important part for the long-term economic self-sufficiency of the project will play
+                                the payments for extra services and resources provided by the Masternode operators. The Masternode
+                                payments from block reward shares still ensure that all the basic services are 
+                                #}-->
                             </p>
                         </div>
                         <div class="col-lg-1 wide-screen"></div>
@@ -551,16 +606,18 @@ of the License, or (at your option) any later version.
                             <div class="card h-100">
                                 <div class="card-body" id="card-body">
                                     <h4 class="card-title">
-                           <a>Multi-algo PoW</a>
-                        </h4>
-                                    <p class="card-text">Multi-algorithmic mining enables the network to be
-                                    secured by large number of miners with different devices, such as GPU rigs or
-                                    ASICs, which in our opinion improves the network decentralization
-                                    and reward distribution.
-                                    To complement multi-algo PoW we're already working on a PoS implementation
-                                    as an additional consensus algorithm.
-
-                                    <br /><br />
+                                       <a>Multi-algo PoW</a>
+                                    </h4>
+                                    <p class="card-text">Independent multi-algorithmic mining brings better security and flexibility
+                                    to the network, where miners can participate with several different devices, whether with <b>ASICS</b> or 
+                                    GPU rigs.<br />
+                                    Veles Core's implementations of multi-algo with dynamic reward system is designed to provide more equal mining opportunities and competition accross the different algorighms.<br />
+                                    <!--  and devices used by taking average real-life hashrate costs into the consideration,
+                                    preventing against low-cost opportunistic mining would the hashrate drop on any algorithm, or on the other hand,
+                                    capping the dynamic rewards by upper limit when sufficient hashrate on a specific algorithm is achieved,
+                                    motivating some of the miners to switch to other algorithm where hashrate is not high enough.
+                                    -->
+                                    <br />
                                     <b>Currently supported:</b></p>
                                     <ul>
                                         <li>Scrypt</li>
@@ -579,16 +636,15 @@ of the License, or (at your option) any later version.
                                     <h4 class="card-title">
                            <a>Masternodes</a>
                         </h4>
-                                    <p class="card-text">Masternodes play important role in the Veles Network
-                                    as they will be providing the core of our decentralized services. Our
-                                    masternode network is steadily growing, as we need to reach sufficient number
-                                    of masternodes for a smooth launch of the dVPN and other services.<br />
-                                    We invite anyone to run a masternode (Tier I), the collateral is currently
-                                    at 2000 VLS and scheduled to be decreased to 500 VLS in v0.18. <br />
-                                    Later on Tier II masternodes will also be implemented to function as
-                                    lightweight exit-nodes. We're experimenting with Proof-of-Location
-                                    concept to for better node distribution.<br /><br />
-                                    <a href="masternode-guide.en.html">Veles Masternode Guide</a>
+                                    <p class="card-text">
+                                    Veles Network takes an advantage of the 
+                                    <a href="Masternode.wiki.en.html" class="wikilink">Masternode</a> concept to provide it's distributed services and 
+                                    enable node operators to earn the fees for those services accordingly.<br />
+                                    The last generation of Veles Masternodes that is currently in public testing is already providing services such as 
+                                    <b>dVPN</b>, <b>recursive dDNS</b> or decentralized <b>Shadowsocks tunnels</b>.<br />
+                                    A unique Masternode Tier and Rating system is currently under development, where each MN operator will be able to 
+                                    choose a specialization for his Masternode  according to the resources available.<br /><br />
+                                    See also <a href="Masternode-Setup-Guide.wiki.en.html" class="wikilink">Masternode Setup Guide</a>
                                     </div>
                             </div>
                         </div>
@@ -596,32 +652,16 @@ of the License, or (at your option) any later version.
                             <div class="card h-100">
                                 <div class="card-body" id="card-body-2">
                                     <h4 class="card-title">
-                           <a>Dynamic</a>
-                        </h4>
+                                        <a>Language-agnostic</a>
+                                    </h4>
                                     <p class="card-text">
-                                        &#9702; Dynamic PoW rewards based on hashrate, automatically adjusted
-                                        after each halving check interval to get closer to the ideal supply release model<br />
-                                        &#9702; Dynamic block reward halvings based on amount of circulating supply realeased since the last halving.<br />
-                                        &#9702; Dynamic block spacing enables blocks to be mined steadily even if some PoW algorithms
-                                        would have low or no hashrate by adapting to the situation.<br />
-                                        &#9702; Dynamic block reward shares:<br />
-                                        &nbsp; &#8226; <b>increasing MN reward</b><br />
-                                        5% - 60% in 5y, now <span
-                                                        data-entity-id="chain.stats.mining"
-                                                        data-attribute="block_reward_mn_percent"
-                                                        data-format="number"
-                                                        data-fixed-decimals="2"
-                                                        data-unit="%"
-                                                    >9 %</span><br />
-                                        &nbsp; to compensate PoW halvings<br />
-                                        &nbsp; &#8226; <b>decreasing dev reward</b><br />
-                                        5% - 0% in 5y, now <span
-                                                        data-entity-id="chain.stats.mining"
-                                                        data-attribute="block_reward_dev_percent"
-                                                        data-format="number"
-                                                        data-fixed-decimals="2"
-                                                        data-unit="%"
-                                                    >4.65 %</span>
+                                        Service-based architecture of the Veles Network ecosystem enforces better scalability, interoperability
+                                        and decoupling of the components, where each one can be developed independently in the most appropriate 
+                                        programming language for the particlar task.<br />
+                                        Veles Core node encapsulates consensus and wallet functionality and takes an advantage of reliability,
+                                        security and performance of the <b>C++</b> code, while many parts of the service layer 
+                                        benefits from the flexbility, easy prototyping or a large library base of the <b>Python</b>.<br /><br />
+                                        See also <a href="https://github.com/velescore" target="_blank">Veles Core GitHub</a> repositories
                                     </p>
                                 </div>
                             </div>

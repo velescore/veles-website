@@ -78,6 +78,9 @@ var velesSinglePageApp = {
 		$('#content-wrapper').find('.spa').removeClass('spa');
 		this.cachedPages[this.language][this.currentPage] = $('#content-wrapper').html();
 
+		// run hook to signal that we're leaving current page, to stop scripts etc.
+		velesSinglePageApp.runPageHook('exit', this.currentPage); // do the same if pageType changes once needed
+
 		// change the current page pointers and links
 		this.currentPage = page;
 		this.setActive(page);

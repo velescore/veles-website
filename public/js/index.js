@@ -20,10 +20,19 @@ var indexTypeWriter = {
     'class': 'index-typewrite',
     'pos': 0, 
     'char': 0,
+    'runLoop': false,
+
     'init': function() {
+        this.runLoop = true;
         this.typeNextChar();
     },
+    'stop': function() {
+        this.runLoop = false;
+    },
     'typeNextChar': function() {
+        if (!this.runLoop)
+            return;
+
         if (this.char >= this.titles[this.pos].length) {
             this.char = 0;
             
@@ -66,6 +75,10 @@ velesSinglePageApp.addPageHook('index', 'init', function() {
 
         velesSinglePageApp.eventsBound['index-sidebar-hook'] = true;
     }
+});
+
+velesSinglePageApp.addPageHook('index', 'exit', function() {
+    indexTypeWriter.stop();
 });
 
 // Show news
