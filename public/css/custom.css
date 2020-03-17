@@ -2979,7 +2979,8 @@ hr.hr-new {
 	margin-top: 40px;
 }*/
 
-#large-header #under-canvas {
+#large-header #under-canvas,
+#large-header #under-canvas2  {
 	position: absolute;
 	pointer-events: none;
 	width: 100%;
@@ -3004,7 +3005,7 @@ hr.hr-new {
 	transition: width 1.0s ease;
 }
 
-#large-header #under-canvas #debug-area {
+#large-header #under-canvas2 #debug-area {
 	padding-top: 310px;
 	font-size: 10px;
 	line-height: 12px;
@@ -3015,7 +3016,7 @@ hr.hr-new {
 	color: #aeed6a;
 }
 
-#large-header #under-canvas #debug-area li{
+#large-header #under-canvas2 #debug-area li{
 	padding: 0;
 	margin: 0;
 }
