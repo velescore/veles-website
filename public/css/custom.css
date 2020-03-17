@@ -414,7 +414,7 @@ body.with-overlay {
 
 .navbar.mobile-menu .navbar-collapse.show {
 	position: absolute;
-	left: 60%;
+	left: 55%;
 	transition: left 2s ease;
 }
 
@@ -602,17 +602,26 @@ li.nav-item.nav-active {
 @media (max-width: 992px) {
 	li.nav-item {
 		margin-left: -16px;
-		padding-left: 16px;
+		padding: 0 0 0 15px;
 	}
 	li.nav-item.nav-active {
 		border-bottom: 0px;
-		border-left: 4px solid #e4b99c;
+		/*border-left: 4px solid #e4b99c;*/
 		padding-left: 12px;
 	}
 	li.nav-item:hover {
+		background-color: transparent;
 		border-bottom: 0px;
-		border-left: 4px solid #F19B7E;
+		/*border-left: 4px solid #F19B7E;*/
 		padding-left: 16px;
+	}
+	.dropdown-item {
+		padding-left: 5px;
+		background-color: rgba(50, 50, 50, 0.3);
+		margin-left: -30px;
+		min-width: 60vw;
+		overflow: hidden;
+    	text-overflow: ellipsis;
 	}
 }
 
@@ -1534,7 +1543,6 @@ span.status-label-short {
 	display: table;
 	opacity: 0.5;
 	margin-bottom: 40px;	/* height of footer overlay */
-	white-space: nowrap;
 	overflow: hidden;
 }
 
@@ -2188,13 +2196,12 @@ div.roadmap-delay-info {
 
 #tomotto{
 	text-align: center;
-	width: 100%;
 	letter-spacing: 2px;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	line-height: 36px;
 	margin: auto;
 	position: relative;
-	margin: 15px 110px 25px 110px;
+	margin: 5px 5px 40px 5px;
 	font-size: 16px;
 }
 
@@ -3513,18 +3520,21 @@ ul.news-list div.news-icon span {
 	color: #aaa;
 }
 
-#languageSelectorBar {
-	max-width: 120px;
-	display: block;
-}
-
-#languageSelectorBar .current-language {
+.language-selector .current-language {
 	opacity: 0.5;
 	font-size: 13px;
 }
 
-#languageSelectorBar:hover .current-language {
+.language-selector:hover .current-language {
 	opacity: 1;
+}
+
+@media (max-width: 992px) {
+	li.nav-item.language-selector {
+		border-top: 1px solid rgba(100, 100, 100, 0.4);
+		min-width: 60vw;
+		margin-top: 20px;
+	}
 }
 
 .footer-copyright .grey {

@@ -127,7 +127,7 @@ var velesSinglePageApp = {
 			if (pageType == 'news')
 				pageSource = './news/pages/';
 
-			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function() {
+			$('#content-wrapper').load(pageSource + this.language + '/' + pageNameParts[0] + '.html' + ' #content', null, function(response, status, xhr) {
 				if (velesSinglePageApp.isJsonPreloaded())
 					velesSinglePageApp.runPageHook('jsonPreload');
 
@@ -290,6 +290,10 @@ var velesSinglePageApp = {
 					velesSinglePageApp.showMobileSlider();
 			})
 
+			$('.overlay-shadow').add('.navbar-brand').click(function(){
+				velesSinglePageApp.hideMobileMenu();
+			});
+
 			$('body').resize(function(){
 				if ($('.sidebar').hasClass('sidebar-expand'))
 					velesSinglePageApp.sidebarResizePage();
@@ -405,6 +409,8 @@ var velesSinglePageApp = {
 	'hideMobileMenu': function() {
 		this.hideOverlay('mobile-menu', false, 100);
 		$('.navbar').removeClass('mobile-menu');
+		$('#navbarResponsive').removeClass('show');	// needed when manually closing by clicking elsewhere
+		$('#content').removeClass('mobile-menu-overlay');
 	},
 
 	'isMobileMenuShown': function() {
@@ -440,7 +446,7 @@ var velesSinglePageApp = {
 			'sidebar': this.extractTemplates('.sidebar')
 		};
 
-		this.buildMenuLevel(menuTree, $('#navbarResponsive ul.navbar-nav'), this.menuTemplates['navbar']);
+		this.buildMenuLevel(menuTree, $('#navbarResponsive ul.nav-menu'), this.menuTemplates['navbar']);
 		//this.buildMenuLevel(menuTree, $('.sidebar ul'), this.menuTemplates['sidebar']);
 
 		$('.navbar .template').removeClass('template');
