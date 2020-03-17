@@ -9,7 +9,7 @@ as published by the Free Software Foundation, either version 3
 of the License, or (at your option) any later version.
 -#}
 {%- include 'header.html' %}
-    <div id="content-wrapper">
+    <div id="content-wrapper" class="sidebar-aligned">
         <div id="content" class="index-page">
             <header>
                 <div class="movething">
@@ -685,4 +685,25 @@ of the License, or (at your option) any later version.
 -#}
         </div> <!-- /#content -->
     </div> <!-- /#content-wrapper -->
+    <div id="error-wrapper" class="sidebar-aligned">
+        <div class="container">
+            <h1>
+                Error <span class="error-code">420</span>: 
+                <span class="error-title">Cloud Not Found</span><span class="error-title-cursor">_</span>
+            </h1>
+            <div class="error-message" data-error-id="420">
+                <p><b>veles-web: task failed successfully</b></p>
+                <p>This is, like, weird. Perhaps the server got high and forgot it wasn't supposed to get high.</p>
+            </div>
+            <div class="error-message" data-error-id="404">
+                <p><b>veles-web: <span class="error-page">unknown</span>.html: page not found</b></p>
+                <p>The page you are looking for has not been found. It has probably been moved to another location,
+                you can use the search panel to find it. Unless it has disappeared in the Veles Network tunnels,
+                never to be found.</p> 
+            </div>
+            <p class="error-links">
+                You can start again from the <a href="https://veles.network">homepage</a>.
+            </p>
+        </div>
+    </div>
 {%- include 'footer.html' -%}

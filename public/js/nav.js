@@ -99,10 +99,13 @@ var velesSinglePageApp = {
 			document.location.href = "./" + page + '.' + this.language + this.pageSuffix;
 		}
 
-		// close the menu if open
+		// close the menu if open, same for sidebar
 		$('div.navbar-collapse').removeClass('show');
 		$('div.navbar-collapse').addClass('hide');
-		//
+		velesSinglePageApp.sidebarCollapse(true);
+		
+		// clear recent errors if any
+		velesSinglePageApp.clearError();
 
 		// load the content if not cached, init the page scripts
 		if (this.cachedPages[this.language].hasOwnProperty(page)) {
@@ -141,6 +144,14 @@ var velesSinglePageApp = {
 				velesSinglePageApp.initPageAnimations();
 				velesSinglePageApp.bindEvents();
 				velesChain.replayEvents();
+
+				if (status == 'error') {
+					velesSinglePageApp.sidebarCollapse();
+					velesSinglePageApp.hideOverlay();
+					velesSinglePageApp.hideMobileMenu();
+					velesSinglePageApp.hideMobileSlider();
+					velesSinglePageApp.showError(xhr.status, xhr.statusText);
+				}
 			});
 		}
 
@@ -149,6 +160,23 @@ var velesSinglePageApp = {
 			$('html, body').animate({ scrollTop: ($(pageHash).offset().top - 60) }, 50);
 		else
 			window.scrollTo(0,0);
+	},
+
+	'showError': function(code, title) {
+		$('#error-wrapper .error-code').text(code);
+		$('#error-wrapper .error-title').text(title);
+		$('#error-wrapper .error-page').text(this.currentPage);
+		$('#error-wrapper .error-message').hide();	// first hide all the messages
+		$('[data-error-id="' + code + '"]').show();	// show appropriate description if available
+		$('#content').hide();						// hide the page content and show the error
+		$('#error-wrapper').show();
+		// show sidebar too
+		velesSinglePageApp.sidebarExpand();
+	},
+
+	'clearError': function() {
+		$('#content').show();
+		$('#error-wrapper').hide();
 	},
 
 	'autoAddIds': function() {
@@ -293,11 +321,12 @@ var velesSinglePageApp = {
 			$('.overlay-shadow').add('.navbar-brand').click(function(){
 				velesSinglePageApp.hideMobileMenu();
 			});
-
+/*
 			$('body').resize(function(){
 				if ($('.sidebar').hasClass('sidebar-expand'))
 					velesSinglePageApp.sidebarResizePage();
 			});
+*/
 
 			this.eventsBound['navbar-toggler'] = true;
 		}
@@ -321,20 +350,25 @@ var velesSinglePageApp = {
 		if (!velesSinglePageApp.eventsBound.hasOwnProperty('search-sidebar-hook') 
             || !velesSinglePageApp.eventsBound['search-sidebar-hook']) {
 	        $('.sidebar').add('.nav-search-icon').on('mouseover', function () {
+	        	/*
 	            if (!$('.sidebar').hasClass('sidebar-expand')) {
 	                $('.sidebar').addClass('expand-temporary');
 	                $('.sidebar').addClass('sidebar-expand');
 	            }
 	            $('.nav-search-icon').addClass('hide-search-icon'); 
+	            */
+	           velesSinglePageApp.sidebarExpand(true);
 	        });
 
 	        $('.sidebar').on('mouseout', function () {
+	        	/*
 	            if ($('.sidebar').hasClass('expand-temporary')) {
 	                $('.sidebar').removeClass('sidebar-expand');
 	                $('.sidebar').removeClass('expand-temporary');
 	                $('.nav-search-icon').removeClass('hide-search-icon'); 
 	            }
-	            
+	            */
+	            velesSinglePageApp.sidebarCollapse(true);
 	        });
 
 	        // fix if we want to avoid the menu with the mouse
@@ -552,15 +586,12 @@ var velesSinglePageApp = {
 			// expand sidebar when parent is menu, on larger screens
 			this.sidebarExpand();
 
-			/*if (!cachedPage)
-				this.sidebarResizePage();*/
-
 		} else {
 			this.sidebarCollapse();
 		}
 
 		//if (!cachedPage)
-		this.sidebarResizePage();
+		//this.sidebarResizePage();
 	},
 
 	'extractTemplates': function(context = null) {
@@ -590,29 +621,51 @@ var velesSinglePageApp = {
 		return menuTemplates;
 	},
 
-	'sidebarExpand': function() {
+	'sidebarExpand': function(temporary = false) {
 		if ($('body').width() > 990 ) {
 			if (!$('.sidebar').hasClass('sidebar-expand')) {
 				$('.sidebar').addClass('sidebar-expand');
+				// always hide search icon when sidebar is expanded
 				$('.nav-search-icon').addClass('hide-search-icon');
+
+				// flag that it only needs to be expanded temporarily
+				if (temporary) {
+					$('.sidebar').addClass('expand-temporary');
+
+				// when expanded pernamently
+				} else {
+					$('.sidebar').removeClass('expand-temporary');
+					// mark the parts affected by the sidebar position if expanded pernamently 
+					$('.sidebar-aligned').addClass('sidebar-expand');
+				}
 			}
-			$('.sidebar').removeClass('expand-temporary');
 		}
 	},
 
-	'sidebarCollapse': function() {
-		$('.sidebar').removeClass('sidebar-expand');
-		$('.nav-search-icon').removeClass('hide-search-icon');
+	'sidebarCollapse': function(temporary = false) {
+		if (!temporary || $('.sidebar').hasClass('expand-temporary')) {
+			$('.sidebar').removeClass('sidebar-expand');
+			$('.nav-search-icon').removeClass('hide-search-icon');
+
+			if (!temporary)
+				$('.sidebar-aligned').removeClass('sidebar-expand');
+		}
+		$('.sidebar').removeClass('expand-temporary');
 	},
 
+/*
+ 	// to be removed after tests
 	'sidebarResizePage': function() {
 		if ($('.sidebar').hasClass('sidebar-expand')) {
 			if ($('body').width() > 990) {
 				$('#content').css('padding-left', 0);
+				$('#error-wrapper').css('padding-left', 0);
+
 				this.sidebarPadContent = (($('body').width() * 0.2) + 50 - (($('body').width()-$('#content').width()) / 2));
 
 				if ((($('body').width()-$('#content').width()) / 2) < ($('body').width() * 0.2)) {
 					$('#content').css('padding-left', this.sidebarPadContent+'px');
+					$('#error-wrapper').css('padding-left', this.sidebarPadContent+'px');
 				} else {
 					$('#content-wrapper').css('padding-left', 'unset');
 				}
@@ -621,7 +674,7 @@ var velesSinglePageApp = {
 			$('#content').css('padding-left', 'unset');
 		}
 	},
-
+*/
 	'buildMenuLevel': function(tree, $parent, templates, parentPage = null, isSectionLinks = false) {
 		var prevPage = null;
 		var url = null;
