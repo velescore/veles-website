@@ -321,6 +321,7 @@ body.with-overlay {
 
 #error-wrapper .error-links {
 	margin-top: 30px;
+	opacity: 0.5;
 }
 
 #error-wrapper .error-title-cursor {

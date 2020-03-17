@@ -340,6 +340,7 @@ var velesSinglePageApp = {
 			.add('.sidebar a')
 			.add('a.nav-page')
 			.add('a.wikilink')
+			.add('a.applink')
 			.not('.bootstrap-autocomplete a')	// just in case
 			.not('.nav-external-app')
 			.not('.spa').click(function(e) {
