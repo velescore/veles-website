@@ -66,8 +66,8 @@
 
 /* Wiki tables */
 table {
-	min-width: 50%;
 	margin-bottom: 20px;
+	min-width: 50%;
 }
 
 table td,
@@ -80,6 +80,15 @@ table th {
 table th {
 	padding: 15px;
 	background: #22222288;
+}
+
+/* Mobile table */
+@media (max-width: 991.98px) {
+	table {
+		display: block;
+		max-width: 100%;
+    	overflow: scroll;
+	}
 }
 
 /* Figures, images in own paragraph aligned to the right */
@@ -103,10 +112,18 @@ figcaption {
 	padding: 3px 3px 0 3px;
 }
 
+/* Mobile figure */
+@media (max-width: 767.99px) and {
+	.wiki-page figure img {
+		max-width: 220px;
+	}
+}
+
 /* Article infobox on the page's right, as on Wikipedia */
-.infobox {
-	width: 260px;
-	min-width: 250px;
+table.infobox {
+	display: table;
+	min-width: unset;
+	width: 265px;
 	float: right;
 	clear: both;
 	color: #ddd;
@@ -125,16 +142,17 @@ table.infobox td,
 table.infobox th {
 	border: none;
 	line-height: 17px;
+	padding: 5px 10px;
+	text-align: left;	/* this can be overriden for all tables within a wiki page, so should be defined here even if it's default */
 }
 
-table.infobox tr:first-of-type {
+table.infobox tr.image-row td {
 	text-align: center;
 }
 
 table.infobox tr td:first-of-type {
 	text-transform: capitalize;
 	font-weight: bold;
-	font-size: 12px;
 	line-height: 20px;
 }
 
@@ -146,13 +164,10 @@ table.infobox tr:last-of-type td {
 	line-height: 5px;	/* hack, with extra column, but theese tables ... */
 }
 
-.infobox caption {
-    font-size: 125%;
-    font-weight: 600;
-    color: white;
-    padding: 0.2em;
-    text-align: center;
-    caption-side: top;
+table.infobox th:first-of-type {
+	color: white;
+	font-weight: bold;
+	text-align: center;
 }
 
 table.infobox img {
@@ -160,12 +175,56 @@ table.infobox img {
 }
 
 .infobox a {
-	font-size: 12px;
-    max-width: 160px;
+    max-width: 142px;
     display: block;
     text-overflow: ellipsis;
     overflow: hidden;
     max-height: 15px;
+}
+
+/* Mobile infobox */
+@media (max-width: 767.99px) {
+	table.infobox {
+		width: 100%;
+		border: none;
+	}
+
+	table.infobox {
+		font-size: 15px;
+	}
+
+	table.infobox tr td:first-of-type {
+		font-size: 14px;
+	}
+
+	table.infobox td {
+		padding: 10px;
+	}
+
+	table.infobox th {
+		padding: 15px;
+	}
+
+	.infobox a {
+		max-width: calc(100vw - 185px);
+	}
+
+	/* figure */
+	figure {
+	    text-align: center;
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: unset;
+	    background: transparent;
+	    border: none;
+	    max-width: 230px;
+	}
+
+	.wiki-page figure img {
+	    border: none;
+	    background-color: #30303080;
+	    max-width: 220px;
+	}
 }
 
 

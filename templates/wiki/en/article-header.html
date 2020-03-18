@@ -28,6 +28,12 @@ by authors {{article.authors | join(', ')}}
                     href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
                     History
                 </a>
-    			<span title="{{article.author}}: {{article.commit_message}}">
-                    Updated on {{article.updated_at | timeformat("%d %B %Y at %H:%M")}}</span>
+                {# Desktop version #}
+    			<span title="{{article.author}}: {{article.commit_message}}" class="desktop-block">
+                    Updated on {{article.updated_at | timeformat("%d %B %Y at %H:%M")}}
+                </span>
+                {# Mobile version #}
+                <span title="{{article.author}}: {{article.commit_message}}" class="mobile-block">
+                    {{article.updated_at | timeformat("%d %b %Y %H:%M")}}
+                </span>
     		</div>

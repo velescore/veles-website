@@ -10,26 +10,48 @@
  * of the License, or (at your option) any later version.
  */
 
-velesSinglePageApp.addCategoryHook('load', 'wiki', function() {
-    var replacements = [
-        // ad colors to special glyphs, and aliases how to enter them
+// An object to encapsulate wiki-related functionality
+velesSinglePageApp.wiki = {
+    'replacements': [
+        // add colors to special glyphs or their aliases
         [/✔/g, '<span class="green">✔</span>'],
         [/✖/g, '️<span class="red">✖</span>'],
         [/\[Y\]/g, '<span class="green">✔</span>'],
         [/\[N\]/g, '️<span class="red">✖</span>']
-    ];
-    var html = $('#content').html();
+    ],
 
-    for (var i = replacements.length - 1; i >= 0; i--) {
-        html = html.replace(replacements[i][0], replacements[i][1])
+    'applyContentFilters': function() {
+        var html = $('#content').html();
+
+        for (var i = this.replacements.length - 1; i >= 0; i--) {
+            html = html.replace(this.replacements[i][0], this.replacements[i][1])
+        }
+
+        $('#content').html(html);
+    },
+
+    'moveInfobox': function() {
+        if ($('body').width() < 768 ) {
+            $('table.infobox').detach().insertAfter('p:first');
+        }
     }
+}
 
-    $('#content').html(html)    
+// Simple object to encapsulate wiki-related functions
+velesSinglePageApp.addCategoryHook('load', 'wiki', function() {
+    // perform client-side replacements in wiki article content
+    velesSinglePageApp.wiki.applyContentFilters();
+
+    // move infobox on mobile, or when window is resized in emulator etc.
+    velesSinglePageApp.wiki.moveInfobox();
+    $('body').resize(function(){ velesSinglePageApp.wiki.moveInfobox(); });
 });
 
 //
 // Scripts triggered for specific Wiki pages
 //
+
+// All Articles: Populate data-table with the article list
 velesSinglePageApp.addPageHook('All-Articles.wiki', 'load', function() {
         $.getJSON("wiki/pages/" + velesSinglePageApp.language + "/articles.json", function (data) {
             for (var i = data.length - 1; i >= 0; i--) {

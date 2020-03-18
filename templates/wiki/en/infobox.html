@@ -11,9 +11,9 @@ of the License, or (at your option) any later version.
 
 {% if article.infobox|length %}
             <table class="infobox">
-                <caption>{{article.infobox.name}}</caption>
+                <th colspan="2">{{article.infobox.name}}</th>
     {% if 'image' in article.infobox %}
-                <tr>
+                <tr class="image-row">
                     <td colspan="2"><img src="{{ 'wiki/' if article.infobox.image.startswith('/') }}{{article.infobox.image}}" alt="{{article.infobox.name}}" /></td>
                 </tr>
     {% endif %}

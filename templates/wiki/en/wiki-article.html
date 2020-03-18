@@ -27,9 +27,7 @@ Commits total:  {{article.commit_count}}
 {{article.commit_message}}
 -->
     	<div class="container">
-			<div class="article-info">
-                {% include 'article-header.html' %}
-    		</div>
+			{% include 'article-header.html' %}
             {% include 'infobox.html' %}
         	{{article.html}}
         </div>
