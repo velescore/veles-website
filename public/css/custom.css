@@ -1541,6 +1541,7 @@ span.status-label-short {
 
 /* Footer */
 .footer {
+	background-color: rgba(0, 0, 0, 0.8);
 	padding-top:	50px; 	/* at least section separator height */
 	margin-bottom: 40px;	/* width of footer-overlay */
 }
@@ -2268,7 +2269,7 @@ div.roadmap-delay-info {
 }
 
 .footer-links {
-	margin-left: 10%;	/* Move optically to the right */
+	margin-left: 20px;
 }
 .footer-links .section a {
 	font-color: 14px;
