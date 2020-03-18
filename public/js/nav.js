@@ -24,7 +24,7 @@ var velesSinglePageApp = {
 		{'id': 'news/recentArticles.json', 'url': 'news/pages/{language}/recentArticles.json'}
 	],
 	'jsonPreload': {},
-	'debugMode': false, 
+	'debugMode': false,
 
 	'go': function(page) {
 		if (!page)	// prevent error if wrong link/element's event gets bound with this method 
@@ -348,6 +348,19 @@ var velesSinglePageApp = {
 			this.eventsBound['navbar-toggler'] = true;
 		}
 
+		// when clicked on the background, collapse everything like sidebar, mobile menus etc.
+		if (!this.eventsBound.hasOwnProperty('background-click') || !this.eventsBound['background-click']) {
+			$('#content-wrapper').click(function(){
+				velesSinglePageApp.sidebarCollapse(true);
+				velesSinglePageApp.hideMobileMenu();
+				velesSinglePageApp.hideMobileSlider();
+				velesDevConsole.hide();
+				$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
+			});
+
+			this.eventsBound['background-click'] = true;
+		}
+
 		// Click events on navigation links
 		$('.nav-link').not('.dropdown-toggle')
 			.add('.navbar-brand')
@@ -452,6 +465,7 @@ var velesSinglePageApp = {
 	},
 
 	'showMobileMenu': function() {
+		velesSinglePageApp.sidebarCollapse(true);	// hide sidebar if open for any reason
 		this.showOverlay('mobile-menu', false, 2000);
 		$('.navbar').addClass('mobile-menu');
 	},
@@ -474,6 +488,9 @@ var velesSinglePageApp = {
 		$('#mobile-follow-toggle').addClass('active');
 		$('.footer-overlay').addClass('footer-panel-slide');
 		$('#content').addClass('footer-panel-slide');
+
+		// hide tooltips to not mess the style
+		$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
 	},
 
 	'hideMobileSlider': function() {
