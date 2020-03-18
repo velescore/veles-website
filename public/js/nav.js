@@ -287,6 +287,23 @@ var velesSinglePageApp = {
 		return $('title').text();
 	},
 
+	'isTouchDevice': function() {
+		var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+		
+		var mq = function (query) {
+			return window.matchMedia(query).matches;
+		}
+
+		if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+			return true;
+		}
+
+		// include the 'heartz' as a way to have a non matching MQ to help terminate the join
+		// https://git.io/vznFH
+		var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+		return mq(query);
+	},
+
 	'bindEvents': function() {
 		// History changed event
 		if (!this.eventsBound.hasOwnProperty('popstate') || !this.eventsBound['popstate']) {
@@ -349,36 +366,34 @@ var velesSinglePageApp = {
 		}).addClass('spa');
 
 		if (!velesSinglePageApp.eventsBound.hasOwnProperty('search-sidebar-hook') 
-            || !velesSinglePageApp.eventsBound['search-sidebar-hook']) {
-	        $('.sidebar').add('.nav-search-icon').on('mouseover', function () {
-	        	/*
-	            if (!$('.sidebar').hasClass('sidebar-expand')) {
-	                $('.sidebar').addClass('expand-temporary');
-	                $('.sidebar').addClass('sidebar-expand');
-	            }
-	            $('.nav-search-icon').addClass('hide-search-icon'); 
-	            */
-	           velesSinglePageApp.sidebarExpand(true);
-	        });
+			|| !velesSinglePageApp.eventsBound['search-sidebar-hook']) {
 
-	        $('.sidebar').on('mouseout', function () {
-	        	/*
-	            if ($('.sidebar').hasClass('expand-temporary')) {
-	                $('.sidebar').removeClass('sidebar-expand');
-	                $('.sidebar').removeClass('expand-temporary');
-	                $('.nav-search-icon').removeClass('hide-search-icon'); 
-	            }
-	            */
-	            velesSinglePageApp.sidebarCollapse(true);
-	        });
+			// seach icon and sidebar behaviour, it depents whether we have a mouse with
+			// hover capabilities, or just a touch device
+			if (velesSinglePageApp.isTouchDevice() || $('body').width() < 768) {
+				$('.nav-search-icon').on('click', function () {	        	
+					if ($('.sidebar').hasClass('expand-temporary'))
+						velesSinglePageApp.sidebarCollapse(true);
+					else
+						velesSinglePageApp.sidebarExpand(true);
+				});
+			} else {
+				$('.sidebar').add('.nav-search-icon').on('mouseover', function () {
+					velesSinglePageApp.sidebarExpand(true);
+				});
+				$('.sidebar').on('mouseout', function () {
+					velesSinglePageApp.sidebarCollapse(true);
+				});
+			}
 
-	        // fix if we want to avoid the menu with the mouse
-	        $('.navbar-brand').on('mouseout', function() {
-	            $('.sidebar').mouseout();
-	        });
 
-	        velesSinglePageApp.eventsBound['search-sidebar-hook'] = true;
-	    }
+			// fix if we want to avoid the menu with the mouse
+			$('.navbar-brand').on('mouseout', function() {
+				$('.sidebar').mouseout();
+			});
+
+			velesSinglePageApp.eventsBound['search-sidebar-hook'] = true;
+		}
 	},
 
 	'hideOverlay': function(overlayName = null, fade = true, delay = 3000) {
@@ -623,11 +638,12 @@ var velesSinglePageApp = {
 	},
 
 	'sidebarExpand': function(temporary = false) {
-		if ($('body').width() > 990 ) {
+		if (temporary || ($('body').width() > 990 && !this.isTouchDevice())) {	// dont expand pernamently if on mobile
 			if (!$('.sidebar').hasClass('sidebar-expand')) {
 				$('.sidebar').addClass('sidebar-expand');
-				// always hide search icon when sidebar is expanded
-				$('.nav-search-icon').addClass('hide-search-icon');
+				// always hide search icon when sidebar is expanded on non-touch devices
+				if (!velesSinglePageApp.isTouchDevice() && $('body').width() >= 768)
+					$('.nav-search-icon').addClass('hide-search-icon');
 
 				// flag that it only needs to be expanded temporarily
 				if (temporary) {
@@ -655,7 +671,7 @@ var velesSinglePageApp = {
 	},
 
 /*
- 	// to be removed after tests
+	// to be removed after tests
 	'sidebarResizePage': function() {
 		if ($('.sidebar').hasClass('sidebar-expand')) {
 			if ($('body').width() > 990) {
@@ -828,9 +844,9 @@ var velesSinglePageApp = {
 			item = this.jsonPreloadConfig[i];
 		
 			$.ajax({
-    			url: item.url.replace('{language}', this.language),
-    			context: {'id': item.id, 'index': i, 'results': sharedResults},	// ensure passing by reference
-    			success: function (data) {
+				url: item.url.replace('{language}', this.language),
+				context: {'id': item.id, 'index': i, 'results': sharedResults},	// ensure passing by reference
+				success: function (data) {
 					this.results[this.id] = data;
 
 					if (this.index === 0) {	// save when fully loaded

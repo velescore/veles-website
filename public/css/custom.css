@@ -88,15 +88,15 @@ html {
 	width: 11px;
 	font-size: 27px;
 	content: ">";
-	background-color: #262626;
+	/*background-color: #262626;*/
 	padding-top: 20px;
 	padding-bottom: 23px;
-	border-right: solid 2px #e4b99cbb;
+	/*border-right: solid 2px #e4b99cbb;*/
 	position: absolute;
 	top: 50%;
 	overflow: visible;
 	transform: translate(0%,-50%);
-	color: #bbb;
+	color: #444;
 	font-size: 15px;
 	text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
 }
@@ -105,14 +105,16 @@ html {
 .sidebar.sidebar-expand:hover:before {
 	opacity: 0;
 }
-.sidebar:hover, .sidebar.sidebar-expand {
+
+.sidebar.sidebar-expand {
 	width: 280px;
-	background-color: #000000dd;
+	background-color: #000000ee;
 	border-top: 0;
 	border-bottom: 0;
 	margin-top: 61px;
 	margin-bottom: 39px;
 }
+
 .sidebar:hover li, .sidebar.sidebar-expand li {
 		opacity:1;
 }
@@ -169,12 +171,18 @@ html {
 	padding-left: 0;
 }
 
+/* sidebar for desktop only */
 @media (min-width: 991.99px) {
 	.sidebar-aligned.sidebar-expand {
 		padding-left: 290px;	/* sidebar width + 10px */
 	}
 }
-
+/* sidebar for mobile only */
+@media (max-width: 991.98px) {
+	.sidebar {
+		width: 0px;
+	}
+}
 
 .header {
 	display: block;
@@ -552,37 +560,54 @@ div#brand-text {
 	border-bottom: 2px solid #e4b99c;
 }
 
+@media (max-width: 991.98px) {
+	/* in mobile make a space for search icon */
+	.navbar-brand {
+		margin-left: 50px;	/* fallback where calc won't work */
+		margin-left: calc((100vw / 2) - 75px);
+	}
+}
+
 /* navbar search icon */
 .nav-search-icon {
-    background: #222;
-    border: 1px solid rgba(100, 100, 100, 0.3);
-    border-radius: 5px;
-    color: #ccc;
+	color: white;
     display: block;
     height: 39px;
-    left: -5px;
-    margin-top: 10px;
+    left: 0;
+    margin-top: 7px;
     opacity: 0.9;
-    padding: 5px 5px 5px 10px;
+    padding: 5px 5px 5px 25px;
     position: absolute;
     top: 0px;
 	transition: all 0.5s ease-in-out;
-    width: 35px;
+    width: 50px;
     z-index: 110;
 }
 
 .nav-search-icon:hover,
 .nav-search-icon.hide-search-icon {
 	background-color: transparent;
-	left: -10px;
-	top: 52px;
-	opacity: 0.2;
-	border: 1px solid rgba(100, 100, 100, 0);
 }
 
-@media (max-width: 992px) {
+/* desktop only serach button style */
+@media (min-width: 991.99px) {	
 	.nav-search-icon {
-		display: none;
+	    background: #222;
+	    border: 1px solid rgba(100, 100, 100, 0.3);
+	    border-radius: 5px;
+	    color: #ccc;
+    	left: -5px;
+    	margin-top: 10px;
+    	padding-left: 13px;
+    	width: 40px;
+    }
+
+	/* only hide for desktop, where mouse out will close the sidebar  */
+	.nav-search-icon.hide-search-icon {
+		left: -10px;
+		top: 52px;
+		opacity: 0.2;
+		border: 1px solid rgba(100, 100, 100, 0);
 	}
 }
 
@@ -675,7 +700,7 @@ li.nav-item.nav-active {
 		/*border-left: 4px solid #F19B7E;*/
 		padding-left: 16px;
 	}
-	.dropdown-item {
+	.nav-menu .dropdown-item {
 		padding-left: 5px;
 		background-color: rgba(50, 50, 50, 0.3);
 		margin-left: -30px;
