@@ -3020,6 +3020,10 @@ hr.hr-new {
 	overflow: hidden;
 }
 
+#large-header #under-canvas2 {
+	background: transparent;
+}
+
 #large-header #under-canvas.parallax-zoom {
 	width: 120%;
 	transition: width 1.0s ease;

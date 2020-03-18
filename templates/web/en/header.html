@@ -64,25 +64,25 @@
                         </div>
                     </li>
                 </ul>
-                <div class="sidebar">
-                    <select class="form-control searchAutoComplete" name="wiki-select"
-                        placeholder="Search wiki articles, website ..."
-                        autocomplete="off"></select>
-                    <h4 data-id="page.title"></h4>
-                    <h5 id="sidebar-caption" data-default="Page Content"></h5>
-                    <ul>
-                        <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                        <li class="menu-item submenu template">
-                            <a href="{{item.url}}"><span>{{item.title}}</span></a>
-                            <ul>
-                                <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
-{% endraw %}
         </div>
+        <div class="sidebar">
+            <select class="form-control searchAutoComplete" name="wiki-select"
+                placeholder="Search wiki articles, website ..."
+                autocomplete="off"></select>
+            <h4 data-id="page.title"></h4>
+            <h5 id="sidebar-caption" data-default="Page Content"></h5>
+            <ul>
+                <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                <li class="menu-item submenu template">
+                    <a href="{{item.url}}"><span>{{item.title}}</span></a>
+                    <ul>
+                        <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+{% endraw %}
     </nav>  <!-- ./Navigation -->
     {# Page loader overlay #}
     <div id="content-overlay">
