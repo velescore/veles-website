@@ -3490,6 +3490,8 @@ div#tallModal {
 }
 
 
+/* index page */
+
 ul.news-list {
 	font-size: 14px;
 	list-style-type: none;
@@ -3600,6 +3602,151 @@ ul.news-list div.news-icon span {
 }
 
 
+/* Stack animation */
+
+.index-page .stack-motion {
+  height: 208px;
+  margin: 64px auto 48px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 128px;
+}
+
+.index-page .stack-motion-layer {
+  -webkit-animation-name: float;
+          animation-name: float;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  border-radius: 16px;
+  height: 128px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+          transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+  width: 128px;
+}
+
+.index-page .text {
+  text-align: center
+}
+
+.index-page .text strong {
+  text-decoration: underline;
+}
+
+.index-page .button {
+  -webkit-appearance: none;
+  background: #FFFFFF;
+  border: 1px solid #C4C7CA;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .07);
+  border-radius: 4px;
+  display: block;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  margin: 1.5em auto;
+  padding: 0.75em 1.5em;
+  -webkit-transition: border-color 200ms;
+  transition: border-color 200ms
+}
+
+.index-page .button:hover {
+  border-color: #949698;
+}
+
+.index-page .vlsgreen {
+  background-image: linear-gradient(45deg, #aeed6a 0%, #427642 100%);
+  opacity: 0.7;
+  top: 24px;
+}
+.index-page .vlsgrey {
+  background-image: linear-gradient(-90deg, #494848 0%, #7d7878 100%);
+  opacity: 0.8;
+  top: 72px;
+}
+.index-page .vlsgrey2 {
+  background-image: linear-gradient(45deg, #e4b99c 0%, #262626 100%);
+  opacity: 0.5;
+  top: 96px;
+}
+.index-page .vlsbrown {
+  background-image: linear-gradient(45deg, #e4b99c 0%, #6f6158 100%);
+}
+.index-page .shadow {
+  -webkit-animation-name: cast;
+          animation-name: cast;
+  background-color: black;
+  box-shadow: 0 0 48px 48px black !important;
+  height: 48px;
+  opacity: 0.2;
+  top: 172px;
+  width: 48px;
+}
+.index-page .vlsorange {
+  background-image: linear-gradient(-116deg, #9b6643 0%, #F19B7E 100%);
+  opacity: 0.9;
+  top: 48px;
+}
+
+.index-page .two {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+.index-page .three {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+.index-page .four {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+.index-page .five {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+@-webkit-keyframes float {
+  50% {
+    -webkit-transform: translate(-50%, -24px) rotateX(60deg) rotateZ(45deg);
+            transform: translate(-50%, -24px) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+@keyframes float {
+  50% {
+    -webkit-transform: translate(-50%, -24px) rotateX(60deg) rotateZ(45deg);
+            transform: translate(-50%, -24px) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+@-webkit-keyframes cast {
+  50% {
+    opacity: 0.08;
+    -webkit-transform: scale(1.1) translateX(-50%) rotateX(60deg) rotateZ(45deg);
+            transform: scale(1.1) translateX(-50%) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+@keyframes cast {
+  50% {
+    opacity: 0.08;
+    -webkit-transform: scale(1.1) translateX(-50%) rotateX(60deg) rotateZ(45deg);
+            transform: scale(1.1) translateX(-50%) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+.index-page #flexible-service-layer .row {
+	overflow-x: visible;	/* fixes an issue with the shadown cut by half on mobile */
+}	
+
+
+/* language selector */
 .language-selector {
 	margin-left: 20px;
 }
