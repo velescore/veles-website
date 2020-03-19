@@ -39,7 +39,7 @@ class WikiMarkdownTemplateView(MarkdownTemplateView):
             'admonition',
             'tables',
             'attr_list',
-            'mdx_urlize'
+            #'mdx_urlize'
             ])
 
     def post_render_filter(self, html, variables):

@@ -336,6 +336,7 @@ body.with-overlay {
     font-size: 15px;
 	font-family: 'Inconsolata', sans-serif;
 	line-height: 19px;
+    margin-bottom: -20px;
     min-height: 100vh;
 }
 
@@ -1202,7 +1203,7 @@ img.image-exchange {
 	opacity: 0;
 	right: 10px;
 	bottom: 28px;
-	z-index: 101;
+	z-index: 1100;
 	width: 300px;
 	background-color: rgba(0, 0, 0, 0.90);
 	border: 1px solid #322c1e;
@@ -2677,7 +2678,7 @@ body::-webkit-scrollbar-thumb:hover {
 	display: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991.98px) {	/* 767px */
 	.wide-screen {
 		display: none !important;
 	}
@@ -2700,10 +2701,9 @@ body::-webkit-scrollbar-thumb:hover {
 		margin: 0 auto !important;
 		padding: 0 !important;
 	}
-	/* Smaller font and line height */
+	/* 1px larger font */
 	#content {
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 17px;
 	}
 	/* Margin on the top of subheadings that gets re-positioned under the image */
 	h2 {

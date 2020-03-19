@@ -304,6 +304,14 @@ var velesSinglePageApp = {
 		return mq(query);
 	},
 
+	'closeAllModals': function() {
+		velesSinglePageApp.sidebarCollapse(true);
+		velesSinglePageApp.hideMobileMenu();
+		velesSinglePageApp.hideMobileSlider();
+		velesDevConsole.hide();
+		$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
+	},
+
 	'bindEvents': function() {
 		// History changed event
 		if (!this.eventsBound.hasOwnProperty('popstate') || !this.eventsBound['popstate']) {
@@ -350,13 +358,11 @@ var velesSinglePageApp = {
 
 		// when clicked on the background, collapse everything like sidebar, mobile menus etc.
 		if (!this.eventsBound.hasOwnProperty('background-click') || !this.eventsBound['background-click']) {
-			$('#content-wrapper').click(function(){
-				velesSinglePageApp.sidebarCollapse(true);
-				velesSinglePageApp.hideMobileMenu();
-				velesSinglePageApp.hideMobileSlider();
-				velesDevConsole.hide();
-				$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
-			});
+			$('#content-wrapper')
+				.add('#error-wrapper')
+				.add('.overlay-shadow')
+				.add('.navbar-brand')
+				.click(function(){ velesSinglePageApp.closeAllModals(); });
 
 			this.eventsBound['background-click'] = true;
 		}
@@ -465,7 +471,7 @@ var velesSinglePageApp = {
 	},
 
 	'showMobileMenu': function() {
-		velesSinglePageApp.sidebarCollapse(true);	// hide sidebar if open for any reason
+		velesSinglePageApp.closeAllModals();	// hide sidebar etc. if open for any reason
 		this.showOverlay('mobile-menu', false, 2000);
 		$('.navbar').addClass('mobile-menu');
 	},
@@ -485,12 +491,12 @@ var velesSinglePageApp = {
 		if (this.isMobileSliderShown())
 			return;
 
+		// hide tooltips to not mess the style, other modals are ok
+		velesSinglePageApp.closeAllModals();
+
 		$('#mobile-follow-toggle').addClass('active');
 		$('.footer-overlay').addClass('footer-panel-slide');
 		$('#content').addClass('footer-panel-slide');
-
-		// hide tooltips to not mess the style
-		$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
 	},
 
 	'hideMobileSlider': function() {
@@ -657,6 +663,8 @@ var velesSinglePageApp = {
 	'sidebarExpand': function(temporary = false) {
 		if (temporary || ($('body').width() > 990 && !this.isTouchDevice())) {	// dont expand pernamently if on mobile
 			if (!$('.sidebar').hasClass('sidebar-expand')) {
+				velesSinglePageApp.closeAllModals();
+
 				$('.sidebar').addClass('sidebar-expand');
 				// always hide search icon when sidebar is expanded on non-touch devices
 				if (!velesSinglePageApp.isTouchDevice() && $('body').width() >= 768)

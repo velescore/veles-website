@@ -2,4 +2,3 @@ dateutil
 jinja2
 py_w3c
 markdown
-markdown-urlize

@@ -272,6 +272,13 @@ table.infobox img {
     max-width: 70%;
 }
 
+@media (max-width: 767.99px) {
+	.wiki-exchanges ul {
+	    max-width: 100%;
+	    padding: 0;
+    }
+}
+
 .wiki-exchanges li img{
 	max-height: 64px;
 	float: right;
