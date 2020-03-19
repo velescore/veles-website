@@ -26,7 +26,7 @@ var velesSinglePageApp = {
 	'jsonPreload': {},
 	'debugMode': false,
 
-	'go': function(page) {
+	'go': function(page, pushHistory = true) {
 		if (!page)	// prevent error if wrong link/element's event gets bound with this method 
 			return;
 
@@ -89,14 +89,18 @@ var velesSinglePageApp = {
 		this.language = pageLanguage;
 
 		// change browser's url filed
-		if (history.pushState) {
-			window.history.pushState(
-				{'currentPage': page},
-				this.getTitle(),
-				"./" + page + '.' + this.language + this.pageSuffix
-				);
-		} else {
-			document.location.href = "./" + page + '.' + this.language + this.pageSuffix;
+		if (pushHistory) {
+			var pageFullName = page + '.' + pageLanguage; 
+
+			if (history.pushState) {
+				window.history.pushState(
+					{'currentPage': pageFullName},
+					this.getTitle(),
+					"./" + pageFullName + this.pageSuffix
+					);
+			} else {
+				document.location.href = "./" + pageFullName + this.pageSuffix;
+			}
 		}
 
 		// close the menu if open, same for sidebar
@@ -311,15 +315,16 @@ var velesSinglePageApp = {
 		velesDevConsole.hide();
 		$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
 	},
+	'e': null,
 
 	'bindEvents': function() {
 		// History changed event
 		if (!this.eventsBound.hasOwnProperty('popstate') || !this.eventsBound['popstate']) {
 			$(window).bind('popstate', function(e) {
-				if (e.originalEvent.state && e.originalEvent.state.hasOwnProperty('currentPage'))
-					velesSinglePageApp.go(e.originalEvent.state.currentPage);
-				else
-					velesSinglePageApp.go();
+					if (e.originalEvent.state && e.originalEvent.state.hasOwnProperty('currentPage')) {
+						velesSinglePageApp.go(e.originalEvent.state.currentPage, false);
+					}// else
+					//	velesSinglePageApp.go();
 			});
 			this.eventsBound['popstate'] = true;
 		}
