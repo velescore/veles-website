@@ -48,7 +48,7 @@ var velesSinglePageApp = {
 
 		// check for supported languages
 		if (!this.cachedPages.hasOwnProperty(pageLanguage)) {
-			pageLanguage = this.defaultLanguage;
+			pageLanguage = this.language;
 		}
 
 		// pages with hash just to scroll to target anrchor
@@ -315,7 +315,6 @@ var velesSinglePageApp = {
 		velesDevConsole.hide();
 		$('.footer-tooltip.tooltip-expand').removeClass('tooltip-expand');
 	},
-	'e': null,
 
 	'bindEvents': function() {
 		// History changed event

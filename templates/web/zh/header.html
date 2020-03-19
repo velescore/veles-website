@@ -21,6 +21,9 @@
 <body class="with-overlay">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
+        <div class="nav-search-icon">
+            <i class="fa fa-search"></i>
+        </div>
         <div class="container">
             <a class="navbar-brand" href="index.zh.html" title="Homepage">
                 <img id="icon" src="images/veles.ico"></img>
@@ -61,25 +64,25 @@
                         </div>
                     </li>
                 </ul>
-                <div class="sidebar">
-                    <select class="form-control wikiAutoComplete" name="wiki-select"
-                        placeholder="Type to search the wiki" {# TODO: translate #}
-                        autocomplete="off"></select>
-                    <span id="wikiNoResultsText" style="display: none;">No results from wiki</span> {# TODO: translate #}
-                    <h4 data-id="page.title"></h4>
-                    <ul>
-                        <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                        <li class="menu-item submenu template">
-                            <a href="{{item.url}}"><span>{{item.title}}</span></a>
-                            <ul>
-                                <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
-{% endraw %}
         </div>
+        <div class="sidebar">
+            <select class="form-control searchAutoComplete" name="wiki-select"
+                placeholder="Search wiki articles, website ..."
+                autocomplete="off"></select>
+            <h4 data-id="page.title"></h4>
+            <h5 id="sidebar-caption" data-default="Page Content"></h5>
+            <ul>
+                <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                <li class="menu-item submenu template">
+                    <a href="{{item.url}}"><span>{{item.title}}</span></a>
+                    <ul>
+                        <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+{% endraw %}
     </nav>  <!-- ./Navigation -->
     <div id="content-overlay">
         <div class="overlay-gradient"></div>

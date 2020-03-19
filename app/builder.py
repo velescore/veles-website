@@ -42,33 +42,34 @@ class WebPageBuilder(object):
             print('WebPageBuilder: Warning: static variable file not found: {}'.format(path))
             return {}
 
-    def build(self, page, variables = {}, output_file = None):
-        tpl_vars = self.load_static_vars(os.path.join(self.path, 'variables.json'))
+    def build(self, page, variables = {}, output_file = None, lang = 'en'):
+        lang_vars = self.load_static_vars(os.path.join(self.path, 'variables.json'))
 
+        # Load extra language-specific variables
+        if os.path.isfile(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')):
+            lang_vars.update(self.load_static_vars(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')))
+
+        # Overwrite with variables explicitly given
+        lang_vars.update(variables)
+
+        source = os.path.join(self.path, self.tpl_dir, lang, '{}.{}'.format(page, self.page_extension))
+
+        if output_file:
+            destination = os.path.join(self.path, self.html_dir, lang, output_file)
+        elif (self.lang_in_extension):
+            destination = '{}.{}.{}'.format(os.path.join(self.path, self.html_dir, page), lang, self.page_extension)
+        else:
+            destination = '{}.{}'.format(os.path.join(self.path, self.html_dir, lang, page), self.page_extension)
+
+        if os.path.isfile(source):
+            view = JinjaTemplateView(source)
+            
+            self.save_result(destination, view.render(lang_vars))
+            print("> " + destination)
+
+        else:
+            raise ValueError('Unknown page: {}'.format(source))
+
+    def build_index(self):
         for lang in os.listdir(os.path.join(self.path, self.tpl_dir)):
-            lang_vars = copy.copy(tpl_vars)
-
-            # Load extra language-specific variables
-            if os.path.isfile(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')):
-                lang_vars.update(self.load_static_vars(os.path.join(self.path, self.tpl_dir, lang, 'variables.json')))
-
-            # Overwrite with variables explicitly given
-            lang_vars.update(variables)
-
-            source = os.path.join(self.path, self.tpl_dir, lang, '{}.{}'.format(page, self.page_extension))
-
-            if output_file:
-                destination = os.path.join(self.path, self.html_dir, lang, output_file)
-            elif (self.lang_in_extension):
-                destination = '{}.{}.{}'.format(os.path.join(self.path, self.html_dir, page), lang, self.page_extension)
-            else:
-                destination = '{}.{}'.format(os.path.join(self.path, self.html_dir, lang, page), self.page_extension)
-
-            if os.path.isfile(source):
-                view = JinjaTemplateView(source)
-                
-                self.save_result(destination, view.render(lang_vars))
-                print(destination)
-
-            else:
-                raise ValueError('Unknown page: {}'.format(source))
+            self.build('index', lang = lang)

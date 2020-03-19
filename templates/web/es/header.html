@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <title>Veles Network</title>
     <script data-pace-options='{ "eventLag": false, "restartOnPushState": false }' src="js/pace.js"></script>
+    <!-- CSS includes -->
 {%- for css in body.css %}
     <link href="{{css.href}}"
         {%- if css.rel %} rel="{{css.rel}}" {% else %} rel="stylesheet" {% endif -%}
@@ -21,6 +22,9 @@
 <body class="with-overlay">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-darker bg-darker fixed-top">
+        <div class="nav-search-icon">
+            <i class="fa fa-search"></i>
+        </div>
         <div class="container">
             <a class="navbar-brand" href="index.es.html" title="Homepage">
                 <img id="icon" src="images/veles.ico"></img>
@@ -53,33 +57,33 @@
                         <a class="nav-link dropdown-toggle" href="index.es.html" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="current-language">Español</span> <img src="./images/lang.png"/>
                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
-                                            <a class="dropdown-item nav-external-app" href="index.zh.html">简体中文</a>
-                                            <a class="dropdown-item nav-external-app" href="index.tc.html">繁體中文</a>
-                                            <a class="dropdown-item nav-external-app" href="index.en.html">English</a>
-                                            <a class="dropdown-item nav-external-app grey" href="index.es.html">Español</a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
+                            <a class="dropdown-item nav-external-app" href="index.zh.html">简体中文</a>
+                            <a class="dropdown-item nav-external-app" href="index.tc.html">繁體中文</a>
+                            <a class="dropdown-item nav-external-app grey" href="index.es.html">Español</a>
+                            <a class="dropdown-item nav-external-app" href="index.en.html">English</a>
                         </div>
                     </li>
                 </ul>
-                <div class="sidebar">
-                    <select class="form-control wikiAutoComplete" name="wiki-select"
-                        placeholder="Type to search the wiki"   {# TODO: translate #}
-                        autocomplete="off"></select>
-                    <span id="wikiNoResultsText" style="display: none;">No results from wiki</span> {# TODO: translate #}
-                    <h4 data-id="page.title"></h4>
-                    <ul>
-                        <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                        <li class="menu-item submenu template">
-                            <a href="{{item.url}}"><span>{{item.title}}</span></a>
-                            <ul>
-                                <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
-{% endraw %}
         </div>
+        <div class="sidebar">
+            <select class="form-control searchAutoComplete" name="wiki-select"
+                placeholder="Search wiki articles, website ..."
+                autocomplete="off"></select>
+            <h4 data-id="page.title"></h4>
+            <h5 id="sidebar-caption" data-default="Page Content"></h5>
+            <ul>
+                <li class="menu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                <li class="menu-item submenu template">
+                    <a href="{{item.url}}"><span>{{item.title}}</span></a>
+                    <ul>
+                        <li class="submenu-item template"><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+{% endraw %}
     </nav>  <!-- ./Navigation -->
     <div id="content-overlay">
         <div class="overlay-gradient"></div>

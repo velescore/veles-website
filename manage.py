@@ -40,7 +40,7 @@ def main():
 	# Actions
 	if args.action == 'build-index':
 		builder = WebPageBuilder(args.path)
-		builder.build('index')
+		builder.build_index()
 
 	elif args.action == 'build-wiki':
 		builder = WikiBuilder(args.path)

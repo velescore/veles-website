@@ -55,6 +55,8 @@ class WikiBuilder(WebPageBuilder):
 			article_info = []
 			tag_index = {}
 
+			print("Building Wiki for language " + lang)
+
 			# Load extra language-specific variables
 			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, self.json_config)):
 				lang_config.update(self.load_static_vars(os.path.join(self.path, self.articles_dir, lang, self.json_config)))
@@ -115,7 +117,8 @@ class WikiBuilder(WebPageBuilder):
 					self.build(
 						self.article_tpl, 
 						variables = {'article': article, self.page_type: lang_config}, 
-						output_file = '{}.{}'.format(article['alias'], self.page_extension)
+						output_file = '{}.{}'.format(article['alias'], self.page_extension),
+						lang = lang
 						)
 
 			print(os.path.join(self.path, self.html_dir, lang, self.pages_file), '[meta-data]')
