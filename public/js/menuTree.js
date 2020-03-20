@@ -13,11 +13,11 @@ var menuTree = [
 /* Sections visible on navigation menu */
 	{
 		'title': 'Roadmap',
+		'sidebarCaption': 'Milestones 2020',
 		'sections': [
-			{ 'title': 'Q1' },
-			{ 'title': 'Q2' },
-			{ 'title': 'Q3' },
-			{ 'title': 'Q4' }
+			{ 'title': 'dVPN Launch Stage' },
+			{ 'title': 'dVPN Scaling Stage' },
+			{ 'title': 'Governance Bootstrap' }
 		]
 	},
 	{
@@ -88,8 +88,8 @@ var menuTree = [
 		'title': 'Wallet',
 		'items': [
 			{
-				'title': 'Go to WebWallet',
-					'url': 'https://wallet.veles.network'
+				'title': 'Go to Web Wallet',
+				'url': 'https://wallet.veles.network'
 			},
 			{
 				'title': 'Login',
@@ -149,9 +149,9 @@ var menuTree = [
 		'sections': [
 			{ 'title': 'Getting Started' },
 			{ 'title': 'Restoring Privacy' },
-			{ 'title': 'Veles dVPN'},
+			{ 'title': 'dVPN Public Testing'},
 			{ 'title': 'Innovative Blockchain' },
-			{ 'title': 'Robust Service Layer' },
+			{ 'title': 'Flexible Service Layer' },
 			{ 'title': 'Funding and Launch' },
 			{ 'title': 'Economic Model' },
 			{ 'title': 'Open Governance' },
