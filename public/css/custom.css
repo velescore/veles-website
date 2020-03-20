@@ -3749,18 +3749,18 @@ ul.news-list div.news-icon span {
 
 /* screenshots for current features section */
 .index-page .card-body,
-.index-page .card-body.fadeout:hover,
-.index-page .card-body.light-fadeout:  {
+.index-page .fadeout:hover,
+.index-page .light-fadeout:hover  {
 	color: #eee;
 	transition: all 500ms;
 }
 
-.index-page .card-body.fadeout {
+.index-page .fadeout {
 	color: #aaa;
 	transition: all 500ms;
 }
 
-.index-page .card-body.light-fadeout {
+.index-page .light-fadeout {
 	color: #bbb;
 	transition: all 500ms;
 }
@@ -3769,24 +3769,60 @@ ul.news-list div.news-icon span {
 	padding-bottom: 10px;
 }
 
-.index-page .card-body.fadeout img {
+.index-page .fadeout img {
 	filter: grayscale(1);
 	transition: all 500ms;
 }
 
-.index-page .card-body.light-fadeout img {
+.index-page .light-fadeout img {
 	filter: grayscale(0.7);
 	transition: all 500ms;
 }
 
-.index-page .card-body.fadeout img:hover,
-.index-page .card-body.light-fadeout img:hover {
+.index-page .fadeout:hover img,
+.index-page .light-fadeout:hover img {
 	filter: grayscale(0);
 	transition: all 500ms;
 }
 
 .index-page .card-body a {
 	font-weight: bold;
+}
+
+.index-page .after-getting-started {
+	background-color: #262626bb;
+	font-weight: bold;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.index-page .after-getting-started .col-md-4 {
+	border-bottom: 2px solid #383737;
+	padding: 20px;
+	text-align: center;
+	transition: background-color 200ms;
+}
+
+.index-page .after-getting-started .col-md-4:hover {
+	background-color: #262626bb;
+	transition: background-color 200ms;
+}
+
+.index-page .after-getting-started img {
+	border: 10px solid #383737;
+	border-radius: 10px;
+    box-shadow: 10px 5px 30px 5px rgba(0,0,0,0.3);
+    display: block;
+    opacity: 0.9;
+    margin-left: 50%;
+    margin-right: 50%;
+	width: 40%;
+	-webkit-transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+	transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+}
+
+.index-page .after-getting-started a:hover {
+	text-decoration: none;
 }
 
 /* language selector */

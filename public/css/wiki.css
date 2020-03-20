@@ -65,26 +65,26 @@
 }
 
 /* Wiki tables */
-table {
+.wiki-page table {
 	margin-bottom: 20px;
 	min-width: 50%;
 }
 
-table td,
-table th {
+.wiki-page table td,
+.wiki-page table th {
 	background: #3a3a3a88;
 	border: 1px solid #e4b99c55;
 	padding: 5px 15px 5px 10px;
 }
 
-table th {
+.wiki-page table th {
 	padding: 15px;
 	background: #22222288;
 }
 
 /* Mobile table */
 @media (max-width: 991.98px) {
-	table {
+	.wiki-page table {
 		display: block;
 		max-width: 100%;
     	overflow: scroll;
