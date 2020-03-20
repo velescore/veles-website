@@ -3771,6 +3771,7 @@ ul.news-list div.news-icon span {
 
 .index-page .fadeout img {
 	filter: grayscale(1);
+	max-width: unset;
 	transition: all 500ms;
 }
 
@@ -3800,25 +3801,35 @@ ul.news-list div.news-icon span {
 	border-bottom: 2px solid #383737;
 	padding: 20px;
 	text-align: center;
-	transition: background-color 200ms;
+	transition: background-color 500ms;
 }
 
 .index-page .after-getting-started .col-md-4:hover {
 	background-color: #262626bb;
-	transition: background-color 200ms;
+	transition: background-color 500ms;
 }
 
 .index-page .after-getting-started img {
-	border: 10px solid #383737;
-	border-radius: 10px;
+	/*border: 10px solid #383737;
+	border-radius: 10px;*/
     box-shadow: 10px 5px 30px 5px rgba(0,0,0,0.3);
     display: block;
     opacity: 0.9;
+    margin-bottom: 15px;
     margin-left: 50%;
     margin-right: 50%;
-	width: 40%;
+	width: 30%;
 	-webkit-transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
 	transform: translateX(-50%) rotateX(60deg) rotateZ(45deg);
+	transition: all 1000ms;
+}
+
+.index-page .after-getting-started .col-md-4:hover img,
+.index-page .after-getting-started .col-md-4 img:hover {
+	box-shadow: 30px 25px 60px 5px rgba(0,0,0,0.3);
+	-webkit-transform: translateX(-50%) translateY(-10%) rotateX(60deg) rotateZ(45deg);
+	transform: translateX(-50%) translateY(-10%) rotateX(60deg) rotateZ(45deg);
+	transition: all 500ms;
 }
 
 .index-page .after-getting-started a:hover {
