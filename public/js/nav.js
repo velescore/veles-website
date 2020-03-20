@@ -184,25 +184,27 @@ var velesSinglePageApp = {
 	},
 
 	'autoAddIds': function() {
+		// Headers h2 and h3 in sections or rows
 		$('h2').add('h3').each(function(i){
-			if (!$(this).parents('.row').length)
-				return;
+			var headerId = $(this).text()
+				.toLowerCase().replace(/: /g, '').replace(/ /g, '-')
+				.trim();
+			var $parent = null;
 
-			if (!$(this).parents('.row').eq(0).attr('id')) {
-				$(this).parents('.row').eq(0).attr('id', $(this).text()
-					.toLowerCase().replace(': ', '').replace(' ', '-')
-					.trim());
-			}
+			if ($(this).parents('section').length)
+				$parent = $(this).parents('section').eq(0);
+			else if ($(this).parents('.row').length)
+				$parent = $(this).parents('.row').eq(0);
+
+			if ($parent && !$parent.attr('id')) 
+				$parent.attr('id', headerId);
 		});
+		// Cards with h4 such as on the Team page
 		$('h4').each(function(i){
-			if (!$(this).parents('div.card').length)
-				return;
-
-			if (!$(this).parents('div.card').eq(0).attr('id')) {
+			if ($(this).parents('div.card').length && !$(this).parents('div.card').eq(0).attr('id'))
 				$(this).parents('div.card').eq(0).attr('id', $(this).text()
-					.toLowerCase().replace(': ', '').replace(' ', '-')
+					.toLowerCase().replace(/: /g, '').replace(/ /g, '-')
 					.trim());
-			}
 		});
 	},
 
@@ -728,7 +730,7 @@ var velesSinglePageApp = {
 		for (var i = 0; i < tree.length; i++) {
 			if (!tree[i].hasOwnProperty('hideFromNav') && !tree[i].hideFromNav) {
 				if (!tree[i].hasOwnProperty('page'))
-					tree[i].page = tree[i].title.toLowerCase().replace(' ', '-');
+					tree[i].page = tree[i].title.toLowerCase().replace(/ /g, '-');
 
 				url = (isSectionLinks)
 					? '#' +  tree[i].page
