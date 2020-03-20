@@ -322,6 +322,8 @@ html {
 */
 #content {
 	transition: margin-top 0.5s ease-in-out;	/* support for easy transition when sliding out */
+	min-height: 100vh;	/* if calc() not supported */
+	min-height: calc(100vh - 98px);
 }
 
 body.with-overlay {
@@ -337,7 +339,9 @@ body.with-overlay {
 	font-family: 'Inconsolata', sans-serif;
 	line-height: 19px;
     margin-bottom: -20px;
-    min-height: 100vh;
+	min-height: 100vh;	/* if calc() not supported */
+	min-height: calc(100vh - 98px);
+
 }
 
 #error-wrapper h1 {
