@@ -1,4 +1,5 @@
 Published:      Jan 23 15:23 2020 +0000
+Image:			blockdx-integration.jpg
 Author:         mdfkbtc
 
 # Feb 2020 (Quick) Progress Update
