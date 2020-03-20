@@ -1,6 +1,8 @@
 Published:      Feb 22 06:14 2020 +0000
 Author:         xCrypto 
 
+# Feb 2020 (Quick) Progress Update
+
 We just wanted to put out a quick update regarding where the project is at. 
  
 * Currently The pre alpha stage of dVPN testing is going great. During the development phase we have discovered several possible alternative multi-tiered multi-hop dVPN configurations that could significantly improve the original concept and are being tested and assessed for integration into the first release.
