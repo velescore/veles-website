@@ -3622,6 +3622,7 @@ ul.news-list div.news-icon span {
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
           animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  border:10px solid #262626cc;
   border-radius: 16px;
   height: 128px;
   left: 50%;
@@ -3653,7 +3654,7 @@ ul.news-list div.news-icon span {
   margin: 1.5em auto;
   padding: 0.75em 1.5em;
   -webkit-transition: border-color 200ms;
-  transition: border-color 200ms
+  transition: border-color 200ms;
 }
 
 .index-page .button:hover {
@@ -3682,6 +3683,7 @@ ul.news-list div.news-icon span {
   -webkit-animation-name: cast;
           animation-name: cast;
   background-color: black;
+  border: none;
   box-shadow: 0 0 48px 48px black !important;
   height: 48px;
   opacity: 0.2;
@@ -3745,6 +3747,47 @@ ul.news-list div.news-icon span {
 	overflow-x: visible;	/* fixes an issue with the shadown cut by half on mobile */
 }	
 
+/* screenshots for current features section */
+.index-page .card-body,
+.index-page .card-body.fadeout:hover,
+.index-page .card-body.light-fadeout:  {
+	color: #eee;
+	transition: all 500ms;
+}
+
+.index-page .card-body.fadeout {
+	color: #aaa;
+	transition: all 500ms;
+}
+
+.index-page .card-body.light-fadeout {
+	color: #bbb;
+	transition: all 500ms;
+}
+
+.index-page .card-body img {
+	padding-bottom: 10px;
+}
+
+.index-page .card-body.fadeout img {
+	filter: grayscale(1);
+	transition: all 500ms;
+}
+
+.index-page .card-body.light-fadeout img {
+	filter: grayscale(0.7);
+	transition: all 500ms;
+}
+
+.index-page .card-body.fadeout img:hover,
+.index-page .card-body.light-fadeout img:hover {
+	filter: grayscale(0);
+	transition: all 500ms;
+}
+
+.index-page .card-body a {
+	font-weight: bold;
+}
 
 /* language selector */
 .language-selector {
