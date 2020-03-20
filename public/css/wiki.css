@@ -82,11 +82,15 @@
 	background: #22222288;
 }
 
+.wiki-page table tr td:first-of-type a {
+	word-break: normal;
+}
+
 /* Mobile table */
 @media (max-width: 991.98px) {
 	.wiki-page table {
 		display: block;
-		max-width: 100%;
+		max-width: 100% !important;
     	overflow: scroll;
 	}
 }
