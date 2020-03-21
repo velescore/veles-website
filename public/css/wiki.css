@@ -155,7 +155,7 @@ table.infobox {
 }
 
 .infobox img {
-	max-width: 150px;
+	max-width: 100%;
 }
 
 table.infobox td,

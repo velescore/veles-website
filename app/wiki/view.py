@@ -25,8 +25,8 @@ from app.wiki.extensions import FigureFromTitleExtension
 class WikiMarkdownTemplateView(MarkdownTemplateView):
     """Renders a wiki page from Markdown file"""
     replacements = [
-        ['src="/', 'src="wiki/'],
-        ['href="/', 'href="wiki/'],
+        ['src="/', 'src="wiki/'],                   # add base directory for images
+        ['href="/', 'class="applink" href="'],      # add class for links for single-page app
         ['<table>', '<table class="wiki-table">']
         ]
     last_meta = None

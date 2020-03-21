@@ -18,8 +18,8 @@ from app.wiki.view import WikiMarkdownTemplateView
 class NewsMarkdownTemplateView(WikiMarkdownTemplateView):
 	"""Renders a news page from Markdown file"""
 	replacements = [
-		['src="/', 'src="news/'],
-		['href="/', 'href="news/'],
+        ['src="/', 'src="images/news/'],			# add base directory for images
+        ['href="/', 'class="applink" href="'],      # add class for links for single-page app
 		]
 	last_meta = None
 
