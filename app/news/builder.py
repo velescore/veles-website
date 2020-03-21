@@ -23,6 +23,7 @@ class NewsBuilder(WikiBuilder):
 	tags_file = 'tags.json'
 	tpl_dir = 'templates/news'
 	html_dir = 'public/news/pages'
+	images_path = 'images/news'
 
 	def get_markdown_view(self, filepath, language):
 		return NewsMarkdownTemplateView(filepath, language)

@@ -26,6 +26,9 @@ Last Commit:   {{article.commit}}
     			<span title="{{article.author}}: {{article.commit_message}}">
                     Published on {{article.updated_at | timeformat("%d %B %Y at %H:%M GMT")}}</span>
     		</div>
+{% if article.image %}
+            <img src="{{article.image}}" class="news-article-image">
+{% endif %}            
         	{{article.html}}
         </div>
     </div>

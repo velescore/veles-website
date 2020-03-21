@@ -94,6 +94,7 @@ velesSinglePageApp.addPageHook('index', 'jsonPreload', function() {
         $row.attr('data-news-id', item['alias']);
         $row.find('.news-title').text(item['title']);
         $row.find('.news-teaser').text(item['abstract']);
+        $row.find('.news-icon').attr('src', (item['image']) ? item['image'] : 'images/news/veles-square.png');
         $row.click(function(e) {
             velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
         });

@@ -17,8 +17,24 @@
 }
 
 .wiki-page h1 {
-	margin-bottom: 25px;
+	font-size: 2em;
+	padding-bottom: 25px;
+	padding-top: 15px;
 }
+.wiki-page h2 {
+	font-size: 1.5em;
+}
+.wiki-page h3 {
+	font-size: 1.25em;
+}
+.wiki-page h4 {
+	font-size: 1.1em;
+}
+.wiki-page h5 {
+	font-size: 1em;
+}
+
+
 .article-info {
 	display: block;
 	padding: 5px 5px 20px 20px;

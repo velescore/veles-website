@@ -38,6 +38,7 @@ class WikiBuilder(WebPageBuilder):
 	html_dir = 'public/wiki/pages'
 	lang_in_extension = False
 	max_abstract_len = 120
+	images_path = 'wiki/images'	# path relative to the document root
 
 	""" Constructor, needs base path of website """
 	def __init__(self, path, page_extension = 'html', article_extension = 'md'):
@@ -55,7 +56,7 @@ class WikiBuilder(WebPageBuilder):
 			article_info = []
 			tag_index = {}
 
-			print("Building Wiki for language " + lang)
+			print("Building {} articles for language {}".format(self.page_type, lang))
 
 			# Load extra language-specific variables
 			if os.path.isfile(os.path.join(self.path, self.articles_dir, lang, self.json_config)):
@@ -77,14 +78,20 @@ class WikiBuilder(WebPageBuilder):
 						'title': self.article_alias_to_title(name_parts[0])
 						}
 					article['abstract'] = self.get_html_article_abstract(article['html'])
+					article['image'] = str(article['meta']['image']) if 'image' in article['meta'] else None
 					article_tags = str(article['meta']['tags']).replace(' ', '').split(',') if 'tags' in article['meta'] else []
+
+					if self.images_path and article['image'] and not article['image'].startswith('https://'):
+						article['image'] = os.path.join(self.images_path, article['image'])
+
 					article_info_item = {
 						'alias': article['alias'],
 						'title': page_list_item['title'],
 						'abstract': article['abstract'],
 						'tags': article_tags,
 						'page': name_parts[0] + '.' + self.page_type, 
-						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' 
+						'url': article['alias'] + '.' + self.page_type + '.' + lang + '.html' ,
+						'image': article['image']
 					}
 					article['infobox'] = self.make_infobox_from_meta(article['meta'], view.replacements)
 
@@ -92,7 +99,7 @@ class WikiBuilder(WebPageBuilder):
 					if 'tags' in article['infobox']:
 						del(article['infobox']['tags'])
 					
-					# index tags to better structure
+					# index pages by tags
 					for tag in article_tags:
 						if not tag in tag_index:
 							tag_index[tag] = []

@@ -2,21 +2,8 @@ Published:      Jan 23 15:23 2020 +0000
 Image:			blockdx-integration.jpg
 Author:         mdfkbtc
 
-# Feb 2020 (Quick) Progress Update
+# BlockDX Integration in Progress
 
-We just wanted to put out a quick update regarding where the project is at. 
- 
-* Currently The pre alpha stage of dVPN testing is going great. During the development phase we have discovered several possible alternative multi-tiered multi-hop dVPN configurations that could significantly improve the original concept and are being tested and assessed for integration into the first release.
-* Service subscription and discovery has been implemented. Along with new Veles masternode framework, Service Manager, and masternode installation scripts.
+Veles Core is being integrated with Block DX  - The_Blocknet, the fully decentralized exchange, so to trade $VLS you won't have to trust 3rd party exchanges anymore!
 
-### Events coming soon
-
-* New Exchange Listing with VLS integration into Block DX decentralized exchange.:grinning: 
-* Release of installation script for dVPN & MN for live activation of dVPN for public use with Tier II masternode implementation.
-* PrivateSend activation
-* Release of native Mobile wallet app
-
-### Later on this year we will be looking towards
-
-* VelesOS live operating system with full integration with Veles privacy services
-* Development of infrastructure for a fair decentralized way of governance in preparation for a full community takeover in the years to come.
+Block DX is the first true decentralized exchange that enables trading freedom for connected blockchains, utilizing cross-chain atomic swaps powered by the Blocknet Protocol. Trading occurs directly from your own wallets and your funds remain in your control throughout the entire trade process. This means there's no third-party control over your funds, no need to transfer funds to another account, no waiting for deposit or withdrawal confirmations, and no withdrawal limits.
