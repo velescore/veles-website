@@ -34,7 +34,7 @@
 	font-size: 1em;
 }
 
-.wiki-page #content {
+#content.wiki-page  {
 	padding-bottom: 75px;
 }
 

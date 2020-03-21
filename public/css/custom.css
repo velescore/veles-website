@@ -3956,7 +3956,7 @@ code{
 	font-size: 1em;
 }
 
-.news-page #content {
+#content.news-page  {
 	padding-bottom: 75px;
 }
 
