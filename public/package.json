@@ -1,9 +1,12 @@
 {
-    "title": "Modern Business",
-    "name": "startbootstrap-modern-business",
-    "version": "4.1.2",
-    "description": "A multipurpose HTML website template built with Bootstrap",
+    "title": "Veles Core Website",
+    "name": "veles-website",
+    "version": "1.2.0",
+    "description": "Single page application for the Veles Core Website and Wiki",
     "keywords": [
+        "veles",
+        "crypto",
+        "jinja2",
         "css",
         "sass",
         "html",
@@ -11,19 +14,21 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/modern-business",
+    "homepage": "https://veles.network",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-modern-business/issues",
-        "email": "feedback@startbootstrap.com"
+        "url": "https://github.com/velescore/veles-website/issues",
+        "email": "admin@veles.network"
     },
-    "license": "MIT",
-    "author": "Start Bootstrap",
+    "license": "GPLv3",
+    "author": "Veles Core",
     "contributors": [
-        "David Miller (http://davidmiller.io/)"
+        "AltcoinBaggins (https://github.com/AltcoinBaggins)",
+        "mdfkbtc (https://github.com/mdfkbtc)",
+        "The Veles Core Developers (https://velesn.network/team.en.html)"  
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-modern-business.git"
+        "url": "https://github.com/velescore/veles-website.git"
     },
     "dependencies": {
         "bootstrap": "4.2.1",
