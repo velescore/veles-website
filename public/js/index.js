@@ -83,28 +83,30 @@ velesSinglePageApp.addPageHook('index', 'exit', function() {
 
 // Show news
 velesSinglePageApp.addPageHook('index', 'jsonPreload', function() {
-    $('.news-list li').each(function (i, row) {
-        // we just need to be sure that number of rows doesn't exceed
-        // pre-set minimum number of recet articles, which is 10 by
-        // default, we need about 4 to show on index.
-        var $row = $(row),
-            item = velesSinglePageApp.jsonPreload['news/recentArticles.json'][i];
+    if ($('.news-list').length && velesSinglePageApp.language == 'en') {// only English news are production ready at the moment
+        $('.news-list li').each(function (i, row) {
+            // we just need to be sure that number of rows doesn't exceed
+            // pre-set minimum number of recet articles, which is 10 by
+            // default, we need about 4 to show on index.
+            var $row = $(row),
+                item = velesSinglePageApp.jsonPreload['news/recentArticles.json'][i];
 
-        // populate existing empty row with json item's content
-        $row.attr('data-news-id', item['alias']);
-        $row.find('.news-title').text(item['title']);
-        $row.find('.news-teaser').text(item['abstract']);
-        $row.find('.news-icon').attr('src', (item['image']) ? item['image'] : 'images/news/veles-square.png');
-        $row.click(function(e) {
-            velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
+            // populate existing empty row with json item's content
+            $row.attr('data-news-id', item['alias']);
+            $row.find('.news-title').text(item['title']);
+            $row.find('.news-teaser').text(item['abstract']);
+            $row.find('.news-icon').attr('src', (item['image']) ? item['image'] : 'images/news/veles-square.png');
+            $row.click(function(e) {
+                velesSinglePageApp.go($(this).attr('data-news-id') + '.news.' + velesSinglePageApp.language);
+            });
+
+            // fade in news section when filled with data
+            $('.news-load-recent').addClass('news-loaded'); 
         });
 
-        // fade in news section when filled with data
-        $('.news-load-recent').addClass('news-loaded'); 
-    });
-
-    // make rows clickable
-    $('.news-link').not('.spa').addClass('spa');
+        // mark rows that we have just linked to the single page app
+        $('.news-link').not('.spa').addClass('spa');
+    }
 });
 
 
