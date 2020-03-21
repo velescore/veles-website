@@ -3877,7 +3877,6 @@ ul.news-list div.news-icon span {
 
 #content {
 	line-height: 24px;
-	padding-bottom: 75px;
 }
 
 code{
@@ -3947,6 +3946,10 @@ code{
 }
 .news-page h5 {
 	font-size: 1em;
+}
+
+.news-page #content {
+	padding-bottom: 75px;
 }
 
 /* Alternative loading bar with spinner
