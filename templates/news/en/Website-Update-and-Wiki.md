@@ -26,3 +26,6 @@ will continue to grow and accumulate knowledge useful to the project.
  - reorganized menu structure with better Wiki integration
  - redesigned homepage with all sections reworked and updated
  - lots of small UI/UX improvements and fixes
+
+The updated is first released in English, with other translations following gradually in coming
+weeks.
