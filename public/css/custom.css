@@ -3495,11 +3495,16 @@ div#tallModal {
 
 
 /* index page */
+.news-list-title {
+	padding-left: 10px;
+	font-weight: bold;
+}
 
 ul.news-list {
 	font-size: 14px;
 	list-style-type: none;
 	padding-left: 10px;
+	padding-top: 5px;
 }
 
 ul.news-list .news-date{
@@ -3797,7 +3802,6 @@ ul.news-list div.news-icon span {
 .index-page .after-getting-started {
 	background-color: #262626bb;
 	font-weight: bold;
-	margin-top: 30px;
 	margin-bottom: 10px;
 }
 
@@ -3838,6 +3842,10 @@ ul.news-list div.news-icon span {
 
 .index-page .after-getting-started a:hover {
 	text-decoration: none;
+}
+
+#getting-started .col-lg-6 {
+	padding-bottom: 20px;
 }
 
 /* language selector */
