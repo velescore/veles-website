@@ -15,6 +15,7 @@ import argparse
 from app.builder import WebPageBuilder
 from app.wiki.builder import WikiBuilder
 from app.news.builder import NewsBuilder
+from app.version import VersionQuery
 
 # Basic commandline interface
 def main():
@@ -49,6 +50,10 @@ def main():
 	elif args.action == 'build-news':
 		builder = NewsBuilder(args.path)
 		builder.build_articles()
+
+	elif args.action == 'update-version':
+		query = VersionQuery(args.path)
+		query.save_version_info()
 
 	else:
 		raise ValueError('unsupported action: {}'.format(args.action))

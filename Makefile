@@ -14,6 +14,7 @@ build:
 	@$(PYTHON_CMD) manage.py build-news
 	@make pull_wiki
 	@$(PYTHON_CMD) manage.py build-wiki
+	@$(PYTHON_CMD) manage.py update-version
 	@echo "[ Success ]"
 
 assert_python_present:

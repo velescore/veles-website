@@ -1,5 +1,4 @@
 var velesSinglePageApp = {
-	'frontendVersion': '1.10.0',
 	'walletVersion': '0.18.1.2',	// default to be overriden by value from WS
 	'currentPage': null,
 	'language': 'en',
@@ -1027,7 +1026,7 @@ var velesSinglePageApp = {
 
 	'printVersionInfo': function() {
 		console.log(
-			"%cVeles Core Web %c " + this.frontendVersion + " %c " + this.walletVersion, 
+			"%cVeles Core Web %c " + appVersion.version + " %c " + appVersion.environment, 
 			"background: #57BA35; color: white; padding: 3px 0px 3px 7px; border-radius:5px 0 0 5px; border-right: none;",
 			"background: #fd7e14; color: white; padding: 3px 0; border-right: none;",
 			"background: #6c757d; color: white; padding: 3px 7px 3px 0px; border-radius:0 5px 5px 0; border-right: none;"

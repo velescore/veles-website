@@ -20,6 +20,7 @@
 			{"src": "js/src/plugins/jqplot.highlighter.js"},
 			{"src": "js/src/plugins/jqplot.cursor.js"},
 			{"src": "js/charts.js"},
+			{"src": "js/version.js"},
 			{"src": "js/nav.js"},
 			{"comment": "Bootstrap", "src": "vendor/bootstrap/js/bootstrap.bundle.min.js"},
 			{"comment": "Bootstrap Autocomplete", "src": "https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.0/dist/latest/bootstrap-autocomplete.min.js"},
