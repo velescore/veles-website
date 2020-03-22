@@ -7,6 +7,11 @@
              will be ignored by the single page app. -->
         <div id="content" class="roadmap-page">
             <div class="container">
+                <div class="article-info">
+                    <a title="Show history of changes in the document" href="https://git.veles.network/velescore/veles-website/commits/branch/master/public/pages/en/roadmap.html" target="_blank">
+                        History
+                    </a>
+                </div>
                 <h1 class="mt-4 mb-3"><span class="grey">The</span> Roadmap</h1>
             </div>
             <section>
@@ -14,7 +19,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <ul class="timeline track-in-view right-slide">
-                                <li class="event milestone" data-date="Q4 2018">
+                                <li class="event milestone" data-date="Q4 2018" id="progress-history">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Network Bootstrap Stage</h1>
@@ -241,7 +246,7 @@
                                     </div>
                                 </li>
 
-                                <li class="event milestone proposal" data-date="Q1 2020">
+                                <li class="event milestone proposal" data-date="Q1 2020" id="dvpn-launch-stage">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>dVPN Launch Stage</h1>
@@ -250,9 +255,9 @@
                                         </div>
                                         <div class="split-right">
                                             <ul class="content-skills">
-                                            <li>Release of installation script for dVPN & MN</li>
-                                            <li>dVPN live for public use</li>
-                                            <li>Development of decentralized domain name system. <i>Already in progress</i></li>
+                                            <li class="checked">Release of installation script for dVPN & MN</li>
+                                            <li class="checked">dVPN live for public use</li>
+                                            <li class="checked">Development of decentralized domain name system. <i>Already in progress</i></li>
                                             <li>Tier II masternode implementation to function as exit nodes to provide multi-hop routing</li>
                                             <i>The exact implementation will be based on the best multi-tiered multi-hop routing
                                                 system chosen according to the real-life data from alpha testing stage.</i>
@@ -265,7 +270,7 @@
                                     </div>
                                 </li>
 
-                                <li class="event proposal" data-date="Q2 2020">
+                                <li class="event proposal" data-date="Q2 2020" id="dvpn-scaling-stage">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>dVPN Scaling Stage</h1>
@@ -285,7 +290,7 @@
                                 </li>
 
 
-                                <li class="event milestone proposal" data-date="Q3 - Q4 2020">
+                                <li class="event milestone proposal" data-date="Q3 - Q4 2020" id="governance-bootstrap">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Governance Bootstrap Phase</h1>
@@ -302,7 +307,7 @@
                                 </li>
 
 
-                                <li class="event proposal" data-date="2020 - 2023">
+                                <li class="event proposal" data-date="2020 - 2023" id="transformation-phase">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Transformation Phase</h1>
@@ -319,7 +324,7 @@
                                     </div>
                                 </li>
 
-                                <li class="event milestone proposal" data-date="2024 - &infin;">
+                                <li class="event milestone proposal" data-date="2024 - &infin;" id="community-takeover">
                                     <div class="split-contents">
                                         <div class="split-left">
                                             <h1>Full Community Takeover</h1>

@@ -1,0 +1,39 @@
+{#-
+Header for the wiki article, with the History, Source buttons and last edit
+history info.
+
+Copyright (C) 2020 The Veles Core developers
+
+This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+-#}
+			<div class="article-info">
+                <a title="Show Markdown source code" href="wiki/articles/en/{{article.alias}}.md" target="_blank">
+                    Source
+                </a>
+                <a title="
+{%- if article.commit_count == 1 -%}
+1 revision &nbsp;
+{%- else -%}
+{{article.commit_count}} revisions &nbsp; 
+{%- endif -%} 
+{%- if article.authors | length == 1 -%}
+by author {{article.author}}
+{%- else -%}
+by authors {{article.authors | join(', ')}}
+{%- endif -%}
+"
+                    href="https://git.veles.network/velesnetwork/veles-wiki/commits/branch/master/articles/en/{{article.alias}}.md" target="_blank">
+                    History
+                </a>
+                {# Desktop version #}
+    			<span title="{{article.author}}: {{article.commit_message}}" class="desktop-block">
+                    Updated on {{article.updated_at | timeformat("%d %B %Y at %H:%M")}}
+                </span>
+                {# Mobile version #}
+                <span title="{{article.author}}: {{article.commit_message}}" class="mobile-block">
+                    {{article.updated_at | timeformat("%d %b %Y %H:%M")}}
+                </span>
+    		</div>

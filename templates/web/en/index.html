@@ -1,0 +1,877 @@
+{#-
+Veles Core Website
+
+Copyright (C) 2019 - 2020 The Veles Core developers
+
+This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+-#}
+{%- include 'header.html' %}
+    <div id="content-wrapper" class="sidebar-aligned">
+        <div id="content" class="index-page">
+            <header>
+                <div class="movething">
+                    <div class="row row-wide">
+                        <div class="col-lg-12">
+                            <div id="large-header" class="header">
+                                <div id="under-canvas" class="parallax-content"></div>
+                                <div id="under-canvas2">
+                                    <ul id="debug-area"></ul>
+                                </div>
+                                <canvas id="canvas"></canvas>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h2 class="main-toptitle">
+                                                <span class="index-typewrite"></span><span class="main-toptitle-cursor">_</span>
+                                            </h2>
+                                            <h1 class="main-title"><span class="thin">VELES</span> NETWORK</h1>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Total Supply
+                                                <span class="tile-label-value"
+                                                    data-entity-id="market.price"
+                                                    data-attribute="total_supply"
+                                                    data-format="number"
+                                                    data-fixed-decimals="0"
+                                                    data-title="{total_supply} VLS"
+                                                    data-unit="VLS"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Maximum Supply
+                                                 <span class="tile-label-value"
+                                                    data-entity-id="market.price"
+                                                    data-attribute="max_supply"
+                                                    data-format="number"
+                                                    data-fixed-decimals="0"
+                                                    data-title="{max_supply} VLS"
+                                                    data-unit="VLS"
+                                                >2 500 000 VLS</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Block Time
+                                                <span class="tile-label-value">2 min</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Maximum Block Reward
+                                                 <span class="tile-label-value"
+                                                    data-entity-id="chain.halving.status"
+                                                    data-attribute="max_block_reward"
+                                                    data-format="number"
+                                                    data-fixed-decimals="2"
+                                                    data-unit="VLS"
+                                                >5 VLS</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Masternode Collateral
+                                                <span class="tile-label-value">500 VLS</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Masternode Reward
+                                                <span class="tile-label-value"
+                                                    data-entity-id="chain.stats.mining"
+                                                    data-attribute="block_reward_mn_percent"
+                                                    data-format="number"
+                                                    data-fixed-decimals="2"
+                                                    data-unit="%"
+                                                >9 %</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Development Deward
+                                                <span class="tile-label-value"
+                                                    data-entity-id="chain.stats.mining"
+                                                    data-attribute="block_reward_dev_percent"
+                                                    data-format="number"
+                                                    data-fixed-decimals="2"
+                                                    data-unit="%"
+                                                >4.65 %</span>
+                                            </div>
+                                        </div>
+                                        <div class="header-tile">
+                                            <div class="tile-label">
+                                                Avg. Block Reward 24h
+                                                <span class="tile-label-value"
+                                                    data-entity-id="chain.stats.mining"
+                                                    data-attribute="block_reward_average"
+                                                    data-format="number"
+                                                    data-fixed-decimals="2"
+                                                    data-unit="VLS"
+                                                >5 VLS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section id="getting-started">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2>Getting Started:</h2>
+                            <div class="buttonset-index">
+                                <a href="download.en.html" class="nav-page">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Download wallet</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a href="exchanges.en.html" class="nav-page">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Buy VLS</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a href="Masternode-Setup-Guide.wiki.en.html" class="nav-page">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Setup MN</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a href="dVPN-Setup-Guide.wiki.en.html" class="nav-page">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Connect to dVPN</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/velescore">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Follow Twitter</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                {# <!--
+                                <a target="_blank" rel="noopener noreferrer" href="https://steemit.com/@velescore/">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Follow Steemit</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                --> #}
+                                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/sBeqEXc">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Join Discord</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://web.telegram.org/#/im?p=@Velescore">
+                                    <div class="button-effect btn-index">
+                                        <span class="label">Join Telegram</span>
+                                        <span class="icon">
+                                        <span></span>
+                                        </span>
+                                        <span class="icon2"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="start-text">Join our community on social-media and stay up-to date with the latest progress.
+                            Currently the most active is our Discord server.</div>
+                        </div>
+                        <div class="col-lg-6 news-load-recent">
+                            <span class="news-list-title">Latest News:</span>
+                            <ul class="news-list">
+                                <li><span class="news-date"></span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-title"></span>
+                                   <span class="news-teaser"></span>
+                                </li>
+                                <li><span class="news-date"></span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-title"></span>
+                                   <span class="news-teaser"></span>
+                                </li>
+                                <li><span class="news-date"></span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-title"></span>
+                                   <span class="news-teaser"></span>
+                                </li>
+                                <li><span class="news-date"></span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-title"></span>
+                                   <span class="news-teaser"></span>
+                                </li>
+                                {# <!--
+                                <li><span class="news-date">1/12/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">Pre-alpha version is live. Start using <a href="dvpn.en.html">dVPN</a> now !</span>
+                                </li>
+                                <li><span class="news-date">24/11/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">Public countdown for <a href="dvpn.en.html">dVPN</a> pre-alpha launch !</span>
+                                </li>
+                                <li><span class="news-date">24/11/2019</span>
+                                   <div class="news-icon"><span>維列斯</span></div>
+                                   <span class="news-teaser"><a href="index.tc.html">Traditional Chinese</a> version of the website has been launched.
+                                </li>
+                                <li><span class="news-date">20/11/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">Lear more about further development. Check<a href="roadmap.en.html"> Roadmap</a> update !</span>
+                                </li>
+                                <li><span class="news-date">13/11/2019</span>
+                                   <img class="news-icon" src="images/team/clover.jpeg" />
+                                   <span class="news-teaser"> New member joined Veles team! Check<a href="team.en.html"> Clover</a> profile.</span>
+                                </li>
+                                <li><span class="news-date">04/11/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">New wallet has been released <a href="download.html">Veles Core 0.18.1.3</a> ! Check the <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.3.md">release-notes</a>.</span>
+                                </li>
+                                <li><span class="news-date">25/10/2019</span>
+                                   <img class="news-icon" src="images/exchanges/gj.png" />
+                                   <span class="news-teaser"> Trading on <a href="https://www.gj.com/trade/vlsusdt">GJ.com</a> is already active !</span>
+                                </li>
+                                <li><span class="news-date">02/10/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">New wallet has been released <a href="download.html">Veles Core 0.18.1.2</a> ! Check the <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.2.md">release-notes</a>.</span>
+                                </li>
+                                <li><span class="news-date">14/08/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">New wallet has been released <a href="download.html">Veles Core 0.18.1</a> ! Check the <a href="https://github.com/velescore/veles/blob/master/doc/release-notes/veles/release-notes-0.18.1.md">release-notes</a>.</span>
+                                </li>
+                                <li><span class="news-date">12/07/2019</span>
+                                   <img class="news-icon" src="images/news/veles-square.png" />
+                                   <span class="news-teaser">New wallet has been released <a href="download.html">Veles Core 0.18.0</a> ! Check the <a href="https://github.com/velescore/veles/blob/0.18/doc/release-notes/veles/release-notes-0.18.0.md">release-notes</a>.</span>
+                                </li>
+                                <li><span class="news-date">02/06/2019</span>
+                                   <div class="news-icon"><span>维列斯</span></div>
+                                   <span class="news-teaser">Simplified Chinese version of the website has been launched.
+                                </li>
+                                <li><span class="news-date">04/07/2019</span>
+                                   <div class="news-icon"><span>ES</span></div>
+                                   <span class="news-teaser">Spanish version of the website has been launched.</span>
+                                </li>
+                                <li><span class="news-date">02/06/2019</span>
+                                   <div class="news-icon"><span>维列斯</span></div>
+                                   <span class="news-teaser">Simplified Chinese version of the website has been launched.</b></span>
+                                </li>
+                                <li><span class="news-date">23/05/2019</span>
+                                   <img class="news-icon" src="images/exchanges/freiexchange.jpg" />
+                                   <span class="news-teaser"> Trading on <a href="https://freiexchange.com/market/VLS/BTC">Freiexchange.com</a> is already active !</span>
+                                </li>
+                            --> #}
+                            </ul>
+                        </div>
+                    </div>
+                    {#
+                </div>
+            </section>
+
+            <section class="after-getting-started">
+                <div class="container">
+                    #}
+                    <div class="row after-getting-started">
+                        <div class="col-md-4 light-fadeout">
+                            <a href="#dvpn-public-testing">
+                                <img src="images/screen-dvpn-alpha.jpg">
+                                Join dVPN Public Testing
+                            </a>
+                        </div>
+                        <div class="col-md-4 light-fadeout">
+                            <a href="#main-features">
+                                <img src="images/screen-velesos.png">
+                                Explore Current Features
+                            </a>
+                        </div>
+                        <div class="col-md-4 light-fadeout">
+                            <a href="Wiki-Home.wiki.en.html" class="wikilink">
+                                <img src="images/screen-wiki.jpg">
+                                Read Tutorials on Wiki
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{#
+            <section id="veles-dvpn">
+                <div class="container">
+                    <div class="row">
+                        <h2>Getting connected:</h2>
+                       
+                    </div>
+                </div>
+            </section>
+#}
+            <section id="restoring-privacy">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view left-slide-in" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Restoring Online Privacy</h2>
+                            <p class="my-6">
+                                Veles Core is an open-source software project that aims to help people to retain their freedom of access to an information and their privacy on the Internet. Most of current solutions are either commercial centralized services 
+                                or are based on volunteer networks which are prone to misuse and censorship. Too fill the gap and provide secure, trustless solution the project take an advantage of developments in distributed systems and blockchain technology,
+                                to build economically self-supporting and eventually self-governing network, significantly more resistant to disruptions or or censorship.<br />
+                                The network currently provides decentralized VPN and tunelling as well as decentralized recursive DNS. More services
+                                will be gradually implemented over time, such as distributed Instant Messaging platform or trustless software
+                                builds.
+                                <!--{#
+
+                                 and
+                                distributed systems
+
+                                We have built a strong decentralized network 
+                                backed by the blockchain, which provides the basis for provisioning decentralized services such as dVPN / tunneling, recursive dDNS,  
+                                that are already accessible for the public. Many more will be gradually implemented along the way,
+                                such as decentralized Git mirrors, distributed private instant messaging,
+                                distributed bulletin boards, or trustless software builds.
+
+                                Veles Core is an open-source software project that aims to help people to retain their freedom of access to an information and their privacy on the Internet. We have built a strong decentralized network 
+                                backed by the blockchain, which provides the basis for provisioning decentralized services such as dVPN / tunneling, recursive dDNS,  
+                                that are already accessible for the public. Many more will be gradually implemented along the way,
+                                such as decentralized Git mirrors, distributed private instant messaging,
+                                distributed bulletin boards, or trustless software builds.<!
+                                <br />
+                                Over a decade of development in the blockchain technology has brought humanity significant advancements
+                                in building distributed and decentralized systems. However, current Internet connection
+                                anonymization services are mostly either commercial services or based on volunteer networks.
+                                To fill the gap and provide secure, trustless solution we take an advantage of this technology to accomplish our goal by building economically self-supporting and eventually self-governing network, significantly more resistant to a disruption or to attempts to one's privacy violation by a third party such as an oppresive government.
+                                <br/> #}-->
+                            </p>
+                            <img class="img-narrow-screen" id="img-introduction" src="images/veles-official.png" alt="Veles Introduction">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dvpn-public-testing">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2>dVPN Free for Public Testing</h2>
+                                <p>The free public alpha-testing is still active and there are several Masternodes with full dVPN support up and running. Everyone can join this testing phase and use dVPN service for free, or run his own dVPN-enabled Veles Masternode. Benchmark data gathered from this public testing will help us to improve Veles dVPN for future launch to production.</p>
+                                <p>See <a href="dVPN-Setup-Guide.wiki.en.html" class="wikilink">dVPN Setup Guide</a> to start using it now on the most popular platforms
+                                such as Windows, Linux, OSX, iOS and Android,
+                                or directly download <a href="dVPN-Configuration-Files.wiki.en.html" class="wikilink">dVPN Configuration Files</a> and Certificates.
+                                </p>
+                                <p>Currently supported protocols for dVPN are <b>OpenVPN, Shadowsocks</b> with extra obfuscation layers 
+                                such as <b>Stunnel</b> and <b>Obfsproxy</b>. These layers will also be used for multi-hop implementation,
+                                based on the effectivness observed during this public testing stage.
+                                </p>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view right-slide-in was-in-view in-view" id="img-debug" src="images/debug.png" alt="Join testing">
+                        </div>
+                        <img class="img-narrow-screen" id="img-debug" src="images/debug.png" alt="Join testing">
+                    </div>
+                </div>
+            </section>
+
+           <section id="innovative-blockchain">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view right-slide-in" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Innovative Blockchain</h2>
+                            <p class="my-6">
+                            At the core of the ecosystem is the Veles Core blochchain that employs innovative solutions to overcome
+                            common issues with the current blockchain implementations.<br />
+                            Independent multi-algorithmic PoW mining and other approaches against 51% attacks ensure secure and reliable
+                            blockchain.<br /> 
+                            Flexible block spacing, insta-mine protection, and dynamic capped block rewards based on hashrate 
+                            ensure fairer mining opportunities on all the available algorithm and protects against low-cost opportunistic mining,
+                            keeping costs of the mining more consistent and hence suporting more balanced price discovery.<br />
+                            Dynamic hashrate-based block reward system is complemented by adaptive non-linear halving 
+                            mechanism tied to current coin supply, ensuring the correct emmision rate to achieve
+                            both low inflation and long-term sustainability.
+                            </p>
+                        </div>
+                        <img class="img-narrow-screen" id="img-dynamic" src="images/dynamic-official.svg" alt="Veles is Dynamic">
+                    </div>
+                </div>
+            </section>
+
+            <section id="flexible-service-layer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2>Flexible Service Layer</h2>
+                            <p class="my-6">
+                            Veles Network is built using a multi-tiered decentralized network approach 
+                            based on Masternodes concept, further leveraging it with a flexible and robust 
+                            service layer. Latest generation of the Veles Masternodes ensures that the all the
+                            services provided by the Veles Network are served in a redundant decentralzied
+                            manner focused on service quality and availability. <br />
+                            Veles Masternode 2nd generation have been in public testing phase through Q1 2020,
+                            providing extra services such as dVPN, recursive dDNS or optional
+                            decentralized Shadowsocks tunnels for no extra fees while metrics are being gathered.<br />
+                            After the end of the public testing phase and enabling payment system for MN services, 
+                            the operators will be able to earn extra frees for the services they provide,
+                            according to their available resources and selected Masternode Tier.<br />
+                            </p>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-4 text-center wide-screen">
+                            <div class="stack-motion img track-in-view right-slide-in">
+                                <div class="stack-motion-layer five shadow"></div>
+                                <div class="stack-motion-layer five vlsgrey2"></div>
+                                <div class="stack-motion-layer four vlsgrey"></div>
+                                <div class="stack-motion-layer three vlsorange"></div>
+                                <div class="stack-motion-layer two vlsgreen"></div>
+                                <div class="stack-motion-layer one vlsbrown"></div>
+                            </div>
+                        </div>
+                        <div class="stack-motion img-narrow-screen">
+                            <div class="stack-motion-layer five shadow"></div>
+                            <div class="stack-motion-layer five vlsgrey2"></div>
+                            <div class="stack-motion-layer four vlsgrey"></div>
+                            <div class="stack-motion-layer three vlsorange"></div>
+                            <div class="stack-motion-layer two vlsgreen"></div>
+                            <div class="stack-motion-layer one vlsbrown"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <section id="funding-and-launch">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 text-center wide-screen">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve"
+                                class="track-in-view left-slide-in">
+                                <g id="alchemist-logo">
+                                  <g class="alchemist-ph">
+                                    <g id="logo" transform="translate(62.000000, 27.000000)">
+                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
+                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
+                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
+                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
+                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <g>
+                                        <defs>
+                                          <clipPath id="clipper">
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578                     "/>
+                                          </clipPath>
+                                        </defs>
+                                        <g class="clipped">
+                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
+                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
+                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
+                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
+                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
+                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
+                                        </g>
+                                      </g>
+                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
+                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
+                                              "/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0            "/>
+                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
+                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
+                                                  "/>
+                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
+                                          34.578,44.174                 "/>
+                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
+                                                  "/>
+                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
+                                                  "/>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Funding and Launch</h2>
+                            <p class="my-6">Veles had a fair launch, no developer premine, no ICO or any type of fund-raising. First block on Veles chain was mined 6th Nov 2018 15:22:08, amount of this block was 50 000 VLS (2% of the Maximum Supply) which was used for coin-swap for early adopters which were part of the early test phase.<br />
+                            Started with slow PoW phase with low block rewards and full PoW reward stage after block 50 000
+                            by VCIP01 activationwhich was publicly announced in advance.<br />
+                            To support development of the project in the initial stages, a development fund receives decreasing portion of the block reward, from 5% to 0% in 5 years (currently at <span class="tile-label-value"
+                                                        data-entity-id="chain.stats.mining"
+                                                        data-attribute="block_reward_dev_percent"
+                                                        data-format="number"
+                                                        data-fixed-decimals="2"
+                                                        data-unit="%"
+                                                    >4.65 %</span>). We believe that should be enough to
+                            grow this project to self-sustained phase. Besides the the dev fund we use open community funding model
+                            based on donations to specific crowd-funding proposal.
+                            </p>
+                            <!--<div id="chart2" class="code" style="margin:20px;height:240px; width:640px;"></div>-->
+                            <pre class="code brush:js"></pre>
+                            <svg class="img-narrow-screen" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                <g id="alchemist-logo">
+                                  <g class="alchemist-ph">
+                                    <g id="logo" transform="translate(62.000000, 27.000000)">
+                                      <path id="substract" fill="#FFFFFF22" d="M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <path id="glass" fill="transparent" d="M14.101,200.555l73.738,38.303l73.739-38.303V100.513l-48.688-25.29V24.112
+                                        c0-0.457-0.303-0.774-0.576-0.774H62.351c-0.273,0-0.576,0.318-0.576,0.774V75.75l-47.673,24.763V200.555L14.101,200.555z"/>
+                                      <path id="Combined-Shape" fill="#262626" d="M87.839,245.924L0,200.295V83.196l47.672-24.764V15.323
+                                        c0-8.181,6.585-14.835,14.678-14.835h49.964c8.094,0,14.678,6.655,14.678,14.835v42.582l48.686,25.292v117.099L87.839,245.924z
+                                         M14.101,191.767l73.738,38.302l73.739-38.302V91.725l-48.688-25.29V15.323c0-0.457-0.303-0.774-0.576-0.774H62.351
+                                        c-0.273,0-0.576,0.318-0.576,0.774v51.638L14.101,91.725V191.767z"/>
+                                      <g>
+                                        <defs>
+                                          <clipPath id="clipper">
+                                            <polygon id="clip" points="131.662,175.813 131.662,100.285 44.016,142.285 44.016,175.813 87.839,198.578                     "/>
+                                          </clipPath>
+                                        </defs>
+                                        {# <!--<g class="clipped">
+                                          <path class="chem2" d="M137.793,314.941c-14.552,29.618-50.691,41.945-80.309,27.393L4.521,316.311
+                                            c-29.618-14.553-41.944-50.691-27.392-80.31L3.152,183.04c14.552-29.618,50.692-41.944,80.31-27.392l52.961,26.021
+                                            c29.617,14.553,41.944,50.692,27.392,80.311L137.793,314.941z"/>
+                                          <path class="chem1" d="M36.142,314.941c14.552,29.618,50.691,41.945,80.31,27.393l52.963-26.023
+                                            c29.617-14.553,41.943-50.692,27.391-80.31l-26.021-52.961c-14.553-29.618-50.691-41.944-80.31-27.392L37.513,181.67
+                                            C7.895,196.223-4.432,232.362,10.12,261.98L36.142,314.941z"/>
+                                        </g>--> #}
+                                      </g>
+                                      <polygon id="container-inside" fill="#262626" points="87.839,214.433 29.915,184.343 29.915,94.688 44.016,94.688
+                                        44.016,175.813 87.839,198.578 131.662,175.813 131.662,94.688 145.764,94.688 145.764,179.57 145.764,184.343 143.244,185.651
+                                              "/>
+                                      <polygon id="mouth" fill="#262626" points="29.451,14.062 146.228,14.062 146.228,0 29.451,0            "/>
+                                      <g id="pinas" transform="translate(60.314607, 84.300601)">
+                                        <polygon id="sun" fill="#262626ff" points="23.598,29.126 17.859,23.812 19.608,16.199 27.093,13.903 32.828,19.219 31.082,26.83
+                                                  "/>
+                                        <polygon id="star3" fill="#e4b99cff" points="30.482,45.43 27.343,42.522 28.301,38.357 32.394,37.101 35.535,40.009
+                                          34.578,44.174                 "/>
+                                        <polygon id="star2" fill="#262626ff" points="43.148,3.049 42.348,7.247 38.301,8.654 35.056,5.862 35.857,1.664 39.904,0.261
+                                                  "/>
+                                        <polygon id="star1" fill="#e4b99cff" points="1.405,12.744 5.523,11.563 8.607,14.528 7.575,18.676 3.456,19.857 0.374,16.891
+                                                  "/>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="economic-model">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h2>Solid Economic Model</h2>
+                            <p class="my-6">
+                                Sane monetary policy plays an important role to ensure store of value of VLS cryptocurrency.<br />
+                                Dynamic hashrate-based block rewards ensures fairer mining opportunities and prevents low-cost
+                                mining would a hashrate drop on any algorithm. Adaptive non-linear halving system tied to
+                                real emission rate compliments the dynamic block rewards and ensures ideal supply curve 
+                                with already low inflation rates while preserving long-term sustainability.<br />
+                                Although well-calculated token emission rate and faird reward share play fundamental role in any successful
+                                monetary model, the most important part for the long-term economic self-sufficiency of the project will play
+                                the payments for extra services and resources provided by the Masternode operators.
+                                <!--{#
+                                Unlike in traditional PoW systems, on Veles Network is not possible to mine low-cost coins by getting a full block reward with low hashrate on one of algorithms, due to dynamic block rewards based on hasrate.<br />
+                                We have developed the concept non-linear, decreasing halving frequency to prevent unneccessary long inflation period during the PoW launch but preserves long steady supply rate.
+
+                                This ensures correct supply curve and inflation rate with the store of value in mind.
+                                Over 50% of the max. supply have been reached within first 2 years, and over 70% will be mined
+                                within about next 5 years, the rest will take more than century to mine, helping long-term
+                                sustainability.<br />
+                                The share of the reward for the mined block it's also intended to better reflect the network's proggress.
+                                Starting from the 90% PoW reward, 5% Masternode and 5% dev fund reward, progressing gradually to the 40% Pow and  
+                                60% Masternode reward, and 0% dev reward within 5 - 7 years (by then the development will be funded through
+                                decentralized organisation).
+                                Although well-calculated token emission rate and faird reward share play fundamental role in any successful
+                                economic model, the most important part for the long-term economic self-sufficiency of the project will play
+                                the payments for extra services and resources provided by the Masternode operators. The Masternode
+                                payments from block reward shares still ensure that all the basic services are 
+                                #}-->
+                            </p>
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img wide-screen track-in-view right-slide-in" src="images/solid-economy.png" alt="Sane Economic Model">
+                        </div>
+                        <img class="img-narrow-screen" id="img-dynamic" src="images/solid-economy.png" alt="Sane Economic Model">
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="open-governance">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-lg-4 text-center wide-screen">
+                            <img class="img track-in-view left-slide-in" id="img-introduction" src="images/governance.png" alt="Open Governance">
+                        </div>
+                        <div class="col-lg-1 wide-screen"></div>
+                        <div class="col-lg-7">
+                            <h2>Open Governance</h2>
+                            <p class="my-6">
+                                Last but not least of our most important goals it's to give away the full control of the
+                                project developement and management to the hands of the decentralized organization conttrolled
+                                fairly by all of the network participants. Already now, everyone is able to participate on the Veles Core
+                                development, and we listen closely to the community feedback.<br />
+                                We've already implemented proposal submission and voting using masternodes, and within a next 5 - 7 years current the team will build and test neccessary means of decentralized governance for the ecosystem to
+                                be governed by a self-governing and self-incentivized decentralized organization with it's own transparent funding, project management and development teams.
+                            </p>
+                            <img class="img-narrow-screen" src="images/governance.png" alt="Open Governance">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="main-features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12"><h2>Main <span class="grey">Current</span> Features</h2></div>
+
+
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
+                                       <span class="grey">Trustless</span> Web Wallet
+                                    </h4>
+                                    <img src="images/screen-web-wallet.jpg" width="100%">
+                                    <p class="card-text">
+                                        Secure browser-based, client-side web wallet without registration. Supports multisig, segwit / bech32 ...<br />
+                                        <br />
+                                        Go to <a class="nav-external-app" href="https://wallet.veles.network" title="Go to Veles Core WebWallet">WebWallet</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body light-fadeout" id="card-body">
+                                    <h4 class="card-title">
+                                       <span class="grey">Secure</span> Mobile Wallet
+                                    </h4>
+                                    <img src="images/screen-mobile-wallet.png" width="100%">
+                                    <p class="card-text">
+                                        Secure and convenient mobile wallet with the support for HD wallets, mnemonic seeds, encryption ...<br />
+                                        <br />
+                                        <b>Coming next week to Google Store</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
+                                       <span class="grey">Mobile</span> Tunneling
+                                    </h4>
+                                    <img src="images/screen-mobile-stunnel.png" width="100%">
+                                    <p class="card-text">
+                                        Veles Stunnel makes it easy to set-up and use additional TLS transport for dVPN on Android devices.<br />
+                                        <br />
+                                        Get from <a class="nav-external-app" href="https://play.google.com/store/apps/details?id=link.infra.velesStunnel" title="Go to Google Play Stores">Google Play Store</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
+                                       <span class="grey">Masternode</span> Installator
+                                    </h4>
+                                    <img src="images/screen-mn-installer.jpg" width="100%">
+                                    <p class="card-text">
+                                        Veles Masternodes have always been easy to install thanks to the friendly installation wizards.<br />
+                                        <br />
+                                        Get installator for MN 
+                                        <a class="nav-external-app" href="https://github.com/velescore/masternode-installer#usage" title="Gen1 Veles MN Installation">Gen 1</a> | 
+                                        <a class="nav-external-app" href="ttps://github.com/velescore/veles-masternode/#installation-instructions-and-notes" title="Gen 1 Veles MN Installation">Gen 2</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body light-fadeout" id="card-body">
+                                    <h4 class="card-title">
+                                       <span class="grey">Masternode</span> Dashboard
+                                    </h4>
+                                    <img src="images/screen-mn-dashboard.jpg" width="100%">
+                                    <p class="card-text">
+                                        Easy and convenient interface to manage Veles Masternodes  Gen 2 providing self-hosting dashboard.<br />
+                                        <br />
+                                        Public release <b>Apr 2020</b>, try a
+                                        <a href="https://velescore.github.io/masternode-dashboard/public/">demo</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body fadeout" id="card-body">
+                                    <h4 class="card-title">
+                                       VelesOS<span class="grey"> Live</span>
+                                    </h4>
+                                    <img src="images/screen-velesos.png" width="100%">
+                                    <p class="card-text">
+                                        VelesOS live operating system, the fastest and easiest way to use Veles dVPN without any setup.<br />
+                                        <br />
+                                        Public beta release through <b>Q2&nbsp;2020</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body">
+                                    <h4 class="card-title">
+                                       <a>Multi-algo PoW</a>
+                                    </h4>
+                                    <p class="card-text">Independent multi-algorithmic mining brings better security and flexibility
+                                    to the network, where miners can participate with several different devices, whether with <b>ASICS</b> or 
+                                    GPU rigs.<br />
+                                    Veles Core's implementations of multi-algo with dynamic reward system is designed to provide more equal mining opportunities and competition accross the different algorighms.<br />
+                                    <!--  and devices used by taking average real-life hashrate costs into the consideration,
+                                    preventing against low-cost opportunistic mining would the hashrate drop on any algorithm, or on the other hand,
+                                    capping the dynamic rewards by upper limit when sufficient hashrate on a specific algorithm is achieved,
+                                    motivating some of the miners to switch to other algorithm where hashrate is not high enough.
+                                    -->
+                                    <br />
+                                    <b>Currently supported:</b></p>
+                                    <ul>
+                                        <li>Scrypt</li>
+                                        <li>Lyra2z</li>
+                                        <li>Sha256d</li>
+                                        <li>X16r</li>
+                                        <li>X11</li>
+                                        <li>Nist5</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-1">
+                                    <h4 class="card-title">
+                           <a>Masternodes</a>
+                        </h4>
+                                    <p class="card-text">
+                                    Veles Network takes an advantage of the 
+                                    <a href="Masternode.wiki.en.html" class="wikilink">Masternode</a> concept to provide it's distributed services and 
+                                    enable node operators to earn the fees for those services accordingly.<br />
+                                    The last generation of Veles Masternodes that is currently in public testing is already providing services such as 
+                                    <b>dVPN</b>, <b>recursive dDNS</b> or decentralized <b>Shadowsocks tunnels</b>.<br />
+                                    A unique Masternode Tier and Rating system is currently under development, where each MN operator will be able to 
+                                    choose a specialization for his Masternode  according to the resources available.<br /><br />
+                                    See also <a href="Masternode-Setup-Guide.wiki.en.html" class="wikilink">Masternode Setup Guide</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item track-in-view fade-in">
+                            <div class="card h-100">
+                                <div class="card-body" id="card-body-2">
+                                    <h4 class="card-title">
+                                        <a>Language-agnostic</a>
+                                    </h4>
+                                    <p class="card-text">
+                                        Service-based architecture of the Veles Network ecosystem enforces better scalability, interoperability
+                                        and decoupling of the components, where each one can be developed independently in the most appropriate 
+                                        programming language for the particlar task.<br />
+                                        Veles Core node encapsulates consensus and wallet functionality and takes an advantage of reliability,
+                                        security and performance of the <b>C++</b> code, while many parts of the service layer 
+                                        benefits from the flexbility, easy prototyping or a large library base of the <b>Python</b>.<br /><br />
+                                        See also <a href="https://github.com/velescore" target="_blank">Veles Core GitHub</a> repositories
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{#-            <!--
+            <section id="twitter-feed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            < ! - - Twitter widget - - >
+                            <a class="twitter-timeline" data-height="400" data-dnt="true" width="2000" data-chrome="transparent" data-theme="dark" href="https://twitter.com/velescore?ref_src=twsrc%5Etfw">Tweets by velescore</a>
+                            < ! - - < script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> - -  >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            -->
+-#}
+        </div> <!-- /#content -->
+    </div> <!-- /#content-wrapper -->
+    <div id="error-wrapper" class="sidebar-aligned">
+        <div class="container">
+            <h1>
+                Error <span class="error-code">420</span>: 
+                <span class="error-title">Cloud Not Found</span><span class="error-title-cursor">_</span>
+            </h1>
+            <div class="error-message" data-error-id="420">
+                <p><b>veles-web: task failed successfully</b></p>
+                <p>This is, like, weird. Perhaps the server got high and forgot it wasn't supposed to get high.</p>
+            </div>
+            <div class="error-message" data-error-id="404">
+                <p><b>veles-web: <span class="error-page">unknown</span>.html: page not found</b></p>
+                <p>The page you are looking for has not been found. It has probably been moved to another location,
+                you can use the search panel to find it. Unless it has disappeared in the Veles Network tunnels,
+                never to be found.</p> 
+            </div>
+            <div class="error-message" data-error-id="502">
+                <p><b>veles-web: <span class="error-page">unknown</span>.html: destination unreachable</b></p>
+                <p>The page you are looking for cannot be loaded at the moment because the upstream server is experiencing
+                difficulties, please try again later.</p> 
+            </div>
+            <div class="error-message" data-error-id="500">
+                <p><b>veles-web: <span class="error-page">unknown</span>.html: error loading the page</b></p>
+                <p>The page you are looking for cannot be loaded at the moment because the upstream server is experiencing
+                difficulties, please try again later.</p> 
+            </div>
+            <p class="error-links">
+                We understand your frustration, now you can decide which developer of our <a href="team.en.html" class="applink">team</a> 
+                should be fired because of this error and send your pick to our administrator (contact at the bottom of the page).
+                If you are in a forgiving mood <b>you can start again from the <a href="https://veles.network">homepage</a></b>. 
+            </p>
+        </div>
+    </div>
+{%- include 'footer.html' -%}

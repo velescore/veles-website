@@ -10,97 +10,26 @@
  * of the License, or (at your option) any later version.
  */
 var menuTree = [
-	{
-		'page': 'index',
-			'title': 'Home',
-			'sections': [
-		  { 'title': 'Getting Started' },
-		  { 'title': 'Restoring Privacy' },
-		  { 'title': 'Innovative Network' },
-		  { 'title': 'Funding and Launch' },
-			{ 'title': 'Economic Model' },
-			{ 'title': 'Open Governance' },
-			{ 'title': 'Main Features' }
-		],
-		'hideFromNav': true,
-	},
-	{
-      'title': 'dVPN',
-      'items': [
-          { 
-            'title': 'dVPN',
-            'sections': [
-              { 'title': 'dVPN Launch' },
-              { 'title': 'Download Config' }
-            ]
-          },
-          { 
-            'page': 'linux-guide',
-            'title': 'Linux Guide',
-            'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'},
-              { 'title': 'Test Connection' }
-            ]
-          },
-          { 
-            'page': 'windows-guide',  
-            'title': 'Windows Guide',
-            'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'ObfsProxy Guide'},
-              { 'title': 'Test Connection' }
-            ]
-          },
-          { 
-            'page': 'osx-guide',
-            'title': 'OSX Guide',
-            'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Stunnel Guide' },
-              { 'title': 'Test Connection' }
-            ]
-          },
-          { 
-            'page': 'android-guide',
-            'title': 'Android Guide',
-            'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Test Connection' }
-            ]
-          },
-          { 
-            'page': 'ios-guide',
-            'title': 'iOS Guide',
-            'sections': [
-              { 'title': 'OpenVPN Guide' },
-              { 'title': 'Test Connection' }
-            ]
-          }
-      ]
-    },
+/* Sections visible on navigation menu */
 	{
 		'title': 'Roadmap',
+		'sidebarCaption': 'Milestones 2020',
 		'sections': [
-			{ 'title': 'Q1' },
-			{ 'title': 'Q2' },
-			{ 'title': 'Q3' },
-			{ 'title': 'Q4' }
+			{ 'title': 'dVPN Launch Stage' },
+			{ 'title': 'dVPN Scaling Stage' },
+			{ 'title': 'Governance Bootstrap' }
 		]
 	},
 	{
 		'title': 'Team',
 		'sections': [
-			{ 'title': 'About Us' },
 			{ 'title': 'AltcoinBaggins' },
 			{ 'title': 'Mdfkbtc' },
 			{ 'title': 'Uhlik' },
 			{ 'title': 'Virtuado' },
 			{ 'title': 'Maty' },
-        	{ 'title': 'AlexDeLarge' },
-        { 'title': 'Clover' }
+					{ 'title': 'AlexDeLarge' },
+				{ 'title': 'Clover' }
 		]
 	},
 	{
@@ -114,24 +43,53 @@ var menuTree = [
 		]
 	},
 	{
-		'title': 'Resources',
+		'title': 'Wiki',
+		'sidebarCaption': 'Pinned Articles',
 		'items': [
-			{ 'title': 'Coin-specs' },
-			{ 'title': 'Whitepaper' },
-			{ 'title': 'Masternode-guide' },
-			{ 'title': 'Exchanges' },
-			{ 'title': 'Mining-pools'},
-			{ 'title': 'External-services'},
-			{ 'title': 'Crowdfundings'},
-			{ 'title': 'FAQ' }
+			{ 
+				'title': 'Wiki Home', 
+				'page': 'Wiki-Home.wiki' 
+			},
+			{ 
+				'title': 'Coin Specifications', 
+				'page': 'Coin-Specifications.wiki' 
+			},
+			{ 
+				'title': 'Exchanges', 
+				'page': 'Exchanges.wiki' 
+			},
+			{ 
+				'title': 'Mining Pools', 
+				'page': 'Mining-Pools.wiki' 
+			},
+			{ 
+				'title': 'External Services', 
+				'page': 'External-Services.wiki' 
+			},
+			{ 
+				'title': 'Whitepaper', 
+				'page': 'Whitepaper.wiki' 
+			},
+			{ 
+				'title': 'dVPN Setup Guide', 
+				'page': 'dVPN-Setup-Guide.wiki' 
+			},
+			{ 
+				'title': 'Masternode Setup Guide', 
+				'page': 'Masternode-Setup-Guide.wiki' 
+			},
+			{ 
+				'title': 'All Wiki Articles', 
+				'page': 'All-Articles.wiki' 
+			}
 		]
 	},
 	{
 		'title': 'Wallet',
 		'items': [
 			{
-				'title': 'Index',
-			  	'url': 'https://wallet.veles.network'
+				'title': 'Go to Web Wallet',
+				'url': 'https://wallet.veles.network'
 			},
 			{
 				'title': 'Login',
@@ -159,8 +117,8 @@ var menuTree = [
 		'title': 'Explorer',
 		'items': [
 			{
-				'title': 'Index',
-			  	'url': 'https://explorer.veles.network'
+				'title': 'Go to Explorer',
+				'url': 'https://explorer.veles.network'
 			},
 			{
 				'title': 'Richlist',
@@ -183,5 +141,90 @@ var menuTree = [
 				'url': 'https://explorer.veles.network/info'
 			}
 		]
-	}
+	},
+/* Hidden special sections */
+	{
+		'page': 'index',
+		'title': 'Home',
+		'sections': [
+			{ 'title': 'Getting Started' },
+			{ 'title': 'Restoring Privacy' },
+			{ 'title': 'dVPN Public Testing'},
+			{ 'title': 'Innovative Blockchain' },
+			{ 'title': 'Flexible Service Layer' },
+			{ 'title': 'Funding and Launch' },
+			{ 'title': 'Economic Model' },
+			{ 'title': 'Open Governance' },
+			{ 'title': 'Main Features' }
+		],
+		'hideFromNav': true,
+	},
+	{
+		'page': 'news',
+		'title': 'News',
+		'sidebarCaption': 'Latest News',
+		'hideFromNav': true,
+		'itemsFromJsonID': 'news/recentArticles.json'
+	},
+	{ 'page': 'crowdfundings', 'title': 'Crowdfundings', 'hideFromNav': true},
+	{ 'page': 'faq', 'title': 'FAQ', 'hideFromNav': true }
+/*
+	{
+		'title': 'dVPN',
+		'items': [
+				{ 
+					'title': 'dVPN',
+					'sections': [
+						{ 'title': 'dVPN Launch' },
+						{ 'title': 'Download Config' }
+					]
+				},
+				{ 
+					'page': 'linux-guide',
+					'title': 'Linux Guide',
+					'sections': [
+						{ 'title': 'OpenVPN Guide' },
+						{ 'title': 'Stunnel Guide' },
+						{ 'title': 'ObfsProxy Guide'},
+						{ 'title': 'Test Connection' }
+					]
+				},
+				{ 
+					'page': 'windows-guide',	
+					'title': 'Windows Guide',
+					'sections': [
+						{ 'title': 'OpenVPN Guide' },
+						{ 'title': 'Stunnel Guide' },
+						{ 'title': 'ObfsProxy Guide'},
+						{ 'title': 'Test Connection' }
+					]
+				},
+				{ 
+					'page': 'osx-guide',
+					'title': 'OSX Guide',
+					'sections': [
+						{ 'title': 'OpenVPN Guide' },
+						{ 'title': 'Stunnel Guide' },
+						{ 'title': 'Test Connection' }
+					]
+				},
+				{ 
+					'page': 'android-guide',
+					'title': 'Android Guide',
+					'sections': [
+						{ 'title': 'OpenVPN Guide' },
+						{ 'title': 'Test Connection' }
+					]
+				},
+				{ 
+					'page': 'ios-guide',
+					'title': 'iOS Guide',
+					'sections': [
+						{ 'title': 'OpenVPN Guide' },
+						{ 'title': 'Test Connection' }
+					]
+				}
+			]
+		},
+*/
 ];

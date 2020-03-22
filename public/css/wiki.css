@@ -1,0 +1,349 @@
+/*
+ * Veles Core Wiki stylesheet
+ *
+ * Copyright (C) 2019-2020 The Veles Core developers
+ *
+ * This program is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3
+ * of the License, or (at your option) any later version.
+ */
+.wiki-page section {
+  padding: 50px;
+}
+
+.wiki-page img {
+  max-width: 90%;
+}
+
+.wiki-page h1 {
+	font-size: 2em;
+	padding-bottom: 25px;
+	padding-top: 15px;
+}
+.wiki-page h2 {
+	font-size: 1.5em;
+}
+.wiki-page h3 {
+	font-size: 1.25em;
+}
+.wiki-page h4 {
+	font-size: 1.1em;
+}
+.wiki-page h5 {
+	font-size: 1em;
+}
+
+#content.wiki-page  {
+	padding-bottom: 75px;
+}
+
+
+
+.article-info {
+	display: block;
+	padding: 5px 5px 20px 20px;
+	font-size: 13px;
+}
+
+.article-info span { 
+	float: right;
+	color: #bbb;
+}
+
+.article-info a {
+	float: right;
+	border-left: 1px solid #6b6767;
+	margin-left: 10px;	
+	padding-left: 10px;
+}
+
+/* Admonitions - alerts, notices */
+.admonition {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    background: #00000066;
+    display: flow-root;	/* not mess with boxes on the right */
+}
+
+.admonition.warning .admonition-title,
+.admonition.danger .admonition-title,
+.admonition.error .admonition-title,
+.admonition.caution .admonition-title  {
+    color: #FFAA00;
+}
+.admonition.important .admonition-title,
+.admonition.attention .admonition-title,
+.admonition.note .admonition-title  {
+    color: #00AAFF;
+}
+.admonition.tip .admonition-title,
+.admonition.hint .admonition-title  {
+    color: #00AA00;
+}
+
+/* Wiki tables */
+.wiki-page table {
+	margin-bottom: 20px;
+	min-width: 50%;
+}
+
+.wiki-page table td,
+.wiki-page table th {
+	background: #3a3a3a88;
+	border: 1px solid #e4b99c55;
+	padding: 5px 15px 5px 10px;
+}
+
+.wiki-page table th {
+	padding: 15px;
+	background: #22222288;
+}
+
+.wiki-page table tr td:first-of-type a {
+	word-break: normal;
+}
+
+/* Mobile table */
+@media (max-width: 991.98px) {
+	.wiki-page table {
+		display: block;
+		max-width: 100% !important;
+    	overflow: scroll;
+	}
+}
+
+/* Figures, images in own paragraph aligned to the right */
+figure {
+	float: right;
+	clear: both;
+	background: #22222288;
+	border: 1px solid #e4b99c55;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	padding: 5px;
+}
+
+.wiki-page figure img {
+	border: 1px solid #e4b99c55;
+	max-width: 220px;
+}
+
+figcaption {
+	font-size: 14px;
+	padding: 3px 3px 0 3px;
+}
+
+/* Mobile figure */
+@media (max-width: 767.99px) and {
+	.wiki-page figure img {
+		max-width: 220px;
+	}
+}
+
+/* Article infobox on the page's right, as on Wikipedia */
+table.infobox {
+	display: table;
+	min-width: unset;
+	width: 265px;
+	float: right;
+	clear: both;
+	color: #ddd;
+	background: #22222288;
+	border: 1px solid #e4b99c55;
+	font-size: 13px;
+	padding: 5px;
+	margin: 20px 0 20px 20px;
+}
+
+.infobox img {
+	max-width: 100%;
+}
+
+table.infobox td,
+table.infobox th {
+	border: none;
+	line-height: 17px;
+	padding: 5px 10px;
+	text-align: left;	/* this can be overriden for all tables within a wiki page, so should be defined here even if it's default */
+}
+
+table.infobox tr.image-row td {
+	text-align: center;
+}
+
+table.infobox tr td:first-of-type {
+	text-transform: capitalize;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+table.infobox tr:first-of-type td:first-of-type {
+	text-align: center;
+}
+
+table.infobox tr:last-of-type td {
+	line-height: 5px;	/* hack, with extra column, but theese tables ... */
+}
+
+table.infobox th:first-of-type {
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+table.infobox img {
+	margin-top: 5px;
+}
+
+.infobox a {
+    max-width: 142px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-height: 15px;
+}
+
+/* Mobile infobox */
+@media (max-width: 767.99px) {
+	table.infobox {
+		width: 100%;
+		border: none;
+	}
+
+	table.infobox {
+		font-size: 15px;
+	}
+
+	table.infobox tr td:first-of-type {
+		font-size: 14px;
+	}
+
+	table.infobox td {
+		padding: 10px;
+	}
+
+	table.infobox th {
+		padding: 15px;
+	}
+
+	.infobox a {
+		max-width: calc(100vw - 185px);
+	}
+
+	/* figure */
+	figure {
+	    text-align: center;
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: unset;
+	    background: transparent;
+	    border: none;
+	    max-width: 230px;
+	}
+
+	.wiki-page figure img {
+	    border: none;
+	    background-color: #30303080;
+	    max-width: 220px;
+	}
+}
+
+
+/* Datatables, while only used on wiki, if used elsewhere, move to new file */
+.dataTables_wrapper {
+	display: block;
+}
+
+/* so datatables css don't override ours */
+.wiki-page table.dataTable {
+	border-collapse: collapse !important;
+}
+.wiki-page .dataTables_info {
+	display: none;
+}
+.wiki-page .dataTables_info:nth-child(1) {	/* a kind of cosmetic bug, likely with the display block here */
+	display: block;
+}
+
+
+/*
+ * Classes for coloring stuff like checkmarks by JS
+ */ 
+.green {
+	font-weight: bold; 
+	color: #aeed6a; 
+}
+.red { 
+	color: #F19B7E;
+	font-weight: bold; 
+}
+.cntr {
+	text-align: center;
+}
+
+
+/*
+ * Page specific styles
+ */
+/* Exchanges */
+.wiki-exchanges ul {
+    list-style: none;
+    font-size: 22px;
+    letter-spacing: 2px;
+    max-width: 70%;
+}
+
+@media (max-width: 767.99px) {
+	.wiki-exchanges ul {
+	    max-width: 100%;
+	    padding: 0;
+    }
+}
+
+.wiki-exchanges li img{
+	max-height: 64px;
+	float: right;
+	margin-top: -15px;
+	margin-right: -15px;
+} 
+
+.wiki-exchanges li {
+	height: 64px;
+	background: #22222288;
+	overflow: hidden;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+.wiki-exchanges li:hover(even) {
+	background: #3a3a3a88;
+}
+
+/* dVPN Setup Guide */
+.wiki-dvpn-setup-guide td,
+.wiki-dvpn-setup-guide th {
+	text-align: center;
+}
+
+.wiki-dvpn-setup-guide th {
+	font-weight: bold;
+}
+
+.wiki-dvpn-setup-guide td:first-of-type {
+	font-weight: bold;
+	text-align: left;
+}
+
+/* Coin specs */
+.wiki-coin-specifications .wiki-table tr td:nth-child(2) {
+	font-weight: bold;
+	color: #fff;
+}
+
+.wiki-coin-specifications .ws, 
+.wiki-coin-specifications .wiki-table tr td.ws {
+	color: #aeed6a;
+}

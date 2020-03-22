@@ -1,0 +1,31 @@
+{#-
+Infobox for wiki article, typical one as seen on the Wikipedia's right side.
+
+Copyright (C) 2020 The Veles Core developers
+
+This program is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+-#}
+
+{% if article.infobox|length %}
+            <table class="infobox">
+                <th colspan="2">{{article.infobox.name}}</th>
+    {% if 'image' in article.infobox %}
+                <tr class="image-row">
+                    <td colspan="2"><img src="{{ 'wiki/' if article.infobox.image.startswith('/') }}{{article.infobox.image}}" alt="{{article.infobox.name}}" /></td>
+                </tr>
+    {% endif %}
+
+    {% for name, value in article.infobox.items() %}
+        {% if name not in ['name', 'image'] %}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{value}}</td>
+                </tr>
+        {% endif %}
+    {% endfor %}
+                <tr><td colspan="2">&nbsp;</td></tr>
+            </table>
+{% endif %}
