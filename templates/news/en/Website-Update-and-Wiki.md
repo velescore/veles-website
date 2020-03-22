@@ -1,10 +1,9 @@
-Published:      22 Mar 2020, 00:05 +0000
+Published:      22 Mar 2020, 00:30 +0000
 Image:			veles-web.jpg
 
 # Website Update and Wiki
 
-Today we have released new Veles Website upgrade featuring new [Wiki]](/Wiki-Home.wiki.en.html) 
-platform and even better mobile support.
+Today we have released new Veles Website upgrade featuring new Wiki and even better mobile support.
 
 As the project have been gradually growing it has reached the point when the information on the website
 wasn't properly reflecting project's current stage. The need for a knowledge base with tutorials on
