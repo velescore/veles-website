@@ -1031,6 +1031,11 @@ var velesSinglePageApp = {
 			"background: #fd7e14; color: white; padding: 3px 0; border-right: none;",
 			"background: #6c757d; color: white; padding: 3px 7px 3px 0px; border-radius:0 5px 5px 0; border-right: none;"
 			);
+
+		if (appVersion.environment == 'development') {
+			$('<h4 class="dev-version-info">v ' + appVersion.version + ' ' + appVersion.environment + '</h4>')
+				.insertAfter('h1:first');
+		}
 	}
 }
 
