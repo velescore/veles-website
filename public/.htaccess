@@ -9,5 +9,13 @@ RewriteRule ^([^/]+).tc.html$ index.tc.html [L]
 # Default languages
 RewriteRule ^([^/\.]+).html$ index.en.html [L]
 
-# Old website redirects
-Redirect 301 /how-to-get-vls /exchanges.html
+# Old website redirects 2018
+Redirect 301 /how-to-get-vls /Exchanges.wiki.html
+# Redirects 2020
+Redirect 301 /exchanges.en.html /Exchanges.wiki.en.html
+Redirect 301 /masternode-guide-pdf.en.html /Masternode-Setup-Guide.wiki.en.html
+Redirect 301 /whitepaper.en.html /Whitepaper.wiki.en.html
+Redirect 301 /coin-specs.en.html /Coin-Specifications.wiki.en.html
+Redirect 301 /mining-pools.en.html /Mining-Pools.wiki.en.html
+Redirect 301 /external-services.en.html /External-Services.wiki.en.html
+Redirect 301 /dvpn.en.html /dVPN-Setup-Guide.wiki.en.html
