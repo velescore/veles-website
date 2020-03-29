@@ -1,11 +1,11 @@
-Published:      Mar 28 2020, 16:00 +0000
+Published:      Mar 30 2020, 00:15 +0000
 Image:			android-wallet.jpg
 
 # Mobile Wallet for Android
 
-Veles Wallet for Android is now available on Google Play Store, secure and convenient with HD wallet and SegWit. 
+Veles Wallet for Android is now available on Google Play Store, secure and convenient with HD wallet and SegWit! 
 
-Featuring typical Veles design with clean UI, full encryption and mnemonic seed supports, it is probably the most 
+Featuring typical Veles design with clean UI, full encryption and mnemonic seed supports, it is likely the most 
 convenient Veles Core wallet available. Designed to be multi-platform, iOS release to App Store is planned as well.
 
 ### Main Features
