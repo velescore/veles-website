@@ -13,8 +13,8 @@
 
 var indexTypeWriter = {
     'titles': [
-        'free dVPN testing stage is still active',
-        'new mobile wallet public release coming soon',
+        'Free dVPN testing stage is still active',
+        'New mobile wallet for Android now on Play Store',
         'Check out our new Wiki and News sections',
     ],
     'class': 'index-typewrite',
