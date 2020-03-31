@@ -262,6 +262,24 @@ html {
 	}
 }
 
+
+@media (max-width: 991.98px) {
+	.movething .main-toptitle {
+	    max-width: 100%;
+	    text-align: right;
+	    overflow: hidden;
+	}
+
+	.movething .main-toptitle .index-typewrite {
+		float: right;
+	}
+
+	.movething .main-toptitle-cursor {
+		display: none;	/* todo: put before toptitle in HTML and swap visibility on mobile*/;
+	}
+}
+
+
 /*.main-title .thin {
 	 font-weight: 200;
 }*/
