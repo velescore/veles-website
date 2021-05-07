@@ -1,3 +1,4 @@
 __pycache__
 public/index.*.html
 public/wiki/*
+public/js/version.js
