@@ -45,7 +45,7 @@ var appVersion = """ + json.dumps(version) + ";"
 		}
 
 	def fetch_last_version(self):
-		cmd = 'git tag | sort -V | head -1'
+		cmd = 'git tag | sort -V | tail -1'
 		output = subprocess.check_output(cmd, cwd=self.path if self.path else '.', shell=True)
 		#lines = output.decode("utf-8").split("\n")
 
