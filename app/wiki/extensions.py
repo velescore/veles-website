@@ -31,8 +31,8 @@ would generate a figure like this:
 from __future__ import unicode_literals
 from markdown import Extension
 from markdown.inlinepatterns import LinkInlineProcessor, IMAGE_LINK_RE
-from markdown.util import etree
-
+#from markdown.util import etree
+import xml.etree.ElementTree as etree
 
 class FigureFromTitleInlineProcessor(LinkInlineProcessor):
     """ Return a img element from the given match. """
@@ -65,7 +65,7 @@ class FigureFromTitleInlineProcessor(LinkInlineProcessor):
 
 
 class FigureFromTitleExtension(Extension):
-    def extendMarkdown(self, md, __md_globals):
+    def extendMarkdown(self, md):
         """ Add an instance of AltCaptionInlineProcessor to InlinePatterns. """
         md.inlinePatterns.register(FigureFromTitleInlineProcessor(IMAGE_LINK_RE, md), 'figureFromTitle', 155)
         md.registerExtension(self)

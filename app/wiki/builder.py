@@ -22,6 +22,7 @@ import markdown
 
 from app.builder import WebPageBuilder
 from app.wiki.view import WikiMarkdownTemplateView
+from app.wiki.urlize_extension import UrlizeExtension 
 
 class WikiBuilder(WebPageBuilder):
 	articles_dir = 'public/wiki/articles'
@@ -43,7 +44,7 @@ class WikiBuilder(WebPageBuilder):
 	""" Constructor, needs base path of website """
 	def __init__(self, path, page_extension = 'html', article_extension = 'md'):
 		self.article_extension = article_extension
-		self.inline_md_renderer = markdown.Markdown(extensions=['mdx_urlize'])
+		self.inline_md_renderer = markdown.Markdown(extensions=[UrlizeExtension()])
 		super().__init__(path, page_extension)
 
 	def build_articles(self):
