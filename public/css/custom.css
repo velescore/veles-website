@@ -3056,7 +3056,7 @@ hr.hr-new {
 	margin-top: -300px;
 	z-index: 50;
 	background-color: black;
-	background-image: url('../images/world-map.jpg');
+	background-image: url('../images/world-map2.jpg');
 	background-position: center center;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
@@ -3069,6 +3069,7 @@ hr.hr-new {
 
 #large-header #under-canvas2 {
 	background: transparent;
+	/*background-image: url('../images/head.jpg');*/
 }
 
 #large-header #under-canvas.parallax-zoom {
@@ -3100,7 +3101,9 @@ hr.hr-new {
 
 #large-header h1, #large-header h2 {
 	z-index: 100;
+	text-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
 }
+
 
 #large-header .container .row {
 	padding-left: 15px;
