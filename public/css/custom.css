@@ -1003,7 +1003,7 @@ img.image-exchange {
 
 #img-dynamic {
 	padding-top: 35px;
-	height: 200px;
+	height: 300px;
 }
 
 #img-debug {
@@ -2853,12 +2853,14 @@ section {
 	width: 100%;
 	padding-top: 60px;
 	padding-bottom: 60px;
-	background-image: linear-gradient(180deg,	#e4b99c22, #6f6158);
+	background: #d6d6d6;
+	color: #000000;
 	overflow-x: hidden;
 }
 
 section:nth-child(even) {
-	background-image: linear-gradient(180deg,	transparent, #383737);	/* #26262622 */
+	background: #080808;
+	color: #d6d6d6;
 }
 
 section::after {
@@ -2867,9 +2869,9 @@ section::after {
 	margin-top: 58px;
 	right: calc(50% - 5px);
 	margin-left: -5px;
-	border-width: 20px;
+	border-width: 10px;
 	border-style: solid;
-	border-color: #6f6158 transparent transparent transparent;
+	border-color: #111111 transparent transparent transparent;
 }
 
 section:nth-child(odd)::after {
@@ -2877,12 +2879,15 @@ section:nth-child(odd)::after {
 }
 
 section:nth-child(even)::after {
-	border-color: #383737 transparent transparent transparent;
+	border-color: #111111 transparent transparent transparent;
 }
 section:last-child::after {
 	border: none;
 }
 
+.bg-cover {
+	background-size: cover!important;
+}
 
 @media only screen and (min-height: 660px) {
 	.download-page section {
