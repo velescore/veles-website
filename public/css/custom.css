@@ -3058,7 +3058,7 @@ hr.hr-new {
 	background-color: black;
 	background-image: url('../images/world-map2.jpg');
 	background-position: center center;
-	background-size: 100% auto;
+	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0.5;
 	text-align: right;
