@@ -13,9 +13,11 @@
 
 var indexTypeWriter = {
     'titles': [
+	'New 2024 release v0.19 "Crypto Chrysalis" is out!',
         'Free dVPN testing stage is still active',
-        'New mobile wallet for Android now on Play Store',
-        'Check out our new Wiki and News sections',
+        'VLS have been listed on new mining pool Altpoo.eu',
+        'VLS is now tradeable on AuTradeX.Systems',
+        'VLS is now tradeable on XredX.org'
     ],
     'class': 'index-typewrite',
     'pos': 0, 
