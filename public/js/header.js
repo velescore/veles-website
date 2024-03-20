@@ -249,7 +249,7 @@ var indexHeaderWidget = {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(228,185,156,'+ p.active+')';
+            ctx.strokeStyle = 'rgba(210, 109, 31,'+ (p.active * 0.8)+')';
             ctx.stroke();
         }
     }
@@ -270,10 +270,10 @@ var indexHeaderWidget = {
             
             if (pos.isStatic) {
                 ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-                ctx.fillStyle = 'rgba(155, 255,126,' + Math.min(_this.active * 1.2, 1) + ')';
+                ctx.fillStyle = 'rgba(239, 193, 0,' + Math.min(_this.active * 1.2, 1) + ')';
             } else {
                 ctx.arc(_this.pos.x, _this.pos.y, Math.max(_this.radius - 1, 2), 0, 2 * Math.PI, false);
-                ctx.fillStyle = 'rgba(228,185,156,' + (_this.active * 0.8) + ')';
+                ctx.fillStyle = 'rgba(211, 117, 0,' + (_this.active * 0.8) + ')';
             }
             ctx.fill();
         };
